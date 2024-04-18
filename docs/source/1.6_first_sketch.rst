@@ -1,0 +1,83 @@
+1.6 Your First Sketch
+================================
+
+Now, let's learn how to send our awesome sketch to the Arduino board. It's like sending a message in a bottle, but way cooler because we're sending it through a USB cable!
+
+**1. Start with an Example Project**
+
+1. First, let's grab a project that's all set up for us. In the Arduino IDE, click on **File** -> **Examples** -> **Basic** -> **Blink**. This pops up a program that's like a cake ready for us to add our own decorations to!
+
+    .. image:: img/1_ide_open_blink.png
+        :align: center
+
+**2. Choose Your Board and Port**
+
+1. Connect your R3 board to your computer with a USB cable. It's like plugging in a secret doorway to endless possibilities!
+
+  .. raw:: html
+
+      <video width="600" loop autoplay muted>
+          <source src="_static/video/connect_board.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+
+2. Now, let's tell the IDE we're using an **Arduino Uno**. Click **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
+
+    .. image:: img/1_ide_select_board.png
+        :align: center
+
+3. We also need to pick the right port, like choosing the correct door to send our message through. Click **Tools** -> **Port**. 
+
+    .. note::
+
+        * On Windows computers, this may be the word "COM" followed by a number(not COM1).
+        * On Mac computers, the port might resemble "/dev/tty.usbmodem".
+        * In Linux computers, the port is called "/dev/ttyACM", followed by a number.
+
+    .. image:: img/1_ide_select_port.png
+        :align: center
+
+4. If you're using Arduino 2.0, there's a super quick way to pick your board and port. If you see **"Unknown COMxx"** (and it's not referring to "Unknown COM1"), you'll need to click on it to select the correct board.
+
+
+    .. image:: img/1_ide_quick_access.png
+        :align: center
+
+5. Type **Arduino Uno** in the search box, select it, pick the right port, and click **OK**.
+
+    .. image:: img/1_ide_quick_board.png
+        :align: center
+
+6. Next time, you might find this quick option even faster! If not, just do the search again.
+
+    .. image:: img/1_ide_quick.png
+        :align: center
+
+**3. Check Your Sketch**
+
+1. Hit the **Verify** button to make sure your sketch is error-free. It's like proofreading your homework before handing it in.
+
+    .. image:: img/1_ide_verify.png
+        :align: center
+
+2. If there's a typo or a mistake, the IDE will tell you what and where it is, so you can fix it.
+
+    .. image:: img/1_ide_verify_error.png
+        :align: center
+
+3. No errors? You'll see a message saying it's all good to go!
+
+    .. image:: img/1_ide_done_compiling.png
+        :align: center
+
+**4. Send Your Sketch to the Board**
+
+Finally, press the **Upload** button to send your sketch on its journey to the board. If everything goes right, you'll get a success message.
+
+    .. image:: img/1_ide_done_upload.png
+        :align: center
+
+Watch the LED on your Arduino board start blinking. It's like it's saying "hello" to you!
+
+
+Great job! You've just uploaded your first Arduino program, making you an official programmer! What's next? There's so much more to discover with Arduino, and this is just the beginning. Ready for more adventures?
