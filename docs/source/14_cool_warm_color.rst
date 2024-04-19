@@ -1,4 +1,4 @@
-光的冷暖
+14. Cool or Warm Color
 ======================
 
 冷暖色(Cool & Warm colour) 指色彩心理上的冷热感觉。

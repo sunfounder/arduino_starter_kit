@@ -1,5 +1,4 @@
-6.1 The Colors of the Rainbow
-
+12. The Colors of the Rainbow
 =======================================
 
 In this activity, you'll delve into the fascinating world of color blending using an RGB LED to understand how primary colors combine to create a spectrum of hues.
@@ -97,7 +96,6 @@ Touch the black probe of the multimeter to the RGB LED's longest pin, and touch 
     :align: center
 
 
-.\
 
 创建代码 —— 使用函数
 ---------------------------------

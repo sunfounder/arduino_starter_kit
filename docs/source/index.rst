@@ -16,10 +16,20 @@ SunFounder Starter Kit
 
     About this Kit <self>
     1_get_started
-    2_electricity
-    3_ohms
-    4_traffic_light
-    5_dimmer_switch
+    2_first_circuit
+    3_multimeter
+    4_ohm's_law
+    5_parallel_series_circuit
+    6_blink_led
+    7_traffic_light_auto
+    8_traffic_light_button
+    9_desk_lamp
+    10_serial_communication
+    11_conditoal_led_control
+    12_rainbow_color
+    13_human_perception_color
+    14_cool_warm_color
+    15_random_color
 
 
 **Copyright Notice**

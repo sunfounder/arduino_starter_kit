@@ -1,5 +1,5 @@
-1. Get Started
-=====================
+1. Get Started Arduino
+=========================
 
 Welcome to our Arduino Exploration for Beginners course! Here, you'll embark on a journey that revisits groundbreaking ideas, inventions, and innovations that have shaped our world. Along the way, you'll apply these historical concepts to build circuits and electronic devices for today's needs, and be inspired to conceive new ideas and inventions for the future. Let's get started on this exciting adventure!
 
@@ -14,5 +14,5 @@ Every journey begins with a single step. In this course, our first step is to ex
     1.4_install_ide
     1.5_introduce_ide
     1.6_first_sketch
-    1.7_electricity_save
+
 

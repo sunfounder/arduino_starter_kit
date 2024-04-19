@@ -1,4 +1,4 @@
-5.4 Conditional LED Control
+11. Conditional LED Control
 ==================================
 
 Welcome to our interactive tutorial on mastering conditional statements for controlling LEDs! This course is designed to take you from basic to advanced techniques, helping you understand how to make LEDs respond dynamically to the input from a potentiometer. Whether you're a beginner looking to learn about if statements or an experienced coder ready to tackle if-else if-else structures, this course offers step-by-step guidance on creating engaging and visually informative setups. By the end of this course, you'll be able to program LEDs to indicate different levels of input, making them not just light up, but tell a story.

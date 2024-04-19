@@ -1,4 +1,4 @@
-4.2 Traffic Light with Pedestrian Button
+8. Traffic Light with Pedestrian Button
 ===============================================
 
 Welcome to the next phase of our Arduino journey—4.2 Traffic Light with Pedestrian Button. In the previous lesson, we built a foundational traffic light system, a staple of our roads, controlling the flow with red, yellow, and green lights. Now, we're adding a layer of interaction that reflects real-world complexities: a pedestrian button. This feature introduces a human element to our electronic crossroads, allowing for a dynamic interplay between the walkways and roadways at our busy intersections. As we delve into this project, we'll explore not just the technical setup but also the logic and programming that make such systems both possible and efficient in managing pedestrian and vehicle traffic.

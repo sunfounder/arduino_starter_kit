@@ -1,13 +1,23 @@
-.. _2.2_build_circuit:
+.. _2_first_circuit:
 
-2.2 Building a Circuit
+2. Your First Circuit
 =========================
 
-A circuit is a looped pathway that allows electricity to flow continuously. Typically, a circuit includes components such as a power source, switches, lights, motors, speakers, and other electrically powered devices. In this activity, you will build a simple circuit to light up an LED using a battery.
+Welcome to the electrifying world of your first circuit, where a simple switch can light up your surroundings, and a single click can bring gadgets to life. This lesson is your gateway to understanding the unseen force of electricity that powers the devices we use every day. Ever curious about how your favorite gadgets operate or what makes lights glow? It's time to embark on a hands-on exploration of circuit building.
 
-.. image:: img/2_uno_gnd.png
-    :width: 600
-    :align: center
+As we begin this adventure, we'll explore the origins of electricity and trace the pathways of electrons as they flow through circuits. This lesson serves as a practical introduction to the components of a circuit and how they interact to perform various functions. You'll also play the role of an electrical detective, discovering how to effectively harness and measure this lively force.
+
+Get ready for some electrifying experiments! Here's what you'll achieve:
+
+* Use a breadboard for easy circuit construction.
+* Read resistor color codes to manage electrical flow.
+* Understand how LEDs control the direction of current.
+* Learn about voltage from R3 Board.
+* Discover how electrons flow through a circuit.
+* Recognize different types of circuits and their functions.
+
+Are you ready to dive into your first circuit-building experience? Let's get charged up and begin this enlightening journey!
+
 
 Components Needed
 ----------------------
@@ -32,7 +42,7 @@ The breadboard you'll be using is called a solderless breadboard. Each hole on t
     :align: center
 
 
-Ever wonder why the essential electronic tool in your hand shares a name with the kitchen board used for slicing bread? It’s quite a story! Back in the days before the 1970s, electronics were assembled on literal wooden boards, sometimes repurposed kitchen breadboards, by nailing or gluing components onto them and making connections with wires.
+Ever wonder why the essential electronic tool in your hand shares a name with the kitchen board used for slicing bread? It's quite a story! Back in the days before the 1970s, electronics were assembled on literal wooden boards, sometimes repurposed kitchen breadboards, by nailing or gluing components onto them and making connections with wires.
 
 .. image:: img/2_breadboard_circuit.jpg
     :width: 500
@@ -102,7 +112,7 @@ Resistor
 
 Resistors help manage the flow of electricity in a circuit by converting electrical energy into heat. Each resistor has two wires, one on each end, allowing electricity to pass in either direction, which means they can be placed in any direction on the circuit.
 
-A resistor’s ohm value tells us the amount of resistance it adds. A higher ohm value means more resistance. For instance, a 220-ohm resistor adds 220 ohms of resistance, and a 10 kiloohm resistor adds 10 kilo ohms.
+A resistor's ohm value tells us the amount of resistance it adds. A higher ohm value means more resistance. For instance, a 220-ohm resistor adds 220 ohms of resistance, and a 10 kiloohm resistor adds 10 kilo ohms.
 
 To read a resistor's value, check the color bands. This chart explains the meaning behind each color band on a resistor. The multiplier is represented in scientific notation, where the exponent indicates the number of zeros added to the number represented by the color bands. For instance, a 4-band resistor shown at the top of the chart starts with a green band. Green stands for the number 5, so the resistance value begins with 5. The second band is brown, so the next number is 1. The multiplier band is red, valued at 2, meaning we add two zeros. This results in a total resistance of 5100 ohms, or 5.1 kilohms (5.1kΩ).
 
@@ -139,7 +149,8 @@ LED
 .. image:: img/2_red_led.png
     :align: center
 
-Diodes are polarized electronic devices, meaning they only allow current to flow in one direction. If you examine the interior of the LED, specifically the yellow part, you’ll notice a gap between the two metallic pieces where the wires connect. Electrons emit photons (particles of light) when they jump across this gap, but this can only occur in one direction.
+
+LEDs, or Light Emitting Diodes, are specialized electronic components that emit light when an electric current flows through them in a specific direction.
 
 .. image:: img/2_led_polarity.jpg
     :width: 200
@@ -149,7 +160,7 @@ The most common LED colors are red, yellow, blue, green, and white, with the emi
 
 .. image:: img/2_led_color.png
 
-The LEDs in your kit have two leads: a long one and a short one. The long lead is known as the anode and the short one as the cathode. On some LEDs, the cathode side is indicated by a flat edge. For the LED to work, current must enter through the anode and exit through the cathode. Therefore, the anode (long lead) should face towards the positive side of the breadboard, and the cathode (short lead) should face towards the ground (negative).
+These devices are designed with two leads: a longer one known as the anode and a shorter one called the cathode. To function properly, the anode should be connected to the positive terminal of the power source, and the cathode should be connected to the negative terminal or ground. Some LEDs feature a flat edge on the side of the cathode to aid in correct placement. 
 
 .. image:: img/2_led_pin.jpg
     :width: 200
@@ -171,8 +182,8 @@ Jumper Wire
 
 7. Find a jumper wire.
 
-Your kit includes jumper wires of various lengths and colors. All these wires function identically, but different lengths and colors are provided to help you organize the breadboard and keep it tidy. Most jumper wires consist of two parts: an inner conductive metal wire and an outer insulating plastic coating. This insulation has high resistance to prevent the conductive wire from making unintended contacts. You can use any length or color of jumper wire. However, it's best practice to use short jumper wires as much as possible to maintain a neat and clean circuit. The image shown here uses a short yellow jumper wire. You can also use different colors to represent different parts of the circuit.
 
+Your kit includes jumper wires of different colors and lengths, all functioning the same. Use varying colors for easy circuit identification and shorter wires for a tidy setup. Each wire consists of a conductive core and an insulated coating to prevent unintended contacts.
 
 .. image:: img/2_wire_color.jpg
     :width: 500
@@ -193,13 +204,13 @@ R3 Board
     :width: 400
     :align: center
 
-In this lesson, we’re using the R3 Board as a power supply. Its 5V pin serves as the positive terminal and the GND pin as the negative terminal, supplying a steady 5V to the circuit.
+In this lesson, we're using the R3 Board as a power supply. Its 5V pin serves as the positive terminal and the GND pin as the negative terminal, supplying a steady 5V to the circuit.
 
 .. image:: img/2_uno_battery.png
     :width: 500
     :align: center
 
-However, connecting the power supply’s terminals directly without a load can cause a short circuit, generating heat and potentially causing damage or fire. Always include a load, like an LED or resistor, to prevent short circuits.
+However, connecting the power supply's terminals directly without a load can cause a short circuit, generating heat and potentially causing damage or fire. Always include a load, like an LED or resistor, to prevent short circuits.
 
 .. image:: img/2_short_circuit.png
     :width: 500
@@ -284,21 +295,3 @@ By mastering these basics, you're on your way to understanding and creating more
    :align: center
 
 2. What happens if you reverse the pins of the LED? Will it light up? Why or why not?
-
-3. Use the resistors listed in the table below to replace the current 220-ohm resistor. Record the changes observed in the LED's behavior with each resistor substitution.
-
-.. list-table::
-   :widths: 25 100
-   :header-rows: 1
-
-   * - Resistor
-     - Observations
-   * - 100Ω
-     - 
-   * - 1KΩ
-     -      
-   * - 10KΩ
-     - 
-   * - 1MΩ
-     - 
-

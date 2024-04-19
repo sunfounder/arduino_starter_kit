@@ -1,26 +1,6 @@
-5.3 Serial Communication
+10. Serial Communication
 ================================
 
-
-The Evolution of Communication
-----------------------------------
-
-From ancient scripts to the revolutionary printing press, human communication has evolved dramatically over the centuries. But one of the most significant leaps occurred in 1876 with Alexander Graham Bell's invention of the telephone. This innovation transformed the way we connect, allowing us to transmit our voices across vast distances for the first time.
-
-Before the telephone, long-distance communication was limited to the telegraph, which could only send Morse code messages. Bell's telephone, however, converted sound into electrical signals that traveled along wires and recreated the original sound at the other end. This was a game-changer in personal and business communication.
-
-.. image:: img/5_bell_telephone.png
-
-The 20th century saw further innovations as Claude Shannon introduced concepts that simplified electronic circuits using Boolean algebra. His work laid the foundation for modern computing and telecommunication networks.
-
-The digital age kicked into high gear when Tim Berners-Lee, a scientist at CERN, faced a practical challenge: sharing vast amounts of scientific data stored on various computers. His solution was the World Wide Web, a network of interconnected documents accessed via the Internet. This simple yet powerful tool started as a niche system for scientists but quickly expanded to become the universal platform for information exchange we rely on today.
-
-Thus, from writing to the web, our quest to communicate more effectively has driven technological advancements that continue to shape our world.
-
-
-
-Creating Code for Serial Communication
--------------------------------------------------
 
 The Serial Monitor is an integral tool within the Arduino IDE, allowing direct communication between the R3 board and a computer. This feature is particularly useful when dealing with analog signals where visual indicators like LED brightness are insufficient to reflect detailed signal levels, unlike digital signals where the state (on or off) is evident.
 
