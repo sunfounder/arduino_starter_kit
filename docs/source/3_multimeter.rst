@@ -157,7 +157,7 @@ Before using the multimeter, you need to install the battery and connect the two
 
 **Measuring Voltage**
 
-1. Turn the multimeter to the DC 20 voltssetting.
+1. Turn the multimeter to the DC 20 volts setting.
 
 .. image:: img/multimeter_dc_20v.png
   :width: 300
@@ -323,7 +323,7 @@ Using the formula above, with the voltage and current you measured, you can calc
 
 **Measuring the Resistance Value**
 
-Now that we've figured out the circuit's total resistance, it's time to see how much of it is because of the resistor and how much is due to the LED. Our resistor is marked as 220 ohms, but with a 1% tolerance, it could actually be anywhere from 217 to 222 ohms. Let's use the multimeter to find out its exact value.
+Now that we've figured out the circuit's total resistance, it's time to see how much of it is because of the resistor and how much is due to the LED. Our resistor is marked as 220 ohms, but with a 5% tolerance, it could actually be anywhere from 209 to 231 ohms. Let's use the multimeter to find out its exact value.
 
 1. When measuring resistance, your multimeter has to act as the only source of voltage; make sure there are no other power sources connected to the circuit. So, unplug any jumper wires from the R3 board to ensure the breadboard is isolated.
 
@@ -352,7 +352,7 @@ To determine the LED's resistance, subtract the resistor's resistance from the t
 
     LED Resistance = Total Resistance - Resistor's Resistance
 
-So, according to my measurements, the LED's resistance should be: 378.88 - 218 = 160.88 ohms.
+So, according to my measurements, the LED's resistance should be: 378.88 - 215 = 163.88 ohms.
 
 We've taken a hands-on journey through the essentials of using a multimeter to measure voltage, current, and resistance in a circuit. From building a simple LED circuit to delving into the nuances of measuring resistance in circuits with LEDs, we've explored how to practically apply Ohm's Law and understand the dynamics of series and parallel circuits. As we move forward, remember that these foundational skills lay the groundwork for more complex projects and deeper understanding of electronics. Keep experimenting, keep learning, and let's continue to illuminate the path of electronic exploration together.
 

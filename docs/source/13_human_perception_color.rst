@@ -1,242 +1,253 @@
-13. The Human Perception of Color
-===================================
+13. The Spectrum of Sight
+================================================================================
+Welcome to this lesson,  where we unravel the mystery of human color perception and replicate it using technology. In this lesson, we delve into how our eyes distinguish millions of colors and how this incredible ability can be simulated digitally with RGB LEDs. By exploring the interplay of photoreceptors in our eyes and the RGB color model, you'll learn to recreate the vividness of the world in digital form.
 
+**Overview**
 
-人类的视觉系统能够感知大约1000万种不同的颜色，
-这是通过眼睛里的视网膜上的感光细胞——视锥细胞和视杆细胞来实现的。
-这种对颜色的感知并不是线性的，也就是说，视觉系统对某些颜色的变化比对其他颜色的变化更为敏感。
-视锥细胞对颜色敏感，主要分为三种，分别对红色、绿色和蓝色光最为敏感。
+The human visual system can perceive about ten million different colors, a capability achieved through photoreceptor cells in the retina—cones and rods. Perception of color is not linear; our visual system is more sensitive to changes in certain colors than others. Cones, which are sensitive to color, primarily come in three types, each most sensitive to either red, green, or blue light.
+
+The human eye perceives about ten million different colors, thanks to specialized cells in the retina called cones and rods. This perception isn't uniform across the spectrum; we're more sensitive to changes in some colors than others. Cones, which detect color, are predominantly sensitive to red, green, or blue wavelengths.
 
 .. image:: img/6_mix_eyeballjpg.jpg
 
-RGB颜色模型是一种加色模型，它通过混合不同强度的红色、绿色和蓝色光来创建出各种颜色。
-在这个模型中，红色、绿色和蓝色通常被认为是基本颜色通道，
-通过调整每个通道的强度（从0到最大值，通常是255对应于8位颜色深度），
-可以生成超过1600万种不同的颜色的可见光。
-例如，橙色可以由更多的红色和更少的绿色产生。
+The RGB color model is an additive color model where colors are created by mixing varying intensities of red, green, and blue light. In this model, red, green, and blue are typically considered primary color channels. By adjusting the intensity of each channel (from 0 to a maximum value, typically 255 corresponding to an 8-bit color depth), it is possible to produce a visible spectrum of over 16 million different colors. For instance, orange can be achieved by mixing more red with less green.
+
+The RGB color model uses an additive approach, mixing red, green, and blue light to create a broad array of colors. This model reflects how our visual system combines light from different parts of the spectrum to form diverse hues. By manipulating the intensity of these three primary colors, we can generate over 16 million distinct colors. For example, by increasing red and decreasing green, we achieve orange.
 
 .. image:: img/6_mix_orange.jpg
 
+In this interactive session, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
+
+**Learning Objectives**
+
+* Grasp how this model mimics human color perception and its application in digital displays.
+* Learn to use Pulse Width Modulation (PWM) for nuanced color mixing with RGB LED.
+* Enhance your coding efficiency and clarity by creating functions that take parameters in Arduino.
+* Experiment with different RGB values to customize colors on your LED, mirroring the complexity of human color vision.
 
 
-在这个活动中，你将让RGB灯亮出你想要的颜色。
+Building the Circuit
+-----------------------
 
+**Components Needed**
 
-**需要的元件**
-
-TODO-IMAGE
-1项目板
-TODO-IMAGE
-1 RGB LED
-TODO-IMAGE
-1 跳线
-TODO-IMAGE
-1 带测试线的万用表
-TODO-IMAGE
-3 个 220 欧姆的电阻
-
+* 1 * R3 Board
+* 1 * Potentiometer
+* 1 * RGB LED
+* 3 * 220 Ohm Resistors
+* Several Jumper Wires
+* 1 * USB Cable
+* 1 * Breadboard
+* 1 * Multimeter with Test Leads
 
 .. note::
-    220 欧姆电阻的色环是： 红色，红色，黑色，黑色，棕色
+    The color bands for a 220 Ohm resistor are: Red, Red, Black, Black, Brown
+
+This lesson uses the same circuit as Lesson 12.
+
+.. image:: img/6_mix_color_bb_4.png
+    :width: 600
+    :align: center
 
 
-**原理示意图+wiring**
+Code Creation - Displaying Colors
+------------------------------------
 
-【】
+In our journey to master the control of RGB LEDs, we've seen how using ``digitalWrite()`` can light up the LED in basic colors. To further explore and unlock the full spectrum of colors that an RGB LED can produce, we'll now delve into using ``analogWrite()`` to send PWM (Pulse Width Modulation) signals, allowing us to achieve a wide range of hues.
 
+Let's see how we can implement this with code.
 
+1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
+2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson13_PWM_Color_Mixing``. Click "Save".
 
-
-**构筑电路**
-
-这个电路是沿用了章节6.1的电路。
-
-
-
-点亮任意颜色
----------------------------------
-
-在这个活动中，你将为 RGB LED的引脚提供不同强度的PWM信号，从而使它能够进行连续的颜色渐变。
-在函数名称和存放函数命令的左大括号之间是一组小括号。
-它是创建函数时就需要定义的 **参数列表**，用于将程序主体部分的变量或其他值等信息传递给该函数。
-这些信息将用来完成函数的任务。
-
-参数列表里可能有多个参数，这些参数被成为形参。（当然一个函数也可能没有形参，这样的函数的小括号是空的，就像 ``void loop()`` 一样。）
-在函数执行时形参作为局部变量存在。
-
-在这里我们设置三个不同的布尔型变量作为参数列表，用来控制三个引脚的电平。这三个变量在设置时也要遵守 ``变量类型 变量名`` 的格式来声明。
+3. First, set the three pins of the RGB LED as outputs:
 
 .. code-block:: Arduino
-    :emphasize-lines: 1
-
-    void lightUp(bool pin1, bool pin2, bool pin3) {
-
-    }
-
-   
-为函数填上内容：如果某引脚对应的参数是True，则为该引脚提供高电平；如果某引脚对应的是False，则提供低电平。
-那么，代码将会变成这样：
-
-.. code-block:: Arduino
-    :emphasize-lines: 2-18
-
-    void lightUp(bool pin1, bool pin2, bool pin3) {
-        if (pin1 == True) {             // If pin1 is True, turn on the first LED
-            digitalWrite(9, HIGH);
-        } else {                        // Otherwise, turn off the first LED
-            digitalWrite(9, LOW);
-        }
-
-        if (pin2 == True) {             // If pin2 is True, turn on the second LED
-            digitalWrite(10, HIGH);
-        } else {                        // Otherwise, turn off the second LED
-            digitalWrite(10, LOW);
-        }
-
-        if (pin3 == True) {             // If pin3 is True, turn on the third LED
-            digitalWrite(11, HIGH);
-        } else {                        // Otherwise, turn off the third LED
-            digitalWrite(11, LOW);
-        }
-    }
-
-
-1) 如果有必要，在 Arduino IDE 中打开你的 Lesson6_mix_color 草图。
-
-2) 用新的名称保存草图。从 "文件 "菜单中选择 "另存为..."，草图位置应该默认为 Arduino Sketchbook。将文件命名为 "Lesson6_mix_color_plus"。点击 "保存"。
-
-3) 目前这个草图中，有个自定的调用函数 ``lightUp()`` ，它的作用是为RGB LED的三个引脚提供电平。
-现在我们要将其改造一番，让它可以为RGB LED的三个引脚提供模拟值。从而改变三原色光各自的强度，组合成丰富的颜色。
-
-为此，我们需要在两个方面修改这个函数：
-
-    1. 修改为用analogWrite()来为RGB LED引脚供电。
-    2. 将传参修改为各个基本颜色通道的强度。(因为PWM值的范围为0-255，而非电平那样是个二极性的数值，因此需要将变量从bool型改为int型)
-
-.. code-block:: Arduino
-
-    void lightUp(int value1, int value2, int value3) {
-        Serial.print("pin value:");
-        Serial.print(value1);
-        Serial.print(" , ");
-        Serial.print(value2);
-        Serial.print(" , ");
-        Serial.println(value3);  
-
-        analogWrite(9, value1);
-        analogWrite(10, value2);
-        analogWrite(11, value3);
-    }
-
-
-6) 在  void loop() 里面使用该函数，为其写入三个通道的强度。现在，请尝试写入这几个数值 (255，98，183)，看看是否出现了新奇的颜色？请描述下这个颜色。
-
-.. code-block:: Arduino
-    :emphasize-lines: 8
+    :emphasize-lines: 3-5
 
     void setup() {
-        pinMode(9, OUTPUT);             // Declare the RGB LED pin1 as output
-        pinMode(10, OUTPUT);            // Declare the RGB LED pin2 as output
-        pinMode(11, OUTPUT);            // Declare the RGB LED pin2 as output
-        Serial.begin(9600);
+        // Set up code to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
     }
 
-    void loop(){
-        lightUp(255, 98, 183);               // Call the lightUp function to control the RGB LED
+4. Use ``analogWrite()`` to send PWM values to the RGB LED. From Lesson 9, we know that PWM values can change an LED's brightness, and the PWM range is 0-255. To display red, we set the PWM value of the RGB LED's red pin to 255, and the other two pins to 0.
+
+.. code-block:: Arduino
+    :emphasize-lines: 10-12
+
+    void setup() {
+        // Set up code to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
     }
 
-    void lightUp(int value1, int value2, int value3) {
-        Serial.print("pin value:");
-        Serial.print(value1);
-        Serial.print(" , ");
-        Serial.print(value2);
-        Serial.print(" , ");
-        Serial.println(value3);  
-
-        analogWrite(9, value1);
-        analogWrite(10, value2);
-        analogWrite(11, value3);
+    void loop() {
+        // Main code to run repeatedly:
+        analogWrite(9, 0);    // Set the PWM value of Blue pin to 0
+        analogWrite(10, 0);   // Set the PWM value of Green pin to 0
+        analogWrite(11, 255);  // Set the PWM value of Red pin to 255
     }
 
-7) 点击“上传”按钮，将草图上传到你的 Arduino 板。
+5. With this setup, after uploading the code to the R3 board, you will see the RGB LED display red.
 
-
-*请描述一下你看到的颜色。并且尝试以下几种数值组合，在手册中记录下看到的颜色。*
+6. The ``analogWrite()`` function allows the RGB LED to display not only the seven basic colors but many other different hues. Now you can adjust the values of pins 9, 10, and 11 separately, and record the observed colors in your handbook.
 
 .. list-table::
     :widths: 20 20 20 40
     :header-rows: 1
 
-    *   - Value1	
-        - Value2	
-        - Value3
+    *   - Red Pin    
+        - Green Pin  
+        - Blue Pin
         - Color
-    *   - 255
-        - 98
-        - 183
+    *   - 0
+        - 128
+        - 128
         - 
-    *   - 122
-        - 236
+    *   - 128
+        - 0
+        - 255
+        - 
+    *   - 128
+        - 128
         - 255
         - 
     *   - 255
-        - 195
-        - 80
-        - 
-    *   - 244
-        - 255
-        - 120
+        - 128
+        - 0
         -     
 
+Code Creation - Parameterized Functions
+------------------------------------------------
 
-亮出自己想要的颜色
-----------------------------------
+Using the ``analogWrite()`` function to display different colors can make your code lengthy if you want to display many colors simultaneously. Therefore, we need to create functions.
 
-我们已经知道，通过给RGB LED 的三个引脚提供不同的值，可以亮出不同的灯光颜色。
-那么，如何让RGB LED亮出我正好想要的颜色呢？这就需要一个调色盘的辅助了。
+Unlike the previous lesson, we are preparing to create a function with parameters. 
 
-在你的个人计算机中，打开 paint （这是Windows系统自带的软件）或者任意的绘图软件。找到自定义颜色。
+
+A parameterized function allows you to pass specific values into the function, which can then use these values to perform its tasks. This is incredibly useful for adjusting properties like color intensity on the fly. It makes your code more flexible and easier to read.
+
+When defining a parameterized function, you specify what values it needs to operate through parameters listed in parentheses right after the function name. These parameters act like placeholders that get replaced by actual values when the function is called.
+
+Here's how to define a parameterized function for setting the color of an RGB LED:
+
+1. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
+
+2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file "``Lesson13_PWM_Color_Mixing_Function``". Click "Save".
+
+3. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
+
+.. code-block:: Arduino
+    :emphasize-lines: 5,6
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+    }
+
+    void setColor(int red, int green, int blue) {
+    }
+
+   
+4. Within the function body, use the ``analogWrite()`` command to send PWM signals to the RGB LED pins. The values passed to ``setColor`` will determine the brightness of each color. The parameters ``red``, ``green``, and ``blue`` are used here to directly control the intensity of each LED pin.
+
+.. code-block:: Arduino
+    :emphasize-lines: 2-18
+
+    // Function to set the color of the RGB LED
+    void setColor(int red, int green, int blue) {
+        // Write PWM value for red, green, and blue to the RGB LED
+        analogWrite(11, red);
+        analogWrite(10, green);
+        analogWrite(9, blue);
+    }
+
+
+5. Now you can call your newly created ``setColor()`` function in the ``void loop()``. Since you created a function with parameters, you need to fill in the arguments in the ``()`` such as ``(255, 0, 0)``. Remember to write comments.
+
+.. code-block:: Arduino
+    :emphasize-lines: 3
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+        setColor(255, 0, 0); // Display red color
+    }
+
+    // Function to set the color of the RGB LED
+    void setColor(int red, int green, int blue) {
+        // Write PWM value for red, green, and blue to the RGB LED
+        analogWrite(11, red);
+        analogWrite(10, green);
+        analogWrite(9, blue);
+    }
+
+6. We already know that by providing different values to the three pins of the RGB LED, we can light up different colors of light. So, how do we make the RGB LED light up exactly the color we want? This requires the aid of a color palette. Open **Paint** (this software comes with Windows) or any drawing software on your personal computer.
 
 .. image:: img/6_mix_color_paint.png
 
-选择一个你喜欢的颜色，记录下它的RGB值。
+7. Choose a color you like, record its RGB values.
+
+.. note::
+
+    Note that before you select a color, adjust the lumens to the proper position.
 
 .. image:: img/6_mix_color_paint_2.png
 
-将你选中的颜色填入代码。其中R值填入value1，G值填入value2，B值填入value3。
-
+8. Fill in the color you selected into the ``setColor()`` function in the ``void loop()``, use the ``delay()`` function to specify the display time for each color.
 
 .. code-block:: Arduino
-    :emphasize-lines: 9
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+        setColor(255, 0, 0);      // Display red color
+        delay(1000);              // Wait for 1 second
+        setColor(0, 128, 128);    // Display teal color
+        delay(1000);              // Wait for 1 second
+        setColor(128, 0, 255);    // Display purple color
+        delay(1000);              // Wait for 1 second
+        setColor(128, 128, 255);  // Display Light blue color
+        delay(1000);              // Wait for 1 second
+        setColor(255, 128, 0);    // Display orange color
+        delay(1000);              // Wait for 1 second
+    }
+
+9. Below is the complete code; you can click "Upload" to upload the code to the R3 board to see the effects.
+
+.. code-block:: Arduino
 
     void setup() {
-        pinMode(9, OUTPUT);             // Declare the RGB LED pin1 as output
-        pinMode(10, OUTPUT);            // Declare the RGB LED pin2 as output
-        pinMode(11, OUTPUT);            // Declare the RGB LED pin2 as output
-        Serial.begin(9600);
+        // put your setup code here, to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
     }
 
-    void loop(){
-        lightUp(144, 109, 199);               // Call the lightUp function to control the RGB LED
+    void loop() {
+        // put your main code here, to run repeatedly:
+        setColor(255, 0, 0);      // Display red color
+        delay(1000);              // Wait for 1 second
+        setColor(0, 128, 128);    // Display teal color
+        delay(1000);              // Wait for 1 second
+        setColor(128, 0, 255);    // Display purple color
+        delay(1000);              // Wait for 1 second
+        setColor(128, 128, 255);  // Display Light blue color
+        delay(1000);              // Wait for 1 second
+        setColor(255, 128, 0);    // Display orange color
+        delay(1000);              // Wait for 1 second
     }
 
-    void lightUp(int value1, int value2, int value3) {
-        Serial.print("pin value:");
-        Serial.print(value1);
-        Serial.print(" , ");
-        Serial.print(value2);
-        Serial.print(" , ");
-        Serial.println(value3);  
-
-        analogWrite(9, value1);
-        analogWrite(10, value2);
-        analogWrite(11, value3);
+    // Function to set the color of the RGB LED
+    void setColor(int red, int green, int blue) {
+        // Write PWM value for red, green, and blue to the RGB LED
+        analogWrite(11, red);
+        analogWrite(10, green);
+        analogWrite(9, blue);
     }
 
-点击“上传”按钮，将草图上传到你的 Arduino 板。
+10. Finally, remember to save your code and tidy up your workspace.
 
-*让RGB LED多亮出几种你喜欢的颜色，将RGB值记录在handbook上。*
+**Summary**
 
-
-
-点击 “保存” 来保存你的草图。
+Today's exploration of color perception bridges the gap between biological science and electronic application, highlighting the power of programming in bringing abstract concepts to life. By adjusting RGB values on an LED, you've mimicked the eye's method of perceiving color, gaining both a deeper appreciation for human biology and advanced skills in electronic control.

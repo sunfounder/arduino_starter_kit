@@ -151,17 +151,15 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
 
 1. In our project, we utilize digital pin 3 on the board to control an LED. Each pin can function either as an output, sending out 5 volts, or as an input, reading the incoming voltage. To configure the LED, we set the pin as an output by using the ``pinMode(pin, mode)`` function.
     
-    Let's dive into the ``pinMode()`` syntax.
+Let's dive into the ``pinMode()`` syntax.
 
-        * ``pinMode(pin, mode)``: Sets a specific pin to ``INPUT`` or ``OUTPUT``. 
-
-        **Syntax**
-            pinMode(pin, mode)
-
-        **Parameters**
-            - ``pin``: the number of the pin you want to set the mode for.
-            - ``mode``: ``INPUT``, ``OUTPUT``, or ``INPUT_PULLUP``.
-
+    * ``pinMode(pin, mode)``: Sets a specific pin to ``INPUT`` or ``OUTPUT``. 
+    **Parameters**
+        - ``pin``: the number of the pin you want to set the mode for.
+        - ``mode``: ``INPUT``, ``OUTPUT``, or ``INPUT_PULLUP``.
+    **Returns**
+        Nothing
+    
 2. Now, it's time to add our first line of code in the ``void setup()`` function.
         
     .. note::
@@ -228,12 +226,12 @@ Debugging is a big part of programming. Professional programmers often spend a l
 
     * ``digitalWrite(pin, value)``: Sends a ``HIGH`` (5V) or ``LOW`` (0V) signal to a digital pin, changing the operating state of the component.
 
-    **Syntax**
-        digitalWrite(pin, value)
-
     **Parameters**
         - ``pin``: the Arduino pin number.
         - ``value``: ``HIGH`` or ``LOW``.
+    
+    **Returns**
+        Nothing
 
 5. Below the comment in the ``void loop()`` function, write a command to turn on the LED connected to pin 3. Don't forget to end the command with a semicolon. Verify and debug your code if necessary.
 
@@ -356,11 +354,11 @@ Now that your LED are on, it's time for them to blink.
 
     * ``delay(ms)``: Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
 
-    **Syntax**
-        delay(ms)
-
     **Parameters**
         - ``ms``: the number of milliseconds to pause. Allowed data types: unsigned long.
+
+    **Returns**
+        Nothing
 
 5. Now, include the ``delay(time)`` command after each set of ON and OFF commands, setting the delay time to 3000 milliseconds (3 seconds). You may adjust this duration to make the LED blink faster or slower.
 

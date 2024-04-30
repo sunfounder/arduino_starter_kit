@@ -1,7 +1,15 @@
 
 7. Let's Make Traffic Lights!
 ==============================
-Welcome to our journey through the lights and codes! In this lesson, we will dive into the fascinating world of electronics and programming with a project that's as practical as it is educational. Together, we'll transform a set of LEDs and resistors on an Arduino board into a miniature version of traffic lights. By the end of this lesson, you'll learn how to control LEDs with code, creating patterns that mimic the operation of real-world traffic signals. So buckle up and get ready to light up your programming skills!
+Welcome to this lesson, this engaging lesson bridges the gap between theoretical concepts and practical application in electronics and programming. We will delve into the process of converting pseudo-code—a simplified form of programming language—into functional Arduino sketches. This exercise will simulate the operations of traffic lights, offering you hands-on experience in programming and circuit design. As you learn to interpret and implement pseudo-code, you will gain deeper insights into the logic behind controlling electronic devices with code.
+
+In this lesson, you will learn to:
+
+* Learn to write and interpret pseudo-code for planning electronic circuit functionality.
+* Convert pseudo-code into Arduino sketches to control traffic light simulations.
+* Build and program a traffic light system using LEDs and an Arduino board.
+
+By mastering these skills, you'll be equipped to design, program, and troubleshoot basic electronic systems, paving the way for more complex projects.
 
 Getting Traffic Lights Ready
 ------------------------------------------
@@ -159,7 +167,7 @@ Here are a couple of pseudo-code examples:
         Turn off green and yellow lights
         Wait 10 seconds
 
-Pseudo-code doesn’t have a strict format, allowing you to clarify your thoughts and organize them logically. This logical order is called an algorithm.
+Pseudo-code doesn't have a strict format, allowing you to clarify your thoughts and organize them logically. This logical order is called an algorithm.
 You use algorithms every day, perhaps without realizing it. Think of an algorithm like a recipe; in programming, the ingredients are keywords and commands, and the cooking steps are the algorithm.
 An algorithm is a set of steps or instructions. When an algorithm is translated from pseudo-code into Arduino programming language, it precisely instructs the Arduino board on what to do and when.
 
@@ -203,7 +211,7 @@ It's time to refine the code you've written and add additional ``digitalWrite()`
 4. You might want the green LED to be on longer. In our traffic system, it might be about a minute, but here we'll simulate it with 10 seconds.
 
     .. code-block:: Arduino
-        :emphasize-lines: 4,5
+        :emphasize-lines: 6
 
         void loop() {
             // put your main code here, to run repeatedly:
@@ -246,13 +254,27 @@ It's time to refine the code you've written and add additional ``digitalWrite()`
             digitalWrite(3, HIGH);  // Light up the LED on pin 3
             digitalWrite(4, LOW);   // Switch off the LED on pin 4
             digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds      
-            digitalWrite(3
+            delay(10000);           // Wait for 10 seconds
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, HIGH);  // Light up the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off LED on pin 5
+            delay(3000);            // Wait for 3 seconds
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, HIGH);  // Light up LED on pin 5
+            delay(10000);           // Wait for 10 seconds
+        }
 
 **Summary**
 
-In this lesson, we ventured into the intersection of programming and electronics, turning LEDs and resistors into a miniature traffic light with an Arduino. We started with assembling the circuit, learning to control LEDs through programming, from lighting them up to making them blink in sequence like real traffic lights.
+Congratulations on completing Lesson 7! You've successfully translated pseudo-code into a fully functional Arduino-controlled traffic light system. Here's a brief recap of what you achieved:
 
-This lesson took us through creating and debugging Arduino sketches, we also explored measuring voltage to connect the dots between code and its physical effects in the circuit.
+* Pseudo-code Mastery: You've mastered the use of pseudo-code to outline electronic system operations, enhancing your logical thinking and planning skills.
+* From Pseudo-code to Real Code: You experienced how a structured approach in pseudo-code leads to effective and accurate Arduino programming.
+* Practical Application: By assembling and programming a traffic light system, you demonstrated practical application of your knowledge, showing how software directly controls hardware.
 
-By the end of the lesson, we had not only built a functional traffic light but also deepened our understanding of how software can manipulate hardware to perform specific tasks. It was a concise journey through the basics of electronics and programming, highlighting the creativity and problem-solving skills essential in technology.
+This lesson has sharpened both your technical abilities and analytical thinking, equipping you for more complex projects in electronics and programming. Keep building on these skills to unlock further possibilities in technology integration!
+
+**Question**
+
+Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?

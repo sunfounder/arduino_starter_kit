@@ -21,15 +21,22 @@ SunFounder Starter Kit
     4_ohm's_law
     5_parallel_series_circuit
     6_blink_led
-    7_traffic_light_auto
-    8_traffic_light_button
-    9_desk_lamp
-    10_serial_communication
-    11_conditoal_led_control
+    7_traffic_light_auto 
+    8_traffic_light_button 
+    9_desk_lamp 
+    10_desk_lamp_button 
+    11_conditional_led_control 
     12_rainbow_color
     13_human_perception_color
-    14_cool_warm_color
-    15_random_color
+    14_random_color 
+    15_cool_warm_color 
+    16_thermistor 
+    17_morse_code 
+    18_photoresistor 
+    19_beep_timer 
+    20_siren 
+    21_music 
+    22_digital_dice
 
 
 **Copyright Notice**

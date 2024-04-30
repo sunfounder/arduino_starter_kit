@@ -1,13 +1,20 @@
 12. The Colors of the Rainbow
 =======================================
+Imagine if you could paint with light, blending red, green, and blue to create every hue imaginable—just like mixing paints on a palette but with beams of light.
 
-In this activity, you'll delve into the fascinating world of color blending using an RGB LED to understand how primary colors combine to create a spectrum of hues.
+.. image:: img/6_rgb_mix.png
+    :width: 300
+    :align: center
 
-You will sequentially power the pins of an RGB LED, observing the emitted colors and addressing these questions:
 
-* What color does each pin of the RGB LED emit when powered individually?
-* What colors result from combining two different light colors?
-* How can the RGB LED emit white light?
+Welcome to this lesson, where you will explore the captivating world of RGB LEDs and discover how the combination of primary colors can create a vibrant spectrum of hues. This hands-on course will guide you through the principles of RGB LED functionality and introduce you to the practical applications of programming and circuit building.
+
+In this lesson, you will learn:
+
+* Understand the operational principles of RGB LEDs.
+* Learn to create and utilize functions in your code to simplify tasks and enhance readability.
+* Explore the impact of different color combinations by manipulating the RGB LED.
+
 
 Building the Circuit
 -----------------------
@@ -95,12 +102,141 @@ Touch the black probe of the multimeter to the RGB LED's longest pin, and touch 
     :width: 600
     :align: center
 
+Code Creation - Lighting Up an RGB LED
+----------------------------------------
+
+1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
+2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson12_Rainbow_Color``. Click "Save".
+
+3. The LED in your circuit is connected to digital pins on the R3 board. As the LED is an output device, you'll need to set digital pins 9, 10, and 11 as ``OUTPUT``.
+
+.. code-block:: Arduino
+    :emphasize-lines: 3-5
 
 
-创建代码 —— 使用函数
----------------------------------
+    void setup() {
+        // put your setup code here, to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+    }
 
-你已经注意到，要让RGB LED显示轮流显示不同的颜色，你将需要很多行类似的代码，比如我们让RGB LED 显示7种颜色，代码如下：
+    void loop() {
+        // put your main code here, to run repeatedly:
+    }
+
+4. Now in the ``void loop()`` set the RGB LED's red pin to ``HIGH``, and the other two pins to ``LOW``.
+
+.. note::
+
+    Since we are using PWM pins 9, 10, and 11, you have the option to use either ``digitalWrite()`` or ``analogWrite()`` to output a high or low level. 
+    
+    For this lesson, as we are simply setting the pins to high or low, we'll use ``digitalWrite()``.
+
+
+
+.. code-block:: Arduino
+    :emphasize-lines: 10-12
+
+    void setup() {
+        // put your setup code here, to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+    }
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
+        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
+        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+    }
+
+5. Save the code and click “Upload” to send it to your R3 board. Let's see what happens.
+
+6. You will see the RGB LED light up red. But what if you want to light up green and blue too? How should you modify the code?
+
+Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want to display as ``HIGH`` and the others as ``LOW``. Each color lighting up should be given a second to shine.
+
+.. code-block:: Arduino
+    :emphasize-lines: 14-21
+
+    void setup() {
+        // put your setup code here, to run once:
+        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
+        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
+        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+    }
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
+        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
+        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        delay(1000);              //Wait for 1 second
+        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
+        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
+        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
+        delay(1000);              //Wait for 1 second
+        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
+        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
+        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
+        delay(1000);              //Wait for 1 second
+    }
+
+7. Upload the code again to see the effects. You will find the RGB LED cycles through red, green, and blue.
+
+**Questions**:
+
+1. If you want other colors, what should you do? Refer to the diagram below and fill in your ideas in your handbook.
+
+.. image:: img/6_rgb_mix.png
+    :width: 300
+    :align: center
+
+.. list-table::
+   :widths: 20 20 20 20
+   :header-rows: 1
+
+   * - Color
+     - Red Pin
+     - Green Pin
+     - Blue Pin
+   * - Red
+     - *HIGH*
+     - *LOW*
+     - *LOW*
+   * - Green
+     - *LOW*
+     - *HIGH*
+     - *LOW*
+   * - Blue
+     - *LOW*
+     - *LOW*
+     - *HIGH*
+   * - Yellow
+     -
+     -
+     -
+   * - Pink
+     -
+     -
+     -
+   * - Cyan
+     - 
+     -
+     -
+   * - White
+     -
+     -
+     -
+
+2. Now, on the basis of the original code, make the RGB LED display Yellow, Pink, Cyan, and White.
+
+Code Creation - Create Functions
+--------------------------------------
+
+You might have noticed that to display different colors sequentially on the RGB LED, you end up writing many lines of similar code. For instance, to showcase seven different colors on the RGB LED, you would write something like the following:
 
 .. code-block:: Arduino
 
@@ -143,55 +279,31 @@ Touch the black probe of the multimeter to the RGB LED's longest pin, and touch 
         delay(1000);             //Wait for 1 second
     }
 
-你会发现整个loop()非常长，而且无法看清具体的逻辑，这时我们就需要引入函数的概念。
+You might have noticed that your ``void loop()`` has become quite lengthy and the logic hard to follow. This is a perfect time to introduce the concept of functions.
 
-其实在写代码过程中我们一直都有调用Arduino定制好的函数，比如 ``pinMode()``, ``digitalWrite()``， ``delay()`` 等等。
+Throughout your coding journey, you've already been using built-in Arduino functions such as ``pinMode()``, ``digitalWrite()``, and ``delay()``. Now, we'll dive into creating custom functions. Custom functions allow you to simplify your code, making it more logical and manageable.
 
-在这里我们要教的是自定义函数，除了调用Arduino或者是其他人定义好的函数，你可以自己定义一个函数来使你的代码简化，逻辑性更强。
-
-The reason that you need to be able to write your own functions is that as
-sketches start to get a little complicated, then your setup and loop functions will
-grow and grow until they are long and complicated and it becomes difficult to see
-how they work.
-The biggest problem in software development of any sort is managing
-complexity. The best programmers write software that is easy to look at and
-understand and requires very little in the way of explanation.
-Functions are a key tool in creating easy-to-understand sketches that can be
-changed without difficulty or risk of the whole thing falling into a crumpled mess.
-
-What Is a Function?
-A function is a little like a program within a program. You can use it to wrap up
-some little thing that you want to do. A function that you define can be called from
-anywhere in your sketch and contains its own variables and its own list of
-commands. When the commands have been run, execution returns to the point just
-after wherever it was in the code that called the function.
-
-.. note::
-
-    调用函数就像一个执行特定任务的迷你程序。只要该任务需要完成，它就可以在主程序中随时运行。
-
-    当函数被 “调用”时，程序离开主代码部分，跳转到函数，并运行函数中的代码行。
-    当函数完成后，程序返回到主代码部分，并从函数被调用的位置后继续运行。
-
-    
-所以我们可以将让RGB LED显示不同颜色代码放到单独的函数中，
-要创建一个调用函数，在 void loop()函数的右大括号之后，移到草图的最底部。
-就像 void setup()和 void loop()函数一样，其他调用的函数也是以 void 开头，然后是函数的名称。
-命名函数与命名变量或常量的规则相同。
-你可以用 Arduino IDE 中任何不是关键词或命令的字给函数命名。函数的命令被放在函数的大括号内。
-
-1. 现在我们在草图底部创建7个新函数，
-
+To create a function, simply add it to the bottom of your sketch after the ``void loop()`` brace. Like ``void setup()`` and ``void loop()``, functions start with void followed by a name you choose. The naming rules for functions are similar to those for variables or constants. You can name a function anything that isn't a keyword in the Arduino IDE, and you enclose its commands within curly braces.
 
 .. code-block:: Arduino
-    :emphasize-lines: 11-13
+    :emphasize-lines: 9-11
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        ...
     }
+
+    void loop() {
+        ...
+    }
+
+    void lightRed(){
+    
+    }
+
+1. At the bottom of your sketch, right after the ``void loop()`` bracket, we're going to add seven new functions. Each function will contain the code to display a specific color on the RGB LED.
+
+.. code-block:: Arduino
+    :emphasize-lines: 10-22
 
     void loop() {
         // put your main code here, to run repeatedly:
@@ -216,10 +328,9 @@ after wherever it was in the code that called the function.
     
     }
 
-2. 现在将不同颜色的代码剪切到相应的函数里面, 之后``loop()``中只留了7个``delay()``函数。
+2. Next, cut the color-specific code snippets from the ``void loop()`` and paste them into their respective functions. This will leave only seven ``delay()`` calls in the ``loop()`` function.
 
 .. code-block:: Arduino
-    :emphasize-lines: 11-13
 
     ...
 
@@ -240,13 +351,6 @@ after wherever it was in the code that called the function.
         digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
         digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
     }
-
-    void lightGreen() {
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-    }
-
     ...
 
     void lightWhite() {
@@ -255,11 +359,10 @@ after wherever it was in the code that called the function.
         digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
     }
 
-3. 现在函数创建完成了，到了需要在  void loop() 里面调用这些函数的时候。调用函数，只需要将这些名加双括号就行，最后不要忘记在每一行加上分号。
-
+3. Now that the functions are set up, it's time to call them within the ``void loop()``. To call a function, simply write its name followed by two parentheses and end the line with a semicolon.
 
 .. code-block:: Arduino
-    :emphasize-lines: 12-28
+    :emphasize-lines: 7-22
 
     void setup() {
         // put your setup code here, to run once:
@@ -324,135 +427,15 @@ after wherever it was in the code that called the function.
     }
 
 
-4. 到了这里，代码已经完成了。点击“Upload”按钮将代码上传到R3板，你会发现RGB LED循环显示，红，绿，蓝，黄，粉，靛青和白色。
+4. With the functions all set up and called in the loop(), your code is now complete. Click the "Upload" button to transfer your code to the R3 board. You will see the RGB LED cycle through red, green, blue, yellow, pink, cyan, and white.
 
 .. note::
-    这个RGB LED的亮度比较刺眼，不要长时间盯着看，以免伤害眼睛。
 
-    另外你可以用纸巾或者其他能光的物体遮挡下。
+    The brightness of the RGB LED can be quite intense, so avoid staring directly at it for long periods to prevent eye strain.
 
+    You might also consider diffusing the light with a tissue or some frosted material to soften the brightness.
 
-.. note:: 
+**Summary**
 
-    对于布尔型变量而言，任何非零值都被视为true，而0被视为false。
-    因此也可以使用1和0来为其赋值。
-    即此函数的 ``lightUp(1, 0, 0);`` 与 ``lightUp(True, False, False);`` 是相同的。
+Through a series of coding exercises, you will write sketches that dynamically change the color of the LED. Starting with basic commands to control each color, you will then refactor your code to use functions, making your setup more modular and maintainable. This approach not only makes the code cleaner but also teaches you about the importance of function in programming.
 
-
-将剩余的几种电平组合都列出来，并用delay()隔开，你的代码应带如下所示：
-
-.. code-block:: Arduino
-
-    int delayTime=1000;
-
-    void setup() {
-        pinMode(9, OUTPUT);             // Declare the RGB LED pin1 as output
-        pinMode(10, OUTPUT);            // Declare the RGB LED pin2 as output
-        pinMode(11, OUTPUT);            // Declare the RGB LED pin2 as output
-    }
-
-    void loop(){              
-        lightUp(1, 0, 0);               // Call the lightUp function to control the LEDs
-        delay(delayTime);               // wait a second
-        lightUp(0, 1, 0);               
-        delay(delayTime);
-        lightUp(0, 0, 1);               
-        delay(delayTime);
-        lightUp(1, 1, 0);               
-        delay(delayTime);
-        lightUp(1, 0, 1);               
-        delay(delayTime);
-        lightUp(0, 1, 1);               
-        delay(delayTime);
-        lightUp(1, 1, 1);   
-        delay(delayTime);                           
-    }
-
-    void lightUp(bool pin1, bool pin2, bool pin3) {
-        if (pin1 == True) {             // If pin1 is True, turn on the first LED
-            digitalWrite(9, HIGH);
-        } else {                        // Otherwise, turn off the first LED
-            digitalWrite(9, LOW);
-        }
-
-        if (pin2 == True) {             // If pin2 is True, turn on the second LED
-            digitalWrite(10, HIGH);
-        } else {                        // Otherwise, turn off the second LED
-            digitalWrite(10, LOW);
-        }
-
-        if (pin3 == True) {             // If pin3 is True, turn on the third LED
-            digitalWrite(11, HIGH);
-        } else {                        // Otherwise, turn off the third LED
-            digitalWrite(11, LOW);
-        }
-    }
-
-现在我们已经可以完整的遍历所有的电平组合了。但是当这个代码烧录进R3板后，你会发现一个问题。
-
-*我已经看到灯光颜色变化了，可是这时候是哪几个引脚处于高电平呢？*
-
-一个简单的解决方法是在 ``lightUp()`` 中添加打印，这样在每次切换颜色时，你都可以通过串口监视器知道现在的电平组合。
-
-.. code-block:: Arduino
-    :emphasize-lines: 7,28-33
-
-    int delayTime=1000;
-
-    void setup() {
-        pinMode(9, OUTPUT);             // Declare the RGB LED pin1 as output
-        pinMode(10, OUTPUT);            // Declare the RGB LED pin2 as output
-        pinMode(11, OUTPUT);            // Declare the RGB LED pin2 as output
-        Serial.begin(9600);
-    }
-
-    void loop(){              
-        lightUp(1, 0, 0);               // Call the lightUp function to control the LEDs
-        delay(delayTime);               // wait a second
-        lightUp(0, 1, 0);               
-        delay(delayTime);
-        lightUp(0, 0, 1);               
-        delay(delayTime);
-        lightUp(1, 1, 0);               
-        delay(delayTime);
-        lightUp(1, 0, 1);               
-        delay(delayTime);
-        lightUp(0, 1, 1);               
-        delay(delayTime);
-        lightUp(1, 1, 1);   
-        delay(delayTime);                           
-    }
-
-    void lightUp(bool pin1, bool pin2, bool pin3) {
-        Serial.print("pin Level:");
-        Serial.print(pin1);
-        Serial.print(" , ");
-        Serial.print(pin2);
-        Serial.print(" , ");
-        Serial.println(pin3);  
-
-        if (pin1 == True) {             // If pin1 is True, turn on the first LED
-            digitalWrite(9, HIGH);
-        } else {                        // Otherwise, turn off the first LED
-            digitalWrite(9, LOW);
-        }
-
-        if (pin2 == True) {             // If pin2 is True, turn on the second LED
-            digitalWrite(10, HIGH);
-        } else {                        // Otherwise, turn off the second LED
-            digitalWrite(10, LOW);
-        }
-
-        if (pin3 == True) {             // If pin3 is True, turn on the third LED
-            digitalWrite(11, HIGH);
-        } else {                        // Otherwise, turn off the third LED
-            digitalWrite(11, LOW);
-        }
-    }
-
-
-点击“上传”按钮，将草图上传到你的 Arduino 板。点击 Arduino IDE 右上角的 "串行监视器 "按钮。串行监视器将在一个新窗口中打开。
-
-为每个电平组合记录下对应的灯光颜色。如果颜色切换得太快来不及记录，可以手动增加 delayTime 的值，延长时间。
-
-点击 “保存” 来保存你的草图。

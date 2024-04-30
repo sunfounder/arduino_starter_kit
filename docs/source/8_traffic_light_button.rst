@@ -1,7 +1,15 @@
 8. Traffic Light with Pedestrian Button
 ===============================================
 
-Welcome to the next phase of our Arduino journey—4.2 Traffic Light with Pedestrian Button. In the previous lesson, we built a foundational traffic light system, a staple of our roads, controlling the flow with red, yellow, and green lights. Now, we're adding a layer of interaction that reflects real-world complexities: a pedestrian button. This feature introduces a human element to our electronic crossroads, allowing for a dynamic interplay between the walkways and roadways at our busy intersections. As we delve into this project, we'll explore not just the technical setup but also the logic and programming that make such systems both possible and efficient in managing pedestrian and vehicle traffic.
+Welcome to the next phase of our Arduino journey. In the previous lesson, we built a foundational traffic light system, a staple of our roads, controlling the flow with red, yellow, and green lights. Now, we're adding a layer of interaction that reflects real-world complexities: a pedestrian button. This feature introduces a human element to our electronic crossroads, allowing for a dynamic interplay between the walkways and roadways at our busy intersections. 
+
+In this lesson, you will learn to:
+
+* Understand how button work and their role in circuits.
+* Learn to use ``digitalRead()`` to detect pin input levels.
+* Implement ``if`` statements to create conditional behaviors in traffic light systems.
+
+As we delve into this project, we'll explore not just the technical setup but also the logic and programming that make such systems both possible and efficient in managing pedestrian and vehicle traffic.
 
 Building the Circuit
 -----------------------------
@@ -24,7 +32,7 @@ Follow the schematic diagram, wiring diagram, or the steps below to build your c
     :width: 600
     :align: center  
 
-1. Start with the traffic light circuit from the previous activity.
+1. Start with the traffic light circuit from the previous lesson.
 
 .. image:: img/4_traffic_wiring_bb.png
     :width: 600
@@ -90,18 +98,14 @@ The 10K resistor connected from pin 8 to ground pulls the pin's voltage down to 
 Your traffic light is a mix of series and parallel circuits. Discuss which parts of your circuit are in series and why. Then, explain which parts are in parallel and why.
 
 
-Sketch Creation — Initialize Pins
-------------------------------------------
+Code Creation
+----------------
 
 **Initializing Pins**
 
-So far, you've programmed the traffic lights to sequentially flash green, yellow, and red LEDs. In this activity, you'll program your pedestrian button so that when pressed, the red and yellow LEDs turn off while the green LED flashes, indicating it's safe for pedestrians to cross.
+So far, you've programmed the traffic lights to sequentially flash green, yellow, and red LEDs. In this lesson, you'll program your pedestrian button so that when pressed, the red and yellow LEDs turn off while the green LED flashes, indicating it's safe for pedestrians to cross.
 
-1. Open the sketch you saved earlier, ``Lesson4_Traffic_Light``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson4_Traffic_Light_Button``. Click "Save".
-
-    .. image:: img/4_traffic_ide_button.png
-       :width: 600
-       :align: center
+1. Open the sketch you saved earlier, ``Lesson7_Traffic_Light``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson7_Traffic_Light_Button``. Click "Save".
 
 2. In the ``void setup()`` function, add another ``pinMode()`` command to declare pin 8 as input (``INPUT``). Then, add a code comment to explain your new command.
 
@@ -109,31 +113,30 @@ So far, you've programmed the traffic lights to sequentially flash green, yellow
     :emphasize-lines: 6
 
     void setup() {
-        // Configure LED pins for output:
-        pinMode(3, OUTPUT);
-        pinMode(4, OUTPUT);
-        pinMode(5, OUTPUT);
+        // Setup code here, to run once:
+        pinMode(3, OUTPUT); // Set pin 3 as output
+        pinMode(4, OUTPUT); // Set pin 4 as output
+        pinMode(5, OUTPUT); // Set pin 5 as output
         pinMode(8, INPUT);  // Declare pin 8 (button) as input
     }
     
     void loop() {
         // put your main code here, to run repeatedly:
-        digitalWrite(3, HIGH);  // Light up the green LED on pin 3
-        digitalWrite(4, LOW);   // Switch off the yellow LED on pin 4
-        digitalWrite(5, LOW);   // Switch off the the red LED on pin 5
-        delay(10000);           // Wait for 10 seconds      
-        digitalWrite(3, LOW);   // Switch off the green LED on pin 3
-        digitalWrite(4, HIGH);  // Light up the yellow LED on pin 4
-        digitalWrite(5, LOW);   // Switch off the red LED on pin 5
+        digitalWrite(3, HIGH);  // Light up the LED on pin 3
+        digitalWrite(4, LOW);   // Switch off the LED on pin 4
+        digitalWrite(5, LOW);   // Switch off the LED on pin 5
+        delay(10000);           // Wait for 10 seconds
+        digitalWrite(3, LOW);   // Switch off the LED on pin 3
+        digitalWrite(4, HIGH);  // Light up the LED on pin 4
+        digitalWrite(5, LOW);   // Switch off LED on pin 5
         delay(3000);            // Wait for 3 seconds
-        digitalWrite(3, LOW);   // Switch off the green LED on pin 3
-        digitalWrite(4, LOW);   // Switch off the yellow LED on pin 4
-        digitalWrite(5, HIGH);  // Light up the red LED on pin 5
+        digitalWrite(3, LOW);   // Switch off the LED on pin 3
+        digitalWrite(4, LOW);   // Switch off the LED on pin 4
+        digitalWrite(5, HIGH);  // Light up LED on pin 5
         delay(10000);           // Wait for 10 seconds
     }
 
 3. After coding, verify your sketch and upload the code to the R3 board.
-
 
 **Measuring Voltage at Pin 8**
 
@@ -193,7 +196,7 @@ Let's use a multimeter to test the voltage at pin 8 when the button is pressed a
      - *≈4.97 volts*
      - 
 
-6. Arduino boards read voltages between 0 and approximately 5 volts at input pins, interpreting them as either LOW or HIGH based on a threshold voltage. For a pin to read as HIGH, it must have over 3 volts. To read as LOW, it must have less than 1.5 volts.
+6. Arduino boards read voltages between 0 and approximately 5 volts at input pins, interpreting them as either ``LOW`` or ``HIGH`` based on a threshold voltage. For a pin to read as ``HIGH``, it must have over 3 volts. To read as ``LOW``, it must have less than 1.5 volts.
 
    Based on the measured voltage, fill in the state for pin 8.
 
@@ -212,8 +215,7 @@ Let's use a multimeter to test the voltage at pin 8 when the button is pressed a
      - *HIGH*
 
 
-Sketch Creation — Conditional Statements
---------------------------------------------
+**Conditional Statements**
 
 The traffic light should display two different behaviors depending on whether the button is pressed:
 
@@ -284,8 +286,8 @@ When comparing two values in a condition, the result can be ``True`` or ``False`
 
 In coding, conditional statements can be simple or involve complex logical arguments with multiple conditions and scenarios. You'll be using the basic form of ``if`` statements next.
 
-Sketch Creation — Button Not Pressed
----------------------------------------
+**Button Not Pressed**
+
 Building on our understanding of conditional statements, let's apply this concept to enhance our traffic light sketch. Given that a button's press alters the flow of traffic, we'll incorporate a condition to monitor the button's state. 
 
 1. From our earlier measurements of pin 8's voltage, we know that when the button is not pressed, pin 8 is ``LOW``. So, if the state of pin 8 read is ``LOW``, it means it's not pressed. Now, at the beginning of the ``void loop()`` function in your previous code, enter the following statement:
@@ -294,10 +296,10 @@ Building on our understanding of conditional statements, let's apply this concep
         :emphasize-lines: 11,13
 
         void setup() {
-            // Configure LED pins for output:
-            pinMode(3, OUTPUT);
-            pinMode(4, OUTPUT);
-            pinMode(5, OUTPUT);
+            // Setup code here, to run once:
+            pinMode(3, OUTPUT); // Set pin 3 as output
+            pinMode(4, OUTPUT); // Set pin 4 as output
+            pinMode(5, OUTPUT); // Set pin 5 as output
             pinMode(8, INPUT);  // Declare pin 8 (button) as input
         }
 
@@ -307,21 +309,23 @@ Building on our understanding of conditional statements, let's apply this concep
                 
             }
 
-            digitalWrite(3, HIGH);  // Light up the green LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the yellow LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the the red LED on pin 5
+            digitalWrite(3, HIGH);  // Light up the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off the LED on pin 5
 
             ...
 
-    Just like the ``digitalWrite()`` command is used for output pins, the ``digitalRead()`` command is used for input pins. ``digitalRead(pin)`` is the command to read if a digital pin is ``HIGH`` or ``LOW``. Here is its syntax:
+Just like the ``digitalWrite()`` command is used for output pins, the ``digitalRead()`` command is used for input pins. ``digitalRead(pin)`` is the command to read if a digital pin is ``HIGH`` or ``LOW``.
+
+Here is its syntax:
 
     * ``digitalRead(pin)``: Reads the value from a specified digital pin, either ``HIGH`` or ``LOW``.
 
-        **Syntax**
-            digitalRead(pin)
-
         **Parameters**
             - ``pin``: the Arduino pin number you want to read
+        
+        **Returns**
+            ``HIGH`` or ``LOW``
 
 2. Next, add the commands to run when the button is not pressed. These commands are the ones you've already created for running the normal traffic light.
 
@@ -333,27 +337,27 @@ Building on our understanding of conditional statements, let's apply this concep
     :emphasize-lines: 11,24
 
     void setup() {
-        // Configure LED pins for output:
-        pinMode(3, OUTPUT);
-        pinMode(4, OUTPUT);
-        pinMode(5, OUTPUT);
+        // Setup code here, to run once:
+        pinMode(3, OUTPUT); // Set pin 3 as output
+        pinMode(4, OUTPUT); // Set pin 4 as output
+        pinMode(5, OUTPUT); // Set pin 5 as output
         pinMode(8, INPUT);  // Declare pin 8 (button) as input
     }
 
     void loop() {
         // put your main code here, to run repeatedly:
         if (digitalRead(8) == LOW) {
-            digitalWrite(3, HIGH);  // Light up the green LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the yellow LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the the red LED on pin 5
-            delay(10000);           // Wait for 10 seconds      
-            digitalWrite(3, LOW);   // Switch off the green LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the yellow LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the red LED on pin 5
+            digitalWrite(3, HIGH);  // Light up the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off the LED on pin 5
+            delay(10000);           // Wait for 10 seconds
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, HIGH);  // Light up the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off LED on pin 5
             delay(3000);            // Wait for 3 seconds
-            digitalWrite(3, LOW);   // Switch off the green LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the yellow LED on pin 4
-            digitalWrite(5, HIGH);  // Light up the red LED on pin 5
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, HIGH);  // Light up LED on pin 5
             delay(10000);           // Wait for 10 seconds
         }
     }
@@ -363,17 +367,18 @@ Notice how the commands within the ``if`` statement are indented. Using indentat
 A common syntax error is forgetting the required number of curly brackets. Sometimes, the right bracket is missed in a function, or too many right brackets are added. In your sketch, every left bracket needs a right bracket. Proper indentation also helps you troubleshoot mismatched brackets.
 
 
-Code Creation — When the Button Is Pressed
---------------------------------------------
+**When the Button Is Pressed**
+
 Now it's time to write the code that allows pedestrians to cross the street when the button is pressed.
 
 This will require a second conditional statement. However, this time you'll need to compare the ``digitalRead()`` value of pin 8 to ``HIGH`` instead of ``LOW``.
 
 When the button is pressed, the traffic light needs to stop all vehicles and signal that it's safe for pedestrians to cross. To achieve this, you'll turn off the red and yellow LEDs and make the green LED blink. Within the curly brackets of your second conditional statement, add three ``digitalWrite()`` commands:
 
-* Turn off the red LED connected to pin 5.
-* Turn off the yellow LED connected to pin 4.
+
 * Turn on the green LED connected to pin 3.
+* Turn off the yellow LED connected to pin 4.
+* Turn off the red LED connected to pin 5.
 
 Then, make the green LED blink. Remember, the blinking frequency is determined by your ``delay()`` statements.
 
@@ -384,35 +389,35 @@ Your sketch should look something like this:
     :emphasize-lines: 24-31
 
     void setup() {
-        pinMode(3, OUTPUT);             // declare pin 3 (green LED) as output
-        pinMode(4, OUTPUT);             // declare pin 4 (yellow LED) as output
-        pinMode(5, OUTPUT);             // declare pin 5 (red LED) as output
-        pinMode(8, INPUT);              // declare pin 8 (button) as input
+        pinMode(3, OUTPUT);  // declare pin 3 (green LED) as output
+        pinMode(4, OUTPUT);  // declare pin 4 (yellow LED) as output
+        pinMode(5, OUTPUT);  // declare pin 5 (red LED) as output
+        pinMode(8, INPUT);   // declare pin 8 (button) as input
     }
-    
+
     void loop() {
         // Main code to run repeatedly:
         if (digitalRead(8) == LOW) {
-            digitalWrite(3, HIGH);  // Turn the green LED on pin 3 ON
-            digitalWrite(4, LOW);   // Turn the yellow LED on pin 4 OFF
-            digitalWrite(5, LOW);   // Turn the red LED on pin 5 OFF
+            digitalWrite(3, HIGH);  // Light up the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off the LED on pin 5
             delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Turn the green LED on pin 3 OFF
-            digitalWrite(4, HIGH);  // Turn the yellow LED on pin 4 ON
-            digitalWrite(5, LOW);   // Turn the red LED on pin 5 OFF
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, HIGH);  // Light up the LED on pin 4
+            digitalWrite(5, LOW);   // Switch off LED on pin 5
             delay(3000);            // Wait for 3 seconds
-            digitalWrite(3, LOW);   // Turn the green LED on pin 3 OFF
-            digitalWrite(4, LOW);   // Turn the yellow LED on pin 4 OFF
-            digitalWrite(5, HIGH);  // Turn the red LED on pin 5 ON
+            digitalWrite(3, LOW);   // Switch off the LED on pin 3
+            digitalWrite(4, LOW);   // Switch off the LED on pin 4
+            digitalWrite(5, HIGH);  // Light up LED on pin 5
             delay(10000);           // Wait for 10 seconds
         }
-        if (digitalRead(8) == HIGH) { //if the button is pressed:
-            digitalWrite(4, LOW);       // turn the yellow LED on pin 4 OFF
-            digitalWrite(5, LOW);       // turn the red LED on pin 5 OFF
-            digitalWrite(3, HIGH);      // turn te green LED on pin 3 ON
-            delay(500);                 // wait half a second
-            digitalWrite(3, LOW);       // turn the green LED on pin 3 OFF
-            delay(500);                 // wait half a second
+        if (digitalRead(8) == HIGH) {  //if the button is pressed:
+            digitalWrite(3, HIGH);       // Light up the LED on pin 3
+            digitalWrite(4, LOW);        // Switch off the LED on pin 4
+            digitalWrite(5, LOW);        // Switch off the LED on pin 5
+            delay(500);                  // Wait half a second
+            digitalWrite(3, LOW);        // Switch off the LED on pin 3
+            delay(500);                  // Wait half a second
         }
     }
 
@@ -424,7 +429,7 @@ Once completed, save your sketch.
 
 **Summary**
 
-Through the lens of a seemingly simple pedestrian button, we've expanded our understanding and skills in both electronics and programming. This lesson brought us closer to real-world applications, showing how technology serves community needs, ensuring safety and efficiency at intersections. We've seen how a combination of hardware (like buttons and LEDs) and software (through Arduino programming) can create systems that guide daily life. By building and programming a traffic light system that responds to pedestrian input, we not only learned about conditional statements and input reading but also about thoughtful design in technology.
+In this lesson, we've delved into integrating a pedestrian button into a traffic light system, simulating a real-world scenario that balances the flow of both pedestrian and vehicular traffic. We explored the workings of a button in an electronic circuit and utilized the ``digitalRead()`` function to monitor input from the button. By implementing conditional statements with ``if`` structures, we programmed the traffic lights to respond dynamically to pedestrian input, enhancing our understanding of interactive systems. This lesson not only reinforced our skills in Arduino programming but also highlighted the practical application of these technologies in managing everyday situations efficiently.
 
 **Question:**
 
