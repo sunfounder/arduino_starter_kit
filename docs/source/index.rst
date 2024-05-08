@@ -1,5 +1,5 @@
-SunFounder Starter Kit
-==============================================
+Beginner's Lab Kit with Original Arduino Uno R3
+=================================================
 
 .. note::
     This document is available in the following languages.
@@ -33,10 +33,12 @@ SunFounder Starter Kit
     16_thermistor 
     17_morse_code 
     18_photoresistor 
-    19_beep_timer 
-    20_siren 
-    21_music 
-    22_digital_dice
+    19_reversing_alarm 
+    20_beep_timer 
+    21_siren 
+    22_little_star
+    23_cyber_dice
+    24_74hc595
 
 
 **Copyright Notice**

@@ -72,7 +72,7 @@ Set the multimeter to the **Continuity** setting for resistance measurement.
     :width: 300
     :align: center
 
-Touch the black probe of the multimeter to the RGB LED's longest pin, and touch the red probe to the other pins individually. You will see the RGB LED light up in red, green, or blue accordingly.
+Touch the black lead of the multimeter to the RGB LED's longest pin, and touch the red lead to the other pins individually. You will see the RGB LED light up in red, green, or blue accordingly.
 
 .. image:: img/6_mix_color_measure_pin.png
     :width: 600

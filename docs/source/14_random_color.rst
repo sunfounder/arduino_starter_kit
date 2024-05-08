@@ -67,7 +67,7 @@ Arduino's approach to randomness involves several functions:
 
 1. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file "``Lesson14_Random_Colors``". Click "Save".
+2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson14_Random_Colors``. Click "Save".
 
 3. Only call ``randomSeed()`` once in ``void setup()`` to initialize the seed. Avoid using a fixed seed value, as this would cause the same sequence of random numbers to be generated every time the program runs.
 

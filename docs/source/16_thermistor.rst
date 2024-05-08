@@ -148,17 +148,21 @@ Through these measurements, we can see that the higher the ambient temperature, 
 
 Understanding Temperature Calculation
 ----------------------------------------
-In our project, we measure temperature using a special type of resistor called a thermistor. Here's how you can figure out the temperature from it:
+**About the Temperature Formula**
 
-**Steps to calculate the temperature:**
+The resistance of an NTC thermistor changes with temperature. This relationship is usually accurately described by the Steinhart-Hart Equation, as follows:
 
-1. **Measure the resistance:** First, we find out the resistance of the thermistor. We use a simplified formula based on something called the beta parameter model. Don't worry about these big words! Think of it as a special recipe that helps us calculate the temperature accurately.
+.. image:: img/9_format_steinhart.png
+    :width: 400
+    :align: center
 
-.. note::
+Here, a, b, and c are called the Steinhart–Hart parameters, which must be specified for each device. T is the absolute temperature, and R is the resistance.
 
-    We'll be talking about temperatures in Kelvin. This is just another way to measure temperature, like Celsius or Fahrenheit. To get Kelvin from Celsius, just add 273.15. This makes 0°C (the freezing point of water) equal to 273.15 K (which is the starting point for absolute temperature).
+In addition to the Steinhart-Hart Equation, many practical applications also use a simplified formula based on the beta parameter (beta parameter) model to quickly calculate temperature. This model assumes that the relationship between resistance and temperature can be approximated by a simpler exponential relationship, thereby simplifying the calculation process and making it suitable for rapid temperature monitoring in engineering applications.
 
 .. image:: img/9_format_3.png
+    :width: 400
+    :align: center
 
 * **T** is the temperature of the thermistor in Kelvin.
 * **T0** is a reference temperature, usually at 25°C (which is 273.15 + 25 in Kelvin).
@@ -166,50 +170,70 @@ In our project, we measure temperature using a special type of resistor called a
 * **R** is the resistance we measure.
 * **R0** is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
 
-To find the temperature in Kelvin, use this formula: T=1/(ln(R/R0)/B+1/T0). Then, subtract 273.15 to convert it to Celsius.
+After converting the above formulas, the Kelvin temperature is calculated as: T=1/(ln(R/R0)/B+1/T0), subtract 273.15 to convert it to Celsius.
 
-2. **How do we measure resistance in our circuit?**
+**How to measure resistance?**
 
 We connect the thermistor and a 10K resistor in series in our circuit.
 
 .. image:: img/16_thermistor_sch.png
+    :width: 200
     :align: center
 
-The voltage at pin A0, which we measure, divided by the resistance of the 10K resistor, tells us the current flowing through the circuit. This same current also flows through the thermistor, helping us calculate its resistance:
+The voltage at pin A0, which we measure, divided by the series resistor (the 10K resistor), tells us the current flowing through the circuit. This current can also be obtained by dividing the total voltage by the total resistance of the circuit (series resistor + thermistor):
 
 .. image:: img/9_format_1.png
+    :width: 400
+    :align: center
 
-* **V_supply**: The voltage supplied to the circuit.
-* **R_series**: The resistance value of the series resistor.
-* **V_measured**: The voltage across the 10K resistor, also the voltage at pin A0.
+* **Vsupply**: The voltage supplied to the circuit.
+* **Rseries**: The resistance value of the series resistor.
+* **Vmeasured**: The voltage across the 10K resistor, also the voltage at pin A0.
 
 From these, we can rearrange the formula to find the resistance of the thermistor:
 
 .. image:: img/9_format_2.png
+    :width: 400
+    :align: center
 
-In our code, we use the ``analogRead()`` function to read the voltage at pin A0. The relationship between the voltage **V_measured** and the analog value read is:
+In our code, we use the ``analogRead()`` function to read the voltage at pin A0. The relationship between the voltage **Vmeasured** and the analog value read is:
 
 .. code-block::
 
-    Analog value at A0 / 1023 = V_measured / V_supply
+    (Analog value at A0) / 1023.0 = Vmeasured / Vsupply
 
 Using the formula above, we calculate the thermistor's resistance:
 
 .. code-block::
 
-    R_thermistor = (1023.0 / Analog value at A0 - 1) * R_series
+    R_thermistor =R_series x (1023.0 / (Analog value at A0) - 1)
 
 .. note::
 
     If the formulas seem complicated, just remember the final ones here, and you're good to go!
 
-    .. code-block::
-
-        R_thermistor = (1023.0 / Analog value at A0 - 1) * R_series
+    The resistance of the thermistor can be obtained through the following formula:
 
     .. code-block::
 
-        T=1/(ln(R_thermistor/R0)/B+1/T0)
+        R_thermistor =R_series x (1023.0 / (Analog value at A0) - 1)
+
+    Then calculate the Kelvin temperature using the following formula:
+
+    .. code-block::
+
+        T=1/(ln(R/R0)/B+1/T0)
+
+    * **T0**: 273.15 + 25.
+    * **B**: 3950.
+    * **R** is the resistance we measure.
+    * **R0**: 10 kilohms.
+
+    Finally, convert to Celsius using the following formula:
+
+    .. code-block::
+
+        Tc = T - 273.15
 
     
 Code Creation
@@ -218,7 +242,7 @@ Code Creation
 **Get the Temperature**
 
 1. Open the Arduino IDE, go to the "File" menu, and select "New Sketch" to start a new project. Close any other open sketch windows.
-2. Save your new sketch by clicking "Save" in the "File" menu or pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location with the name ``Lesson16_temperature_alarm``.
+2. Save your new sketch by clicking "Save" in the "File" menu or pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location with the name ``Lesson16_Temperature_Alarm``.
 
 3. In previous lessons, we directly referenced the RGB LED pins in our code; here, we define them as constants.
 
@@ -238,6 +262,13 @@ Code Creation
 Using constants instead of variables, which remain unchanged throughout the program, provides clarity and simplifies maintenance. It allows meaningful names instead of numbers, and changes only need adjustments in declaration, not everywhere in the code. Constants follow the same naming rules as variables, avoiding any reserved keywords or commands from the Arduino IDE.
 
 4. Before using the thermistor, we also need to define some more constants to store parameters related to the circuit.
+
+.. note::
+
+    You will see that there are ``int`` type constants and ``float`` type constants. So, what's the difference between these two types of constants?
+
+  * ``const int``: An ``int`` (short for integer) constant holds whole numbers. This type does not support fractions or decimal points. It occupies typically 16 or 32 bits of memory, depending on the system.
+  * ``const float``: A ``float`` (short for floating-point) constant holds numbers that can have fractional parts. It is used when more precision is needed, such as in measurements or calculations that require decimal values. A ``float`` typically occupies 32 bits of memory and can represent a wider range of numbers than ``int``.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
@@ -340,7 +371,6 @@ For example, we set three temperature ranges:
 11. For controlling the RGB LED, we'll use the function ``setColor()`` created in previous lessons.
 
 .. code-block:: Arduino
-    :emphasize-lines: 6-11
 
     // Function to set the color of the RGB LED
     void setColor(int red, int green, int blue) {

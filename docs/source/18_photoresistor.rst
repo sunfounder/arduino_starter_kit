@@ -273,10 +273,12 @@ Code Creation
 
 9. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
 During an art exhibition, there might be accidental touches or instances where someone leans against a painting while taking photos. These situations should trigger an alert. How should the code be adjusted to handle these scenarios? 
 
 Before coding, consider the following questions:
 
-* How many ranges should the potentiometer's values be divided into?
+* How many ranges should the Photoresistor's values be divided into?
 * How should the buzzer sound at different ranges?
 * For example, if the value is above 1000, the buzzer should not make a sound; if it is below 1000 but above 600, it should emit a slow sound. What should be the effect in the remaining range?

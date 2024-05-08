@@ -136,7 +136,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
 
 1. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file "``Lesson13_PWM_Color_Mixing_Function``". Click "Save".
+2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson13_PWM_Color_Mixing_Function``. Click "Save".
 
 3. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
 

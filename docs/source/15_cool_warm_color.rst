@@ -132,7 +132,7 @@ The primary difference between warm and cool colors is the ratio of the three pr
 
 3. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
 
-4. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file "``Lesson14_Cool_Warm_Color``". Click "Save".
+4. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson14_Cool_Warm_Color``. Click "Save".
 
 5. Before the ``void setup()``, declare six variables to store the RGB values for these two colors. Use the colors you've selected.
 

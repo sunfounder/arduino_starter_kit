@@ -325,7 +325,7 @@ Make LED Blink
 ------------------------------
 Now that your LED are on, it's time for them to blink.
 
-1. Open the sketch you saved earlier, ``Lesson6_Light_Up_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson6_Blink_LED``. Click "Save".
+1. Open the sketch you saved earlier, ``Lesson6_Light_up_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson6_Blink_LED``. Click "Save".
 
 2. In the ``void loop()`` function of your sketch, copy the ``digitalWrite()`` commands and paste them after the originals. To make the LED blink, you previously turned it ON; now set its state to ``LOW`` to turn it OFF.
 

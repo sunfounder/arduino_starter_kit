@@ -63,24 +63,32 @@ Open at the back, passive buzzers require an external frequency signal from a mi
     :width: 500
     :align: center
 
-2. Connect the anode of the buzzer to pin 9 on the R3 board.
-
-.. image:: img/16_morse_code_pin9.png
-    :width: 500
-    :align: center
-
-3. Connect the cathode to the GND pin on the R3 board.
+2. Connect the cathode to the GND pin on the R3 board.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
+3. If you insert the anode of the buzzer into the 5V pin of the R3 board, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
+
+.. image:: img/16_morse_code_5v.png
+    :width: 500
+    :align: center
+
+4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the R3 board, so that the buzzer can be controlled with code.
+
+.. image:: img/16_morse_code.png
+    :width: 500
+    :align: center
+
+
+
 Code Creation
 ----------------
 1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson17_morse_code``. Click "Save".
+2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson17_Morse_Code``. Click "Save".
 
-3. First, create a constant called ``buzzerPin`` and set it equal to pin 9. Type the following command:
+3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
 
 .. code-block:: Arduino
     :emphasize-lines: 1
