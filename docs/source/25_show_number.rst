@@ -1,84 +1,15 @@
-24. 74HC595
-=================
+25. Show Number with 74hc595
+==================================
 
-想象一下，你有一个电子板，上面有很多LED，你想通过电脑控制这些LED一起闪烁。
-但是，你的电脑上的接口（可以想象成电脑的手指）是有限的，不足以控制所有的LED。
-这时候，74HC595芯片就派上用场了！
+在前面的活动中你可能已经注意到了，74HC595和数码管是一对绝佳的搭档。
+74HC595可以同时输出8位的信号，而数码管则由8个电信号同时控制（包括了控制右下小数点的LED段，即dp段）。
+那么，能否藉由74HC595控制数码管呢？答案是肯定的。
 
+接下来我们就将用74HC595来控制数码管，让它显示不同的数字。
 
-74HC595芯片就像是一个小助手，可以帮你用更少的线（接口）来控制更多的LED。
-它的工作可以分成几个简单的步骤：
+**构筑电路**
 
-#. 接收信息：首先，电脑通过一根线把控制LED亮灭的信息（就是一串0和1的代码）发送给74HC595芯片。0代表关灯，1代表开灯。
-
-#. 存储信息：74HC595有一个特殊的功能，它可以暂时记住电脑发送过来的信息。就像是一个小仓库，暂时存放信息直到需要的时候。
-
-#. 控制LED：当所有需要的信息都传送并存储好后，74HC595就会按照电脑的指令来控制每一个LED是否亮起。
-
-.. image:: img/74HC595_show.png
-    :align: center
-    :width: 600
-
-
-**二进制数**
-
-Arduino UNO向74HC595芯片发送的是一组组二进制数据。
-二进制数据是计算机和许多电子设备的核心，它使用简单的0和1来处理复杂的数据和指令。
-计算机科学和数字电子中，二进制数据非常重要，因为它是电子计算机处理和存储信息的基础。
-这里，0和1可以被看作是开关的状态，其中0代表关（关闭），1代表开（打开）。
-
-对于二进制数，你需要了解两个基本概念：
-
-* Bit：位是二进制系统中的基本单位，每个位可以是0或1。
-* Byte：一个字节由8位组成。字节是计算机处理数据的常用单位。（瞧，74HC595芯片每次接受的正是1byte的数据！）
-
-二进制数是可以与十进制数相互转换的，在二进制系统中，数值是从右到左增加的，每位的值是2的幂次方。例如：
-
-* 最右边的位称为“个位”，它的值是2的零次方或（1）。
-* 下一位是“2位”，它的值是 2的1次方（2）。
-* 然后是“4位”，它的值是 2的2次方（4）。
-* 依此类推。
-
-一个二进制数，如 1101，可以转换成十进制数来更容易理解：
-
-``(1x2^3)+(1x2^2)+(0x2^1)+(1x2^0)=8+4+0+1=13``
-
-所以，二进制1101等于十进制的13。
-
-*Question: 如果1个Byte中的所有位数值都是1（即 11111111 ），转换为十进制数是多少，你会发现一个熟悉的数值！*
-
-
-在这个活动中，我们会使用74hc595，搭建一个流水灯点阵。
-
-
-Building the Circuit
---------------------------------
-
-**Components Needed**
-
-
-.. list-table:: 
-   :widths: 25 25 25 25
-   :header-rows: 0
-
-   * - 1 * R3 Board
-     - 7 * Red LEDs
-     - 7 * 220Ω Resistor
-     - 1 * 74HC595
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_1kohm| 
-   * - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
-     - 1 * Multimeter
-   * - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_usb_cable| 
-     - |compoents_meter|
-
-25 AAAAAAA
+数码管的a-g段按顺序连接到Q7-Q1，dp段则连接到Q0。
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -101,199 +32,6 @@ Building the Circuit
      - |compoents_usb_cable| 
      - |compoents_meter|
 
-
-
-**Building Step-by-Step**
-
-Follow the schematic diagram, wiring diagram, or the steps below to build your circuit.
-
-**编写代码** 
-
-1. 创建一个新的草图，将其命名为"Lesson11_flow_light"
-
-2. 定义引脚和初始设置。控制74HC595只需要三个引脚来提供脉冲信号，将它们设置成OUTPUT。
-
-.. code-block:: Arduino
-
-    const int STcp = 12;//Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;//Pin connected to SH_CP of 74HC595 
-    const int DS = 11; //Pin connected to DS of 74HC595 
-
-    void setup ()
-    {
-        //set pins to output
-        pinMode(STcp,OUTPUT);
-        pinMode(SHcp,OUTPUT);
-        pinMode(DS,OUTPUT);
-    }
-
-3. 让我们来看看74HC595芯片是如何具体控制多个LED的。
-为了方便理解，我们可以将其过程想象成一个装满篮球（这里的篮球代表数据位）的传送带。
-
-首先，你需要通过一个DS（Data Input）引脚向74HC595发送数据。
-数据是一位一位地发送的，就像一串珠子。每发送一位数据，就相当于往传送带上放一个篮球。
-这些数据通常代表LED的开关状态，1代表开灯（亮），0代表关灯（灭）。
-
-当你向DS引脚输入一个数据位后，需要一个时钟信号来帮助数据“移位”。
-这个时钟信号来自另一个叫做SH_CP（Shift Register Clock Input）的引脚。
-每次SH_CP引脚接收到一个上升沿信号（电压从低变高的瞬间），
-已经输入的数据（篮球）就会在传送带上向前移动一位。
-
-这个传输数据的过程可以通过 ``shiftOut()`` 函数来实现。
-
-.. code-block:: Arduino
-
-    void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val);
-
-``shiftOut()`` 函数通过指定的 dataPin 引脚向外部设备发送数据 val。数据传输的过程是串行的，并且由 clockPin 引脚的脉冲控制。
-
-* dataPin：用于发送数据的 Arduino 引脚。
-* clockPin：用于控制数据时钟的 Arduino 引脚。
-* bitOrder：指定数据传输的位顺序。可以是 MSBFIRST（最高有效位先），数据从最高有效位（高位）开始发送；或 LSBFIRST（最低有效位先），数据从最低有效位（低位）开始发送。
-* val：要发送的数据。
-
-在这里，我们尝试向一个 74HC595 移位寄存器发送一个字节（8 位）的数据，可以这样使用 shiftOut() 函数。
-
-.. code-block:: Arduino
-
-    const int STcp = 12;//Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;//Pin connected to SH_CP of 74HC595 
-    const int DS = 11; //Pin connected to DS of 74HC595 
-
-    void setup ()
-    {
-        //set pins to output
-        pinMode(STcp,OUTPUT);
-        pinMode(SHcp,OUTPUT);
-        pinMode(DS,OUTPUT);
-    }
-
-    void loop()
-    {
-        shiftOut(DS,SHcp,MSBFIRST,B00011111);
-    }
-
-这会将数据 B00011111（二进制）发送到74HC595的移位寄存器，数据从最高有效位（高位）开始发送，每个位之间通过 SHcp 控制。
-
-4. 当所有的数据位都通过DS引脚输入并通过多次时钟信号移动到正确位置后，
-下一步是将这些数据从“传送带”（移位寄存器）复制到一个叫做“存储寄存器”的地方。
-这个动作通过另一个引脚ST_CP（Storage Register Clock Input）来控制。
-当ST_CP引脚接收到一个上升沿信号时，移位寄存器中的数据会被复制到存储寄存器中。
-
-
-.. image:: img/74HC595_show2.png
-    :align: center
-    :width: 200
-
-存储寄存器中的数据会直接连接到74HC595的输出引脚，这些输出引脚分别连接到LED。
-所以一旦数据被复制到存储寄存器，连接到相应输出引脚的LED就会根据数据是1还是0来决定是否亮起。
-
-.. code-block:: Arduino
-
-    const int STcp = 12;//Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;//Pin connected to SH_CP of 74HC595 
-    const int DS = 11; //Pin connected to DS of 74HC595 
-
-    void setup ()
-    {
-        //set pins to output
-        pinMode(STcp,OUTPUT);
-        pinMode(SHcp,OUTPUT);
-        pinMode(DS,OUTPUT);
-    }
-
-    void loop()
-    {
-        digitalWrite(STcp,LOW); //ground ST_CP and hold low for as long as you are transmitting
-        shiftOut(DS,SHcp,MSBFIRST,B00011111);
-        digitalWrite(STcp,HIGH); //pull the ST_CP to save the data
-        delay(1000); //wait for a second        
-    }
-
-
-5. 现在你可以将这个代码上传到Arduino中查看LED灯是否正确亮起。如果你的代码与我一样，传输的数据是 ``B00011111`` 则应当是前三个LED熄灭，后五个LED点亮。
-
-
-6. 让我们继续改造代码，在这里我们想搭建一个流水灯，其效果是LED灯一个个的亮起，那么，我们为将这组流水灯的亮灭状况写为一个数组。
-
-
-.. code-block:: Arduino
-    :emphasize-lines: 4
-
-    const int STcp = 12;//Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;//Pin connected to SH_CP of 74HC595 
-    const int DS = 11; //Pin connected to DS of 74HC595 
-    int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
-
-
-7. 随后使用一个for循环，逐一调用这个数组。
-
-.. code-block:: Arduino
-    :emphasize-lines: 3,6
-
-    void loop()
-    {
-        for(int num = 0; num <=8; num++)
-        {
-            digitalWrite(STcp,LOW); //ground ST_CP and hold low for as long as you are transmitting
-            shiftOut(DS,SHcp,MSBFIRST,datArray[num]);
-            //return the latch pin high to signal chip that it 
-            //no longer needs to listen for information
-            digitalWrite(STcp,HIGH); //pull the ST_CP to save the data
-            delay(1000); //wait for a second
-        }
-    }
-
-现在你的完整代码应当如下所示：
-
-.. code-block:: Arduino
-
-    const int STcp = 12;//Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;//Pin connected to SH_CP of 74HC595 
-    const int DS = 11; //Pin connected to DS of 74HC595 
-    int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
-
-    void setup ()
-    {
-        //set pins to output
-        pinMode(STcp,OUTPUT);
-        pinMode(SHcp,OUTPUT);
-        pinMode(DS,OUTPUT);
-    }
-
-    void loop()
-    {
-        for(int num = 0; num <=8; num++)
-        {
-            digitalWrite(STcp,LOW); //ground ST_CP and hold low for as long as you are transmitting
-            shiftOut(DS,SHcp,MSBFIRST,datArray[num]);
-            //return the latch pin high to signal chip that it 
-            //no longer needs to listen for information
-            digitalWrite(STcp,HIGH); //pull the ST_CPST_CP to save the data
-            delay(1000); //wait for a second
-        }
-    }
-
-8. 现在你可以将这个代码上传到Arduino中查看LED灯是否正确亮起。
-
-9. 保存你的代码。
-
-
-
-用74HC595控制数码管
-----------------------------------
-
-在前面的活动中你可能已经注意到了，74HC595和数码管是一对绝佳的搭档。
-74HC595可以同时输出8位的信号，而数码管则由8个电信号同时控制（包括了控制右下小数点的LED段，即dp段）。
-那么，能否藉由74HC595控制数码管呢？答案是肯定的。
-
-接下来我们就将用74HC595来控制数码管，让它显示不同的数字。
-
-**构筑电路**
-
-数码管的a-g段按顺序连接到Q7-Q1，dp段则连接到Q0。
-
-
 【】
 
 **编写代码**
@@ -307,7 +45,7 @@ Follow the schematic diagram, wiring diagram, or the steps below to build your c
 
 *请将0-9的所有二进制编码写出来，记录在handbook上*
 
-.. image:: img/7_segment2.png
+.. image:: img/23_segment_2.png
     :align: center
     :width: 200
 
@@ -327,6 +65,7 @@ Follow the schematic diagram, wiring diagram, or the steps below to build your c
     :width: 400
 
 *请将0-9的所有十进制编码，十六进制编码也写出来，记录在handbook上，这样你就能获得一个进制转换的速查表*
+
 
 .. code-block:: Arduino
 

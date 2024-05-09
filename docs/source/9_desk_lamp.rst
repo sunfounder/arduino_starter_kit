@@ -13,7 +13,7 @@ Get ready to:
 * Master reading analog signals with ``analogRead()``.
 * Explore PWM through ``analogWrite()`` to fine-tune LED brightness.
 
-By the end of this session, not only will you have crafted a fully functional electronic desk lamp, but you'll also have deepened your understanding of how software interacts with hardware to bring everyday objects to life. Let’s illuminate our knowledge by building a desk lamp that responds to your touch.
+By the end of this lesson, not only will you have crafted a fully functional electronic desk lamp, but you'll also have deepened your understanding of how software interacts with hardware to bring everyday objects to life. Let’s illuminate our knowledge by building a desk lamp that responds to your touch.
 
 
 Build the circuit

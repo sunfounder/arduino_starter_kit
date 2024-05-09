@@ -247,7 +247,9 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
             digitalWrite(10, LOW);  // Switch off the LED on pin 10
             digitalWrite(11, LOW);  // Switch off the LED on pin 11
         }
-    }   
+    }
+
+ 
 12. Add an ``else if`` statement to light up the first LED when the potentiometer's analog value is below 600.
 
 
@@ -288,7 +290,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
 14. Finally, modify the commands inside the ``else`` block to light up all three LEDs using ``digitalWrite()``. This block contains commands that run when none of the other conditions are true. In other words, if the ``potValue`` from the potentiometer is greater than or equal to 1000, the commands within ``else {}`` will execute. Your ``else`` block should look like this:
 
 .. code-block:: Arduino
-    :emphasize-lines: 6-10 
+    :emphasize-lines: 6-8 
 
     else if (potValue < 1000) {  // If potValue less than 1000
         digitalWrite(9, HIGH);     // Light up the LED on pin 9

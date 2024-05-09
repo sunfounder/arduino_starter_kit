@@ -259,6 +259,7 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
             ledState = !ledState;                               // Toggle LED state
         }
     }
+
 3. After checking the button's state and updating the LED accordingly, we need to record the current state of the button as the new 'last known state'. This step is crucial for detecting the next state change.
 
 .. code-block:: Arduino
