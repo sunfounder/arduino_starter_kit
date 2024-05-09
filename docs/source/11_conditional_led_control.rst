@@ -125,7 +125,7 @@ Code Creation
     - how many ranges should the potentiometer's values be divided?
     - What should each LED display across these ranges?
 
-2. Write your pseudocode for the LED array in the blank section provided in Lesson 5.4 of your handbook.
+2. Write your pseudocode for the LED array in the blank section provided in your handbook.
 
 **Printing Potentiometer Values**
 
