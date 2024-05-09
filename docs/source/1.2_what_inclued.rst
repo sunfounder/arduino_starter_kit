@@ -41,7 +41,7 @@ When current flows through, it lights up. Used as indicators on devices, for col
 
 Combines red, green, and blue LEDs in one casing. It can display various colors by adjusting the input voltage, creating millions of colors.
 
-.. image:: img/1_rgb_led.jpg
+.. image:: img/12_rgb_led.jpg
     :width: 300
     :align: center
 
@@ -49,7 +49,7 @@ Combines red, green, and blue LEDs in one casing. It can display various colors 
 
 Changes resistance based on light intensity. Useful for light-sensitive projects.
 
-.. image:: img/1_photoresistor.png
+.. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
@@ -66,14 +66,14 @@ A thermistor is a resistor sensitive to temperature changes. NTC thermistors dec
 
 An audio signaling device. Comes in active and passive types, useful for sound effects.
 
-.. image:: img/1_buzzer.png
+.. image:: img/7_beep_2.png
     :align: center
 
 **Potentiometer**
 
 A potentiometer is a variable resistor with three pins. Two pins connect to the ends of a resistor, while the middle pin attaches to a movable wiper, dividing the resistor into two parts. Potentiometers, often used to adjust voltage in circuits, are like the volume knobs on radios.
 
-.. image:: img/1_potentiometer.png
+.. image:: img/5_dimmer_pot.png
     :width: 200
     :align: center
 
@@ -94,7 +94,7 @@ Closes the circuit when pressed, opens when released. Lets the Arduino detect on
 Controls eight output pins with only three input pins, great for expanding I/O lines.
 
 
-.. image:: img/1_74hc595.png
+.. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
@@ -102,7 +102,7 @@ Controls eight output pins with only three input pins, great for expanding I/O l
 
 A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
 
-.. image:: img/1_7_segment.png
+.. image:: img/23_7_segment.png
     :width: 300
     :align: center
 
@@ -124,6 +124,10 @@ Connects the Arduino board to a computer. Allows you to write, compile, and tran
     :width: 400
     :align: center
 
-**Battery Snap**
+**9V Battery**
 
-Connects a 9V battery to your circuit. Easily plugs into your breadboard or Arduino.
+This is a non-rechargeable alkaline 9V battery. You need to install it on the multimeter.
+
+.. image:: img/1_9v_battery.png
+    :width: 400
+    :align: center

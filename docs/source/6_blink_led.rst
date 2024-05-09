@@ -9,7 +9,7 @@ In this lesson, you will learn to:
 * Upload sketches to the R3 board and understand their real-time effects.
 * Implement ``delay()`` in sketches to manage circuit behaviors.
 
-By the end of this session, you will be able to build a circuit that not only lights up an LED but also makes it blink at intervals you set, giving you a basic understanding of how software interacts with hardware.
+By the end of this lesson, you will be able to build a circuit that not only lights up an LED but also makes it blink at intervals you set, giving you a basic understanding of how software interacts with hardware.
 
 Building the Circuit
 --------------------------------

@@ -16,7 +16,7 @@ The RGB color model uses an additive approach, mixing red, green, and blue light
 
 .. image:: img/6_mix_orange.jpg
 
-In this interactive session, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
+In this interactive lesson, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
 
 **Learning Objectives**
 
@@ -51,8 +51,6 @@ Building the Circuit
      - |compoents_breadboard| 
      - |compoents_meter|
      -
-
-
 
 This lesson uses the same circuit as Lesson 12.
 
@@ -165,7 +163,6 @@ Here's how to define a parameterized function for setting the color of an RGB LE
 4. Within the function body, use the ``analogWrite()`` command to send PWM signals to the RGB LED pins. The values passed to ``setColor`` will determine the brightness of each color. The parameters ``red``, ``green``, and ``blue`` are used here to directly control the intensity of each LED pin.
 
 .. code-block:: Arduino
-    :emphasize-lines: 2-18
 
     // Function to set the color of the RGB LED
     void setColor(int red, int green, int blue) {

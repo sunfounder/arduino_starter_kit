@@ -38,7 +38,8 @@ Beginner's Lab Kit with Original Arduino Uno R3
     21_siren 
     22_little_star
     23_cyber_dice
-    24_74hc595
+    24_flowing_light
+    25_show_number
 
 
 **Copyright Notice**

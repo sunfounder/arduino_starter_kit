@@ -315,7 +315,7 @@ the R value of the RGB LED will gradually change from 246 to 100, G value from 8
 
 
 .. code-block:: Arduino
-    :emphasize-lines: 23-26
+    :emphasize-lines: 3,4
 
     void loop() {
         // put your main code here, to run repeatedly:
