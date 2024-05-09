@@ -398,7 +398,7 @@ Now, this circuit has two LEDs in a parallel configuration. There are two paths 
 
 **Question:**
 
-In this parallel circuit, what happens if one LED is removed? Why does this occur? Record your answer in the parallel circuit section of Lesson 3 in your engineering notebook.
+In this parallel circuit, what happens if one LED is removed? Why does this occur? Record your answer in your engineering notebook.
 
 .. image:: img/3_parallel_circuit_remove.png
     :width: 600
