@@ -48,12 +48,28 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * Passive Buzzer
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Breadboard
+     - 1 * Passive Buzzer
+     - Jumper Wires
+   * - |compoents_uno_r3| 
+     - |compoents_breadboard| 
+     - |compoents_passive_buzzer| 
+     - |compoents_wire| 
+   * - 1 * USB Cable
+     - 1 * Multimeter
+     - 
+     - 
+   * - |compoents_usb_cable| 
+     - |compoents_meter|
+     - 
+     - 
+
+
 
 **Building Step-by-Step**
 

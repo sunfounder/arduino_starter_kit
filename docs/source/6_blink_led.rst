@@ -16,13 +16,29 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * Red LED
-* 1 * 220Ω Resistor
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Red LEDs
+     - 1 * 220Ω Resistor
+     - Jumper Wires
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_220ohm| 
+     - |compoents_wire| 
+   * - 1 * USB Cable
+     - 1 * Breadboard
+     - 1 * Multimeter
+     -   
+   * - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_meter|
+     - 
+
+
 
 **Building Step-by-Step**
 
@@ -154,9 +170,11 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
 Let's dive into the ``pinMode()`` syntax.
 
     * ``pinMode(pin, mode)``: Sets a specific pin to ``INPUT`` or ``OUTPUT``. 
+
     **Parameters**
         - ``pin``: the number of the pin you want to set the mode for.
         - ``mode``: ``INPUT``, ``OUTPUT``, or ``INPUT_PULLUP``.
+
     **Returns**
         Nothing
     
@@ -236,7 +254,7 @@ Debugging is a big part of programming. Professional programmers often spend a l
 5. Below the comment in the ``void loop()`` function, write a command to turn on the LED connected to pin 3. Don't forget to end the command with a semicolon. Verify and debug your code if necessary.
 
     .. code-block:: Arduino
-        :emphasize-lines: 10
+        :emphasize-lines: 8
 
         void setup() {
             // Setup code here, to run once:
@@ -251,7 +269,7 @@ Debugging is a big part of programming. Professional programmers often spend a l
 6. After the ``digitalWrite()`` command, add a code comment explaining what this line does. For instance:
 
     .. code-block:: Arduino
-        :emphasize-lines: 10
+        :emphasize-lines: 8
 
         void setup() {
             // Setup code here, to run once: 
@@ -335,7 +353,7 @@ Now that your LED are on, it's time for them to blink.
        * Use ``Ctrl+T`` to format your code neatly in one click, making it more readable and friendly.
 
     .. code-block:: Arduino
-       :emphasize-lines: 13,14,15
+       :emphasize-lines: 8,9
 
        void setup() {
             // Setup code here, to run once:
@@ -367,7 +385,7 @@ Now that your LED are on, it's time for them to blink.
         During this delay, the R3 board can't perform any tasks or execute any other commands until the delay ends.
         
     .. code-block:: Arduino
-       :emphasize-lines: 9,11
+       :emphasize-lines: 10,11
 
        void setup() {
             // Setup code here, to run once:
@@ -402,7 +420,7 @@ Now that your LED are on, it's time for them to blink.
 10. With all three LED turned off, record the measured voltage for Pin 3 in the "LOW" row of your table.
 
 .. list-table::
-   :widths: 25 25
+   :widths: 25 25 25 25
    :header-rows: 1
 
    * - State
@@ -411,8 +429,12 @@ Now that your LED are on, it's time for them to blink.
      - Pin 5 Voltage 
    * - HIGH
      - *≈4.95 volts*
+     -
+     -
    * - LOW
      - *0.00 volts*
+     -
+     -
 
 Through our measurements, we found that when the LED are off, the voltage at Pin 3 drops to 0V. This demonstrates that in our code, setting a pin to "LOW" effectively reduces the output voltage at that pin to 0V, turning off the connected LED. This principle allows us to control the on and off states of LED with precise timing, mimicking the operation of a traffic light.
 

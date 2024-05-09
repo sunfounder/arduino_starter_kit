@@ -31,17 +31,28 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * Potentiometer
-* 1 * RGB LED
-* 3 * 220 Ohm Resistors
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
 
-.. note::
-    The color bands for a 220 Ohm resistor are: Red, Red, Black, Black, Brown
+   * - 1 * R3 Board
+     - 1 * RGB LED
+     - 3 * 220Ω Resistor
+     - Jumper Wires
+   * - |compoents_uno_r3| 
+     - |compoents_rgb_led| 
+     - |compoents_220ohm| 
+     - |compoents_wire| 
+   * - 1 * USB Cable
+     - 1 * Breadboard
+     - 1 * Multimeter
+     -
+   * - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_meter|
+     -
+
+
 
 This lesson uses the same circuit as Lesson 12.
 

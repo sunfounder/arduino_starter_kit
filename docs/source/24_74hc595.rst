@@ -56,15 +56,52 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * 7-segment Display
-* 1 * 220Ω Resistor
-* 1 * 74HC595
-* 1 * 10KΩ Resistor
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 7 * Red LEDs
+     - 7 * 220Ω Resistor
+     - 1 * 74HC595
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_220ohm| 
+     - |compoents_1kohm| 
+   * - 1 * Breadboard
+     - Jumper Wires
+     - 1 * USB Cable
+     - 1 * Multimeter
+   * - |compoents_breadboard| 
+     - |compoents_wire| 
+     - |compoents_usb_cable| 
+     - |compoents_meter|
+
+25 AAAAAAA
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * 7-segment Display
+     - 1 * 220Ω Resistor
+     - 1 * 74HC595
+   * - |compoents_uno_r3| 
+     - |compoents_7segment| 
+     - |compoents_220ohm| 
+     - |compoents_1kohm| 
+   * - 1 * Breadboard
+     - Jumper Wires
+     - 1 * USB Cable
+     - 1 * Multimeter
+   * - |compoents_breadboard| 
+     - |compoents_wire| 
+     - |compoents_usb_cable| 
+     - |compoents_meter|
+
+
 
 **Building Step-by-Step**
 

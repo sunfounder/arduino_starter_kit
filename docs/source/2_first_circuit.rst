@@ -22,12 +22,26 @@ Are you ready to dive into your first circuit-building experience? Let's get cha
 Components Needed
 ----------------------
 
-* 1 * R3 Board
-* 1 * Red LED
-* 1 * 220Ω Resistor
-* Several * Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Red LED
+     - 1 * 220Ω Resistor
+     - Jumper Wires
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_220ohm| 
+     - |compoents_wire| 
+   * - 1 * USB Cable
+     - 1 * Breadboard
+     - 1 * Multimeter
+     -   
+   * - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_meter|
+     - 
 
 
 Breadboard

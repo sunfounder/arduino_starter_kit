@@ -24,13 +24,28 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * Photoresistor
-* 1 * 10K ohms Resistor
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Photoresistor
+     - 1 * 10KΩ Resistor
+     - 1 * Active Buzzer
+   * - |compoents_uno_r3| 
+     - |compoents_photoresistor| 
+     - |compoents_10kohm| 
+     - |compoents_active_buzzer| 
+   * - 1 * USB Cable
+     - 1 * Breadboard
+     - Jumper Wires
+     - 1 * Multimeter
+   * - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_wire| 
+     - |compoents_meter|
+
+
 
 **Building Step-by-Step**
 

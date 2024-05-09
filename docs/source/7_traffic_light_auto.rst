@@ -17,15 +17,34 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
 
 **Components Needed**
 
-* 1 * R3 Board
-* 3 * 220 Ohm Resistors
-* 1 * Red LED
-* 1 * Yellow LED
-* 1 * Green LED
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Red LED
+     - 1 * Yellow LED
+     - 1 * Green LED
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_yellow_led| 
+     - |compoents_green_led| 
+   * - 1 * USB Cable
+     - 1 * Breadboard
+     - 3 * 220Ω Resistor
+     - Jumper Wires
+   * - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_220ohm| 
+     - |compoents_wire| 
+   * - 1 * Multimeter
+     - 
+     - 
+     - 
+   * - |compoents_meter| 
+     - 
+     - 
+     - 
 
 
 **Building Step-by-Step**

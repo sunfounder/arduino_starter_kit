@@ -20,15 +20,35 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * R3 Board
-* 1 * Thermistor
-* 1 * 10K ohms Resistor
-* 3 * LEDs
-* 3 * 220 ohms Resistors
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * RGB LED
+     - 3 * 220Ω Resistor
+     - 1 * 10KΩ Resistor
+   * - |compoents_uno_r3| 
+     - |compoents_rgb_led| 
+     - |compoents_220ohm| 
+     - |compoents_10kohm| 
+   * - 1 * Thermistor
+     - 1 * Breadboard
+     - Jumper Wires
+     - 1 * USB Cable
+   * - |compoents_thermistor| 
+     - |compoents_breadboard| 
+     - |compoents_wire| 
+     - |compoents_usb_cable| 
+   * - 1 * Multimeter
+     - 
+     - 
+     - 
+   * - |compoents_meter| 
+     - 
+     - 
+     - 
 
 **Building Step-by-Step**
 

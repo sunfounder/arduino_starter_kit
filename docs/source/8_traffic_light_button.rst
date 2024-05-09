@@ -16,12 +16,34 @@ Building the Circuit
 
 **Components Needed**
 
-* 1 * Assembled traffic light circuit
-* 1 * 10K Ohm Resistor
-* 1 * Push Button
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Multimeter with Test Leads
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Red LED
+     - 1 * Yellow LED
+     - 1 * Green LED
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_yellow_led| 
+     - |compoents_green_led| 
+   * - 1 * Push Button
+     - 1 * Breadboard
+     - 3 * 220Ω Resistor
+     - 1 * 10K Ohm Resistor
+   * - |compoents_button| 
+     - |compoents_breadboard| 
+     - |compoents_220ohm| 
+     - |compoents_10kohm| 
+   * - 1 * USB Cable
+     - Jumper Wires
+     - 1 * Multimeter
+     - 
+   * - |compoents_usb_cable| 
+     - |compoents_wire| 
+     - |compoents_meter|
+     - 
 
 
 **Building Step-by-Step**

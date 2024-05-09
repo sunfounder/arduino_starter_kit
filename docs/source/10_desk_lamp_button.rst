@@ -18,15 +18,36 @@ Build the circuit
 
 **Components Needed**
 
-* 1 * Assembled desk lamp circuit
-* 1 * Button
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
 
-.. note::
-    The color bands for a 220 Ohm resistor are: Red, Red, Black, Black, Brown
+.. list-table:: 
+   :widths: 25 25 25 25
+   :header-rows: 0
+
+   * - 1 * R3 Board
+     - 1 * Red LEDs
+     - 1 * 220Ω Resistor
+     - 1 * Potentiometer
+   * - |compoents_uno_r3| 
+     - |compoents_red_led| 
+     - |compoents_220ohm| 
+     - |compoents_potentiometer| 
+   * - 1 * Button
+     - 1 * USB Cable
+     - 1 * Breadboard
+     - Jumper Wires
+   * - |compoents_button| 
+     - |compoents_usb_cable| 
+     - |compoents_breadboard| 
+     - |compoents_wire| 
+   * - 1 * Multimeter
+     - 
+     - 
+     - 
+   * - |compoents_meter| 
+     - 
+     - 
+     - 
+
 
 **Building Steps**
 
