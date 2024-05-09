@@ -345,6 +345,6 @@ In this lesson, we only used the Morse codes for the letters "S" and "O." Here i
 
 **Question**
 
-Using the Morse code table provided, write a code to send the message "Hello" through the buzzer.
+Using the Morse code table provided, write a code to send the message "Hello".
 
 
