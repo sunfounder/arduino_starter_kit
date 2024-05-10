@@ -380,8 +380,8 @@ Now that your code is complete, the full listing is as follows:
 
 2. Open the Serial Monitor to view the output data. You will notice that the button state prints "1" continuously when not pressed and "0" for the moment the button is pressed. At the same time, the value from the potentiometer will also be printed. As you rotate the potentiometer, you'll observe in the Serial Monitor that the higher the value, the brighter the LED becomes, and vice versa.
     
-    .. image:: img/5_dimmer_led_serial_tool.png
-        :align: center
+.. image:: img/5_dimmer_led_serial_tool.png
+    :align: center
 
 .. note::
 
@@ -390,7 +390,7 @@ Now that your code is complete, the full listing is as follows:
     - Digital signals only have two states: 0 and 1.
     - Analog signals, however, have a range, which in this case is from 0 to 1023.
 
-4. Finally, remember to save your code and tidy up your workspace.
+3. Finally, remember to save your code and tidy up your workspace.
 
 **Summary**
 

@@ -52,6 +52,8 @@ Building the Circuit
 1. Start with a Photoresistor.
 
 .. image:: img/17_photoresistor.png
+    :width: 100
+    :align: center
 
 A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photoconductivity.
 

@@ -167,6 +167,6 @@ Arduino's approach to randomness involves several functions:
 
 By the end of this lesson, you will not only have learned about randomness in programming and how to manipulate it to create vibrant, unexpected visual displays but also appreciated the simple beauty of randomness in everyday life. Programming can be as unpredictable as life itself, and with the right tools, you can harness that unpredictability in creative and functional ways.
 
-**Final Thought:**
+**Question**
 
-Why not take randomness beyond colors? Consider other ways you might incorporate random elements into your projects to simulate real-world scenarios or make interactive, dynamic systems.
+What are some situations where randomness is used to solve problems in everyday life, aside from randomly picking colors for decoration and choosing lottery numbers?

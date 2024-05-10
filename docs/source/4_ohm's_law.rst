@@ -111,4 +111,6 @@ Now, let's apply Ohm's Law in a hands-on manner by using a simple LED circuit to
 
   With Ohm's Law, knowing the resistance and the new voltage, the current should be I = V/R. With a decrease in voltage while resistance stays the same, the current decreases, dimming the LED.
 
+**Summary**
+
 By conducting these experiments, you have directly observed how Ohm's Law is fundamental in understanding and designing electrical circuits. This practical application helps cement the theoretical concepts discussed earlier and demonstrates the real-world implications of voltage, current, and resistance in electrical engineering.

@@ -255,6 +255,9 @@ Here, we similarly make the buzzer beep once every second.
     }
   }
 
+**Question**
+
+If the ``delay(100);`` is changed to ``delay(1000);``, what will happen to the program? Why?
 
 
 Coding Creation - Pomodoro Timer

@@ -413,3 +413,22 @@ the R value of the RGB LED will gradually change from 246 to 100, G value from 8
 During the experiment, you might find that the shift between warm and cool hues is not as apparent as seen on screen; for example, an expected warm light may appear white. This is normal, as the color mixing in an RGB LED is not as refined as on a display.
 
 In such cases, you can reduce the intensity of G and B values in the warm color to make the RGB LED display a more appropriate color.
+
+**Question**
+
+Note that the "lower bounds" of either range may be larger or smaller than the "upper bounds", so the ``map(value, fromLow, fromHigh, toLow, toHigh)`` function may be used to reverse a range of numbers, for example:
+
+.. code-block::
+
+    y = map(x, 1, 50, 50, 1);
+
+The function also handles negative numbers well, so that this example is also valid and works well.
+
+.. code-block::
+
+    y = map(x, 1, 50, 50, -100);
+
+For ``y = map(x, 1, 50, 50, -100);``, if ``x`` equals 20, what should ``y`` be? Refer to the following formula to calculate it.
+
+
+.. image:: img/13_map_format.png

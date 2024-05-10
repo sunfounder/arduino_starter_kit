@@ -12,7 +12,7 @@ Beginner's Lab Kit with Original Arduino Uno R3
 
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 1
 
     About this Kit <self>
     1_get_started

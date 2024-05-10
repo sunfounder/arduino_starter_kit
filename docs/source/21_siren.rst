@@ -27,6 +27,7 @@ Here are several key physical properties of sound:
     :align: center
 
 **Frequency**
+
 Frequency refers to the number of vibration cycles per unit of time, typically expressed in Hertz (Hz).
 Frequency determines the pitch of sound: higher frequencies sound higher in pitch; lower frequencies sound lower. The human audible range is approximately from 20 Hz to 20,000 Hz.
 

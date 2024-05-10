@@ -336,7 +336,7 @@ Now that we have a solid understanding of creating arrays, accessing array eleme
     }
   }
 
-9. Your complete code is shown below, and once you upload the code to the R3 board, you will be able to hear the buzzer playing Twinkle Twinkle Little Star.
+9. Your complete code is shown below, and once you upload the code to the R3 board, you will be able to hear the buzzer playing "Twinkle Twinkle Little Star".
 
 .. code-block:: Arduino
 
@@ -377,6 +377,10 @@ Now that we have a solid understanding of creating arrays, accessing array eleme
   
 10. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+If you replace the passive buzzer in the circuit with an active buzzer, can you positively play “Twinkle Twinkle Little Star”? Why?
+
 **Summary**
 
 Now that the class is over, in this lesson we learned how to use arrays to store data, calculate array lengths, index elements within an array, and perform operations on each element. By storing note frequencies and timing intervals in arrays and iterating through them with a for loop, we successfully programmed a passive buzzer to play 'Twinkle, Twinkle, Little Star'.
@@ -385,5 +389,5 @@ Additionally, we learned how to pause the playback of a note using the ``noTone(
 
 This lesson not only reinforced our understanding of array operations and control structures in programming but also demonstrated how these concepts can be applied to create music with electronic components, linking theoretical knowledge with practical applications in a fun and engaging way.
 
-**Question**
+
 

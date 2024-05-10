@@ -378,6 +378,10 @@ How would we implement a flowing light effect, where the LEDs light up one by on
 
 6. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+If we want to have three LEDs lit at a time and have them appear to "flow," how should the elements of the ``datArray[]`` array be modified?
+
 **Summary**
 
 In this lesson, we explored the structure and functionality of the 74HC595 chip, learning how to shift binary data through its shift register and build a flowing light experiment. Using the ``shiftOut()`` function to control binary data transmission, we successfully managed the sequential lighting of 8 LEDs to achieve a flowing light effect. With this newfound knowledge, you should now be able to effectively use the 74HC595 chip to add dazzling lighting features to your own projects.

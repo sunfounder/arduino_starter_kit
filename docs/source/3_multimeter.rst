@@ -122,14 +122,25 @@ During the measurement of resistance, voltage, or current, you might notice that
 
 If you're uncertain about the appropriate range to choose for measuring voltage, current, or resistance, it's advisable to begin with the maximum range available. This approach provides an initial estimate of the values you're working with, allowing you to subsequently narrow down to a more accurate range for precise measurements.
 
-**Question**: 
+**Question**
 
 Now that you have a detailed understanding of how to use a multimeter, consider which multimeter setting you would use to measure the following electrical values?
 
-    * 9V volts DC
-    * 1K ohms
-    * 40 milliamps
-    * 110 volts AC
+.. list-table::
+  :widths: 25 25
+  :header-rows: 1
+
+  * - Measurement Object
+    - Multimeter Setting
+  * - 9V volts DC
+    -
+  * - 1K ohms
+    -
+  * - 40 milliamps
+    - 
+  * - 110 volts AC
+    -
+
 
 Measuring with a Multimeter
 --------------------------------

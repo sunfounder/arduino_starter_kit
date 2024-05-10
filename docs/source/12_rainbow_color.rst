@@ -240,8 +240,6 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
      -
      -
 
-2. Now, on the basis of the original code, make the RGB LED display Yellow, Pink, Cyan, and White.
-
 Code Creation - Create Functions
 --------------------------------------
 

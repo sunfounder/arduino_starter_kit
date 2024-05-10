@@ -420,24 +420,22 @@ Now that your LED are on, it's time for them to blink.
 10. With all three LED turned off, record the measured voltage for Pin 3 in the "LOW" row of your table.
 
 .. list-table::
-   :widths: 25 25 25 25
+   :widths: 25 25
    :header-rows: 1
 
    * - State
-     - Pin 3 Voltage
-     - Pin 4 Voltage
-     - Pin 5 Voltage 
+     - Pin 3 Voltage 
    * - HIGH
      - *≈4.95 volts*
-     -
-     -
    * - LOW
      - *0.00 volts*
-     -
-     -
+
 
 Through our measurements, we found that when the LED are off, the voltage at Pin 3 drops to 0V. This demonstrates that in our code, setting a pin to "LOW" effectively reduces the output voltage at that pin to 0V, turning off the connected LED. This principle allows us to control the on and off states of LED with precise timing, mimicking the operation of a traffic light.
 
+**Question**
+
+Upload the above code, and you'll find the LED repeatedly blinking at a 3-second interval. If you just want it to turn on and off once, what should you do?
 
 **Summary**
 

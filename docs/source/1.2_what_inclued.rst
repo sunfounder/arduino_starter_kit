@@ -129,5 +129,9 @@ Connects the Arduino board to a computer. Allows you to write, compile, and tran
 This is a non-rechargeable alkaline 9V battery. You need to install it on the multimeter.
 
 .. image:: img/1_9v_battery.png
-    :width: 400
+    :width: 200
     :align: center
+
+**Multimeter**
+
+

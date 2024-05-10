@@ -190,7 +190,7 @@ In addition to the Steinhart-Hart Equation, many practical applications also use
 * **R** is the resistance we measure.
 * **R0** is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
 
-After converting the above formulas, the Kelvin temperature is calculated as: T=1/(ln(R/R0)/B+1/T0), subtract 273.15 to convert it to Celsius.
+After converting the above formulas, the Kelvin temperature is calculated as: ``T=1/(ln(R/R0)/B+1/T0)``, subtract 273.15 to convert it to Celsius.
 
 **How to measure resistance?**
 
@@ -491,5 +491,7 @@ In today's lesson, we built a temperature alarm system that uses a thermistor to
 
 **Question**
 
-Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful? How might you modify the design to suit different environments or needs?
+1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
+
+2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful? How might you modify the design to suit different environments or needs?
 
