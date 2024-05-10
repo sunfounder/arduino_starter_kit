@@ -1,20 +1,14 @@
 24. Flowing Light with 74HC595
 =======================================
 
-想象一下，你有一个电子板，上面有很多LED，你想通过电脑控制这些LED一起闪烁。
-但是，你的电脑上的接口（可以想象成电脑的手指）是有限的，不足以控制所有的LED。
-这时候，74HC595芯片就派上用场了！
+In this lesson, we will delve into the world of the 74HC595 shift register chip. This powerful component allows us to control numerous LEDs with just a few pins, making it perfect for implementing flowing light effects. By the end of this lesson, you'll have a solid understanding of how the 74HC595 works, how to use it to shift binary data, and how to apply it in a practical LED control experiment.
 
-74HC595芯片就像是一个小助手，可以帮你用更少的线（接口）来控制更多的LED。它还可以通过Q7'级联更多的芯片以控制更多的LED。
+In this lesson, you will learn:
 
-在这节课中，让我们看下74HC595是如何控制8个LED来实现一个流水灯的效果的吧。
-
-在这节课中，你将学习：
-
-* 74HC595的工作原理
-* 用``shiftOut()``对数据进行移位
-* 用74HC595搭建一个流水灯实验。
-
+* Understand the working principles of the 74HC595 chip and its pin functions.
+* Learn how to use the ``shiftOut()`` function to shift data.
+* Build a flowing light circuit using the 74HC595 chip and Arduino.
+* Control 8 LEDs using binary data and the 74HC595 chip to create a flowing light effect.
 
 Learn the 74HC595 Chip
 --------------------------
@@ -24,13 +18,11 @@ The 74HC595 chip consists of an 8-bit shift register and a storage register with
     :width: 300
     :align: center
 
-When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. The memory register outputs a Bus with a parallel 8-bit and in three states. When OE is enabled (low level), the data in memory register is output to the bus.
+**Pins Functions**
 
 .. image:: img/24_74hc595_pin.png
     :width: 500
     :align: center
-
-**Pins Functions**
 
 * **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
 * **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
@@ -45,7 +37,7 @@ When MR (pin10) is high level and OE (pin13) is low level, data is input in the 
 **Working Principle**
 
 When MR (pin10) is high level and OE (pin13) is low level, 
-data is input in the rising edge of SHcp and goes to the memory register through the rising edge of STcp. 
+data is input in the rising edge of SHcp and goes to the storage register through the rising edge of STcp. 
 
 
 * Shift Register
@@ -88,7 +80,7 @@ Building the Circuit
    * - |compoents_uno_r3| 
      - |compoents_red_led| 
      - |compoents_220ohm| 
-     - |compoents_1kohm| 
+     - |compoents_74hc595|  
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
@@ -100,7 +92,7 @@ Building the Circuit
 
 **Building Step-by-Step**
 
-Follow the schematic diagram, wiring diagram, or the steps below to build your circuit.
+Follow the wiring diagram, or the steps below to build your circuit.
 
 .. image:: img/24_flow_light.png
     :width: 600
@@ -288,8 +280,7 @@ Let's now see how the 74HC595 receives binary data and outputs it to the LEDs!
     }
 
 * When the ``ST_CP`` pin receives a rising edge signal, the data in the shift register is copied to the storage register.
-* The data in the storage register is directly connected to the output pins of the 74HC595, and these output pins are connected to the LEDs.
-* Once the data is copied to the storage register, the LEDs connected to the corresponding output pins will light up or remain off according to whether the data is 1 or 0.
+* Once the data is copied to the storage register, the LEDs connected to the corresponding output pins(Q0 ~ Q7) will light up or remain off according to whether the data is 1 or 0.
 
 .. image:: img/24_74hc595_storage_1data.png
     :width: 300
@@ -345,7 +336,7 @@ How would we implement a flowing light effect, where the LEDs light up one by on
 4. Then, use a ``for`` loop to sequentially call this array.
 
 .. code-block:: Arduino
-    :emphasize-lines: 3,6
+    :emphasize-lines: 3,5
 
     void loop()
     {
@@ -365,7 +356,7 @@ How would we implement a flowing light effect, where the LEDs light up one by on
     const int STcp = 12;  // Pin connected to ST_CP of 74HC595
     const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
     const int DS = 11;    // Pin connected to DS of 74HC595
-    int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B11101110, B00111111, B01111111, B11111111};
+    int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
     void setup ()
     {
@@ -387,10 +378,9 @@ How would we implement a flowing light effect, where the LEDs light up one by on
 
 6. Finally, remember to save your code and tidy up your workspace.
 
-**总结**
+**Summary**
 
-在这节课我们学习了74HC595的功能以及工作原理，了解了二进制数，以及学习了用``shiftout()``函数如何用74HC595传输这个二进制数来控制8个LED的亮灭.
-
+In this lesson, we explored the structure and functionality of the 74HC595 chip, learning how to shift binary data through its shift register and build a flowing light experiment. Using the ``shiftOut()`` function to control binary data transmission, we successfully managed the sequential lighting of 8 LEDs to achieve a flowing light effect. With this newfound knowledge, you should now be able to effectively use the 74HC595 chip to add dazzling lighting features to your own projects.
 
 
 

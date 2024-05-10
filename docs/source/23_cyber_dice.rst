@@ -65,7 +65,7 @@ To determine whether a 7-segment display is common cathode or common anode, you 
     :width: 300
     :align: center
 
-2. Insert the 7-segment display into a breadboard, noting that the decimal point is at the bottom right. Insert a wire in the same row as pin 1 of the display, and touch it with the red lead of the multimeter. Insert another wire in the same row as any “-” pin of the display, and touch it with the black lead.
+2. Insert the 7-segment display into a breadboard, noting that the decimal point is at the bottom right and ensure to spans the middle gap. Insert a wire in the same row as pin 1 of the display, and touch it with the red lead of the multimeter. Insert another wire in the same row as any “-” pin of the display, and touch it with the black lead.
 
 .. image:: img/23_7_segment_test.png
     :align: center
@@ -162,7 +162,7 @@ Building the Circuit
 
 **Building Step-by-Step**
 
-Follow the schematic diagram, wiring diagram, or the steps below to build your circuit.
+Follow the wiring diagram, or the steps below to build your circuit.
 
 .. image:: img/23_segment_5v.png
     :align: center
