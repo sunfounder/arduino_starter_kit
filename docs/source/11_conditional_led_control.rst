@@ -35,7 +35,7 @@ Build the circuit
 
 **Building Steps**
 
-Follow the schematic diagram, wiring diagram, or the steps below to build your circuit.
+Follow the wiring diagram, or the steps below to build your circuit.
 
 .. image:: img/11_conditional_led_cont rol_p9.png
     :width: 500

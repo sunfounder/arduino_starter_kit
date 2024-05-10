@@ -44,7 +44,7 @@ Building the Circuit
      
 **Step-by-Step Building Instructions**
 
-Follow the schematic and wiring diagram or these steps to construct the circuit.
+Follow the wiring diagram or these steps to construct the circuit.
 
 .. image:: img/6_mix_color_bb_4.png
     :width: 500

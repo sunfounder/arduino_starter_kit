@@ -33,4 +33,4 @@ Building the Circuit
 
 **Building Step-by-Step**
 
-Follow the schematic diagram, wiring diagram, or the steps below to build your circuit.
+Follow the wiring diagram, or the steps below to build your circuit.
