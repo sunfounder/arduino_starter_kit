@@ -12,7 +12,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
@@ -22,16 +22,16 @@ Building the Circuit
      - |compoents_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
-     - 1 * Multimeter
+     -
      -
    * - |compoents_usb_cable| 
      - |compoents_breadboard| 
-     - |compoents_meter|
+     -
      -
      
 This lesson uses the same circuit as Lesson 12.
 
-.. image:: img/6_mix_color_bb_4.png
+.. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
@@ -44,7 +44,7 @@ In the previous lessons, you've controlled the RGB LED to display your desired c
 
 In the physical world, randomness abounds, but in programming, so-called "random" numbers are usually computed through a deterministic algorithm. This algorithm typically requires a starting point known as a "seed," making these numbers predictable and thus called "pseudo-random." The "pseudo" prefix indicates that these numbers seem random but are actually patterned.
 
-Interestingly, on an R3 board, we can use physical measurements from the real world as seeds. During your measurements with a multimeter, you might notice minor fluctuations in the circuit's voltage and current values. These fluctuations can provide unpredictability to our random numbers.
+Interestingly, on an Arduino Uno R3, we can use physical measurements from the real world as seeds. During your measurements with a multimeter, you might notice minor fluctuations in the circuit's voltage and current values. These fluctuations can provide unpredictability to our random numbers.
 
 Arduino's approach to randomness involves several functions:
 
@@ -80,7 +80,7 @@ Arduino's approach to randomness involves several functions:
 
 3. Only call ``randomSeed()`` once in ``void setup()`` to initialize the seed. Avoid using a fixed seed value, as this would cause the same sequence of random numbers to be generated every time the program runs.
 
-    We use ``analogRead(0)`` to read the value from an unconnected analog pin. As this pin is not connected, it picks up noise, which varies with each reading, providing a good seed for ``randomSeed()``.
+    We use ``analogRead(A0)`` to read the value from an unconnected analog pin. As this pin is not connected, it picks up noise, which varies with each reading, providing a good seed for ``randomSeed()``.
 
 .. code-block:: Arduino
     :emphasize-lines: 9
@@ -93,7 +93,7 @@ Arduino's approach to randomness involves several functions:
             
         // Initialize random seed based on an unconnected analog pin
         // This ensures a different sequence of random numbers on each reset
-        randomSeed(analogRead(0));
+        randomSeed(analogRead(A0));
     }
 
 4. Now in ``void loop()``, remove the original code. Use the ``random()`` function to generate random values stored in the variables ``redValue``, ``greenValue``, and ``blueValue``.
@@ -126,7 +126,7 @@ Arduino's approach to randomness involves several functions:
     }
 
 
-6. Your complete code is now ready. You can upload it to the R3 board, and you will see the RGB LED display a random color every second.
+6. Your complete code is now ready. You can upload it to the Arduino Uno R3, and you will see the RGB LED display a random color every second.
 
 .. code-block:: Arduino
     :emphasize-lines: 19,20
@@ -139,7 +139,7 @@ Arduino's approach to randomness involves several functions:
         
         // Initialize random seed based on an unconnected analog pin
         // This ensures a different sequence of random numbers on each reset
-        randomSeed(analogRead(0));
+        randomSeed(analogRead(A0));
     }
 
     void loop() {
@@ -163,10 +163,13 @@ Arduino's approach to randomness involves several functions:
 
 7. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+1. If you change the code from ``randomSeed(analogRead(A0))`` to ``randomSeed(0)``, how will the colors of the RGB LED change, and why?
+
+2. What are some situations where randomness is used to solve problems in everyday life, aside from randomly picking colors for decoration and choosing lottery numbers?
+
 **Summary**
 
 By the end of this lesson, you will not only have learned about randomness in programming and how to manipulate it to create vibrant, unexpected visual displays but also appreciated the simple beauty of randomness in everyday life. Programming can be as unpredictable as life itself, and with the right tools, you can harness that unpredictability in creative and functional ways.
 
-**Question**
-
-What are some situations where randomness is used to solve problems in everyday life, aside from randomly picking colors for decoration and choosing lottery numbers?

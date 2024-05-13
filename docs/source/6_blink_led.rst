@@ -1,12 +1,12 @@
 6. Blink LED
 ======================
-Welcome to this lesson, you'll learn to manipulate the digital pins of the R3 board to programmatically control an LED—turning it on and off without manual intervention, a skill fundamental to both home and industrial electronics applications.
+Welcome to this lesson, you'll learn to manipulate the digital pins of the Arduino Uno R3 to programmatically control an LED—turning it on and off without manual intervention, a skill fundamental to both home and industrial electronics applications.
 
 In this lesson, you will learn to:
 
 * Create and save sketches using the Arduino IDE.
 * Use ``pinMode()`` and ``digitalWrite()`` functions to control circuit elements.
-* Upload sketches to the R3 board and understand their real-time effects.
+* Upload sketches to the Arduino Uno R3 and understand their real-time effects.
 * Implement ``delay()`` in sketches to manage circuit behaviors.
 
 By the end of this lesson, you will be able to build a circuit that not only lights up an LED but also makes it blink at intervals you set, giving you a basic understanding of how software interacts with hardware.
@@ -21,7 +21,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - Jumper Wires
@@ -38,13 +38,11 @@ Building the Circuit
      - |compoents_meter|
      - 
 
-
-
 **Building Step-by-Step**
 
 Take the circuit built in :ref:`2_first_circuit`, and switch the wire from the 5V to pin 3, as shown in the image below.
 
-.. image:: img/3_led_circuit.png
+.. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
@@ -68,15 +66,15 @@ If you've dismantled the previous circuit, you can rebuild it following these st
     :width: 300
     :align: center
 
-4. Connect the breadboard's positive terminal to pin 3 on the R3 board.
+4. Connect the breadboard's positive terminal to pin 3 on the Arduino Uno R3.
 
-.. image:: img/3_led_circuit_13.png
+.. image:: img/6_led_circuit_3.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the R3 board. The ground pins are marked as "GND".
+5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
 
-.. image:: img/3_led_circuit.png
+.. image:: img/6_led_circuit.png
     :width: 600
     :align: center
 
@@ -90,18 +88,18 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
 
 1. Fire up the Arduino IDE. Go to the “File” menu and hit “New Sketch” to start fresh. You can close any other sketch windows that might be open.
 
-    .. image:: img/4_traffic_ide_new.png
+    .. image:: img/6_blink_ide_new.png
         :align: center
 
 
 2. Arrange the Arduino IDE window side by side with this online tutorial, so you can see both at once. Things might look a bit small, but it beats flipping back and forth between windows.
 
-    .. image:: img/4_traffic_ide_tutorials.png
+    .. image:: img/6_blink_ide_tutorials.png
 
 
 3. Time to save your sketch. Hit “Save” from the “File” menu or press ``Ctrl + S``. 
 
-    .. image:: img/4_traffic_ide_save.png
+    .. image:: img/6_blink_ide_save.png
 
 
 4. You can save your sketch in the default location or another place. Name your sketch something meaningful, like ``Lesson6_Light_up_LED``, and click “Save”.
@@ -110,7 +108,7 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
     * Arduino sketch filenames can't have spaces.
     * When saving significant changes, consider saving as a new version (e.g., V1) for backup.
     
-    .. image:: img/4_traffic_ide_name.png
+    .. image:: img/6_blink_ide_name.png
 
 
 5. Your new sketch consists of two main parts, ``void setup()`` and ``void loop()``, which are functions used in all Arduino sketches.
@@ -134,18 +132,16 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
 
 **2. Picking the Board and Port**
 
-1. Connect your R3 board to the computer with a USB cable. You'll see the power light come on the Arduino.
+1. Connect your Arduino Uno R3 to the computer with a USB cable. You'll see the power light come on the Arduino.
 
-    .. raw:: html
+    .. image:: img/1_connect_uno_pc.jpg
+        :width: 600
+        :align: center
 
-        <video width="600" loop autoplay muted>
-            <source src="_static/video/connect_board.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
 
 2. Let the IDE know we're using an **Arduino Uno**. Head to **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
 
-    .. image:: img/4_traffic_ide_board.png
+    .. image:: img/6_blink_ide_board.png
         :width: 600
         :align: center
 
@@ -158,7 +154,7 @@ Alright, it's showtime for the LED! Instead of just diving into the Arduino's Bl
         * If a different Arduino Board is connected, you might need to choose a new port. 
         * Always check the port first if there's a connection issue.
 
-    .. image:: img/4_traffic_ide_port.png
+    .. image:: img/6_blink_ide_port.png
         :width: 600
         :align: center
 
@@ -207,21 +203,21 @@ Before activating our traffic lights, we'll verify the code. This checks if the 
 
 1. To verify your code, click the **checkmark** button in the upper-left corner of the window.
 
-    .. image:: img/4_traffic_ide_verify.png
+    .. image:: img/6_blink_ide_verify.png
         :width: 600
         :align: center
 
 
 2. If your code is machine-readable, a message at the bottom will indicate the code has been successfully compiled. This area also shows how much storage space your program uses.
 
-    .. image:: img/4_traffic_ide_verify_done.png
+    .. image:: img/6_blink_ide_verify_done.png
         :width: 600
         :align: center
 
 
 3. If there's an error in your code, you'll see an orange error message. The IDE often highlights where the issue might be, typically near the highlighted line. For example, a missing semicolon error will highlight the line right after the mistake.
 
-    .. image:: img/4_traffic_ide_verify_error.png
+    .. image:: img/6_blink_ide_verify_error.png
         :width: 600
         :align: center
 
@@ -240,7 +236,7 @@ Debugging is a big part of programming. Professional programmers often spend a l
 
 **5. Continuing to Write the Sketch**
 
-1. Now you're ready to start on the ``void loop()`` function. This is where the main action of your sketch or program happens. To light up the LED connected to the R3 board, we'll need to provide voltage to the circuit using ``digitalWrite()``.
+1. Now you're ready to start on the ``void loop()`` function. This is where the main action of your sketch or program happens. To light up the LED connected to the Arduino Uno R3, we'll need to provide voltage to the circuit using ``digitalWrite()``.
 
     * ``digitalWrite(pin, value)``: Sends a ``HIGH`` (5V) or ``LOW`` (0V) signal to a digital pin, changing the operating state of the component.
 
@@ -284,18 +280,18 @@ Debugging is a big part of programming. Professional programmers often spend a l
 
 **6. Uploading the Code**
 
-With your code error-free and verified, it's time to upload it to the R3 board and see your traffic light come to life.
+With your code error-free and verified, it's time to upload it to the Arduino Uno R3 and see your traffic light come to life.
 
-1. In the IDE, click the “Upload” button. The computer will compile the code and then transfer it to the R3 board. During the transfer, you should see some lights blinking on the board, indicating communication with the computer.
+1. In the IDE, click the “Upload” button. The computer will compile the code and then transfer it to the Arduino Uno R3. During the transfer, you should see some lights blinking on the board, indicating communication with the computer.
 
-.. image:: img/4_traffic_ide_upload.png
+.. image:: img/6_blink_ide_upload.png
     :width: 600
     :align: center
 
 
 2. A message of “Done Uploading” means your code has no issues and you've selected the correct board and port.
 
-.. image:: img/4_traffic_ide_upload_done.png
+.. image:: img/6_blink_ide_upload_done.png
     :width: 600
     :align: center
 
@@ -314,7 +310,7 @@ Let's use a multimeter to measure the voltage at pin 3 and understand what the `
 
 2. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
 
-.. image:: img/4_traffic_wiring_measure_high.png
+.. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
@@ -366,9 +362,9 @@ Now that your LED are on, it's time for them to blink.
             digitalWrite(3, LOW);  // Switch off the LED on pin 3
        }
 
-3. Press the “Upload” button to transfer the sketch to the R3 board. After the transfer, you might notice the LED don't blink, or they blink so fast it's imperceptible.
+3. Press the “Upload” button to transfer the sketch to the Arduino Uno R3. After the transfer, you might notice the LED don't blink, or they blink so fast it's imperceptible.
 
-4. To visually observe the blinking, you can use the ``delay()`` command to make the R3 board wait for any duration you specify, in milliseconds.
+4. To visually observe the blinking, you can use the ``delay()`` command to make the Arduino Uno R3 wait for any duration you specify, in milliseconds.
 
     * ``delay(ms)``: Pauses the program for the amount of time (in milliseconds) specified as parameter. (There are 1000 milliseconds in a second.)
 
@@ -382,7 +378,7 @@ Now that your LED are on, it's time for them to blink.
 
     .. note::
 
-        During this delay, the R3 board can't perform any tasks or execute any other commands until the delay ends.
+        During this delay, the Arduino Uno R3 can't perform any tasks or execute any other commands until the delay ends.
         
     .. code-block:: Arduino
        :emphasize-lines: 10,11
@@ -401,7 +397,7 @@ Now that your LED are on, it's time for them to blink.
        }
 
 
-6. Upload your sketch to the R3 board. After completion, your LED should blink at a 3 seconds interval.
+6. Upload your sketch to the Arduino Uno R3. After completion, your LED should blink at a 3 seconds interval.
 
 7. Confirm everything is working as expected, then save your sketch.
 
@@ -413,7 +409,7 @@ Now that your LED are on, it's time for them to blink.
 
 9. Start by measuring the voltage at Pin 3. Touch the red test lead of the multimeter to Pin 3 and the black test lead to GND.
 
-.. image:: img/4_traffic_wiring_measure_high.png
+.. image:: img/6_blink_wiring_measure_high.png
     :width: 600
     :align: center
 
@@ -439,6 +435,6 @@ Upload the above code, and you'll find the LED repeatedly blinking at a 3-second
 
 **Summary**
 
-Congratulations on completing this lesson, where you successfully programmed an LED to blink using the R3 board. This lesson served as an introduction to writing and uploading Arduino sketches, setting pin modes, and manipulating outputs to achieve desired electrical responses. Through building the circuit and programming the R3 board, you gained valuable insights into the interaction between software commands and physical hardware behaviors.
+Congratulations on completing this lesson, where you successfully programmed an LED to blink using the Arduino Uno R3. This lesson served as an introduction to writing and uploading Arduino sketches, setting pin modes, and manipulating outputs to achieve desired electrical responses. Through building the circuit and programming the Arduino Uno R3, you gained valuable insights into the interaction between software commands and physical hardware behaviors.
 
 Your ability to control an LED is just the beginning—imagine what you can achieve as you expand on these basics!

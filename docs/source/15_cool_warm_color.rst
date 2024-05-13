@@ -7,19 +7,19 @@ Colors are not just a part of our visual experience—they also influence our em
 
 The concept of cool and warm colors relates to the psychological effects colors have on our perception. Reds, oranges, yellows, and browns typically evoke feelings of warmth and excitement, classifying them as warm colors. Conversely, greens, blues, and purples often impart calming, refreshing, and spacious feelings, making them cool colors. Orange and blue are at opposite ends of this warm-cool spectrum.
 
-.. image:: img/6_mix_color_warm_cool.png
+.. image:: img/15_mix_color_warm_cool.png
     :width: 400
     :align: center
 
 At home or in leisure environments, people prefer lighting in shades of light yellow or off-white, creating a cozy atmosphere akin to being bathed in sunset or candlelight.
 
-.. image:: img/6_mix_color_warm_room.png
+.. image:: img/15_mix_color_warm_room.png
     :width: 400
     :align: center
 
 In libraries, classrooms, offices, and hospitals, cooler lighting tones are favored as they promote concentration and freshness, which are conducive to working and learning.
 
-.. image:: img/6_mix_color_cool_room.png
+.. image:: img/15_mix_color_cool_room.png
     :width: 400
     :align: center
 
@@ -45,7 +45,7 @@ Build the circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * Potentiometer
@@ -56,41 +56,41 @@ Build the circuit
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
-     - 1 * Multimeter
+     -
    * - |compoents_usb_cable| 
      - |compoents_breadboard| 
      - |compoents_wire| 
-     - |compoents_meter|
+     -
      
 **Building Steps**
 
 This circuit builds upon the one from Lesson 12 by adding a potentiometer.
 
-.. image:: img/13_cool_warm_color.png
+.. image:: img/15_cool_warm_color.png
     :width: 500
     :align: center
 
-1. Remove the jumper wire connecting the GND pin of the R3 board to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
 
-.. image:: img/13_cool_warm_color_gnd.png
+.. image:: img/15_cool_warm_color_gnd.png
     :width: 500
     :align: center
 
 2. Insert the potentiometer into holes 25G, 26F, and 27G.
 
-.. image:: img/13_cool_warm_color_pot.png
+.. image:: img/15_cool_warm_color_pot.png
     :width: 500
     :align: center
 
-3. Connect the middle pin of the potentiometer to the A0 pin of the R3 board.
+3. Connect the middle pin of the potentiometer to the A0 pin of the Arduino Uno R3.
 
-.. image:: img/13_cool_warm_color_a0.png
+.. image:: img/15_cool_warm_color_a0.png
     :width: 500
     :align: center
 
-4. Finally, connect the left pin of the potentiometer to the 5V pin on the R3 board and the right pin to the negative terminal on the breadboard.
+4. Finally, connect the left pin of the potentiometer to the 5V pin on the Arduino Uno R3 and the right pin to the negative terminal on the breadboard.
 
-.. image:: img/13_cool_warm_color.png
+.. image:: img/15_cool_warm_color.png
     :width: 500
     :align: center
 
@@ -132,11 +132,11 @@ The perception of warmth in lighting is somewhat subjective, but unquestionably,
 
 * Red (Red: 246, Green: 52, Blue: 8)
 
-.. image:: img/6_mix_color_tone_warm.png
+.. image:: img/15_mix_color_tone_warm.png
 
 * Light Blue (Red: 100 ,Green: 150, Blue: 255)
 
-.. image:: img/6_mix_color_tone_cool.png
+.. image:: img/15_mix_color_tone_cool.png
 
 The primary difference between warm and cool colors is the ratio of the three primary color intensities. Next, we'll store these warm and cool RGB values in our sketch.
 
@@ -208,7 +208,7 @@ Using algebra, you can rearrange this equation to solve for ``y``:
 
     y = (value-fromLow) * (toHigh-toLow) / (fromHigh-fromLow) + toLow
 
-.. image:: img/13_map_format.png
+.. image:: img/15_map_format.png
 
 For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 434, then ``y = (434-0) * (100 - 246) / (1023-0) + 246``, which approximately equals 152.
 
@@ -364,7 +364,7 @@ the R value of the RGB LED will gradually change from 246 to 100, G value from 8
         delay(500);
     }
 
-14. Your complete code is as follows; you can click the Upload button to upload the code to the R3 board. Then you can rotate the potentiometer, and you will notice the RGB LED slowly transition from a cool to a warm hue, or from a warm hue to a cool hue.
+14. Your complete code is as follows; you can click the Upload button to upload the code to the Arduino Uno R3. Then you can rotate the potentiometer, and you will notice the RGB LED slowly transition from a cool to a warm hue, or from a warm hue to a cool hue.
 
 .. code-block:: Arduino
 
@@ -431,4 +431,4 @@ The function also handles negative numbers well, so that this example is also va
 For ``y = map(x, 1, 50, 50, -100);``, if ``x`` equals 20, what should ``y`` be? Refer to the following formula to calculate it.
 
 
-.. image:: img/13_map_format.png
+.. image:: img/15_map_format.png

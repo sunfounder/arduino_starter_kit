@@ -53,7 +53,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Breadboard
      - 1 * Passive Buzzer
      - Jumper Wires
@@ -62,11 +62,11 @@ Building the Circuit
      - |compoents_passive_buzzer| 
      - |compoents_wire| 
    * - 1 * USB Cable
-     - 1 * Multimeter
+     -
      - 
      - 
    * - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
      - 
      - 
 
@@ -86,19 +86,19 @@ In previous lessons, we used active buzzer. In this lesson, we will use a passiv
     :width: 500
     :align: center
 
-3. Connect one pin of the passive buzzer to the GND pin on the R3 board.
+3. Connect one pin of the passive buzzer to the GND pin on the Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-4. Connect the other pin of the passive buzzer to the 5V pin of the R3 board. The buzzer will not make a sound, differentiating it from an active buzzer, which would sound when connected this way.
+4. Connect the other pin of the passive buzzer to the 5V pin of the Arduino Uno R3. The buzzer will not make a sound, differentiating it from an active buzzer, which would sound when connected this way.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-5. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the R3 board, so that the buzzer can be controlled with code.
+5. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -143,7 +143,7 @@ As we learned while connecting, simply providing high and low power to a passive
 4. To fully understand the use of the ``tone()`` function, we write it in the ``void setup()`` so that the buzzer will emit a sound at a specific frequency for a set duration.
 
 .. code-block:: Arduino
-    :emphasize-lines: 6
+    :emphasize-lines: 5
 
     const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
 
@@ -156,7 +156,7 @@ As we learned while connecting, simply providing high and low power to a passive
         // put your main code here, to run repeatedly:
     }
 
-5. Now you can upload the code to the R3 board, after which you will hear a brief "beep" sound from the passive buzzer, and then it will go silent.
+5. Now you can upload the code to the Arduino Uno R3, after which you will hear a brief "beep" sound from the passive buzzer, and then it will go silent.
 
 **Questions**
 
@@ -201,7 +201,7 @@ From our earlier explorations, we know that using the ``tone(pin, frequency)`` f
         delay(500);
     }
 
-4. At this point, you can upload the code to the R3 board, and you will hear the buzzer repeating three different tones.
+4. At this point, you can upload the code to the Arduino Uno R3, and you will hear the buzzer repeating three different tones.
 
 5. To achieve a smoother pitch increase, we should set shorter intervals for ``frequency``, such as an interval of 10, starting from 100, 110, 120...up to 1000. We can write the following code.
 
@@ -277,7 +277,7 @@ From our earlier explorations, we know that using the ``tone(pin, frequency)`` f
     }
 
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the R3 board.
+9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
 
 .. code-block:: Arduino
 

@@ -25,7 +25,7 @@ Build the circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - 1 * Potentiometer
@@ -48,13 +48,13 @@ Build the circuit
 
 A potentiometer, often called a pot, serves as a variable resistor, meaning it can adjust its resistance from nearly zero to its maximum limit. Most potentiometers are marked with their range. The one included in your kit is designated as a 103 (10K) potentiometer, which equates to 10 kilo-ohms or 10,000 ohms.
 
-.. image:: img/5_dimmer_pot.png
+.. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
 Inside the potentiometer is a strip of resistive material with a slider that moves along it. Each end of the resistive material is connected to a terminal or pin, shown below as pins A and B. The resistance between pins A and B is fixed and represents the maximum resistance the potentiometer can offer. For the ones in your kit, the maximum resistance is 10 kilo-ohms.
 
-.. image:: img/5_dimmer_pot_2.png
+.. image:: img/9_dimmer_pot_2.png
     :width: 400
     :align: center
 
@@ -66,13 +66,13 @@ Inside the potentiometer is a strip of resistive material with a slider that mov
 
 The Pin C connects to the slider. The resistance through the slider, or Pin C, depends on the slider's position along the resistive material.
 
-.. image:: img/5_dimmer_pot_3.png
+.. image:: img/9_dimmer_pot_3.png
     :width: 400
     :align: center
 
 In schematic diagrams, the symbol for a potentiometer typically looks like a resistor with an arrow through the middle.
 
-.. image:: img/5_dimmer_pot_4.png
+.. image:: img/9_dimmer_pot_4.png
     :width: 200
     :align: center
 
@@ -84,14 +84,14 @@ Now let's explore how the potentiometer adjusts resistance in a circuit.
 .. note::
     The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
 
-.. image:: img/5_dimmer_test_pot.png
+.. image:: img/9_dimmer_test_pot.png
     :width: 500
     :align: center
 
 
 3. To measure the resistance of the potentiometer, you need to insert a wire into 29J and then touch it with the red test lead, and insert another wire into 28J and touch it with the black lead.
 
-.. image:: img/5_dimmer_test_wore.png
+.. image:: img/9_dimmer_test_wore.png
     :width: 500
     :align: center
 
@@ -103,7 +103,7 @@ Now let's explore how the potentiometer adjusts resistance in a circuit.
 
 5. Rotate the potentiometer to the "1" position indicated in the diagram.
 
-.. image:: img/5_pot_direction.png
+.. image:: img/9_pot_direction.png
     :width: 300
     :align: center
     
@@ -147,44 +147,44 @@ From the measurement results:
 
 8. Insert the other end of the jumper wire from 28J into the negative terminal of the breadboard.
 
-.. image:: img/5_dimmer_led1_pot_gnd.png
+.. image:: img/9_dimmer_led1_pot_gnd.png
     :width: 500
     :align: center
 
-9. Then, insert the other end of the jumper wire from 29J into the A0 pin of the R3 board.
+9. Then, insert the other end of the jumper wire from 29J into the A0 pin of the Arduino Uno R3.
 
-.. image:: img/5_dimmer_led1_pot_a0.png
+.. image:: img/9_dimmer_led1_pot_a0.png
     :width: 500
     :align: center
 
-10. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the R3 board.
+10. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the Arduino Uno R3.
 
-.. image:: img/5_dimmer_led1_pot_5v.png
+.. image:: img/9_dimmer_led1_pot_5v.png
     :width: 500
     :align: center
 
 
-11. Connect the GND pin of the R3 board to the negative terminal of the breadboard using a long jumper wire.
+11. Connect the GND pin of the Arduino Uno R3 to the negative terminal of the breadboard using a long jumper wire.
 
-.. image:: img/5_dimmer_led1_gnd.png
+.. image:: img/9_dimmer_led1_gnd.png
     :width: 500
     :align: center
 
 12. Take out an LED. Insert its anode (longer pin) into hole 13A, and its cathode (shorter pin) into the negative terminal of the breadboard.
 
-.. image:: img/5_dimmer_led1_led.png
+.. image:: img/9_dimmer_led1_led.png
     :width: 500
     :align: center
 
 13. Place a 220 ohms resistor between holes 13E and 13G.
 
-.. image:: img/5_dimmer_led1_resistor.png
+.. image:: img/9_dimmer_led1_resistor.png
     :width: 500
     :align: center
 
-14. Connect the hole 13J on the breadboard to pin 9 on the R3 board with a wire.
+14. Connect the hole 13J on the breadboard to pin 9 on the Arduino Uno R3 with a wire.
 
-.. image:: img/5_dimmer_led1_pin9.png
+.. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
@@ -214,7 +214,7 @@ Here's what the pseudocode might look like:
 1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
 2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson9_Desk_Lamp``. Click "Save".
 
-3. The LED in your circuit is connected to digital pin on the R3 board, set as output. Remember to add a comment.
+3. The LED in your circuit is connected to digital pin on the Arduino Uno R3, set as output. Remember to add a comment.
 
 
 .. note::
@@ -239,7 +239,7 @@ To control the fading of LED using a potentiometer, you need a **variable** to s
 
 Let's dive into the concept of variables in programming. A variable acts like a container in your program, allowing you to store and later retrieve information.
 
-.. image:: img/5_variable_define.png
+.. image:: img/9_variable_define.png
     :width: 400
     :align: center
 
@@ -257,13 +257,13 @@ Variable names can be anything you choose, such as ``i``, ``apple``, ``Bruce``, 
 
 * Names can include letters, digits, and underscores, but not spaces or special characters like !, #, %, etc.
 
-  .. image:: img/5_variable_name1.png
+  .. image:: img/9_variable_name1.png
     :width: 400
     :align: center
 
 * Names must start with a letter or an underscore (_). They cannot begin with a number.
 
-  .. image:: img/5_variable_name2.png
+  .. image:: img/9_variable_name2.png
     :width: 400
     :align: center
 
@@ -318,7 +318,7 @@ You have just declared an integer variable named ``potValue`` and set it to zero
 
 You're now ready to enter the main loop of the program. The first thing you'll do in the ``void loop()`` function is determine the value of the potentiometer.
 
-The potentiometer is connected to a 5-volt power pin, allowing the voltage at pin A0 to range from 0 to 5 volts. This voltage is then converted by the R3 board's microprocessor into an analog value ranging from 0 to 1023, thanks to the microprocessor's 10-bit resolution.
+The potentiometer is connected to a 5-volt power pin, allowing the voltage at pin A0 to range from 0 to 5 volts. This voltage is then converted by the Arduino Uno R3's microprocessor into an analog value ranging from 0 to 1023, thanks to the microprocessor's 10-bit resolution.
 
 Once converted, these analog values can be utilized within your program.
 
@@ -359,9 +359,9 @@ Make sure to save and verify your code to correct any errors.
 
 **Writing Analog Values**
 
-The digital pins on the R3 board are capable of either ON or OFF states, meaning they can't output true analog values. To simulate analog behavior for applications like controlling LED brightness, we use a technique called Pulse Width Modulation (PWM). PWM pins, which are marked with a tilde (~) on the board, can vary the perceived output by adjusting the duty cycle of the signal.
+The digital pins on the Arduino Uno R3 are capable of either ON or OFF states, meaning they can't output true analog values. To simulate analog behavior for applications like controlling LED brightness, we use a technique called Pulse Width Modulation (PWM). PWM pins, which are marked with a tilde (~) on the board, can vary the perceived output by adjusting the duty cycle of the signal.
 
-.. image:: img/5_dimmer_pwm_pin.png
+.. image:: img/9_dimmer_pwm_pin.png
     :width: 500
     :align: center
 
@@ -411,7 +411,7 @@ Think of the duty cycle like a faucet's on and off pattern that controls water f
         analogWrite(9, potValue / 4);       // Apply brightness to LED on pin 9
     }
 
-7. Once the code is uploaded to the R3 board, turning the potentiometer will change the brightness of the LEDs. According to our setup, turning the potentiometer clockwise should increase the brightness, while turning it counterclockwise should decrease it.
+7. Once the code is uploaded to the Arduino Uno R3, turning the potentiometer will change the brightness of the LEDs. According to our setup, turning the potentiometer clockwise should increase the brightness, while turning it counterclockwise should decrease it.
 
 .. note::
 

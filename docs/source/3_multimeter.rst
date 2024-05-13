@@ -52,6 +52,25 @@ This image shows the setting for measuring alternating current (AC) voltage. AC 
     :width: 300
     :align: center
 
+
+**Transistors**
+
+The hFE NPN PNP setting is for measuring transistors. You will not use this setting in this course.
+
+.. image:: img/multimeter_hfe.png
+    :width: 300
+    :align: center
+
+
+**1.5V mA**
+
+
+The "1.5V mA" setting on a meter is used to measure the current at a 1.5V voltage level, typically for testing how much current a circuit or device draws at this voltage
+
+.. image:: img/multimeter_1.5v.png
+    :width: 300
+    :align: center
+
 **Current**
 
 For measuring current, the multimeter has settings for 200μ (200 microamp), 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
@@ -80,13 +99,7 @@ For measuring currents up to 10 amperes, you must insert the red test lead into 
 
 **Measuring Method**: To measure the current in a circuit, the multimeter must be inserted into the circuit. In other words, it must become part of the circuit. This is different from measuring voltage or resistance, which can be done by across a component in the circuit. You will have the opportunity to make these measurements later when you start building circuits.
 
-**Transistors**
 
-The hFE NPN PNP setting is for measuring transistors. You will not use this setting in this course.
-
-.. image:: img/multimeter_hfe.png
-    :width: 300
-    :align: center
 
 **Continuity**
 
@@ -156,7 +169,7 @@ Before using the multimeter, you need to install the battery and connect the two
   .. raw:: html
 
       <video width="600" loop autoplay muted>
-          <source src="_static/video/multimeter_battery.mp4" type="video/mp4">
+          <source src="_static/video/3_multimeter_battery.mp4" type="video/mp4">
           Your browser does not support the video tag.
       </video>
 
@@ -218,6 +231,8 @@ You have measured the voltage in the circuit. Next, you will measure the current
 1. For current measurement, the multimeter needs to be integrated into the circuit's flow path, essentially becoming a segment of the circuit's conductive route. A straightforward method involves adjusting the LED's placement: keep the LED's anode in hole 1F while shifting its cathode (the shorter leg) from hole 1E to hole 3E.
 
 .. image:: img/3_measure_current.png
+  :width: 600
+  :align: center
 
 2. Set the multimeter to the 200 milliamps position.
 
@@ -269,7 +284,6 @@ You have measured the voltage in the circuit. Next, you will measure the current
      -
 
 6. Put the LED back in its original position, with the anode in hole 1F and the cathode in hole 1E.
-
 
 **Calculating Total Resistance**
 
@@ -336,7 +350,7 @@ Using the formula above, with the voltage and current you measured, you can calc
 
 Now that we've figured out the circuit's total resistance, it's time to see how much of it is because of the resistor and how much is due to the LED. Our resistor is marked as 220 ohms, but with a 5% tolerance, it could actually be anywhere from 209 to 231 ohms. Let's use the multimeter to find out its exact value.
 
-1. When measuring resistance, your multimeter has to act as the only source of voltage; make sure there are no other power sources connected to the circuit. So, unplug any jumper wires from the R3 board to ensure the breadboard is isolated.
+1. When measuring resistance, your multimeter has to act as the only source of voltage; make sure there are no other power sources connected to the circuit. So, unplug any jumper wires from the Arduino Uno R3 to ensure the breadboard is isolated.
 
 .. image:: img/3_measure_resistance.png
   :width: 600
@@ -369,8 +383,9 @@ We've taken a hands-on journey through the essentials of using a multimeter to m
 
 **Question:**
 
-1. Now that we can measure voltage, current, and calculate resistance, what change in LED brightness might occur if we switch the wire from the R3 board's 5V pin to the 3.3v pin? Measure the current in the circuit now to verify your answer.
+1. Now that we can measure voltage, current, and calculate resistance, what change in LED brightness might occur if we switch the wire from the Arduino Uno R3's 5V pin to the 3.3v pin? Measure the current in the circuit now to verify your answer.
 
 .. image:: img/3_multimeter_3.3v.png
-
+  :width: 600
+  :align: center
 

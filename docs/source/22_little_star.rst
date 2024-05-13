@@ -70,7 +70,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Breadboard
      - 1 * Passive Buzzer
      - Jumper Wires
@@ -79,11 +79,11 @@ Building the Circuit
      - |compoents_passive_buzzer| 
      - |compoents_wire| 
    * - 1 * USB Cable
-     - 1 * Multimeter
+     -
      - 
      - 
    * - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
      - 
      - 
 
@@ -159,7 +159,7 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
     // put your main code here, to run repeatedly:
   }
 
-5. After uploading the code to the R3 board, open the serial monitor, and you will see two 262s.
+5. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see two 262s.
 
 .. code-block::
 
@@ -215,7 +215,7 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
     // put your main code here, to run repeatedly:
   }
 
-8. After uploading the code to the R3 board, open the serial monitor, and you will see the elements in the array ``melody[]`` printed one by one.
+8. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see the elements in the array ``melody[]`` printed one by one.
 
 .. code-block::
 
@@ -336,7 +336,7 @@ Now that we have a solid understanding of creating arrays, accessing array eleme
     }
   }
 
-9. Your complete code is shown below, and once you upload the code to the R3 board, you will be able to hear the buzzer playing "Twinkle Twinkle Little Star".
+9. Your complete code is shown below, and once you upload the code to the Arduino Uno R3, you will be able to hear the buzzer playing "Twinkle Twinkle Little Star".
 
 .. code-block:: Arduino
 

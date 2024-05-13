@@ -20,7 +20,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
@@ -50,55 +50,49 @@ Building the Circuit
 
 Follow the wiring diagram, or the steps below to build your circuit.
 
-.. image:: img/4.2_traffic_wiring_bb_5.png
+.. image:: img/8_traffic_light_button.png
     :width: 600
     :align: center  
 
 1. Start with the traffic light circuit from the previous lesson.
 
-.. image:: img/4_traffic_wiring_bb.png
+.. image:: img/7_traffic_light.png
     :width: 600
     :align: center
 
 2. Find a push button. 
 
-.. image:: img/4.2_traffic_button.png
+.. image:: img/8_traffic_button.png
     :width: 500
     :align: center
 
 Buttons are ubiquitous components in electronics, acting as switches to make or break circuits. Below is the internal structure of a button, with its common symbol used in circuit diagrams.
 
-.. image:: img/4.2_traffic_button_symbol.png
+.. image:: img/8_traffic_button_symbol.png
     :width: 500
     :align: center
 
 Though buttons have four pins, pins 1 and 2 are connected, as are pins 3 and 4. Pressing the button connects all four pins, closing the circuit.
 
-3. Insert the button into the breadboard across the middle gap, with pins in holes 25e, 25f, 27e, and 27f. 
+3. Insert the button into the breadboard across the middle gap, with pins in holes 18e, 18f, 20e, and 20f. 
 
 .. note::
 
     If you're unsure how to insert the button, try both orientations. One way, the pin spacing will be slightly too narrow to fit.
 
-.. image:: img/4.2_traffic_wiring_bb_1.png
+.. image:: img/8_traffic_light_button_button.png
     :width: 600
     :align: center
 
-4. Connect the button's top-right pin to digital pin 8 on the R3 board with a long jumper wire, inserting one end into hole 25j and the other into pin 8.
+4. Connect the button's top-right pin to digital pin 8 on the Arduino Uno R3 with a long jumper wire, inserting one end into hole 18j and the other into pin 8.
 
-.. image:: img/4.2_traffic_wiring_bb_2.png
+.. image:: img/8_traffic_light_button_pin8.png
     :width: 600
     :align: center
 
-5. Connect the button's bottom-right pin to the breadboard's positive rail with a short jumper wire, inserting one end into hole 27j and the other into the positive rail.
+5. Place a 10K Ohm resistor between the button's top-left pin and ground, connecting one end to hole 18a and the other to the breadboard's negative rail. This resistor pulls pin 8 to ground, stabilizing it at LOW when the button is not pressed.
 
-.. image:: img/4.2_traffic_wiring_bb_3.png
-    :width: 600
-    :align: center
-
-6. Place a 10K Ohm resistor between the button's top-left pin and ground, connecting one end to hole 25a and the other to the breadboard's negative rail. This resistor pulls pin 8 to ground, stabilizing it at LOW when the button is not pressed.
-
-    .. image:: img/4.2_traffic_wiring_bb_4.png
+    .. image:: img/8_traffic_light_button_10k.png
         :width: 600
         :align: center
 
@@ -108,9 +102,9 @@ If without the 10K resistor, pin 8 connects only to the button, floating between
 
 The 10K resistor connected from pin 8 to ground pulls the pin's voltage down to ground level, ensuring it reads as LOW when the button is unpressed.
 
-7. Lastly, power the button by connecting the breadboard's positive rail to the R3 board's 5V pin with a red power wire.
+6. Lastly, power the button by connecting the breadboard's positive rail to the Arduino Uno R3's 5V pin with a red power wire.
 
-.. image:: img/4.2_traffic_wiring_bb_5.png
+.. image:: img/8_traffic_light_button.png
     :width: 600
     :align: center
 
@@ -158,11 +152,11 @@ So far, you've programmed the traffic lights to sequentially flash green, yellow
         delay(10000);           // Wait for 10 seconds
     }
 
-3. After coding, verify your sketch and upload the code to the R3 board.
+3. After coding, verify your sketch and upload the code to the Arduino Uno R3.
 
 **Measuring Voltage at Pin 8**
 
-We already know how the LEDs section of our circuit works from the previous lesson. Each LED, acting as an output, is controlled by different pins on the R3 board.
+We already know how the LEDs section of our circuit works from the previous lesson. Each LED, acting as an output, is controlled by different pins on the Arduino Uno R3.
 
 However, the button connected to pin 8 on the board is different. It's an input device. Pin 8 will read incoming voltage instead of sending voltage out.
 
@@ -176,7 +170,7 @@ Let's use a multimeter to test the voltage at pin 8 when the button is pressed a
 
 2. When the button is not pressed, measure the voltage at pin 8. Touch the red test lead of the multimeter to pin 8 and the black test lead to GND.
 
-.. image:: img/4.2_traffic_voltage.png
+.. image:: img/8_traffic_voltage.png
     :width: 600
     :align: center
 
@@ -198,7 +192,7 @@ Let's use a multimeter to test the voltage at pin 8 when the button is pressed a
 
 4. Have your friend help you press the button, then continue measuring the voltage at pin 8.
 
-.. image:: img/4.2_traffic_voltage.png
+.. image:: img/8_traffic_voltage.png
     :width: 600
     :align: center
 
@@ -270,7 +264,7 @@ In the Arduino IDE, a conditional statement looks like this:
             commands to run when the condition is true 
         }
 
-The ``condition`` is within parentheses, using comparison operators to compare two or more values. These values can be numbers, variables, or inputs coming into the R3 board.
+The ``condition`` is within parentheses, using comparison operators to compare two or more values. These values can be numbers, variables, or inputs coming into the Arduino Uno R3.
 
 Here's a list of comparison operators and how they're used in the condition part of an if statement:
 
@@ -443,7 +437,7 @@ Your sketch should look something like this:
         }
     }
 
-Upload your code to the R3 board. Once the sketch is fully transferred, the code will execute.
+Upload your code to the Arduino Uno R3. Once the sketch is fully transferred, the code will execute.
 
 Observe the behavior of your traffic light. Press the button and wait for the traffic light to complete its cycle. Does the pedestrian green light blink? When the button is released, does the traffic light return to its normal operation mode? If not, make adjustments to your sketch and re-upload it to the R3.
 

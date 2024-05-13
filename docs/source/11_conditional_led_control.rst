@@ -15,7 +15,7 @@ Build the circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 3 * Red LEDs
      - 3 * 220Ω Resistor
      - 1 * Potentiometer
@@ -46,7 +46,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
 .. note::
     The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
 
-.. image:: img/5_dimmer_test_pot.png
+.. image:: img/11_dimmer_test_pot.png
     :width: 500
     :align: center
 
@@ -56,20 +56,20 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-3. Then, insert a jumper wire between hole 29J and the A0 pin of the R3 board.
+3. Then, insert a jumper wire between hole 29J and the A0 pin of the Arduino Uno R3.
 
 .. image:: img/11_conditional_led_control_a0.png
     :width: 500
     :align: center
 
-4. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the R3 board.
+4. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the Arduino Uno R3.
 
 .. image:: img/11_conditional_led_control_5v.png
     :width: 500
     :align: center
 
 
-5. Connect the GND pin of the R3 board to the negative terminal of the breadboard using a long jumper wire.
+5. Connect the GND pin of the Arduino Uno R3 to the negative terminal of the breadboard using a long jumper wire.
 
 .. image:: img/11_conditional_led_control_gnd.png
     :width: 500
@@ -93,19 +93,19 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-6. Connect the hole 15J on the breadboard to pin 11 on the R3 board with a wire.
+6. Connect the hole 15J on the breadboard to pin 11 on the Arduino Uno R3 with a wire.
 
 .. image:: img/11_conditional_led_control_p11.png
     :width: 500
     :align: center
 
-7. Connect the hole 11J on the breadboard to pin 10 on the R3 board with a wire.
+7. Connect the hole 11J on the breadboard to pin 10 on the Arduino Uno R3 with a wire.
 
 .. image:: img/11_conditional_led_control_p10.png
     :width: 500
     :align: center
 
-8. Connect the hole 7J on the breadboard to pin 9 on the R3 board with a wire. Your circuit is now complete.
+8. Connect the hole 7J on the breadboard to pin 9 on the Arduino Uno R3 with a wire. Your circuit is now complete.
 
 .. image:: img/11_conditional_led_control_p9.png
     :width: 500
@@ -197,7 +197,7 @@ Code Creation
 
 9. Validate and compile your code if necessary.
 
-10. Once the code is uploaded to the R3 board, you'll notice that rotating the potentiometer causes the value displayed in the serial monitor to vary between 0 and 1023. This range is ideal, though due to manufacturing variances, your potentiometer might show a range from 50 to 1000. Just remember this range for reference.
+10. Once the code is uploaded to the Arduino Uno R3, you'll notice that rotating the potentiometer causes the value displayed in the serial monitor to vary between 0 and 1023. This range is ideal, though due to manufacturing variances, your potentiometer might show a range from 50 to 1000. Just remember this range for reference.
 
 
 **Control LEDs with Potentiometer Values**
@@ -302,7 +302,7 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
         digitalWrite(11, HIGH);  // Light up the LED on pin 11
     }
 
-15. Your complete code is as follows. Click "Upload" to send the code to your R3 board.
+15. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
 
 16. Rotate the potentiometer to see if the LED array functions as expected:
 

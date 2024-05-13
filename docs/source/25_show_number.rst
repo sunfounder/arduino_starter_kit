@@ -24,7 +24,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 74HC595
@@ -35,11 +35,11 @@ Building the Circuit
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-     - 1 * Multimeter
+     -
    * - |compoents_breadboard| 
      - |compoents_wire| 
      - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
 
 **Building Step-by-Step**
 
@@ -91,31 +91,31 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-8. Connect the DS pin of the 74HC595 to pin 11 of the R3 board.
+8. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
 
 .. image:: img/25_show_number_pin11.png
     :width: 500
     :align: center
 
-9. Connect the ST_CP pin of the 74HC595 to pin 12 of the R3 board.
+9. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
 
 .. image:: img/25_show_number_pin12.png
     :width: 500
     :align: center
 
-10. Connect the SH_CP pin of the 74HC595 to pin 8 of the R3 board.
+10. Connect the SH_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
 
 .. image:: img/25_show_number_pin8.png
     :width: 500
     :align: center
 
-11. Finally, connect the GND and 5V pins of the R3 board to the negative and positive rails on the breadboard, respectively.
+11. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
 
 .. image:: img/25_show_number.png
     :width: 500
     :align: center
 
-12. The following tables shows the pin connections between the 74HC595, the R3 board, the7-segment Display.
+12. The following tables shows the pin connections between the 74HC595, the Arduino Uno R3, the7-segment Display.
 
 .. list-table::
     :widths: 20 20
@@ -249,7 +249,7 @@ Code Creation - Displaying Numbers
         }
     }
 
-5. Your complete code should look like the following. At this point, you can upload the code to the R3 board, and you'll see the 7-segment display scrolling through digits 0 to 9.
+5. Your complete code should look like the following. At this point, you can upload the code to the Arduino Uno R3, and you'll see the 7-segment display scrolling through digits 0 to 9.
 
 
 .. code-block:: Arduino
@@ -378,7 +378,7 @@ Please convert the binary numbers representing digits 0 to 9 into decimal and he
 
 Now, open your ``Lesson25_Show_Number_Binary`` sketch in the Arduino IDE. Click "File" -> "Save As...", name the file ``Lesson25_Show_Number_Decimal``. Click "Save".
 
-Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once modified, you can upload the code to the R3 board to see the effect.
+Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once modified, you can upload the code to the Arduino Uno R3 to see the effect.
 
 .. code-block:: Arduino
 
@@ -456,7 +456,7 @@ Now, use an ``if`` statement in void ``loop()`` to check if data has been read f
         // }
     }
 
-4. Your complete code is shown below. At this point, you can upload the code to the R3 board.
+4. Your complete code is shown below. At this point, you can upload the code to the Arduino Uno R3.
 
 .. code-block:: Arduino
 
@@ -595,7 +595,7 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
         }
     }
 
-10. Your complete code should be as follows. You can now upload the code to the R3 board and open the Serial Monitor. Enter any number between 0 and 9 to see if the 7-segment display shows the corresponding number.
+10. Your complete code should be as follows. You can now upload the code to the Arduino Uno R3 and open the Serial Monitor. Enter any number between 0 and 9 to see if the 7-segment display shows the corresponding number.
 
 .. code-block:: Arduino
 
@@ -636,7 +636,7 @@ In ASCII, the code for the character ``0`` is ``48`` in decimal.
 
 **Summary**
 
-In this lesson, you learned how to use the 74HC595 shift register to drive a 7-segment display and reduce the number of pins required on the R3 board. You also explored the binary representations for digits to be displayed and understood how to convert binary numbers to decimal and hexadecimal formats, making the code more readable.
+In this lesson, you learned how to use the 74HC595 shift register to drive a 7-segment display and reduce the number of pins required on the Arduino Uno R3. You also explored the binary representations for digits to be displayed and understood how to convert binary numbers to decimal and hexadecimal formats, making the code more readable.
 
 Additionally, you learned how to use the Serial Monitor for serial input and how the input characters are internally converted to ASCII codes. By understanding this conversion, you could map characters to their numeric equivalents, enabling accurate display on the 7-segment display.
 

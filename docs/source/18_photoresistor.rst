@@ -28,7 +28,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Photoresistor
      - 1 * 10KΩ Resistor
      - 1 * Active Buzzer
@@ -145,7 +145,7 @@ The kit includes a resistor rated at 10K at 25°C. Now, use a multimeter to meas
 
 From the measurements, we have confirmed the photoconductive properties of the photoresistor: the stronger the light, the lower the resistance; the dimmer the light, the higher the resistance, which can reach several megaohms.
 
-9. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the R3 board.
+9. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the Arduino Uno R3.
 
 .. image:: img/17_light_alarm_a0.png
     :width: 500
@@ -163,7 +163,7 @@ When the light is enhanced, the resistance of the photoresistor decreases, then 
 
 If you place the photoresistor in a dark situation, the value of the A0 pin will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 5V (the 10K resistor becomes negligible), and the value of the A0 pin will be close to 1023.
 
-11. Connect the other pin of the 10K resistor to the 5V pin on the R3 board.
+11. Connect the other pin of the 10K resistor to the 5V pin on the Arduino Uno R3.
 
 .. image:: img/17_light_alarm_5v.png
     :width: 500
@@ -175,7 +175,7 @@ If you place the photoresistor in a dark situation, the value of the A0 pin will
     :width: 500
     :align: center
 
-13. Finally, connect the negative terminal of the breadboard to the GND pin on the R3 board with a jumper wire.
+13. Finally, connect the negative terminal of the breadboard to the GND pin on the Arduino Uno R3 with a jumper wire.
 
 
 .. image:: img/17_light_alarm.png
@@ -258,7 +258,7 @@ Code Creation
         }
     }
 
-8. Here is your complete code. You can now click "Upload" to upload the code to the R3 board.
+8. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
 
 .. code-block:: Arduino
 

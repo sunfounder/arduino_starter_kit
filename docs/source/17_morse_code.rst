@@ -30,7 +30,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Active Buzzer
      - 1 * Breadboard
      - Jumper Wires
@@ -39,11 +39,11 @@ Building the Circuit
      - |compoents_breadboard| 
      - |compoents_wire| 
    * - 1 * USB Cable
-     - 1 * Multimeter
+     -
      - 
      - 
    * - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
      - 
      - 
 
@@ -78,19 +78,19 @@ Open at the back, passive buzzers require an external frequency signal from a mi
     :width: 500
     :align: center
 
-2. Connect the cathode to the GND pin on the R3 board.
+2. Connect the cathode to the GND pin on the Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-3. If you insert the anode of the buzzer into the 5V pin of the R3 board, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
+3. If you insert the anode of the buzzer into the 5V pin of the Arduino Uno R3, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the R3 board, so that the buzzer can be controlled with code.
+4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -146,7 +146,7 @@ Code Creation
         delay(250);                     // Interval between signals: 250 milliseconds
     }
 
-6. You can upload your code to the R3 board, and then you will hear the "beep beep" sound.
+6. You can upload your code to the Arduino Uno R3, and then you will hear the "beep beep" sound.
 
 
 7. To make the buzzer emit Morse code, you need to create two functions after ``void loop()``, for emitting dots (short signals) and dashes (long signals).
@@ -207,7 +207,7 @@ Code Creation
         delay(750);  // Repeat after a period
     }
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the R3 board, after which you will hear the Morse code for "SOS" (... --- ...).
+9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3, after which you will hear the Morse code for "SOS" (... --- ...).
 
 .. code-block:: Arduino
 

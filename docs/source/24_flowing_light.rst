@@ -73,7 +73,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 8 * LEDs
      - 8 * 220Ω Resistor
      - 1 * 74HC595
@@ -84,11 +84,11 @@ Building the Circuit
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-     - 1 * Multimeter
+     -
    * - |compoents_breadboard| 
      - |compoents_wire| 
      - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
 
 **Building Step-by-Step**
 
@@ -141,31 +141,31 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-7. Connect the DS pin of the 74HC595 to pin 11 of the R3 board.
+7. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin11.png
     :width: 600
     :align: center
 
-8. Connect the ST_CP pin of the 74HC595 to pin 12 of the R3 board.
+8. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin12.png
     :width: 600
     :align: center
 
-9. Connect the Sh_CP pin of the 74HC595 to pin 8 of the R3 board.
+9. Connect the Sh_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin8.png
     :width: 600
     :align: center
 
-10. Finally, connect the GND and 5V pins of the R3 board to the negative and positive rails on the breadboard, respectively.
+10. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
 
 .. image:: img/24_flow_light.png
     :width: 600
     :align: center
 
-11. The following table shows the pin connections between the 74HC595 and the R3 board.
+11. The following table shows the pin connections between the 74HC595 and the Arduino Uno R3.
 
 
 .. list-table::
@@ -195,7 +195,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
 Code Creation - Lighting Up LEDs
 --------------------------------------------
 
-The R3 board sends groups of binary data to the 74HC595 chip.
+The Arduino Uno R3 sends groups of binary data to the 74HC595 chip.
 Binary data forms the core of computers and many electronic devices, using simple 0s and 1s to process complex data and instructions.
 In computer science and digital electronics, binary data is vital as it forms the foundation for information processing and storage in electronic computers.
 Here, 0 and 1 can be seen as states of a switch, where 0 represents off (closed), and 1 represents on (open).
@@ -286,7 +286,7 @@ Let's now see how the 74HC595 receives binary data and outputs it to the LEDs!
     :width: 300
     :align: center
 
-7. Here's your complete code. You can now upload this code to the R3 board. After that, you will see the LEDs connected to Q0 and Q4 turned off while other LEDs are lit.
+7. Here's your complete code. You can now upload this code to the Arduino Uno R3. After that, you will see the LEDs connected to Q0 and Q4 turned off while other LEDs are lit.
 
 .. code-block:: Arduino
 
@@ -348,7 +348,7 @@ How would we implement a flowing light effect, where the LEDs light up one by on
         }
     }
 
-5. Your complete code is shown below. You can now upload this code to the R3 board, and then you'll see the LEDs light up one by one, like a flowing light.
+5. Your complete code is shown below. You can now upload this code to the Arduino Uno R3, and then you'll see the LEDs light up one by one, like a flowing light.
 
 
 .. code-block:: Arduino

@@ -12,14 +12,11 @@ Now, let's learn how to send our awesome sketch to the Arduino board. It's like 
 
 **2. Choose Your Board and Port**
 
-1. Connect your R3 board to your computer with a USB cable. It's like plugging in a secret doorway to endless possibilities!
+1. Connect your Arduino Uno R3 to your computer with a USB cable. It's like plugging in a secret doorway to endless possibilities!
 
-  .. raw:: html
-
-      <video width="600" loop autoplay muted>
-          <source src="_static/video/connect_board.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-      </video>
+    .. image:: img/1_connect_uno_pc.jpg
+        :width: 600
+        :align: center
 
 2. Now, let's tell the IDE we're using an **Arduino Uno**. Click **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
 

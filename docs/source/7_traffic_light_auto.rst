@@ -21,7 +21,7 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
@@ -37,97 +37,68 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
      - |compoents_breadboard| 
      - |compoents_220ohm| 
      - |compoents_wire| 
-   * - 1 * Multimeter
-     - 
-     - 
-     - 
-   * - |compoents_meter| 
-     - 
-     - 
-     - 
+
 
 
 **Building Step-by-Step**
 
 Let's put everything together, just like building a LEGO set!
 
-.. image:: img/4_traffic_wiring_bb.png
+.. image:: img/7_traffic_light.png
     :width: 600
     :align: center
 
-1. Grab a jumper wire and connect pin 5 on the Arduino to hole 17J on the breadboard. This is where the red light will live.
+1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
 
-.. image:: img/4_traffic_wiring_bb_1.png
+.. image:: img/7_traffic_light_resistor.png
     :width: 600
     :align: center
 
+2. Add a Green LED to the breadboard. The LED's anode (long lead) should be in hole 1F. The cathode (short leg) should be in hole 1E.
 
-2. Pop the red LED into holes 17F and 17E. Make sure the longer leg (that's the anode) goes into 17F.
-
-.. image:: img/4_traffic_wiring_bb_2.png
+.. image:: img/7_traffic_light_green.png
     :width: 600
     :align: center
 
+3. Connect the green LED to pin 3 of the Arduino Uno R3 with a wire. Insert a jumper wire in hole 1J and the other end of the jumper wire into pin 3 of the Arduino Uno R3.
 
-3. Place a 220 Ohm resistor with one end in hole 17A and the other end going to the negative side. This keeps the red light safe from too much electricity.
-
-.. image:: img/4_traffic_wiring_bb_3.png
+.. image:: img/7_traffic_light_pin3.png
     :width: 600
     :align: center
 
+4. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
 
-4. Use another wire to connect pin 4 on the Arduino to hole 10J for the yellow light.
-
-.. image:: img/4_traffic_wiring_bb_4.png
+.. image:: img/7_traffic_light_yellow_resistor.png
     :width: 600
     :align: center
 
+5. Take a Yellow LED. The LED's anode (long Lead) should be in hole 6F. The cathode (short lead) should be in hole 6E.
 
-5. Get the yellow LED in place with its longer leg in 10F and the shorter one in 10E.
-
-.. image:: img/4_traffic_wiring_bb_5.png
+.. image:: img/7_traffic_light_yellow.png
     :width: 600
     :align: center
 
+6. Connect the yellow LED to pin 4 of the Arduino Uno R3.
 
-6. Attach another 220 Ohm resistor from hole 10A to the negative side, just like we did with red.
-
-.. image:: img/4_traffic_wiring_bb_6.png
+.. image:: img/7_traffic_light_pin4.png
     :width: 600
     :align: center
 
+7. Connect the red LED in the same way, the red LED is connected to pin 5 of the Arduino Uno R3.
 
-7. Connect digital pin 3 to hole 3J with a jumper wire. Green light is getting ready!
-
-.. image:: img/4_traffic_wiring_bb_7.png
+.. image:: img/7_traffic_light_red.png
     :width: 600
     :align: center
 
+8. Oops! We almost forgot to ground the circuit. Connect the breadboard's negative side to a GND pin on the Arduino Uno R3 with a black wire. Now, it's all set!
 
-8. Place the green LED, anode to 3F, cathode to 3E. Green means go!
-
-.. image:: img/4_traffic_wiring_bb_8.png
+.. image:: img/7_traffic_light.png
     :width: 600
     :align: center
-
-
-9. Connect the green LED to ground with its own 220 Ohm resistor from hole 3A to the negative terminal.
-
-.. image:: img/4_traffic_wiring_bb_9.png
-    :width: 600
-    :align: center
-
-
-10. Oops! We almost forgot to ground the circuit. Connect the breadboard's negative side to a GND pin on the R3 Board with a black wire. Now, it's all set!
-
-.. image:: img/4_traffic_wiring_bb.png
-    :width: 600
-    :align: center
-
 
 .. note::
 
-    There are three GND pins on the R3 Board. You can use any of them; they all work the same way.
+    There are three GND pins on the Arduino Uno R3. You can use any of them; they all work the same way.
 
 And just like that, you've got a complete traffic light setup! Each colored light is controlled by its own switch on the R3, ready to tell cars when to stop, wait, or go. Isn't it awesome to build something that works like real traffic lights? Great job!
 

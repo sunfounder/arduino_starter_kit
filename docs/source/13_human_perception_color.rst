@@ -8,13 +8,13 @@ The human visual system can perceive about ten million different colors, a capab
 
 The human eye perceives about ten million different colors, thanks to specialized cells in the retina called cones and rods. This perception isn't uniform across the spectrum; we're more sensitive to changes in some colors than others. Cones, which detect color, are predominantly sensitive to red, green, or blue wavelengths.
 
-.. image:: img/6_mix_eyeballjpg.jpg
+.. image:: img/13_mix_eyeballjpg.jpg
 
 The RGB color model is an additive color model where colors are created by mixing varying intensities of red, green, and blue light. In this model, red, green, and blue are typically considered primary color channels. By adjusting the intensity of each channel (from 0 to a maximum value, typically 255 corresponding to an 8-bit color depth), it is possible to produce a visible spectrum of over 16 million different colors. For instance, orange can be achieved by mixing more red with less green.
 
 The RGB color model uses an additive approach, mixing red, green, and blue light to create a broad array of colors. This model reflects how our visual system combines light from different parts of the spectrum to form diverse hues. By manipulating the intensity of these three primary colors, we can generate over 16 million distinct colors. For example, by increasing red and decreasing green, we achieve orange.
 
-.. image:: img/6_mix_orange.jpg
+.. image:: img/13_mix_orange.jpg
 
 In this interactive lesson, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
 
@@ -35,7 +35,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
@@ -45,16 +45,16 @@ Building the Circuit
      - |compoents_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
-     - 1 * Multimeter
+     -
      -
    * - |compoents_usb_cable| 
      - |compoents_breadboard| 
-     - |compoents_meter|
+     -
      -
 
 This lesson uses the same circuit as Lesson 12.
 
-.. image:: img/6_mix_color_bb_4.png
+.. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
@@ -100,7 +100,7 @@ Let's see how we can implement this with code.
         analogWrite(11, 255);  // Set the PWM value of Red pin to 255
     }
 
-5. With this setup, after uploading the code to the R3 board, you will see the RGB LED display red.
+5. With this setup, after uploading the code to the Arduino Uno R3, you will see the RGB LED display red.
 
 6. The ``analogWrite()`` function allows the RGB LED to display not only the seven basic colors but many other different hues. Now you can adjust the values of pins 9, 10, and 11 separately, and record the observed colors in your handbook.
 
@@ -193,7 +193,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
 
 6. We already know that by providing different values to the three pins of the RGB LED, we can light up different colors of light. So, how do we make the RGB LED light up exactly the color we want? This requires the aid of a color palette. Open **Paint** (this software comes with Windows) or any drawing software on your personal computer.
 
-.. image:: img/6_mix_color_paint.png
+.. image:: img/13_mix_color_paint.png
 
 7. Choose a color you like, record its RGB values.
 
@@ -201,7 +201,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
 
     Note that before you select a color, adjust the lumens to the proper position.
 
-.. image:: img/6_mix_color_paint_2.png
+.. image:: img/13_mix_color_paint_2.png
 
 8. Fill in the color you selected into the ``setColor()`` function in the ``void loop()``, use the ``delay()`` function to specify the display time for each color.
 
@@ -221,7 +221,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
         delay(1000);              // Wait for 1 second
     }
 
-9. Below is the complete code; you can click "Upload" to upload the code to the R3 board to see the effects.
+9. Below is the complete code; you can click "Upload" to upload the code to the Arduino Uno R3 to see the effects.
 
 .. code-block:: Arduino
 

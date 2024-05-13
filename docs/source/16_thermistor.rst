@@ -25,7 +25,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * 10KΩ Resistor
@@ -54,19 +54,19 @@ Building the Circuit
 
 This circuit builds upon the one from Lesson 12 by adding a Thermistor.
 
-.. image:: img/18_temperature_alarm.png
+.. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
-1. Remove the jumper wire connecting the GND pin of the R3 board to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
 
-.. image:: img/18_temperature_alarm_gnd.png
+.. image:: img/16_temperature_alarm_gnd.png
     :width: 500
     :align: center
 
 2. Insert the Thermistor into holes 6E and 8E. The pins are non-directional and can be inserted freely.
 
-.. image:: img/18_temperature_alarm_thermistor.png
+.. image:: img/16_temperature_alarm_thermistor.png
     :width: 500
     :align: center
 
@@ -74,7 +74,7 @@ A thermistor is a special type of resistor whose resistance changes with tempera
 
 Here is the electronic symbol of thermistor.
 
-.. image:: img/thermistor_symbol.png
+.. image:: img/16_thermistor_symbol.png
     :width: 300
     :align: center
 
@@ -96,7 +96,7 @@ Now use a multimeter to measure the resistance of this thermistor to see if it i
 
 4. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
 
-.. image:: img/18_temperature_alarm_test.png
+.. image:: img/16_temperature_alarm_test.png
     :width: 500
     :align: center
 
@@ -149,20 +149,20 @@ Through these measurements, we can see that the higher the ambient temperature, 
 
 8. Now you can continue building the circuit. Connect one end of the thermistor to a 10K resistor, and the other end of the 10K resistor to the negative terminal of the breadboard.
 
-.. image:: img/18_temperature_alarm_resistor.png
+.. image:: img/16_temperature_alarm_resistor.png
     :width: 500
     :align: center
 
-9. Connect the other end of the breadboard to the 5V pin of the R3 board.
+9. Connect the other end of the breadboard to the 5V pin of the Arduino Uno R3.
 
-.. image:: img/18_temperature_alarm_5v.png
+.. image:: img/16_temperature_alarm_5v.png
     :width: 500
     :align: center
 
 
-10. Finally, connect the common pin of the photoresistor and the 10K resistor to the A0 pin of the R3 board.
+10. Finally, connect the common pin of the photoresistor and the 10K resistor to the A0 pin of the Arduino Uno R3.
 
-.. image:: img/18_temperature_alarm.png
+.. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
@@ -172,7 +172,7 @@ Understanding Temperature Calculation
 
 The resistance of an NTC thermistor changes with temperature. This relationship is usually accurately described by the Steinhart-Hart Equation, as follows:
 
-.. image:: img/9_format_steinhart.png
+.. image:: img/16_format_steinhart.png
     :width: 400
     :align: center
 
@@ -180,7 +180,7 @@ Here, a, b, and c are called the Steinhart–Hart parameters, which must be spec
 
 In addition to the Steinhart-Hart Equation, many practical applications also use a simplified formula based on the beta parameter (beta parameter) model to quickly calculate temperature. This model assumes that the relationship between resistance and temperature can be approximated by a simpler exponential relationship, thereby simplifying the calculation process and making it suitable for rapid temperature monitoring in engineering applications.
 
-.. image:: img/9_format_3.png
+.. image:: img/16_format_3.png
     :width: 400
     :align: center
 
@@ -202,7 +202,7 @@ We connect the thermistor and a 10K resistor in series in our circuit.
 
 The voltage at pin A0, which we measure, divided by the series resistor (the 10K resistor), tells us the current flowing through the circuit. This current can also be obtained by dividing the total voltage by the total resistance of the circuit (series resistor + thermistor):
 
-.. image:: img/9_format_1.png
+.. image:: img/16_format_1.png
     :width: 400
     :align: center
 
@@ -212,7 +212,7 @@ The voltage at pin A0, which we measure, divided by the series resistor (the 10K
 
 From these, we can rearrange the formula to find the resistance of the thermistor:
 
-.. image:: img/9_format_2.png
+.. image:: img/16_format_2.png
     :width: 400
     :align: center
 
@@ -368,7 +368,7 @@ Using constants instead of variables, which remain unchanged throughout the prog
         Serial.print(tempC);           // Display temperature in Celsius on Serial Monitor
     }
 
-10. At this point, you can upload the code to your R3 board and obtain the current Celsius temperature values.
+10. At this point, you can upload the code to your Arduino Uno R3 and obtain the current Celsius temperature values.
 
 .. code-block::
 
@@ -426,7 +426,7 @@ For example, we set three temperature ranges:
         delay(1000);  // Delay 1 second before next reading
     }
 
-13. Your complete code is now ready. You can now upload the code to your R3 board to see the effects.
+13. Your complete code is now ready. You can now upload the code to your Arduino Uno R3 to see the effects.
 
 
 .. code-block:: Arduino

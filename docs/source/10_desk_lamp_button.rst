@@ -23,7 +23,7 @@ Build the circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - 1 * Potentiometer
@@ -39,21 +39,14 @@ Build the circuit
      - |compoents_usb_cable| 
      - |compoents_breadboard| 
      - |compoents_wire| 
-   * - 1 * Multimeter
-     - 
-     - 
-     - 
-   * - |compoents_meter| 
-     - 
-     - 
-     - 
+
 
 
 **Building Steps**
 
 1. Start with the desk lamp circuit from the previous lesson.
 
-.. image:: img/5_dimmer_led1_pin9.png
+.. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
@@ -67,7 +60,7 @@ Build the circuit
     :width: 500
     :align: center
 
-3. Connect the button's buttom-left pin to digital pin 7 on the R3 board with a long jumper wire, inserting one end into hole 8J and the other into pin 7.
+3. Connect the button's buttom-left pin to digital pin 7 on the Arduino Uno R3 with a long jumper wire, inserting one end into hole 8J and the other into pin 7.
 
 .. image:: img/10_desk_lamp_button_p7.png
     :width: 500
@@ -100,9 +93,9 @@ Code Creation
         pinMode(7, INPUT_PULLUP);  // Set pin 8 as input with an internal pull-up resistor
     }
 
-3. To utilize the Serial Monitor, you must include a command that initiates serial communication on the R3 board. 
+3. To utilize the Serial Monitor, you must include a command that initiates serial communication on the Arduino Uno R3. 
 
-This command is typically placed in the ``void setup()`` section of the sketch. The command ``Serial.begin(baud)`` starts the serial communication, where ``baud`` represents the rate of data transfer per second between the computer and the R3 board. Common baud rates are 9600 and 115200 bits per second.
+This command is typically placed in the ``void setup()`` section of the sketch. The command ``Serial.begin(baud)`` starts the serial communication, where ``baud`` represents the rate of data transfer per second between the computer and the Arduino Uno R3. Common baud rates are 9600 and 115200 bits per second.
 
 .. code-block:: Arduino
     :emphasize-lines: 7
@@ -202,20 +195,20 @@ This command can represent various data types and formats, including numbers, fl
         Serial.println(buttonState);  // Print the current button state
     }
 
-9. At this point, the code is essentially complete. Click "Upload" to upload the code to the R3 board.
+9. At this point, the code is essentially complete. Click "Upload" to upload the code to the Arduino Uno R3.
 
     .. note::
 
-        Whenever data is transmitted from the board to the computer, you should see the TX LED on your R3 board flashing.
+        Whenever data is transmitted from the board to the computer, you should see the TX LED on your Arduino Uno R3 flashing.
 
 10. Afterward, click on the "Serial Monitor" button in the top right corner of the Arduino IDE.
 
-    .. image:: img/5_dimmer_led_serial.png
+    .. image:: img/10_dimmer_led_serial.png
         :align: center
 
 11. If you see garbled data displayed, you will need to adjust the baud rate to match the one set in your code.
 
-    .. image:: img/5_dimmer_led_serial_baud.png
+    .. image:: img/10_dimmer_led_serial_baud.png
         :align: center
 
 12. You will find that when the button is not pressed, it continuously prints "1", and when the button is pressed, it continuously prints "0". This is the characteristic of a digital signal, which has only two states: “0” and “1”.
@@ -380,7 +373,7 @@ Now that your code is complete, the full listing is as follows:
 
 2. Open the Serial Monitor to view the output data. You will notice that the button state prints "1" continuously when not pressed and "0" for the moment the button is pressed. At the same time, the value from the potentiometer will also be printed. As you rotate the potentiometer, you'll observe in the Serial Monitor that the higher the value, the brighter the LED becomes, and vice versa.
     
-.. image:: img/5_dimmer_led_serial_tool.png
+.. image:: img/10_dimmer_led_serial_tool.png
     :align: center
 
 .. note::

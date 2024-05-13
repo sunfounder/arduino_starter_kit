@@ -16,7 +16,7 @@ These objectives will empower you to bridge the gap between theoretical knowledg
 Series Circuit vs. Parallel Circuit
 ------------------------------------------
 
-In our previous lessons, we've successfully constructed a simple circuit with an R3 Board, a resistor, and an LED. The current in this setup flows in a series configuration: from the board's Pin 13 pin, through the LED, through the resistor, and back to the GND pin. This is a straightforward example of a series circuit.
+In our previous lessons, we've successfully constructed a simple circuit with an Arduino Uno R3, a resistor, and an LED. The current in this setup flows in a series configuration: from the board's Pin 13 pin, through the LED, through the resistor, and back to the GND pin. This is a straightforward example of a series circuit.
 
 But as we delve deeper into the world of electronics, we encounter circuits that are more complex, comprising components arranged in series or parallel. To comprehend these arrangements and their implications on current and voltage, we need to familiarize ourselves with circuit diagrams, also known as schematic diagrams.
 
@@ -32,24 +32,24 @@ However, to grasp a circuit's functionality and design logic, schematic diagrams
 
 Here are the symbols for a LED, a resistor, and a battery that you'll often find in schematics:
 
-.. image:: img/3_led_resistor_symbol.png
+.. image:: img/5_led_resistor_symbol.png
   :align: center
 
-A schematic diagram based on our previous wiring would look like this, with the entire R3 board acting as a battery powering the circuit. From this schematic, you can clearly indicate the flow and direction of current, simplifying the complexity of physical connections.
+A schematic diagram based on our previous wiring would look like this, with the entire Arduino Uno R3 acting as a battery powering the circuit. From this schematic, you can clearly indicate the flow and direction of current, simplifying the complexity of physical connections.
 
-.. image:: img/3_serial_circuit_1led.png
+.. image:: img/5_serial_circuit_1led.png
   :align: center
 
 **Series vs. Parallel Configurations**
 
 In a series circuit, components are lined up in a row, so the current has a single path to follow. If one component fails, the entire circuit is interrupted—much like a string of old Christmas lights where one burnt-out bulb would darken the whole chain.
 
-.. image:: img/3_serial_circuit_2led.png
+.. image:: img/5_serial_circuit_2led.png
   :align: center
 
 A parallel circuit, on the other hand, divides the current into multiple paths. Each component operates independently, so if one path is broken, the others continue to function. Think of your home's electrical system: if you switch off a light, the TV can still be on.
 
-.. image:: img/3_parallel_circuit.png
+.. image:: img/5_parallel_circuit.png
   :align: center
 
 
@@ -64,7 +64,7 @@ Building on our understanding of the differences between series and parallel cir
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 3 * Red LEDs
      - 3 * 220Ω Resistor
      - Jumper Wires
@@ -85,21 +85,21 @@ Building on our understanding of the differences between series and parallel cir
 
 1. Adjust the previous LED circuit by removing the jumper wire between 1J and the breadboard's positive side on the right. Then, take another red LED and insert its cathode (the shorter leg) into 1J, and the anode into the breadboard's positive side, so you can serially connect another LED in the circuit.
 
-.. image:: img/3_serial_circuit.png
+.. image:: img/5_serial_circuit.png
 
 Now you have a series circuit with two LEDs. Follow the current through the circuit:
 
-* Current flows from 5V on the R3 board, through a long jumper wire to the breadboard's positive terminal.
+* Current flows from 5V on the Arduino Uno R3, through a long jumper wire to the breadboard's positive terminal.
 * Then the current flows through the first LED, lighting it up due to the flow of current.
 * The current then flows through the breadboard's metal clips to the second LED, which also lights up.
 * After leaving the second LED, it enters the 220Ω resistor, where it encounters resistance, reducing the amount of current. Without this resistor, the current through the LEDs would be too high and could burn them out.
-* It then flows back to the R3 board's ground pin, completing the circuit.
+* It then flows back to the Arduino Uno R3's ground pin, completing the circuit.
 
 **Question:** 
 
 In this series circuit, what happens if you remove one LED? Why does this occur?
 
-.. image:: img/3_serial_circuit_remove.png
+.. image:: img/5_serial_circuit_remove.png
     :width: 600
     :align: center
 
@@ -118,7 +118,7 @@ In this series circuit, what happens if you remove one LED? Why does this occur?
         
         Measuring a component's voltage in a circuit means checking the voltage across it. Essentially, voltage represents the energy difference between two points. So, when you measure a component's voltage, you're gauging the energy difference from one side to the other.
 
-.. image:: img/3_serial_circuit_voltage_resistor.png
+.. image:: img/5_serial_circuit_voltage_resistor.png
     :width: 600
     :align: center
 
@@ -147,7 +147,7 @@ In this series circuit, what happens if you remove one LED? Why does this occur?
 
 4. Now, measure the voltage across LED 1 in the circuit.
 
-.. image:: img/3_serial_circuit_voltage_led1.png
+.. image:: img/5_serial_circuit_voltage_led1.png
     :width: 600
     :align: center
 
@@ -170,7 +170,7 @@ In this series circuit, what happens if you remove one LED? Why does this occur?
 
 6. Measure the voltage across LED 2 in the circuit.
 
-.. image:: img/3_serial_circuit_voltage_led2.png
+.. image:: img/5_serial_circuit_voltage_led2.png
     :width: 600
     :align: center
 
@@ -193,7 +193,7 @@ In this series circuit, what happens if you remove one LED? Why does this occur?
 
 8. Now measure the total voltage in the circuit.
 
-.. image:: img/3_serial_circuit_voltage.png
+.. image:: img/5_serial_circuit_voltage.png
     :width: 600
     :align: center
 
@@ -242,13 +242,13 @@ Having understood the voltage characteristics of series circuits, let's now expl
 
 2. For current measurement, the multimeter must be integrated into the circuit's flow path. Keep the LED's anode in hole 1F and shift its cathode (the shorter leg) from hole 1E to hole 3E.
 
-.. image:: img/3_serial_circuit_led1_current.png
+.. image:: img/5_serial_circuit_led1_current.png
     :width: 600
     :align: center
 
 3. Measure the current across LED 1 in the circuit.
 
-.. image:: img/3_serial_circuit_led1_current1.png
+.. image:: img/5_serial_circuit_led1_current1.png
     :width: 600
     :align: center
 
@@ -267,13 +267,13 @@ Having understood the voltage characteristics of series circuits, let's now expl
 
 5. Move the first LED's cathode back to its original position and shift the second LED's cathode (the shorter leg) from hole 1J to hole 2J.
 
-.. image:: img/3_serial_circuit_led2_current.png
+.. image:: img/5_serial_circuit_led2_current.png
     :width: 600
     :align: center
 
 6. Measure the current across LED 2 in the circuit.
 
-.. image:: img/3_serial_circuit_led2_current1.png
+.. image:: img/5_serial_circuit_led2_current1.png
     :width: 600
     :align: center
 
@@ -299,7 +299,7 @@ The exploration of voltage, current, and resistance not only enriches our unders
 
 If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? Please continue to fill in their voltages into the table.
 
-.. image:: img/3_serial_circuit_3led.png
+.. image:: img/5_serial_circuit_3led.png
     :width: 600
     :align: center
 
@@ -326,7 +326,7 @@ Diving into Parallel Circuits
 
 **Components Needed**
 
-* 1 * R3 Board
+* 1 * Arduino Uno R3
 * 3 * Red LEDs
 * 3 * 220Ω Resistors
 * Several Jumper Wires
@@ -336,7 +336,7 @@ Diving into Parallel Circuits
 
 **Building the Circuit**
 
-.. image:: img/3_parallel_circuit_bb.png
+.. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
   
@@ -358,33 +358,33 @@ Diving into Parallel Circuits
     :width: 300
     :align: center
 
-4. Connect the long jumper wire connected to the breadboard's positive terminal to the 5V pin on the R3 board. The LED should turn on and stay on. The 5V pin provides a constant 5 volts DC to the circuit. This is different from pin 13, which can be programmed via the Arduino IDE software to turn on and off.
+4. Connect the long jumper wire connected to the breadboard's positive terminal to the 5V pin on the Arduino Uno R3. The LED should turn on and stay on. The 5V pin provides a constant 5 volts DC to the circuit. This is different from pin 13, which can be programmed via the Arduino IDE software to turn on and off.
 
-.. image:: img/3_parallel_circuit_5v.png
+.. image:: img/5_parallel_circuit_5v.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the R3 board. The ground pins are marked as "GND".
+5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
 
-.. image:: img/3_parallel_circuit_gnd.png
+.. image:: img/5_parallel_circuit_gnd.png
     :width: 600
     :align: center
 
 6. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
 
-.. image:: img/3_parallel_circuit_resistor.png
+.. image:: img/5_parallel_circuit_resistor.png
     :width: 600
     :align: center
 
 7. Take another red LED. The LED's anode (long leg) should be in hole 6F. The cathode (short leg) should be in hole 6E.
 
-.. image:: img/3_parallel_circuit_led.png
+.. image:: img/5_parallel_circuit_led.png
     :width: 600
     :align: center
 
 8. Finally, place one end of a short jumper wire in hole 6J and the other end in the positive terminal. This completes the parallel circuit.
 
-.. image:: img/3_parallel_circuit_bb.png
+.. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
 
@@ -393,14 +393,14 @@ Now, this circuit has two LEDs in a parallel configuration. There are two paths 
 
 * In the first path: current enters the first LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
 * In the second path: current enters the second LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the R3 board.
+* At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the Arduino Uno R3.
 
 
 **Question:**
 
 In this parallel circuit, what happens if one LED is removed? Why does this occur? Record your answer in your engineering notebook.
 
-.. image:: img/3_parallel_circuit_remove.png
+.. image:: img/5_parallel_circuit_remove.png
     :width: 600
     :align: center
 
@@ -415,7 +415,7 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
 
 2. Remember, in a parallel circuit, each branch gets the entire voltage from the power source. So, each branch in your setup should show around 5 volts. Start by measuring the voltage along the first path.
 
-.. image:: img/3_parallel_circuit_voltage1.png
+.. image:: img/5_parallel_circuit_voltage1.png
     :width: 600
     :align: center
 
@@ -432,7 +432,7 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
 
 3. Next, check the voltage drop across the second path. Expect it to be near 5 volts as well.
 
-.. image:: img/3_parallel_circuit_voltage2.png
+.. image:: img/5_parallel_circuit_voltage2.png
     :width: 600
     :align: center
 
@@ -466,13 +466,13 @@ From our previous measurements, we learned that each branch in a parallel circui
     
     This step will cause LED 1 to turn off while LED 2 remains lit. This demonstrates a characteristic of parallel circuits: the disconnection of one path does not affect the other paths.
 
-.. image:: img/3_parallel_circuit_led1_current.png
+.. image:: img/5_parallel_circuit_led1_current.png
     :width: 600
     :align: center
 
 3. Place the multimeter's red and black leads between the LED and the resistor, and you will see LED1 light up again.
 
-.. image:: img/3_parallel_circuit_led1_current1.png
+.. image:: img/5_parallel_circuit_led1_current1.png
     :width: 600
     :align: center
 
@@ -493,13 +493,13 @@ From our previous measurements, we learned that each branch in a parallel circui
 
 5. Return the first resistor to its original position, and keep one end of the second resistor at the breadboard's negative terminal while moving the other end to hole 9B.
 
-.. image:: img/3_parallel_circuit_led2_current.png
+.. image:: img/5_parallel_circuit_led2_current.png
     :width: 600
     :align: center
 
 6. Now, measure the current across LED 2 in the circuit.
 
-.. image:: img/3_parallel_circuit_led2_current1.png
+.. image:: img/5_parallel_circuit_led2_current1.png
     :width: 600
     :align: center
 
@@ -520,13 +520,13 @@ From our previous measurements, we learned that each branch in a parallel circui
 
 8. Having measured the current in both paths, what is the total current when the paths converge? Now, move the jumper wire from the breadboard's negative terminal to hole 25C.
 
-.. image:: img/3_parallel_circuit_total_current.png
+.. image:: img/5_parallel_circuit_total_current.png
     :width: 600
     :align: center
 
 9. Measure the total current of the circuit now.
 
-.. image:: img/3_parallel_circuit_total_current.png
+.. image:: img/5_parallel_circuit_total_current1.png
     :width: 600
     :align: center
 
@@ -551,7 +551,7 @@ Our exploration into parallel circuits has illuminated a key aspect: the total c
 
 1. If another LED is added to this circuit, what happens to the brightness of the LEDs? Why? Record your answer in your handbook.
 
-.. image:: img/3_parallel_circuit_3led.png
+.. image:: img/5_parallel_circuit_3led.png
     :width: 600
     :align: center
 

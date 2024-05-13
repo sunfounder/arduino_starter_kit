@@ -12,7 +12,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Ultrasonic Module
      - 1 * Active Buzzer
      - Jumper Wires

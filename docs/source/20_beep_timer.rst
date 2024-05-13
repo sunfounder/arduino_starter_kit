@@ -54,7 +54,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * Breadboard
      - 1 * Active Buzzer
      - Jumper Wires
@@ -63,11 +63,11 @@ Building the Circuit
      - |compoents_active_buzzer| 
      - |compoents_wire| 
    * - 1 * USB Cable
-     - 1 * Multimeter
+     -
      - 
      - 
    * - |compoents_usb_cable| 
-     - |compoents_meter|
+     -
      - 
      - 
 
@@ -110,9 +110,9 @@ We often use it to pause the program for a short time, which, combined with loop
     delay(1000);                     // Interval between signals: 1000 milliseconds
   }
 
-In this setup, the first ``delay()`` function pauses the R3 board for 100 milliseconds, during which the buzzer continues to sound. The second ``delay()`` function pauses the Arduino for 1000 milliseconds (1 second), during which the buzzer is silent.
+In this setup, the first ``delay()`` function pauses the Arduino Uno R3 for 100 milliseconds, during which the buzzer continues to sound. The second ``delay()`` function pauses the Arduino for 1000 milliseconds (1 second), during which the buzzer is silent.
 
-4. After uploading the code to the R3 board, you will hear the buzzer beep once every second.
+4. After uploading the code to the Arduino Uno R3, you will hear the buzzer beep once every second.
 
 Coding Creation - ``millis()``
 ------------------------------
@@ -229,7 +229,7 @@ Here, we similarly make the buzzer beep once every second.
     }
   }
 
-9. Your complete code should look like this, upload it to the R3 board, and you will find the buzzer beeps once every second.
+9. Your complete code should look like this, upload it to the Arduino Uno R3, and you will find the buzzer beeps once every second.
 
 .. code-block:: Arduino
 
@@ -380,7 +380,7 @@ Next, we will program a timer that will buzz every 25 minutes to signal the end 
   }
 
 
-9. Your complete code should look like this, and you can upload it to the R3 board to see the effects.
+9. Your complete code should look like this, and you can upload it to the Arduino Uno R3 to see the effects.
 
 .. note::
 

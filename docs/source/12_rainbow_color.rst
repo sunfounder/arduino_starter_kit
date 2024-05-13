@@ -2,7 +2,7 @@
 =======================================
 Imagine if you could paint with light, blending red, green, and blue to create every hue imaginable—just like mixing paints on a palette but with beams of light.
 
-.. image:: img/6_rgb_mix.png
+.. image:: img/12_rgb_mix.png
     :width: 300
     :align: center
 
@@ -25,7 +25,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
@@ -46,7 +46,7 @@ Building the Circuit
 
 Follow the wiring diagram or these steps to construct the circuit.
 
-.. image:: img/6_mix_color_bb_4.png
+.. image:: img/12_mix_color_bb_4.png
     :width: 500
     :align: center
 
@@ -54,7 +54,7 @@ Follow the wiring diagram or these steps to construct the circuit.
 
 RGB LEDs emit light in various colors by integrating red, green, and blue LEDs within a single package. By varying the voltage input on the three pins, these LEDs can combine to produce up to 16,777,216 different colors.
 
-.. image:: img/6_mix_color_rgb.png
+.. image:: img/12_mix_color_rgb.png
     :width: 400
     :align: center
 
@@ -63,13 +63,13 @@ Depending on their design, RGB LEDs can be either common anode or common cathode
 * Common cathode RGB LEDs have a shared negative connection.
 * Common anode RGB LEDs have a shared positive connection.
 
-.. image:: img/6_rgb_cc_ca.jpg
+.. image:: img/12_rgb_cc_ca.jpg
     :width: 600
     :align: center
 
 An RGB LED typically has 4 pins; the longest one is the ground. When placing the RGB LED, ensure the longest lead is second from the left, configuring the pins as Red, GND, Green, and Blue from left to right.
 
-.. image:: img/6_mix_color_rgb_1.jpg
+.. image:: img/12_mix_color_rgb_1.jpg
     :width: 200
     :align: center
 
@@ -83,32 +83,32 @@ Set the multimeter to the **Continuity** setting for resistance measurement.
 
 Touch the black lead of the multimeter to the RGB LED's longest pin, and touch the red lead to the other pins individually. You will see the RGB LED light up in red, green, or blue accordingly.
 
-.. image:: img/6_mix_color_measure_pin.png
-    :width: 600
+.. image:: img/12_mix_color_measure_pin.png
+    :width: 500
     :align: center
 
 2. Insert the RGB LED into the breadboard with the longest pin going into hole 17D, and the other three pins into 18D, 16D, and 15D, respectively.
 
-.. image:: img/6_mix_color_bb_1.png
-    :width: 600
+.. image:: img/12_mix_color_bb_1.png
+    :width: 500
     :align: center
 
 3. Insert three resistors as shown from holes 15E to 15G, 16E to 16G, and 18E to 18G.
 
-.. image:: img/6_mix_color_bb_2.png
-    :width: 600
+.. image:: img/12_mix_color_bb_2.png
+    :width: 500
     :align: center
 
-4. Connect these resistors to pins 9, 10, and 11 on the R3 board with jumper wires as illustrated.
+4. Connect these resistors to pins 9, 10, and 11 on the Arduino Uno R3 with jumper wires as illustrated.
 
-.. image:: img/6_mix_color_bb_3.png
-    :width: 600
+.. image:: img/12_mix_color_bb_3.png
+    :width: 500
     :align: center
 
 5. Connect the longest pin of the RGB LED to GND using a jumper wire.
 
-.. image:: img/6_mix_color_bb_4.png
-    :width: 600
+.. image:: img/12_mix_color_bb_4.png
+    :width: 500
     :align: center
 
 Code Creation - Lighting Up an RGB LED
@@ -117,7 +117,7 @@ Code Creation - Lighting Up an RGB LED
 1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
 2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson12_Rainbow_Color``. Click "Save".
 
-3. The LED in your circuit is connected to digital pins on the R3 board. As the LED is an output device, you'll need to set digital pins 9, 10, and 11 as ``OUTPUT``.
+3. The LED in your circuit is connected to digital pins on the Arduino Uno R3. As the LED is an output device, you'll need to set digital pins 9, 10, and 11 as ``OUTPUT``.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
@@ -161,7 +161,7 @@ Code Creation - Lighting Up an RGB LED
         digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
     }
 
-5. Save the code and click “Upload” to send it to your R3 board. Let's see what happens.
+5. Save the code and click “Upload” to send it to your Arduino Uno R3. Let's see what happens.
 
 6. You will see the RGB LED light up red. But what if you want to light up green and blue too? How should you modify the code?
 
@@ -199,7 +199,7 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
 
 1. If you want other colors, what should you do? Refer to the diagram below and fill in your ideas in your handbook.
 
-.. image:: img/6_rgb_mix.png
+.. image:: img/12_rgb_mix.png
     :width: 300
     :align: center
 
@@ -434,7 +434,7 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
     }
 
 
-4. With the functions all set up and called in the loop(), your code is now complete. Click the "Upload" button to transfer your code to the R3 board. You will see the RGB LED cycle through red, green, blue, yellow, pink, cyan, and white.
+4. With the functions all set up and called in the loop(), your code is now complete. Click the "Upload" button to transfer your code to the Arduino Uno R3. You will see the RGB LED cycle through red, green, blue, yellow, pink, cyan, and white.
 
 .. note::
 

@@ -133,7 +133,7 @@ Building the Circuit
    :widths: 25 25 25 25
    :header-rows: 0
 
-   * - 1 * R3 Board
+   * - 1 * Arduino Uno R3
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 10KΩ Resistor
@@ -174,19 +174,19 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :align: center
     :width: 500
 
-2. Insert one end of a 220Ω resistor into the negative (“-”) terminal of the 7-segment display, and the other end into the negative rail of the breadboard. Then connect the breadboard’s negative rail to the GND pin of the R3 board with a jumper wire.
+2. Insert one end of a 220Ω resistor into the negative (“-”) terminal of the 7-segment display, and the other end into the negative rail of the breadboard. Then connect the breadboard’s negative rail to the GND pin of the Arduino Uno R3 with a jumper wire.
 
 .. image:: img/23_segment_resistor_gnd.png
     :align: center
     :width: 500
 
-3. Connect the pins controlling the a, b, c segments of the LED to pins 2, 3, and 4 on the R3 board.
+3. Connect the pins controlling the a, b, c segments of the LED to pins 2, 3, and 4 on the Arduino Uno R3.
 
 .. image:: img/23_segment_abc.png
     :align: center
     :width: 500
 
-4. Connect the pins controlling the d, e, f, g segments of the LED to pins 5, 6, 7, and 8 on the R3 board.
+4. Connect the pins controlling the d, e, f, g segments of the LED to pins 5, 6, 7, and 8 on the Arduino Uno R3.
 
 .. image:: img/23_segment_defg.png
     :align: center
@@ -210,7 +210,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :align: center
     :width: 500
 
-8. Connect the lower left pin of the button to the 5V on the R3 board.
+8. Connect the lower left pin of the button to the 5V on the Arduino Uno R3.
 
 .. image:: img/23_segment_5v.png
     :align: center
@@ -304,7 +304,7 @@ Code Creation - Displaying Numbers
         digitalWrite(pinG, HIGH);
     }
 
-5. Now you can upload the code to the R3 board, and you will see the number 2 displayed on the 7-segment display.
+5. Now you can upload the code to the Arduino Uno R3, and you will see the number 2 displayed on the 7-segment display.
 
 6. If you need to display other numbers, such as cycling through 1 to 6, using ``digitalWrite()`` to set each segment would make the code very long and the logic less clear. Here we use a function creation method instead.
 
@@ -423,7 +423,7 @@ The basic syntax of a switch statement is usually as follows:
     }
 
 
-11. Below is your complete code. Now you can upload the code to the R3 board, and you will see the 7-segment display cycle through displaying 3 and 6.
+11. Below is your complete code. Now you can upload the code to the Arduino Uno R3, and you will see the 7-segment display cycle through displaying 3 and 6.
 
 .. code-block:: Arduino
 
@@ -628,7 +628,7 @@ We can implement this with a ``while`` loop in the code.
     }
 
 
-8. Your complete code should look like this, and now you can upload the code to the R3 board. Once the code is uploaded, if you hold down the button, the numbers on the display will cycle rapidly, and when released, a number will be shown.
+8. Your complete code should look like this, and now you can upload the code to the Arduino Uno R3. Once the code is uploaded, if you hold down the button, the numbers on the display will cycle rapidly, and when released, a number will be shown.
 
 .. code-block:: Arduino
 
