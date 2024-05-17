@@ -1,6 +1,10 @@
 18. Light Alarm
 ========================
 
+.. image:: img/18_light_alarm.png
+    :width: 600
+    :align: center
+
 Imagine a scene straight out of a movie:
 In a dimly lit museum, a cunning thief quietly approaches a priceless painting.
 He moves stealthily, attempting to carry out his theft under the cover of night.
@@ -15,8 +19,8 @@ Now, let's build a simulated light alarm system using a photoresistor and a buzz
 
 In this lesson, you will learn:
 
-The working principles and characteristics of a photoresistor
-How to build a simple light alarm system
+* The working principles and characteristics of a photoresistor.
+* How to build a simple light alarm system.
 
 
 Building the Circuit
@@ -292,10 +296,5 @@ Code Creation
 
 **Question**
 
-During an art exhibition, there might be accidental touches or instances where someone leans against a painting while taking photos. These situations should trigger an alert. How should the code be adjusted to handle these scenarios? 
-
-Before coding, consider the following questions:
-
-* How many ranges should the Photoresistor's values be divided into?
-* How should the buzzer sound at different ranges?
-* For example, if the value is above 1000, the buzzer should not make a sound; if it is below 1000 but above 600, it should emit a slow sound. What should be the effect in the remaining range?
+Cunning thieves might choose to steal at night, and if a painting disappears, 
+the photoresistor might not be able to detect any change in light, thus failing to trigger an alarm. What can be done to improve this flaw?

@@ -380,12 +380,3 @@ To determine the LED's resistance, subtract the resistor's resistance from the t
 So, according to my measurements, the LED's resistance should be: 378.88 - 215 = 163.88 ohms.
 
 We've taken a hands-on journey through the essentials of using a multimeter to measure voltage, current, and resistance in a circuit. From building a simple LED circuit to delving into the nuances of measuring resistance in circuits with LEDs, we've explored how to practically apply Ohm's Law and understand the dynamics of series and parallel circuits. As we move forward, remember that these foundational skills lay the groundwork for more complex projects and deeper understanding of electronics. Keep experimenting, keep learning, and let's continue to illuminate the path of electronic exploration together.
-
-**Question:**
-
-1. Now that we can measure voltage, current, and calculate resistance, what change in LED brightness might occur if we switch the wire from the Arduino Uno R3's 5V pin to the 3.3v pin? Measure the current in the circuit now to verify your answer.
-
-.. image:: img/3_multimeter_3.3v.png
-  :width: 600
-  :align: center
-

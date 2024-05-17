@@ -164,13 +164,6 @@ Here, we similarly make the buzzer beep once every second.
   unsigned long previousMillis = 0;  // Store the timestamp of the last time the buzzer beeped
   long interval = 1000;              // Interval at which to beep (milliseconds)
 
-.. note::
-
-  In previous lessons, we worked with ``int`` and ``float`` types of variables or constants. Now, let’s understand what long and unsigned long variables are about:
-
-  * ``long``: A ``long`` integer is an extended version of an ``int``. It is used to store larger integer values that exceed the capacity of standard ``int``. A long typically occupies 32 or 64 bits of memory, which allows it to hold much larger values, both positive and negative.
-  * ``unsigned long``: An ``unsigned long`` is similar to a ``long`` but can only represent non-negative values. It uses the bit normally reserved for the sign to extend the range of possible values it can hold, but strictly in the positive spectrum.
-
 
 
 5. In the ``void setup()`` function, set the buzzer pin to output mode.
@@ -384,7 +377,8 @@ Next, we will program a timer that will buzz every 25 minutes to signal the end 
 
 .. note::
 
-  If you find waiting 25 minutes for a work period and 5 minutes for a break too long during debugging, you can shorten ``breakPeriod`` to 15000 milliseconds and ``workPeriod`` to 30000 milliseconds. You will then hear the buzzer sound twice long every 1.5 minutes, followed by a short buzz twice after 3 seconds.
+  If you find waiting 25 minutes for a work period and 5 minutes for a break too long during debugging, 
+  you can shorten ``workPeriod`` to 15000 milliseconds and ``breakPeriod`` to 3000 milliseconds. You will then hear the buzzer sound twice long every 15 seconds, followed by a short buzz twice after 3 seconds.
 
 
 .. code-block:: Arduino

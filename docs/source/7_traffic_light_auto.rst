@@ -1,6 +1,12 @@
 
 7. Let's Make Traffic Lights!
 ==============================
+
+
+.. image:: img/5_traffic_light_pic.png
+    :width: 400
+    :align: center
+
 Welcome to this lesson, this engaging lesson bridges the gap between theoretical concepts and practical application in electronics and programming. We will delve into the process of converting pseudo-code—a simplified form of programming language—into functional Arduino sketches. This exercise will simulate the operations of traffic lights, offering you hands-on experience in programming and circuit design. As you learn to interpret and implement pseudo-code, you will gain deeper insights into the logic behind controlling electronic devices with code.
 
 In this lesson, you will learn to:

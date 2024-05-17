@@ -571,6 +571,13 @@ The core idea of this method is that after a button is pressed and an action is 
 
 We can implement this with a ``while`` loop in the code.
 
+
+.. image:: img/while_loop.png
+    :width: 400
+    :align: center
+
+
+
 .. code-block:: Arduino
     :emphasize-lines: 4-6
 

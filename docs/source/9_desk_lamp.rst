@@ -79,7 +79,7 @@ In schematic diagrams, the symbol for a potentiometer typically looks like a res
 
 Now let's explore how the potentiometer adjusts resistance in a circuit.
 
-2. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 29G.
+2. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 28G.
 
 .. note::
     The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
@@ -190,7 +190,7 @@ From the measurement results:
 
 **Question**:
 
-You can think of the potentiometer as comprising two resistors connected in series within the circuit. Based on the circuit diagram, how do you think the voltage at A0 would change when the potentiometer is turned clockwise and counterclockwise?
+How do you think the voltage at A0 would change when the potentiometer is turned clockwise and counterclockwise?
 
 
 Code Creation

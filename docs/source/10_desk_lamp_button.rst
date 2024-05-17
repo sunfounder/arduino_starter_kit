@@ -318,6 +318,11 @@ In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light u
 
 3. To ensure the LED turns off when ``ledState`` is ``LOW``, add an ``else`` statement following the ``if`` block. This will handle turning off the LED completely when the conditions within the ``if`` are not met.
 
+.. image:: img/if_else.png
+    :width: 400
+    :align: center
+
+
 .. code-block:: Arduino
     :emphasize-lines: 6-8
 

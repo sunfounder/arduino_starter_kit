@@ -243,6 +243,12 @@ To program these behaviors, you'll use a new coding function known as conditiona
 Conditional statements are sometimes called ``if-then`` statements, or simply, an ``if`` statement.
 Conditional statements allow you to run certain lines of code when a specific condition or scenario is true.
 
+
+.. image:: img/if.png
+    :width: 300
+    :align: center
+
+
 .. note::
 
     You often use conditional statements in everyday life to make decisions, such as:
@@ -250,10 +256,8 @@ Conditional statements allow you to run certain lines of code when a specific co
     .. code-block:: Arduino
 
         start;
-        if cold:
-            wear a coat;
-        then:
-            do nothing;
+        if cold;
+        then wear a coat;
         end;
         
 In the Arduino IDE, a conditional statement looks like this:
@@ -449,4 +453,7 @@ In this lesson, we've delved into integrating a pedestrian button into a traffic
 
 **Question:**
 
-During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, but pedestrians can't cross the road while continuously pressing the button. How could you modify the code to read the button press and allow pedestrians to cross at the same time? Please write down the pseudo-code solution in the handbook.
+
+During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, 
+but pedestrians can’t cross the road while continuously pressing the button. How can you modify the code to ensure that once the pedestrian button is pressed, 
+the green LED lights up long enough for a safe crossing without requiring continuous pressing? Please write down the pseudo-code solution in your handbook.

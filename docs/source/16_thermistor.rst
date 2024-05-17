@@ -58,7 +58,7 @@ This circuit builds upon the one from Lesson 12 by adding a Thermistor.
     :width: 500
     :align: center
 
-1. Remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Based on the circuit of lesson12, remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
 
 .. image:: img/16_temperature_alarm_gnd.png
     :width: 500
@@ -493,5 +493,5 @@ In today's lesson, we built a temperature alarm system that uses a thermistor to
 
 1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
 
-2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful? How might you modify the design to suit different environments or needs?
+2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful?
 

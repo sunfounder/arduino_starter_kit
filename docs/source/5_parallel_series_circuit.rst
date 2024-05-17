@@ -297,28 +297,8 @@ The exploration of voltage, current, and resistance not only enriches our unders
 
 **Question**
 
-If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? Please continue to fill in their voltages into the table.
+If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? 
 
-.. image:: img/5_serial_circuit_3led.png
-    :width: 600
-    :align: center
-
-.. list-table::
-   :widths: 25 25 25 25 25 25
-   :header-rows: 1
-
-   * - Circuit
-     - Current
-     - LED1 Voltage
-     - LED2 Voltage
-     - LED3 Voltage
-     - Total Voltage 
-   * - 3 LEDs
-     - 
-     - 
-     - 
-     - 
-     - 
 
 
 Diving into Parallel Circuits
@@ -398,7 +378,7 @@ Now, this circuit has two LEDs in a parallel configuration. There are two paths 
 
 **Question:**
 
-In this parallel circuit, what happens if one LED is removed? Why does this occur? Record your answer in your engineering notebook.
+In this parallel circuit, what happens if one LED is removed? Why does this occur? 
 
 .. image:: img/5_parallel_circuit_remove.png
     :width: 600
@@ -574,22 +554,36 @@ Summary of Series and Parallel Circuits
 
 Here are the rules for series and parallel circuits, which you can continue to verify with a multimeter:
 
-.. list-table::
-   :widths: 10 25 25 25
-   :header-rows: 1
+.. .. list-table::
+..    :widths: 10 25 25 25
+..    :header-rows: 1
 
-   * - Circuit
-     - Voltage
-     - Current
-     - Resistance  
-   * - Series
-     - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
-     - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
-     - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
-   * - Parallel
-     - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
-     - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
-     - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
+..    * - Circuit
+..      - Voltage
+..      - Current
+..      - Resistance  
+..    * - Series
+..      - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
+..      - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
+..      - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+..    * - Parallel
+..      - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
+..      - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
+..      - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
+
+
+**Series**
+
+  - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
+  - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
+  - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+
+**Parallel**
+
+  - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
+  - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
+  - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
+
 
 
 

@@ -41,7 +41,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     :width: 500
     :align: center
 
-1. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 29G.
+1. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 28G.
 
 .. note::
     The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
@@ -227,6 +227,13 @@ To streamline this, utilize the ``if-else if`` structure:
     else {
         // Execute if none of the conditions are true
     }
+
+
+.. image:: img/if_else_if.png
+    :width: 500
+    :align: center
+
+
 
 In an ``if-else if`` structure, the first condition is tested. If it's true, the associated commands are executed, and all other conditions are skipped (even if some of them are true). If the first condition is false, it tests the second condition in the structure. If the second condition is true, it executes the commands associated with this condition and then skips the others. If it is false, it tests the third condition, and so on. In some scenarios, there can be multiple true conditions. Therefore, the order of conditions is important. Only the first true condition will have its associated commands run.
 

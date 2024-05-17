@@ -244,6 +244,12 @@ From our earlier explorations, we know that using the ``tone(pin, frequency)`` f
         * ``condition``: each time through the loop, condition is tested; if it's true, the statement block and the increment are executed, then the condition is tested again. When the condition becomes false, the loop ends.
         * ``increment``: executed each time through the loop when condition is true.
 
+.. image:: img/for_loop.png
+    :width: 400
+    :align: center
+
+
+
 7. Now change the ``void loop()`` function as shown below, where ``freq`` starts at 100 and increases by 10 until 1000.
 
 .. code-block:: Arduino
