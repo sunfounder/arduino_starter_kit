@@ -97,6 +97,12 @@ gettext_compact = False # Support for generating the contents of the folders ins
 rst_epilog = """
 
 
+
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/3wDYH38" target="_blank">here</a>
+
+
 .. |link_wiki_avometer| raw:: html
 
     <a href="https://en.wikipedia.org/wiki/Avometer" target="_blank">Wikipedia - Avometer</a>
