@@ -15,7 +15,9 @@
 Beginner's Lab Kit with Original Arduino Uno R3
 =================================================
 
- Thank You for Choosing the Beginner's Lab Kit
+Thank You for Choosing the Beginner's Lab Kit
+
+* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
 Welcome to the Beginner's Lab Kit, a comprehensive starter pack designed 
 specifically for newcomers to the world of electronics and programming. 

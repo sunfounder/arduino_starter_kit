@@ -19,7 +19,7 @@
 import sphinx_rtd_theme
 import time  ###
 
-project = 'SunFounder Beginner's Lab Kit'
+project = 'SunFounder Beginners Lab Kit'
 copyright = f'{time.localtime().tm_year}, SunFounder'  ###
 author = 'www.sunfounder.com'
 
