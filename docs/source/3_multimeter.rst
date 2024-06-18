@@ -1,3 +1,17 @@
+.. note::
+
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+
+    **Why Join?**
+
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+
 3. Measure with Multimeter
 ==========================================
 Welcome to our exploration of the multimeter, an essential tool in electronics. This lesson will guide you through the functionality and application of the multimeter, teaching you how to measure various electrical properties effectively. Starting from the basics of setting up your multimeter with a battery and test leads, we'll delve into adjusting settings and utilizing its numerous functions. This hands-on experience will not only impart theoretical knowledge but also equip you with the skills to perform accurate measurements on any circuit.

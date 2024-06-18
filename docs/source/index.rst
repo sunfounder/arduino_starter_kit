@@ -1,7 +1,23 @@
+.. note::
+
+    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+
+    **Why Join?**
+
+    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
+    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
+    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
+    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
+    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+
+    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+
 Beginner's Lab Kit with Original Arduino Uno R3
 =================================================
 
- Thank You for Choosing the Beginner's Lab Kit
+Thank You for Choosing the Beginner's Lab Kit
+
+* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
 Welcome to the Beginner's Lab Kit, a comprehensive starter pack designed 
 specifically for newcomers to the world of electronics and programming. 

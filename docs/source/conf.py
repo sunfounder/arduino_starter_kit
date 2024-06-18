@@ -19,7 +19,7 @@
 import sphinx_rtd_theme
 import time  ###
 
-project = 'SunFounder 3in1 Kit'
+project = 'SunFounder Beginners Lab Kit'
 copyright = f'{time.localtime().tm_year}, SunFounder'  ###
 author = 'www.sunfounder.com'
 
@@ -95,6 +95,12 @@ gettext_compact = False # Support for generating the contents of the folders ins
 # open link in a new window
 
 rst_epilog = """
+
+
+
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
 
 
 .. |link_wiki_avometer| raw:: html
