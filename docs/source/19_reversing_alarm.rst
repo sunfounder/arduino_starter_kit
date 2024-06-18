@@ -104,8 +104,9 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 
 
-
-
+.. image:: img/19_reversing_aid_bb.png
+    :width: 600
+    :align: center
 
 
 Code Creation
