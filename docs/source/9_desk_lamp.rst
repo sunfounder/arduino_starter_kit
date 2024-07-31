@@ -17,10 +17,17 @@
 
 Imagine every desk lamp at home, gently casting light over your evening reads or late-night projects. Have you ever wondered how these lamps manage to adjust their brightness so seamlessly? In this lesson, we dive into the mechanics and electronics behind a desk lamp, transforming curiosity into knowledge as we build one from scratch using Arduino.
 
-.. image:: img/9_desk_lamp_pot.jpg
-    :width: 500
-    :align: center
+.. .. image:: img/9_desk_lamp_pot.jpg
+..     :width: 500
+..     :align: center
     
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/9_dimmble_led.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 Get ready to:
 
 * Decode the role of variables in storing and manipulating data within Arduino sketches.
@@ -30,7 +37,7 @@ Get ready to:
 By the end of this lesson, not only will you have crafted a fully functional electronic desk lamp, but you'll also have deepened your understanding of how software interacts with hardware to bring everyday objects to life. Let’s illuminate our knowledge by building a desk lamp that responds to your touch.
 
 
-Build the circuit
+Build the Circuit
 ------------------------------------
 
 **Components Needed**
@@ -43,18 +50,18 @@ Build the circuit
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_meter|
 
 **Building Steps**
 
@@ -225,8 +232,8 @@ Here's what the pseudocode might look like:
 
 **Pin Initialization**
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson9_Desk_Lamp``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson9_Desk_Lamp`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. The LED in your circuit is connected to digital pin on the Arduino Uno R3, set as output. Remember to add a comment.
 
@@ -433,10 +440,11 @@ Think of the duty cycle like a faucet's on and off pattern that controls water f
 
 8. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?
+
 **Summary**
 
 In this lesson, we explored how to work with analog signals in Arduino projects. We learned how to read analog values from a potentiometer, how to process these values in the Arduino sketch, and how to control the brightness of LED using Pulse Width Modulation (PWM). We also delved into the use of variable to store and manipulate data within our sketches. By integrating these elements, we demonstrated the dynamic control of electronic components, bridging the gap between simple digital outputs and more nuanced control of hardware through analog input readings.
 
-**Question**:
-
-If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?

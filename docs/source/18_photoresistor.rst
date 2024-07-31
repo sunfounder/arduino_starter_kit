@@ -31,6 +31,13 @@ How is this achieved? This involves placing a photoresistor or a more sophistica
 
 Now, let's build a simulated light alarm system using a photoresistor and a buzzer, shall we?
 
+.. raw:: html
+
+    <video controls style = "max-width:90%">
+        <source src="_static/video/18_light_alarm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will learn:
 
 * The working principles and characteristics of a photoresistor.
@@ -50,18 +57,18 @@ Building the Circuit
      - 1 * Photoresistor
      - 1 * 10KΩ Resistor
      - 1 * Active Buzzer
-   * - |compoents_uno_r3| 
-     - |compoents_photoresistor| 
-     - |compoents_10kohm| 
-     - |compoents_active_buzzer| 
+   * - |list_uno_r3| 
+     - |list_photoresistor| 
+     - |list_10kohm| 
+     - |list_active_buzzer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_meter|
 
 
 
@@ -202,9 +209,8 @@ If you place the photoresistor in a dark situation, the value of the A0 pin will
 
 Code Creation
 -------------
-
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson18_Light_Alarm``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson18_Light_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Before the ``void setup()``, create constants for the photoresistor and buzzer, as well as a constant threshold value that will trigger the alarm when the photoresistor's reading falls below it.
 

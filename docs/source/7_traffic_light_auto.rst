@@ -17,11 +17,18 @@
 ==============================
 
 
-.. image:: img/5_traffic_light_pic.png
-    :width: 400
-    :align: center
+.. .. image:: img/5_traffic_light_pic.png
+..     :width: 400
+..     :align: center
 
 Welcome to this lesson, this engaging lesson bridges the gap between theoretical concepts and practical application in electronics and programming. We will delve into the process of converting pseudo-code—a simplified form of programming language—into functional Arduino sketches. This exercise will simulate the operations of traffic lights, offering you hands-on experience in programming and circuit design. As you learn to interpret and implement pseudo-code, you will gain deeper insights into the logic behind controlling electronic devices with code.
+
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/7_traffic_light.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 In this lesson, you will learn to:
 
@@ -45,18 +52,18 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_yellow_led| 
-     - |compoents_green_led| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_yellow_led| 
+     - |list_green_led| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_220ohm| 
+     - |list_wire| 
 
 
 
@@ -275,6 +282,10 @@ It's time to refine the code you've written and add additional ``digitalWrite()`
             delay(10000);           // Wait for 10 seconds
         }
 
+**Question**
+
+Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?
+
 **Summary**
 
 Congratulations on completing Lesson 7! You've successfully translated pseudo-code into a fully functional Arduino-controlled traffic light system. Here's a brief recap of what you achieved:
@@ -285,6 +296,3 @@ Congratulations on completing Lesson 7! You've successfully translated pseudo-co
 
 This lesson has sharpened both your technical abilities and analytical thinking, equipping you for more complex projects in electronics and programming. Keep building on these skills to unlock further possibilities in technology integration!
 
-**Question**
-
-Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?

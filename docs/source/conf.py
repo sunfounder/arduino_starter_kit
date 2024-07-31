@@ -29,7 +29,9 @@ author = 'www.sunfounder.com'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel'
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_copybutton'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -46,6 +48,7 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_static_path = ['_static']
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -147,50 +150,50 @@ rst_epilog += """
 
 .. |link_german_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/3in1-kit-r4/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+    <a href="https://docs.sunfounder.com/projects/beginners-lab-kit/de/latest/" target="_blank">Deutsch Online-Kurs</a>
 
 .. |link_jp_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/3in1-kit-r4/ja/latest/" target="_blank">日本語オンライン教材</a>
+    <a href="https://docs.sunfounder.com/projects/beginners-lab-kit/ja/latest/" target="_blank">日本語オンライン教材</a>
 
 .. |link_en_tutorials| raw:: html
 
-    <a href="https://docs.sunfounder.com/projects/3in1-kit-r4/en/latest/" target="_blank">English Online-tutorials</a>
+    <a href="https://docs.sunfounder.com/projects/beginners-lab-kit/en/latest/" target="_blank">English Online-tutorials</a>
 
 """
 
 # component pic
 rst_epilog += """
 
-.. |compoents_green_led| image:: /img/list_cpn/lab_list-2.png 
-.. |compoents_red_led| image:: /img/list_cpn/lab_list-3.png 
-.. |compoents_blue_led| image:: /img/list_cpn/lab_list-4.png 
-.. |compoents_yellow_led| image:: /img/list_cpn/lab_list-5.png 
-.. |compoents_white_led| image:: /img/list_cpn/lab_list-6.png 
-.. |compoents_rgb_led| image:: /img/list_cpn/lab_list-7.png 
-.. |compoents_10ohm| image:: /img/list_cpn/lab_list-8.png 
-.. |compoents_100ohm| image:: /img/list_cpn/lab_list-9.png 
-.. |compoents_220ohm| image:: /img/list_cpn/lab_list-10.png 
-.. |compoents_330ohm| image:: /img/list_cpn/lab_list-11.png 
-.. |compoents_1kohm| image:: /img/list_cpn/lab_list-12.png 
-.. |compoents_2kohm| image:: /img/list_cpn/lab_list-13.png 
-.. |compoents_5_1ohm| image:: /img/list_cpn/lab_list-14.png 
-.. |compoents_10kohm| image:: /img/list_cpn/lab_list-15.png 
-.. |compoents_100kohm| image:: /img/list_cpn/lab_list-16.png 
-.. |compoents_1mohm| image:: /img/list_cpn/lab_list-17.png 
-.. |compoents_active_buzzer| image:: /img/list_cpn/lab_list-18.png 
-.. |compoents_passive_buzzer| image:: /img/list_cpn/lab_list-19.png 
-.. |compoents_button| image:: /img/list_cpn/lab_list-20.png 
-.. |compoents_photoresistor| image:: /img/list_cpn/lab_list-21.png 
-.. |compoents_thermistor| image:: /img/list_cpn/lab_list-22.png 
-.. |compoents_potentiometer| image:: /img/list_cpn/lab_list-23.png 
-.. |compoents_7segment| image:: /img/list_cpn/lab_list-24.png 
-.. |compoents_74hc595| image:: /img/list_cpn/lab_list-25.png 
-.. |compoents_ultrasonic| image:: /img/list_cpn/lab_list-26.png 
-.. |compoents_meter| image:: /img/list_cpn/lab_list-27.png 
-.. |compoents_wire| image:: /img/list_cpn/lab_list-28.png
-.. |compoents_breadboard| image:: /img/list_cpn/lab_list-29.png 
-.. |compoents_usb_cable| image:: /img/list_cpn/lab_list-30.png
-.. |compoents_uno_r3| image:: /img/list_cpn/lab_list-31.png 
+.. |list_green_led| image:: /img/list_cpn/list_green_led.png 
+.. |list_red_led| image:: /img/list_cpn/list_red_led.png 
+.. |list_blue_led| image:: /img/list_cpn/list_blue_led.png 
+.. |list_yellow_led| image:: /img/list_cpn/list_yellow_led.png 
+.. |list_white_led| image:: /img/list_cpn/list_white_led.png 
+.. |list_rgb_led| image:: /img/list_cpn/list_rgb_led.png 
+.. |list_10ohm| image:: /img/list_cpn/list_10ohm.png 
+.. |list_100ohm| image:: /img/list_cpn/list_100ohm.png 
+.. |list_220ohm| image:: /img/list_cpn/list_220ohm.png 
+.. |list_330ohm| image:: /img/list_cpn/list_330ohm.png 
+.. |list_1kohm| image:: /img/list_cpn/list_1kohm.png 
+.. |list_2kohm| image:: /img/list_cpn/list_2kohm.png 
+.. |list_5_1ohm| image:: /img/list_cpn/list_5_1ohm.png 
+.. |list_10kohm| image:: /img/list_cpn/list_10kohm.png 
+.. |list_100kohm| image:: /img/list_cpn/list_100kohm.png 
+.. |list_1mohm| image:: /img/list_cpn/list_1mohm.png 
+.. |list_active_buzzer| image:: /img/list_cpn/list_active_buzzer.png 
+.. |list_passive_buzzer| image:: /img/list_cpn/list_passive_buzzer.png 
+.. |list_button| image:: /img/list_cpn/list_button.png 
+.. |list_thermistor| image:: /img/list_cpn/list_thermistor.png 
+.. |list_photoresistor| image:: /img/list_cpn/list_photoresistor.png 
+.. |list_potentiometer| image:: /img/list_cpn/list_potentiometer.png 
+.. |list_7segment| image:: /img/list_cpn/list_7segment.png 
+.. |list_74hc595| image:: /img/list_cpn/list_74hc595.png 
+.. |list_ultrasonic| image:: /img/list_cpn/list_ultrasonic.png 
+.. |list_meter| image:: /img/list_cpn/list_meter.png 
+.. |list_wire| image:: /img/list_cpn/list_wire.png
+.. |list_breadboard| image:: /img/list_cpn/list_breadboard.png 
+.. |list_usb_cable| image:: /img/list_cpn/list_usb_cable.png 
+.. |list_uno_r3| image:: /img/list_cpn/list_uno_r3.png 
 
 """

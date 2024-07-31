@@ -44,16 +44,16 @@ Components Needed
      - 1 * Red LED
      - 1 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      -
      -   
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
      -
      - 
 
@@ -238,7 +238,7 @@ Arduino Uno R3
 
 In this lesson, we're using the Arduino Uno R3 as a power supply. Its 5V pin serves as the positive terminal and the GND pin as the negative terminal, supplying a steady 5V to the circuit.
 
-.. image:: img/2_uno_battery.png
+.. image:: img/1_uno_power_pin.png
     :width: 500
     :align: center
 

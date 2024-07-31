@@ -17,9 +17,16 @@
 
 In this lesson, we'll explore the critical role of temperature management in food safety. Not all foods need to be refrigerated or frozen; even shelf-stable items like chips, bread, and certain fruits require proper temperature storage to maintain quality and safety. By building a temperature monitoring system, we will learn how to keep foods within safe temperature ranges, triggering an alarm when temperatures deviate from these limits. This practical project not only helps protect food but also serves as an excellent introduction to environmental monitoring with real-world applications.
 
-.. image:: img/16_temperature.jpg
-    :width: 400
-    :align: center
+.. .. image:: img/16_temperature.jpg
+..     :width: 400
+..     :align: center
+
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/16_temp_alarm.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 By the end of this lesson, you will be able to:
 
@@ -43,23 +50,23 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * 10KΩ Resistor
-   * - |compoents_uno_r3| 
-     - |compoents_rgb_led| 
-     - |compoents_220ohm| 
-     - |compoents_10kohm| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * Thermistor
      - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-   * - |compoents_thermistor| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_usb_cable| 
+   * - |list_thermistor| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
    * - 1 * Multimeter
      - 
      - 
      - 
-   * - |compoents_meter| 
+   * - |list_meter| 
      - 
      - 
      - 
@@ -275,8 +282,8 @@ Code Creation
 
 **Get the Temperature**
 
-1. Open the Arduino IDE, go to the "File" menu, and select "New Sketch" to start a new project. Close any other open sketch windows.
-2. Save your new sketch by clicking "Save" in the "File" menu or pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location with the name ``Lesson16_Temperature_Alarm``.
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson16_Temperature_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. In previous lessons, we directly referenced the RGB LED pins in our code; here, we define them as constants.
 
@@ -366,7 +373,7 @@ Using constants instead of variables, which remain unchanged throughout the prog
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     }
 
-9. Subtract 273.15 from the Kelvin temperature to convert it to Celsius, and then print the result to the serial monitor using the ``Serial.println()`` function.
+9. Subtract 273.15 from the Kelvin temperature to convert it to Celsius, and then print the result to the serial monitor using the ``Serial.printlnln()`` function.
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
@@ -379,7 +386,7 @@ Using constants instead of variables, which remain unchanged throughout the prog
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
         float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.print(tempC);           // Display temperature in Celsius on Serial Monitor
+        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
     }
 
 10. At this point, you can upload the code to your Arduino Uno R3 and obtain the current Celsius temperature values.
@@ -427,7 +434,7 @@ For example, we set three temperature ranges:
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
         float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.print(tempC);           // Display temperature in Celsius on Serial Monitor
+        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
 
         // Adjust LED color based on temperature
         if (tempC < 10) {
@@ -475,7 +482,7 @@ For example, we set three temperature ranges:
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
 
         float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.print(tempC);           //Display temperature in Celsius on Serial Monitor
+        Serial.println(tempC);           //Display temperature in Celsius on Serial Monitor
 
         // Adjust LED color based on temperature
         if (tempC < 10) {
@@ -499,13 +506,14 @@ For example, we set three temperature ranges:
 
 14. Finally, remember to save your code and tidy up your workspace.
 
-**Summary**
-
-In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
-
 **Question**
 
 1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
 
 2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful?
+
+**Summary**
+
+In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
+
 

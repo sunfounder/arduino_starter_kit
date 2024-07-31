@@ -20,7 +20,6 @@ Imagine if you could paint with light, blending red, green, and blue to create e
     :width: 300
     :align: center
 
-
 Welcome to this lesson, where you will explore the captivating world of RGB LEDs and discover how the combination of primary colors can create a vibrant spectrum of hues. This hands-on course will guide you through the principles of RGB LED functionality and introduce you to the practical applications of programming and circuit building.
 
 In this lesson, you will learn:
@@ -43,17 +42,17 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_rgb_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Multimeter
      -
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_meter|
      -
      
 **Step-by-Step Building Instructions**
@@ -107,7 +106,7 @@ Touch the black lead of the multimeter to the RGB LED's longest pin, and touch t
     :width: 500
     :align: center
 
-3. Insert three resistors as shown from holes 15E to 15G, 16E to 16G, and 18E to 18G.
+3. Insert three 220ohm resistors as shown from holes 15E to 15G, 16E to 16G, and 18E to 18G.
 
 .. image:: img/12_mix_color_bb_2.png
     :width: 500
@@ -128,8 +127,8 @@ Touch the black lead of the multimeter to the RGB LED's longest pin, and touch t
 Code Creation - Lighting Up an RGB LED
 ----------------------------------------
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson12_Rainbow_Color``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson12_Rainbow_Color`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. The LED in your circuit is connected to digital pins on the Arduino Uno R3. As the LED is an output device, you'll need to set digital pins 9, 10, and 11 as ``OUTPUT``.
 

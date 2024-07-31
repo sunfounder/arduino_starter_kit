@@ -22,6 +22,12 @@ These pitch changes can evoke a sense of urgency, as they are often associated w
 
 By adjusting the frequency of a passive buzzer, we can simulate the characteristic rising and falling pitches of a siren sound.
 
+.. raw:: html
+
+    <video controls style = "max-width:90%">
+        <source src="_static/video/21_siren_sound.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 In this lesson, you will learn:
 
@@ -71,15 +77,15 @@ Building the Circuit
      - 1 * Breadboard
      - 1 * Passive Buzzer
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_breadboard| 
-     - |compoents_passive_buzzer| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_breadboard| 
+     - |list_passive_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |compoents_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 
@@ -141,8 +147,9 @@ As we learned while connecting, simply providing high and low power to a passive
     **Returns**
         Nothing
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson21_Tone``. Click "Save".
+
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson21_Tone`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. First, define the buzzer pin.
 
@@ -191,9 +198,9 @@ Previously, we learned how to make a buzzer emit sound and understood how freque
 
 From our earlier explorations, we know that using the ``tone(pin, frequency)`` function allows a passive buzzer to emit sound. Gradually increasing the ``frequency`` makes the pitch of the passive buzzer's sound higher. Let's implement this with code now.
 
-1. If necessary, open your ``Lesson21_Tone`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson21_Tone``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson21_Siren_Sound``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson21_Siren_Sound``. Click "Save".
 
 3. Write the ``tone()`` function into the ``void loop()`` and set three different frequencies. To clearly hear the difference in each frequency sound, use the ``delay()`` function to separate them.
 

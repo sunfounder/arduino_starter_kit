@@ -16,6 +16,13 @@
 ===========================================
 In this lesson, we delve into the fascinating intersection of music and technology. You'll learn how different musical pitches are produced through frequency changes, and how this principle can be applied using a microcontroller like Arduino to control a buzzer. By the end of this lesson, you will not only understand the basics of musical frequencies but also be able to program an Arduino to play a simple melody.
 
+.. raw:: html
+
+     <video controls style = "max-width:90%">
+        <source src="_static/video/22_little_star.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 By the end of this lesson, you will be able to:
 
 * Learn how musical pitches correspond to specific frequencies.
@@ -88,15 +95,15 @@ Building the Circuit
      - 1 * Breadboard
      - 1 * Passive Buzzer
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_breadboard| 
-     - |compoents_passive_buzzer| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_breadboard| 
+     - |list_passive_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |compoents_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 
@@ -114,9 +121,8 @@ This lesson uses the same circuit as Lesson 21.
 
 Code Creation - Array
 ----------------------
-
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson22_Array``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson22_Array`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Now create an array at the very beginning of the code, storing the notes of Twinkle Twinkle Little Star into the array.
 
@@ -255,9 +261,10 @@ Code Creation - Play Little Star
 
 Now that we have a solid understanding of creating arrays, accessing array elements, and calculating their lengths and operations, let's apply this knowledge to program a passive buzzer to play 'Twinkle, Twinkle, Little Star' using stored frequencies and intervals.
 
-1. If necessary, open your ``Lesson22_Array`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson22_Array``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson22_Little_Star``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson22_Little_Star``. Click "Save".
+
 
 3. First, define the buzzer pin.
 

@@ -19,7 +19,15 @@ Welcome to this lesson, where we explore how to master conditional statements to
 
 By the end of this lesson, you will not only know how to program LEDs to turn on in sequence but also understand how to use these lighting patterns to visually represent different input thresholds.
 
-Build the circuit
+.. raw:: html
+
+    <video controls style = "max-width:90%">
+        <source src="_static/video/11_control_leds.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+Build the Circuit
 ------------------------------------
 
 **Components Needed**
@@ -33,18 +41,18 @@ Build the circuit
      - 3 * Red LEDs
      - 3 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      - 1 * Multimeter
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_meter|
      
 
 **Building Steps**
@@ -143,8 +151,8 @@ Code Creation
 
 **Printing Potentiometer Values**
 
-3. To turn your pseudocode into a working sketch, open the Arduino IDE, go to the “File” menu, and select “New Sketch” to begin a new project. Ensure no other sketch windows are open.
-4. Save your new sketch by selecting “Save” from the “File” menu or pressing ``Ctrl + S``. Store it in the default Arduino Sketchbook location under the name ``Lesson11_LED_Array`` and click "Save".
+3. To turn your pseudocode into a working sketch, open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+4. Save your sketch as ``Lesson11_LED_Array`` using ``Ctrl + S`` or by clicking “Save”.
 
 5. Similar to previous lessons, create a variable before the ``void setup()`` to store the potentiometer value, and remember to annotate your code to match its functionality.
 
@@ -325,6 +333,42 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
 
 15. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
 
+.. code-block:: Arduino
+
+    int potValue = 0;  // Variable to store the value read from the potentiometer
+
+    void setup() {
+        pinMode(9, OUTPUT);   // Configure pin 9 as output
+        pinMode(10, OUTPUT);  // Configure pin 10 as output
+        pinMode(11, OUTPUT);  // Configure pin 11 as output
+        Serial.begin(9600);   // Start serial communication at 9600 baud
+    }
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+        potValue = analogRead(A0);    // Read value from potentiometer
+        Serial.print("Pot Value: ");  // Prompt for the read value
+        Serial.println(potValue);     // Print the potentiometer value
+        delay(100);
+        if (potValue < 200) {          // If potValue less than 200
+            digitalWrite(9, LOW);        // Switch off the LED on pin 9
+            digitalWrite(10, LOW);       // Switch off the LED on pin 10
+            digitalWrite(11, LOW);       // Switch off the LED on pin 11
+        } else if (potValue < 600) {   // If potValue less than 600
+            digitalWrite(9, HIGH);       // Light up the LED on pin 9
+            digitalWrite(10, LOW);       // Switch off the LED on pin 10
+            digitalWrite(11, LOW);       // Switch off the LED on pin 11
+        } else if (potValue < 1000) {  // If potValue less than 1000
+            digitalWrite(9, HIGH);       // Light up the LED on pin 9
+            digitalWrite(10, HIGH);      // Light up the LED on pin 10
+            digitalWrite(11, LOW);       // Switch off the LED on pin 11
+        } else {
+            digitalWrite(9, HIGH);   // Light up the LED on pin 9
+            digitalWrite(10, HIGH);  // Light up the LED on pin 10
+            digitalWrite(11, HIGH);  // Light up the LED on pin 11
+        }
+    }
+
 16. Rotate the potentiometer to see if the LED array functions as expected:
 
    - If the potentiometer's value is below 200, all LEDs should be off.
@@ -332,12 +376,13 @@ In an ``if-else if`` structure, the first condition is tested. If it's true, the
    - If the value is between 600 and 1000, the first two LEDs should be on.
    - If the value exceeds 1000, all LEDs should be on.
 
+**Question**
+
+In the code, we determine the number of LEDs to light up based on the value of the potentiometer. How can we modify the code so that, while lighting up the LEDs, their brightness changes in accordance with the potentiometer?
+
 **Summary**
 
 In this comprehensive lesson, you've learned to create an interactive LED display that responds to a potentiometer. Starting with circuit building, you've assembled a system that incorporates multiple LEDs controlled via digital pins, linked to a potentiometer that adjusts their states based on its readings. Through step-by-step instructions, you've successfully programmed your Arduino to manage different lighting scenarios based on specific potentiometer thresholds, enhancing your understanding of both hardware and software interactions.
 
 This course has equipped you with the skills to write efficient conditional structures, enabling your projects to react to precise changes in sensor inputs. By experimenting with different conditions, you've seen firsthand how the order and structure of your code affect the output and efficiency of your electronic projects.
 
-**Question:**
-
-In the last code, we determine the number of LEDs to light up based on the value of the potentiometer. How can we modify the code so that, while lighting up the LEDs, their brightness changes in accordance with the potentiometer?

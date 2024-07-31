@@ -16,6 +16,14 @@
 ================================================================================
 Welcome to this lesson,  where we unravel the mystery of human color perception and replicate it using technology. In this lesson, we delve into how our eyes distinguish millions of colors and how this incredible ability can be simulated digitally with RGB LEDs. By exploring the interplay of photoreceptors in our eyes and the RGB color model, you'll learn to recreate the vividness of the world in digital form.
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/13_human_perception_color.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
 **Overview**
 
 The human visual system can perceive about ten million different colors, a capability achieved through photoreceptor cells in the retina—cones and rods. Perception of color is not linear; our visual system is more sensitive to changes in certain colors than others. Cones, which are sensitive to color, primarily come in three types, each most sensitive to either red, green, or blue light.
@@ -53,16 +61,16 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_rgb_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      -
      -
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
      -
      -
 
@@ -80,8 +88,8 @@ In our journey to master the control of RGB LEDs, we've seen how using ``digital
 
 Let's see how we can implement this with code.
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson13_PWM_Color_Mixing``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson13_PWM_Color_Mixing`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. First, set the three pins of the RGB LED as outputs:
 
@@ -157,9 +165,9 @@ When defining a parameterized function, you specify what values it needs to oper
 
 Here's how to define a parameterized function for setting the color of an RGB LED:
 
-1. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson13_PWM_Color_Mixing_Function``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson13_PWM_Color_Mixing_Function``. Click "Save".
 
 3. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
 

@@ -17,6 +17,13 @@
 
 Welcome to the next phase of our Arduino journey. In the previous lesson, we built a foundational traffic light system, a staple of our roads, controlling the flow with red, yellow, and green lights. Now, we're adding a layer of interaction that reflects real-world complexities: a pedestrian button. This feature introduces a human element to our electronic crossroads, allowing for a dynamic interplay between the walkways and roadways at our busy intersections. 
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/8_traffic_light_button.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will learn to:
 
 * Understand how button work and their role in circuits.
@@ -38,25 +45,25 @@ Building the Circuit
      - 1 * Red LED
      - 1 * Yellow LED
      - 1 * Green LED
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_yellow_led| 
-     - |compoents_green_led| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_yellow_led| 
+     - |list_green_led| 
    * - 1 * Push Button
      - 1 * Breadboard
      - 3 * 220Ω Resistor
      - 1 * 10K Ohm Resistor
-   * - |compoents_button| 
-     - |compoents_breadboard| 
-     - |compoents_220ohm| 
-     - |compoents_10kohm| 
+   * - |list_button| 
+     - |list_breadboard| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * USB Cable
      - Jumper Wires
      - 1 * Multimeter
      - 
-   * - |compoents_usb_cable| 
-     - |compoents_wire| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_wire| 
+     - |list_meter|
      - 
 
 
@@ -135,7 +142,7 @@ Code Creation
 
 So far, you've programmed the traffic lights to sequentially flash green, yellow, and red LEDs. In this lesson, you'll program your pedestrian button so that when pressed, the red and yellow LEDs turn off while the green LED flashes, indicating it's safe for pedestrians to cross.
 
-1. Open the sketch you saved earlier, ``Lesson7_Traffic_Light``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson7_Traffic_Light_Button``. Click "Save".
+1. Open the sketch you saved earlier, ``Lesson7_Traffic_Light``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson8_Traffic_Light_Button``. Click "Save".
 
 2. In the ``void setup()`` function, add another ``pinMode()`` command to declare pin 8 as input (``INPUT``). Then, add a code comment to explain your new command.
 
@@ -461,13 +468,11 @@ Observe the behavior of your traffic light. Press the button and wait for the tr
 
 Once completed, save your sketch.
 
+**Question**
+
+During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, but pedestrians can’t cross the road while continuously pressing the button. How can you modify the code to ensure that once the pedestrian button is pressed, the green LED lights up long enough for a safe crossing without requiring continuous pressing? Please write down the pseudo-code solution in your handbook.
+
 **Summary**
 
 In this lesson, we've delved into integrating a pedestrian button into a traffic light system, simulating a real-world scenario that balances the flow of both pedestrian and vehicular traffic. We explored the workings of a button in an electronic circuit and utilized the ``digitalRead()`` function to monitor input from the button. By implementing conditional statements with ``if`` structures, we programmed the traffic lights to respond dynamically to pedestrian input, enhancing our understanding of interactive systems. This lesson not only reinforced our skills in Arduino programming but also highlighted the practical application of these technologies in managing everyday situations efficiently.
 
-**Question:**
-
-
-During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, 
-but pedestrians can’t cross the road while continuously pressing the button. How can you modify the code to ensure that once the pedestrian button is pressed, 
-the green LED lights up long enough for a safe crossing without requiring continuous pressing? Please write down the pseudo-code solution in your handbook.

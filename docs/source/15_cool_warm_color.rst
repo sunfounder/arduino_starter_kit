@@ -17,6 +17,13 @@
 
 Colors are not just a part of our visual experience—they also influence our emotions and feelings. In this lesson, we dive into the psychological impacts of colors and learn how to manipulate an RGB LED to shift between warm and cool colors, mimicking the effects of changing light temperatures.
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/15_cool_warm_color.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 **Overview**
 
 The concept of cool and warm colors relates to the psychological effects colors have on our perception. Reds, oranges, yellows, and browns typically evoke feelings of warmth and excitement, classifying them as warm colors. Conversely, greens, blues, and purples often impart calming, refreshing, and spacious feelings, making them cool colors. Orange and blue are at opposite ends of this warm-cool spectrum.
@@ -49,7 +56,7 @@ In this lesson, we'll take on the role of lighting engineers to create a lightin
 - Develop practical skills in using the ``map()`` function to transition between color temperatures.
 
 
-Build the circuit
+Build the Circuit
 ------------------------------------
 
 **Components Needed**
@@ -63,17 +70,17 @@ Build the circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |compoents_uno_r3| 
-     - |compoents_rgb_led| 
-     - |compoents_220ohm| 
-     - |compoents_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
      -
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
      -
      
 **Building Steps**
@@ -154,9 +161,9 @@ The perception of warmth in lighting is somewhat subjective, but unquestionably,
 
 The primary difference between warm and cool colors is the ratio of the three primary color intensities. Next, we'll store these warm and cool RGB values in our sketch.
 
-3. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
+3. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
 
-4. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson14_Cool_Warm_Color``. Click "Save".
+4. Hit “Save As...” from the “File” menu, and rename it to ``Lesson15_Cool_Warm_Color``. Click "Save".
 
 5. Before the ``void setup()``, declare six variables to store the RGB values for these two colors. Use the colors you've selected.
 

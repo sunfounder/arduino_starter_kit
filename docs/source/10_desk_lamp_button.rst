@@ -27,7 +27,7 @@ In this lesson, you'll expand on your previous project by adding a practical fea
 * Explore the characteristics of digital and analog signals
 * Utilizing Conditional Statements (``if else``)
 
-Build the circuit
+Build the Circuit
 ------------------------------------
 
 **Components Needed**
@@ -41,18 +41,18 @@ Build the circuit
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - 1 * Potentiometer
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_potentiometer| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_potentiometer| 
    * - 1 * Button
      - 1 * USB Cable
      - 1 * Breadboard
      - Jumper Wires
-   * - |compoents_button| 
-     - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
+   * - |list_button| 
+     - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_wire| 
 
 
 
@@ -404,11 +404,7 @@ Now that your code is complete, the full listing is as follows:
 
 3. Finally, remember to save your code and tidy up your workspace.
 
-**Summary**
-
-By the end of this lesson, you'll have a fully functional ON/OFF desk lamp controlled via a simple user interface. You will have mastered how to integrate and manipulate various electronic components and Arduino programming techniques to create a practical and interactive electronic device. This project not only reinforces foundational concepts in electronics and programming but also gives you a functional piece to add to your collection of DIY projects.
-
-**Question**:
+**Question**
 
 1. What would happen if you set digital pin 7 to INPUT only? Why?
 
@@ -422,3 +418,7 @@ By the end of this lesson, you'll have a fully functional ON/OFF desk lamp contr
     }
 
 2. If pin 7 is set only to ``INPUT``, what adjustments would need to be made to the circuit?
+
+**Summary**
+
+By the end of this lesson, you'll have a fully functional ON/OFF desk lamp controlled via a simple user interface. You will have mastered how to integrate and manipulate various electronic components and Arduino programming techniques to create a practical and interactive electronic device. This project not only reinforces foundational concepts in electronics and programming but also gives you a functional piece to add to your collection of DIY projects.

@@ -21,6 +21,13 @@ In this lesson, we'll explore the intersection of time management and technology
   :width: 500
   :align: center
 
+.. raw:: html
+
+     <video controls style = "max-width:90%">
+        <source src="_static/video/20_beep_timer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 By the end of this lesson, you will be able to:
 
 * Understand the historical significance of sound in timekeeping.
@@ -72,15 +79,15 @@ Building the Circuit
      - 1 * Breadboard
      - 1 * Active Buzzer
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_breadboard| 
-     - |compoents_active_buzzer| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_breadboard| 
+     - |list_active_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |compoents_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 
@@ -102,8 +109,8 @@ Coding Creation - Tick Tick
 In Arduino, ``delay()`` is the simplest and most commonly used timing function.
 We often use it to pause the program for a short time, which, combined with loops, can create a blinking LED effect. Here, we use the ``delay()`` function to make the buzzer sound once every second.
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson20_Timer_Tick_Tick``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson20_Timer_Tick_Tick`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Write the code as follows:
 
@@ -154,8 +161,8 @@ Arduino also has a timing tool that does not pause the program, which is ``milli
 
 Here, we similarly make the buzzer beep once every second.
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson20_Timer_Millis``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson20_Timer_Millis`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
 
@@ -289,8 +296,8 @@ The benefits of the Pomodoro Technique include enhanced focus, reduced fatigue, 
 
 Next, we will program a timer that will buzz every 25 minutes to signal the end of a work period followed by a reminder for a 5-minute break:
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson20_Timer_Millis_Pomodoro``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson20_Timer_Millis_Pomodoro`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Define some constants and variables before ``void setup()``.
 
@@ -442,13 +449,14 @@ Next, we will program a timer that will buzz every 25 minutes to signal the end 
 
 10. Finally, remember to save your code and tidy up your workspace.
 
+**Question**
+
+Think about other places in your life where you can 'hear' time. List a few examples and write them in your handbook!
+
 
 **Summary**
 
 In today's class, we successfully built an electronic version of the Pomodoro Timer, an invaluable tool for enhancing productivity through structured work and break periods. Through this project, students learned about the utility of buzzers in time management and the practical application of the ``millis()`` function to create non-blocking timer code in Arduino. This approach enables multitasking in microcontroller applications, mirroring more complex systems in technology and industry.
 
-**Question**
-
-Think about other places in your life where you can 'hear' time. List a few examples and write them in your handbook!
 
 

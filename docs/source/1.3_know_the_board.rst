@@ -20,6 +20,8 @@ Welcome to your next step in the Arduino journey! In your hands is an Arduino bo
 Think of the amazing projects you can create—whether it's a mini robot, a custom-made game, or a smart device for your room. Arduino is all about making those ideas possible. It's a compact platform filled with big possibilities. Let's get to know the board and all its parts so you can start creating.
 
 .. image:: img/1_introduce_board.png
+    :width: 800
+    :align: center
 
 The Core: Microcontroller
 -------------------------------
@@ -27,6 +29,8 @@ The Core: Microcontroller
 The microcontroller is the main chip on your Arduino. Think of it as the board's brain where all the thinking happens. It processes your commands and controls the pins, which interact with lights, motors, and sensors.
 
 .. image:: img/1_uno_mcu.png
+    :width: 500
+    :align: center
 
 Pins: Connecting and Controlling
 -------------------------------------
@@ -36,24 +40,32 @@ Pins: Connecting and Controlling
 These pins supply power to your creations. They have labels like "3.3V," "5V," and "GND," each providing different power levels for your projects. The "Reset" pin acts like a restart button, resetting everything back to the beginning.
 
 .. image:: img/1_uno_power_pin.png
+    :width: 500
+    :align: center
 
 **Digital Pins**
 
 Digital pins act like little switches that can be turned on and off. You'll use them to control things like LEDs or to read button presses. Some of them can even control how much power they send, which is useful for dimming lights or controlling motor speeds.
 
 .. image:: img/1_uno_digital_pin.png
+    :width: 500
+    :align: center
 
 **Analog Pins**
 
 These pins can read different levels of power, which means they're great for reading from sensors. They can measure how bright a light is, how warm something is, or how much pressure you're applying.
 
 .. image:: img/1_uno_analog_pin.png
+    :width: 500
+    :align: center
 
 **ICSP Header**
 
 This set of pins is a bit like a secret passage for programming your Arduino in a special way. It's not commonly used, but it's there if you need it.
 
 .. image:: img/1_uno_icsp_header.png
+    :width: 500
+    :align: center
 
 Ports: Connecting Your Board
 --------------------------------
@@ -63,12 +75,16 @@ Ports: Connecting Your Board
 This port connects your Arduino to your computer, allowing you to upload programs and let your board know what you want it to do.
 
 .. image:: img/1_uno_usb_port.png
+    :width: 500
+    :align: center
 
 **Power Jack**
 
 This is where you can plug in an external power source, like a battery, to make your Arduino work without a computer.
 
 .. image:: img/1_uno_power_jack.png
+    :width: 500
+    :align: center
 
 Other Key Components
 ----------------------------------
@@ -78,17 +94,23 @@ Other Key Components
 This part makes sure your Arduino gets just the right amount of power, keeping everything running smoothly.
 
 .. image:: img/1_uno_voltage_regulator.png
+    :width: 500
+    :align: center
 
 **Reset Switch**
 
 The reset button lets you start your program over, right from the beginning, with just a push.
 
 .. image:: img/1_uno_reset_switch.png
+    :width: 500
+    :align: center
 
 **USB Interface Chip**
 
 This is what talks to the USB port, helping your computer and Arduino understand each other.
 
 .. image:: img/1_uno_usb_chip.png
+    :width: 500
+    :align: center
 
 Understanding these parts will help you get the most out of your Arduino board. So let's get started on this learning adventure together!

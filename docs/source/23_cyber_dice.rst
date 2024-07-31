@@ -17,11 +17,18 @@
 
 In this lesson, we embark on an exciting journey through two projects involving digital electronics and programming.
 
-Initially, we will delve into the operation of a 7-segment display, learning how to control it to show numbers step-by-step. Following that, we will create an electronic dice! By simply pressing a button, a random number ranging from 1 to 6 will appear on the 7-segment display, offering a digital twist to traditional dice.
-
 .. image:: img/23_dice.jpg
     :align: center
     :width: 500
+
+Initially, we will delve into the operation of a 7-segment display, learning how to control it to show numbers step-by-step. Following that, we will create an electronic dice! By simply pressing a button, a random number ranging from 1 to 6 will appear on the 7-segment display, offering a digital twist to traditional dice.
+
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/23_cycle_dice.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 During this lesson, you will learn:
 
@@ -151,23 +158,23 @@ Building the Circuit
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 10KΩ Resistor
-   * - |compoents_uno_r3| 
-     - |compoents_7segment| 
-     - |compoents_220ohm| 
-     - |compoents_1kohm| 
+   * - |list_uno_r3| 
+     - |list_7segment| 
+     - |list_220ohm| 
+     - |list_10kohm| 
    * - 1 * Button
      - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
-   * - |compoents_button| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_usb_cable| 
+   * - |list_button| 
+     - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
    * - 1 * Multimeter
      - 
      - 
      - 
-   * - |compoents_meter| 
+   * - |list_meter| 
      - 
      - 
      - 
@@ -254,9 +261,8 @@ Follow the wiring diagram, or the steps below to build your circuit.
 
 Code Creation - Displaying Numbers
 -------------------------------------
-
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson23_Show_Number``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson23_Show_Number`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Define pins connected to the 7-segment display and set all pins as outputs.
 
@@ -531,9 +537,9 @@ Now that we know how to display numbers 1-6 on the 7-segment display, how can we
 
 This involves pressing a button to make the display cycle through numbers 1 to 6, and releasing the button to show a stable number. Let's see how we can achieve this with code.
 
-1. If necessary, open your ``Lesson23_Show_Number`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson23_Show_Number``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson23_Cyber_Dice``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson23_Cyber_Dice``. Click "Save".
 
 3. Define the button pin and set it as an input.
 

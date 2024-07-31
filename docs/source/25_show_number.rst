@@ -21,12 +21,18 @@ So, can the 74HC595 be used to control the 7-segment display? The answer is yes.
 
 In this lesson, we will use the 74HC595 to control the 7-segment display and make it show different numbers.
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/25_show_number.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will able to:
 
 * Understand how to use the 74HC595 shift register to drive a 7-segment display.
 * Learn the binary representations of digits 0 to 9 and how to convert them to decimal and hexadecimal formats.
 * Understand how to use the Serial Monitor to input data and display it on the 7-segment display.
-
 
 
 Building the Circuit
@@ -42,17 +48,17 @@ Building the Circuit
      - 1 * 7-segment Display
      - 1 * 220Ω Resistor
      - 1 * 74HC595
-   * - |compoents_uno_r3| 
-     - |compoents_7segment| 
-     - |compoents_220ohm| 
-     - |compoents_74hc595| 
+   * - |list_uno_r3| 
+     - |list_7segment| 
+     - |list_220ohm| 
+     - |list_74hc595| 
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
      -
-   * - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_usb_cable| 
+   * - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
      -
 
 **Building Step-by-Step**
@@ -232,10 +238,10 @@ Now that we know the binary representations for digits 0 and 2, please fill in t
 
 Code Creation - Displaying Numbers
 ------------------------------------------
+1. Open the sketch you saved earlier, ``Lesson24_Flowing_Light``. 
 
-1. If necessary, open your ``Lesson24_Flowing_Light`` sketch in the Arduino IDE.
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson25_Show_Number_Binary``. Click "Save".
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson25_Show_Number``. Click "Save".
 
 3. Change the ``datArray[]`` to display the binary numbers corresponding to digits 0 to 9.
 

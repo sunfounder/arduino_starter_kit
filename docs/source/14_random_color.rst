@@ -30,16 +30,16 @@ Building the Circuit
      - 1 * RGB LED
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_rgb_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_rgb_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      -
      -
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
+   * - |list_usb_cable| 
+     - |list_breadboard| 
      -
      -
      
@@ -88,9 +88,9 @@ Arduino's approach to randomness involves several functions:
 
 **Writing the Code**
 
-1. If necessary, open your ``Lesson13_PWM_Color_Mixing`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson14_Random_Colors``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson14_Random_Colors``. Click "Save".
 
 3. Only call ``randomSeed()`` once in ``void setup()`` to initialize the seed. Avoid using a fixed seed value, as this would cause the same sequence of random numbers to be generated every time the program runs.
 

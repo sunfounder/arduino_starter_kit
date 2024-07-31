@@ -16,6 +16,13 @@
 ======================
 Welcome to this lesson, you'll learn to manipulate the digital pins of the Arduino Uno R3 to programmatically control an LED—turning it on and off without manual intervention, a skill fundamental to both home and industrial electronics applications.
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/6_blink_led.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will learn to:
 
 * Create and save sketches using the Arduino IDE.
@@ -39,17 +46,17 @@ Building the Circuit
      - 1 * Red LEDs
      - 1 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Multimeter
      -   
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_meter|
      - 
 
 **Building Step-by-Step**

@@ -82,17 +82,17 @@ Building on our understanding of the differences between series and parallel cir
      - 3 * Red LEDs
      - 3 * 220Ω Resistor
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Multimeter
      -   
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_meter|
      - 
 
 **Building the Circuit**

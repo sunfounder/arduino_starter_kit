@@ -43,7 +43,6 @@ Dive into your learning journey with the Beginner's Lab Kit and start building, 
 .. note::
     This document is available in the following languages.
 
-        * |link_german_tutorials|
         * |link_jp_tutorials|
         * |link_en_tutorials|
     

@@ -17,6 +17,13 @@
 
 In this lesson, we will delve into the world of the 74HC595 shift register chip. This powerful component allows us to control numerous LEDs with just a few pins, making it perfect for implementing flowing light effects. By the end of this lesson, you'll have a solid understanding of how the 74HC595 works, how to use it to shift binary data, and how to apply it in a practical LED control experiment.
 
+.. raw:: html
+
+    <video muted controls style = "max-width:90%">
+        <source src="_static/video/24_flowing_light.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will learn:
 
 * Understand the working principles of the 74HC595 chip and its pin functions.
@@ -91,17 +98,17 @@ Building the Circuit
      - 8 * LEDs
      - 8 * 220Ω Resistor
      - 1 * 74HC595
-   * - |compoents_uno_r3| 
-     - |compoents_red_led| 
-     - |compoents_220ohm| 
-     - |compoents_74hc595|  
+   * - |list_uno_r3| 
+     - |list_red_led| 
+     - |list_220ohm| 
+     - |list_74hc595|  
    * - 1 * Breadboard
      - Jumper Wires
      - 1 * USB Cable
      -
-   * - |compoents_breadboard| 
-     - |compoents_wire| 
-     - |compoents_usb_cable| 
+   * - |list_breadboard| 
+     - |list_wire| 
+     - |list_usb_cable| 
      -
 
 **Building Step-by-Step**
@@ -227,8 +234,8 @@ Binary numbers are ordered from least significant to most significant bit, with 
 
 Let's now see how the 74HC595 receives binary data and outputs it to the LEDs!
 
-1. Open the Arduino IDE, go to the "File" menu, and select "New Sketch" to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking "Save" from the "File" menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson24_Lighting_up_LEDs``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson24_Lighting_up_LEDs`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Controlling the 74HC595 only requires three pins to provide pulse signals, so set them as OUTPUT.
 
@@ -333,9 +340,9 @@ Code Creation - Flowing Light
 
 How would we implement a flowing light effect, where the LEDs light up one by one?
 
-1. If necessary, open your ``Lesson24_Lighting_up_LEDs`` sketch in the Arduino IDE.
+1. Open the sketch you saved earlier, ``Lesson24_Lighting_up_LEDs``. 
 
-2. Save the sketch under a new name. From the "File" menu, select "Save As...", and the sketch location should default to the Arduino Sketchbook. Name the file ``Lesson24_Flowing_Light``. Click "Save".
+2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson24_Flowing_Light``. Click "Save".
 
 3. Here, we want to set up a flowing light, where the LEDs light up one by one. We will write the on/off states of this flowing light sequence as an array.
 

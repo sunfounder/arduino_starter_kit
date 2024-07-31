@@ -17,6 +17,13 @@
 
 Morse code is like a secret language using dots (.) and dashes (-) invented by Samuel Morse in the 1840s. It was created to send messages across long distances using telegraphs. Each letter of the alphabet and number is represented by a unique combination of these signals. For example, the most famous Morse code message is "SOS" (··· ––– ···), which is an international signal for help. Morse code used to be essential for communication before the invention of phones and the internet, and it was especially popular among ship and airplane operators. Today, it's fun to learn as a way to send secret messages to your friends!
 
+.. raw:: html
+
+    <video controls style = "max-width:90%">
+        <source src="_static/video/17_morse_code.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 In this lesson, you will learn:
 
 * Understand the workings of an active buzzer.
@@ -48,15 +55,15 @@ Building the Circuit
      - 1 * Active Buzzer
      - 1 * Breadboard
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_active_buzzer| 
-     - |compoents_breadboard| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_active_buzzer| 
+     - |list_breadboard| 
+     - |list_wire| 
    * - 1 * USB Cable
      -
      - 
      - 
-   * - |compoents_usb_cable| 
+   * - |list_usb_cable| 
      -
      - 
      - 
@@ -114,8 +121,8 @@ Open at the back, passive buzzers require an external frequency signal from a mi
 
 Code Creation
 ----------------
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson17_Morse_Code``. Click "Save".
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson17_Morse_Code`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
 

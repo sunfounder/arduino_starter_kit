@@ -15,8 +15,6 @@
 19. Reverse Parking Alarm System
 =====================================
 
-
-
 .. image:: img/19_packing.png
     :width: 600
     :align: center
@@ -29,7 +27,13 @@ The ultrasonic sensor helps detect the distance to obstacles behind the vehicle,
 
 This project not only allows us to better understand how ultrasonic sensors work but also teaches us how to program and control using Arduino to implement a practical reverse warning function. 
 
+.. raw:: html
 
+    <video controls style = "max-width:90%">
+        <source src="_static/video/19_reverse_parking_system.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  
 
 **Ultrasonic Module**
 
@@ -97,17 +101,17 @@ Building the Circuit
      - 1 * Ultrasonic Module
      - 1 * Active Buzzer
      - Jumper Wires
-   * - |compoents_uno_r3| 
-     - |compoents_ultrasonic| 
-     - |compoents_active_buzzer| 
-     - |compoents_wire| 
+   * - |list_uno_r3| 
+     - |list_ultrasonic| 
+     - |list_active_buzzer| 
+     - |list_wire| 
    * - 1 * USB Cable
      - 1 * Breadboard
      - 1 * Multimeter
      - 
-   * - |compoents_usb_cable| 
-     - |compoents_breadboard| 
-     - |compoents_meter|
+   * - |list_usb_cable| 
+     - |list_breadboard| 
+     - |list_meter|
      - 
 
 
@@ -126,10 +130,8 @@ Follow the wiring diagram, or the steps below to build your circuit.
 Code Creation
 -------------
 
-1. Open the Arduino IDE, go to the “File” menu, and select “New Sketch” to start a fresh project. Close any other sketch windows that might be open.
-
-2. Save your new sketch by clicking “Save” from the “File” menu or by pressing ``Ctrl + S``. Save it in the default Arduino Sketchbook location under the name ``Lesson19_reversin_alarm``. Click "Save".
-
+1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
+2. Save your sketch as ``Lesson19_reversin_alarm`` using ``Ctrl + S`` or by clicking “Save”.
 
 3. Firstly, we need to define the pins on the Arduino that are connected to the ultrasonic sensor and the buzzer. This step is crucial as it sets the foundation for the hardware interface.
 
