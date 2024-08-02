@@ -1,27 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Facebookで同じ趣味を持つ仲間と一緒に、Raspberry Pi、Arduino、ESP32についてさらに深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：購入後の問題や技術的な課題を、コミュニティとチームの助けを借りて解決します。
+    - **学びと共有**：スキル向上のためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**：新製品発表や先行情報に早期アクセスできます。
+    - **特別割引**：最新製品に対する特別割引を享受できます。
+    - **イベントプロモーションとギブアウェイ**：ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の旅に出る準備はできましたか？[|link_sf_facebook|]をクリックして、今日参加しましょう！
 
 
-7. Let's Make Traffic Lights!
+7. 信号機を作ろう！
 ==============================
-
 
 .. .. image:: img/5_traffic_light_pic.png
 ..     :width: 400
 ..     :align: center
 
-Welcome to this lesson, this engaging lesson bridges the gap between theoretical concepts and practical application in electronics and programming. We will delve into the process of converting pseudo-code—a simplified form of programming language—into functional Arduino sketches. This exercise will simulate the operations of traffic lights, offering you hands-on experience in programming and circuit design. As you learn to interpret and implement pseudo-code, you will gain deeper insights into the logic behind controlling electronic devices with code.
+このレッスンへようこそ。この魅力的なレッスンでは、理論的な概念と実際の応用を電子工学とプログラミングの両面で橋渡しします。私たちは、擬似コード（プログラミング言語の簡略化された形）を機能的なArduinoスケッチに変換するプロセスを探求します。この演習では、信号機の操作をシミュレートし、プログラミングと回路設計の実践的な経験を提供します。擬似コードを解釈し実装することで、コードを使用して電子デバイスを制御する背後にある論理を深く理解することができます。
 
 .. raw:: html
 
@@ -30,36 +29,36 @@ Welcome to this lesson, this engaging lesson bridges the gap between theoretical
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn to:
+このレッスンで学ぶこと:
 
-* Learn to write and interpret pseudo-code for planning electronic circuit functionality.
-* Convert pseudo-code into Arduino sketches to control traffic light simulations.
-* Build and program a traffic light system using LEDs and an Arduino board.
+* 電子回路の機能を計画するための擬似コードを書く方法と解釈する方法を学びます。
+* 擬似コードをArduinoスケッチに変換して信号機のシミュレーションを制御します。
+* LEDとArduinoボードを使用して信号機システムを構築し、プログラムします。
 
-By mastering these skills, you'll be equipped to design, program, and troubleshoot basic electronic systems, paving the way for more complex projects.
+これらのスキルを習得することで、基本的な電子システムを設計、プログラム、トラブルシューティングする能力が身につき、より複雑なプロジェクトへの道が開かれます。
 
-Getting Traffic Lights Ready
+信号機の準備
 ------------------------------------------
-Hey there! Ready to create your very own traffic light with an Arduino? Here's what we need:
+こんにちは！Arduinoで自分だけの信号機を作る準備はできましたか？以下のものが必要です。
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * Yellow LED
-     - 1 * Green LED
+     - 1 * 赤色LED
+     - 1 * 黄色LED
+     - 1 * 緑色LED
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_yellow_led| 
      - |list_green_led| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - 3 * 220Ω抵抗
+     - ジャンパーワイヤー
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_220ohm| 
@@ -67,57 +66,57 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
 
 
 
-**Building Step-by-Step**
+**ステップバイステップの組み立て**
 
-Let's put everything together, just like building a LEGO set!
+すべてをレゴセットのように組み立てましょう！
 
 .. image:: img/7_traffic_light.png
     :width: 600
     :align: center
 
-1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
+1. ブレッドボードに220Ω抵抗を接続します。片方の端を負極に、もう片方の端を1Bに差し込みます。
 
 .. image:: img/7_traffic_light_resistor.png
     :width: 600
     :align: center
 
-2. Add a Green LED to the breadboard. The LED's anode (long lead) should be in hole 1F. The cathode (short leg) should be in hole 1E.
+2. 緑色LEDをブレッドボードに追加します。LEDのアノード（長いリード）を1Fに、カソード（短いリード）を1Eに差し込みます。
 
 .. image:: img/7_traffic_light_green.png
     :width: 600
     :align: center
 
-3. Connect the green LED to pin 3 of the Arduino Uno R3 with a wire. Insert a jumper wire in hole 1J and the other end of the jumper wire into pin 3 of the Arduino Uno R3.
+3. 緑色LEDをジャンパーワイヤーでArduino Uno R3のピン3に接続します。ジャンパーワイヤーの一端を1Jに、もう一端をArduino Uno R3のピン3に差し込みます。
 
 .. image:: img/7_traffic_light_pin3.png
     :width: 600
     :align: center
 
-4. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
+4. 別の220Ω抵抗を取り、片方の端を負極に、もう片方の端を6Bに接続します。
 
 .. image:: img/7_traffic_light_yellow_resistor.png
     :width: 600
     :align: center
 
-5. Take a Yellow LED. The LED's anode (long Lead) should be in hole 6F. The cathode (short lead) should be in hole 6E.
+5. 黄色LEDを用意します。LEDのアノード（長いリード）を6Fに、カソード（短いリード）を6Eに差し込みます。
 
 .. image:: img/7_traffic_light_yellow.png
     :width: 600
     :align: center
 
-6. Connect the yellow LED to pin 4 of the Arduino Uno R3.
+6. 黄色LEDをArduino Uno R3のピン4に接続します。
 
 .. image:: img/7_traffic_light_pin4.png
     :width: 600
     :align: center
 
-7. Connect the red LED in the same way, the red LED is connected to pin 5 of the Arduino Uno R3.
+7. 赤色LEDを同じ方法で接続し、赤色LEDはArduino Uno R3のピン5に接続します。
 
 .. image:: img/7_traffic_light_red.png
     :width: 600
     :align: center
 
-8. Oops! We almost forgot to ground the circuit. Connect the breadboard's negative side to a GND pin on the Arduino Uno R3 with a black wire. Now, it's all set!
+8. うっかりしていましたが、回路をグラウンドに接続するのを忘れずに行いましょう。黒いワイヤーを使ってブレッドボードの負極側をArduino Uno R3のGNDピンに接続します。これで、すべてがセット完了です！
 
 .. image:: img/7_traffic_light.png
     :width: 600
@@ -125,82 +124,82 @@ Let's put everything together, just like building a LEGO set!
 
 .. note::
 
-    There are three GND pins on the Arduino Uno R3. You can use any of them; they all work the same way.
+    Arduino Uno R3にはGNDピンが3つあります。どのピンも同じように機能するので、どれでも使用できます。
 
-And just like that, you've got a complete traffic light setup! Each colored light is controlled by its own switch on the R3, ready to tell cars when to stop, wait, or go. Isn't it awesome to build something that works like real traffic lights? Great job!
+これで、信号機のセットアップが完了しました！それぞれの色のライトは、R3上の独自のスイッチで制御され、車が止まる、待つ、または進むべきタイミングを教えてくれます。実際の信号機のように機能するものを作るのは素晴らしいことですよね！お疲れ様でした！
 
-Writing Pseudo-code for a Traffic Light
+信号機のための擬似コードを書く
 -------------------------------------------
 
-It's time to give your LEDs a purpose. In this activity, you will program them to act as a traffic light, controlling the flow of traffic at a busy intersection.
+LEDに役割を持たせる時が来ました。このアクティビティでは、交通量の多い交差点での交通の流れを制御する信号機としてプログラムします。
 
-Traffic lights require precise control to switch between three colors in a strict sequence, making it an ideal project for diving into Arduino programming. To perfect our traffic light, we must clearly instruct the Arduino on its tasks.
+信号機は3色のライトを厳密な順序で切り替えるための正確な制御が必要であり、Arduinoプログラミングに取り組むための理想的なプロジェクトです。信号機を完璧にするためには、Arduinoにそのタスクを明確に指示する必要があります。
 
-Communication between humans involves listening, speaking, reading, writing, gesturing, or making facial expressions. Communicating with microcontrollers (like the one on your Arduino board) involves writing code.
+人間同士のコミュニケーションには、聞く、話す、読む、書く、ジェスチャー、または表情を使います。マイクロコントローラー（Arduinoボード上のもの）とのコミュニケーションには、コードを書くことが必要です。
 
-We can't simply tell the Arduino to "make a traffic light" in natural language. However, we can use natural language to write a "pseudo-code" to aid in the actual Arduino code development.
-
-.. note::
-    
-    There are no right or wrong answers in pseudo-code writing. The more detailed your pseudo-code, the easier it will be to translate it into a functional program.
-
-
-Think about what needs to happen for your circuit to act like a traffic light. In the space provided in your log, write down the pseudo-code describing how your traffic light will function. Use plain English.
-
-Here are some guiding questions for your pseudo-code:
-
-* Should two or more lights be on at the same time?
-* What's the order of the lights?
-* What happens to the other lights when one is on?
-* What happens after the third light turns off?
-* How long should each light stay on?
-
-Here are a couple of pseudo-code examples:
-
-.. code-block::
-
-    1) Set all LED pins to output.
-    2) Start main loop.
-    a) Turn off all lights.
-    b) Turn on green light for 10 seconds.
-    c) Turn off all lights.
-    d) Turn on yellow light for 3 seconds.
-    e) Turn off all lights.
-    f) Turn on red light for 10 seconds.
-    3) Return to the start of the loop.
-
-.. code-block::
-
-    Setup:
-        Define all LED pins as output
-    Main Loop:
-        Turn on green light
-        Turn off red and yellow lights
-        Wait 10 seconds
-        Turn on yellow light
-        Turn off red and green lights
-        Wait 3 seconds
-        Turn on red light
-        Turn off green and yellow lights
-        Wait 10 seconds
-
-Pseudo-code doesn't have a strict format, allowing you to clarify your thoughts and organize them logically. This logical order is called an algorithm.
-You use algorithms every day, perhaps without realizing it. Think of an algorithm like a recipe; in programming, the ingredients are keywords and commands, and the cooking steps are the algorithm.
-An algorithm is a set of steps or instructions. When an algorithm is translated from pseudo-code into Arduino programming language, it precisely instructs the Arduino board on what to do and when.
+自然言語で「信号機を作って」とArduinoに伝えることはできませんが、自然言語を使って「擬似コード」を書くことで、実際のArduinoコードの開発に役立てることができます。
 
 .. note::
     
-    Using sticky notes or index cards can be helpful when writing pseudo-code. Place each step of your algorithm on a separate note. This way, you can easily rearrange, insert, or remove steps from your algorithm.
+    擬似コードを書く際に正しい答えや間違った答えはありません。擬似コードが詳細であればあるほど、機能的なプログラムに変換するのが簡単になります。
 
 
-Transform Pseudo-code into an Arduino Sketch
+回路が信号機のように機能するために必要なことを考えてみましょう。ログのスペースに、信号機がどのように動作するかを説明する擬似コードを書きましょう。簡単な英語を使ってください。
+
+擬似コードを書く際のガイドとなる質問をいくつか示します：
+
+* 複数のライトが同時に点灯する必要がありますか？
+* ライトの順序はどうなっていますか？
+* あるライトが点灯しているときに他のライトはどうなりますか？
+* 3つ目のライトが消えた後はどうなりますか？
+* 各ライトはどのくらいの時間点灯しますか？
+
+擬似コードの例をいくつか示します：
+
+.. code-block::
+
+    1) すべてのLEDピンを出力に設定する。
+    2) メインループを開始する。
+    a) すべてのライトをオフにする。
+    b) 緑色のライトを10秒間点灯する。
+    c) すべてのライトをオフにする。
+    d) 黄色のライトを3秒間点灯する。
+    e) すべてのライトをオフにする。
+    f) 赤色のライトを10秒間点灯する。
+    3) ループの開始に戻る。
+
+.. code-block::
+
+    セットアップ：
+        すべてのLEDピンを出力に定義する
+    メインループ：
+        緑色のライトを点灯する
+        赤色と黄色のライトを消灯する
+        10秒待つ
+        黄色のライトを点灯する
+        赤色と緑色のライトを消灯する
+        3秒待つ
+        赤色のライトを点灯する
+        緑色と黄色のライトを消灯する
+        10秒待つ
+
+擬似コードには厳密な形式はなく、考えを明確にし、論理的に整理するためのものです。この論理的な順序はアルゴリズムと呼ばれます。
+毎日、無意識のうちにアルゴリズムを使用しているかもしれません。レシピのようなもので、プログラミングではキーワードやコマンドが材料であり、調理手順がアルゴリズムです。
+アルゴリズムは一連の手順や指示のことです。擬似コードからArduinoプログラミング言語に変換されると、Arduinoボードに具体的な指示を与えることができます。
+
+.. note::
+    
+    擬似コードを書く際には、付箋やインデックスカードを使用することが便利です。アルゴリズムの各ステップを別々のメモに書き、それを並べ替えたり、挿入したり、削除したりすることが簡単になります。
+
+
+擬似コードをArduinoスケッチに変換する
 ----------------------------------------------
 
-It's time to refine the code you've written and add additional ``digitalWrite()`` and ``delay()`` commands as needed. Here's a guide to structuring your code: Your ``void loop()`` function should encapsulate separate segments for the green, yellow, and red LEDs, each followed by a unique delay period. Not all delays need to be of equal duration. Update your code comments for clarity on what each line achieves.
+これまでに書いたコードを洗練させ、必要に応じて ``digitalWrite()`` や ``delay()`` コマンドを追加します。コードの構造をガイドするために、 ``void loop()`` 関数には、緑色、黄色、赤色のLEDそれぞれのセグメントをカプセル化し、それぞれの後に一意の遅延期間を追加する必要があります。すべての遅延が同じ期間である必要はありません。各行が何を達成するかを明確にするために、コードコメントを更新します。
 
-1. Open the sketch you saved earlier, ``Lesson6_Blink_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson7_Traffic_Light``. Click "Save".
+1. 以前保存したスケッチ ``Lesson6_Blink_LED`` を開きます。「ファイル」メニューから「名前を付けて保存」をクリックし、 ``Lesson7_Traffic_Light`` に名前を変更します。「保存」をクリックします。
 
-2. Now, according to our pseudo-code, set all three pins to output in the ``void setup()``. Copy the ``pinMode()`` command twice, paste it below, and adjust the pin numbers for each.
+2. 擬似コードに従って、 ``void setup()`` で3つのピンをすべて出力に設定します。 ``pinMode()`` コマンドを2回コピーして貼り付け、それぞれのピン番号を調整します。
 
     .. code-block:: Arduino
         :emphasize-lines: 4,5
@@ -282,17 +281,17 @@ It's time to refine the code you've written and add additional ``digitalWrite()`
             delay(10000);           // Wait for 10 seconds
         }
 
-**Question**
+**質問**
 
-Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?
+自宅周辺の交差点を見てみましょう。通常、信号機はいくつありますか？それらはどのように連携していますか？
 
-**Summary**
+**まとめ**
 
-Congratulations on completing Lesson 7! You've successfully translated pseudo-code into a fully functional Arduino-controlled traffic light system. Here's a brief recap of what you achieved:
+レッスン7の完了おめでとうございます！擬似コードを完全に機能するArduino制御の信号機システムに翻訳することに成功しました。ここで達成したことを簡単に振り返ってみましょう：
 
-* Pseudo-code Mastery: You've mastered the use of pseudo-code to outline electronic system operations, enhancing your logical thinking and planning skills.
-* From Pseudo-code to Real Code: You experienced how a structured approach in pseudo-code leads to effective and accurate Arduino programming.
-* Practical Application: By assembling and programming a traffic light system, you demonstrated practical application of your knowledge, showing how software directly controls hardware.
+* 擬似コードのマスター：電子システムの操作を概説するための擬似コードの使用を習得し、論理的思考と計画スキルを向上させました。
+* 擬似コードから実際のコードへ：構造化されたアプローチを使用することで、効果的で正確なArduinoプログラミングが可能になりました。
+* 実践的な応用：信号機システムの組み立てとプログラミングを通じて、知識の実践的な応用を示し、ソフトウェアがハードウェアを直接制御する方法を学びました。
 
-This lesson has sharpened both your technical abilities and analytical thinking, equipping you for more complex projects in electronics and programming. Keep building on these skills to unlock further possibilities in technology integration!
+このレッスンは、技術的な能力と分析的思考を磨き、エレクトロニクスとプログラミングにおけるより複雑なプロジェクトに備えるものです。これらのスキルを活かして、さらなる技術統合の可能性を探求し続けましょう！
 

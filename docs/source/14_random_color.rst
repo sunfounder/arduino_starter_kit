@@ -1,26 +1,26 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！Raspberry Pi、Arduino、ESP32に関心のある仲間たちと一緒に深く探求しましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**: コミュニティとチームの助けを借りて、販売後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表やスニークピークにいち早くアクセスしましょう。
+    - **特別割引**: 最新製品の特別割引を楽しみましょう。
+    - **お祭りのプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造する準備はできましたか？今すぐクリックして参加しましょう [|link_sf_facebook|]！
 
-14. Random Colors
+14. ランダムカラー
 ======================
 
-Sometimes, life needs a dash of surprise. When you're feeling indecisive, let randomness take the reins. This lesson will guide you on how to make an RGB LED light up in random colors, perfect for when you want to add an unpredictable sparkle to your projects.
+時には、人生にサプライズが必要です。決めかねている時には、ランダムに任せてみましょう。このレッスンでは、RGB LEDをランダムな色で点灯させる方法を学びます。プロジェクトに予測不可能な輝きを加えるのに最適です。
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -28,14 +28,14 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * 220Ω抵抗
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
      -
      -
    * - |list_usb_cable| 
@@ -43,147 +43,145 @@ Building the Circuit
      -
      -
      
-This lesson uses the same circuit as Lesson 12.
+このレッスンでは、レッスン12と同じ回路を使用します。
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
-Code Creation
+コード作成
 -------------------
 
-In the previous lessons, you've controlled the RGB LED to display your desired colors. But sometimes, you may not need it to show a specific color; instead, you might want it to display a random color, much like stage lights. How can this be done?
+前のレッスンでは、RGB LEDを制御して希望の色を表示しました。しかし、特定の色を表示する必要がない場合もあり、代わりにランダムな色を表示させたいことがあります。舞台照明のようにランダムな色を表示させるにはどうすればいいでしょうか？
 
-**Know random() functions**
+**ランダム()関数を知る**
 
-In the physical world, randomness abounds, but in programming, so-called "random" numbers are usually computed through a deterministic algorithm. This algorithm typically requires a starting point known as a "seed," making these numbers predictable and thus called "pseudo-random." The "pseudo" prefix indicates that these numbers seem random but are actually patterned.
+物理的な世界ではランダムが溢れていますが、プログラミングでは「ランダム」な数値は通常、決定論的なアルゴリズムによって計算されます。このアルゴリズムは通常、「シード」と呼ばれる開始点を必要とし、これらの数値を予測可能にします。そのため、「擬似ランダム」と呼ばれます。「擬似」の接頭辞は、これらの数値がランダムに見えるが実際にはパターン化されていることを示します。
 
-Interestingly, on an Arduino Uno R3, we can use physical measurements from the real world as seeds. During your measurements with a multimeter, you might notice minor fluctuations in the circuit's voltage and current values. These fluctuations can provide unpredictability to our random numbers.
+興味深いことに、Arduino Uno R3では、実世界からの物理的な測定値をシードとして使用できます。マルチメーターで測定する際、回路の電圧や電流値に微妙な変動があることに気付くかもしれません。これらの変動がランダムな数値に予測不可能性を与えます。
 
-Arduino's approach to randomness involves several functions:
+Arduinoのランダム性へのアプローチには、いくつかの関数があります：
 
-* ``randomSeed();``: Initializing the random number generator's seed value. This function ensures that the starting point of the random number sequence varies with each program run, thus producing different sequences. 
+* ``randomSeed();``: ランダム数生成器のシード値を初期化する関数。この関数は、プログラムの実行ごとにランダム数のシーケンスの開始点を変え、異なるシーケンスを生成します。
 
-    **Parameters**
-        * ``seed``: A value used to initialize the random number generator. This unsigned long value sets the starting point of the random sequence.
-    **Returns**
-        None.
+    **パラメータ**
+        * ``seed``: ランダム数生成器を初期化するために使用される値。このunsigned long値はランダムシーケンスの開始点を設定します。
+    **戻り値**
+        なし。
 
-* ``long random(long max);``: Generating a random number within a specified range.
+* ``long random(long max);``: 指定された範囲内でランダムな数値を生成する関数。
 
-    **Parameters**
-        ``max``: The upper limit of the random number (``max`` itself not included), meaning the random number will be between 0 (inclusive) and ``max-1`` (inclusive).
+    **パラメータ**
+        ``max``: ランダム数の上限（ ``max`` 自体は含まれない）。ランダム数は0（含む）から ``max-1`` （含む）の範囲になります。
     
-    **Returns**
-        A long type number between 0 and max-1.
+    **戻り値**
+        0からmax-1の範囲のlong型数値。
 
-* ``long random(long min, long max);``: Generating a random number within a specified range.
+* ``long random(long min, long max);``: 指定された範囲内でランダムな数値を生成する関数。
 
-    **Parameters**
-        ``min``: The lower limit of the random number (inclusive).
-        ``max``: The upper limit of the random number (``max`` itself not included), meaning the random number will be between min (inclusive) and max-1 (inclusive).
+    **パラメータ**
+        ``min``: ランダム数の下限（含む）。
+        ``max``: ランダム数の上限（ ``max`` 自体は含まれない）。ランダム数はmin（含む）からmax-1（含む）の範囲になります。
     
-    **Returns**
-        A long type number between min and max-1.
+    **戻り値**
+        minからmax-1の範囲のlong型数値。
 
-**Writing the Code**
+**コードの作成**
 
-1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
+1. 以前に保存したスケッチ ``Lesson13_PWM_Color_Mixing`` を開きます。
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson14_Random_Colors``. Click "Save".
+2. メニューの「ファイル」から「名前を付けて保存」を選び、名前を ``Lesson14_Random_Colors`` に変更して「保存」をクリックします。
 
-3. Only call ``randomSeed()`` once in ``void setup()`` to initialize the seed. Avoid using a fixed seed value, as this would cause the same sequence of random numbers to be generated every time the program runs.
+3. シードを初期化するために、``void setup()`` 内で ``randomSeed()`` を一度だけ呼び出します。固定されたシード値を使用しないでください。そうしないと、プログラムが実行されるたびに同じ乱数のシーケンスが生成されます。
 
-    We use ``analogRead(A0)`` to read the value from an unconnected analog pin. As this pin is not connected, it picks up noise, which varies with each reading, providing a good seed for ``randomSeed()``.
+   接続されていないアナログピンから値を読み取るために ``analogRead(A0)`` を使用します。このピンは接続されていないため、ノイズを拾い、各読み取りで変動し、 ``randomSeed()`` に適したシードを提供します。
 
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     void setup() {
-        // Set up code to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // 一度だけ実行されるセットアップコード：
+        pinMode(9, OUTPUT);   // RGB LEDの青ピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDの緑ピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDの赤ピンを出力に設定
             
-        // Initialize random seed based on an unconnected analog pin
-        // This ensures a different sequence of random numbers on each reset
+        // 接続されていないアナログピンに基づいてランダムシードを初期化
+        // これにより、リセット時に異なる乱数のシーケンスが生成されることを保証
         randomSeed(analogRead(A0));
     }
 
-4. Now in ``void loop()``, remove the original code. Use the ``random()`` function to generate random values stored in the variables ``redValue``, ``greenValue``, and ``blueValue``.
+4. 次に ``void loop()`` 内の元のコードを削除します。 ``random()``  関数を使用してランダム値を生成し、それを ``redValue``、 ``greenValue`` 、および ``blueValue`` 変数に格納します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
 
     void loop(){
-        // Generate random values for each color component
-        int redValue = random(0, 256);   // Random value between 0 and 255
-        int greenValue = random(0, 256); // Random value between 0 and 255
-        int blueValue = random(0, 256);  // Random value between 0 and 255
+        // 各色成分のランダム値を生成
+        int redValue = random(0, 256);   // 0から255の間のランダム値
+        int greenValue = random(0, 256); // 0から255の間のランダム値
+        int blueValue = random(0, 256);  // 0から255の間のランダム値
     }
 
-5. Input the generated RGB values into the ``setColor()`` function, allowing the RGB LED to emit the color. Also, use a ``delay()`` function to determine how long the color is displayed.
-
+5. 生成されたRGB値を ``setColor()`` 関数に入力し、RGB LEDが色を発光できるようにします。また、色の表示時間を決定するために ``delay()`` 関数を使用します。
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     void loop() {
-        // Generate random values for each color component between 0 and 255
-        int redValue = random(0, 256);    // Generate a random red value
-        int greenValue = random(0, 256);  // Generate a random green value
-        int blueValue = random(0, 256);   // Generate a random blue value
+        // 各色成分のランダム値を0から255の範囲で生成
+        int redValue = random(0, 256);    // ランダムな赤の値を生成
+        int greenValue = random(0, 256);  // ランダムな緑の値を生成
+        int blueValue = random(0, 256);   // ランダムな青の値を生成
 
-        // Apply the random color values to the RGB LED
+        // 生成されたランダムな色の値をRGB LEDに適用
         setColor(redValue, greenValue, blueValue);
-        delay(1000);  // Wait for 1 second
+        delay(1000);  // 1秒間待機
     }
 
-
-6. Your complete code is now ready. You can upload it to the Arduino Uno R3, and you will see the RGB LED display a random color every second.
+6. これでコードは完成です。Arduino Uno R3にアップロードすると、RGB LEDが毎秒ランダムな色を表示するのが見えるでしょう。
 
 .. code-block:: Arduino
     :emphasize-lines: 19,20
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // 一度だけ実行されるセットアップコード：
+        pinMode(9, OUTPUT);   // RGB LEDの青ピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDの緑ピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDの赤ピンを出力に設定
         
-        // Initialize random seed based on an unconnected analog pin
-        // This ensures a different sequence of random numbers on each reset
+        // 接続されていないアナログピンに基づいてランダムシードを初期化
+        // これにより、リセット時に異なる乱数のシーケンスが生成されることを保証
         randomSeed(analogRead(A0));
     }
 
     void loop() {
-        // Generate random values for each color component between 0 and 255
-        int redValue = random(0, 256);    // Generate a random red value
-        int greenValue = random(0, 256);  // Generate a random green value
-        int blueValue = random(0, 256);   // Generate a random blue value
+        // 各色成分のランダム値を0から255の範囲で生成
+        int redValue = random(0, 256);    // ランダムな赤の値を生成
+        int greenValue = random(0, 256);  // ランダムな緑の値を生成
+        int blueValue = random(0, 256);   // ランダムな青の値を生成
 
-        // Apply the random color values to the RGB LED
+        // 生成されたランダムな色の値をRGB LEDに適用
         setColor(redValue, greenValue, blueValue);
-        delay(1000);  // Wait for 1 second
+        delay(1000);  // 1秒間待機
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // 赤、緑、青のPWM値をRGB LEDに書き込む
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-7. Finally, remember to save your code and tidy up your workspace.
+7. 最後に、コードを保存して作業スペースを整理することを忘れないでください。
 
-**Question**
+**質問**
 
-1. If you change the code from ``randomSeed(analogRead(A0))`` to ``randomSeed(0)``, how will the colors of the RGB LED change, and why?
+1. ``randomSeed(analogRead(A0))`` を ``randomSeed(0)`` に変更すると、RGB LEDの色はどのように変わり、なぜそうなるのですか？
 
-2. What are some situations where randomness is used to solve problems in everyday life, aside from randomly picking colors for decoration and choosing lottery numbers?
+2. デコレーション用の色のランダム選択や宝くじ番号の選択以外に、日常生活でランダム性が問題解決に使用される場面にはどのようなものがありますか？
 
-**Summary**
+**まとめ**
 
-By the end of this lesson, you will not only have learned about randomness in programming and how to manipulate it to create vibrant, unexpected visual displays but also appreciated the simple beauty of randomness in everyday life. Programming can be as unpredictable as life itself, and with the right tools, you can harness that unpredictability in creative and functional ways.
+このレッスンの終わりまでに、プログラミングにおけるランダム性について学び、それを操作して鮮やかで予測不可能なビジュアルディスプレイを作成する方法を習得するだけでなく、日常生活におけるランダム性の単純な美しさも理解できるようになります。プログラミングは人生と同じように予測不可能なものであり、適切なツールを使えば、その予測不可能性を創造的かつ機能的に活用することができます。
 

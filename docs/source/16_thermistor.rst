@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi＆Arduino＆ESP32ファンのコミュニティへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32についてさらに深く掘り下げましょう。
 
-    **Why Join?**
+    **参加のメリット**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決します。
+    - **学び＆共有**：スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**：新製品の発表や先行情報にいち早くアクセスできます。
+    - **特別割引**：最新製品の特別割引をお楽しみいただけます。
+    - **フェスティブプロモーションとプレゼント**：ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-16. Temperature Alarm
+16. 温度アラーム
 ========================
 
-In this lesson, we'll explore the critical role of temperature management in food safety. Not all foods need to be refrigerated or frozen; even shelf-stable items like chips, bread, and certain fruits require proper temperature storage to maintain quality and safety. By building a temperature monitoring system, we will learn how to keep foods within safe temperature ranges, triggering an alarm when temperatures deviate from these limits. This practical project not only helps protect food but also serves as an excellent introduction to environmental monitoring with real-world applications.
+このレッスンでは、食品安全における温度管理の重要な役割を探ります。すべての食品が冷蔵や冷凍を必要とするわけではありません。チップス、パン、特定の果物のような常温保存可能な食品でも、品質と安全性を維持するためには適切な温度で保存する必要があります。温度監視システムを構築することで、食品を安全な温度範囲内に保ち、その範囲を超えるとアラームを発するように学びます。この実践的なプロジェクトは、食品を保護するだけでなく、環境監視の現実世界での応用に良い導入となります。
 
 .. .. image:: img/16_temperature.jpg
 ..     :width: 400
@@ -28,19 +28,18 @@ In this lesson, we'll explore the critical role of temperature management in foo
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンの終わりには、以下のことができるようになります：
 
-* Understand the importance of temperature control in food safety.
-* Build a circuit with a thermistor to monitor temperature changes.
-* Write an Arduino program to read temperature data from a thermistor.
-* Use logic in programming to trigger actions (like lighting an LED or sounding an alarm) based on temperature data.
-* Apply concepts of electrical resistance and temperature conversion in practical scenarios.
+* 食品安全における温度管理の重要性を理解する。
+* 温度変化を監視するためのサーミスタを使用した回路を構築する。
+* サーミスタから温度データを読み取るArduinoプログラムを書く。
+* プログラミングにおいて温度データに基づいてアクション（LEDの点灯やアラームの鳴動）をトリガーするロジックを使用する。
+* 電気抵抗と温度変換の概念を実際のシナリオに適用する。
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
-
+**必要な部品**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -48,21 +47,21 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * 10KΩ Resistor
+     - 3 * 220Ω 抵抗
+     - 1 * 10KΩ 抵抗
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_10kohm| 
-   * - 1 * Thermistor
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * サーミスタ
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * USB ケーブル
    * - |list_thermistor| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
-   * - 1 * Multimeter
+   * - 1 * マルチメーター
      - 
      - 
      - 
@@ -71,262 +70,259 @@ Building the Circuit
      - 
      - 
 
-**Building Step-by-Step**
+**手順ごとの構築**
 
-This circuit builds upon the one from Lesson 12 by adding a Thermistor.
+この回路はレッスン12の回路にサーミスタを追加したものです。
 
 .. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
-1. Based on the circuit of lesson12, remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. レッスン12の回路に基づいて、Arduino Uno R3のGNDピンとRGB LEDのGNDピンを接続しているジャンパーワイヤーを取り外し、それをブレッドボードの負極端子に差し込みます。その後、負極端子からRGB LEDのGNDピンにジャンパーワイヤーを接続します。
 
 .. image:: img/16_temperature_alarm_gnd.png
     :width: 500
     :align: center
 
-2. Insert the Thermistor into holes 6E and 8E. The pins are non-directional and can be inserted freely.
+2. サーミスタを6Eと8Eの穴に挿入します。ピンは方向性がなく、自由に挿入できます。
 
 .. image:: img/16_temperature_alarm_thermistor.png
     :width: 500
     :align: center
 
-A thermistor is a special type of resistor whose resistance changes with temperature. This device is very useful as it helps us detect and measure temperature, thereby controlling it in various electronic projects and devices.
+サーミスタは温度によって抵抗値が変わる特殊な抵抗器です。このデバイスは温度を検出し測定するのに非常に便利で、さまざまな電子プロジェクトやデバイスで温度を制御するのに役立ちます。
 
-Here is the electronic symbol of thermistor.
+ここにサーミスタの電子記号があります。
 
 .. image:: img/16_thermistor_symbol.png
     :width: 300
     :align: center
 
-Thermistors are of two opposite fundamental types:
+サーミスタには2つの基本的な種類があります：
 
-* **NTC thermistors**: Resistance decreases with rising temperature. Commonly used as temperature sensors or inrush current limiters in circuits.
-* **PTC thermistors**: Resistance increases with rising temperature. Often used as resettable fuses in circuits to protect against overcurrent.
+* **NTCサーミスタ**：温度が上昇すると抵抗が減少します。温度センサーや回路の突入電流制限器として一般的に使用されます。
+* **PTCサーミスタ**：温度が上昇すると抵抗が増加します。回路のリセット可能なヒューズとして、過電流保護に使用されることがよくあります。
 
-In this kit we use an **NTC** one. 
+このキットでは**NTC**タイプを使用します。
 
-Now use a multimeter to measure the resistance of this thermistor to see if it indeed decreases with an increase in temperature.
+今、マルチメーターを使用してこのサーミスタの抵抗を測定し、温度が上昇するにつれて抵抗が減少するかどうかを確認します。
 
-3. Since the rated resistance of the thermistor is 10K, set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+3. サーミスタの定格抵抗が10Kであるため、マルチメーターを20キロオーム（20K）レンジに設定します。
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-
-4. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
+4. 次に、マルチメーターの赤と黒のテストリードでフォトレジスタの2つのピンに触れます。
 
 .. image:: img/16_temperature_alarm_test.png
     :width: 500
     :align: center
 
-5. Read the resistance value under the current temperature and record it in the table below.
+5. 現在の温度下での抵抗値を読み取り、以下の表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Current temperature
+   * - 環境
+     - 抵抗値 (キロオーム)
+   * - 現在の温度
      - *9.37*
-   * - Higher temperature
+   * - 高温時
      -
-   * - Lower temperature
+   * - 低温時
      -
 
-6. Now you can find a friend to help you hold the thermistor, or use something else to raise the temperature around the thermistor (no water, no fire, safety first). Record the resistance value of the thermistor at this time in the table.
+6. まず友人にサーミスタを持ってもらうか、他の方法でサーミスタ周囲の温度を上げます（水や火は使用しないでください、安全第一です）。このときのサーミスタの抵抗値を表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Current temperature
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 現在の温度
      - *9.37*
-   * - Higher temperature
+   * - 高温時
      - *6.10*
-   * - Lower temperature
+   * - 低温時
      -
 
-7. You can place the thermistor outdoors, or fan it to lower the temperature around it. Record the resistance measured at this time in the table.
+7. サーミスタを屋外に置くか、扇いで周囲の温度を下げます。このときのサーミスタの抵抗値を表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Current temperature
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 現在の温度
      - *9.37*
-   * - Higher temperature
+   * - 高温時
      - *6.10*
-   * - Lower temperature
+   * - 低温時
      - *12.49*
 
-Through these measurements, we can see that the higher the ambient temperature, the lower the
+これらの測定から、周囲温度が高くなると抵抗値が低くなることがわかります。
 
-8. Now you can continue building the circuit. Connect one end of the thermistor to a 10K resistor, and the other end of the 10K resistor to the negative terminal of the breadboard.
+8. 次に回路の構築を続けます。サーミスタの一端を10K抵抗に接続し、10K抵抗のもう一端をブレッドボードの負端子に接続します。
 
 .. image:: img/16_temperature_alarm_resistor.png
     :width: 500
     :align: center
 
-9. Connect the other end of the breadboard to the 5V pin of the Arduino Uno R3.
+9. ブレッドボードの他端をArduino Uno R3の5Vピンに接続します。
 
 .. image:: img/16_temperature_alarm_5v.png
     :width: 500
     :align: center
 
-
-10. Finally, connect the common pin of the photoresistor and the 10K resistor to the A0 pin of the Arduino Uno R3.
+10. 最後に、フォトレジスタと10K抵抗の共通ピンをArduino Uno R3のA0ピンに接続します。
 
 .. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
-Understanding Temperature Calculation
+温度計算の理解
 ----------------------------------------
-**About the Temperature Formula**
+**温度公式について**
 
-The resistance of an NTC thermistor changes with temperature. This relationship is usually accurately described by the Steinhart-Hart Equation, as follows:
+NTCサーミスタの抵抗は温度によって変化します。この関係は通常、Steinhart-Hart方程式で正確に記述されます。
 
 .. image:: img/16_format_steinhart.png
     :width: 400
     :align: center
 
-Here, a, b, and c are called the Steinhart–Hart parameters, which must be specified for each device. T is the absolute temperature, and R is the resistance.
+ここで、a、b、およびcはSteinhart-Hartパラメータと呼ばれ、各デバイスに対して指定する必要があります。Tは絶対温度であり、Rは抵抗です。
 
-In addition to the Steinhart-Hart Equation, many practical applications also use a simplified formula based on the beta parameter (beta parameter) model to quickly calculate temperature. This model assumes that the relationship between resistance and temperature can be approximated by a simpler exponential relationship, thereby simplifying the calculation process and making it suitable for rapid temperature monitoring in engineering applications.
+Steinhart-Hart方程式に加えて、多くの実用的なアプリケーションでは、ベータパラメータモデルに基づく簡略化された公式も使用して温度を迅速に計算します。このモデルでは、抵抗と温度の関係をより簡単な指数関数的関係で近似し、計算プロセスを簡素化し、エンジニアリングアプリケーションでの迅速な温度監視に適しています。
 
 .. image:: img/16_format_3.png
     :width: 400
     :align: center
 
-* **T** is the temperature of the thermistor in Kelvin.
-* **T0** is a reference temperature, usually at 25°C (which is 273.15 + 25 in Kelvin).
-* **B** is the beta parameter of the material, the beta coefficient of the NTC thermistor used in this kit is 3950.
-* **R** is the resistance we measure.
-* **R0** is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
+* **T**: サーミスタの温度（ケルビン）。
+* **T0**: 基準温度、通常は25°C（ケルビンでは273.15 + 25）。
+* **B**: 材料のベータパラメータ、このキットに使用されているNTCサーミスタのベータ係数は3950です。
+* **R**: 測定した抵抗値。
+* **R0**: 基準温度T0での抵抗、このキットに使用されているNTCサーミスタの25°Cでの抵抗は10キロオームです。
 
-After converting the above formulas, the Kelvin temperature is calculated as: ``T=1/(ln(R/R0)/B+1/T0)``, subtract 273.15 to convert it to Celsius.
+上記の公式を変換すると、ケルビン温度は次のように計算されます: ``T=1/(ln(R/R0)/B+1/T0)``, 273.15を引くと摂氏に変換されます。
 
-**How to measure resistance?**
+**抵抗の測定方法**
 
-We connect the thermistor and a 10K resistor in series in our circuit.
+サーミスタと10K抵抗を直列に接続します。
 
 .. image:: img/16_thermistor_sch.png
     :width: 200
     :align: center
 
-The voltage at pin A0, which we measure, divided by the series resistor (the 10K resistor), tells us the current flowing through the circuit. This current can also be obtained by dividing the total voltage by the total resistance of the circuit (series resistor + thermistor):
+A0ピンで測定した電圧を直列抵抗（10K抵抗）で割ると、回路を流れる電流がわかります。この電流は、全電圧を回路全体の抵抗（直列抵抗+サーミスタ）で割ることで得られます。
 
 .. image:: img/16_format_1.png
     :width: 400
     :align: center
 
-* **Vsupply**: The voltage supplied to the circuit.
-* **Rseries**: The resistance value of the series resistor.
-* **Vmeasured**: The voltage across the 10K resistor, also the voltage at pin A0.
+* **Vsupply**: 回路に供給される電圧。
+* **Rseries**: 直列抵抗の抵抗値。
+* **Vmeasured**: 10K抵抗の両端の電圧、つまりA0ピンでの電圧。
 
-From these, we can rearrange the formula to find the resistance of the thermistor:
+これらから、サーミスタの抵抗を求めるために公式を再配置できます。
 
 .. image:: img/16_format_2.png
     :width: 400
     :align: center
 
-In our code, we use the ``analogRead()`` function to read the voltage at pin A0. The relationship between the voltage **Vmeasured** and the analog value read is:
+コードでは、 ``analogRead()`` 関数を使用してA0ピンでの電圧を読み取ります。電圧 **Vmeasured** と読み取ったアナログ値との関係は次の通りです:
 
 .. code-block::
 
-    (Analog value at A0) / 1023.0 = Vmeasured / Vsupply
+    (A0のアナログ値) / 1023.0 = Vmeasured / Vsupply
 
-Using the formula above, we calculate the thermistor's resistance:
+上記の公式を使用して、サーミスタの抵抗を計算します:
 
 .. code-block::
 
-    R_thermistor =R_series x (1023.0 / (Analog value at A0) - 1)
-
+    R_thermistor = R_series x (1023.0 / (A0のアナログ値) - 1)
 .. note::
 
-    If the formulas seem complicated, just remember the final ones here, and you're good to go!
+    もしこれらの数式が複雑に感じる場合は、ここに示した最終的な式だけを覚えておけば大丈夫です。
 
-    The resistance of the thermistor can be obtained through the following formula:
+    サーミスタの抵抗値は次の式で求められます：
 
     .. code-block::
 
         R_thermistor =R_series x (1023.0 / (Analog value at A0) - 1)
 
-    Then calculate the Kelvin temperature using the following formula:
+    次に、次の式を使ってケルビン温度を計算します：
 
     .. code-block::
 
         T=1/(ln(R/R0)/B+1/T0)
 
-    * **T0**: 273.15 + 25.
-    * **B**: 3950.
-    * **R** is the resistance we measure.
-    * **R0**: 10 kilohms.
+    * **T0**: 273.15 + 25
+    * **B**: 3950
+    * **R**: 測定した抵抗値
+    * **R0**: 10キロオーム
 
-    Finally, convert to Celsius using the following formula:
+    最後に、次の式を使って摂氏温度に変換します：
 
     .. code-block::
 
         Tc = T - 273.15
 
     
-Code Creation
+コード作成
 ---------------
 
-**Get the Temperature**
+**温度の取得**
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson16_Temperature_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Ctrl + S`` を押すか「保存」をクリックして ``Lesson16_Temperature_Alarm`` として保存します。
 
-3. In previous lessons, we directly referenced the RGB LED pins in our code; here, we define them as constants.
+3. 前のレッスンでは、RGB LEDのピンを直接コード内で参照していましたが、ここではそれらを定数として定義します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 11;         // Red LED digital pin
-    const int greenPin = 10;       // Green LED digital pin
-    const int bluePin = 9;         // Blue LED digital pin
+    // ピンの設定
+    const int tempSensorPin = A0;  // NTCサーミスタのアナログ入力ピン
+    const int redPin = 11;         // 赤色LEDのデジタルピン
+    const int greenPin = 10;       // 緑色LEDのデジタルピン
+    const int bluePin = 9;         // 青色LEDのデジタルピン
 
     void setup() {
-        // put your setup code here, to run once:
+        // 初期設定コードをここに記述します。一度だけ実行されます。
     }
 
-Using constants instead of variables, which remain unchanged throughout the program, provides clarity and simplifies maintenance. It allows meaningful names instead of numbers, and changes only need adjustments in declaration, not everywhere in the code. Constants follow the same naming rules as variables, avoiding any reserved keywords or commands from the Arduino IDE.
+変数ではなく定数を使用することで、プログラム全体で変更されない値を明確にし、保守を簡素化できます。これにより、数字の代わりに意味のある名前を使用でき、コード全体で変更が必要な場合は宣言部だけを修正すれば済みます。定数は変数と同じ命名規則に従い、Arduino IDEの予約語やコマンドを避ける必要があります。
 
-4. Before using the thermistor, we also need to define some more constants to store parameters related to the circuit.
+4. サーミスタを使用する前に、回路に関連するパラメータを格納するための定数をさらに定義する必要があります。
 
 .. note::
+ 
+    ``int``型定数と ``float`` 型定数があることに気づくでしょう。それでは、これら二つの型の定数の違いは何でしょうか？
 
-    You will see that there are ``int`` type constants and ``float`` type constants. So, what's the difference between these two types of constants?
-
-  * ``const int``: An ``int`` (short for integer) constant holds whole numbers. This type does not support fractions or decimal points. It occupies typically 16 or 32 bits of memory, depending on the system.
-  * ``const float``: A ``float`` (short for floating-point) constant holds numbers that can have fractional parts. It is used when more precision is needed, such as in measurements or calculations that require decimal values. A ``float`` typically occupies 32 bits of memory and can represent a wider range of numbers than ``int``.
+  * ``const int`` : ``int`` （整数）は、整数値を保持します。この型は小数点や分数をサポートしません。システムに依存しますが、通常は16ビットまたは32ビットのメモリを使用します。
+  * ``const float`` : ``float``（浮動小数点数）は、小数部分を持つ数値を保持します。測定値や計算で小数点以下の精度が必要な場合に使用します。 ``float`` は通常32ビットのメモリを使用し、 ``int`` よりも広い範囲の数値を表すことができます。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 10;         // Red LED digital pin
-    const int greenPin = 11;       // Green LED digital pin
-    const int bluePin = 12;        // Blue LED digital pin
+    // ピンの設定
+    const int tempSensorPin = A0;  // NTCサーミスタのアナログ入力ピン
+    const int redPin = 10;         // 赤色LEDのデジタルピン
+    const int greenPin = 11;       // 緑色LEDのデジタルピン
+    const int bluePin = 12;        // 青色LEDのデジタルピン
 
-    // Constants for temperature calculation
-    const float beta = 3950.0;               // NTC thermistor's Beta value
-    const float seriesResistor = 10000;      // Series resistor value (ohms)
-    const float roomTempResistance = 10000;  // NTC resistance at 25°C
-    const float roomTemp = 25 + 273.15;      // Room temperature in Kelvin
+    // 温度計算のための定数
+    const float beta = 3950.0;               // NTCサーミスタのベータ値
+    const float seriesResistor = 10000;      // 直列抵抗の値（オーム）
+    const float roomTempResistance = 10000;  // 25°CでのNTC抵抗値
+    const float roomTemp = 25 + 273.15;      // 室温（ケルビン）
 
-5. In ``void setup()``, set the RGB LED pins as outputs and configure the serial communication baud rate to 9600.
+5. ``void setup()`` 内で、RGB LEDピンを出力として設定し、シリアル通信のボーレートを9600に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
@@ -341,55 +337,55 @@ Using constants instead of variables, which remain unchanged throughout the prog
         Serial.begin(9600);
     }
 
-6. First, you need to read the analog value of the pin A0 in ``void loop()``.
+6. まず、 ``void loop()`` 内でA0ピンのアナログ値を読み取る必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 2
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
+        int adcValue = analogRead(tempSensorPin);  // サーミスタの値を読み取る
     }
 
-7. Next, calculate the resistance of the thermistor using the formula derived previously for converting analog values to voltage.
+7. 次に、アナログ値を電圧に変換するために導き出された式を使用してサーミスタの抵抗を計算します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // サーミスタの値を読み取る
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // サーミスタの抵抗を計算
     }
 
-8. Then, calculate the Kelvin temperature using the formula shown below:
+8. その後、以下の式を使ってケルビン温度を計算します。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // サーミスタの値を読み取る
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // サーミスタの抵抗を計算
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // ベータパラメータ方程式を使用してケルビン温度を計算
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     }
-
-9. Subtract 273.15 from the Kelvin temperature to convert it to Celsius, and then print the result to the serial monitor using the ``Serial.printlnln()`` function.
+    
+9. ケルビン温度から273.15を引いて摂氏温度に変換し、結果を ``Serial.println()`` 関数を使ってシリアルモニタに表示します。
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // サーミスタの値を読み取る
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // サーミスタの抵抗を計算
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // ベータパラメータ方程式を使用してケルビン温度を計算
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // 摂氏に変換
+        Serial.println(tempC);         // 摂氏温度をシリアルモニタに表示
     }
 
-10. At this point, you can upload the code to your Arduino Uno R3 and obtain the current Celsius temperature values.
+10. この時点で、コードをArduino Uno R3にアップロードし、現在の摂氏温度を取得できます。
 
 .. code-block::
 
@@ -399,44 +395,44 @@ Using constants instead of variables, which remain unchanged throughout the prog
     26.28
     26.28
 
-**Change RGB LED Color**
+**RGB LEDの色を変更する**
 
-Now, let's change the RGB LED color based on the temperature measured by the thermistor.
+次に、サーミスタで測定した温度に基づいてRGB LEDの色を変更します。
 
-For example, we set three temperature ranges:
+例えば、次のような温度範囲を設定します：
 
-* Below 10 degrees, the RGB LED shows green, indicating the temperature is comfortable.
-* Between 10 and 20 degrees, the RGB LED shows yellow, signaling caution with the current temperature.
-* Above 21 degrees, the RGB LED shows red, indicating the temperature is too high and measures are needed.
+* 10度未満では、RGB LEDは緑色を表示し、快適な温度を示します。
+* 10度から20度の間では、RGB LEDは黄色を表示し、現在の温度に注意を促します。
+* 21度以上では、RGB LEDは赤色を表示し、高温であることを示し、対策が必要です。
 
-11. For controlling the RGB LED, we'll use the function ``setColor()`` created in previous lessons.
+11. RGB LEDを制御するために、前のレッスンで作成した``setColor()``関数を使用します。
 
 .. code-block:: Arduino
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM values for red, green, and blue to the RGB LED
+        // PWM値を赤、緑、青の各LEDに書き込み
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-12. Now, we use an ``if else if`` statement to control the RGB LED's color based on different temperatures.
+12. 次に、 ``if else if`` 文を使って、異なる温度に応じてRGB LEDの色を制御します。
 
 .. code-block:: Arduino
     :emphasize-lines: 12-18
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // サーミスタの値を読み取る
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // サーミスタの抵抗を計算
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // ベータパラメータ方程式を使用してケルビン温度を計算
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // 摂氏に変換
+        Serial.println(tempC);         // 摂氏温度をシリアルモニタに表示
 
-        // Adjust LED color based on temperature
+        // 温度に応じてLEDの色を調整
         if (tempC < 10) {
             setColor(0, 0, 255);  // Cold: blue
         } else if (tempC >= 10 && tempC <= 21) {
@@ -444,76 +440,72 @@ For example, we set three temperature ranges:
         } else if (tempC > 21) {
             setColor(255, 0, 0);  // Hot: red
         }
-        delay(1000);  // Delay 1 second before next reading
+        delay(1000);  // 次の読み取りまで1秒待つ
     }
 
-13. Your complete code is now ready. You can now upload the code to your Arduino Uno R3 to see the effects.
-
+13. これでコードが完成しました。コードをArduino Uno R3にアップロードし、効果を確認してください。
 
 .. code-block:: Arduino
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 10;         // Red LED digital pin
-    const int greenPin = 11;       // Green LED digital pin
-    const int bluePin = 12;        // Blue LED digital pin
+    // ピンの設定
+    const int tempSensorPin = A0;  // NTCサーミスタのアナログ入力ピン
+    const int redPin = 10;         // 赤色LEDのデジタルピン
+    const int greenPin = 11;       // 緑色LEDのデジタルピン
+    const int bluePin = 12;        // 青色LEDのデジタルピン
 
-    // Constants for temperature calculation
-    const float beta = 3950.0;               // NTC thermistor's Beta value
-    const float seriesResistor = 10000;      // Series resistor value (ohms)
-    const float roomTempResistance = 10000;  // NTC resistance at 25°C
-    const float roomTemp = 25 + 273.15;      // Room temperature in Kelvin
+    // 温度計算のための定数
+    const float beta = 3950.0;               // NTCサーミスタのベータ値
+    const float seriesResistor = 10000;      // 直列抵抗の値（オーム）
+    const float roomTempResistance = 10000;  // 25°CでのNTC抵抗値
+    const float roomTemp = 25 + 273.15;      // 室温（ケルビン）
 
     void setup() {
-        // Initialize LED pins as outputs
+        // LEDピンを出力として初期化
         pinMode(redPin, OUTPUT);
         pinMode(greenPin, OUTPUT);
         pinMode(bluePin, OUTPUT);
 
-        // Start serial communication at 9600 baud
+        // シリアル通信を9600ボーレートで開始
         Serial.begin(9600);
     }
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // サーミスタの値を読み取る
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // サーミスタの抵抗を計算
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // ベータパラメータ方程式を使用してケルビン温度を計算
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
 
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           //Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // 摂氏に変換
+        Serial.println(tempC);         // 摂氏温度をシリアルモニタに表示
 
-        // Adjust LED color based on temperature
+        // 温度に応じてLEDの色を調整
         if (tempC < 10) {
-            setColor(0, 0, 255);  // Cold: blue
+            setColor(0, 0, 255);  // 寒い：青色
         } else if (tempC >= 10 && tempC <= 21) {
-            setColor(0, 255, 0);  // Comfortable: green
+            setColor(0, 255, 0);  // 快適：緑色
         } else if (tempC > 21) {
-            setColor(255, 0, 0);  // Hot: red
+            setColor(255, 0, 0);  // 暑い：赤色
         }
-        delay(1000);  // Delay 1 second before next reading
+        delay(1000);  // 次の読み取りまで1秒待つ
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // PWM値を赤、緑、青の各LEDに書き込み
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
+14. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-14. Finally, remember to save your code and tidy up your workspace.
+**質問**
 
-**Question**
+1. コードでは、ケルビン温度と摂氏温度が計算されています。もし華氏温度も知りたい場合、どうすればよいでしょうか？
 
-1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
+2. 今日作成した温度監視システムが他にどのような状況や場所で役立つか考えてみてください。
 
-2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful?
+**まとめ**
 
-**Summary**
-
-In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
-
-
+今日のレッスンでは、サーミスタを使って貯蔵エリアの温度を監視する温度警報システムを作成しました。サーミスタの抵抗値を読み取り、摂氏温度に変換する方法を学びました。さらに、温度に応じてRGB LEDの色を変更するプログラムを設定し、低温、適温、高温を視覚的に警告する方法を学びました。

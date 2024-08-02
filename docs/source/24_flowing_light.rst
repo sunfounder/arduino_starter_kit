@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32エンスージアストコミュニティへようこそ！Facebookで仲間のエンスージアストと一緒にRaspberry Pi、Arduino、ESP32について深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：コミュニティやチームの助けを借りて、購入後の問題や技術的な課題を解決。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルの交換。
+    - **独占プレビュー**：新製品発表やプレビューに早期アクセス。
+    - **特別割引**：最新製品の特別割引を楽しむ。
+    - **フェスティバルプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し、創造する準備はできましたか？クリックして[|link_sf_facebook|]今日参加しましょう！
 
-24. Flowing Light with 74HC595
+24. 74HC595を使用した流れる光
 =======================================
 
-In this lesson, we will delve into the world of the 74HC595 shift register chip. This powerful component allows us to control numerous LEDs with just a few pins, making it perfect for implementing flowing light effects. By the end of this lesson, you'll have a solid understanding of how the 74HC595 works, how to use it to shift binary data, and how to apply it in a practical LED control experiment.
+このレッスンでは、74HC595シフトレジスターチップの世界に入り込みます。この強力なコンポーネントを使用することで、少数のピンで多数のLEDを制御でき、流れる光のエフェクトを実現するのに最適です。このレッスンの終わりには、74HC595の仕組み、バイナリーデータのシフト方法、および実際のLED制御実験への適用方法についてのしっかりとした理解が得られます。
 
 .. raw:: html
 
@@ -24,60 +24,58 @@ In this lesson, we will delve into the world of the 74HC595 shift register chip.
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+このレッスンで学ぶこと:
 
-* Understand the working principles of the 74HC595 chip and its pin functions.
-* Learn how to use the ``shiftOut()`` function to shift data.
-* Build a flowing light circuit using the 74HC595 chip and Arduino.
-* Control 8 LEDs using binary data and the 74HC595 chip to create a flowing light effect.
+* 74HC595チップの動作原理とそのピン機能を理解する。
+* ``shiftOut()`` 関数を使用してデータをシフトする方法を学ぶ。
+* 74HC595チップとArduinoを使用して流れる光の回路を作成する。
+* バイナリーデータと74HC595チップを使用して8つのLEDを制御し、流れる光のエフェクトを作成する。
 
-Learn the 74HC595 Chip
+74HC595チップの学習
 --------------------------
-The 74HC595 chip consists of an 8-bit shift register and a storage register with three-state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU. 
+74HC595チップは、8ビットシフトレジスターと三状態のパラレル出力を持つストレージレジスターで構成されています。シリアル入力をパラレル出力に変換するため、MCUのIOポートを節約できます。
 
 .. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
-**Pins Functions**
+**ピン機能**
 
 .. image:: img/24_74hc595_pin.png
     :width: 500
     :align: center
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level;
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level.
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7**: 8ビットのパラレルデータ出力ピンで、8つのLEDや7セグメントディスプレイの8ピンを直接制御できます。
+* **Q7'**: シリーズ出力ピンで、他の74HC595のDSに接続して複数の74HC595を直列に接続できます。
+* **MR**: リセットピンで、低レベルでアクティブになります。
+* **SHcp**: シフトレジスターのタイムシーケンス入力です。立ち上がりエッジで、シフトレジスター内のデータが順次1ビット移動します。立ち下がりエッジでは、シフトレジスター内のデータは変わりません。
+* **STcp**: ストレージレジスターのタイムシーケンス入力です。立ち上がりエッジで、シフトレジスター内のデータがメモリレジスターに移動します。
+* **CE**: 出力イネーブルピンで、低レベルでアクティブになります。
+* **DS**: シリアルデータ入力ピンです。
+* **VCC**: 正電源電圧です。
+* **GND**: グランドです。
 
-**Working Principle**
+**動作原理**
 
-When MR (pin10) is high level and OE (pin13) is low level, 
-data is input in the rising edge of SHcp and goes to the storage register through the rising edge of STcp. 
+MR（ピン10）が高レベルで、OE（ピン13）が低レベルのとき、データはSHcpの立ち上がりエッジで入力され、STcpの立ち上がりエッジでストレージレジスターに移動します。
 
+* シフトレジスター
 
-* Shift Register
-
-    * Suppose, we want to input the binary data 1110 1110 into the shift register of the 74hc595.
-    * The data is input from bit 0 of the shift register.
-    * Whenever the shift register clock is a rising edge, the bits in the shift register are shifted one step. For example, bit 7 accepts the previous value in bit 6, bit 6 gets the value of bit 5, etc.
+    * 例えば、74HC595のシフトレジスターにバイナリーデータ1110 1110を入力したい場合を考えます。
+    * データはシフトレジスターのビット0から入力されます。
+    * シフトレジスタークロックが立ち上がりエッジになるたびに、シフトレジスター内のビットが1ステップシフトされます。例えば、ビット7は以前のビット6の値を受け取り、ビット6はビット5の値を受け取る、という具合です。
 
 .. image:: img/24_74hc595_shift.png
     :width: 600
     :align: center
 
-* Storage Register
+* ストレージレジスター
 
-    * When the storage register is in the rising edge state, the data of the shift register will be transferred to the storage register.
-    * The storage register is directly connected to the 8 output pins, Q0 ~ Q7 will be able to receive a byte of data. 
-    * The so-called storage register means that the data can exist in this register and will not disappear with one output. 
-    * The data will remain valid and unchanged as long as the 74HC595 is powered on continuously. 
-    * When new data comes, the data in the storage register will be overwritten and updated.
+    * ストレージレジスターが立ち上がりエッジ状態になると、シフトレジスターのデータがストレージレジスターに転送されます。
+    * ストレージレジスターは直接8つの出力ピンに接続されており、Q0〜Q7は1バイトのデータを受け取ることができます。
+    * ストレージレジスターとは、データがこのレジスターに存在し、一度出力されても消えないことを意味します。
+    * 74HC595が継続的に電源が入っている限り、データは有効で変更されません。
+    * 新しいデータが来ると、ストレージレジスター内のデータは上書きされ更新されます。
 
 .. image:: img/24_74hc595_storage.png
     :width: 600
@@ -85,109 +83,108 @@ data is input in the rising edge of SHcp and goes to the storage register throug
 
 
 
-Building the Circuit
+回路の作成
 --------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 8 * LEDs
-     - 8 * 220Ω Resistor
+     - 8 * LED
+     - 8 * 220Ω抵抗
      - 1 * 74HC595
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_74hc595|  
-   * - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * USBケーブル
      -
    * - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
      -
 
-**Building Step-by-Step**
+**ステップバイステップの作成方法**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+配線図、または以下の手順に従って回路を作成してください。
 
 .. image:: img/24_flow_light.png
     :width: 600
     :align: center
 
-1. Insert 8 LEDs into the breadboard, in any color configuration you like. Ensure that all the cathodes (short legs) of the LEDs are connected to the ground rail on the breadboard, while the anodes are connected to separate rows.
+1. ブレッドボードに8つのLEDを挿入します。任意の色の構成にできます。すべてのLEDのカソード（短い脚）がブレッドボードのグランドレールに接続され、アノードが別々の行に接続されていることを確認してください。
 
 .. image:: img/24_flow_light_led.png
     :width: 500
     :align: center
 
-2. Connect a 220Ω resistor to each anode of the LEDs.
+2. 各LEDのアノードに220Ωの抵抗を接続します。
 
 .. image:: img/24_flow_light_resistor.png
     :width: 500
     :align: center
 
-3. Locate the 74HC595 chip and insert it into the breadboard. Ensure that the chip spans the middle gap.
+3. 74HC595チップを見つけてブレッドボードに挿入します。チップが中央のギャップをまたいでいることを確認してください。
 
 .. note::
 
-    Pay careful attention to the orientation of the 74HC595 to avoid damage. You can identify the correct orientation using the following clues:
+    74HC595の向きを慎重に確認して、損傷を避けてください。以下の手がかりを使って正しい向きを識別できます：
 
-    * The label on the chip is upright.
-    * The notch on the chip is to the left.
+    * チップのラベルが正しく読める。
+    * チップのノッチが左側にある。
 
 .. image:: img/24_flow_light_74hc595.png
     :width: 500
     :align: center
 
-4. Connect the VCC and MR pins of the 74HC595 to the positive rail on the breadboard.
+4. 74HC595のVCCとMRピンをブレッドボードの正電源レールに接続します。
 
 .. image:: img/24_flow_light_vcc.png
     :width: 500
     :align: center
 
-5. Connect the CE and GND pins of the 74HC595 to the negative rail on the breadboard.
+5. 74HC595のCEとGNDピンをブレッドボードの負電源レールに接続します。
 
 .. image:: img/24_flow_light_gnd.png
     :width: 500
     :align: center
 
-6. Connect the Q0-Q7 pins of the 74HC595 to the rows on the breadboard containing the 220Ω resistors.
+6. 74HC595のQ0-Q7ピンをブレッドボード上の220Ω抵抗を含む行に接続します。
 
 .. image:: img/24_flow_light_q0_q7.png
     :width: 500
     :align: center
 
-7. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
+7. 74HC595のDSピンをArduino Uno R3の11番ピンに接続します。
 
 .. image:: img/24_flow_light_pin11.png
     :width: 600
     :align: center
 
-8. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
+8. 74HC595のST_CPピンをArduino Uno R3の12番ピンに接続します。
 
 .. image:: img/24_flow_light_pin12.png
     :width: 600
     :align: center
 
-9. Connect the Sh_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
+9. 74HC595のSH_CPピンをArduino Uno R3の8番ピンに接続します。
 
 .. image:: img/24_flow_light_pin8.png
     :width: 600
     :align: center
 
-10. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
+10. 最後に、Arduino Uno R3のGNDと5Vピンをそれぞれブレッドボードの負電源レールと正電源レールに接続します。
 
 .. image:: img/24_flow_light.png
     :width: 600
     :align: center
 
-11. The following table shows the pin connections between the 74HC595 and the Arduino Uno R3.
-
+11. 次の表は、74HC595とArduino Uno R3のピン接続を示しています。
 
 .. list-table::
     :widths: 20 20
@@ -212,149 +209,149 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - GND
         - GND
 
-
-Code Creation - Lighting Up LEDs
+コード作成 - LEDの点灯
 --------------------------------------------
 
-The Arduino Uno R3 sends groups of binary data to the 74HC595 chip.
-Binary data forms the core of computers and many electronic devices, using simple 0s and 1s to process complex data and instructions.
-In computer science and digital electronics, binary data is vital as it forms the foundation for information processing and storage in electronic computers.
-Here, 0 and 1 can be seen as states of a switch, where 0 represents off (closed), and 1 represents on (open).
+Arduino Uno R3は、バイナリデータのグループを74HC595チップに送信します。
+バイナリデータは、コンピュータや多くの電子デバイスの中核を形成し、複雑なデータや指示を処理するために単純な0と1を使用します。
+コンピュータサイエンスおよびデジタル電子工学では、バイナリデータは電子コンピュータの情報処理およびストレージの基礎を形成するため、非常に重要です。
+ここで、0と1はスイッチの状態として見ることができ、0はオフ（閉）、1はオン（開）を表します。
 
-For binary numbers, you need to understand two basic concepts:
+バイナリ数について、2つの基本的な概念を理解する必要があります：
 
-* Bit: A bit is the basic unit in the binary system, and each bit can be either 0 or 1.
-* Byte: A byte is made up of 8 bits. It is a common unit of data processing in computers. (And look, the 74HC595 chip accepts exactly 1 byte of data at a time!)
+* ビット：ビットはバイナリシステムの基本単位であり、各ビットは0または1のいずれかです。
+* バイト：バイトは8ビットで構成されます。これは、コンピュータでのデータ処理の一般的な単位です。（そして見てください、74HC595チップは一度にちょうど1バイトのデータを受け取ります！）
 
-Binary numbers are ordered from least significant to most significant bit, with the rightmost bit being the least significant and the leftmost bit being the most significant.
+バイナリ数は、最下位ビットから最上位ビットまで順序付けられ、右端のビットが最下位ビット、左端のビットが最上位ビットです。
 
 .. image:: img/24_binary_bit.png
     :width: 500
     :align: center
 
-Let's now see how the 74HC595 receives binary data and outputs it to the LEDs!
+それでは、74HC595がバイナリデータを受信し、それをLEDに出力する方法を見てみましょう！
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson24_Lighting_up_LEDs`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson24_Lighting_up_LEDs`` として保存します。 ``Ctrl + S`` を押すか、「保存」をクリックしてください。
 
-3. Controlling the 74HC595 only requires three pins to provide pulse signals, so set them as OUTPUT.
+3. 74HC595を制御するには、パルス信号を提供するために3本のピンが必要です。これらをOUTPUTに設定します。
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // 74HC595のST_CPに接続されたピン
+    const int SHcp = 8;   // 74HC595のSH_CPに接続されたピン
+    const int DS = 11;    // 74HC595のDSに接続されたピン
 
     void setup() {
-        // Set pins to output mode
+        // ピンを出力モードに設定
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
     }
 
-4. Your computer sends binary data to the ``DS`` (Data Input) pin of the 74HC595, then uses the clock signal from the ``SH_CP`` (Shift Register Clock Input) pin to shift each data bit forward. This data transmission process can be implemented using the ``shiftOut()`` function.
+4. コンピュータはバイナリデータを74HC595の``DS``（データ入力）ピンに送信し、その後、 ``SH_CP`` （シフトレジスタクロック入力）ピンからのクロック信号を使用して各データビットを前方にシフトします。このデータ転送プロセスは、 ``shiftOut()`` 関数を使用して実装できます。
 
-    * ``shiftOut(dataPin, clockPin, bitOrder, value)``: Shifts out a byte of data one bit at a time. Starts from either the most (i.e., the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.
+    * ``shiftOut(dataPin, clockPin, bitOrder, value)``：データを1ビットずつシフトアウトします。最も重要なビット（左端）または最も重要でないビット（右端）から開始します。各ビットは順番にデータピンに書き込まれ、その後、クロックピンがパルスされ（高から低に変わる）、ビットが利用可能であることを示します。
 
-    **Parameters**
+    **パラメータ**
 
-        * ``dataPin``: the pin on which to output each bit. Allowed data types: int.
-        * ``clockPin``: the pin to toggle once the dataPin has been set to the correct value. Allowed data types: int.
-        * ``bitOrder``: which order to shift out the bits; either ``MSBFIRST`` or ``LSBFIRST``. (Most Significant Bit First, or Least Significant Bit First).
-        * ``value``: the data to shift out. Allowed data types: byte.
+        * ``dataPin``：各ビットを出力するピン。許容データ型：int。
+        * ``clockPin``：dataPinが正しい値に設定された後にトグルするピン。許容データ型：int。
+        * ``bitOrder``：ビットのシフトアウト順序； ``MSBFIRST`` または ``LSBFIRST`` 。（最上位ビットから、または最下位ビットから）。
+        * ``value``：シフトアウトするデータ。許容データ型：byte。
 
-    **Returns**
-        Nothing
+    **戻り値**
+        なし
 
-5. Here, we attempt to send a byte (8 bits) of data to the 74HC595 shift register using the ``shiftOut()`` function.
+5. ここでは、 ``shiftOut()`` 関数を使用して、74HC595シフトレジスタにバイト（8ビット）のデータを送信しようとします。
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop()
     {
-        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Shift out the data, MSB first
+        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // データをシフトアウト、最上位ビットから
     }
 
-* This sends the data ``B11101110`` (binary, B is short for binary) to the 74HC595 shift register, with data sent starting from the most significant bit.
-* Each time the ``SH_CP`` pin receives a rising edge signal (the moment voltage goes from low to high), the bits in the shift register are shifted one step.
-* For example, bit 7 accepts the previous value in bit 6, bit 6 gets the value of bit 5, etc.
+* これにより、 ``B11101110`` （バイナリ、Bはバイナリを表す）のデータが74HC595シフトレジスタに送信され、データは最上位ビットから送信されます。
+* ``SH_CP`` ピンが立ち上がり信号（電圧が低から高に変わる瞬間）を受信するたびに、シフトレジスタ内のビットが1ステップシフトされます。
+* 例えば、ビット7はビット6の以前の値を受け取り、ビット6はビット5の値を受け取ります。
 
 .. image:: img/24_74hc595_shift.png
     :width: 500
     :align: center
 
-6. After all the data bits have been input through the DS pin and shifted to their correct positions using multiple clock signals, the next step is to copy this data from the shift register to a storage register.
+6. すべてのデータビットがDSピンを介して入力され、複数のクロック信号を使用して正しい位置にシフトされた後、次のステップは、このデータをシフトレジスタからストレージレジスタにコピーすることです。
 
 .. code-block:: Arduino
     :emphasize-lines: 2,7
 
     void loop() {
-        digitalWrite(STcp, LOW);  // Ground ST_CP (Latch Pin) and hold low while transmitting data
+        digitalWrite(STcp, LOW);  // ST_CP（ラッチピン）を接地し、データ送信中は低に保持
         
-        // Send data to the shift register using MSBFIRST (Most Significant Bit First)
+        // MSBFIRST（最上位ビットから）を使用してシフトレジスタにデータを送信
         shiftOut(DS, SHcp, MSBFIRST, B11101110);
         
-        digitalWrite(STcp, HIGH);  // Pull ST_CP (Latch Pin) high to save the data to output pins
+        digitalWrite(STcp, HIGH);  // ST_CP（ラッチピン）を高にしてデータを出力ピンに保存
         
-        delay(1000);  // Wait for one second before repeating
+        delay(1000);  // 繰り返す前に1秒待機
     }
 
-* When the ``ST_CP`` pin receives a rising edge signal, the data in the shift register is copied to the storage register.
-* Once the data is copied to the storage register, the LEDs connected to the corresponding output pins(Q0 ~ Q7) will light up or remain off according to whether the data is 1 or 0.
+* ``ST_CP`` ピンが立ち上がり信号を受信すると、シフトレジスタ内のデータがストレージレジスタにコピーされます。
+* データがストレージレジスタにコピーされると、対応する出力ピン（Q0 ~ Q7）に接続されたLEDが、データが1である場合は点灯し、0である場合は消灯します。
 
 .. image:: img/24_74hc595_storage_1data.png
     :width: 300
     :align: center
 
-7. Here's your complete code. You can now upload this code to the Arduino Uno R3. After that, you will see the LEDs connected to Q0 and Q4 turned off while other LEDs are lit.
+7. これがあなたの完全なコードです。このコードをArduino Uno R3にアップロードできます。その後、Q0とQ4に接続されたLEDが消灯し、他のLEDが点灯しているのが見えるでしょう。
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // 74HC595のST_CPに接続されたピン
+    const int SHcp = 8;   // 74HC595のSH_CPに接続されたピン
+    const int DS = 11;    // 74HC595のDSに接続されたピン
 
     void setup() {
-        // Set pins to output mode
+        // ピンを出力モードに設定
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
     }
 
     void loop() {
-        digitalWrite(STcp, LOW);  // Ground ST_CP and hold low while transmitting
-        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Shift out the data, MSB first
-        digitalWrite(STcp, HIGH);  // Pull ST_CP high to save the data
-        delay(1000);  // Wait for a second
+        digitalWrite(STcp, LOW);  // ST_CPを接地して低に保持しながら送信
+        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // データをシフトアウト、MSBから
+        digitalWrite(STcp, HIGH);  // ST_CPを高にしてデータを保存
+        delay(1000);  // 1秒待機
+
     }
+    
+**質問**
 
-**Question**
-
-What happens if we change ``MSBFIRST`` to ``LSBFIRST`` in ``shiftOut(DS, SHcp, MSBFIRST, B11101110);``? Why?
+``shiftOut(DS, SHcp, MSBFIRST, B11101110);``の ``MSBFIRST`` を ``LSBFIRST`` に変更するとどうなりますか？なぜでしょうか？
 
 
 
-Code Creation - Flowing Light
+コード作成 - 流れる光
 --------------------------------
 
-How would we implement a flowing light effect, where the LEDs light up one by one?
+LEDが一つずつ点灯する流れる光の効果をどのように実現するのでしょうか？
 
-1. Open the sketch you saved earlier, ``Lesson24_Lighting_up_LEDs``. 
+1. 以前に保存したスケッチ ``Lesson24_Lighting_up_LEDs`` を開きます。
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson24_Flowing_Light``. Click "Save".
+2. 「ファイル」メニューから「名前を付けて保存」を選択し、スケッチの名前を ``Lesson24_Flowing_Light`` に変更します。「保存」をクリックします。
 
-3. Here, we want to set up a flowing light, where the LEDs light up one by one. We will write the on/off states of this flowing light sequence as an array.
+3. ここでは、LEDが一つずつ点灯する流れる光を設定したいと考えています。この流れる光のシーケンスのオン/オフ状態を配列として書き込みます。
 
 .. code-block:: Arduino
     :emphasize-lines: 4
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // 74HC595のST_CPに接続されたピン
+    const int SHcp = 8;   // 74HC595のSH_CPに接続されたピン
+    const int DS = 11;    // 74HC595のDSに接続されたピン
     int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
-4. Then, use a ``for`` loop to sequentially call this array.
+4. 次に、 ``for`` ループを使用してこの配列を順次呼び出します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3,5
@@ -362,26 +359,25 @@ How would we implement a flowing light effect, where the LEDs light up one by on
     void loop()
     {
         for (int num = 0; num <= 8; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // ST_CPを接地し、送信中は低に保持
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // データをシフトアウト、MSBから
+            digitalWrite(STcp, HIGH);                     // ST_CPを高にしてデータを保存
+            delay(1000);                                  // 1秒待機
         }
     }
 
-5. Your complete code is shown below. You can now upload this code to the Arduino Uno R3, and then you'll see the LEDs light up one by one, like a flowing light.
-
+5. 以下が完全なコードです。このコードをArduino Uno R3にアップロードすると、LEDが一つずつ点灯し、流れる光のようになります。
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // 74HC595のST_CPに接続されたピン
+    const int SHcp = 8;   // 74HC595のSH_CPに接続されたピン
+    const int DS = 11;    // 74HC595のDSに接続されたピン
     int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
     void setup ()
     {
-        // Set pins to output mode
+        // ピンを出力モードに設定
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
@@ -390,25 +386,20 @@ How would we implement a flowing light effect, where the LEDs light up one by on
     void loop()
     {
         for (int num = 0; num <= 8; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // ST_CPを接地し、送信中は低に保持
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // データをシフトアウト、MSBから
+            digitalWrite(STcp, HIGH);                     // ST_CPを高にしてデータを保存
+            delay(1000);                                  // 1秒待機
         }
     }
 
-6. Finally, remember to save your code and tidy up your workspace.
+6. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Question**
+**質問**
 
-If we want to have three LEDs lit at a time and have them appear to "flow," how should the elements of the ``datArray[]`` array be modified?
+3つのLEDが同時に点灯し、それが「流れる」ようにするには、 ``datArray[]`` 配列の要素をどのように変更すればよいでしょうか？
 
-**Summary**
+**まとめ**
 
-In this lesson, we explored the structure and functionality of the 74HC595 chip, learning how to shift binary data through its shift register and build a flowing light experiment. Using the ``shiftOut()`` function to control binary data transmission, we successfully managed the sequential lighting of 8 LEDs to achieve a flowing light effect. With this newfound knowledge, you should now be able to effectively use the 74HC595 chip to add dazzling lighting features to your own projects.
-
-
-
-
-
+このレッスンでは、74HC595チップの構造と機能を探求し、シフトレジスタを通じてバイナリデータをシフトし、流れる光の実験を構築する方法を学びました。 ``shiftOut()`` 関数を使用してバイナリデータの送信を制御し、8つのLEDの順次点灯を成功裏に管理して流れる光効果を達成しました。この新たに得た知識を使って、74HC595チップを効果的に使用し、自身のプロジェクトに素晴らしい照明機能を追加できるようになるでしょう。
 

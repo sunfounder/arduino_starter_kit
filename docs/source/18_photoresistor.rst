@@ -1,35 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community（Facebook）へようこそ！Raspberry Pi、Arduino、ESP32の世界を仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**：コミュニティとチームの助けを借りて、販売後の問題や技術的な課題を解決します。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表やスニークピークをいち早く入手できます。
+    - **特別割引**：最新の製品に対する限定割引を楽しめます。
+    - **フェスティブプロモーションとプレゼント**：プレゼントやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索と創造の準備はできましたか？こちらをクリックして [|link_sf_facebook|] 参加しましょう！
 
-18. Light Alarm
+18. 光アラーム
 ========================
 
 .. image:: img/18_light_alarm.png
     :width: 600
     :align: center
 
-Imagine a scene straight out of a movie:
-In a dimly lit museum, a cunning thief quietly approaches a priceless painting.
-He moves stealthily, attempting to carry out his theft under the cover of night.
-However, the moment he touches the painting, a series of sophisticated sensors are triggered,
-setting off alarms throughout the gallery, instantly illuminating the surrounding area.
-The thief is quickly apprehended by on-site security personnel, preventing a potential art heist in its tracks.
-This isn't a movie; this is a real-life example of sensor technology at work in modern security systems.
+映画のワンシーンを想像してみてください：
+薄暗い博物館で、狡猾な泥棒が静かに貴重な絵画に近づきます。
+彼は夜の闇に紛れて盗みを遂行しようとしています。
+しかし、絵画に触れた瞬間、一連の高度なセンサーが作動し、
+ギャラリー全体にアラームが鳴り響き、周囲が一気に明るくなります。
+泥棒はすぐに現場の警備員に捕らえられ、絵画盗難を未然に防ぐことができました。
+これは映画ではなく、現代のセキュリティシステムにおけるセンサー技術の実例です。
 
-How is this achieved? This involves placing a photoresistor or a more sophisticated light sensor near the frame of the painting. Any attempt to move the painting or block it alters the light conditions, thus triggering the alarm system.
+これはどのように達成されるのでしょうか？絵画のフレーム近くにフォトレジスタや高度な光センサーを配置します。絵画を動かしたり遮ったりすると、光の条件が変化し、アラームシステムが作動します。
 
-Now, let's build a simulated light alarm system using a photoresistor and a buzzer, shall we?
+では、フォトレジスタとブザーを使用して、光アラームシステムをシミュレートしてみましょう。
 
 .. raw:: html
 
@@ -38,33 +38,33 @@ Now, let's build a simulated light alarm system using a photoresistor and a buzz
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+このレッスンで学ぶこと:
 
-* The working principles and characteristics of a photoresistor.
-* How to build a simple light alarm system.
+* フォトレジスタの動作原理と特性を理解する。
+* 簡単な光アラームシステムを構築する方法を学ぶ。
 
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Photoresistor
-     - 1 * 10KΩ Resistor
-     - 1 * Active Buzzer
+     - 1 * フォトレジスタ
+     - 1 * 10KΩ抵抗
+     - 1 * アクティブブザー
    * - |list_uno_r3| 
      - |list_photoresistor| 
      - |list_10kohm| 
      - |list_active_buzzer| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * マルチメーター
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
@@ -72,249 +72,248 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**ステップバイステップでの構築**
 
-1. Start with a Photoresistor.
+1. フォトレジスタから始めましょう。
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
-A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photoconductivity.
+フォトレジスタ（またはフォトセル）は、光制御可変抵抗器です。フォトレジスタの抵抗は入射光の強度が増すと減少します。言い換えれば、光電導性を示します。
 
-Photoresistors can be used as resistive semiconductors in light-sensitive detector circuits and in light-activated and dark-activated switching circuits. In darkness, the resistance of a photoresistor can be as high as several megaohms (MΩ), while in lighted conditions, it can drop to a few hundred ohms.
+フォトレジスタは、光感知検出回路や光作動および暗作動スイッチング回路で抵抗性半導体として使用できます。暗闇では、フォトレジスタの抵抗は数メガオーム（MΩ）にも達し、光が当たると数百オームにまで低下することがあります。
 
-The kit includes a resistor rated at 10K at 25°C. Now, use a multimeter to measure the resistance of the photoresistor under normal light, illuminated, and dark conditions.
+このキットには、25°Cで10KΩの抵抗が含まれています。次に、マルチメーターを使用して、通常の光、明るい光、暗い条件下でのフォトレジスタの抵抗を測定します。
 
-2. Since the rated resistance of the photoresistor is 10K, set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+2. フォトレジスタの定格抵抗が10Kであるため、マルチメーターを20キロオーム（20K）範囲で抵抗を測定するように設定します。
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-3. Insert the photoresistor into the breadboard at positions 10E and 11E. The pins are non-directional and can be inserted freely.
+3. フォトレジスタをブレッドボードの10Eと11Eの位置に挿入します。ピンには方向性がなく、自由に挿入できます。
 
 .. image:: img/17_light_alarm_photoresistor.png
     :width: 500
     :align: center
 
-4. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
+4. 次に、マルチメーターの赤と黒のテストリードでフォトレジスタの2つのピンに触れます。
 
 .. image:: img/17_light_alarm_test.png
     :width: 500
     :align: center
 
-5. Read the resistance value under the current ambient light and record it in the table below.
+5. 現在の周囲光下での抵抗値を読み取り、以下の表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *5.48*
-   * - Bright Light
+   * - 明るい光
      -
-   * - Darkness
+   * - 暗闇
      -
 
-6. Now, have a friend help by shining a flashlight or another light source directly on the photoresistor, record the resistance value, which might be just a few hundred ohms. Therefore, you might need to set the multimeter to 2K, or even to 200 ohms for a more precise reading.
+6. 次に、友人に手伝ってもらい、懐中電灯や他の光源をフォトレジスタに直接当ててもらいます。抵抗値を記録し、数百オームになることがあります。そのため、マルチメーターを2Kまたは200オームに設定し、より正確な読み取りを行います。
 
 .. note::
 
-    We've set the resistance unit in the table to kilohms. 1 kilohm (kΩ) = 1000 ohms.
+    表の抵抗単位はキロオームに設定しています。1キロオーム（kΩ）は1000オームです。
 
-    If you chose the 200 ohm range and got a reading of 164.5 ohms, convert it to 0.16 kilohms (rounding recommended to two decimal places), and enter the converted value in the table.
+    200オームの範囲を選び、164.5オームの読み取り値を得た場合、それを0.16キロオームに変換し（小数点以下2桁に丸めることを推奨）、変換した値を表に記入します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *≈5.48*
-   * - Bright Light
+   * - 明るい光
      - *≈0.16*
-   * - Darkness
+   * - 暗闇
      - 
 
-7. For dark conditions, the resistance of the photoresistor can reach several megaohms, so we need to set the multimeter to the 2 megaohm position.
+7. 暗い条件では、フォトレジスタの抵抗が数メガオームに達することがあるため、マルチメーターを2メガオームの位置に設定します。
 
 .. image:: img/multimeter_2mΩ.png
     :width: 300
     :align: center
 
-8. Completely cover the photoresistor with a black object, then record the measured resistance in the table.
+8. フォトレジスタを黒い物体で完全に覆い、測定した抵抗値を表に記録します。
 
 .. note::
-    We have set the resistance unit in the table to kilohms. 1 megohm (MΩ) = 1000 kilohms.
+    表の抵抗単位はキロオームに設定しています。1メガオーム（MΩ）は1000キロオームです。
 
-    If you chose the 2 megaohm range and obtained a reading of 1.954 megohms, convert it to 1954 kilohms, which is the value you should enter.
+    2メガオームの範囲を選び、1.954メガオームの読み取り値を得た場合、それを1954キロオームに変換し、この値を記入します。
 
-    If the reading is directly higher than 2MΩ, it will display "1.", at which point you can directly enter 2 megohms, or you might consider using a more precise multimeter to measure the exact value.
+    読み取り値が直接2MΩを超える場合は「1」と表示され、この場合は2メガオームを直接入力するか、より正確なマルチメーターを使用して正確な値を測定することを検討してください。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - 環境
+     - 抵抗値（キロオーム）
+   * - 通常の光
      - *≈5.48*
-   * - Bright Light
+   * - 明るい光
      - *≈0.16*
-   * - Darkness
+   * - 暗闇
      - *≈1954*
 
-From the measurements, we have confirmed the photoconductive properties of the photoresistor: the stronger the light, the lower the resistance; the dimmer the light, the higher the resistance, which can reach several megaohms.
+これらの測定から、フォトレジスタの光電導特性を確認しました。光が強くなるほど抵抗が低くなり、光が弱くなるほど抵抗が高くなり、数メガオームに達することがわかります。
 
-9. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the Arduino Uno R3.
+9. 回路の構築を続けます。フォトレジスタの一方のピンをブレッドボードの負端子に、もう一方のピンをArduino Uno R3のA0ピンに接続します。
 
 .. image:: img/17_light_alarm_a0.png
     :width: 500
     :align: center
 
-10. Insert a 10K resistor in the same row as the photoresistor's connection to A0.
+10. フォトレジスタの接続部分と同じ列に10KΩ抵抗を挿入します。
 
 .. image:: img/17_light_alarm_resistor.png
     :width: 500
     :align: center
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the A0 pin reads the value after the voltage conversion of the photoresistor.
+この回路では、10KΩ抵抗とフォトレジスタが直列に接続されており、これらを流れる電流は同じです。10KΩ抵抗は保護役割を果たし、A0ピンはフォトレジスタの電圧変換後の値を読み取ります。
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from the A0 pin will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of the A0 pin will be close to 0. At this time, the 10K resistor plays a protective role, preventing a short circuit by keeping the 5V and GND from being directly connected.
+光が強くなるとフォトレジスタの抵抗が減少し、その電圧も減少するため、A0ピンの値も減少します。光が十分に強ければフォトレジスタの抵抗はほぼ0になり、A0ピンの値もほぼ0になります。このとき、10KΩ抵抗が保護役割を果たし、5VとGNDが直接接続されて短絡するのを防ぎます。
 
-If you place the photoresistor in a dark situation, the value of the A0 pin will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 5V (the 10K resistor becomes negligible), and the value of the A0 pin will be close to 1023.
+フォトレジスタを暗い場所に置くと、A0ピンの値が増加します。十分に暗い場合、フォトレジスタの抵抗は無限大になり、その電圧は5Vに近づきます（10KΩ抵抗は無視できるほど小さくなります）。このとき、A0ピンの値は1023に近づきます。
 
-11. Connect the other pin of the 10K resistor to the 5V pin on the Arduino Uno R3.
+11. 10KΩ抵抗のもう一方のピンをArduino Uno R3の5Vピンに接続します。
 
 .. image:: img/17_light_alarm_5v.png
     :width: 500
     :align: center
 
-12. Next, as in the previous lesson, insert the active buzzer into the breadboard, connecting its anode to pin 9 of the R3 and its cathode to the negative terminal of the breadboard.
+12. 前のレッスンと同様に、アクティブブザーをブレッドボードに挿入し、アノードをR3のピン9に、カソードをブレッドボードの負端子に接続します。
 
 .. image:: img/17_light_alarm_buzzer.png
     :width: 500
     :align: center
 
-13. Finally, connect the negative terminal of the breadboard to the GND pin on the Arduino Uno R3 with a jumper wire.
-
+13. 最後に、ジャンパーワイヤーを使ってブレッドボードの負端子をArduino Uno R3のGNDピンに接続します。
 
 .. image:: img/17_light_alarm.png
     :width: 500
     :align: center
 
-Code Creation
+コード作成
 -------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson18_Light_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Ctrl + S`` を押すか「保存」をクリックして ``Lesson18_Light_Alarm`` として保存します。
 
-3. Before the ``void setup()``, create constants for the photoresistor and buzzer, as well as a constant threshold value that will trigger the alarm when the photoresistor's reading falls below it.
+3. ``void setup()`` の前に、フォトレジスタとブザーの定数、およびフォトレジスタの読み取り値がこれを下回ったときにアラームを鳴らす閾値を設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2,3
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // フォトレジスタ用の定数にピンA0を割り当て
+    const int buzzerPin = 9;    // ブザー用の定数にピン9を割り当て
+    const int threshold = 300;  // 閾値を設定
 
     void setup() {
-        // put your setup code here, to run once:
+        // 初期設定コードをここに記述します。一度だけ実行されます。
     }
 
-4. Additionally, create a variable to store the value read from the photoresistor.
+4. さらに、フォトレジスタから読み取った値を格納する変数を作成します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // フォトレジスタ用の定数にピンA0を割り当て
+    const int buzzerPin = 9;    // ブザー用の定数にピン9を割り当て
+    const int threshold = 300;  // 閾値を設定
 
-    int sensorValue = 0;  // To store the photoresistor reading
+    int sensorValue = 0;  // フォトレジスタの読み取り値を格納するための変数
 
     void setup() {
-        // put your setup code here, to run once:
+        // 初期設定コードをここに記述します。一度だけ実行されます。
     }
 
-5. In the ``void setup()``, set the buzzer as an output and start serial communication to monitor the readings from the photoresistor.
+5. ``void setup()`` 内で、ブザーを出力モードに設定し、フォトレジスタの読み取り値を監視するためにシリアル通信を開始します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set the buzzer pin as an output
-        Serial.begin(9600);          // Initialize serial communication at 9600 baud rate
+        // 初期設定コードをここに記述します。一度だけ実行されます。
+        pinMode(buzzerPin, OUTPUT);  // ブザーピンを出力モードに設定
+        Serial.begin(9600);          // シリアル通信を9600ボーレートで初期化
     }
 
-6. In the ``void loop()``, use the ``analogRead()`` function to read from the photoresistor and store the value in the variable ``sensorValue``. Then print this value to the serial monitor. Remember to set a time interval for each data reading.
+6. ``void loop()``内で、 ``analogRead()`` 関数を使用してフォトレジスタから読み取り、その値を ``sensorValue`` 変数に格納します。次に、この値をシリアルモニタに表示します。各データ読み取りの間隔を設定することを忘れないでください。
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4,5
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100); // Wait 0.1 seconds
+        // メインコードをここに記述します。繰り返し実行されます。
+        sensorValue = analogRead(sensorPin);  // フォトレジスタからアナログ値を読み取る
+        Serial.println(sensorValue);          // フォトレジスタの読み取り値をシリアルモニタに表示
+        delay(100); // 0.1秒待つ
     }
 
-7. When the environment shifts from dark to bright, the resistance of the photoresistor decreases, and so does the reading at pin A0. Now use an ``if`` statement to check if the photoresistor's value is below the ``threshold``; if it is, turn the buzzer on, otherwise, turn it off.
+7. 環境が暗から明に変わると、フォトレジスタの抵抗が減少し、A0ピンの読み取り値も減少します。ここで ``if`` 文を使用して、フォトレジスタの値が ``threshold`` を下回っているかどうかを確認します。下回っている場合はブザーをオンにし、そうでない場合はオフにします。
 
 .. code-block:: Arduino
     :emphasize-lines: 7-12
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100);                           // Wait 0.1 seconds
+        // メインコードをここに記述します。繰り返し実行されます。
+        sensorValue = analogRead(sensorPin);  // フォトレジスタからアナログ値を読み取る
+        Serial.println(sensorValue);          // フォトレジスタの読み取り値をシリアルモニタに表示
+        delay(100);                           // 0.1秒待つ
 
-        // Check if the reading is below the threshold
+        // 読み取り値が閾値を下回っているか確認
         if (sensorValue < threshold) {
-            digitalWrite(buzzerPin, HIGH);  // If below threshold, turn on the buzzer
+            digitalWrite(buzzerPin, HIGH);  // 閾値を下回っている場合、ブザーをオンにする
         } else {
-            digitalWrite(buzzerPin, LOW);  // If not below threshold, turn off the buzzer
+            digitalWrite(buzzerPin, LOW);  // 閾値を下回っていない場合、ブザーをオフにする
         }
     }
 
-8. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+8. これが完全なコードです。これで「アップロード」をクリックしてコードをArduino Uno R3にアップロードできます。
 
 .. code-block:: Arduino
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // フォトレジスタ用の定数にピンA0を割り当て
+    const int buzzerPin = 9;    // ブザー用の定数にピン9を割り当て
+    const int threshold = 300;  // 閾値を設定
 
-    int sensorValue = 0;  // To store the photoresistor reading
+    int sensorValue = 0;  // フォトレジスタの読み取り値を格納するための変数
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set the buzzer pin as an output
-        Serial.begin(9600);          // Initialize serial communication at 9600 baud rate
+        // 初期設定コードをここに記述します。一度だけ実行されます。
+        pinMode(buzzerPin, OUTPUT);  // ブザーピンを出力モードに設定
+        Serial.begin(9600);          // シリアル通信を9600ボーレートで初期化
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100);                           // Wait 0.1 seconds
+        // メインコードをここに記述します。繰り返し実行されます。
+        sensorValue = analogRead(sensorPin);  // フォトレジスタからアナログ値を読み取る
+        Serial.println(sensorValue);          // フォトレジスタの読み取り値をシリアルモニタに表示
+        delay(100);                           // 0.1秒待つ
 
-        // Check if the reading is below the threshold
+        // 読み取り値が閾値を下回っているか確認
         if (sensorValue < threshold) {
-            digitalWrite(buzzerPin, HIGH);  // If below threshold, turn on the buzzer
+            digitalWrite(buzzerPin, HIGH);  // 閾値を下回っている場合、ブザーをオンにする
         } else {
-            digitalWrite(buzzerPin, LOW);  // If not below threshold, turn off the buzzer
+            digitalWrite(buzzerPin, LOW);  // 閾値を下回っていない場合、ブザーをオフにする
         }
     }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Question**
 
-Cunning thieves might choose to steal at night, and if a painting disappears, 
-the photoresistor might not be able to detect any change in light, thus failing to trigger an alarm. What can be done to improve this flaw?
+**質問**
+
+狡猾な泥棒は夜間に盗みを働くことを選ぶかもしれません。絵画が消えた場合、フォトレジスタは光の変化を検出できず、アラームが作動しない可能性があります。この欠陥を改善するにはどうすればよいでしょうか？

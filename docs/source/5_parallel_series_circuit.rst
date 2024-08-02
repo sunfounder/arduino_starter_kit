@@ -1,413 +1,412 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**：販売後の問題や技術的な課題をコミュニティとチームの助けを借りて解決しましょう。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表やプレビューに早期アクセスしましょう。
+    - **特別割引**：最新製品の特別割引をお楽しみください。
+    - **お祭りのプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-5. Series Circuit vs. Parallel Circuit
+
+5. 直列回路 vs 並列回路
 =================================================
 
-In this lesson, you will engage in building and analyzing both series and parallel circuits, learning to measure and understand how voltage behaves in different circuit configurations. Utilizing a multimeter, you will measure the voltage and resistance of the circuits you construct, gaining practical insights into circuit dynamics.
+このレッスンでは、直列回路と並列回路の両方を構築して分析し、異なる回路構成で電圧がどのように振る舞うかを学びます。マルチメーターを使用して、構築した回路の電圧と抵抗を測定し、回路の動力学について実践的な洞察を得ます。
 
-In this exciting lesson, you'll:
+このエキサイティングなレッスンで、以下のことを学びます：
 
-* Connect schematic diagrams with actual circuits.
-* Use a multimeter to measure resistance and voltage.
-* Build series and parallel circuits using a breadboard.
-* Compare the behavior of voltage in series and parallel circuits.
+* 回路図と実際の回路を接続する方法
+* マルチメーターを使用して抵抗と電圧を測定する方法
+* ブレッドボードを使用して直列回路と並列回路を構築する方法
+* 直列回路と並列回路における電圧の振る舞いを比較する方法
 
-These objectives will empower you to bridge the gap between theoretical knowledge and practical application, enriching your understanding of electronics through hands-on experience.
+これらの目標は、理論的な知識と実践的な応用のギャップを埋め、ハンズオンの経験を通じて電子工学の理解を深めることを可能にします。
 
 
-Series Circuit vs. Parallel Circuit
+直列回路 vs 並列回路
 ------------------------------------------
 
-In our previous lessons, we've successfully constructed a simple circuit with an Arduino Uno R3, a resistor, and an LED. The current in this setup flows in a series configuration: from the board's Pin 13 pin, through the LED, through the resistor, and back to the GND pin. This is a straightforward example of a series circuit.
+前のレッスンでは、Arduino Uno R3、抵抗器、LEDを使用して簡単な回路を構築することに成功しました。この設定では、電流はピン13からLEDを通り、抵抗器を通り、GNDピンに戻る直列構成で流れます。これは直列回路のシンプルな例です。
 
-But as we delve deeper into the world of electronics, we encounter circuits that are more complex, comprising components arranged in series or parallel. To comprehend these arrangements and their implications on current and voltage, we need to familiarize ourselves with circuit diagrams, also known as schematic diagrams.
+しかし、電子工学の世界に深く踏み込むと、直列または並列に配置されたコンポーネントを含む、より複雑な回路に出会います。これらの配置と電流および電圧への影響を理解するためには、回路図、つまり回路図を理解する必要があります。
 
-**Wiring Diagrams vs. Schematic Diagrams**
+**配線図 vs 回路図**
 
-We've been using wiring diagrams—pictorial representations that mimic the physical layout of circuit components. These diagrams are intuitive and serve well for assembly purposes:
+これまで、回路コンポーネントの物理的なレイアウトを模倣した図解を使用してきました。これらの図は直感的で、組み立て目的に適しています：
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-However, to grasp a circuit's functionality and design logic, schematic diagrams are indispensable. Schematic diagrams distill circuits down to their essence, using standardized symbols to represent each component. They reveal the electrical relationships between components without the clutter of physical layouts.
+しかし、回路の機能性と設計ロジックを把握するためには、回路図が不可欠です。回路図は標準化された記号を使用して各コンポーネントを表現し、物理的なレイアウトの煩雑さを排除してコンポーネント間の電気的な関係を明らかにします。
 
-Here are the symbols for a LED, a resistor, and a battery that you'll often find in schematics:
+ここに、LED、抵抗器、およびバッテリーの回路図でよく見られる記号を示します：
 
 .. image:: img/5_led_resistor_symbol.png
   :align: center
 
-A schematic diagram based on our previous wiring would look like this, with the entire Arduino Uno R3 acting as a battery powering the circuit. From this schematic, you can clearly indicate the flow and direction of current, simplifying the complexity of physical connections.
+これまでの配線を基にした回路図は次のようになります。Arduino Uno R3全体が回路に電力を供給するバッテリーとして機能しています。この回路図から、電流の流れと方向を明確に示すことができ、物理的な接続の複雑さを簡素化します。
 
 .. image:: img/5_serial_circuit_1led.png
   :align: center
 
-**Series vs. Parallel Configurations**
+**直列構成 vs 並列構成**
 
-In a series circuit, components are lined up in a row, so the current has a single path to follow. If one component fails, the entire circuit is interrupted—much like a string of old Christmas lights where one burnt-out bulb would darken the whole chain.
+直列回路では、コンポーネントが一列に並び、電流が単一の経路をたどります。1つのコンポーネントが故障すると、回路全体が中断されます。これは古いクリスマスライトのように、1つの電球が切れると全体が暗くなるのと似ています。
 
 .. image:: img/5_serial_circuit_2led.png
   :align: center
 
-A parallel circuit, on the other hand, divides the current into multiple paths. Each component operates independently, so if one path is broken, the others continue to function. Think of your home's electrical system: if you switch off a light, the TV can still be on.
+一方、並列回路では、電流が複数の経路に分かれます。各コンポーネントは独立して動作するため、1つの経路が切れても他の経路は動作し続けます。これは家の電気システムのようなもので、1つのライトを消してもテレビはまだ点いているのと同じです。
 
 .. image:: img/5_parallel_circuit.png
   :align: center
 
 
-Diving into Series Circuits
+直列回路の探求
 ------------------------------
 
-Building on our understanding of the differences between series and parallel circuits, this activity focuses on constructing a series circuit with multiple LEDs. Remember, in a series circuit, the electrical current flows through a single pathway. Let's explore the unique characteristics of series circuits through this practical exercise.
+直列回路と並列回路の違いを理解した上で、このアクティビティでは複数のLEDを使用して直列回路を構築します。直列回路では、電流が単一の経路を通ることを覚えておいてください。この実践的な演習を通じて、直列回路の独自の特性を探りましょう。
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 3 * Red LEDs
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * 赤色LED
+     - 3 * 220Ω 抵抗器
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - 1 * マルチメーター
      -   
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_meter|
      - 
 
-**Building the Circuit**
+**回路の構築**
 
-1. Adjust the previous LED circuit by removing the jumper wire between 1J and the breadboard's positive side on the right. Then, take another red LED and insert its cathode (the shorter leg) into 1J, and the anode into the breadboard's positive side, so you can serially connect another LED in the circuit.
+1. 前のLED回路を調整して、1Jと右側のブレッドボードの正端子の間のジャンパーワイヤーを取り外します。次に、別の赤色LEDを取り、陰極（短い脚）を1Jに、陽極をブレッドボードの正端子に挿入して、回路にもう1つのLEDを直列に接続します。
 
 .. image:: img/5_serial_circuit.png
 
-Now you have a series circuit with two LEDs. Follow the current through the circuit:
+これで2つのLEDを直列に接続した回路が完成しました。回路を通る電流を追跡しましょう：
 
-* Current flows from 5V on the Arduino Uno R3, through a long jumper wire to the breadboard's positive terminal.
-* Then the current flows through the first LED, lighting it up due to the flow of current.
-* The current then flows through the breadboard's metal clips to the second LED, which also lights up.
-* After leaving the second LED, it enters the 220Ω resistor, where it encounters resistance, reducing the amount of current. Without this resistor, the current through the LEDs would be too high and could burn them out.
-* It then flows back to the Arduino Uno R3's ground pin, completing the circuit.
+* Arduino Uno R3の5Vから電流が流れ、長いジャンパーワイヤーを通ってブレッドボードの正端子に到達します。
+* 次に、電流は最初のLEDを通過し、電流の流れによって点灯します。
+* 電流はブレッドボードの金属クリップを通って2つ目のLEDに到達し、これも点灯します。
+* 2つ目のLEDを通過した後、電流は220Ωの抵抗器に入り、抵抗により電流の量が減少します。この抵抗器がなければ、LEDを通る電流が多すぎて破損する可能性があります。
+* 最後に、電流はArduino Uno R3のGNDピンに戻り、回路が完結します。
 
-**Question:** 
+**質問:**
 
-In this series circuit, what happens if you remove one LED? Why does this occur?
+この直列回路で1つのLEDを取り外すとどうなりますか？なぜこのようなことが起こるのでしょうか？
 
 .. image:: img/5_serial_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Measuring Voltage**
+**電圧の測定**
 
-1. Set the multimeter to the 20 volts DC setting.
+1. マルチメーターを20ボルトDC設定にセットします。
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Use the multimeter to measure the voltage across the resistor.
+2. マルチメーターを使って抵抗器の両端の電圧を測定します。
 
     .. note::
         
-        Measuring a component's voltage in a circuit means checking the voltage across it. Essentially, voltage represents the energy difference between two points. So, when you measure a component's voltage, you're gauging the energy difference from one side to the other.
+        回路内のコンポーネントの電圧を測定することは、そのコンポーネントの両端の電圧差をチェックすることを意味します。基本的に、電圧は2点間のエネルギー差を表します。したがって、コンポーネントの電圧を測定するときは、片側からもう一方の側へのエネルギー差を測定しているのです。
 
 .. image:: img/5_serial_circuit_voltage_resistor.png
     :width: 600
     :align: center
 
-3. Record the voltage across the resistor, voltage unit: Volts (V).
+3. 抵抗器の両端の電圧を記録し、電圧の単位はボルト（V）です。
 
 .. note::
 
-    * Mine was 1.13V, you should fill in according to your measurement.
+    * 私の測定値は1.13Vでしたが、あなたの測定値に基づいて記入してください。
 
-    * Due to wiring issues and your hand's instability, you may see the voltage fluctuate. You need to keep your hand steady, then observe several times to get a fairly stable voltage value.
+    * 配線の問題や手の不安定さにより、電圧が変動することがあります。手を安定させ、何度か観察して比較的安定した電圧値を得る必要があります。
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
-   * - 2 LEDs
+   * - 回路
+     - 抵抗器の電圧
+     - LED1の電圧
+     - LED2の電圧
+     - 合計電圧 
+   * - 2つのLED
      - *≈1.13 volts*
      - 
      - 
      - 
 
-4. Now, measure the voltage across LED 1 in the circuit.
+4. 次に、回路内のLED1の両端の電圧を測定します。
 
 .. image:: img/5_serial_circuit_voltage_led1.png
     :width: 600
     :align: center
 
-5. Record the voltage across LED 1 in the table.
+5. 表にLED1の両端の電圧を記録します。
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
-   * - 2 LEDs
+   * - 回路
+     - 抵抗器の電圧
+     - LED1の電圧
+     - LED2の電圧
+     - 合計電圧 
+   * - 2つのLED
      - *≈1.13 volts*
      - *≈1.92 volts*
      - 
      - 
 
-6. Measure the voltage across LED 2 in the circuit.
+6. 回路内のLED2の両端の電圧を測定します。
 
 .. image:: img/5_serial_circuit_voltage_led2.png
     :width: 600
     :align: center
 
-7. Record the voltage across LED 2 in the table.
+7. 表にLED2の両端の電圧を記録します。
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
-   * - 2 LEDs
+   * - 回路
+     - 抵抗器の電圧
+     - LED1の電圧
+     - LED2の電圧
+     - 合計電圧 
+   * - 2つのLED
      - *≈1.13 volts*
      - *≈1.92 volts*
      - *≈1.92 volts*
      - 
 
-8. Now measure the total voltage in the circuit.
+8. 次に、回路全体の合計電圧を測定します。
 
 .. image:: img/5_serial_circuit_voltage.png
     :width: 600
     :align: center
 
-9. Fill in the measured voltage into the Total Voltage column of the table.
+9. 測定した電圧を表の合計電圧欄に記入します。
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
-   * - 2 LEDs
+   * - 回路
+     - 抵抗器の電圧
+     - LED1の電圧
+     - LED2の電圧
+     - 合計電圧 
+   * - 2つのLED
      - *≈1.13 volts*
      - *≈1.92 volts*
      - *≈1.92 volts*
      - *≈4.97 volts*
 
 
-Through our measurements, you will discover:
+測定を通じて、次のことがわかります：
 
 .. code-block::
 
-    Total Voltage = Resistor Voltage + LED 1 Voltage + LED 2 Voltage
+    合計電圧 = 抵抗器の電圧 + LED1の電圧 + LED2の電圧
 
 
 .. note::
     
-    Due to wiring stability, or minor manufacturing differences in the LEDs and resistor, the sum of the resistor voltage and the two LEDs' voltages might not equal the total voltage you measured. This is also okay, as long as it's within a reasonable range.
+    配線の安定性や、LEDや抵抗器の製造上のわずかな違いにより、抵抗器の電圧と2つのLEDの電圧の合計が測定した合計電圧と一致しない場合があります。これは、合理的な範囲内であれば問題ありません。
 
 
-This is a characteristic of a series circuit, where the total voltage across the circuit is the sum of the voltages across each component.
+これは直列回路の特徴であり、回路全体の合計電圧は各コンポーネントの電圧の合計であることを示しています。
 
-**Measuring Current**
+**電流の測定**
 
-Having understood the voltage characteristics of series circuits, let's now explore the current within the circuit using a multimeter.
+直列回路の電圧特性を理解した上で、次にマルチメーターを使って回路内の電流を調べましょう。
 
-
-1. Set the multimeter to the 20 milliamps position. The current won't exceed 20mA, so this setting is chosen. If unsure, it's recommended to start with the 200mA setting.
+1. マルチメーターを20ミリアンペアの位置に設定します。電流は20mAを超えないため、この設定を選びます。確信が持てない場合は、200mAの設定から始めることをお勧めします。
 
 .. image:: img/multimeter_20a.png
   :width: 300
   :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Keep the LED's anode in hole 1F and shift its cathode (the shorter leg) from hole 1E to hole 3E.
+2. 電流を測定するには、マルチメーターを回路の流れの中に組み込む必要があります。LEDのアノードを1Fの穴に保ち、カソード（短い足）を1Eから3Eに移動します。
 
 .. image:: img/5_serial_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Measure the current across LED 1 in the circuit.
+3. 回路内のLED 1の電流を測定します。
 
 .. image:: img/5_serial_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. 測定した電流を表に記録します。
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-   * - 2 LEDs
+   * - 回路
+     - LED1の電流
+     - LED2の電流
+   * - 2つのLED
      - *≈4.43 milliamps*
      - 
 
-5. Move the first LED's cathode back to its original position and shift the second LED's cathode (the shorter leg) from hole 1J to hole 2J.
+5. 最初のLEDのカソードを元の位置に戻し、2番目のLEDのカソード（短い足）を1Jから2Jに移動します。
 
 .. image:: img/5_serial_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Measure the current across LED 2 in the circuit.
+6. 回路内のLED 2の電流を測定します。
 
 .. image:: img/5_serial_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. 測定した電流を表に記録します。
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-   * - 2 LEDs
+   * - 回路
+     - LED1の電流
+     - LED2の電流
+   * - 2つのLED
      - *≈4.43 milliamps*
      - *≈4.43 milliamps*
 
-Our measurements have illustrated a fundamental principle of series circuits: the current that flows through each component is identical. This consistent flow underscores the interconnectedness of components in series, where the interruption of current in one part affects the entire circuit.
+私たちの測定結果は、直列回路の基本的な原理を示しています。すなわち、各コンポーネントを通る電流は同じです。この一貫した流れは、直列に接続されたコンポーネントの相互接続性を強調しており、一部の電流が遮断されると回路全体に影響を与えることを示しています。
 
-The exploration of voltage, current, and resistance not only enriches our understanding of series circuits but also lays the groundwork for more complex electrical engineering concepts. It's through these hands-on experiments that we bridge the gap between theory and practical application, making the learning process both engaging and informative.
-
-
-**Question**
-
-If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? 
+電圧、電流、抵抗の探索は、直列回路の理解を深めるだけでなく、より複雑な電気工学の概念の基礎を築きます。これらの実験を通じて、理論と実践を結びつけ、学習プロセスを魅力的で有益なものにします。
 
 
+**質問**
 
-Diving into Parallel Circuits
+この回路にさらに1つのLEDを追加し、合計で3つのLEDにすると、LEDの明るさはどう変わりますか？なぜですか？3つのLEDそれぞれの両端の電圧はどう変わりますか？
+
+
+並列回路への挑戦
 ---------------------------------------
 
-**Components Needed**
+**必要な部品**
 
 * 1 * Arduino Uno R3
-* 3 * Red LEDs
-* 3 * 220Ω Resistors
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+* 3 * 赤色LED
+* 3 * 220Ω抵抗
+* いくつかのジャンパーワイヤー
+* 1 * USBケーブル
+* 1 * ブレッドボード
+* 1 * テストリード付きマルチメーター
 
-**Building the Circuit**
+**回路の構築**
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
   
-1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
+1. 220Ωの抵抗をブレッドボードに接続します。一方の端は負の端子に、もう一方の端は1Bの穴に差し込みます。
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-2. Add a red LED to the breadboard. The LED's anode (long leg) should be in hole 1F. The cathode (short leg) should be in hole 1E.
+2. 赤色LEDをブレッドボードに追加します。LEDのアノード（長い足）は1Fの穴に、カソード（短い足）は1Eの穴に差し込みます。
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-3. Use a short jumper wire to connect the LED and the power source. One end of the jumper wire should be in hole 1J. The other end should be in the positive terminal.
+3. LEDと電源を接続するための短いジャンパーワイヤーを使用します。ジャンパーワイヤーの一端を1Jの穴に、もう一端を正の端子に差し込みます。
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
-4. Connect the long jumper wire connected to the breadboard's positive terminal to the 5V pin on the Arduino Uno R3. The LED should turn on and stay on. The 5V pin provides a constant 5 volts DC to the circuit. This is different from pin 13, which can be programmed via the Arduino IDE software to turn on and off.
+4. ブレッドボードの正の端子に接続された長いジャンパーワイヤーをArduino Uno R3の5Vピンに接続します。LEDが点灯し続けます。5Vピンは回路に一定の5ボルトDCを供給します。これは、Arduino IDEソフトウェアでオン/オフをプログラムできる13ピンとは異なります。
 
 .. image:: img/5_parallel_circuit_5v.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
+5. ブレッドボードの負の端子をArduino Uno R3のGNDピンの1つに接続します。GNDピンは「GND」と表示されています。
 
 .. image:: img/5_parallel_circuit_gnd.png
     :width: 600
     :align: center
 
-6. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
+6. もう一つの220Ωの抵抗を取り、片方の端を負の端子に、もう片方の端を6Bの穴に接続します。
 
 .. image:: img/5_parallel_circuit_resistor.png
     :width: 600
     :align: center
 
-7. Take another red LED. The LED's anode (long leg) should be in hole 6F. The cathode (short leg) should be in hole 6E.
+7. もう一つの赤色LEDを取り、アノード（長い足）は6Fの穴に、カソード（短い足）は6Eの穴に接続します。
 
 .. image:: img/5_parallel_circuit_led.png
     :width: 600
     :align: center
 
-8. Finally, place one end of a short jumper wire in hole 6J and the other end in the positive terminal. This completes the parallel circuit.
+8. 最後に、短いジャンパーワイヤーの一端を6Jの穴に、もう一端を正の端子に差し込みます。これで並列回路が完成します。
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
 
 
-Now, this circuit has two LEDs in a parallel configuration. There are two paths for current to flow through:
+この回路には、2つのLEDが並列に配置されています。これにより、電流は2つの経路に分かれます：
 
-* In the first path: current enters the first LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* In the second path: current enters the second LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the Arduino Uno R3.
+* 最初の経路では、電流がジャンパーワイヤーから最初のLEDに入り、電流制限抵抗を通過し、その後ブレッドボードの負の側に流れます。
+* 2つ目の経路では、電流がジャンパーワイヤーから2つ目のLEDに入り、電流制限抵抗を通過し、その後ブレッドボードの負の側に流れます。
+* 負の側で、2つの経路は再び収束し、黒い電源ワイヤーを通じてArduino Uno R3のGNDピンに到達します。
 
 
-**Question:**
+**質問:**
 
-In this parallel circuit, what happens if one LED is removed? Why does this occur? 
+この並列回路では、1つのLEDを取り外すとどうなりますか？なぜこのようなことが起こるのでしょうか？
 
 .. image:: img/5_parallel_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Voltage Measurement Steps**
+**電圧測定の手順**
 
-1. Adjust the multimeter to the DC 20 volts mode.
+1. マルチメーターをDC 20ボルトモードに調整します。
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Remember, in a parallel circuit, each branch gets the entire voltage from the power source. So, each branch in your setup should show around 5 volts. Start by measuring the voltage along the first path.
+2. 並列回路では、各枝が電源からの全電圧を受け取ります。したがって、各枝は約5ボルトを示すはずです。まず、最初の経路に沿って電圧を測定します。
 
 .. image:: img/5_parallel_circuit_voltage1.png
     :width: 600
@@ -417,14 +416,14 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Path1 Voltage
-     - Path2 Voltage
-   * - 2 LEDs
-     - *≈5.00 volts*
+   * - 回路
+     - 経路1の電圧
+     - 経路2の電圧
+   * - 2つのLED
+     - *≈5.00 ボルト*
      - 
 
-3. Next, check the voltage drop across the second path. Expect it to be near 5 volts as well.
+3. 次に、2番目の経路に沿って電圧降下を確認します。同様に約5ボルトであることを期待します。
 
 .. image:: img/5_parallel_circuit_voltage2.png
     :width: 600
@@ -434,140 +433,138 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - Path1 Voltage
-     - Path2 Voltage
-   * - 2 LEDs
-     - *≈5.00 volts*
-     - *≈5.00 volts*
+   * - 回路
+     - 経路1の電圧
+     - 経路2の電圧
+   * - 2つのLED
+     - *≈5.00 ボルト*
+     - *≈5.00 ボルト*
 
-Our voltage measurement exercise in a parallel circuit clearly demonstrates that each branch receives an equal share of the total voltage from the source, approximately 5 volts in this case. This consistency across different paths confirms the fundamental nature of parallel circuits, where voltage remains constant across each branch, despite potential minor variations due to manufacturing differences in components like LEDs and resistors.
+並列回路の電圧測定演習は、各枝が電源からの全電圧を受け取ることを明確に示しています。この場合、約5ボルトです。異なる経路間で一貫性があり、並列回路の基本的な性質を確認しています。部品（LEDや抵抗）の製造上の微小な差異による電圧のわずかな変動も考慮します。
 
 
-**Current Measurement Steps**
+**電流測定の手順**
 
-From our previous measurements, we learned that each branch in a parallel circuit receives the full voltage from the source. But what about the current? Let's measure it now.
+前回の測定から、並列回路の各枝が電源からの全電圧を受け取ることを学びました。しかし、電流についてはどうでしょうか？今から測定してみましょう。
 
-1. Set the multimeter to the 200 milliamps position.
+1. マルチメーターを200ミリアンペアの位置に設定します。
 
 .. image:: img/multimeter_200ma.png
     :width: 300
     :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Leave one end of the resistor on the breadboard's negative terminal and move the other end to hole 3B.
+2. 電流を測定するためには、マルチメーターを回路の流れに組み込む必要があります。抵抗の一端をブレッドボードの負の端子に残し、他の端を3Bの穴に移動します。
 
 .. note::
     
-    This step will cause LED 1 to turn off while LED 2 remains lit. This demonstrates a characteristic of parallel circuits: the disconnection of one path does not affect the other paths.
+    このステップでは、LED 1が消灯し、LED 2が点灯したままになります。これは並列回路の特性を示しており、1つの経路が切断されても他の経路には影響がないことを示しています。
 
 .. image:: img/5_parallel_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Place the multimeter's red and black leads between the LED and the resistor, and you will see LED1 light up again.
+3. マルチメーターの赤と黒のリードをLEDと抵抗の間に置くと、LED1が再び点灯します。
 
 .. image:: img/5_parallel_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. 測定した電流を表に記録します。
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
-   * - 2 LEDs
-     - *≈12.6 milliamps*
+   * - 回路
+     - LED1の電流
+     - LED2の電流
+     - 総電流
+   * - 2つのLED
+     - *≈12.6 ミリアンペア*
      -
      - 
 
-5. Return the first resistor to its original position, and keep one end of the second resistor at the breadboard's negative terminal while moving the other end to hole 9B.
+5. 最初の抵抗を元の位置に戻し、2番目の抵抗の一端をブレッドボードの負の端子に保ちながら、他の端を9Bの穴に移動します。
 
 .. image:: img/5_parallel_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Now, measure the current across LED 2 in the circuit.
+6. 今度は、回路内のLED 2の電流を測定します。
 
 .. image:: img/5_parallel_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. 測定した電流を表に記録します。
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
-   * - 2 LEDs
-     - *≈12.6 milliamps*
-     - *≈12.6 milliamps*
+   * - 回路
+     - LED1の電流
+     - LED2の電流
+     - 総電流
+   * - 2つのLED
+     - *≈12.6 ミリアンペア*
+     - *≈12.6 ミリアンペア*
      - 
 
-8. Having measured the current in both paths, what is the total current when the paths converge? Now, move the jumper wire from the breadboard's negative terminal to hole 25C.
+8. 両経路の電流を測定した後、経路が合流したときの総電流はどうなりますか？今、ジャンパーワイヤーをブレッドボードの負の端子から穴25Cに移動させてください。
 
 .. image:: img/5_parallel_circuit_total_current.png
     :width: 600
     :align: center
 
-9. Measure the total current of the circuit now.
+9. 今、回路全体の電流を測定します。
 
 .. image:: img/5_parallel_circuit_total_current1.png
     :width: 600
     :align: center
 
-10. Fill in the measured results in the table.
+10. 測定結果を表に記入します。
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
-   * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
-   * - 2 LEDs
-     - *≈12.6 milliamps*
-     - *≈12.6 milliamps*
-     - *≈25.3 milliamps*
+   * - 回路
+     - LED1の電流
+     - LED2の電流
+     - 総電流
+   * - 2つのLED
+     - *≈12.6ミリアンペア*
+     - *≈12.6ミリアンペア*
+     - *≈25.3ミリアンペア*
 
-Our exploration into parallel circuits has illuminated a key aspect: the total current mirrors the sum of individual branch currents, adhering to the fundamental principles of electrical circuits. This hands-on activity not only strengthens our understanding of parallel circuitry but also highlights its distinct behavior compared to series circuits, offering a clear picture of how components in parallel share the electrical load. As we continue our journey through the world of electronics, these insights lay the groundwork for deeper investigations into circuit design and functionality.
+並列回路の探求を通じて、総電流が各枝の電流の合計を反映することを明らかにしました。これは、電気回路の基本原則に従っています。この実践的な活動は、並列回路の理解を深めるだけでなく、直列回路と比較した際の特性の違いを示し、回路設計と機能のさらなる探求への基礎を築きます。
 
-**Question**:
+**質問**：
 
-1. If another LED is added to this circuit, what happens to the brightness of the LEDs? Why? Record your answer in your handbook.
+1. この回路にもう1つLEDを追加すると、LEDの明るさはどうなりますか？なぜですか？答えを手帳に記録してください。
 
 .. image:: img/5_parallel_circuit_3led.png
     :width: 600
     :align: center
 
 
-
-Summary of Series and Parallel Circuits
+直列回路と並列回路のまとめ
 -----------------------------------------------------
 
-**Series Circuits**
+**直列回路**
 
-* **Advantages**: Since the current throughout the circuit is the same, it's easy to control the current. If one component fails, the current will stop. Its wiring is simpler, reducing the cost of building large circuits.
-* **Disadvantages**: If one part of the circuit is damaged, the whole circuit will stop working. Since the current in the circuit is steady, you can't use components that require different currents.
+* **利点**: 回路全体で電流が同じであるため、電流を制御しやすいです。1つの部品が故障すると、電流が止まります。配線が簡単で、大規模な回路の作成コストが低くなります。
+* **欠点**: 回路の一部が損傷すると、全体が機能しなくなります。回路内の電流が一定のため、異なる電流を必要とする部品を使用できません。
 
-**Parallel Circuits**
+**並列回路**
 
-* **Advantages**: If any path in the circuit is disconnected, it does not affect the other branches in the circuit. A device in one branch can operate independently of other devices. More branches can be easily added to the circuit at any time.
-* **Disadvantages**: As more devices are added to the circuit, more current is drawn. This can become dangerous as the circuit heats up, potentially leading to fire. Fuses or circuit breakers are used to disconnect the circuit when the current is too high to avoid overheating. Its wiring is more complex, increasing the cost of making large circuits.
+* **利点**: 回路内の任意の経路が切断されても、他の枝には影響がありません。1つの枝のデバイスは、他のデバイスとは独立して動作できます。回路に枝を簡単に追加できます。
+* **欠点**: デバイスが増えると、引き込む電流も増えます。これにより、回路が加熱され、火災の危険が生じる可能性があります。電流が過剰になると回路を切断するヒューズやブレーカーが使用され、過熱を防ぎます。配線が複雑になり、大規模な回路の作成コストが増加します。
 
-**Rules of Series and Parallel Circuits**
+**直列回路と並列回路のルール**
 
-Here are the rules for series and parallel circuits, which you can continue to verify with a multimeter:
-
+以下は、マルチメーターで検証し続けることができる、直列回路と並列回路のルールです：
 .. .. list-table::
 ..    :widths: 10 25 25 25
 ..    :header-rows: 1
@@ -586,18 +583,17 @@ Here are the rules for series and parallel circuits, which you can continue to v
 ..      - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
 
 
-**Series**
 
-  - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
-  - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
-  - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+**直列回路**
 
-**Parallel**
-
-  - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
-  - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
-  - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
+  - 回路の総電圧は、各部品が使用する電圧の合計に等しい（総電圧 = V1 + V2 + V3 + ...）。
+  - 回路の任意の点での電流は同じである（総電流 = I1 = I2 = I3 = ...）。
+  - 回路の総抵抗は、各部品の抵抗の合計に等しい（総抵抗 = R1 + R2 + R3 + ...）。
 
 
+**並列回路**
 
+  - 各負荷が使用する電圧は、回路が使用する総電圧に等しい（総電圧 = V1 = V2 = V3 = ...）。
+  - 回路の総電流は、各部品が使用する電流の合計に等しい（総電流 = I1 + I2 + I3 + ...）。
+  - 総抵抗の逆数は、各部品の抵抗の逆数の合計に等しい（1/総抵抗 = 1/R1 + 1/R2 + 1/R3 + ...）。
 

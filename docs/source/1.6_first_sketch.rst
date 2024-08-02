@@ -1,94 +1,92 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**：販売後の問題や技術的な課題をコミュニティとチームの助けを借りて解決しましょう。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表やプレビューに早期アクセスしましょう。
+    - **特別割引**：最新製品の特別割引をお楽しみください。
+    - **お祭りのプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-1.6 Your First Sketch
+1.6 最初のスケッチ
 ================================
 
-Now, let's learn how to send our awesome sketch to the Arduino board. It's like sending a message in a bottle, but way cooler because we're sending it through a USB cable!
+それでは、素晴らしいスケッチをArduinoボードに送る方法を学びましょう。これはボトルに入れたメッセージを送るようなものですが、USBケーブルを使うのでさらにクールです！
 
-**1. Start with an Example Project**
+**1. 例のプロジェクトから始めましょう**
 
-1. First, let's grab a project that's all set up for us. In the Arduino IDE, click on **File** -> **Examples** -> **Basic** -> **Blink**. This pops up a program that's like a cake ready for us to add our own decorations to!
+1. まず、セットアップ済みのプロジェクトを取得しましょう。Arduino IDEで **ファイル**  -> **スケッチ例** -> **Basics** -> **Blink** をクリックします。これで、私たちが装飾を加える準備が整ったケーキのようなプログラムが表示されます！
 
     .. image:: img/1_ide_open_blink.png
         :align: center
 
-**2. Choose Your Board and Port**
+**2. ボードとポートを選択**
 
-1. Connect your Arduino Uno R3 to your computer with a USB cable. It's like plugging in a secret doorway to endless possibilities!
+1. USBケーブルでArduino Uno R3をコンピューターに接続します。これは無限の可能性への秘密の入り口を開くようなものです！
 
     .. image:: img/1_connect_uno_pc.jpg
         :width: 600
         :align: center
 
-2. Now, let's tell the IDE we're using an **Arduino Uno**. Click **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
+2. 次に、使用しているボードが **Arduino Uno** であることをIDEに伝えましょう。 **ツール**  -> **ボード** -> **Arduino AVR Boards** -> **Arduino Uno** をクリックします。
 
     .. image:: img/1_ide_select_board.png
         :align: center
 
-3. We also need to pick the right port, like choosing the correct door to send our message through. Click **Tools** -> **Port**. 
+3. さらに、正しいポートを選択する必要があります。これはメッセージを送るための正しいドアを選ぶようなものです。 **ツール**  -> **ポート** をクリックします。
 
     .. note::
 
-        * On Windows computers, this may be the word "COM" followed by a number(not COM1).
-        * On Mac computers, the port might resemble "/dev/tty.usbmodem".
-        * In Linux computers, the port is called "/dev/ttyACM", followed by a number.
+        * Windowsコンピューターでは、「COM」と数字（COM1以外）が表示されることがあります。
+        * Macコンピューターでは、ポートは「/dev/tty.usbmodem」のように表示されることがあります。
+        * Linuxコンピューターでは、ポートは「/dev/ttyACM」と数字が続きます。
 
     .. image:: img/1_ide_select_port.png
         :align: center
 
-4. If you're using Arduino 2.0, there's a super quick way to pick your board and port. If you see **"Unknown COMxx"** (and it's not referring to "Unknown COM1"), you'll need to click on it to select the correct board.
-
+4. Arduino 2.0を使用している場合、ボードとポートを選ぶための非常に迅速な方法があります。「Unknown COMxx」（「Unknown COM1」ではない）と表示されている場合、正しいボードを選択する必要があります。
 
     .. image:: img/1_ide_quick_access.png
         :align: center
 
-5. Type **Arduino Uno** in the search box, select it, pick the right port, and click **OK**.
+5. 検索ボックスに**Arduino Uno**と入力し、選択して正しいポートを選び、 **OK** をクリックします。
 
     .. image:: img/1_ide_quick_board.png
         :align: center
 
-6. Next time, you might find this quick option even faster! If not, just do the search again.
+6. 次回は、このクイックオプションがさらに速いことがわかるかもしれません。それでもうまくいかない場合は、もう一度検索してください。
 
     .. image:: img/1_ide_quick.png
         :align: center
 
-**3. Check Your Sketch**
+**3. スケッチを確認**
 
-1. Hit the **Verify** button to make sure your sketch is error-free. It's like proofreading your homework before handing it in.
+1. **Verify** ボタンを押して、スケッチにエラーがないか確認します。これは宿題を提出する前に校正するようなものです。
 
     .. image:: img/1_ide_verify.png
         :align: center
 
-2. If there's a typo or a mistake, the IDE will tell you what and where it is, so you can fix it.
+2. タイプミスや間違いがある場合、IDEがそれを教えてくれますので、修正できます。
 
     .. image:: img/1_ide_verify_error.png
         :align: center
 
-3. No errors? You'll see a message saying it's all good to go!
+3. エラーがなければ、すべてが順調であることを示すメッセージが表示されます。
 
     .. image:: img/1_ide_done_compiling.png
         :align: center
 
-**4. Send Your Sketch to the Board**
+**4. スケッチをボードに送信**
 
-Finally, press the **Upload** button to send your sketch on its journey to the board. If everything goes right, you'll get a success message.
+最後に、 **Upload** ボタンを押してスケッチをボードに送信します。すべてがうまくいけば、成功のメッセージが表示されます。
 
     .. image:: img/1_ide_done_upload.png
         :align: center
 
-Watch the LED on your Arduino board start blinking. It's like it's saying "hello" to you!
+ArduinoボードのLEDが点滅し始めます。これはまるで「こんにちは」と言っているかのようです！
 
-
-Great job! You've just uploaded your first Arduino program, making you an official programmer! What's next? There's so much more to discover with Arduino, and this is just the beginning. Ready for more adventures?
+素晴らしい！最初のArduinoプログラムをアップロードしました。これで正式にプログラマーになりました！次は何をしましょうか？Arduinoにはもっとたくさんのことが待っています。これが始まりに過ぎません。さらなる冒険に準備はできましたか？

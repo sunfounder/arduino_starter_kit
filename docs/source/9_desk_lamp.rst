@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！一緒にRaspberry Pi、Arduino、ESP32の世界を深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由は？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **エキスパートサポート**: 購入後の問題や技術的な挑戦を、コミュニティやチームの助けを借りて解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **独占プレビュー**: 新製品の発表やプレビューに早期アクセスできます。
+    - **特別割引**: 最新製品を特別割引価格でお楽しみください。
+    - **お祭りプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探索と創造の旅を始める準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-9. Dimmable Desk Lamp
+9. 調光可能なデスクランプ
 =============================================
 
-Imagine every desk lamp at home, gently casting light over your evening reads or late-night projects. Have you ever wondered how these lamps manage to adjust their brightness so seamlessly? In this lesson, we dive into the mechanics and electronics behind a desk lamp, transforming curiosity into knowledge as we build one from scratch using Arduino.
+家庭のデスクランプが、夕方の読書や夜遅くのプロジェクトを優しく照らす様子を想像してみてください。これらのランプがどのようにしてその明るさをシームレスに調整できるのか、考えたことがありますか？このレッスンでは、Arduinoを使用して、デスクランプのメカニズムとエレクトロニクスの背後にある仕組みを解明し、ゼロからランプを作成することで好奇心を知識に変えます。
 
 .. .. image:: img/9_desk_lamp_pot.jpg
 ..     :width: 500
@@ -28,117 +28,116 @@ Imagine every desk lamp at home, gently casting light over your evening reads or
         Your browser does not support the video tag.
     </video>
 
-Get ready to:
+準備しましょう：
 
-* Decode the role of variables in storing and manipulating data within Arduino sketches.
-* Master reading analog signals with ``analogRead()``.
-* Explore PWM through ``analogWrite()`` to fine-tune LED brightness.
+* Arduinoスケッチ内でデータを格納および操作する変数の役割を解読します。
+* ``analogRead()`` を使ってアナログ信号を読み取る方法をマスターします。
+* ``analogWrite()`` を使ってPWMを探索し、LEDの明るさを微調整します。
 
-By the end of this lesson, not only will you have crafted a fully functional electronic desk lamp, but you'll also have deepened your understanding of how software interacts with hardware to bring everyday objects to life. Let’s illuminate our knowledge by building a desk lamp that responds to your touch.
+このレッスンの終わりまでに、完全に機能する電子デスクランプを作成するだけでなく、ソフトウェアがハードウェアとどのように連携して日常のオブジェクトを活気づけるかについての理解も深まります。タッチに反応するデスクランプを作り、知識を照らしましょう。
 
-
-Build the Circuit
+回路の作成
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LEDs
-     - 1 * 220Ω Resistor
-     - 1 * Potentiometer
+     - 1 * 赤色LED
+     - 1 * 220Ω抵抗
+     - 1 * ポテンショメーター
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
+     - 1 * マルチメーター
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_meter|
 
-**Building Steps**
+**作成手順**
 
-1. Find a Potentiometer.
+1. ポテンショメーターを見つけます。
 
-A potentiometer, often called a pot, serves as a variable resistor, meaning it can adjust its resistance from nearly zero to its maximum limit. Most potentiometers are marked with their range. The one included in your kit is designated as a 103 (10K) potentiometer, which equates to 10 kilo-ohms or 10,000 ohms.
+ポテンショメーター（一般にポットと呼ばれる）は、可変抵抗器として機能し、ほぼゼロから最大限まで抵抗を調整できます。ほとんどのポテンショメーターにはその範囲が記されています。キットに含まれているものは、103（10K）ポテンショメーターとして指定されており、これは10キロオームまたは10,000オームに相当します。
 
 .. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
-Inside the potentiometer is a strip of resistive material with a slider that moves along it. Each end of the resistive material is connected to a terminal or pin, shown below as pins A and B. The resistance between pins A and B is fixed and represents the maximum resistance the potentiometer can offer. For the ones in your kit, the maximum resistance is 10 kilo-ohms.
+ポテンショメーターの内部には、スライダーが動く抵抗材料のストリップがあります。抵抗材料の両端は端子またはピンに接続されており、以下の図ではピンAとBとして示されています。ピンAとBの間の抵抗は固定されており、ポテンショメーターが提供できる最大抵抗を表しています。キットに含まれているものの最大抵抗は10キロオームです。
 
 .. image:: img/9_dimmer_pot_2.png
     :width: 400
     :align: center
 
-* **A**: Connect to power
-* **B**: Connect to ground
-* **C**: Connect to analog pin
-* **D**: Slider
-* **E**: Resistive strip
+* **A**: 電源に接続
+* **B**: グラウンドに接続
+* **C**: アナログピンに接続
+* **D**: スライダー
+* **E**: 抵抗ストリップ
 
-The Pin C connects to the slider. The resistance through the slider, or Pin C, depends on the slider's position along the resistive material.
+ピンCはスライダーに接続されています。スライダー（ピンC）を介した抵抗は、スライダーの抵抗材料に沿った位置に依存します。
 
 .. image:: img/9_dimmer_pot_3.png
     :width: 400
     :align: center
 
-In schematic diagrams, the symbol for a potentiometer typically looks like a resistor with an arrow through the middle.
+回路図では、ポテンショメーターのシンボルは通常、中央に矢印が付いた抵抗のように見えます。
 
 .. image:: img/9_dimmer_pot_4.png
     :width: 200
     :align: center
 
 
-Now let's explore how the potentiometer adjusts resistance in a circuit.
+次に、ポテンショメーターが回路内でどのように抵抗を調整するかを見てみましょう。
 
-2. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 28G.
+2. ポテンショメーターをブレッドボードに接続します。その3つのピンを30G、29F、28Gの穴に差し込みます。
 
 .. note::
-    The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
+    ポテンショメーターには「P 103」というラベルがあり、その抵抗範囲を示しています。ポテンショメーターを示されたようにブレッドボードに挿入してください。ラベルが自分に向かうようにしてください。
 
 .. image:: img/9_dimmer_test_pot.png
     :width: 500
     :align: center
 
 
-3. To measure the resistance of the potentiometer, you need to insert a wire into 29J and then touch it with the red test lead, and insert another wire into 28J and touch it with the black lead.
+3. ポテンショメーターの抵抗を測定するには、29Jにワイヤーを挿入し、赤のテストリードで接触し、28Jに別のワイヤーを挿入して黒のテストリードで接触します。
 
 .. image:: img/9_dimmer_test_wore.png
     :width: 500
     :align: center
 
-4. Set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+4. マルチメーターを20キロオーム（20K）の範囲で抵抗を測定するように設定します。
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-5. Rotate the potentiometer to the "1" position indicated in the diagram.
+5. ポテンショメーターを図に示された「1」の位置に回します。
 
 .. image:: img/9_pot_direction.png
     :width: 300
     :align: center
     
-6. Record the measured resistance values in the table.
+6. 測定した抵抗値を表に記録します。
 
 .. note::
-    The values in the table are my measurements; your results may vary. Fill them out according to your actual findings.
+    表の値は私の測定値です。結果は異なる場合があります。実際の測定結果に基づいて記入してください。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Measurement Point
-     - Resistance (kilohm)
+   * - 測定点
+     - 抵抗値 (キロオーム)
    * - 1
      - *1.52*
    * - 2
@@ -146,14 +145,14 @@ Now let's explore how the potentiometer adjusts resistance in a circuit.
    * - 3
      -
 
-7. Rotate the potentiometer clockwise to positions 2 and 3 to measure the resistance at each point, and record the results in the table.
+7. ポテンショメーターを時計回りに2番と3番の位置に回して、それぞれの点で抵抗を測定し、結果を表に記録します。
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Measurement Point
-     - Resistance (kilohm)
+   * - 測定点
+     - 抵抗値 (キロオーム)
    * - 1
      - *1.52*
    * - 2
@@ -161,163 +160,162 @@ Now let's explore how the potentiometer adjusts resistance in a circuit.
    * - 3
      - *9.01*
 
-From the measurement results:
+測定結果から：
 
-* As you rotate the potentiometer **clockwise** from position 1 to 3, the resistance between the position 2 and position 1 increases.
-* Conversely, rotating **counterclockwise** from position 3 to 1 will decrease the resistance between the position 2 and position 1.
+* ポテンショメータを位置1から位置3に時計回りに回すと、位置2と位置1の間の抵抗が増加します。
+* 逆に、位置3から位置1に反時計回りに回すと、位置2と位置1の間の抵抗が減少します。
 
-8. Insert the other end of the jumper wire from 28J into the negative terminal of the breadboard.
+8. ジャンパーワイヤーのもう一方の端を28Jからブレッドボードの負端子に挿入します。
+
+
 
 .. image:: img/9_dimmer_led1_pot_gnd.png
     :width: 500
     :align: center
 
-9. Then, insert the other end of the jumper wire from 29J into the A0 pin of the Arduino Uno R3.
+9. 次に、ジャンパーワイヤーのもう一方の端を29JからArduino Uno R3のA0ピンに挿入します。
 
 .. image:: img/9_dimmer_led1_pot_a0.png
     :width: 500
     :align: center
 
-10. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the Arduino Uno R3.
+10. 最後に、ブレッドボードの30Jの穴とArduino Uno R3の5Vピンの間にジャンパーワイヤーを挿入して、ポテンショメータを5Vに接続します。
 
 .. image:: img/9_dimmer_led1_pot_5v.png
     :width: 500
     :align: center
 
-
-11. Connect the GND pin of the Arduino Uno R3 to the negative terminal of the breadboard using a long jumper wire.
+11. 長いジャンパーワイヤーを使用して、Arduino Uno R3のGNDピンをブレッドボードの負端子に接続します。
 
 .. image:: img/9_dimmer_led1_gnd.png
     :width: 500
     :align: center
 
-12. Take out an LED. Insert its anode (longer pin) into hole 13A, and its cathode (shorter pin) into the negative terminal of the breadboard.
+12. LEDを取り出します。アノード（長いピン）を13Aの穴に、カソード（短いピン）をブレッドボードの負端子に挿入します。
 
 .. image:: img/9_dimmer_led1_led.png
     :width: 500
     :align: center
 
-13. Place a 220 ohms resistor between holes 13E and 13G.
+13. 220オームの抵抗を13Eと13Gの穴の間に配置します。
 
 .. image:: img/9_dimmer_led1_resistor.png
     :width: 500
     :align: center
 
-14. Connect the hole 13J on the breadboard to pin 9 on the Arduino Uno R3 with a wire.
+14. ブレッドボードの13Jの穴をArduino Uno R3のピン9にワイヤーで接続します。
 
 .. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
-**Question**:
+**質問**：
 
-How do you think the voltage at A0 would change when the potentiometer is turned clockwise and counterclockwise?
+ポテンショメータを時計回りおよび反時計回りに回したとき、A0の電圧はどのように変化すると思いますか？
 
 
-Code Creation
+コードの作成
 -------------------------------------
 
-In this lesson, we aim to adjust the brightness of the LED based on the rotation of the potentiometer.
+このレッスンでは、ポテンショメータの回転に基づいてLEDの明るさを調整することを目指します。
 
-Here's what the pseudocode might look like:
+擬似コードは次のようになります：
 
 .. code-block::
 
-    Create variable to store input information.
-    Set a pin as output.
-    Begin main loop:
-        Store the potentiometer value in a variable.
-        Set the LED brightness based on the potentiometer variable.
-    End main loop.
+    入力情報を格納する変数を作成します。
+    ピンを出力に設定します。
+    メインループを開始します：
+        ポテンショメータの値を変数に格納します。
+        変数に基づいてLEDの明るさを設定します。
+    メインループを終了します。
 
-**Pin Initialization**
+**ピンの初期化**
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson9_Desk_Lamp`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. 「保存」をクリックするか、 ``Ctrl + S`` を使用してスケッチを ``Lesson9_Desk_Lamp`` として保存します。
 
-3. The LED in your circuit is connected to digital pin on the Arduino Uno R3, set as output. Remember to add a comment.
-
+3. 回路内のLEDはArduino Uno R3のデジタルピンに接続されており、出力として設定されています。コメントを追加することを忘れないでください。
 
 .. note::
 
-    The potentiometer is an analog input device connected to the analog pin A0. All analog pins on Arduino are input pins, which means they do not need to be declared as INPUT like digital pins.
+    ポテンショメータはアナログ入力デバイスであり、A0のアナログピンに接続されています。Arduinoのすべてのアナログピンは入力ピンであるため、デジタルピンのようにINPUTとして宣言する必要はありません。
     
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // ここに初期設定コードを記述します。プログラムが開始すると1回だけ実行されます:
+        pinMode(9, OUTPUT);  // ピン9を出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // ここにメインコードを記述します。繰り返し実行されます:
     }
 
-**Variable Declaration**
+**変数の宣言**
 
-To control the fading of LED using a potentiometer, you need a **variable** to store the value from the potentiometer.
+ポテンショメータを使用してLEDのフェードを制御するには、ポテンショメータからの値を格納するための**変数**が必要です。
 
-Let's dive into the concept of variables in programming. A variable acts like a container in your program, allowing you to store and later retrieve information.
+プログラミングにおける変数の概念に触れましょう。変数はプログラム内で情報を格納し、後で取り出すことができるコンテナのようなものです。
 
 .. image:: img/9_variable_define.png
     :width: 400
     :align: center
 
-Before using a variable, it must be declared, which is known as variable declaration.
+変数を使用する前に、変数を宣言する必要があります。これを変数の宣言といいます。
 
-To declare a variable, you must define its type and name. It is not necessary to assign a value to the variable at the moment of declaration—you can assign it later in your sketch. Here is how you can declare a variable:
+変数を宣言するには、その型と名前を定義する必要があります。変数を宣言する時点で値を割り当てる必要はなく、スケッチ内の後で値を割り当てることができます。変数を宣言する方法は次の通りです：
 
 .. code-block:: Arduino
 
     int var;
 
-Here, ``int`` is the data type used for integers, capable of storing values from -32768 to 32767. Variables can store various types of data, including ``float``, ``byte``, ``boolean``, ``char``, and ``string``.
+ここで、 ``int`` は整数に使用されるデータ型であり、-32768から32767までの値を格納できます。変数は ``float`` 、 ``byte`` 、 ``boolean`` 、 ``char`` 、 ``string`` など、さまざまな種類のデータを格納できます。
 
-Variable names can be anything you choose, such as ``i``, ``apple``, ``Bruce``, ``R2D2``, or ``Sectumsempra``. However, there are rules for naming:
+変数名は任意に選択できますが、 ``i`` 、 ``apple`` 、 ``Bruce`` 、 ``R2D2`` 、 ``Sectumsempra`` などのように、ルールがあります：
 
-* Names can include letters, digits, and underscores, but not spaces or special characters like !, #, %, etc.
+* 名前には文字、数字、アンダースコアを含めることができますが、スペースや!、#、%などの特殊文字は使用できません。
 
   .. image:: img/9_variable_name1.png
     :width: 400
     :align: center
 
-* Names must start with a letter or an underscore (_). They cannot begin with a number.
+* 名前は文字またはアンダースコア(_)で始める必要があります。数字で始めることはできません。
 
   .. image:: img/9_variable_name2.png
     :width: 400
     :align: center
 
-* Names are case sensitive. ``myCat`` and ``mycat`` would be considered different variables.
+* 名前は大文字と小文字を区別します。 ``myCat`` と ``mycat`` は異なる変数として扱われます。
 
-* Avoid using keywords that the Arduino IDE recognizes and highlights, like ``int``, which it colors to indicate special significance. If the name turns a color like orange or blue, it's a keyword and should be avoided as a variable name.
+* Arduino IDEが認識してハイライトするキーワード（例えば ``int`` ）は避けるようにしましょう。名前がオレンジや青などの色に変わったら、それはキーワードであり、変数名として使用しないほうが良いです。
 
+変数のスコープ（有効範囲）は、その変数がスケッチ内のどこで使用できるかを決定します。
 
-The scope of a variable determines where it can be used in your sketch, based on where it is declared. 
-
-* A variable declared outside all functions (i.e., outside any braces) is a global variable and can be used anywhere in your sketch. 
-* A variable declared within a function (within a set of braces) is a local variable and can only be used within that function.
+* すべての関数の外側（すなわち、中括弧の外側）で宣言された変数はグローバル変数であり、スケッチのどこでも使用できます。
+* 関数内で宣言された変数（中括弧の内側）はローカル変数であり、その関数内でのみ使用できます。
 
 .. code-block:: Arduino
     :emphasize-lines: 1,4,9
 
-    int global_variable = 0; // This is a global variable
+    int global_variable = 0; // これはグローバル変数です
 
     void setup() {
-        int variable = 0; // This is a local variable
+        int variable = 0; // これはローカル変数です
     }
 
     void loop() {
-        int variable = 0; // This is another local variable
+        int variable = 0; // これは別のローカル変数です
     }
 
 .. note::
 
-    Local variables can only be used within the functions where they are declared, meaning you can declare variables with the same name in different functions without issue. However, avoid using the same name for local and global variables to prevent confusion.
+    ローカル変数は宣言された関数内でのみ使用できるため、異なる関数で同じ名前の変数を宣言しても問題ありません。しかし、混乱を避けるために、グローバル変数とローカル変数に同じ名前を使用しないようにしましょう。
 
-Typically, an Arduino sketch should follow a consistent pattern: declare global variables first, then define the ``void setup()`` function, and finally, the ``void loop()`` function.
+通常、Arduinoスケッチは一貫したパターンに従うべきです：最初にグローバル変数を宣言し、次に ``void setup()`` 関数を定義し、最後に ``void loop()`` 関数を定義します。
 
-4. Go to the very start of your sketch, before the ``void setup()`` function. Here you will declare your variable to store value from the potentiometer.
+4. スケッチの最初、 ``void setup()`` 関数の前に移動します。ここで、ポテンショメータからの値を格納するための変数を宣言します。
 
 .. code-block:: Arduino
     :emphasize-lines: 1
@@ -325,40 +323,40 @@ Typically, an Arduino sketch should follow a consistent pattern: declare global 
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // ここに初期設定コードを記述します。プログラムが開始すると1回だけ実行されます:
+        pinMode(9, OUTPUT);  // ピン9を出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // ここにメインコードを記述します。繰り返し実行されます:
     }
 
-You have just declared an integer variable named ``potValue`` and set it to zero. This variable will be used later in your sketch to store the potentiometer's output.
+``potValue`` という名前の整数変数を宣言し、ゼロに設定しました。この変数は後でスケッチ内でポテンショメータの出力を格納するために使用されます。
 
-**Reading Analog Values**
+**アナログ値の読み取り**
 
-You're now ready to enter the main loop of the program. The first thing you'll do in the ``void loop()`` function is determine the value of the potentiometer.
+メインループに進む準備が整いました。 ``void loop()`` 関数内で最初に行うことは、ポテンショメータの値を取得することです。
 
-The potentiometer is connected to a 5-volt power pin, allowing the voltage at pin A0 to range from 0 to 5 volts. This voltage is then converted by the Arduino Uno R3's microprocessor into an analog value ranging from 0 to 1023, thanks to the microprocessor's 10-bit resolution.
+ポテンショメータは5ボルトの電源ピンに接続されているため、A0ピンの電圧は0から5ボルトの範囲になります。この電圧はArduino Uno R3のマイクロプロセッサによって0から1023の範囲のアナログ値に変換されます。これは、マイクロプロセッサの10ビットの解像度のおかげです。
 
-Once converted, these analog values can be utilized within your program.
+変換されたアナログ値はプログラム内で利用できます。
 
-To fetch the analog value from the potentiometer, use the ``analogRead(pin)`` command. This command reads the voltage entering an analog pin and maps it to a value between 0 and 1023:
+ポテンショメータからアナログ値を取得するには、 ``analogRead(pin)`` コマンドを使用します。このコマンドはアナログピンに入力される電圧を読み取り、0から1023の値にマッピングします：
 
-- If there is no voltage, the analog value is 0.
-- If the voltage is a full 5 volts, the analog value will be 1023.
+- 電圧がない場合、アナログ値は0です。
+- 電圧が完全な5ボルトの場合、アナログ値は1023になります。
 
-Here is how to use it:
+使用方法は次の通りです：
 
-    * ``analogRead(pin)``: Reads the value from the specified analog pin. 
+    * ``analogRead(pin)``：指定されたアナログピンから値を読み取ります。
 
-    **Parameters**
-        - ``pin``: the name of the analog input pin to read from.
+    **パラメータ**
+        - ``pin``：読み取り対象のアナログ入力ピンの名前。
 
-    **Returns**
-        The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.
+    **戻り値**
+        ピンのアナログ読み取り値。これはアナログからデジタルへの変換器の解像度に制限されます（10ビットの場合は0-1023、12ビットの場合は0-4095）。データ型：int。
 
-5. Place the following command inside the void ``loop()`` function to store the analog value from the potentiometer into the ``potValue`` variable declared at the top of your sketch:
+5. スケッチの上部で宣言した ``potValue`` 変数にポテンショメータからのアナログ値を格納するために、以下のコマンドを ``void loop()`` 関数内に配置します：
 
 .. code-block:: Arduino
     :emphasize-lines: 10
@@ -375,46 +373,44 @@ Here is how to use it:
         potValue = analogRead(A0);        // Read value from potentiometer
     }
 
+コードを保存して、エラーがないか確認してください。
 
-Make sure to save and verify your code to correct any errors.
+**アナログ値の書き込み**
 
-**Writing Analog Values**
-
-The digital pins on the Arduino Uno R3 are capable of either ON or OFF states, meaning they can't output true analog values. To simulate analog behavior for applications like controlling LED brightness, we use a technique called Pulse Width Modulation (PWM). PWM pins, which are marked with a tilde (~) on the board, can vary the perceived output by adjusting the duty cycle of the signal.
+Arduino Uno R3のデジタルピンはONまたはOFFの状態しか持たないため、真のアナログ値を出力することはできません。LEDの明るさを制御するようなアプリケーションでアナログ動作をシミュレートするために、パルス幅変調（PWM）という技術を使用します。PWMピンは、ボード上にチルダ（~）でマークされており、信号のデューティサイクルを調整することで出力の見かけの明るさを変えることができます。
 
 .. image:: img/9_dimmer_pwm_pin.png
     :width: 500
     :align: center
 
-To control an LED's brightness, we use the ``analogWrite(pin, value)`` command. This adjusts the LED's brightness by changing the duty cycle of the PWM signal sent to the pin.
+LEDの明るさを制御するには、 ``analogWrite(pin, value)`` コマンドを使用します。これにより、ピンに送信されるPWM信号のデューティサイクルを変更してLEDの明るさを調整します。
 
-    * ``analogWrite(pin, value)``: Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. 
+    * ``analogWrite(pin, value)``：ピンにアナログ値（PWM波）を書き込みます。これにより、LEDの明るさを変えることができたり、モーターの速度を調整することができます。
 
-    **Parameters**
-        - ``pin``: the Arduino pin to write to. Allowed data types: int.
-        - ``value``: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: int.
-    
-    **Returns**
-        Nothing
+    **パラメータ**
+        - ``pin``：書き込み対象のArduinoピン。データ型：int。
+        - ``value``：デューティサイクル：0（常にOFF）から255（常にON）の間。データ型：int。
 
-Think of the duty cycle like a faucet's on and off pattern that controls water flow into a bucket, which represents LED brightness. Here's a simple breakdown:
+    **戻り値**
+        なし
 
-* ``analogWrite(255)`` means the faucet is fully open all the time, making the bucket full and the LED brightest.
-* ``analogWrite(191)`` means the faucet is open 75% of the time, making the bucket less full and the LED dimmer.
-* ``analogWrite(0)`` means the faucet is completely closed, leaving the bucket empty and the LED off.
+デューティサイクルを蛇口の開閉パターンのように考えてみてください。バケツに流れ込む水の流量がLEDの明るさを制御します。以下に簡単な説明を示します：
+
+* ``analogWrite(255)`` は蛇口が常に全開で、バケツが満杯でLEDが最も明るい状態です。
+* ``analogWrite(191)`` は蛇口が75%開いており、バケツが少し少ない状態でLEDが暗くなります。
+* ``analogWrite(0)`` は蛇口が完全に閉じており、バケツが空でLEDが消えています。
 
 .. image:: img/9_pwm_signal.png
     :width: 400
     :align: center
 
-6. Add an ``analogWrite()`` command in the ``void loop()`` function and comment each line for clarity:
+6. ``void loop()``関数内に ``analogWrite()`` コマンドを追加し、各行にコメントを付けます：
 
 .. note::
 
-    * Because the input range from the potentiometer is 0 to 1023, but the range for output to the LEDs is 0 to 255. To bridge this gap, you can scale down the potentiometer value by dividing it by 4:
+    * ポテンショメータの入力範囲は0から1023ですが、LEDへの出力範囲は0から255です。このギャップを埋めるために、ポテンショメータの値を4で割ってスケールダウンします：
 
-    * Although the division result might not always be an integer, only the integer part is stored because the variables are declared as integers (int).
-
+    * 割り算の結果が整数でない場合でも、整数部分のみが格納されます。変数は整数（int）として宣言されているためです。
 
 .. code-block:: Arduino
     :emphasize-lines: 11
@@ -432,19 +428,19 @@ Think of the duty cycle like a faucet's on and off pattern that controls water f
         analogWrite(9, potValue / 4);       // Apply brightness to LED on pin 9
     }
 
-7. Once the code is uploaded to the Arduino Uno R3, turning the potentiometer will change the brightness of the LEDs. According to our setup, turning the potentiometer clockwise should increase the brightness, while turning it counterclockwise should decrease it.
+7. コードをArduino Uno R3にアップロードすると、ポテンショメータを回すことでLEDの明るさが変わります。設定に従い、ポテンショメータを時計回りに回すと明るさが増し、反時計回りに回すと明るさが減ります。
 
 .. note::
 
-    Debugging often requires checking both the code and the circuit for errors. If the code compiles correctly or seems correct but the LED do not change as expected, the issue may lie within the circuitry. Check all connections and components on the breadboard for good contact.
+    デバッグにはコードと回路の両方を確認する必要があります。コードが正しくコンパイルされたり、正しいと思われる場合でも、LEDが期待通りに変わらない場合は、回路内の問題である可能性があります。ブレッドボード上のすべての接続とコンポーネントを確認してください。
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. 最後に、コードを保存し、作業スペースを整理しましょう。
 
-**Question**
+**質問**
 
-If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?
+LEDを別のピン（例えばピン8）に接続し、ポテンショメータを回した場合、LEDの明るさは変わりますか？その理由は何ですか？
 
-**Summary**
+**まとめ**
 
-In this lesson, we explored how to work with analog signals in Arduino projects. We learned how to read analog values from a potentiometer, how to process these values in the Arduino sketch, and how to control the brightness of LED using Pulse Width Modulation (PWM). We also delved into the use of variable to store and manipulate data within our sketches. By integrating these elements, we demonstrated the dynamic control of electronic components, bridging the gap between simple digital outputs and more nuanced control of hardware through analog input readings.
+このレッスンでは、Arduinoプロジェクトでアナログ信号を扱う方法について学びました。ポテンショメータからのアナログ値を読み取り、それらの値をArduinoスケッチ内で処理し、パルス幅変調（PWM）を使用してLEDの明るさを制御する方法を学びました。また、スケッチ内でデータを格納し操作するための変数の使用についても学びました。これらの要素を統合することで、電子部品の動的な制御を実演し、単純なデジタル出力とアナログ入力読み取りを通じたハードウェア制御の橋渡しをしました。
 

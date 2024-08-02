@@ -1,102 +1,96 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**：販売後の問題や技術的な課題をコミュニティとチームの助けを借りて解決しましょう。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表やプレビューに早期アクセスしましょう。
+    - **特別割引**：最新製品の特別割引をお楽しみください。
+    - **お祭りのプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-1.2 What's Included in Your Kit
+1.2 キットに含まれているもの
 ======================================
 
+このコースで回路を作るために使用するさまざまな部品やパーツがキットに含まれています。以下はその内容の簡単なガイドです。
 
-Inside our kit, you'll find a variety of components and parts you'll use throughout this course to build circuits. Here's a quick guide to what's included.
 
+**1 x オリジナルArduino Uno R3**
 
-**1 x Original Arduino Uno R3**
-
-A microcontroller board that's the brain of your circuits. It has everything needed to support the microcontroller; simply connect it to your computer with a USB cable or power it with an AC-to-DC adapter or battery to get started.
+回路の頭脳であるマイクロコントローラーボードです。マイクロコントローラーをサポートするために必要なすべてが揃っており、USBケーブルでコンピューターに接続するか、AC-DCアダプターやバッテリーで電源を供給するだけで使用を開始できます。
 
 .. image:: img/1_uno_r3.png
     :width: 500
     :align: center
 
+**1 x 400穴ブレッドボード**
 
-**1 x 400-hole Breadboard**
-
-A solderless board that lets you easily build electronic circuits. It's filled with rows of holes for connecting wires and components.
+簡単に電子回路を構築できるはんだ不要のボードです。ワイヤーやコンポーネントを接続するための穴が並んでいます。
 
 .. image:: img/2_breadboard_half.png
     :width: 500
     :align: center
 
-**120 x Resistors (10 of each, 30 of 220Ω resistor)**
+**120 x 抵抗器（各10個、220Ω抵抗器は30個）**
 
-A resistor is a component that obstructs the flow of electric power, thereby altering the voltage and current within a circuit. The value of a resistor is measured in ohms, symbolized by the Greek letter omega (Ω). The colored stripes on a resistor indicate its resistance value and tolerance.
-
+抵抗器は電力の流れを妨げるコンポーネントで、回路内の電圧と電流を変える役割を果たします。抵抗器の値はオームで測定され、ギリシャ文字のオメガ（Ω）で表されます。抵抗器のカラーコードは、その抵抗値と許容誤差を示します。
 
 .. image:: img/2_all_resistor.png
     :align: center
 
-**25 x LEDs (5 of each color)**
+**25 x LED（各色5個）**
 
-This colorful LED selection includes five colors: red, green, blue, yellow, and white, meeting various lighting and signaling needs. Suitable for applications ranging from simple status indicators to complex decorative lighting projects, these LEDs offer a rich color choice to enhance the visual appeal of any electronic project.
+このカラフルなLEDセットには、赤、緑、青、黄、白の5色が含まれており、さまざまな照明や信号のニーズに対応できます。単純な状態表示から複雑な装飾照明プロジェクトまで、これらのLEDはどんな電子プロジェクトでも視覚的な魅力を高める豊かな色の選択肢を提供します。
 
 .. image:: img/2_led_color.png
     :align: center
 
-**2 x RGB LEDs**
+**2 x RGB LED**
 
-Combines red, green, and blue LEDs in one casing. It can display various colors by adjusting the input voltage, creating millions of colors.
+赤、緑、青のLEDを1つのケースに組み合わせたもので、入力電圧を調整することでさまざまな色を表示でき、数百万色を作り出すことができます。
 
 .. image:: img/12_rgb_led.jpg
     :width: 300
     :align: center
 
-**1 x Photoresistor**
+**1 x 光センサー**
 
-
-A photoresistor is a light-sensitive component that changes its resistance based on the intensity of light it is exposed to, ideal for creating light-activated controls and sensors in electronic projects.
+光センサーは、光の強度に応じて抵抗値が変わる光感受性コンポーネントで、電子プロジェクトで光を利用したコントロールやセンサーを作成するのに最適です。
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
+**1 x NTCサーミスタ**
 
-**1 x NTC Thermistor**
-
-A thermistor is a resistor sensitive to temperature changes. NTC thermistors decrease resistance as temperature rises, while PTC thermistors increase resistance with temperature.
+サーミスタは温度変化に敏感な抵抗器です。NTCサーミスタは温度が上昇すると抵抗が減少し、PTCサーミスタは温度が上昇すると抵抗が増加します。
 
 .. image:: img/1_thermistor.png
     :width: 100
     :align: center
 
-**1 x Active Buzzer & 1 x Passive Buzzer**
+**1 x アクティブブザー & 1 x パッシブブザー**
 
-A buzzer, available in active and passive types, is an audio signaling device that emits sound when electric current is applied. It is commonly used in alarms, timers, and notification systems.
-
+ブザーは、電流が流れると音を発するオーディオ信号装置で、アクティブタイプとパッシブタイプがあります。アラーム、タイマー、通知システムによく使用されます。
 
 .. image:: img/7_beep_2.png
     :align: center
 
-**1 x Potentiometer**
+**1 x ポテンショメーター**
 
-A potentiometer is a variable resistor with three pins. Two pins connect to the ends of a resistor, while the middle pin attaches to a movable wiper, dividing the resistor into two parts. Potentiometers, often used to adjust voltage in circuits, are like the volume knobs on radios.
+ポテンショメーターは、3本のピンを持つ可変抵抗器です。2本のピンは抵抗器の両端に接続され、中央のピンは可動ワイパーに接続され、抵抗器を2つに分割します。ポテンショメーターは回路内の電圧を調整するために使用され、ラジオのボリュームノブのような役割を果たします。
 
 .. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
 
-**10 x Small Buttons**
+**10 x 小型ボタン**
 
-A small push-button is used to provide a physical response when pressed, commonly used in electronic devices to initiate actions or input commands.
+小型の押しボタンは、押すと物理的な反応を提供し、電子機器でアクションを開始したりコマンドを入力するために一般的に使用されます。
 
 .. image:: img/1_button.png
     :width: 200
@@ -104,65 +98,65 @@ A small push-button is used to provide a physical response when pressed, commonl
 
 
 
-**1 x 74HC595 Chip**
+**1 x 74HC595 チップ**
 
-The 74HC594 is a shift register that is used to expand the input/output ports of digital circuits by converting serial input into parallel output, thus reducing the number of connection pins needed. This chip is suitable for controlling a large number of output devices, such as 7-segment Display, without occupying too many microcontroller pins.
+74HC595はシフトレジスタで、シリアル入力をパラレル出力に変換することでデジタル回路の入出力ポートを拡張し、接続ピンの数を減らします。このチップは、マイクロコントローラーのピンを多く占有することなく、7セグメントディスプレイなどの多くの出力デバイスを制御するのに適しています。
 
 .. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
-**1 x 7-segment Display**
+**1 x 7セグメントディスプレイ**
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+7セグメントディスプレイは、7つのLEDをパッケージ化した8の字型のコンポーネントです。各LEDはセグメントと呼ばれ、電源が供給されると、数字の一部を形成します。
 
 .. image:: img/23_7_segment.png
     :width: 300
     :align: center
 
-**1 x Ultrasonic Module**
+**1 x 超音波モジュール**
 
-This is an ultrasonic module that uses ultrasonic waves to measure distances, accurately detecting and measuring the position and distance of objects. Widely used in robotics, obstacle avoidance systems, and automatic control fields, it is a key component for environmental perception and spatial navigation.
+この超音波モジュールは、超音波を利用して距離を測定し、物体の位置や距離を正確に検出・測定します。ロボティクス、障害物回避システム、自動制御分野で広く使用され、環境認識と空間ナビゲーションの重要なコンポーネントです。
 
 .. image:: img/19_ultrasonic_pic.png
     :width: 300
     :align: center
 
-**65 x Jumper Wires**
+**65 x ジャンパーワイヤー**
 
-Connect components on the breadboard to each other and to the Arduino board.
+ブレッドボード上のコンポーネントを互いに、またArduinoボードに接続します。
 
 .. image:: img/2_wire_color.jpg
     :width: 400
     :align: center
 
-**10 x Male-to-female DuPont Wires**
+**10 x オス-メスDuPontワイヤー**
 
-Male-to-female DuPont wires are specifically designed for connecting modules with male pin headers, like ultrasonic module, to breadboard. These wires are essential for interfacing different components in electronic projects, where breadboard-compatible male-to-female connections are needed.
+オス-メスDuPontワイヤーは、超音波モジュールのようなオスピンヘッダーを持つモジュールをブレッドボードに接続するために特別に設計されています。これらのワイヤーは、電子プロジェクトでブレッドボード対応のオス-メス接続が必要な場合に不可欠です。
 
 .. image:: img/1_dupont_wire.jpg
     :width: 400
     :align: center
 
-**1 x USB Cable**
+**1 x USBケーブル**
 
-Connects the Arduino board to a computer. Allows you to write, compile, and transfer programs to the Arduino board. Also powers the board.
+Arduinoボードをコンピューターに接続します。プログラムの作成、コンパイル、転送を可能にし、ボードにも電源を供給します。
 
 .. image:: img/1_usb_cable.png
     :width: 400
     :align: center
 
-**1 x 9V Battery**
+**1 x 9Vバッテリー**
 
-This is a non-rechargeable alkaline 9V battery. You need to install it on the multimeter.
+これは非充電式のアルカリ9Vバッテリーです。マルチメーターに取り付ける必要があります。
 
 .. image:: img/1_9v_battery.png
     :width: 200
     :align: center
 
-**1 x Multimeter with Red & Black Leads**
+**1 x マルチメーター（赤と黒のリード付き）**
 
-This is a versatile multimeter capable of measuring voltage, current, and resistance, as well as performing other electrical tests, making it an indispensable tool for electronics and electrical work.
+この多機能マルチメーターは、電圧、電流、抵抗を測定することができ、その他の電気テストも行えるため、電子機器や電気作業に欠かせないツールです。
 
 .. image:: img/multimeter_pic.png
     :width: 200

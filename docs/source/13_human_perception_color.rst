@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts CommunityのFacebookページへようこそ！Raspberry Pi、Arduino、ESP32に関する情報を深く掘り下げ、仲間と共に楽しみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: 購入後の問題や技術的な課題を、コミュニティやチームの助けを借りて解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表やスニークピークにいち早くアクセスできます。
+    - **特別割引**: 最新の製品に対する特別割引を楽しめます。
+    - **イベントとプレゼント**: プレゼント企画やホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探究し、創造しましょう！[|link_sf_facebook|]をクリックして、今すぐ参加してください！
 
-13. The Spectrum of Sight
+13. 視覚のスペクトル
 ================================================================================
-Welcome to this lesson,  where we unravel the mystery of human color perception and replicate it using technology. In this lesson, we delve into how our eyes distinguish millions of colors and how this incredible ability can be simulated digitally with RGB LEDs. By exploring the interplay of photoreceptors in our eyes and the RGB color model, you'll learn to recreate the vividness of the world in digital form.
+このレッスンへようこそ。ここでは、人間の色の知覚の謎を解き明かし、それを技術で再現する方法を学びます。このレッスンでは、目が数百万色を識別する方法と、RGB LEDを使ってこの驚異的な能力をデジタルでシミュレートする方法に触れます。私たちの目の光受容体とRGBカラーモデルの相互作用を探求することで、デジタル形式で世界の鮮やかさを再現する方法を学びます。
 
 .. raw:: html
 
@@ -24,34 +24,29 @@ Welcome to this lesson,  where we unravel the mystery of human color perception 
     </video>
 
 
-**Overview**
+**概要**
 
-The human visual system can perceive about ten million different colors, a capability achieved through photoreceptor cells in the retina—cones and rods. Perception of color is not linear; our visual system is more sensitive to changes in certain colors than others. Cones, which are sensitive to color, primarily come in three types, each most sensitive to either red, green, or blue light.
-
-The human eye perceives about ten million different colors, thanks to specialized cells in the retina called cones and rods. This perception isn't uniform across the spectrum; we're more sensitive to changes in some colors than others. Cones, which detect color, are predominantly sensitive to red, green, or blue wavelengths.
+人間の視覚システムは約1000万色を認識することができます。この能力は、網膜の錐体細胞と桿体細胞によって実現されています。色の知覚は線形ではなく、特定の色の変化に対してより敏感です。色に敏感な錐体細胞は、主に赤、緑、青の光に最も敏感な3種類に分けられます。
 
 .. image:: img/13_mix_eyeballjpg.jpg
 
-The RGB color model is an additive color model where colors are created by mixing varying intensities of red, green, and blue light. In this model, red, green, and blue are typically considered primary color channels. By adjusting the intensity of each channel (from 0 to a maximum value, typically 255 corresponding to an 8-bit color depth), it is possible to produce a visible spectrum of over 16 million different colors. For instance, orange can be achieved by mixing more red with less green.
-
-The RGB color model uses an additive approach, mixing red, green, and blue light to create a broad array of colors. This model reflects how our visual system combines light from different parts of the spectrum to form diverse hues. By manipulating the intensity of these three primary colors, we can generate over 16 million distinct colors. For example, by increasing red and decreasing green, we achieve orange.
+RGBカラーモデルは加法混色のモデルで、異なる強度の赤、緑、青の光を混ぜることで色が生成されます。このモデルでは、赤、緑、青が通常、主要な色チャンネルとみなされます。各チャンネルの強度（0から最大値、通常は8ビットカラー深度に対応する255まで）を調整することで、1600万以上の色を作り出すことが可能です。例えば、オレンジ色は赤を多めに、緑を少なめに混ぜることで実現できます。
 
 .. image:: img/13_mix_orange.jpg
 
-In this interactive lesson, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
+このインタラクティブなレッスンでは、これらの原理を適用してRGB LEDを制御し、正確な電子コマンドを使用してお好みの色を表示できるようにします。
 
-**Learning Objectives**
+**学習目標**
 
-* Grasp how this model mimics human color perception and its application in digital displays.
-* Learn to use Pulse Width Modulation (PWM) for nuanced color mixing with RGB LED.
-* Enhance your coding efficiency and clarity by creating functions that take parameters in Arduino.
-* Experiment with different RGB values to customize colors on your LED, mirroring the complexity of human color vision.
+* このモデルが人間の色知覚を模倣する方法と、デジタルディスプレイでの応用を理解する。
+* PWM（パルス幅変調）を使用してRGB LEDで微妙な色の混合を行う方法を学ぶ。
+* パラメータを取る関数を作成することで、コーディングの効率と明確さを向上させる。
+* 人間の色覚の複雑さを反映して、RGB値を調整してLEDの色をカスタマイズする。
 
-
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -59,14 +54,14 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * 220Ω抵抗
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
      -
      -
    * - |list_usb_cable| 
@@ -74,24 +69,24 @@ Building the Circuit
      -
      -
 
-This lesson uses the same circuit as Lesson 12.
+このレッスンでは、レッスン12と同じ回路を使用します。
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
 
-Code Creation - Displaying Colors
+コード作成 - 色の表示
 ------------------------------------
 
-In our journey to master the control of RGB LEDs, we've seen how using ``digitalWrite()`` can light up the LED in basic colors. To further explore and unlock the full spectrum of colors that an RGB LED can produce, we'll now delve into using ``analogWrite()`` to send PWM (Pulse Width Modulation) signals, allowing us to achieve a wide range of hues.
+RGB LEDの制御をマスターするための旅では、 ``digitalWrite()`` を使用して基本的な色を点灯させる方法を見てきました。次に、PWM（パルス幅変調）信号を送信するために ``analogWrite()`` を使用し、RGB LEDが生成できる色の全範囲を探求し、解放します。
 
-Let's see how we can implement this with code.
+コードを使ってこれをどのように実装できるか見てみましょう。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson13_PWM_Color_Mixing`` using ``Ctrl + S`` or by clicking “Save”.
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson13_PWM_Color_Mixing`` として保存します。 ``Ctrl + S`` を押すか、「保存」をクリックします。
 
-3. First, set the three pins of the RGB LED as outputs:
+3. 最初に、RGB LEDの3つのピンを出力として設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
@@ -103,7 +98,7 @@ Let's see how we can implement this with code.
         pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
     }
 
-4. Use ``analogWrite()`` to send PWM values to the RGB LED. From Lesson 9, we know that PWM values can change an LED's brightness, and the PWM range is 0-255. To display red, we set the PWM value of the RGB LED's red pin to 255, and the other two pins to 0.
+4. ``analogWrite()`` を使用して、RGB LEDにPWM値を送信します。レッスン9から、PWM値がLEDの明るさを変えることができること、PWM範囲が0-255であることを学びました。赤を表示するには、RGB LEDの赤ピンのPWM値を255に、他の2つのピンを0に設定します。
 
 .. code-block:: Arduino
     :emphasize-lines: 10-12
@@ -122,18 +117,18 @@ Let's see how we can implement this with code.
         analogWrite(11, 255);  // Set the PWM value of Red pin to 255
     }
 
-5. With this setup, after uploading the code to the Arduino Uno R3, you will see the RGB LED display red.
+5. このセットアップで、コードをArduino Uno R3にアップロードすると、RGB LEDが赤色を表示します。
 
-6. The ``analogWrite()`` function allows the RGB LED to display not only the seven basic colors but many other different hues. Now you can adjust the values of pins 9, 10, and 11 separately, and record the observed colors in your handbook.
+6. ``analogWrite()`` 関数を使用すると、RGB LEDは7つの基本色だけでなく、他の多くの色も表示できるようになります。9、10、11ピンの値をそれぞれ調整し、観察した色をハンドブックに記録します。
 
 .. list-table::
     :widths: 20 20 20 40
     :header-rows: 1
 
-    *   - Red Pin    
-        - Green Pin  
-        - Blue Pin
-        - Color
+    *   - 赤ピン    
+        - 緑ピン  
+        - 青ピン
+        - 色
     *   - 0
         - 128
         - 128
@@ -151,38 +146,37 @@ Let's see how we can implement this with code.
         - 0
         -     
 
-Code Creation - Parameterized Functions
+コード作成 - パラメータ化された関数
 ------------------------------------------------
 
-Using the ``analogWrite()`` function to display different colors can make your code lengthy if you want to display many colors simultaneously. Therefore, we need to create functions.
+異なる色を表示するために ``analogWrite()`` 関数を使用すると、多くの色を同時に表示したい場合、コードが長くなることがあります。そのため、関数を作成する必要があります。
 
-Unlike the previous lesson, we are preparing to create a function with parameters. 
+前のレッスンとは異なり、今回はパラメータを持つ関数を作成します。
+
+パラメータ化された関数を使用すると、特定の値を関数に渡し、その値を使用してタスクを実行できます。これは、色の強度などのプロパティを動的に調整するのに非常に便利です。これにより、コードが柔軟で読みやすくなります。
+
+パラメータ化された関数を定義するとき、関数名の後の括弧内に必要な値（パラメータ）を指定します。これらのパラメータは、関数が呼び出されたときに実際の値に置き換えられます。
+
+以下に、RGB LEDの色を設定するためのパラメータ化された関数を定義する方法を示します：
 
 
-A parameterized function allows you to pass specific values into the function, which can then use these values to perform its tasks. This is incredibly useful for adjusting properties like color intensity on the fly. It makes your code more flexible and easier to read.
+1. 以前に保存したスケッチ ``Lesson13_PWM_Color_Mixing`` を開きます。
 
-When defining a parameterized function, you specify what values it needs to operate through parameters listed in parentheses right after the function name. These parameters act like placeholders that get replaced by actual values when the function is called.
+2. 「ファイル」メニューから「名前を付けて保存」を選択し、スケッチを ``Lesson13_PWM_Color_Mixing_Function`` として保存します。「保存」をクリックします。
 
-Here's how to define a parameterized function for setting the color of an RGB LED:
-
-1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
-
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson13_PWM_Color_Mixing_Function``. Click "Save".
-
-3. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
+3. ``void loop()``の後に、キーワード ``void`` を使用して関数を宣言し、関数名と括弧内にパラメータを記述します。 ``setColor`` 関数では、RGB LEDの各色成分の強度を表す ``red`` 、 ``green`` 、 ``blue`` の3つのパラメータを使用します。
 
 .. code-block:: Arduino
     :emphasize-lines: 5,6
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // 繰り返し実行するメインコードを記述:
     }
 
     void setColor(int red, int green, int blue) {
     }
 
-   
-4. Within the function body, use the ``analogWrite()`` command to send PWM signals to the RGB LED pins. The values passed to ``setColor`` will determine the brightness of each color. The parameters ``red``, ``green``, and ``blue`` are used here to directly control the intensity of each LED pin.
+4. 関数の本文内で、 ``analogWrite()`` コマンドを使用してRGB LEDのピンにPWM信号を送信します。 ``setColor`` に渡された値は各色の明るさを決定します。ここでは、パラメータ ``red`` 、 ``green`` 、 ``blue`` を使用して、各LEDピンの強度を直接制御します。
 
 .. code-block:: Arduino
 
@@ -194,8 +188,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
         analogWrite(9, blue);
     }
 
-
-5. Now you can call your newly created ``setColor()`` function in the ``void loop()``. Since you created a function with parameters, you need to fill in the arguments in the ``()`` such as ``(255, 0, 0)``. Remember to write comments.
+5. 新しく作成した ``setColor()`` 関数を ``void loop()`` 内で呼び出します。パラメータを持つ関数を作成したので、 ``()`` 内に引数を埋める必要があります。例えば ``(255, 0, 0)`` のようにします。コメントを忘れずに記述してください。
 
 .. code-block:: Arduino
     :emphasize-lines: 3
@@ -213,19 +206,19 @@ Here's how to define a parameterized function for setting the color of an RGB LE
         analogWrite(9, blue);
     }
 
-6. We already know that by providing different values to the three pins of the RGB LED, we can light up different colors of light. So, how do we make the RGB LED light up exactly the color we want? This requires the aid of a color palette. Open **Paint** (this software comes with Windows) or any drawing software on your personal computer.
+6. 既に、RGB LEDの3つのピンに異なる値を提供することで、異なる色の光を点灯させることができることを知っています。では、RGB LEDを正確に希望の色に点灯させるにはどうすればよいでしょうか？これには、カラーパレットの助けが必要です。Windowsに付属の **Paint** （または任意の描画ソフトウェア）を開きます。
 
 .. image:: img/13_mix_color_paint.png
 
-7. Choose a color you like, record its RGB values.
+7. 好きな色を選択し、そのRGB値を記録します。
 
 .. note::
 
-    Note that before you select a color, adjust the lumens to the proper position.
+    色を選択する前に、明度を適切な位置に調整することを忘れないでください。
 
 .. image:: img/13_mix_color_paint_2.png
 
-8. Fill in the color you selected into the ``setColor()`` function in the ``void loop()``, use the ``delay()`` function to specify the display time for each color.
+8. 選択した色を ``void loop()`` 内の ``setColor()`` 関数に入力し、 ``delay()`` 関数を使用して各色の表示時間を指定します。
 
 .. code-block:: Arduino
 
@@ -243,7 +236,7 @@ Here's how to define a parameterized function for setting the color of an RGB LE
         delay(1000);              // Wait for 1 second
     }
 
-9. Below is the complete code; you can click "Upload" to upload the code to the Arduino Uno R3 to see the effects.
+9. 以下は完全なコードです。クリックして「アップロード」し、Arduino Uno R3にコードを転送して効果を確認します。
 
 .. code-block:: Arduino
 
@@ -276,8 +269,8 @@ Here's how to define a parameterized function for setting the color of an RGB LE
         analogWrite(9, blue);
     }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
-**Summary**
+**まとめ**
 
-Today's exploration of color perception bridges the gap between biological science and electronic application, highlighting the power of programming in bringing abstract concepts to life. By adjusting RGB values on an LED, you've mimicked the eye's method of perceiving color, gaining both a deeper appreciation for human biology and advanced skills in electronic control.
+今日の色の知覚に関する探求は、生物学と電子応用の橋渡しをし、プログラミングの力が抽象的な概念を現実にする方法を強調しました。RGB値を調整してLEDを制御することで、目が色を認識する方法を模倣し、人間の生物学への深い理解と電子制御の高度なスキルを習得しました。

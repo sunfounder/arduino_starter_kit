@@ -1,100 +1,98 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32ファンコミュニティへようこそ！Raspberry Pi、Arduino、ESP32に興味のある仲間たちと共に、さらに深く探求してみましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**: 購入後の問題や技術的な課題をコミュニティやチームの助けを借りて解決できます。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や予告を早期に入手できます。
+    - **特別割引**: 最新製品の限定割引を利用できます。
+    - **お祭りプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し、創造する準備はできましたか？[|link_sf_facebook|]をクリックして今すぐ参加しましょう！
 
-10. ON/OFF Desk Lamp
+10. ON/OFFデスクランプ
 ====================================
 
-In this lesson, you'll expand on your previous project by adding a practical feature to your adjustable desk lamp—a switchable button. This enhancement simulates a real-life scenario where desk lamps are turned on or off and then adjusted for brightness using a dimmer, mimicking everyday functionality more closely.
+このレッスンでは、調光可能なデスクランプにスイッチボタンを追加することで、前回のプロジェクトを拡張します。この改良により、実際のデスクランプのようにオンオフを切り替え、その後に明るさを調整する機能が追加され、日常の使用に近いシナリオをシミュレートします。
 
 .. image:: img/10_desk_lamp_button.jpg
     :width: 500
     :align: center
 
-* Learn to use the Serial Monitor for real-time data display.
-* Implement the ``INPUT_PULLUP`` mode to manage button inputs efficiently.
-* Understand how to detect changes from one state to another.
-* Explore the characteristics of digital and analog signals
-* Utilizing Conditional Statements (``if else``)
+* リアルタイムデータ表示のためのシリアルモニタの使用方法を学ぶ。
+* ボタン入力を効率的に管理するための``INPUT_PULLUP``モードの実装。
+* 状態の変化を検出する方法を理解する。
+* デジタル信号とアナログ信号の特性を探る。
+* 条件文（``if else``）の活用。
 
-Build the Circuit
+回路の構築
 ------------------------------------
 
-**Components Needed**
-
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LEDs
-     - 1 * 220Ω Resistor
-     - 1 * Potentiometer
+     - 1 * 赤色LED
+     - 1 * 220Ω抵抗
+     - 1 * ポテンショメータ
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * Button
-     - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * ボタン
+     - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤー
    * - |list_button| 
      - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
 
 
+**構築手順**
 
-**Building Steps**
-
-1. Start with the desk lamp circuit from the previous lesson.
+1. 前回のレッスンのデスクランプ回路から始めます。
 
 .. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
-2. Insert the button into the breadboard across the middle gap, with pins in holes 6E, 8E, 6J and 8J. 
+2. ボタンをブレッドボードの中央のギャップをまたいで挿入し、ピンを6E、8E、6J、8Jの穴に挿入します。
 
 .. note::
 
-    If you're unsure how to insert the button, try both orientations. One way, the pin spacing will be slightly too narrow to fit.
+    ボタンの挿入方法が不明な場合は、両方の向きを試してみてください。一方の向きでは、ピンの間隔が少し狭くて合わないかもしれません。
 
 .. image:: img/10_desk_lamp_button_button.png
     :width: 500
     :align: center
 
-3. Connect the button's buttom-left pin to digital pin 7 on the Arduino Uno R3 with a long jumper wire, inserting one end into hole 8J and the other into pin 7.
+3. ボタンの左下のピンを長いジャンパーワイヤーでArduino Uno R3のデジタルピン7に接続し、一方の端を8Jの穴に、もう一方の端をピン7に挿入します。
 
 .. image:: img/10_desk_lamp_button_p7.png
     :width: 500
     :align: center
 
-4. Connect the button's top-right pin to the breadboard's negative rail with a short jumper wire, inserting one end into hole 6A and the other into the negative rail.
+4. ボタンの右上のピンを短いジャンパーワイヤーでブレッドボードの負端子に接続し、一方の端を6Aの穴に、もう一方の端を負端子に挿入します。
 
 .. image:: img/10_desk_lamp_button_gnd.png
     :width: 500
     :align: center
 
 
-Code Creation
+コードの作成
 -----------------
 
-**Printing Button State**
+**ボタンの状態を表示**
 
-1. Open the sketch you saved earlier, ``Lesson9_Desk_Lamp``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson10_Desk_Lamp_Button``. Click "Save".
+1. 以前保存したスケッチ ``Lesson9_Desk_Lamp`` を開き、「名前を付けて保存...」を選択して ``Lesson10_Desk_Lamp_Button`` に名前を変更し、「保存」をクリックします。
 
-2. In Lesson 8, we used a button with a manually connected 10K pull-down resistor between GND and the button. However, in this circuit, we did not connect a resistor. Instead, we can use the Arduino software pull-up feature. You need to set the pin connected to the button as input while also setting it to ``PULLUP``.
+2. レッスン8では、10Kプルダウン抵抗を手動でGNDとボタンの間に接続しましたが、この回路では抵抗を接続していません。代わりに、Arduinoのソフトウェアプルアップ機能を使用します。ボタンに接続されたピンを入力に設定し、 ``PULLUP`` に設定する必要があります。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
@@ -102,14 +100,14 @@ Code Creation
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 8 as input with an internal pull-up resistor
+        // ここに初期設定コードを記述します。プログラムが開始すると1回だけ実行されます:
+        pinMode(9, OUTPUT);        // ピン9を出力に設定
+        pinMode(7, INPUT_PULLUP);  // ピン7を内部プルアップ抵抗で入力に設定
     }
 
-3. To utilize the Serial Monitor, you must include a command that initiates serial communication on the Arduino Uno R3. 
+3. シリアルモニタを利用するには、Arduino Uno R3でシリアル通信を開始するコマンドを含める必要があります。
 
-This command is typically placed in the ``void setup()`` section of the sketch. The command ``Serial.begin(baud)`` starts the serial communication, where ``baud`` represents the rate of data transfer per second between the computer and the Arduino Uno R3. Common baud rates are 9600 and 115200 bits per second.
+このコマンドは通常、スケッチの ``void setup()`` セクションに配置されます。 ``Serial.begin(baud)`` コマンドはシリアル通信を開始し、 ``baud`` はコンピュータとArduino Uno R3間の1秒あたりのデータ転送速度を表します。一般的なボーレートは9600ビット/秒と115200ビット/秒です。
 
 .. code-block:: Arduino
     :emphasize-lines: 7
@@ -124,7 +122,7 @@ This command is typically placed in the ``void setup()`` section of the sketch. 
     }
 
 
-4. Before entering the ``void loop()``, we also need to create two variables to initialize the states of the button and the LED. The LED should be off when there is no interaction, so set it to LOW. Since the button uses an internal pull-up resistor, it will read as HIGH when not pressed.
+4. ``void loop()`` に入る前に、ボタンとLEDの状態を初期化するための変数を2つ作成する必要があります。ボタンが押されていないときにLEDが消灯している状態に設定し、ボタンは内部プルアップ抵抗を使用しているため、押されていないときはHIGHとして読み取られます。
 
 .. code-block:: Arduino
     :emphasize-lines: 2,3
@@ -139,7 +137,7 @@ This command is typically placed in the ``void setup()`` section of the sketch. 
         Serial.begin(9600);        // Serial communication setup at 9600 baud
     }
 
-5. Now, in the ``void loop()``, first read the state of the button using ``digitalRead()`` and store it in the variable ``buttonState``. 
+5. 次に、 ``void loop()`` 内で最初にボタンの状態を ``digitalRead()`` を使用して読み取り、その値を ``buttonState`` 変数に格納します。
 
 .. code-block:: Arduino
     :emphasize-lines: 2
@@ -147,34 +145,33 @@ This command is typically placed in the ``void setup()`` section of the sketch. 
     void loop() {
         int buttonState = digitalRead(7);  // Read the state of the button
     }
+    
+6. シリアルモニタを使用してデータを表示する準備が整いました。 ``Serial.print()`` を利用してデータやテキストを表示します。
 
-6. You are now ready to use the Serial Monitor to print data. You will utilize ``Serial.print()`` to display data and other texts.
-
-Here's how to use it:
+使い方は以下の通りです：
 
 
-    * ``Serial.print(val)`` or ``Serial.print(val, format)``: Prints data to the serial port as human-readable ASCII text. 
+    * ``Serial.print(val)`` または ``Serial.print(val, format)``: データをシリアルポートに人間が読み取れるASCIIテキストとして出力します。
 
-    **Parameters**
-        - ``Serial``: serial port object.
-        - ``val``: the value to print. Allowed data types: any data type.
+    **パラメータ**
+        - ``Serial``: シリアルポートオブジェクト。
+        - ``val``: 出力する値。許容データ型：任意のデータ型。
 
-    **Returns**
-        ``print()`` returns the number of bytes written, though reading that number is optional. Data type: size_t.
+    **戻り値**
+        ``print()`` は書き込まれたバイト数を返しますが、その数を読み取るのは任意です。データ型：size_t。
 
-This command can represent various data types and formats, including numbers, floating points, bytes, and strings. For example:
+このコマンドは様々なデータ型やフォーマットを表現できます。例えば：
 
 .. code-block:: Arduino
 
-    Serial.print(78);                // outputs "78"
-    Serial.print(78, BIN);           // outputs "1001110"
-    Serial.print(1.23456);           // outputs "1.23"
-    Serial.print(1.23456, 0);        // outputs "1"
-    Serial.print('N');               // outputs "N"
-    Serial.print("Hello world.");    // outputs "Hello world."
+    Serial.print(78);                // "78"と出力
+    Serial.print(78, BIN);           // "1001110"と出力
+    Serial.print(1.23456);           // "1.23"と出力
+    Serial.print(1.23456, 0);        // "1"と出力
+    Serial.print('N');               // "N"と出力
+    Serial.print("Hello world.");    // "Hello world."と出力
 
-
-7. Now, use this command to print a prompt indicating the data about to be printed. This is helpful when differentiating multiple data prints at once.
+7. 次に、表示するデータについてのプロンプトを表示するコマンドを使用します。これは複数のデータを一度に区別するのに役立ちます。
 
 .. code-block:: Arduino
     :emphasize-lines: 3
@@ -184,11 +181,11 @@ This command can represent various data types and formats, including numbers, fl
         Serial.print("Button State: ");
     }
 
-8. Now print the value stored in the ``buttonState`` variable. To ensure each output appears on a new line in the Serial Monitor, use ``Serial.println()``, which adds a newline character at the end of the print statement.
-    
+8. 次に、 ``buttonState`` 変数に格納されている値を表示します。シリアルモニタで各出力を新しい行に表示するには、 ``Serial.println()`` を使用して、印刷文の末尾に改行文字を追加します。
+
 .. note::
 
-    Note the difference in printing characters or strings (which must be enclosed in quotes) versus variables that are inserted directly.
+    文字や文字列（引用符で囲む必要があります）を印刷する場合と、変数を直接挿入する場合の違いに注意してください。
     
 .. code-block:: Arduino
     :emphasize-lines: 14
@@ -209,33 +206,33 @@ This command can represent various data types and formats, including numbers, fl
         Serial.println(buttonState);  // Print the current button state
     }
 
-9. At this point, the code is essentially complete. Click "Upload" to upload the code to the Arduino Uno R3.
+9. ここで、コードは本質的に完成です。「アップロード」をクリックしてコードをArduino Uno R3にアップロードします。
 
     .. note::
 
-        Whenever data is transmitted from the board to the computer, you should see the TX LED on your Arduino Uno R3 flashing.
+        ボードからコンピュータにデータが送信されるたびに、Arduino Uno R3のTX LEDが点滅するはずです。
 
-10. Afterward, click on the "Serial Monitor" button in the top right corner of the Arduino IDE.
+10. その後、Arduino IDEの右上にある「シリアルモニタ」ボタンをクリックします。
 
     .. image:: img/10_dimmer_led_serial.png
         :align: center
 
-11. If you see garbled data displayed, you will need to adjust the baud rate to match the one set in your code.
+11. データが文字化けして表示される場合は、コードで設定したボーレートに合わせてボーレートを調整する必要があります。
 
     .. image:: img/10_dimmer_led_serial_baud.png
         :align: center
 
-12. You will find that when the button is not pressed, it continuously prints "1", and when the button is pressed, it continuously prints "0". This is the characteristic of a digital signal, which has only two states: “0” and “1”.
+12. ボタンが押されていないときは「1」が連続して表示され、ボタンが押されると「0」が連続して表示されることがわかります。これは、デジタル信号の特徴で、状態が「0」と「1」のみであることを示しています。
 
-**Detecting Button State Changes**
+**ボタン状態の変化を検出**
 
-In this segment, we're going to learn how a simple button can control an LED by toggling its state from ON to OFF and vice versa. This involves detecting the precise moment the button changes from not being pressed to being pressed.
+このセクションでは、簡単なボタンでLEDのオンオフを切り替える方法を学びます。これは、ボタンの状態が変化した瞬間を検出することを含みます。
 
-1. Let's start with the core function that monitors the button press.
+1. ボタンの押下を監視するコア機能から始めましょう。
 
-Previously, we learned how to determine if a button is pressed by reading its state as ``HIGH`` or ``LOW``. However, this lesson aims to respond to a single press without the need to keep the button held down. This requires us to detect a change in the button's state.
+以前に、ボタンが押されたかどうかをその状態が ``HIGH`` または ``LOW`` で読み取る方法を学びました。しかし、このレッスンではボタンを押し続ける必要がないように、単一の押下に応答することを目指します。これには、ボタンの状態が変化したことを検出する必要があります。
 
-To achieve this, we use an ``if`` statement that compares the button's previous state (``lastButtonState``) with its current state (``buttonState``). The logical operator ``&&`` is used here, meaning both conditions must be true for the block of code within the ``if`` statement to execute.
+これを達成するために、ボタンの前回の状態（ ``lastButtonState`` ）を現在の状態（ ``buttonState`` ）と比較する ``if`` 文を使用します。論理演算子 ``&&`` をここで使用して、両方の条件が真である場合に ``if`` 文内のコードブロックが実行されるようにします。
 
 .. code-block:: Arduino
     :emphasize-lines: 7,8
@@ -250,27 +247,10 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
         }
     }
 
-2. When the button is detected as pressed, we toggle the LED's state. This means if the LED was off, it turns on, and if it was on, it turns off. The ``!`` operator is used to invert the state of the ledState variable.
-
+2. ボタンが押されたと検出されたとき、LEDの状態を切り替えます。つまり、LEDが消灯していた場合は点灯し、点灯していた場合は消灯します。 ``!`` 演算子を使用してledState変数の状態を反転させます。
 
 .. code-block:: Arduino
     :emphasize-lines: 8
-
-    void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
-        Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
-            
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-            ledState = !ledState;                               // Toggle LED state
-        }
-    }
-
-3. After checking the button's state and updating the LED accordingly, we need to record the current state of the button as the new 'last known state'. This step is crucial for detecting the next state change.
-
-.. code-block:: Arduino
-    :emphasize-lines: 10,11
 
     void loop() {
         int buttonState = digitalRead(7);  // Read the state of the button
@@ -281,17 +261,31 @@ To achieve this, we use an ``if`` statement that compares the button's previous 
         if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
             ledState = !ledState;                               // Toggle LED state
         }
-        lastButtonState = buttonState;  // Update lastButtonState to the current state
-        delay(200);                     // Optional: Simple software debouncing
+    }
+
+3. ボタンの状態を確認してLEDを更新した後、ボタンの現在の状態を新しい「最後に知られている状態」として記録する必要があります。このステップは次の状態変化を検出するために重要です。
+
+.. code-block:: Arduino
+    :emphasize-lines: 10,11
+
+    void loop() {
+        int buttonState = digitalRead(7);  // ボタンの状態を読み取る
+        Serial.print("Button State: ");
+        Serial.println(buttonState);  // 現在のボタン状態を出力
+        
+        // ボタン状態が前回のループの反復から変化したかどうかを確認
+        if (lastButtonState == HIGH && buttonState == LOW) {  // ボタン押下が検出された
+            ledState = !ledState;                               // LEDの状態を切り替え
         }
+        lastButtonState = buttonState;  // lastButtonStateを現在の状態に更新
+        delay(200);                     // オプション：簡単なソフトウェアデバウンス
+    }
 
-**Adjusting Brightness with a Potentiometer**
+**ポテンショメータで明るさを調整**
 
-In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light up but also to have its brightness adjustable by a potentiometer. Here’s how you can implement this functionality:
+``ledState`` が ``HIGH`` の場合、LEDを点灯させるだけでなく、ポテンショメータで明るさを調整できるようにします。これを実装する方法は次の通りです：
 
-
-1. Right after the ``if`` statement that toggles the LED state upon a button press, add another ``if`` statement to check if ``ledState`` is ``HIGH``. If it is, this is where we'll adjust the LED's brightness based on the potentiometer's value.
-
+1. ボタン押下でLEDの状態を切り替える ``if`` 文の直後に、 ``ledState`` が ``HIGH`` であるかどうかを確認する別の ``if`` 文を追加します。もしそうであれば、ポテンショメータの値に基づいてLEDの明るさを調整します。
 
 .. code-block:: Arduino
     :emphasize-lines: 10,12
@@ -312,7 +306,7 @@ In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light u
         delay(200);                     // Optional: Simple software debouncing
     }
 
-2. Inside the ``if (ledState == HIGH)`` block, read the potentiometer value to determine the brightness level. Then, apply this value to adjust the LED's brightness using ``analogWrite()``. Also, print this value to the Serial Monitor for real-time feedback.
+2. ``if (ledState == HIGH)``ブロックの中で、ポテンショメータの値を読み取って明るさレベルを決定します。次に、 ``analogWrite()`` を使用してこの値を適用し、LEDの明るさを調整します。また、シリアルモニタにこの値をリアルタイムでフィードバックするために出力します。
 
 .. code-block:: Arduino
     :emphasize-lines: 6-9
@@ -330,12 +324,11 @@ In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light u
     lastButtonState = buttonState;  // Update lastButtonState to the current state
     delay(200);                     // Optional: Simple software debouncing
 
-3. To ensure the LED turns off when ``ledState`` is ``LOW``, add an ``else`` statement following the ``if`` block. This will handle turning off the LED completely when the conditions within the ``if`` are not met.
+3. ``ledState``が ``LOW`` の場合、LEDをオフにするための ``else`` 文を ``if`` ブロックの後に追加します。これにより、 ``if`` の条件が満たされない場合にLEDを完全にオフにします。
 
 .. image:: img/if_else.png
     :width: 400
     :align: center
-
 
 .. code-block:: Arduino
     :emphasize-lines: 6-8
@@ -348,10 +341,10 @@ In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light u
     } else {
         analogWrite(9, 0);  // Adjust brightness continuously
     }
+    
+**コードの実行**
 
-**Running the Code**
-
-Now that your code is complete, the full listing is as follows:
+コードが完成したので、全体のリストは次のようになります：
 
 .. code-block:: Arduino
 
@@ -388,25 +381,25 @@ Now that your code is complete, the full listing is as follows:
         delay(200);                     // Optional: Simple software debouncing
     }
 
-1. After selecting the correct board and port, click "Upload" to upload the code to your Arduino.
+1. 正しいボードとポートを選択した後、「Upload」をクリックしてコードをArduinoにアップロードします。
 
-2. Open the Serial Monitor to view the output data. You will notice that the button state prints "1" continuously when not pressed and "0" for the moment the button is pressed. At the same time, the value from the potentiometer will also be printed. As you rotate the potentiometer, you'll observe in the Serial Monitor that the higher the value, the brighter the LED becomes, and vice versa.
+2. シリアルモニタを開いて出力データを確認します。ボタンが押されていないときは「1」が連続して表示され、押された瞬間は「0」が表示されることがわかります。同時に、ポテンショメータからの値も表示されます。ポテンショメータを回すと、その値が高くなるほどLEDが明るくなり、逆に低くなると暗くなります。
     
 .. image:: img/10_dimmer_led_serial_tool.png
     :align: center
 
 .. note::
 
-    From this, you should clearly understand:
+    これにより、以下が明確に理解できるはずです：
 
-    - Digital signals only have two states: 0 and 1.
-    - Analog signals, however, have a range, which in this case is from 0 to 1023.
+    - デジタル信号は0と1の2つの状態しか持たない。
+    - アナログ信号は0から1023までの範囲を持つ。
 
-3. Finally, remember to save your code and tidy up your workspace.
+3. 最後に、コードを保存して作業スペースを整理整頓しましょう。
 
-**Question**
+**質問**
 
-1. What would happen if you set digital pin 7 to INPUT only? Why?
+1. デジタルピン7を単にINPUTに設定した場合、何が起こるでしょうか？なぜですか？
 
 .. code-block::
     :emphasize-lines: 3
@@ -417,8 +410,8 @@ Now that your code is complete, the full listing is as follows:
         Serial.begin(9600);        // Serial communication setup at 9600 baud
     }
 
-2. If pin 7 is set only to ``INPUT``, what adjustments would need to be made to the circuit?
+2. ピン7を ``INPUT`` に設定するだけの場合、回路にはどのような調整が必要ですか？
 
-**Summary**
+**まとめ**
 
-By the end of this lesson, you'll have a fully functional ON/OFF desk lamp controlled via a simple user interface. You will have mastered how to integrate and manipulate various electronic components and Arduino programming techniques to create a practical and interactive electronic device. This project not only reinforces foundational concepts in electronics and programming but also gives you a functional piece to add to your collection of DIY projects.
+このレッスンの終わりまでに、シンプルなユーザーインターフェースを介して制御される完全な機能を持つON/OFFデスクランプが完成します。さまざまな電子部品の統合とArduinoプログラミング技術を駆使して、実用的でインタラクティブな電子デバイスを作成する方法を習得します。このプロジェクトは、エレクトロニクスとプログラミングの基本概念を強化するだけでなく、DIYプロジェクトのコレクションに追加できる機能的な作品を提供します。

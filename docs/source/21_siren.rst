@@ -1,26 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは！SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！Raspberry Pi、Arduino、ESP32について、仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: 購入後の問題や技術的な課題を、コミュニティとチームの助けを借りて解決。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換。
+    - **独占プレビュー**: 新製品の発表や先行プレビューに早期アクセス。
+    - **特別割引**: 最新の製品に対する特別割引を享受。
+    - **フェスティブプロモーションとプレゼント**: プレゼントやホリデープロモーションに参加。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-21. Siren Sound
+
+21. サイレン音
 =========================
 
-In this Arduino project, we will explore how to create a siren system through programming and the integration of electronic hardware.
+このArduinoプロジェクトでは、プログラミングと電子ハードウェアの統合を通じて、サイレンシステムを作成する方法を探ります。
 
-Siren sounds use a specific frequency and pitch pattern, characterized by rapid rises and falls in pitch, which is not only easily recognizable but also distinct from other everyday sounds.
-These pitch changes can evoke a sense of urgency, as they are often associated with warning signals or dangerous situations in nature.
+サイレン音は特定の周波数とピッチパターンを使用し、急激なピッチの上昇と下降によって特徴付けられています。これにより、他の日常的な音とは異なる、非常に認識しやすい音になります。
+これらのピッチの変化は、しばしば警告信号や自然界の危険な状況に関連しているため、緊急性を感じさせることができます。
 
-By adjusting the frequency of a passive buzzer, we can simulate the characteristic rising and falling pitches of a siren sound.
+パッシブブザーの周波数を調整することで、サイレン音の特徴的なピッチの上昇と下降をシミュレートできます。
 
 .. raw:: html
 
@@ -29,59 +30,58 @@ By adjusting the frequency of a passive buzzer, we can simulate the characterist
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+このレッスンで学ぶこと:
 
-* How passive buzzers work
-* How to drive a passive buzzer using the tone() function
-* How to use the for loop in programming
-* How to implement a siren sound
+* パッシブブザーの仕組み
+* tone()関数を使用してパッシブブザーを駆動する方法
+* プログラミングでforループを使用する方法
+* サイレン音を実装する方法
 
-Understanding Sound Properties
+音の特性の理解
 -----------------------------------
 
-Sound is a wave phenomenon that propagates through mediums such as air, water, or solids as vibrating energy. Understanding the physical properties of sound can help us better understand and control how sound behaves in different environments.
-Here are several key physical properties of sound:
+音は、空気、水、または固体などの媒質を介して伝わる波現象です。音の物理的特性を理解することで、異なる環境で音がどのように動作するかをよりよく理解し、制御することができます。
+ここでは、音のいくつかの重要な物理的特性を紹介します。
 
 .. image:: img/7_siren.png
     :width: 500
     :align: center
 
-**Frequency**
+**周波数**
 
-Frequency refers to the number of vibration cycles per unit of time, typically expressed in Hertz (Hz).
-Frequency determines the pitch of sound: higher frequencies sound higher in pitch; lower frequencies sound lower. The human audible range is approximately from 20 Hz to 20,000 Hz.
+周波数は、通常ヘルツ（Hz）で表される、単位時間あたりの振動サイクルの数を指します。
+周波数は音のピッチを決定します：高い周波数は高いピッチに、低い周波数は低いピッチになります。人間が聞くことができる範囲は約20Hzから20,000Hzです。
 
-**Amplitude**
-Amplitude is the strength of the vibration of a sound wave, which determines the loudness of the sound.
-Greater amplitude means a louder sound; smaller amplitude means a softer sound.
-In physics, amplitude is usually directly related to the energy of a sound wave, while in everyday language, we often use decibels (dB) to describe the loudness of sound.
+**振幅**
+振幅は、音波の振動の強さを指し、音の大きさを決定します。
+振幅が大きいほど音は大きく、振幅が小さいほど音は小さくなります。
+物理学では、振幅は通常、音波のエネルギーに直接関連していますが、日常の言葉では、デシベル（dB）を使用して音の大きさを表現することが多いです。
 
-**Timbre**
-Timbre describes the texture or 'color' of sound, which allows us to distinguish sounds from different sources even if they have the same pitch and loudness.
-For example, even if a violin and a piano play the same note, we can still distinguish them by their timbre.
+**音色**
+音色は、音のテクスチャーや「色」を表し、同じピッチと大きさであっても、異なる音源の音を区別することができます。
+たとえば、バイオリンとピアノが同じ音を演奏しても、その音色によって区別することができます。
+
+このプロジェクトでは、周波数が音に与える影響のみを探ります。
 
 
-In this project, we are only exploring the influence of frequency on sound.
-
-
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Breadboard
-     - 1 * Passive Buzzer
-     - Jumper Wires
+     - 1 * ブレッドボード
+     - 1 * パッシブブザー
+     - ジャンパーワイヤー
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_passive_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USBケーブル
      -
      - 
      - 
@@ -92,33 +92,33 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**ステップバイステップの構築**
 
-In previous lessons, we used active buzzer. In this lesson, we will use a passive buzzer. The circuit is the same, but the coding approach to drive it differs.
+前のレッスンでは、アクティブブザーを使用しました。このレッスンでは、パッシブブザーを使用します。回路は同じですが、駆動するためのコードのアプローチが異なります。
 
-1. Locate a passive buzzer, which has an exposed circuit board on its back.
+1. パッシブブザーを見つけます。裏面に露出した回路基板があるのが特徴です。
 
 .. image:: img/7_beep_2.png
 
-2. Although there is a '+' sign on the passive buzzer, it is not a polarized device. Insert it in any direction into the 15F and 18F holes of the breadboard.
+2. パッシブブザーには'+'の記号がありますが、極性はありません。どちらの向きでも、ブレッドボードの15Fと18Fの穴に挿入できます。
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-3. Connect one pin of the passive buzzer to the GND pin on the Arduino Uno R3.
+3. パッシブブザーの片方のピンをArduino Uno R3のGNDピンに接続します。
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-4. Connect the other pin of the passive buzzer to the 5V pin of the Arduino Uno R3. The buzzer will not make a sound, differentiating it from an active buzzer, which would sound when connected this way.
+4. パッシブブザーのもう一方のピンをArduino Uno R3の5Vピンに接続します。この場合、ブザーは音を出しません。アクティブブザーであれば、このように接続すると音が鳴ります。
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-5. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+5. 次に、5Vピンに挿入したワイヤーを取り外し、Arduino Uno R3のピン9に挿入します。これにより、コードでブザーを制御できるようになります。
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -126,132 +126,130 @@ In previous lessons, we used active buzzer. In this lesson, we will use a passiv
 
 
 
-Code Creation - Make the Passive Buzzer Sound
+Code Creation - パッシブブザーを鳴らす
 ---------------------------------------------------
 
-As we learned while connecting, simply providing high and low power to a passive buzzer won't make it sound. In Arduino programming, the ``tone()`` function is used to control a passive buzzer or other audio output devices to generate a sound at a specified frequency.
+接続時に学んだように、パッシブブザーに単に高電圧と低電圧を供給するだけでは音を鳴らすことはできません。Arduinoプログラミングでは、 ``tone()`` 関数を使用してパッシブブザーや他の音声出力デバイスを指定された周波数で鳴らすことができます。
 
-    * ``tone()``: Generates a square wave of the specified frequency (and 50% duty cycle) on a pin. A duration can be specified, otherwise the wave continues until a call to ``noTone()``.
+    * ``tone()``: 指定された周波数（および50％デューティサイクル）の方形波をピンで生成します。持続時間を指定することができます。指定しない場合、 ``noTone()`` が呼ばれるまで波形は続きます。
 
-    **Syntax**
+    **構文**
 
         * ``tone(pin, frequency)``
         * ``tone(pin, frequency, duration)``
 
-    **Parameters**
+    **パラメータ**
 
-        * ``pin``: the Arduino pin on which to generate the tone.
-        * ``frequency``: the frequency of the tone in hertz. Allowed data types: unsigned int.
-        * ``duration``: the duration of the tone in milliseconds (optional). Allowed data types: unsigned long.
+        * ``pin``: トーンを生成するArduinoのピン。
+        * ``frequency``: トーンの周波数（ヘルツ単位）。許可されるデータ型：unsigned int。
+        * ``duration``: トーンの持続時間（ミリ秒単位、オプション）。許可されるデータ型：unsigned long。
 
-    **Returns**
-        Nothing
+    **戻り値**
+        なし
 
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. スケッチを ``Lesson21_Tone`` として保存します。 ``Ctrl + S`` を押すか、「保存」をクリックします。
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson21_Tone`` using ``Ctrl + S`` or by clicking “Save”.
-
-3. First, define the buzzer pin.
+3. 最初に、ブザーピンを定義します。
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // ブザー用のピン9を定数に割り当てる
 
     void setup() {
-        // put your setup code here, to run once:
+        // ここに一度だけ実行するセットアップコードを記述
     }
 
-4. To fully understand the use of the ``tone()`` function, we write it in the ``void setup()`` so that the buzzer will emit a sound at a specific frequency for a set duration.
+4. ``tone()``関数の使用を完全に理解するために、 ``void setup()`` 内で記述し、特定の周波数と持続時間でブザーを鳴らします。
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // ブザー用のピン9を定数に割り当てる
 
     void setup() {
-        // put your setup code here, to run once:
-        tone(buzzerPin, 1000, 100);  // Turn on the buzzer at 1000 Hz with a duration of 100 milliseconds
+        // ここに一度だけ実行するセットアップコードを記述
+        tone(buzzerPin, 1000, 100);  // 1000Hzで100ミリ秒間ブザーを鳴らす
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // ここに繰り返し実行するメインコードを記述
     }
 
-5. Now you can upload the code to the Arduino Uno R3, after which you will hear a brief "beep" sound from the passive buzzer, and then it will go silent.
+5. これでコードをArduino Uno R3にアップロードすると、パッシブブザーから短い「ビープ」音が聞こえ、その後は無音になります。
 
-**Questions**
+**質問**
 
-1. If you switch the code and circuit pins to 7 or 8, which are not PWM pins, will the buzzer still make a sound? You can test and then write your answer in the handbook.
+1. コードと回路のピンをPWMピンではない7または8に切り替えた場合、ブザーは音を出すでしょうか？テストしてから、手帳に答えを書いてください。
 
-2. To explore how ``frequency`` and ``duration`` in ``tone(pin, frequency, duration)`` affect the sound of the buzzer, please modify the code under two conditions and fill in the observed phenomena in your handbook:
+2. ``tone(pin, frequency, duration)``における ``frequency`` と ``duration`` がブザーの音にどのように影響するかを探るために、コードを次の2つの条件で変更し、観察結果を手帳に記入してください。
 
-* Keeping ``frequency`` at 1000, gradually increase ``duration``, from 100, 500, to 1000. How does the sound of the buzzer change, and why?
+* ``frequency``を1000に固定し、 ``duration`` を100、500、1000と徐々に増やします。ブザーの音はどう変化するでしょうか？なぜですか？
 
-* Keeping ``duration`` at 100, gradually increase ``frequency``, from 1000, 2000, to 5000. How does the sound of the buzzer change, and why?
+* ``duration``を100に固定し、 ``frequency`` を1000、2000、5000と徐々に増やします。ブザーの音はどう変化するでしょうか？なぜですか？
 
 
-
-Code Creation - Emit a Siren Sound
+Code Creation - サイレン音の発生
 -----------------------------------------
 
-Previously, we learned how to make a buzzer emit sound and understood how frequency and duration affect the sound. Now, if we want to make the buzzer emit a siren sound that increases from a low to a high pitch, how should we proceed?
+以前、ブザーを鳴らす方法を学び、周波数と持続時間が音にどのように影響するかを理解しました。では、ブザーを低音から高音へと変化させるサイレン音を発生させるにはどうすればよいでしょうか？
 
-From our earlier explorations, we know that using the ``tone(pin, frequency)`` function allows a passive buzzer to emit sound. Gradually increasing the ``frequency`` makes the pitch of the passive buzzer's sound higher. Let's implement this with code now.
+以前の探求から、 ``tone(pin, frequency)`` 関数を使用すると、パッシブブザーが音を発することがわかりました。 ``frequency`` を徐々に増やすことで、パッシブブザーの音のピッチが高くなります。これをコードで実装してみましょう。
 
-1. Open the sketch you saved earlier, ``Lesson21_Tone``. 
+1. 先ほど保存したスケッチ、 ``Lesson21_Tone`` を開きます。
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson21_Siren_Sound``. Click "Save".
+2. 「ファイル」メニューから「名前を付けて保存」を選択し、 ``Lesson21_Siren_Sound`` に名前を変更します。「保存」をクリックします。
 
-3. Write the ``tone()`` function into the ``void loop()`` and set three different frequencies. To clearly hear the difference in each frequency sound, use the ``delay()`` function to separate them.
+3. ``tone()``関数を``void loop()``に記述し、3つの異なる周波数を設定します。それぞれの周波数の音の違いをはっきりと聞くために、 ``delay()`` 関数を使用して間隔をあけます。
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // ブザー用のピン9を定数に割り当てる
 
     void setup() {
-        // put your setup code here, to run once:
+        // ここに一度だけ実行するセットアップコードを記述
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 100 Hz
+        // ここに繰り返し実行するメインコードを記述
+        tone(buzzerPin, 100);  // 100Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 300);  // Turn on the buzzer at 300 Hz
+        tone(buzzerPin, 300);  // 300Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 600);  // Turn on the buzzer at 600 Hz
+        tone(buzzerPin, 600);  // 600Hzでブザーを鳴らす
         delay(500);
     }
 
-4. At this point, you can upload the code to the Arduino Uno R3, and you will hear the buzzer repeating three different tones.
+4. ここまでの作業が完了したら、コードをArduino Uno R3にアップロードし、ブザーが3種類の異なるトーンを繰り返して鳴るのを確認してください。
 
-5. To achieve a smoother pitch increase, we should set shorter intervals for ``frequency``, such as an interval of 10, starting from 100, 110, 120...up to 1000. We can write the following code.
+5. よりスムーズなピッチの上昇を実現するためには、 ``frequency`` の間隔を10に設定し、100から110、120と順次1000まで上げる必要があります。以下のようにコードを書きます。
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 1000 Hz
+        // ここに繰り返し実行するメインコードを記述
+        tone(buzzerPin, 100);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 110);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 110);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 120);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 120);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 130);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 130);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 140);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 140);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 150);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 150);  // 1000 Hzでブザーを鳴らす
         delay(500);
-        tone(buzzerPin, 160);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 160);  // 1000 Hzでブザーを鳴らす
         delay(500);
         ...
     }
 
-6. You will notice that if you really wanted to write up to 1000, this code would be over two hundred lines long. At this point, you can use the ``for`` statement, which is used to repeat a block of statements enclosed in curly braces.
+6. 本当に1000まで書くと、このコードは200行を超える長さになります。この時点で、繰り返し処理をカールブレース内にまとめるために ``for`` ステートメントを使用できます。
 
-    * ``for``: The ``for`` statement is useful for any repetitive operation, and is often used in combination with arrays to operate on collections of data/pins. An increment counter is usually used to increment and terminate the loop. 
+    * ``for``: ``for`` ステートメントは任意の反復操作に役立ち、配列と組み合わせてデータやピンの集合を操作するのに頻繁に使用されます。インクリメントカウンタが通常、ループをインクリメントおよび終了させるために使用されます。
 
-    **Syntax**
+    **構文**
 
     .. code-block::
 
@@ -259,77 +257,75 @@ From our earlier explorations, we know that using the ``tone(pin, frequency)`` f
             // statement(s);
         }
 
-    **Parameters**
+    **パラメータ**
 
-        * ``initialization``: happens first and exactly once.
-        * ``condition``: each time through the loop, condition is tested; if it's true, the statement block and the increment are executed, then the condition is tested again. When the condition becomes false, the loop ends.
-        * ``increment``: executed each time through the loop when condition is true.
+        * ``initialization``: 最初に一度だけ実行されます。
+        * ``condition``: 各ループのたびに条件がテストされます。真であれば、ステートメントブロックとインクリメントが実行され、再度条件がテストされます。条件が偽になると、ループが終了します。
+        * ``increment``: 条件が真の間、ループごとに実行されます。
 
 .. image:: img/for_loop.png
     :width: 400
     :align: center
 
-
-
-7. Now change the ``void loop()`` function as shown below, where ``freq`` starts at 100 and increases by 10 until 1000.
+7. 次に示すように、 ``void loop()`` 関数を変更し、 ``freq`` を100から開始し、10ずつ増加して1000まで上げます。
 
 .. code-block:: Arduino
     :emphasize-lines: 3-6
 
     void loop() {
-        // Gradually increase the pitch
+        // ピッチを徐々に上げる
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // トーンを発する
+            delay(20);              // 周波数を変更する前に待機
         }
     }
 
-8. Next, let ``freq`` start at 1000 and decrease by 10 until 100, so you can hear the buzzer's sound go from low to high and then from high to low, thus simulating a siren sound.
+8. 次に、 ``freq`` を1000から開始し、10ずつ減少させて100まで下げることで、ブザーの音が低音から高音に変化し、さらに高音から低音に変化するサイレン音をシミュレートします。
 
 .. code-block:: Arduino
     :emphasize-lines: 9-12
 
     void loop() {
-        // Gradually increase the pitch
+        // ピッチを徐々に上げる
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // トーンを発する
+            delay(20);              // 周波数を変更する前に待機
         }
 
-        // Gradually decrease the pitch
+        // ピッチを徐々に下げる
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // トーンを発する
+            delay(20);              // 周波数を変更する前に待機
         }
     }
 
-
-9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+9. 完成したコードは以下のようになります。これをArduino Uno R3にアップロードしてください。
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // ブザー用のピン9を定数に割り当てる
 
     void setup() {
-        // put your setup code here, to run once:
+        // ここに一度だけ実行するセットアップコードを記述
     }
 
     void loop() {
-        // Gradually increase the pitch
+        // ピッチを徐々に上げる
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // トーンを発する
+            delay(20);              // 周波数を変更する前に待機
         }
 
-        // Gradually decrease the pitch
+        // ピッチを徐々に下げる
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // トーンを発する
+            delay(20);              // 周波数を変更する前に待機
         }
     }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. 最後に、コードを保存し、作業スペースを整理することを忘れないでください。
 
 **Summary**
 
-In this lesson, we explored how to use an Arduino and a passive buzzer to simulate a siren sound. By discussing the basic physical properties of sound, such as frequency and pitch, we learned how these elements influence the perception and effect of sound. Through hands-on activities, we not only learned how to build circuits but also mastered programming with the ``tone()`` function on Arduino to control the frequency and duration of sound, achieving the simulation of a siren sound that rises and falls in pitch.
+このレッスンでは、Arduinoとパッシブブザーを使用してサイレン音をシミュレートする方法を学びました。音の基本的な物理的特性、例えば周波数とピッチについて話し合い、それらが音の認識と効果にどのように影響するかを学びました。ハンズオン活動を通じて、回路の構築方法を学び、Arduinoの``tone()``関数を使用して音の周波数と持続時間を制御するプログラミングを習得し、ピッチが上がり下がりするサイレン音のシミュレーションを実現しました。
+

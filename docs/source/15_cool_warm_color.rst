@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32の深い世界へ飛び込みましょう。
 
-    **Why Join?**
+    **なぜ参加するのか？**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門的なサポート**：アフターサービスの問題や技術的な課題をコミュニティとチームの助けを借りて解決します。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**：新製品の発表や予告をいち早く入手できます。
+    - **特別割引**：最新製品の独占割引を楽しめます。
+    - **祝祭プロモーションとギブアウェイ**：ギブアウェイや休日のプロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 探索し、共に創造する準備ができましたか？ [|link_sf_facebook|] をクリックして、今すぐ参加しましょう！
 
-15. Cool or Warm Colors
-=========================
+15. クールカラーとウォームカラー
+==================================
 
-Colors are not just a part of our visual experience—they also influence our emotions and feelings. In this lesson, we dive into the psychological impacts of colors and learn how to manipulate an RGB LED to shift between warm and cool colors, mimicking the effects of changing light temperatures.
+色は私たちの視覚体験の一部であるだけでなく、感情や気分にも影響を与えます。このレッスンでは、色の心理的影響について掘り下げ、RGB LEDを操作して暖色と寒色を切り替える方法を学び、光の温度の変化を模倣します。
 
 .. raw:: html
 
@@ -24,42 +24,42 @@ Colors are not just a part of our visual experience—they also influence our em
         Your browser does not support the video tag.
     </video>
 
-**Overview**
+**概要**
 
-The concept of cool and warm colors relates to the psychological effects colors have on our perception. Reds, oranges, yellows, and browns typically evoke feelings of warmth and excitement, classifying them as warm colors. Conversely, greens, blues, and purples often impart calming, refreshing, and spacious feelings, making them cool colors. Orange and blue are at opposite ends of this warm-cool spectrum.
+クールカラーとウォームカラーの概念は、色が私たちの認識に与える心理的な影響に関連しています。赤、オレンジ、黄色、茶色は通常、暖かさと興奮を呼び起こすため、ウォームカラーと分類されます。一方、緑、青、紫はしばしば落ち着き、爽快感、広がりを与え、クールカラーとされています。オレンジと青は、この暖かい－冷たいスペクトルの反対側に位置します。
 
 .. image:: img/15_mix_color_warm_cool.png
     :width: 400
     :align: center
 
-At home or in leisure environments, people prefer lighting in shades of light yellow or off-white, creating a cozy atmosphere akin to being bathed in sunset or candlelight.
+家庭やレジャー環境では、薄い黄色やオフホワイトの照明が好まれ、日没やろうそくの光を浴びているような居心地の良い雰囲気を作り出します。
 
 .. image:: img/15_mix_color_warm_room.png
     :width: 400
     :align: center
 
-In libraries, classrooms, offices, and hospitals, cooler lighting tones are favored as they promote concentration and freshness, which are conducive to working and learning.
+図書館、教室、オフィス、病院では、集中力や爽快感を促進するため、クールな色調の照明が好まれ、学習や作業に適した環境を提供します。
 
 .. image:: img/15_mix_color_cool_room.png
     :width: 400
     :align: center
 
-The warmth or coolness of light is a visceral experience that affects our psychological response and visual comfort. Designers and lighting engineers carefully select color temperatures suited to a space's function and desired ambiance, creating both aesthetically pleasing and practical lighting environments. By scientifically applying these principles, we can enhance the quality of our living and working environments, fostering a healthier and more comfortable atmosphere.
+光の温かさや冷たさは、私たちの心理的反応や視覚的快適さに大きく影響します。デザイナーや照明エンジニアは、空間の機能と望ましい雰囲気に適した色温度を慎重に選び、美的にも実用的にも優れた照明環境を作り出します。これらの原則を科学的に応用することで、生活と仕事の環境の質を向上させ、より健康で快適な雰囲気を作り出すことができます。
 
-In this lesson, we'll take on the role of lighting engineers to create a lighting system that can switch between color temperatures.
+このレッスンでは、照明エンジニアの役割を担い、色温度を切り替える照明システムを作成します。
 
-**Learning Objectives**
+**学習目標**
 
-- Understand the psychological effects of cool and warm colors.
-- Explore how light temperatures affect mood and setting.
-- Learn to adjust RGB LED colors to simulate different temperatures using Arduino.
-- Develop practical skills in using the ``map()`` function to transition between color temperatures.
+- クールカラーとウォームカラーの心理的効果を理解する。
+- 光の温度が気分や設定に与える影響を探る。
+- RGB LEDの色を調整して異なる温度をシミュレートする方法をArduinoを使って学ぶ。
+- ``map()`` 関数を使って色温度を移行させる実用的なスキルを身につける。
 
 
-Build the Circuit
+回路の構築
 ------------------------------------
 
-**Components Needed**
+**必要なコンポーネント**
 
 
 .. list-table:: 
@@ -68,48 +68,48 @@ Build the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * Potentiometer
+     - 3 * 220Ω抵抗
+     - 1 * ポテンショメータ
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USBケーブル
+     - 1 * ブレッドボード
+     - ジャンパーワイヤ
      -
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      -
      
-**Building Steps**
+**構築ステップ**
 
-This circuit builds upon the one from Lesson 12 by adding a potentiometer.
+この回路は、レッスン12のものにポテンショメータを追加して構築します。
 
 .. image:: img/15_cool_warm_color.png
     :width: 500
     :align: center
 
-1. Remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Arduino Uno R3のGNDピンからRGB LEDのGNDピンに接続されているジャンパーワイヤを取り外し、それをブレッドボードの負端子に挿入します。次に、負端子からRGB LEDのGNDピンにジャンパーワイヤを接続します。
 
 .. image:: img/15_cool_warm_color_gnd.png
     :width: 500
     :align: center
 
-2. Insert the potentiometer into holes 25G, 26F, and 27G.
+2. ポテンショメータを穴25G、26F、27Gに挿入します。
 
 .. image:: img/15_cool_warm_color_pot.png
     :width: 500
     :align: center
 
-3. Connect the middle pin of the potentiometer to the A0 pin of the Arduino Uno R3.
+3. ポテンショメータの中央のピンをArduino Uno R3のA0ピンに接続します。
 
 .. image:: img/15_cool_warm_color_a0.png
     :width: 500
     :align: center
 
-4. Finally, connect the left pin of the potentiometer to the 5V pin on the Arduino Uno R3 and the right pin to the negative terminal on the breadboard.
+4. 最後に、ポテンショメータの左のピンをArduino Uno R3の5Vピンに、右のピンをブレッドボードの負端子に接続します。
 
 .. image:: img/15_cool_warm_color.png
     :width: 500
@@ -117,113 +117,113 @@ This circuit builds upon the one from Lesson 12 by adding a potentiometer.
 
 
 
-Code Creation
+コードの作成
 ---------------------
 
-**Understanding Warm and Cool Colors**
+**ウォームカラーとクールカラーの理解**
 
-Before adjusting the color temperature, we need to understand the differences between the RGB values for cool and warm colors.
+色温度を調整する前に、クールカラーとウォームカラーのRGB値の違いを理解する必要があります。
 
-The perception of warmth in lighting is somewhat subjective, but unquestionably, warm colors should lean towards orange-red, while cool colors should lean towards blue.
+照明の暖かさの認識は主観的な部分もありますが、ウォームカラーはオレンジ－赤に傾き、クールカラーは青に傾くことは間違いありません。
 
-1. Open **Paint** or any color picking tool, find what you consider the warmest and coolest colors, and record their RGB values in your handbook.
+1. **ペイント** または任意のカラーピッキングツールを開き、最も暖かい色と最も涼しい色を見つけ、そのRGB値をハンドブックに記録します。
 
 .. note::
 
-    Note that before you select a color, adjust the lumens to the proper position.
+    色を選択する前に、ルーメンを適切な位置に調整してください。
 
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Color Type
-     - Red
-     - Green
-     - Blue
-   * - Warm Color
+   * - 色の種類
+     - 赤
+     - 緑
+     - 青
+   * - ウォームカラー
      -
      -
      -
-   * - Cool Color
+   * - クールカラー
      -
      -
      -
 
-2. Here are examples of warm and cool tones along with their RGB values:
+2. 以下にウォームトーンとクールトーンの例とそのRGB値を示します：
 
-* Red (Red: 246, Green: 52, Blue: 8)
+* レッド (赤: 246, 緑: 52, 青: 8)
 
 .. image:: img/15_mix_color_tone_warm.png
 
-* Light Blue (Red: 100 ,Green: 150, Blue: 255)
+* ライトブルー (赤: 100, 緑: 150, 青: 255)
 
 .. image:: img/15_mix_color_tone_cool.png
 
-The primary difference between warm and cool colors is the ratio of the three primary color intensities. Next, we'll store these warm and cool RGB values in our sketch.
+ウォームカラーとクールカラーの主な違いは、三つの主要な色の強度の比率です。次に、これらのウォームカラーとクールカラーのRGB値をスケッチに保存します。
 
-3. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
+3. 以前に保存したスケッチ ``Lesson13_PWM_Color_Mixing`` を開きます。
 
-4. Hit “Save As...” from the “File” menu, and rename it to ``Lesson15_Cool_Warm_Color``. Click "Save".
+4. 「ファイル」メニューから「名前を付けて保存」を選択し、``Lesson15_Cool_Warm_Color`` に名前を変更します。「保存」をクリックします。
 
-5. Before the ``void setup()``, declare six variables to store the RGB values for these two colors. Use the colors you've selected.
+5. ``void setup()`` の前に、これら二つの色のRGB値を保存するための六つの変数を宣言します。選択した色を使用します。
 
 .. code-block:: Arduino
     :emphasize-lines: 1-4,6-9
 
-    // RGB values for a warm color
+    // ウォームカラーのRGB値
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // クールカラーのRGB値
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // 初期設定コードをここに記述します：
+        pinMode(9, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDのレッドピンを出力に設定
     }
 
-**Using the map() Function**
+**map() 関数の使用**
 
-To transition from warm to cool lighting, all you need to do is reduce the intensity of red light, increase blue light, and finely adjust green light intensity.
+ウォームからクールの照明に移行するには、赤色光の強度を減らし、青色光を増やし、緑色光の強度を微調整するだけです。
 
-In previous projects, we've learned how to vary the LED's brightness in response to the rotation of a potentiometer.
+以前のプロジェクトでは、ポテンショメータの回転に応じてLEDの明るさを変化させる方法を学びました。
 
-However, in this project, the potentiometer's rotation causes the intensities of the RGB pins to change within a specific range, making simple division inadequate for our needs. Thus, we require a new function, ``map()``.
+しかし、このプロジェクトでは、ポテンショメータの回転が特定の範囲内でRGBピンの強度を変化させるため、単純な分割では不十分です。したがって、新しい関数 ``map()`` が必要です。
 
-In Arduino programming, the ``map()`` function is extremely useful because it allows you to map (or convert) a numerical range to another range.
+Arduinoプログラミングにおいて、 ``map()``  関数は非常に便利で、数値範囲を別の範囲にマップ（または変換）することができます。
 
-Here is how to use it:
+使い方は以下の通りです：
 
-* ``map(value, fromLow, fromHigh, toLow, toHigh)``: Re-maps a number from one range to another. That is, a value of ``fromLow`` would get mapped to ``toLow``, a value of ``fromHigh`` to ``toHigh``, values in-between to values in-between, etc.
+* ``map(value, fromLow, fromHigh, toLow, toHigh)``：数値をある範囲から別の範囲に再マップします。つまり、 ``fromLow``  の値は ``toLow`` に、 ``fromHigh``  の値は ``toHigh`` に、間の値は間の値にマップされます。
 
-    **Parameters**
-        * ``value``: the number to map.
-        * ``fromLow``: the lower bound of the value's current range.
-        * ``fromHigh``: the upper bound of the value's current range.
-        * ``toLow``: the lower bound of the value's target range.
-        * ``toHigh``: the upper bound of the value's target range.
+    **パラメータ**
+        * ``value``：マップする数値。
+        * ``fromLow``：現在の範囲の下限。
+        * ``fromHigh``：現在の範囲の上限。
+        * ``toLow``：対象範囲の下限。
+        * ``toHigh``：対象範囲の上限。
 
-    **Returns**
-        The mapped value. Data type: long.
+    **戻り値**
+        マップされた値。データ型：long。
 
-The ``map()`` function scales a value from its original range (fromLow to fromHigh) to a new range (toLow to toHigh). First, it calculates the position of the ``value`` within its original range, then applies the same proportion to scale this position to the new range.
+``map()`` 関数は、元の範囲（fromLowからfromHigh）から新しい範囲（toLowからtoHigh）に値をスケーリングします。まず、 ``value``  の元の範囲内の位置を計算し、この位置を新しい範囲にスケーリングします。
 
 .. image:: img/15_map_pic.png
     :width: 400
     :align: center
 
-So it can be written as the formula shown below:
+したがって、次の式で表すことができます：
 
 .. code-block::
 
     (value-fromLow)/(fromHigh-fromLow) = (y-toLow)/(toHigh-toLow)
 
-Using algebra, you can rearrange this equation to solve for ``y``:
+代数を使って、この式を再配置して ``y`` を解くことができます：
 
 .. code-block::
 
@@ -231,10 +231,9 @@ Using algebra, you can rearrange this equation to solve for ``y``:
 
 .. image:: img/15_map_format.png
 
-For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 434, then ``y = (434-0) * (100 - 246) / (1023-0) + 246``, which approximately equals 152.
+たとえば、 ``y = map(value, 0, 1023, 246, 100);``  を使用すると、 ``value``  が434の場合、 ``y = (434-0) * (100 - 246) / (1023-0) + 246``  となり、おおよそ152になります。
 
-
-6. Remove the original code in ``void loop()``, then write code to read the potentiometer value, storing it in the variable ``potValue``.
+6. ``void loop()`` の元のコードを削除し、ポテンショメータの値を読み取り、変数 ``potValue`` に格納するコードを記述します。
 
 .. code-block:: Arduino
 
@@ -243,7 +242,7 @@ For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 
         int potValue = analogRead(A0);                         // Read value from potentiometer
     }
 
-7. Then, use the ``map()`` function to map the potentiometer value from the range 0~1023 to the range 255 (``warm_r``) ~ 100 (``cool_r``).
+7. 次に、 ``map()`` 関数を使用して、ポテンショメータの値を0～1023の範囲から255（ ``warm_r`` ）～100（ ``cool_r`` ）の範囲にマップします。
 
 .. code-block:: Arduino
 
@@ -253,60 +252,60 @@ For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 
         int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
     }
 
-8. You can use the serial monitor to view the ``potValue`` and the mapped value ``value_r`` to deepen your understanding of the ``map()`` function. Now start the serial monitor in ``void setup()``.
+8. シリアルモニタを使用して、 ``potValue``  とマップされた値 ``value_r`` を表示し、 ``map()``  関数の理解を深めます。 ``void setup()``  でシリアルモニタを開始します。
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        // 初期設定コードをここに記述します：
+        pinMode(9, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDのレッドピンを出力に設定
+        Serial.begin(9600);        // 9600ボーでシリアル通信を設定
     }
 
-9. Print the variables ``potValue`` and ``value_r`` on the same line, separated by "|".
+9. 変数 ``potValue`` と ``value_r`` を同じ行に "|" で区切って表示します。
 
 .. code-block:: Arduino
     :emphasize-lines: 23-26
 
-    // RGB values for a warm color
+    // ウォームカラーのRGB値
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // クールカラーのRGB値
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        // 初期設定コードをここに記述します：
+        pinMode(9, OUTPUT);   // RGB LEDのブルーピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDのグリーンピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDのレッドピンを出力に設定
+        Serial.begin(9600);        // 9600ボーでシリアル通信を設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // 繰り返し実行されるメインコードをここに記述します：
+        int potValue = analogRead(A0);                         // ポテンショメータの値を読み取る
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // ポット値を赤の強度にマップする
         Serial.print(potValue);
         Serial.print(" | ");
         Serial.println(value_r);
-        delay(500);  // Wait for 500ms
+        delay(500);  // 500ms待機
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        analogWrite(11, red);    // Write PWM to red pin
-        analogWrite(10, green);  // Write PWM to green pin
-        analogWrite(9, blue);    // Write PWM to blue pin
+        analogWrite(11, red);    // 赤ピンにPWMを書き込む
+        analogWrite(10, green);  // 緑ピンにPWMを書き込む
+        analogWrite(9, blue);    // 青ピンにPWMを書き込む
     }
 
-10. You can now verify and upload your code, open the serial monitor, and you will see two columns of data printed.
+10. コードを検証してアップロードし、シリアルモニタを開くと、2列のデータが表示されることが確認できます。
 
 .. code-block::
 
@@ -317,139 +316,133 @@ For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 
     434 | 152
     434 | 152
 
-
-From the data, it is evident that the value 434's position within the range 0~1023 corresponds to the position of 152 within the range 246~100.
-
-
-**Adjusting Color Temperature**
-
-Here we use the ``map()`` function to make the intensity of the three pins of the RGB LED change with the rotation of the potentiometer, shifting from the warmest to the coldest hues.
-More specifically, as an example with the reference values I provided, as the potentiometer is rotated,
-the R value of the RGB LED will gradually change from 246 to 100, G value from 8 to 150 (even though the change in G value is not very noticeable), and B value gradually from 8 to 255.
+このデータから、範囲0〜1023内の値434の位置が、範囲246〜100内の値152の位置に対応していることがわかります。
 
 
-11. Next, we won't need serial printing temporarily, and serial printing can affect the entire code process, so use ``Ctrl +/`` to comment out the related code.
+**色温度の調整**
+
+ここでは、ポテンショメータの回転に伴いRGB LEDの3つのピンの強度が変化し、最も暖かい色から最も冷たい色に移行するように ``map()`` 関数を使用します。
+具体的には、提供した参照値を用いて、ポテンショメータを回転させると、RGB LEDのR値が246から100に、G値が8から150に（G値の変化はあまり顕著ではないものの）、B値が8から255に徐々に変化します。
+
+11. 次に、シリアル印刷は一時的に必要ないので、シリアル印刷はコード全体の処理に影響を与えるため、 ``Ctrl + /`` を使って関連コードをコメントアウトします。
 
     .. note::
 
-        The reason not to delete directly is that if you need to print below, you do not need to rewrite it; just select these lines and press ``Ctrl+/`` to uncomments.
-
+        直接削除しない理由は、後で印刷が必要になった場合に、再度記述する必要がなく、これらの行を選択して ``Ctrl + /`` を押すだけでコメント解除できるためです。
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // 繰り返し実行されるメインコードをここに記述します：
+        int potValue = analogRead(A0);                         // ポテンショメータの値を読み取る
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // ポット値を赤の強度にマップする
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
+        // delay(500);  // 500ms待機
     }
 
-12. Continue to call the ``map()`` function, to get the mapped ``value_g`` and ``value_b`` based on the potentiometer's value.
-
+12. 続けて、 ``map()`` 関数を呼び出し、ポテンショメータの値に基づいてマップされた ``value_g`` および ``value_b`` を取得します。
 
 .. code-block:: Arduino
     :emphasize-lines: 9,10
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // 繰り返し実行されるメインコードをここに記述します：
+        int potValue = analogRead(A0);                         // ポテンショメータの値を読み取る
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // ポット値を赤の強度にマップする
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
+        // delay(500);  // 500ms待機
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // ポット値を緑の強度にマップする
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // ポット値を青の強度にマップする
     }
 
-13. Finally, call the ``setColor()`` function to display the mapped RGB values on the RGB LED.
+13. 最後に、 ``setColor()`` 関数を呼び出して、マップされたRGB値をRGB LEDに表示させます。
 
 .. code-block:: Arduino
     :emphasize-lines: 11,12
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // 繰り返し実行されるメインコードをここに記述します：
+        int potValue = analogRead(A0);                         // ポテンショメータの値を読み取る
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // ポット値を赤の強度にマップする
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
-        setColor(value_r, value_g, value_b);                   // Set LED color
+        // delay(500);  // 500ms待機
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // ポット値を緑の強度にマップする
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // ポット値を青の強度にマップする
+        setColor(value_r, value_g, value_b);                   // LEDの色を設定する
         delay(500);
     }
 
-14. Your complete code is as follows; you can click the Upload button to upload the code to the Arduino Uno R3. Then you can rotate the potentiometer, and you will notice the RGB LED slowly transition from a cool to a warm hue, or from a warm hue to a cool hue.
+14. 以下は完成したコードです。「Upload」ボタンをクリックしてArduino Uno R3にコードをアップロードしてください。その後、ポテンショメータを回すと、RGB LEDが冷たい色から暖かい色、または暖かい色から冷たい色にゆっくりと変化するのがわかります。
 
 .. code-block:: Arduino
 
-    // RGB values for a warm color
+    // 暖色のRGB値
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // 冷色のRGB値
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // 初期設定をここに記述します：
+        pinMode(9, OUTPUT);   // RGB LEDの青ピンを出力に設定
+        pinMode(10, OUTPUT);  // RGB LEDの緑ピンを出力に設定
+        pinMode(11, OUTPUT);  // RGB LEDの赤ピンを出力に設定
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // 繰り返し実行されるメインコードをここに記述します：
+        int potValue = analogRead(A0);                         // ポテンショメータの値を読み取る
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // ポット値を赤の強度にマップする
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
-        setColor(value_r, value_g, value_b);                   // Set LED color
-        delay(500);                                            // Wait for 500ms
+        // delay(500);  // 500ms待機
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // ポット値を緑の強度にマップする
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // ポット値を青の強度にマップする
+        setColor(value_r, value_g, value_b);                   // LEDの色を設定する
+        delay(500);                                            // 500ms待機
     }
 
-    // Function to set the color of the RGB LED
+    // RGB LEDの色を設定する関数
     void setColor(int red, int green, int blue) {
-        analogWrite(11, red);    // Write PWM to red pin
-        analogWrite(10, green);  // Write PWM to green pin
-        analogWrite(9, blue);    // Write PWM to blue pin
+        analogWrite(11, red);    // 赤ピンにPWMを書き込む
+        analogWrite(10, green);  // 緑ピンにPWMを書き込む
+        analogWrite(9, blue);    // 青ピンにPWMを書き込む
     }
 
-15. Finally, remember to save your code and tidy up your workspace.
+15. 最後に、コードを保存し、作業スペースを整理整頓することを忘れないでください。
 
-**Tips**
+**ヒント**
 
-During the experiment, you might find that the shift between warm and cool hues is not as apparent as seen on screen; for example, an expected warm light may appear white. This is normal, as the color mixing in an RGB LED is not as refined as on a display.
+実験中に、暖かい色と冷たい色の変化が画面上で見るほど明確でないことがあるかもしれません。例えば、予想される暖かい光が白く見えることがあります。これは正常で、RGB LEDの色混合はディスプレイ上のように精巧ではないためです。
 
-In such cases, you can reduce the intensity of G and B values in the warm color to make the RGB LED display a more appropriate color.
+そのような場合、暖色のG値とB値の強度を下げることで、RGB LEDがより適切な色を表示するように調整できます。
 
-**Question**
+**質問**
 
-Note that the "lower bounds" of either range may be larger or smaller than the "upper bounds", so the ``map(value, fromLow, fromHigh, toLow, toHigh)`` function may be used to reverse a range of numbers, for example:
+「下限」が「上限」よりも大きい、または小さい場合があるため、 ``map(value, fromLow, fromHigh, toLow, toHigh)`` 関数は数値の範囲を逆転させるためにも使用できます。例えば：
 
 .. code-block::
 
     y = map(x, 1, 50, 50, 1);
 
-The function also handles negative numbers well, so that this example is also valid and works well.
+この関数は負の数も適切に処理するため、次の例も有効で正常に動作します。
 
 .. code-block::
 
     y = map(x, 1, 50, 50, -100);
 
-For ``y = map(x, 1, 50, 50, -100);``, if ``x`` equals 20, what should ``y`` be? Refer to the following formula to calculate it.
-
+``y = map(x, 1, 50, 50, -100);``の場合、 ``x`` が20なら、 ``y`` は何になるでしょうか。以下の式を参照して計算してください。
 
 .. image:: img/15_map_format.png

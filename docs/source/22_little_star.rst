@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebookへようこそ！ここで仲間と一緒にRaspberry Pi、Arduino、ESP32について深く学びましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: アフターサービスの問題や技術的な課題をコミュニティとチームの助けを借りて解決します。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換します。
+    - **独占プレビュー**: 新製品の発表や予告を早期に入手できます。
+    - **特別割引**: 最新製品に対する特別割引を享受できます。
+    - **フェスティバルプロモーションとギブアウェイ**: ギブアウェイやホリデープロモーションに参加できます。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探究し、創造する準備ができましたか？今すぐ[|link_sf_facebook|]をクリックして参加してください！
 
-22. Play “Twinkle, Twinkle, Little Star”
+22. 「きらきら星」を演奏する
 ===========================================
-In this lesson, we delve into the fascinating intersection of music and technology. You'll learn how different musical pitches are produced through frequency changes, and how this principle can be applied using a microcontroller like Arduino to control a buzzer. By the end of this lesson, you will not only understand the basics of musical frequencies but also be able to program an Arduino to play a simple melody.
+このレッスンでは、音楽と技術の交差点を探ります。異なる音楽の音高が周波数の変化によってどのように生成されるかを学び、この原理を使ってArduinoでブザーを制御します。レッスン終了時には、音楽の周波数の基本を理解し、Arduinoをプログラムしてシンプルなメロディを演奏できるようになります。
 
 .. raw:: html
 
@@ -23,39 +23,37 @@ In this lesson, we delve into the fascinating intersection of music and technolo
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+このレッスンで学ぶこと:
 
-* Learn how musical pitches correspond to specific frequencies.
-* Simplify programming by using arrays to store and manipulate musical notes.
-* Write and execute a program that controls a passive buzzer to play "Twinkle, Twinkle, Little Star" 
+* 音楽の音高が特定の周波数に対応する方法
+* 配列を使用して音楽のノートを保存し操作する方法
+* Arduinoをプログラムして「きらきら星」を演奏する方法
 
-Musical Frequencies and Sound Production
+音楽の周波数と音の生成
 ----------------------------------------------
 .. image:: img/7_sound.png
   :width: 400
   :align: center
 
-Various musical instruments produce different pitches by changing the frequency.
-For example, on a piano, striking the keys causes the corresponding strings to vibrate rapidly, producing specific pitches.
-Scientists and musicians have developed various music tuning methods and pitch standards by precisely measuring these vibration frequencies.
+様々な楽器は、周波数を変えることで異なる音高を生成します。
+例えば、ピアノでは鍵盤を叩くと対応する弦が振動し、特定の音高を生成します。
+科学者と音楽家はこれらの振動周波数を正確に測定することで、様々な音楽調律方法と音高基準を開発しました。
 
-When you control an Arduino or other microcontroller to send an electrical signal to a buzzer, the buzzer's diaphragm vibrates rapidly according to the frequency of the signal,
-thereby producing sound. For example, a signal set to 440 Hz will produce the standard musical pitch "A4," which is a reference point in music tuning.
-As the frequency increases or decreases, the pitch produced also rises or falls, thus achieving a range of pitches from low to high in musical composition.
+Arduinoや他のマイクロコントローラを制御してブザーに電気信号を送ると、ブザーのダイアフラムが信号の周波数に応じて高速に振動し、音を生成します。例えば、440 Hzに設定された信号は、標準の音楽音高「A4」を生成し、音楽調律の基準点となります。
+周波数が上昇または下降すると、生成される音高も上昇または下降し、音楽作曲において低音から高音までの範囲を実現します。
 
+西洋音楽では、オクターブはCからBまでの12音（半音）を含み、次に高いCに戻ります。
 
-In Western music, an octave includes 12 pitches (semitones), from C to B, and then back to a higher C.
-
-For example, the frequency of Middle C (usually referred to as C4) is about 261.63 Hz. The frequency of a note can be calculated using the following formula:
+例えば、中央のC（通常C4と呼ばれる）の周波数は約261.63 Hzです。ノートの周波数は次の式を使用して計算できます：
 
 .. image:: img/7_music_format.png
 
-where f_0 is the reference pitch (usually A4, frequency 440Hz), and n is the number of semitone steps from the reference pitch to the target pitch (positive numbers indicate a rise, negative numbers indicate a drop).
-Using this formula, we can calculate the frequency of any note.
+ここで、f_0は基準音高（通常はA4、周波数440Hz）で、nは基準音高から目標音高までの半音ステップ数（正の数は上昇、負の数は下降）です。
+この式を使用して、任意のノートの周波数を計算できます。
 
-Here is a set of frequency tables:
+ここに周波数表のセットがあります：
 
-* C (C4): 262 Hz (actually close to 261.63 Hz, rounded to 262)
+* C (C4): 262 Hz (実際には261.63 Hzに近く、262に丸められています)
 * D (D4): 294 Hz
 * E (E4): 330 Hz
 * F (F4): 349 Hz
@@ -63,15 +61,15 @@ Here is a set of frequency tables:
 * A (A4): 440 Hz
 * B (B4): 494 Hz
 
-Now we will explore the secrets of the notes through Arduino and a buzzer. Let's have the passive buzzer play the first two lines of "Twinkle, Twinkle, Little Star":
+次に、Arduinoとブザーを使って「きらきら星」の最初の2行を演奏してみましょう：
 
 .. note::
 
-  The melody of "Twinkle, Twinkle, Little Star" is based on simple note combinations,
-  and the melody of this song is based on variations of "Ah vous dirai-je, Maman" by French composer Wolfgang Amadeus Mozart,
-  which are very suitable for beginners to learn.
+  「きらきら星」のメロディはシンプルなノートの組み合わせに基づいており、
+  フランスの作曲家ウォルフガング・アマデウス・モーツァルトが作曲した「Ah vous dirai-je, Maman」のバリエーションに基づいています。
+  初心者が学ぶのに非常に適しています。
 
-  Here is the basic sheet music for "Twinkle, Twinkle, Little Star," including each note:
+  以下に「きらきら星」の基本的な楽譜を示します。
 
   .. code-block:: 
 
@@ -82,24 +80,24 @@ Now we will explore the secrets of the notes through Arduino and a buzzer. Let's
     C C G G A A G
     F F E E D D C
 
-Building the Circuit
+回路の構築
 -----------------------
 
-**Components Needed**
+**必要な部品**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Breadboard
-     - 1 * Passive Buzzer
-     - Jumper Wires
+     - 1 * ブレッドボード
+     - 1 * パッシブブザー
+     - ジャンパワイヤー
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_passive_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USBケーブル
      -
      - 
      - 
@@ -110,9 +108,9 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**ステップバイステップの構築**
 
-This lesson uses the same circuit as Lesson 21.
+このレッスンでは、レッスン21と同じ回路を使用します。
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -120,15 +118,15 @@ This lesson uses the same circuit as Lesson 21.
 
 
 Code Creation - Array
-----------------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson22_Array`` using ``Ctrl + S`` or by clicking “Save”.
+-------------------------
+1. Arduino IDEを開き、「ファイル」メニューから「新しいスケッチ」を選択して新しいプロジェクトを開始します。
+2. ``Ctrl + S`` を押すか「保存」をクリックして、スケッチを ``Lesson22_Array`` として保存します。
 
-3. Now create an array at the very beginning of the code, storing the notes of Twinkle Twinkle Little Star into the array.
+3. 次に、コードの最初に配列を作成し、「きらきら星」の音符をその配列に格納します。
 
 .. code-block:: Arduino
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Cメジャースケールの音符の周波数を定義する（ミドルCから始まるオクターブ）
   int c = 262;
   int d = 294;
   int e = 330;
@@ -136,26 +134,25 @@ Code Creation - Array
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // 高いC
 
-  // Define an array containing the sequence of notes in the melody
+  // メロディの音符の並びを含む配列を定義
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
-An array is a data structure used to store multiple elements of the same type in Arduino programming.
-It is a very basic and powerful tool, and when used properly, it can greatly enhance programming efficiency and program performance.
-Arrays can store elements of types such as integers, floating-point numbers, and characters.
+配列は、Arduinoプログラミングにおいて同じ型の複数の要素を格納するためのデータ構造です。
+非常に基本的で強力なツールであり、適切に使用するとプログラムの効率とパフォーマンスを大幅
+に向上させることができます。配列は、整数、浮動小数点数、文字などの型の要素を格納できます。
 
-Similar to creating variables and functions, creating an array also involves specifying the array type and array name - ``int melody[]``.
+変数や関数を作成するのと同様に、配列を作成する際も配列の型と配列名を指定します - ``int melody[]``。
 
-The elements inside ``{}`` are called array elements, starting from index 0, so ``melody[0]`` equals the first ``c(262)``, and ``melody[13]`` is also ``c(262)``. 
+``{}``の中の要素は配列要素と呼ばれ、インデックス0から始まります。そのため、 ``melody[0]`` は最初の ``c(262)`` に、 ``melody[13]`` も ``c(262)`` に等しいです。
 
-
-4. Now print the elements at index 0 and 13 from the ``melody[]`` array in the serial monitor.
+4. 次に、 ``melody[]`` 配列のインデックス0と13の要素をシリアルモニターに表示します。
 
 .. code-block:: Arduino
   :emphasize-lines: 17,18
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Cメジャースケールの音符の周波数を定義する（ミドルCから始まるオクターブ）
   int c = 262;
   int d = 294;
   int e = 330;
@@ -163,50 +160,49 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // 高いC
 
-  // Define an array containing the sequence of notes in the melody
+  // メロディの音符の並びを含む配列を定義
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
+    // 一度だけ実行するセットアップコードをここに記述
+    Serial.begin(9600);  // 9600ボーレートでシリアル通信を初期化
     Serial.println(melody[0]);
     Serial.println(melody[13]);
   }
   
   void loop() {
-    // put your main code here, to run repeatedly:
+    // 繰り返し実行するメインコードをここに記述
   }
 
-5. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see two 262s.
+5. コードをArduino Uno R3にアップロードした後、シリアルモニターを開くと、2つの262が表示されます。
 
 .. code-block::
 
   262
   262
 
-6. If you want to print each element in the array ``melody[]`` one by one, you will first need to know the length of the array. You can use the ``sizeof()`` function to calculate the number of elements in the array.
+6. 配列``melody[]``の各要素を1つずつ表示したい場合は、まず配列の長さを知る必要があります。``sizeof()``関数を使用して配列の要素数を計算できます。
 
 .. code-block:: Arduino
   :emphasize-lines: 4
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
-    int notes = sizeof(melody) / sizeof(melody[0]); // Calculate the number of element
+    // 一度だけ実行するセットアップコードをここに記述
+    Serial.begin(9600);  // 9600ボーレートでシリアル通信を初期化
+    int notes = sizeof(melody) / sizeof(melody[0]); // 要素数を計算
   }
 
-  
-* ``sizeof(melody)`` gives the total bytes used by all elements in the array.
-* ``sizeof(melody[0])`` gives the number of bytes used by one element of the array.
-* Dividing the total bytes by the bytes per element gives the total number of elements in the array.
+* ``sizeof(melody)`` は配列内の全要素が使用する総バイト数を返します。
+* ``sizeof(melody[0])`` は配列の1要素が使用するバイト数を返します。
+* 総バイト数を要素あたりのバイト数で割ることで、配列の全要素数が得られます。
 
-7. Then use a ``for`` statement to iterate through the elements in the array ``melody[]``, and print them out using the ``Serial.println()`` function.
+7. 次に、 ``for`` 文を使用して ``melody[]`` 配列の要素を繰り返し処理し、 ``Serial.println()`` 関数を使用してそれらを表示します。
 
 .. code-block:: Arduino
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // Cメジャースケールの音符の周波数を定義する（ミドルCから始まるオクターブ）
   int c = 262;
   int d = 294;
   int e = 330;
@@ -214,28 +210,28 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // 高いC
 
-  // Define an array containing the sequence of notes in the melody
+  // メロディの音符の並びを含む配列を定義
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
 
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 一度だけ実行するセットアップコードをここに記述
+    Serial.begin(9600);                              // 9600ボーレートでシリアル通信を初期化
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       Serial.println(melody[i]);
     }
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
+    // 繰り返し実行するメインコードをここに記述
   }
 
-8. After uploading the code to the Arduino Uno R3, open the serial monitor, and you will see the elements in the array ``melody[]`` printed one by one.
+8. コードをArduino Uno R3にアップロードした後、シリアルモニターを開き、配列 ``melody[]`` の要素が1つずつ印刷されるのを確認します。
 
 .. code-block::
 
@@ -251,119 +247,117 @@ The elements inside ``{}`` are called array elements, starting from index 0, so 
   330
   ...
 
-**Questions**
+**質問**
 
-You can also perform operations on the elements in the array, such as changing to ``Serial.println(melody[i] * 1.3);`` What data will you get and why?
+配列の要素に対して操作を行うこともできます。例えば、 ``Serial.println(melody[i] * 1.3);`` に変更すると、どのようなデータが得られるでしょうか？その理由も考えてみましょう。
 
 
-Code Creation - Play Little Star 
+コード作成 - きらきら星を演奏
 -----------------------------------
 
-Now that we have a solid understanding of creating arrays, accessing array elements, and calculating their lengths and operations, let's apply this knowledge to program a passive buzzer to play 'Twinkle, Twinkle, Little Star' using stored frequencies and intervals.
+配列を作成し、配列要素にアクセスし、それらの長さと操作を計算する方法を理解したところで、これらの知識を活用して、パッシブブザーを使って「きらきら星」を演奏するプログラムを作成しましょう。
 
-1. Open the sketch you saved earlier, ``Lesson22_Array``. 
+1. 以前に保存したスケッチ ``Lesson22_Array`` を開きます。
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson22_Little_Star``. Click "Save".
+2. 「ファイル」メニューから「名前を付けて保存」を選択し、 ``Lesson22_Little_Star`` と名前を変更して「保存」をクリックします。
 
-
-3. First, define the buzzer pin.
+3. 最初にブザーピンを定義します。
 
 .. code-block:: Arduino
 
-  const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  const int buzzerPin = 9;  // ブザーのピンを定数として9に割り当てます
 
 
-4. Now create another array to store the duration of the notes.
+4. 次に、音符の持続時間を格納する別の配列を作成します。
 
 .. code-block:: Arduino
   :emphasize-lines: 3
 
-  // Set up the sequence of notes and their durations in milliseconds
+  // 音符の並びとその持続時間をミリ秒単位で設定
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
   int noteDurations[] = { 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000 };
 
-5. Now move part of the code from ``void setup()`` into ``void loop()``.
+5. 次に、コードの一部を ``void setup()`` から ``void loop()`` に移動します。
 
 .. code-block:: Arduino
   :emphasize-lines: 8-13
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
+    // 一度だけ実行するセットアップコードをここに記述
+    Serial.begin(9600);                              // 9600ボーレートでシリアル通信を初期化
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 繰り返し実行するメインコードをここに記述
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       Serial.println(melody[i]);
     }
   }
 
-6. In the ``for`` statement, comment out the printing code and use the ``tone()`` function to play the notes.
+6. ``for``文の中で、印刷コードをコメントアウトし、 ``tone()`` 関数を使用して音符を演奏します。
 
 .. code-block:: Arduino
   :emphasize-lines: 9
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 繰り返し実行するメインコードをここに記述
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // 音符を演奏
     }
   }
 
-
-7. After each note is played, to make the melody more natural, add a brief pause between two notes. Here we multiply the duration of the notes by 1.30 to calculate the interval, making the melody sound less hurried.
+7. 各音符を再生した後、メロディーをより自然にするために、2つの音符の間に短い間隔を設けます。ここでは、音符の持続時間に1.30を掛けて間隔を計算し、メロディーが急ぎすぎないようにします。
 
 .. code-block:: Arduino
   :emphasize-lines: 10
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 繰り返し実行するメインコードをここに記述
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // 音符を再生
+      delay(noteDurations[i] * 1.30);                // 音符の変更前に待機
     }
   }
 
-8. Use the ``noTone()`` function to stop the tone output from the current pin. This is a necessary step to ensure each note is clearly played without blending into the next one.
+8. 現在のピンからの音出力を停止するために``noTone()``関数を使用します。これは、各音符が次の音符と混ざらずに明確に再生されるようにするために必要なステップです。
 
 .. code-block:: Arduino
   :emphasize-lines: 11
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 繰り返し実行するメインコードをここに記述
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
-      noTone(buzzerPin);                             // Stop playing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // 音符を再生
+      delay(noteDurations[i] * 1.30);                // 音符の変更前に待機
+      noTone(buzzerPin);                             // 音符の再生を停止
     }
   }
 
-9. Your complete code is shown below, and once you upload the code to the Arduino Uno R3, you will be able to hear the buzzer playing "Twinkle Twinkle Little Star".
+9. 完全なコードは以下の通りで、このコードをArduino Uno R3にアップロードすると、「きらきら星」をブザーで聞くことができます。
 
 .. code-block:: Arduino
 
-  int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+  int buzzerPin = 9;  // ブザーのピンを定数として9に割り当てます
 
-  // Define the frequencies for the notes of the C major scale (octave starting from middle C)
+  // ドの音階の周波数を定義します（中央のドから始まるオクターブ）
   int c = 262;
   int d = 294;
   int e = 330;
@@ -371,44 +365,41 @@ Now that we have a solid understanding of creating arrays, accessing array eleme
   int g = 392;
   int a = 440;
   int b = 494;
-  int C = 523;  // High C
+  int C = 523;  // 高いド
 
-  // Set up the sequence of notes and their durations in milliseconds
+  // 音符の並びとその持続時間をミリ秒単位で設定
   int melody[] = { c, c, g, g, a, a, g, f, f, e, e, d, d, c, g, g, f, f, e, e, d, g, g, f, f, e, e, d, c, c, g, g, a, a, g, f, f, e, e, d, d, c };
   int noteDurations[] = { 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000, 500, 500, 500, 500, 500, 500, 1000 };
 
   void setup() {
-    // put your setup code here, to run once:
-    Serial.begin(9600);                              // Initialize serial communication at 9600 baud rate
+    // 一度だけ実行するセットアップコードをここに記述
+    Serial.begin(9600);                              // 9600ボーレートでシリアル通信を初期化
   }
 
   void loop() {
-    // put your main code here, to run repeatedly:
-    int notes = sizeof(melody) / sizeof(melody[0]);  // Calculate the number of element
-    // Loop through each note in the melody array
+    // 繰り返し実行するメインコードをここに記述
+    int notes = sizeof(melody) / sizeof(melody[0]);  // 要素数を計算
+    // メロディ配列内の各音符をループ処理
     for (int i = 0; i < notes; i = i + 1) {
-      // Print each note's frequency to the serial monitor
+      // 各音符の周波数をシリアルモニターに表示
       // Serial.println(melody[i]);
 
-      tone(buzzerPin, melody[i], noteDurations[i]);  // Play the note
-      delay(noteDurations[i] * 1.30);                // Wait before changing the note
-      noTone(buzzerPin);                             // Stop playing the note
+      tone(buzzerPin, melody[i], noteDurations[i]);  // 音符を再生
+      delay(noteDurations[i] * 1.30);                // 音符の変更前に待機
+      noTone(buzzerPin);                             // 音符の再生を停止
     }
   }
   
-10. Finally, remember to save your code and tidy up your workspace.
+10. 最後に、コードを保存して作業スペースを整頓することを忘れないでください。
 
-**Question**
+**質問**
 
-If you replace the passive buzzer in the circuit with an active buzzer, can you positively play “Twinkle Twinkle Little Star”? Why?
+回路のパッシブブザーをアクティブブザーに置き換えると、「きらきら星」を再生できるでしょうか？その理由を考えてみましょう。
 
-**Summary**
+**まとめ**
 
-Now that the class is over, in this lesson we learned how to use arrays to store data, calculate array lengths, index elements within an array, and perform operations on each element. By storing note frequencies and timing intervals in arrays and iterating through them with a for loop, we successfully programmed a passive buzzer to play 'Twinkle, Twinkle, Little Star'.
+今回のレッスンでは、配列を使用してデータを保存し、配列の長さを計算し、配列内の要素にインデックスを付け、各要素に対して操作を行う方法を学びました。音符の周波数とタイミングの間隔を配列に格納し、それらをforループで反復処理することで、「きらきら星」をパッシブブザーで演奏するプログラムを成功させました。
 
-Additionally, we learned how to pause the playback of a note using the ``noTone()`` function.
+さらに、 ``noTone()`` 関数を使用して音符の再生を一時停止する方法も学びました。
 
-This lesson not only reinforced our understanding of array operations and control structures in programming but also demonstrated how these concepts can be applied to create music with electronic components, linking theoretical knowledge with practical applications in a fun and engaging way.
-
-
-
+このレッスンでは、配列操作とプログラミングにおける制御構造の理解を深めただけでなく、これらの概念を電子部品を使用して音楽を作成するためにどのように適用できるかを示し、理論的知識を実践的な応用に結びつける楽しく魅力的な方法を体験しました。

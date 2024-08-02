@@ -1,52 +1,49 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32愛好者コミュニティへようこそ！Facebookで仲間と一緒にRaspberry Pi、Arduino、ESP32の世界をもっと深く探求しましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門サポート**: コミュニティとチームの支援を受けて、購入後の問題や技術的な課題を解決しましょう。
+    - **学びと共有**: スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**: 新製品の発表や先行情報を早期に入手できます。
+    - **特別割引**: 最新製品に対する限定割引をお楽しみください。
+    - **イベントやプレゼント企画**: プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
 Beginner's Lab Kit with Original Arduino Uno R3
-=================================================
+===================================================
 
-Thank You for Choosing the Beginner's Lab Kit
+ビギナーズラボキットを選んでいただきありがとうございます
 
 * :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
-Welcome to the Beginner's Lab Kit, a comprehensive starter pack designed 
-specifically for newcomers to the world of electronics and programming. 
-This kit includes an array of essential components such as LEDs, resistors, 
-a buzzer, potentiometers, photoresistors, thermistors, push buttons, digital tubes, 
-and an ultrasonic module. One of the standout features of this kit is the inclusion of a multimeter, 
-an invaluable tool that allows you to measure current, voltage, and resistance within your circuits. 
-This addition is particularly useful for deepening your understanding of how each component functions.
+ビギナーズラボキットへようこそ。このキットは、電子工作とプログラミングの世界に初めて触れる方々
+のために設計された、包括的なスターターパックです。LED、抵抗器、ブザー、ポテンショメータ、フォト
+レジスタ、サーミスタ、プッシュボタン、デジタルチューブ、超音波モジュールなど、基本的な部品が多数
+含まれています。このキットの目玉の一つは、電流、電圧、抵抗を測定できるマルチメーターの追加です。
+このツールは、各部品の機能をより深く理解するのに非常に役立ちます。
 
-The course sequence provided with this kit is structured around the Arduino programming syntax, 
-ensuring a logical and educational progression. 
-This structure allows you to build circuits step-by-step while learning how to write the programs that control them. 
-Throughout the course, you will encounter troubleshooting challenges that enhance your understanding of the material.
+このキットに付属するコースは、Arduinoのプログラミング構文に基づいて構成されており、論理的かつ教
+育的な進行を保証します。この構造により、回路を一歩ずつ構築し、それを制御するプログラムを書く方法
+を学ぶことができます。コース全体を通じて、トラブルシューティングの課題に直面することで、教材の理
+解を深めることができます。
 
-For any inquiries or support, please reach out to us at service@sunfounder.com. 
-Dive into your learning journey with the Beginner's Lab Kit and start building, coding, and exploring the exciting world of electronics!
-
+お問い合わせやサポートが必要な場合は、service@sunfounder.comまでご連絡ください。ビギナーズラボ
+キットを使って学びの旅に出発し、電子工作のエキサイティングな世界を探求しましょう！
 
 .. image:: img/00_bgn_lab_kit_page1.jpg
     :width: 800
     :align: center
 
 .. note::
-    This document is available in the following languages.
+    このドキュメントは以下の言語で利用できます。
 
         * |link_jp_tutorials|
         * |link_en_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
 
 
 .. toctree::
@@ -80,7 +77,6 @@ Dive into your learning journey with the Beginner's Lab Kit and start building, 
     25_show_number
 
 
-**Copyright Notice**
+**著作権通知**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+このマニュアルに含まれるテキスト、画像、コードなどのすべての内容は、SunFounder社の所有物です。個人の学習、調査、楽しみ、または非営利目的でのみ使用してください。関連する規制および著作権法に基づき、著者および関連する権利者の法的権利を侵害することなく使用してください。許可なく商業的利益のためにこれらを使用する個人または組織に対して、同社は法的措置を取る権利を留保します。

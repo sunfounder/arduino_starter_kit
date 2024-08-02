@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    こんにちは、SunFounderのRaspberry Pi & Arduino & ESP32 Enthusiasts Communityへようこそ！Raspberry Pi、Arduino、ESP32について、仲間と一緒に深く掘り下げましょう。
 
-    **Why Join?**
+    **参加する理由**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **専門家のサポート**：販売後の問題や技術的な課題をコミュニティとチームの助けを借りて解決しましょう。
+    - **学びと共有**：スキルを向上させるためのヒントやチュートリアルを交換しましょう。
+    - **限定プレビュー**：新製品の発表やプレビューに早期アクセスしましょう。
+    - **特別割引**：最新製品の特別割引をお楽しみください。
+    - **お祭りのプロモーションとプレゼント**：プレゼント企画やホリデープロモーションに参加しましょう。
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 私たちと一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今すぐ参加しましょう！
 
-1. Get Started Arduino
-=========================
+1. Arduinoを始めましょう
+============================
 
-Welcome to our Arduino Exploration for Beginners course! Here, you'll embark on a journey that revisits groundbreaking ideas, inventions, and innovations that have shaped our world. Along the way, you'll apply these historical concepts to build circuits and electronic devices for today's needs, and be inspired to conceive new ideas and inventions for the future. Let's get started on this exciting adventure!
+初心者向けArduino探求コースへようこそ！ここでは、私たちの世界を形作ってきた画期的なアイデア、発明、革新を振り返りながら、それらの歴史的なコンセプトを今日のニーズに合わせて回路や電子機器を作成し、未来のための新しいアイデアや発明を考案するためのインスピレーションを得る旅に出ます。このエキサイティングな冒険を始めましょう！
 
-Every journey begins with a single step. In this course, our first step is to explore the tools you'll be using. These include the hardware in your kit, the software that controls it, and essential safety guidelines. Let's dive into the hardware first.
+すべての旅は一歩から始まります。このコースでは、最初のステップとして使用するツールを探ります。これには、キットに含まれるハードウェア、それを制御するソフトウェア、そして重要な安全ガイドラインが含まれます。まずハードウェアから見ていきましょう。
 
 .. toctree::
     :maxdepth: 1
@@ -28,5 +28,3 @@ Every journey begins with a single step. In this course, our first step is to ex
     1.4_install_ide
     1.5_introduce_ide
     1.6_first_sketch
-
-
