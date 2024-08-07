@@ -233,8 +233,11 @@ Through our measurements, you will discover:
 
 .. code-block::
 
-    Total Voltage = Resistor Voltage + LED 1 Voltage + LED 2 Voltage
+  4.97 volts ≈ 1.13 volts + 1.92 volts + 1.92 volts
 
+  Total Voltage = Resistor Voltage + LED 1 Voltage + LED 2 Voltage
+
+You can also calculate whether your measurement results conform to the above equation.
 
 .. note::
     

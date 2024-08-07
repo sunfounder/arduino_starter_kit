@@ -14,6 +14,7 @@
 
 3. Measure with Multimeter
 ==========================================
+
 Welcome to our exploration of the multimeter, an essential tool in electronics. This lesson will guide you through the functionality and application of the multimeter, teaching you how to measure various electrical properties effectively. Starting from the basics of setting up your multimeter with a battery and test leads, we'll delve into adjusting settings and utilizing its numerous functions. This hands-on experience will not only impart theoretical knowledge but also equip you with the skills to perform accurate measurements on any circuit.
 
 Here's what you'll achieve:
@@ -42,18 +43,17 @@ In this image, the selected position is used for measuring direct current (DC) v
 
 Your multimeter has five different DC voltage ranges — 200m (millivolts), 2V (volts), 20V (volts), 200V (volts), and 600V (volts). These numbers represent the maximum voltage that can be measured in each setting.
 
+.. image:: img/multimeter_dc.png
+    :width: 300
+    :align: center
+
 .. note::
 
     Here's the conversion between Volts:
 
-    * 1 volt (V) = 1 volt (V)
     * 1 millivolt (mV) = 0.001 volt (V)
 
     For example, if you have a voltage of 500 millivolts (mV), it can also be expressed as 0.5 volts (V).
-
-.. image:: img/multimeter_dc.png
-    :width: 300
-    :align: center
 
 **Measuring Method**: Before measuring voltage, you need to select an appropriate measuring range. In all of our courses, the circuit voltage will not exceed 5V, so you can simply select the 20V position. When the circuit is functioning normally, you can test the voltage by placing the red and black test leads on either side of the device.
 
@@ -89,19 +89,20 @@ The "1.5V mA" setting on a meter is used to measure the current at a 1.5V voltag
 
 For measuring current, the multimeter has settings for 200μ (200 microamp), 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
 
+.. image:: img/multimeter_current.png
+    :width: 300
+    :align: center
+
 .. note::
 
     Here's the conversion between amperes:
 
-    * 1 ampere (A) = 1 ampere (A)
     * 1 milliampere (mA) = 0.001 ampere (A)
     * 1 microampere (μA) = 0.000001 ampere (A)
 
     For example, if you have a current of 50 milliamperes (mA), it can also be expressed as 0.05 amperes (A).
 
-.. image:: img/multimeter_current.png
-    :width: 300
-    :align: center
+
 
 To measure currents less than 200 milliamps, you can insert the red test lead into the VΩmA port. Then, turn the dial to one of the milliamp settings. The circuits you build in this course and project will always have currents less than 200 mA.
 
@@ -112,8 +113,6 @@ For measuring currents up to 10 amperes, you must insert the red test lead into 
     :align: center
 
 **Measuring Method**: To measure the current in a circuit, the multimeter must be inserted into the circuit. In other words, it must become part of the circuit. This is different from measuring voltage or resistance, which can be done by across a component in the circuit. You will have the opportunity to make these measurements later when you start building circuits.
-
-
 
 **Continuity**
 
@@ -128,19 +127,19 @@ The setting with a diode symbol and a sound icon is used for measuring continuit
 
 The final set of options on the multimeter is designated for assessing resistance, symbolized by the Greek letter omega (Ω). Typically, multimeters offer a variety of ranges for resistance measurements. This particular multimeter is equipped with five ranges: 200 ohms, 2k (2,000 ohms), 20k (20,000 ohms), 200k (200,000 ohms), and 2M (2,000,000 ohms). Each range specifies the highest resistance value it can accurately measure. To achieve the most precise readings, select a range that can measure the resistance without surpassing its upper limit.
 
+.. image:: img/multimeter_resistance.png
+    :width: 300
+    :align: center
+  
 .. note::
 
     Here's the conversion between ohms:
 
-    * 1 ohm (Ω) = 1 ohm (Ω)
     * 1 kilohm (kΩ) = 1000 ohms (Ω)
     * 1 megohm (MΩ) = 1000000 ohms (Ω)
 
 For example, if you have a resistance of 1000 ohms (Ω), it can also be expressed as 1 kilohm (kΩ).
 
-.. image:: img/multimeter_resistance.png
-    :width: 300
-    :align: center
 
 **Tips**
 

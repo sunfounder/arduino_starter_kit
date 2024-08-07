@@ -48,18 +48,7 @@ Now, let's learn how to send our awesome sketch to the Arduino board. It's like 
     .. image:: img/1_ide_select_port.png
         :align: center
 
-4. If you're using Arduino 2.0, there's a super quick way to pick your board and port. If you see **"Unknown COMxx"** (and it's not referring to "Unknown COM1"), you'll need to click on it to select the correct board.
-
-
-    .. image:: img/1_ide_quick_access.png
-        :align: center
-
-5. Type **Arduino Uno** in the search box, select it, pick the right port, and click **OK**.
-
-    .. image:: img/1_ide_quick_board.png
-        :align: center
-
-6. Next time, you might find this quick option even faster! If not, just do the search again.
+4. If you're using Arduino IDE 2.0, you can quickly select the appropriate board and port in this window.
 
     .. image:: img/1_ide_quick.png
         :align: center

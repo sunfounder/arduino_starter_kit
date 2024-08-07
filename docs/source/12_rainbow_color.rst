@@ -100,7 +100,7 @@ Touch the black lead of the multimeter to the RGB LED's longest pin, and touch t
     :width: 500
     :align: center
 
-2. Insert the RGB LED into the breadboard with the longest pin going into hole 17D, and the other three pins into 18D, 16D, and 15D, respectively.
+2. Insert the RGB LED into the breadboard with the longest pin going into hole 17D, and the other three pins into 18C, 16C, and 15C, respectively.
 
 .. image:: img/12_mix_color_bb_1.png
     :width: 500

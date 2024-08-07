@@ -19,6 +19,18 @@ Thank You for Choosing the Beginner's Lab Kit
 
 * :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
+.. image:: img/00_bgn_lab_kit_page1.jpg
+    :width: 800
+    :align: center
+
+.. note::
+    This document is available in the following languages.
+
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+    
+    Please click on the respective links to access the document in your preferred language.
+
 Welcome to the Beginner's Lab Kit, a comprehensive starter pack designed 
 specifically for newcomers to the world of electronics and programming. 
 This kit includes an array of essential components such as LEDs, resistors, 
@@ -34,20 +46,6 @@ Throughout the course, you will encounter troubleshooting challenges that enhanc
 
 For any inquiries or support, please reach out to us at service@sunfounder.com. 
 Dive into your learning journey with the Beginner's Lab Kit and start building, coding, and exploring the exciting world of electronics!
-
-
-.. image:: img/00_bgn_lab_kit_page1.jpg
-    :width: 800
-    :align: center
-
-.. note::
-    This document is available in the following languages.
-
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
-    
-    Please click on the respective links to access the document in your preferred language.
-
 
 .. toctree::
     :maxdepth: 1

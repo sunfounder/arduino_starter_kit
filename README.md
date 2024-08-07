@@ -24,6 +24,9 @@ This addition is particularly useful for deepening your understanding of how eac
 
 <a id="update"></a>
 ## Update:
+2024-08-07:
+- Fix some errors
+
 2024-07-31:
 - Fix some errors
 - Add videos

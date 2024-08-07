@@ -199,7 +199,7 @@ These devices are designed with two leads: a longer one known as the anode and a
     :align: center
 
 
-6. Insert the cathode of the LED (the short lead) into hole 1e on the breadboard. This connects the LED to the 1KΩ resistor. Remember, holes 1a and 1e are connected underneath the breadboard.
+6. Insert the cathode of the LED (the short lead) into hole 1e on the breadboard. This connects the LED to the 220Ω resistor. Remember, holes 1b and 1e are connected underneath the breadboard.
 
 .. note::
 
@@ -263,7 +263,7 @@ However, connecting the power supply's terminals directly without a load can cau
 
 12. Finally, power the Arduino Uno R3 by connecting it to a computer or a power socket using the USB cable provided in the kit, and the LED should light up.
 
-    .. image:: img/1_connect_uno_pc.jpg
+    .. image:: img/2_first_circuit.png
         :width: 600
         :align: center
 
@@ -276,15 +276,13 @@ Understanding Electricity in Circuits
 
 **Electricity Essentials**
 
-The flow of electrons from the negative to the positive is what we understand as the current. Initially, scientists like Ben Franklin believed that the current was a movement of positive charges, which is why traditional current flows from positive to negative.
-
+The flow of electrons from the negative to the positive is what we understand as the actual electron flow. Initially, scientists like Ben Franklin believed that the current was a movement of positive charges, which is why conventional current is defined as flowing from positive to negative.
 
 .. image:: img/2_uno_current.png
     :width: 600
     :align: center
 
-
-However, in reality, electrons, which carry a negative charge, move from the negative terminal to the positive terminal. Most countries today still use the traditional flow model. Thus, in diagrams and when designing electronic components, current is depicted as flowing from the positive to the negative terminal, even though electrons actually flow in the opposite direction.
+However, in reality, electrons, which carry a negative charge, move from the negative terminal to the positive terminal. Most countries today still use the conventional current flow model. Thus, in diagrams and when designing electronic components, current is depicted as flowing from the positive to the negative terminal, even though electrons actually flow in the opposite direction.
 
 .. image:: img/2_uno_electron.png
     :width: 600

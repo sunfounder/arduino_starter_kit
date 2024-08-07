@@ -317,7 +317,7 @@ With your code error-free and verified, it's time to upload it to the Arduino Un
     :align: center
 
 
-3. Once the transfer is complete, the code will run, and you should see all three LED on the breadboard light up.
+3. Once the transfer is complete, the code will run, and you should see the LED on the breadboard light up.
 
 **7. Measuring the Voltage Across the LED**
 
