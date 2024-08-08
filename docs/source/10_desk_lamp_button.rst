@@ -22,7 +22,7 @@
     :align: center
 
 * リアルタイムデータ表示のためのシリアルモニタの使用方法を学ぶ。
-* ボタン入力を効率的に管理するための``INPUT_PULLUP``モードの実装。
+* ボタン入力を効率的に管理するための ``INPUT_PULLUP`` モードの実装。
 * 状態の変化を検出する方法を理解する。
 * デジタル信号とアナログ信号の特性を探る。
 * 条件文（``if else``）の活用。
@@ -324,7 +324,7 @@
     lastButtonState = buttonState;  // Update lastButtonState to the current state
     delay(200);                     // Optional: Simple software debouncing
 
-3. ``ledState``が ``LOW`` の場合、LEDをオフにするための ``else`` 文を ``if`` ブロックの後に追加します。これにより、 ``if`` の条件が満たされない場合にLEDを完全にオフにします。
+3. ``ledState`` が ``LOW`` の場合、LEDをオフにするための ``else`` 文を ``if`` ブロックの後に追加します。これにより、 ``if`` の条件が満たされない場合にLEDを完全にオフにします。
 
 .. image:: img/if_else.png
     :width: 400

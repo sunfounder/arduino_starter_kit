@@ -144,7 +144,7 @@ LEDに役割を持たせる時が来ました。このアクティビティで�
     擬似コードを書く際に正しい答えや間違った答えはありません。擬似コードが詳細であればあるほど、機能的なプログラムに変換するのが簡単になります。
 
 
-回路が信号機のように機能するために必要なことを考えてみましょう。ログのスペースに、信号機がどのように動作するかを説明する擬似コードを書きましょう。簡単な英語を使ってください。
+回路が信号機のように機能するために必要なことを考えてみましょう。ログのスペースに、信号機がどのように動作するかを説明する擬似コードを書きましょう。
 
 擬似コードを書く際のガイドとなる質問をいくつか示します：
 
@@ -211,50 +211,50 @@ LEDに役割を持たせる時が来ました。このアクティビティで�
             pinMode(5, OUTPUT); // set pin 5 as output
         }
 
-3. In ``void loop()``, first turn on the green LED and turn off the other two LEDs. So, copy the ``digitalWrite()`` commands twice and modify the pin numbers to 4 and 5, changing ``HIGH`` to ``LOW`` for the LEDs you want to turn off, and update the comments to suit the current scenario. Modified code is as follows:
+3. ``void loop()`` 関数では、最初に緑色のLEDを点灯し、他の2つのLEDを消灯します。そのため、 ``digitalWrite()`` コマンドを2回コピーしてピン番号を4と5に変更し、消灯したいLEDの ``HIGH`` を ``LOW`` に変更し、コメントも現在のシナリオに合わせて更新します。修正後のコードは以下の通りです：
 
     .. code-block:: Arduino
         :emphasize-lines: 4,5
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(3000);           // Wait for 3 seconds
+            // ここにメインのコードを書き、繰り返し実行します：
+            digitalWrite(3, HIGH);  // ピン3のLEDを点灯
+            digitalWrite(4, LOW);   // ピン4のLEDを消灯
+            digitalWrite(5, LOW);   // ピン5のLEDを消灯
+            delay(3000);            // 3秒待つ
         }
 
-4. You might want the green LED to be on longer. In our traffic system, it might be about a minute, but here we'll simulate it with 10 seconds.
+4. 緑色のLEDをもっと長く点灯させたい場合があります。交通システムでは約1分かかるかもしれませんが、ここでは10秒でシミュレーションします。
 
     .. code-block:: Arduino
         :emphasize-lines: 6
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
+            // ここにメインのコードを書き、繰り返し実行します：
+            digitalWrite(3, HIGH);  // ピン3のLEDを点灯
+            digitalWrite(4, LOW);   // ピン4のLEDを消灯
+            digitalWrite(5, LOW);   // ピン5のLEDを消灯
+            delay(10000);           // 10秒待つ
         }
 
-5. Now let the yellow LED light up, and turn off the other two LEDs. Again, copy and paste the 4 lines from ``void loop()``, setting pin 4 to HIGH and the others to LOW. Change the delay for the yellow LED to 3 seconds.
+5. 次に黄色のLEDを点灯させ、他の2つのLEDを消灯します。再び ``void loop()`` から4行をコピーしてペーストし、ピン4をHIGHに設定し、他をLOWにします。黄色のLEDの遅延を3秒に変更します。
 
     .. code-block:: Arduino
         :emphasize-lines: 7-10
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(3000);            // Wait for 3 seconds
+            // ここにメインのコードを書き、繰り返し実行します：
+            digitalWrite(3, HIGH);  // ピン3のLEDを点灯
+            digitalWrite(4, LOW);   // ピン4のLEDを消灯
+            digitalWrite(5, LOW);   // ピン5のLEDを消灯
+            delay(10000);           // 10秒待つ
+            digitalWrite(3, LOW);   // ピン3のLEDを消灯
+            digitalWrite(4, HIGH);  // ピン4のLEDを点灯
+            digitalWrite(5, LOW);   // ピン5のLEDを消灯
+            delay(3000);            // 3秒待つ
         }
 
-6. Finally, let the red LED light up for 10 seconds, turning the other two LEDs off. Your complete code is as follows:
+6. 最後に、赤色のLEDを10秒間点灯させ、他の2つのLEDを消灯します。完成したコードは以下の通りです：
 
     .. code-block:: Arduino
 

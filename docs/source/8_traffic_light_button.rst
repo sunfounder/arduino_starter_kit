@@ -355,7 +355,7 @@ Arduino IDEでは、条件文は次のように見えます：
 
             ...
 
-``digitalWrite()``コマンドが出力ピンに使用されるように、 ``digitalRead()`` コマンドは入力ピンに使用されます。 ``digitalRead(pin)`` は、デジタルピンが ``HIGH`` か ``LOW`` かを読み取るコマンドです。
+``digitalWrite()`` コマンドが出力ピンに使用されるように、 ``digitalRead()`` コマンドは入力ピンに使用されます。 ``digitalRead(pin)`` は、デジタルピンが ``HIGH`` か ``LOW`` かを読み取るコマンドです。
 
 その構文は次のとおりです：
 

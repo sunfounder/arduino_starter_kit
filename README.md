@@ -24,12 +24,11 @@ This addition is particularly useful for deepening your understanding of how eac
 
 <a id="update"></a>
 ## Update:
-2024-07-31:
+2024-08-07:
 - Fix some errors
-- Add videos
 
-2024-04-18:
-- First release
+2024-08-02:
+- First release the Japanese version.
 
 <a id="trouble"></a>
 ## Trouble Shootings:

@@ -99,7 +99,9 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
+.. |link_beginner_lab_kit| raw:: html
 
+    <a href="https://www.sunfounder.com/products/sunfounder-beginners-lab-starter-kit" target="_blank">Beginners' Lab Kit</a>
 
 .. |link_sf_facebook| raw:: html
 

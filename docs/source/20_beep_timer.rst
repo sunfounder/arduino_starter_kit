@@ -300,7 +300,7 @@ Arduinoにもプログラムを一時停止させないタイミングツール�
 
 * ``buzzerPin`` はブザーが接続されているピンを識別します。
 * ``startMillis`` はタイマーが開始した時刻を記録します。
-* ``workPeriod`` と``breakPeriod``はそれぞれの期間がどれくらい続くかを定義します。
+* ``workPeriod`` と ``breakPeriod`` はそれぞれの期間がどれくらい続くかを定義します。
 * ``isWorkPeriod`` は作業時間か休憩時間かを追跡するためのブール型変数です。
 
 .. code-block:: Arduino

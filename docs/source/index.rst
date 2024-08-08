@@ -12,12 +12,24 @@
 
     👉 一緒に探求し創造する準備はできましたか？[|link_sf_facebook|]をクリックして、今日から参加しましょう！
 
-Beginner's Lab Kit with Original Arduino Uno R3
-===================================================
+|link_beginner_lab_kit| with Original Arduino Uno R3
+======================================================
 
-ビギナーズラボキットを選んでいただきありがとうございます
+|link_beginner_lab_kit| を選んでいただき、ありがとうございます。
 
-* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
+.. image:: img/00_bgn_lab_kit_page1.jpg
+    :width: 800
+    :align: center
+
+.. note::
+    このドキュメントは以下の言語で利用できます。
+
+        * |link_jp_tutorials|
+        * |link_en_tutorials|
+    
+    ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
+
+* :download:`初心者用ラボキットハンドブック（解答付き） </_static/pdf/初心者用ラボキットハンドブック（解答付き）.pdf>`
 
 ビギナーズラボキットへようこそ。このキットは、電子工作とプログラミングの世界に初めて触れる方々
 のために設計された、包括的なスターターパックです。LED、抵抗器、ブザー、ポテンショメータ、フォト
@@ -32,19 +44,6 @@ Beginner's Lab Kit with Original Arduino Uno R3
 
 お問い合わせやサポートが必要な場合は、service@sunfounder.comまでご連絡ください。ビギナーズラボ
 キットを使って学びの旅に出発し、電子工作のエキサイティングな世界を探求しましょう！
-
-.. image:: img/00_bgn_lab_kit_page1.jpg
-    :width: 800
-    :align: center
-
-.. note::
-    このドキュメントは以下の言語で利用できます。
-
-        * |link_jp_tutorials|
-        * |link_en_tutorials|
-    
-    ご希望の言語のリンクをクリックして、ドキュメントにアクセスしてください。
-
 
 .. toctree::
     :maxdepth: 1

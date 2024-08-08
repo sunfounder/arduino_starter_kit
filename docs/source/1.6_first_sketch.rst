@@ -48,17 +48,7 @@
     .. image:: img/1_ide_select_port.png
         :align: center
 
-4. Arduino 2.0を使用している場合、ボードとポートを選ぶための非常に迅速な方法があります。「Unknown COMxx」（「Unknown COM1」ではない）と表示されている場合、正しいボードを選択する必要があります。
-
-    .. image:: img/1_ide_quick_access.png
-        :align: center
-
-5. 検索ボックスに**Arduino Uno**と入力し、選択して正しいポートを選び、 **OK** をクリックします。
-
-    .. image:: img/1_ide_quick_board.png
-        :align: center
-
-6. 次回は、このクイックオプションがさらに速いことがわかるかもしれません。それでもうまくいかない場合は、もう一度検索してください。
+4. Arduino IDE 2.0を使用している場合、このウィンドウで適切なボードとポートをすばやく選択できます。
 
     .. image:: img/1_ide_quick.png
         :align: center
