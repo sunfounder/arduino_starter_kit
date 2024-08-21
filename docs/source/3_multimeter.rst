@@ -87,7 +87,7 @@ The "1.5V mA" setting on a meter is used to measure the current at a 1.5V voltag
 
 **Current**
 
-For measuring current, the multimeter has settings for 200μ (200 microamp), 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
+For measuring current, the multimeter has settings for 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
 
 .. image:: img/multimeter_current.png
     :width: 300
@@ -98,7 +98,6 @@ For measuring current, the multimeter has settings for 200μ (200 microamp), 2m 
     Here's the conversion between amperes:
 
     * 1 milliampere (mA) = 0.001 ampere (A)
-    * 1 microampere (μA) = 0.000001 ampere (A)
 
     For example, if you have a current of 50 milliamperes (mA), it can also be expressed as 0.05 amperes (A).
 
