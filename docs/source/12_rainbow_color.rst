@@ -1,216 +1,214 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein, gemeinsam mit anderen Technikbegeisterten.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Löse technische Herausforderungen und Probleme nach dem Kauf mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Gewinnspiele**: Nimm an Gewinnspielen und Sonderaktionen zu Feiertagen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu forschen und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-12. The Colors of the Rainbow
+12. Die Farben des Regenbogens
 =======================================
-Imagine if you could paint with light, blending red, green, and blue to create every hue imaginable—just like mixing paints on a palette but with beams of light.
+Stell dir vor, du könntest mit Licht malen, indem du Rot, Grün und Blau mischst, um jede erdenkliche Farbe zu erzeugen – so wie beim Mischen von Farben auf einer Palette, nur mit Lichtstrahlen.
 
 .. image:: img/12_rgb_mix.png
     :width: 300
     :align: center
 
-Welcome to this lesson, where you will explore the captivating world of RGB LEDs and discover how the combination of primary colors can create a vibrant spectrum of hues. This hands-on course will guide you through the principles of RGB LED functionality and introduce you to the practical applications of programming and circuit building.
+Willkommen zu dieser Lektion, in der du die faszinierende Welt der RGB-LEDs erkunden wirst und lernst, wie die Kombination von Primärfarben ein lebendiges Farbspektrum erzeugen kann. Dieser praktische Kurs führt dich durch die Funktionsprinzipien der RGB-LEDs und zeigt dir die Anwendungsmöglichkeiten in der Programmierung und im Schaltungsaufbau.
 
-In this lesson, you will learn:
+In dieser Lektion wirst du lernen:
 
-* Understand the operational principles of RGB LEDs.
-* Learn to create and utilize functions in your code to simplify tasks and enhance readability.
-* Explore the impact of different color combinations by manipulating the RGB LED.
+* Die Funktionsweise von RGB-LEDs zu verstehen.
+* Funktionen in deinem Code zu erstellen und zu nutzen, um Aufgaben zu vereinfachen und die Lesbarkeit zu verbessern.
+* Die Auswirkungen verschiedener Farbkombinationen zu erkunden, indem du die RGB-LED steuerst.
 
 
-Building the Circuit
+Aufbau der Schaltung
 -----------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * RGB-LED
+     - 3 * 220Ω-Widerstand
+     - Steckkabel
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
      - 1 * Multimeter
      -
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_meter|
      -
-     
-**Step-by-Step Building Instructions**
 
-Follow the wiring diagram or these steps to construct the circuit.
+**Schritt-für-Schritt-Anleitung zum Aufbau**
+
+Folge dem Schaltplan oder diesen Schritten, um die Schaltung aufzubauen.
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 500
     :align: center
 
-1. Start with an RGB LED.
+1. Beginne mit einer RGB-LED.
 
-RGB LEDs emit light in various colors by integrating red, green, and blue LEDs within a single package. By varying the voltage input on the three pins, these LEDs can combine to produce up to 16,777,216 different colors.
+RGB-LEDs erzeugen Licht in verschiedenen Farben, indem sie rote, grüne und blaue LEDs in einem einzigen Gehäuse kombinieren. Durch das Variieren der Spannung an den drei Pins können diese LEDs bis zu 16.777.216 verschiedene Farben erzeugen.
 
 .. image:: img/12_mix_color_rgb.png
     :width: 400
     :align: center
 
-Depending on their design, RGB LEDs can be either common anode or common cathode. For this project, we use a **common cathode** RGB LED, where all three LEDs share a negative connection.
+Je nach Bauweise können RGB-LEDs entweder eine gemeinsame Anode oder eine gemeinsame Kathode haben. In diesem Projekt verwenden wir eine **gemeinsame Kathode**-RGB-LED, bei der alle drei LEDs eine negative Verbindung teilen.
 
-* Common cathode RGB LEDs have a shared negative connection.
-* Common anode RGB LEDs have a shared positive connection.
+* RGB-LEDs mit gemeinsamer Kathode haben eine gemeinsame negative Verbindung.
+* RGB-LEDs mit gemeinsamer Anode haben eine gemeinsame positive Verbindung.
 
 .. image:: img/12_rgb_cc_ca.jpg
     :width: 600
     :align: center
 
-An RGB LED typically has 4 pins; the longest one is the ground. When placing the RGB LED, ensure the longest lead is second from the left, configuring the pins as Red, GND, Green, and Blue from left to right.
+Eine RGB-LED hat in der Regel 4 Pins; der längste davon ist der Massepin. Achte beim Einsetzen der RGB-LED darauf, dass der längste Pin der zweite von links ist, und konfiguriere die Pins als Rot, GND, Grün und Blau von links nach rechts.
 
 .. image:: img/12_mix_color_rgb_1.jpg
     :width: 200
     :align: center
 
-You can also use a multimeter in Diode Test mode to identify the color each pin emits.
+Du kannst auch ein Multimeter im Diodentestmodus verwenden, um herauszufinden, welche Farbe jeder Pin erzeugt.
 
-Set the multimeter to the **Continuity** setting for resistance measurement.
+Stelle das Multimeter auf die **Durchgangsprüfung** für die Widerstandsmessung ein.
 
 .. image:: img/multimeter_diode_measure.png
     :width: 300
     :align: center
 
-Touch the black lead of the multimeter to the RGB LED's longest pin, and touch the red lead to the other pins individually. You will see the RGB LED light up in red, green, or blue accordingly.
+Berühre mit der schwarzen Leitung des Multimeters den längsten Pin der RGB-LED und mit der roten Leitung die anderen Pins einzeln. Die RGB-LED leuchtet dann in Rot, Grün oder Blau auf.
 
 .. image:: img/12_mix_color_measure_pin.png
     :width: 500
     :align: center
 
-2. Insert the RGB LED into the breadboard with the longest pin going into hole 17D, and the other three pins into 18C, 16C, and 15C, respectively.
+2. Setze die RGB-LED in das Steckbrett ein, wobei der längste Pin in Loch 17D geht und die anderen drei Pins in 18C, 16C und 15C.
 
 .. image:: img/12_mix_color_bb_1.png
     :width: 500
     :align: center
 
-3. Insert three 220ohm resistors as shown from holes 15E to 15G, 16E to 16G, and 18E to 18G.
+3. Setze drei 220Ω-Widerstände ein, wie gezeigt: von Loch 15E zu 15G, 16E zu 16G und 18E zu 18G.
 
 .. image:: img/12_mix_color_bb_2.png
     :width: 500
     :align: center
 
-4. Connect these resistors to pins 9, 10, and 11 on the Arduino Uno R3 with jumper wires as illustrated.
+4. Verbinde diese Widerstände mit den Pins 9, 10 und 11 des Arduino Uno R3, wie im Diagramm gezeigt.
 
 .. image:: img/12_mix_color_bb_3.png
     :width: 500
     :align: center
 
-5. Connect the longest pin of the RGB LED to GND using a jumper wire.
+5. Verbinde den längsten Pin der RGB-LED mit GND, indem du ein Steckkabel verwendest.
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 500
     :align: center
 
-Code Creation - Lighting Up an RGB LED
-----------------------------------------
+Code-Erstellung - RGB-LEDs zum Leuchten bringen
+--------------------------------------------------
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson12_Rainbow_Color`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du "Neue Skizze" aus dem Menü "Datei" wählst.
+2. Speichere deine Skizze als ``Lesson12_Rainbow_Color`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. The LED in your circuit is connected to digital pins on the Arduino Uno R3. As the LED is an output device, you'll need to set digital pins 9, 10, and 11 as ``OUTPUT``.
+3. Die LED in deinem Schaltkreis ist mit digitalen Pins des Arduino Uno R3 verbunden. Da die LED ein Ausgabegerät ist, musst du die digitalen Pins 9, 10 und 11 als ``OUTPUT`` festlegen.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
 
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);   // Setze den blauen Pin der RGB-LED als Ausgang
+        pinMode(10, OUTPUT);  // Setze den grünen Pin der RGB-LED als Ausgang
+        pinMode(11, OUTPUT);  // Setze den roten Pin der RGB-LED als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hauptcode, der wiederholt ausgeführt wird:
     }
 
-4. Now in the ``void loop()`` set the RGB LED's red pin to ``HIGH``, and the other two pins to ``LOW``.
+4. Setze nun im ``void loop()`` den roten Pin der RGB-LED auf ``HIGH`` und die anderen beiden Pins auf ``LOW``.
 
 .. note::
 
-    Since we are using PWM pins 9, 10, and 11, you have the option to use either ``digitalWrite()`` or ``analogWrite()`` to output a high or low level. 
+    Da wir die PWM-Pins 9, 10 und 11 verwenden, kannst du entweder ``digitalWrite()`` oder ``analogWrite()`` verwenden, um einen hohen oder niedrigen Pegel auszugeben.
     
-    For this lesson, as we are simply setting the pins to high or low, we'll use ``digitalWrite()``.
-
-
+    Für diese Lektion werden wir jedoch einfach die Pins auf high oder low setzen und deshalb ``digitalWrite()`` verwenden.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-12
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);   // Setze den blauen Pin der RGB-LED als Ausgang
+        pinMode(10, OUTPUT);  // Setze den grünen Pin der RGB-LED als Ausgang
+        pinMode(11, OUTPUT);  // Setze den roten Pin der RGB-LED als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        // Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
 
-5. Save the code and click “Upload” to send it to your Arduino Uno R3. Let's see what happens.
+5. Speichere den Code und klicke auf „Hochladen“, um ihn auf dein Arduino Uno R3 zu übertragen. Schau dir an, was passiert.
 
-6. You will see the RGB LED light up red. But what if you want to light up green and blue too? How should you modify the code?
+6. Du wirst sehen, dass die RGB-LED rot aufleuchtet. Aber was ist, wenn du möchtest, dass auch Grün und Blau leuchten? Wie solltest du den Code ändern?
 
-Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want to display as ``HIGH`` and the others as ``LOW``. Each color lighting up should be given a second to shine.
+Kopiere nun die drei ``digitalWrite()``-Befehle zwei weitere Male. Setze den gewünschten Pin auf ``HIGH`` und die anderen auf ``LOW``. Jede Farbe sollte für eine Sekunde leuchten.
 
 .. code-block:: Arduino
     :emphasize-lines: 14-21
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);   // Setze den blauen Pin der RGB-LED als Ausgang
+        pinMode(10, OUTPUT);  // Setze den grünen Pin der RGB-LED als Ausgang
+        pinMode(11, OUTPUT);  // Setze den roten Pin der RGB-LED als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);              //Wait for 1 second
+        // Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);              // Warte 1 Sekunde
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
+        delay(1000);              // Warte 1 Sekunde
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
+        delay(1000);              // Warte 1 Sekunde
     }
 
-7. Upload the code again to see the effects. You will find the RGB LED cycles through red, green, and blue.
+7. Lade den Code erneut hoch, um die Effekte zu sehen. Du wirst feststellen, dass die RGB-LED zwischen Rot, Grün und Blau wechselt.
 
-**Questions**:
+**Fragen**:
 
-1. If you want other colors, what should you do? Refer to the diagram below and fill in your ideas in your handbook.
+1. Wenn du andere Farben möchtest, was solltest du tun? Sieh dir das untenstehende Diagramm an und trage deine Ideen in dein Handbuch ein.
 
 .. image:: img/12_rgb_mix.png
     :width: 300
@@ -220,23 +218,23 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
    :widths: 20 20 20 20
    :header-rows: 1
 
-   * - Color
-     - Red Pin
-     - Green Pin
-     - Blue Pin
-   * - Red
+   * - Farbe
+     - Roter Pin
+     - Grüner Pin
+     - Blauer Pin
+   * - Rot
      - *HIGH*
      - *LOW*
      - *LOW*
-   * - Green
+   * - Grün
      - *LOW*
      - *HIGH*
      - *LOW*
-   * - Blue
+   * - Blau
      - *LOW*
      - *LOW*
      - *HIGH*
-   * - Yellow
+   * - Gelb
      -
      -
      -
@@ -248,62 +246,62 @@ Now copy the three ``digitalWrite()`` commands twice more. Set the pin you want 
      - 
      -
      -
-   * - White
+   * - Weiß
      -
      -
      -
 
-Code Creation - Create Functions
---------------------------------------
+Code-Erstellung - Erstellen von Funktionen
+------------------------------------------------
 
-You might have noticed that to display different colors sequentially on the RGB LED, you end up writing many lines of similar code. For instance, to showcase seven different colors on the RGB LED, you would write something like the following:
+Vielleicht ist dir aufgefallen, dass du, um verschiedene Farben nacheinander auf der RGB-LED anzuzeigen, viele ähnliche Codezeilen schreiben musst. Um beispielsweise sieben verschiedene Farben auf der RGB-LED darzustellen, könntest du Folgendes schreiben:
 
 .. code-block:: Arduino
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);   // Setze den blauen Pin der RGB-LED als Ausgang
+        pinMode(10, OUTPUT);  // Setze den grünen Pin der RGB-LED als Ausgang
+        pinMode(11, OUTPUT);  // Setze den roten Pin der RGB-LED als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, LOW);   // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);   // Turn on the Green pin of RGB LED
-        digitalWrite(11, HIGH);   // Turn on the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);   // Turn on the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, HIGH);   // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, HIGH);   // Turn on the Green pin of RGB LED
-        digitalWrite(11, HIGH);   // Turn on the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
+        // Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
+        delay(1000);             // Warte 1 Sekunde
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);             // Warte 1 Sekunde
     }
 
-You might have noticed that your ``void loop()`` has become quite lengthy and the logic hard to follow. This is a perfect time to introduce the concept of functions.
+Du hast vielleicht bemerkt, dass deine ``void loop()``-Funktion recht lang geworden ist und die Logik schwer nachzuvollziehen ist. Dies ist der perfekte Moment, um das Konzept der Funktionen einzuführen.
 
-Throughout your coding journey, you've already been using built-in Arduino functions such as ``pinMode()``, ``digitalWrite()``, and ``delay()``. Now, we'll dive into creating custom functions. Custom functions allow you to simplify your code, making it more logical and manageable.
+Während deiner Programmierreise hast du bereits eingebaute Arduino-Funktionen wie ``pinMode()``, ``digitalWrite()`` und ``delay()`` verwendet. Jetzt werden wir eigene Funktionen erstellen. Eigene Funktionen helfen dir, deinen Code zu vereinfachen und übersichtlicher zu gestalten.
 
-To create a function, simply add it to the bottom of your sketch after the ``void loop()`` brace. Like ``void setup()`` and ``void loop()``, functions start with void followed by a name you choose. The naming rules for functions are similar to those for variables or constants. You can name a function anything that isn't a keyword in the Arduino IDE, and you enclose its commands within curly braces.
+Um eine Funktion zu erstellen, füge sie einfach am Ende deiner Skizze nach der schließenden Klammer von ``void loop()`` hinzu. Wie bei ``void setup()`` und ``void loop()`` beginnt eine Funktion mit dem Schlüsselwort ``void``, gefolgt von einem selbstgewählten Namen. Die Namensregeln für Funktionen sind denen für Variablen oder Konstanten ähnlich. Du kannst eine Funktion nach Belieben benennen, solange es kein reserviertes Wort in der Arduino IDE ist, und die Anweisungen der Funktion werden in geschweifte Klammern gesetzt.
 
 .. code-block:: Arduino
     :emphasize-lines: 9-11
@@ -320,17 +318,17 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
     
     }
 
-1. At the bottom of your sketch, right after the ``void loop()`` bracket, we're going to add seven new functions. Each function will contain the code to display a specific color on the RGB LED.
+1. Füge am Ende deiner Skizze, direkt nach der schließenden Klammer von ``void loop()``, sieben neue Funktionen hinzu. Jede Funktion wird den Code enthalten, um eine bestimmte Farbe auf der RGB-LED anzuzeigen.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-22
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
-        delay(1000);             //Wait for 1 second
+        // Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
+        delay(1000);             // Warte 1 Sekunde
         ...
     }
 
@@ -348,114 +346,112 @@ To create a function, simply add it to the bottom of your sketch after the ``voi
     
     }
 
-2. Next, cut the color-specific code snippets from the ``void loop()`` and paste them into their respective functions. This will leave only seven ``delay()`` calls in the ``loop()`` function.
+2. Als Nächstes schneidest du die farbspezifischen Code-Snippets aus der Funktion ``void loop()`` und fügst sie in ihre jeweiligen Funktionen ein. Dadurch bleiben nur sieben ``delay()``-Aufrufe in der ``loop()``-Funktion übrig.
 
 .. code-block:: Arduino
 
     ...
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hier kommt dein Hauptcode, der wiederholt ausgeführt wird:
 
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
+        delay(1000);  // Warte 1 Sekunde
     }
 
     void lightRed() {
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
     ...
 
     void lightWhite() {
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
 
-3. Now that the functions are set up, it's time to call them within the ``void loop()``. To call a function, simply write its name followed by two parentheses and end the line with a semicolon.
+3. Nun, da die Funktionen eingerichtet sind, ist es an der Zeit, sie innerhalb der Funktion ``void loop()`` aufzurufen. Um eine Funktion aufzurufen, schreibe einfach ihren Namen gefolgt von zwei Klammern und beende die Zeile mit einem Semikolon.
 
 .. code-block:: Arduino
     :emphasize-lines: 7-22
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Hier kommt dein Setup-Code, der einmalig ausgeführt wird:
+        pinMode(9, OUTPUT);   // Setze den blauen Pin der RGB-LED als Ausgang
+        pinMode(10, OUTPUT);  // Setze den grünen Pin der RGB-LED als Ausgang
+        pinMode(11, OUTPUT);  // Setze den roten Pin der RGB-LED als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hier kommt dein Hauptcode, der wiederholt ausgeführt wird:
         lightRed();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightGreen();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightBlue();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightYellow();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightPink();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightCyan();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
         lightWhite();
-        delay(1000);  //Wait for 1 second
+        delay(1000);  // Warte 1 Sekunde
     }
 
     void lightRed() {
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
 
     void lightGreen() {
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
     }
     void lightBlue() {
-        digitalWrite(9, HIGH);  // Turn on the Blue pin of RGB LED
-        digitalWrite(10, LOW);  // Turn off the Green pin of RGB LED
-        digitalWrite(11, LOW);  // Turn off the Red pin of RGB LED
+        digitalWrite(9, HIGH);  // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, LOW);  // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, LOW);  // Schalte den roten Pin der RGB-LED aus
     }
     void lightYellow() {
-        digitalWrite(9, LOW);    // Turn off the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, LOW);    // Schalte den blauen Pin der RGB-LED aus
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
     void lightPink() {
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, LOW);   // Turn off the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, LOW);   // Schalte den grünen Pin der RGB-LED aus
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
     void lightCyan() {
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, LOW);   // Turn off the Red pin of RGB LED
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, LOW);   // Schalte den roten Pin der RGB-LED aus
     }
     void lightWhite() {
-        digitalWrite(9, HIGH);   // Turn on the Blue pin of RGB LED
-        digitalWrite(10, HIGH);  // Turn on the Green pin of RGB LED
-        digitalWrite(11, HIGH);  // Turn on the Red pin of RGB LED
+        digitalWrite(9, HIGH);   // Schalte den blauen Pin der RGB-LED ein
+        digitalWrite(10, HIGH);  // Schalte den grünen Pin der RGB-LED ein
+        digitalWrite(11, HIGH);  // Schalte den roten Pin der RGB-LED ein
     }
 
-
-4. With the functions all set up and called in the loop(), your code is now complete. Click the "Upload" button to transfer your code to the Arduino Uno R3. You will see the RGB LED cycle through red, green, blue, yellow, pink, cyan, and white.
+4. Sobald alle Funktionen eingerichtet und im Loop aufgerufen sind, ist dein Code nun vollständig. Klicke auf den "Upload"-Button, um den Code auf das Arduino Uno R3 zu übertragen. Du wirst sehen, wie die RGB-LED nacheinander die Farben Rot, Grün, Blau, Gelb, Pink, Cyan und Weiß durchläuft.
 
 .. note::
 
-    The brightness of the RGB LED can be quite intense, so avoid staring directly at it for long periods to prevent eye strain.
+    Die Helligkeit der RGB-LED kann ziemlich intensiv sein, daher solltest du vermeiden, zu lange direkt in die LED zu schauen, um eine Überanstrengung der Augen zu verhindern.
 
-    You might also consider diffusing the light with a tissue or some frosted material to soften the brightness.
+    Du könntest auch in Erwägung ziehen, das Licht mit einem Taschentuch oder einem mattierten Material zu streuen, um die Helligkeit zu mildern.
 
-**Summary**
+**Zusammenfassung**
 
-Through a series of coding exercises, you will write sketches that dynamically change the color of the LED. Starting with basic commands to control each color, you will then refactor your code to use functions, making your setup more modular and maintainable. This approach not only makes the code cleaner but also teaches you about the importance of function in programming.
-
+Durch eine Reihe von Programmierübungen wirst du Sketche schreiben, die die Farbe der LED dynamisch verändern. Beginnend mit einfachen Befehlen zur Steuerung jeder Farbe wirst du anschließend deinen Code so umstrukturieren, dass Funktionen verwendet werden, wodurch dein Aufbau modularer und wartungsfreundlicher wird. Dieser Ansatz macht den Code nicht nur übersichtlicher, sondern zeigt dir auch die Bedeutung von Funktionen in der Programmierung.

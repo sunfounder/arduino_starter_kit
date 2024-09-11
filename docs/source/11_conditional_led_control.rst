@@ -1,23 +1,23 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 mit gleichgesinnten Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Experten-Support**: Löse Probleme nach dem Kauf und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugriff auf neue Produktankündigungen und Einblicke.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu forschen und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-11. Controlling LED Arrays with Potentiometer
+11. Steuerung von LED-Arrays mit Potentiometer
 ===================================================
 
-Welcome to this lesson, where we explore how to master conditional statements to control LED arrays dynamically. Building on our prior knowledge of simple LED circuits, this lesson introduces you to complex conditional logic, allowing LEDs to respond to varying levels of input from a potentiometer. This course is ideal for both beginners who are new to programming conditional statements and for experienced coders who wish to deepen their understanding of if-else if-else structures.
+Willkommen zu dieser Lektion, in der wir lernen, bedingte Anweisungen zu meistern, um LED-Arrays dynamisch zu steuern. Aufbauend auf unserem vorherigen Wissen über einfache LED-Schaltungen führt diese Lektion in komplexere bedingte Logik ein, die es ermöglicht, dass LEDs auf verschiedene Eingaben eines Potentiometers reagieren. Dieser Kurs eignet sich sowohl für Anfänger, die neu in der Programmierung von bedingten Anweisungen sind, als auch für erfahrene Programmierer, die ihr Verständnis für if-else if-else-Strukturen vertiefen möchten.
 
-By the end of this lesson, you will not only know how to program LEDs to turn on in sequence but also understand how to use these lighting patterns to visually represent different input thresholds.
+Am Ende dieser Lektion wirst du nicht nur wissen, wie man LEDs nacheinander programmiert, sondern auch verstehen, wie man diese Lichtmuster verwendet, um unterschiedliche Eingabeschwellen visuell darzustellen.
 
 .. raw:: html
 
@@ -27,10 +27,10 @@ By the end of this lesson, you will not only know how to program LEDs to turn on
     </video>
 
 
-Build the Circuit
+Bau der Schaltung
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 
 .. list-table:: 
@@ -38,16 +38,16 @@ Build the Circuit
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 3 * Red LEDs
-     - 3 * 220Ω Resistor
+     - 3 * Rote LEDs
+     - 3 * 220Ω Widerstände
      - 1 * Potentiometer
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
+     - Jumper-Kabel
      - 1 * Multimeter
    * - |list_usb_cable| 
      - |list_breadboard| 
@@ -55,199 +55,198 @@ Build the Circuit
      - |list_meter|
      
 
-**Building Steps**
+**Bau der Schaltung**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Folge dem Verdrahtungsdiagramm oder den folgenden Schritten, um deine Schaltung zu bauen.
 
 .. image:: img/11_conditional_led_cont rol_p9.png
     :width: 500
     :align: center
 
-1. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 28G.
+1. Schließe ein Potentiometer an das Steckbrett an. Setze seine drei Pins in die Löcher 30G, 29F, 28G.
 
 .. note::
-    The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
+    Das Potentiometer ist mit "P 103" beschriftet, was auf seinen Widerstandsbereich hinweist. Setze das Potentiometer so in das Steckbrett ein, dass die beschriftete Seite zu dir zeigt.
 
 .. image:: img/11_dimmer_test_pot.png
     :width: 500
     :align: center
 
-2. Insert a jumper wire into hole 28J and connect it to the negative terminal of the breadboard.
+2. Setze ein Jumper-Kabel in das Loch 28J und verbinde es mit dem negativen Anschluss des Steckbretts.
 
 .. image:: img/11_conditional_led_control_pot_gnd.png
     :width: 500
     :align: center
 
-3. Then, insert a jumper wire between hole 29J and the A0 pin of the Arduino Uno R3.
+3. Setze dann ein Jumper-Kabel zwischen Loch 29J und den A0-Pin des Arduino Uno R3.
 
 .. image:: img/11_conditional_led_control_a0.png
     :width: 500
     :align: center
 
-4. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the Arduino Uno R3.
+4. Verbinde schließlich das Potentiometer mit 5V, indem du ein Jumper-Kabel zwischen Loch 30J am Steckbrett und den 5V-Pin des Arduino Uno R3 einsetzt.
 
 .. image:: img/11_conditional_led_control_5v.png
     :width: 500
     :align: center
 
 
-5. Connect the GND pin of the Arduino Uno R3 to the negative terminal of the breadboard using a long jumper wire.
+5. Verbinde den GND-Pin des Arduino Uno R3 mit dem negativen Anschluss des Steckbretts, indem du ein langes Jumper-Kabel verwendest.
 
 .. image:: img/11_conditional_led_control_gnd.png
     :width: 500
     :align: center
 
-3. Take out three LEDs of any color. Insert their anodes (longer pins) into holes 15A, 11A, and 7A respectively, and their cathodes (shorter pins) into the negative terminal of the breadboard.
+6. Nimm drei LEDs beliebiger Farbe heraus. Setze ihre Anoden (längere Pins) in die Löcher 15A, 11A und 7A und ihre Kathoden (kürzere Pins) in den negativen Anschluss des Steckbretts.
 
 .. image:: img/11_conditional_led_control_3led.png
     :width: 500
     :align: center
 
-4. Place a 220 ohms resistor between holes 15E and 15G.
+7. Setze einen 220 Ohm Widerstand zwischen die Löcher 15E und 15G.
 
 .. image:: img/11_conditional_led_control_1resistor.png
     :width: 500
     :align: center
 
-5. Similarly, insert a 220 ohms resistor between 11E and 11G, and another between 7E and 7G.
+8. Setze ebenfalls einen 220 Ohm Widerstand zwischen 11E und 11G sowie einen weiteren zwischen 7E und 7G.
 
 .. image:: img/11_conditional_led_control_2resistor.png
     :width: 500
     :align: center
 
-6. Connect the hole 15J on the breadboard to pin 11 on the Arduino Uno R3 with a wire.
+9. Verbinde das Loch 15J am Steckbrett mit Pin 11 des Arduino Uno R3 mit einem Kabel.
 
 .. image:: img/11_conditional_led_control_p11.png
     :width: 500
     :align: center
 
-7. Connect the hole 11J on the breadboard to pin 10 on the Arduino Uno R3 with a wire.
+10. Verbinde das Loch 11J am Steckbrett mit Pin 10 des Arduino Uno R3 mit einem Kabel.
 
 .. image:: img/11_conditional_led_control_p10.png
     :width: 500
     :align: center
 
-8. Connect the hole 7J on the breadboard to pin 9 on the Arduino Uno R3 with a wire. Your circuit is now complete.
+11. Verbinde das Loch 7J am Steckbrett mit Pin 9 des Arduino Uno R3 mit einem Kabel. Deine Schaltung ist jetzt fertiggestellt.
 
 .. image:: img/11_conditional_led_control_p9.png
     :width: 500
     :align: center
-    
-Code Creation
+
+Codeerstellung
 -----------------------
 
-**Writing Pseudocode**
+**Pseudocode schreiben**
 
-1. Pseudocode serves as a program sketch, written in plain language to simplify understanding. Your task is to create pseudocode for an LED array that reacts to a potentiometer. As the potentiometer's value increases, more LEDs will light up. Before diving into pseudocode, answer these questions:
+1. Pseudocode dient als Programmskizze, die in einfacher Sprache verfasst ist, um das Verständnis zu erleichtern. Deine Aufgabe ist es, einen Pseudocode für ein LED-Array zu erstellen, das auf ein Potentiometer reagiert. Wenn der Wert des Potentiometers steigt, sollen mehr LEDs leuchten. Bevor du mit dem Pseudocode beginnst, beantworte diese Fragen:
 
 .. code-block::
 
-    - How does the Arduino read the potentiometer's value?
-    - How can each LED be controlled individually?
-    - how many ranges should the potentiometer's values be divided?
-    - What should each LED display across these ranges?
+    - Wie liest der Arduino den Wert des Potentiometers aus?
+    - Wie kann jede LED einzeln gesteuert werden?
+    - In wie viele Bereiche sollte der Wert des Potentiometers unterteilt werden?
+    - Was sollte jede LED in diesen Bereichen anzeigen?
 
-2. Write your pseudocode for the LED array in the blank section provided in your handbook.
+2. Schreibe deinen Pseudocode für das LED-Array in den vorgesehenen Abschnitt deines Handbuchs.
 
-**Printing Potentiometer Values**
+**Potentiometerwerte anzeigen**
 
-3. To turn your pseudocode into a working sketch, open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-4. Save your sketch as ``Lesson11_LED_Array`` using ``Ctrl + S`` or by clicking “Save”.
+3. Um deinen Pseudocode in ein funktionierendes Sketch umzuwandeln, öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ die Option „Neues Sketch“ auswählst.
+4. Speichere dein Sketch als ``Lesson11_LED_Array`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-5. Similar to previous lessons, create a variable before the ``void setup()`` to store the potentiometer value, and remember to annotate your code to match its functionality.
+5. Ähnlich wie in den vorherigen Lektionen erstellst du eine Variable vor dem ``void setup()``, um den Potentiometerwert zu speichern. Denke daran, deinen Code passend zu kommentieren.
 
 .. code-block:: Arduino
     :emphasize-lines: 1
 
-    int potValue = 0;            // Variable to store the value read from the potentiometer
+    int potValue = 0;            // Variable zur Speicherung des Potentiometerwerts
 
     void setup() {
-        // Code to run once:
-
+        // Code, der einmal ausgeführt wird:
     }
 
-6. Since LEDs are output devices, you'll need to configure digital pins 9, 10, and 11 as OUTPUTs. Remember to include comments.
+6. Da LEDs Ausgabegeräte sind, musst du die digitalen Pins 9, 10 und 11 als OUTPUT konfigurieren. Vergiss nicht, Kommentare hinzuzufügen.
 
 .. code-block:: Arduino
     :emphasize-lines: 5,6,7
 
-    int potValue = 0;            // Variable to store the value read from the potentiometer
+    int potValue = 0;            // Variable zur Speicherung des Potentiometerwerts
 
     void setup() {
-        // Code to run once:
-        pinMode(9, OUTPUT);  // Configure pin 9 as output
-        pinMode(10, OUTPUT); // Configure pin 10 as output
-        pinMode(11, OUTPUT); // Configure pin 11 as output
+        // Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Konfiguriere Pin 9 als Ausgang
+        pinMode(10, OUTPUT); // Konfiguriere Pin 10 als Ausgang
+        pinMode(11, OUTPUT); // Konfiguriere Pin 11 als Ausgang
     }
 
-7. Start serial communication by setting the baud rate to 9600.
+7. Starte die serielle Kommunikation, indem du die Baudrate auf 9600 einstellst.
 
 .. code-block:: Arduino
     :emphasize-lines: 8
 
-    int potValue = 0;            // Variable to store the value read from the potentiometer
+    int potValue = 0;            // Variable zur Speicherung des Potentiometerwerts
 
     void setup() {
-        // Code to run once:
-        pinMode(9, OUTPUT);  // Configure pin 9 as output
-        pinMode(10, OUTPUT); // Configure pin 10 as output
-        pinMode(11, OUTPUT); // Configure pin 11 as output
-        Serial.begin(9600);  // Start serial communication at 9600 baud
+        // Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Konfiguriere Pin 9 als Ausgang
+        pinMode(10, OUTPUT); // Konfiguriere Pin 10 als Ausgang
+        pinMode(11, OUTPUT); // Konfiguriere Pin 11 als Ausgang
+        Serial.begin(9600);  // Starte serielle Kommunikation mit 9600 Baud
     }
 
-8. Within the ``void loop()``, after reading the potentiometer value, store it in the variable ``potValue`` and print it to the serial monitor.
+8. Innerhalb der ``void loop()``, nachdem du den Potentiometerwert gelesen hast, speichere ihn in der Variable ``potValue`` und gib ihn auf dem seriellen Monitor aus.
 
 .. code-block:: Arduino
     :emphasize-lines: 12-15
 
-    int potValue = 0;            // Variable to store the value read from the potentiometer
+    int potValue = 0;            // Variable zur Speicherung des Potentiometerwerts
 
     void setup() {
-        pinMode(9, OUTPUT);  // Configure pin 9 as output
-        pinMode(10, OUTPUT); // Configure pin 10 as output
-        pinMode(11, OUTPUT); // Configure pin 11 as output
-        Serial.begin(9600);  // Start serial communication at 9600 baud
+        pinMode(9, OUTPUT);  // Konfiguriere Pin 9 als Ausgang
+        pinMode(10, OUTPUT); // Konfiguriere Pin 10 als Ausgang
+        pinMode(11, OUTPUT); // Konfiguriere Pin 11 als Ausgang
+        Serial.begin(9600);  // Starte serielle Kommunikation mit 9600 Baud
     }
 
     void loop() {
-        // Main code to run repeatedly:
-        potValue = analogRead(A0);     // Read value from potentiometer
-        Serial.print("Pot Value: ");  // Display the reading
-        Serial.println(potValue);      // Print the potentiometer value
+        // Hauptcode, der wiederholt ausgeführt wird:
+        potValue = analogRead(A0);     // Lese den Wert des Potentiometers
+        Serial.print("Pot Value: ");  // Zeige den Wert an
+        Serial.println(potValue);      // Drucke den Potentiometerwert
         delay(100);
     }
 
-9. Validate and compile your code if necessary.
+9. Überprüfe und kompiliere deinen Code bei Bedarf.
 
-10. Once the code is uploaded to the Arduino Uno R3, you'll notice that rotating the potentiometer causes the value displayed in the serial monitor to vary between 0 and 1023. This range is ideal, though due to manufacturing variances, your potentiometer might show a range from 50 to 1000. Just remember this range for reference.
+10. Nachdem der Code auf das Arduino Uno R3 hochgeladen wurde, wirst du feststellen, dass das Drehen des Potentiometers den angezeigten Wert im seriellen Monitor zwischen 0 und 1023 variieren lässt. Dieser Bereich ist ideal, aber aufgrund von Fertigungstoleranzen könnte dein Potentiometer einen Bereich von 50 bis 1000 zeigen. Behalte diesen Bereich zur Referenz im Hinterkopf.
 
 
-**Control LEDs with Potentiometer Values**
+**Steuerung der LEDs mit Potentiometerwerten**
 
-To sequentially light up each LED based on the value of the potentiometer, you will need multiple conditions. You can use ``if`` to specify actions for different ranges of potentiometer values:
+Um jede LED nacheinander basierend auf dem Wert des Potentiometers zu beleuchten, benötigst du mehrere Bedingungen. Du kannst ``if`` verwenden, um Aktionen für verschiedene Bereiche der Potentiometerwerte festzulegen:
   
-  - Below 200: Turn off all LEDs.
-  - Between 200 and 600: Light up the first LED.
-  - Between 600 and 1000: Light up two LEDs.
-  - Above 1000: Light up all LEDs.
+  - Unter 200: Alle LEDs ausschalten.
+  - Zwischen 200 und 600: Die erste LED einschalten.
+  - Zwischen 600 und 1000: Zwei LEDs einschalten.
+  - Über 1000: Alle LEDs einschalten.
 
-However, managing these conditions separately can be inefficient, as Arduino needs to check each one in every loop cycle. 
+Das Verwalten dieser Bedingungen separat kann jedoch ineffizient sein, da der Arduino jede Bedingung in jedem Schleifendurchlauf überprüfen muss. 
 
-To streamline this, utilize the ``if-else if`` structure:
+Um dies zu vereinfachen, verwende die ``if-else if``-Struktur:
 
 .. code-block:: Arduino
 
-    if (condition 1) {
-        // Execute if condition 1 is true
+    if (Bedingung 1) {
+        // Ausführen, wenn Bedingung 1 wahr ist
     }
-    else if (condition 2) {
-        // Execute if condition 2 is true
+    else if (Bedingung 2) {
+        // Ausführen, wenn Bedingung 2 wahr ist
     }
-    else if (condition 3) {
-        // Execute if condition 3 is true
+    else if (Bedingung 3) {
+        // Ausführen, wenn Bedingung 3 wahr ist
     }
     else {
-        // Execute if none of the conditions are true
+        // Ausführen, wenn keine der Bedingungen zutrifft
     }
 
 
@@ -256,133 +255,129 @@ To streamline this, utilize the ``if-else if`` structure:
     :align: center
 
 
+In einer ``if-else if``-Struktur wird die erste Bedingung überprüft. Ist sie wahr, werden die zugehörigen Befehle ausgeführt, und alle anderen Bedingungen werden übersprungen (auch wenn einige davon wahr sind). Wenn die erste Bedingung falsch ist, wird die zweite Bedingung in der Struktur getestet. Ist die zweite Bedingung wahr, werden die zugehörigen Befehle ausgeführt und die restlichen Bedingungen übersprungen. Ist auch die zweite Bedingung falsch, wird die dritte Bedingung getestet, und so weiter. In manchen Szenarien können mehrere Bedingungen wahr sein. Daher ist die Reihenfolge der Bedingungen wichtig. Nur die erste wahre Bedingung wird ausgeführt.
 
-In an ``if-else if`` structure, the first condition is tested. If it's true, the associated commands are executed, and all other conditions are skipped (even if some of them are true). If the first condition is false, it tests the second condition in the structure. If the second condition is true, it executes the commands associated with this condition and then skips the others. If it is false, it tests the third condition, and so on. In some scenarios, there can be multiple true conditions. Therefore, the order of conditions is important. Only the first true condition will have its associated commands run.
 
-
-11. First, turn off all three LEDs if the value of the potentiometer is less than 200. Add an if statement and then use the digitalWrite() function to set pins 9, 10, and 11 to LOW to turn off the LEDs.
+11. Schalten Sie zuerst alle drei LEDs aus, wenn der Wert des Potentiometers unter 200 liegt. Fügen Sie eine if-Anweisung hinzu und verwenden Sie dann die Funktion digitalWrite(), um die Pins 9, 10 und 11 auf LOW zu setzen, um die LEDs auszuschalten.
 
 .. code-block:: Arduino
     :emphasize-lines: 7-11 
     
     void loop() {
-        // put your main code here, to run repeatedly:
-        potValue = analogRead(A0);    // Read value from potentiometer
-        Serial.print("Pot Value: ");  // Prompt for the read value
-        Serial.println(potValue);     // Print the potentiometer value
+        // Hauptcode, der wiederholt ausgeführt wird:
+        potValue = analogRead(A0);    // Lese den Potentiometerwert
+        Serial.print("Pot Value: ");  // Ausgabe des gelesenen Werts
+        Serial.println(potValue);     // Drucke den Potentiometerwert
         delay(100);
-        if (potValue < 200) {     // If potValue less than 200
-            digitalWrite(9, LOW);   // Switch off the LED on pin 9
-            digitalWrite(10, LOW);  // Switch off the LED on pin 10
-            digitalWrite(11, LOW);  // Switch off the LED on pin 11
+        if (potValue < 200) {     // Wenn potValue kleiner als 200 ist
+            digitalWrite(9, LOW);   // Schalte die LED an Pin 9 aus
+            digitalWrite(10, LOW);  // Schalte die LED an Pin 10 aus
+            digitalWrite(11, LOW);  // Schalte die LED an Pin 11 aus
         }
     }
 
- 
-12. Add an ``else if`` statement to light up the first LED when the potentiometer's analog value is below 600.
-
+12. Fügen Sie eine ``else if``-Anweisung hinzu, um die erste LED einzuschalten, wenn der analoge Wert des Potentiometers unter 600 liegt.
 
 .. code-block:: Arduino
     :emphasize-lines: 5-9 
     
-    if (potValue < 200) {         // If potValue less than 200
-        digitalWrite(9, LOW);       // Switch off the LED on pin 9
-        digitalWrite(10, LOW);      // Switch off the LED on pin 10
-        digitalWrite(11, LOW);      // Switch off the LED on pin 11
-    } else if (potValue < 600) {  // If potValue less than 600
-        digitalWrite(9, HIGH);      // Light up the LED on pin 9
-        digitalWrite(10, LOW);      // Switch off the LED on pin 10
-        digitalWrite(11, LOW);      // Switch off the LED on pin 11
+    if (potValue < 200) {         // Wenn potValue kleiner als 200 ist
+        digitalWrite(9, LOW);       // Schalte die LED an Pin 9 aus
+        digitalWrite(10, LOW);      // Schalte die LED an Pin 10 aus
+        digitalWrite(11, LOW);      // Schalte die LED an Pin 11 aus
+    } else if (potValue < 600) {  // Wenn potValue kleiner als 600 ist
+        digitalWrite(9, HIGH);      // Schalte die LED an Pin 9 ein
+        digitalWrite(10, LOW);      // Schalte die LED an Pin 10 aus
+        digitalWrite(11, LOW);      // Schalte die LED an Pin 11 aus
     }
 
-
-13. To light up two LEDs when the value is below 1000, insert another ``else if`` condition like this:
+13. Um zwei LEDs zu beleuchten, wenn der Wert unter 1000 liegt, fügen Sie eine weitere ``else if``-Bedingung wie folgt hinzu:
 
 .. code-block:: Arduino
     :emphasize-lines: 10-14 
     
-    if (potValue < 200) {         // If potValue less than 200
-        digitalWrite(9, LOW);       // Switch off the LED on pin 9
-        digitalWrite(10, LOW);      // Switch off the LED on pin 10
-        digitalWrite(11, LOW);      // Switch off the LED on pin 11
-    } else if (potValue < 600) {  // If potValue less than 600
-        digitalWrite(9, HIGH);      // Light up the LED on pin 9
-        digitalWrite(10, LOW);      // Switch off the LED on pin 10
-        digitalWrite(11, LOW);      // Switch off the LED on pin 11
+    if (potValue < 200) {         // Wenn potValue kleiner als 200 ist
+        digitalWrite(9, LOW);       // Schalte die LED an Pin 9 aus
+        digitalWrite(10, LOW);      // Schalte die LED an Pin 10 aus
+        digitalWrite(11, LOW);      // Schalte die LED an Pin 11 aus
+    } else if (potValue < 600) {  // Wenn potValue kleiner als 600 ist
+        digitalWrite(9, HIGH);      // Schalte die LED an Pin 9 ein
+        digitalWrite(10, LOW);      // Schalte die LED an Pin 10 aus
+        digitalWrite(11, LOW);      // Schalte die LED an Pin 11 aus
     }
-    else if (potValue < 1000) {  // If potValue less than 1000
-        digitalWrite(9, HIGH);     // Light up the LED on pin 9
-        digitalWrite(10, HIGH);    // Light up the LED on pin 10
-        digitalWrite(11, LOW);     // Switch off the LED on pin 11
+    else if (potValue < 1000) {  // Wenn potValue kleiner als 1000 ist
+        digitalWrite(9, HIGH);     // Schalte die LED an Pin 9 ein
+        digitalWrite(10, HIGH);    // Schalte die LED an Pin 10 ein
+        digitalWrite(11, LOW);     // Schalte die LED an Pin 11 aus
     }    
 
-14. Finally, modify the commands inside the ``else`` block to light up all three LEDs using ``digitalWrite()``. This block contains commands that run when none of the other conditions are true. In other words, if the ``potValue`` from the potentiometer is greater than or equal to 1000, the commands within ``else {}`` will execute. Your ``else`` block should look like this:
+14. Schließlich ändern Sie die Befehle im ``else``-Block, um alle drei LEDs mit ``digitalWrite()`` einzuschalten. Dieser Block enthält Befehle, die ausgeführt werden, wenn keine der anderen Bedingungen wahr ist. Mit anderen Worten: Wenn der ``potValue`` des Potentiometers größer oder gleich 1000 ist, werden die Befehle innerhalb von ``else {}`` ausgeführt. Ihr ``else``-Block sollte wie folgt aussehen:
 
 .. code-block:: Arduino
     :emphasize-lines: 6-8 
 
-    else if (potValue < 1000) {  // If potValue less than 1000
-        digitalWrite(9, HIGH);     // Light up the LED on pin 9
-        digitalWrite(10, HIGH);    // Light up the LED on pin 10
-        digitalWrite(11, LOW);     // Switch off the LED on pin 11
+    else if (potValue < 1000) {  // Wenn potValue kleiner als 1000 ist
+        digitalWrite(9, HIGH);     // Schalte die LED an Pin 9 ein
+        digitalWrite(10, HIGH);    // Schalte die LED an Pin 10 ein
+        digitalWrite(11, LOW);     // Schalte die LED an Pin 11 aus
     } else {
-        digitalWrite(9, HIGH);   // Light up the LED on pin 9
-        digitalWrite(10, HIGH);  // Light up the LED on pin 10
-        digitalWrite(11, HIGH);  // Light up the LED on pin 11
+        digitalWrite(9, HIGH);   // Schalte die LED an Pin 9 ein
+        digitalWrite(10, HIGH);  // Schalte die LED an Pin 10 ein
+        digitalWrite(11, HIGH);  // Schalte die LED an Pin 11 ein
     }
 
-15. Your complete code is as follows. Click "Upload" to send the code to your Arduino Uno R3.
+15. Ihr vollständiger Code lautet wie folgt. Klicken Sie auf "Upload", um den Code auf Ihr Arduino Uno R3 zu laden.
 
 .. code-block:: Arduino
 
-    int potValue = 0;  // Variable to store the value read from the potentiometer
+    int potValue = 0;  // Variable zur Speicherung des Potentiometerwerts
 
     void setup() {
-        pinMode(9, OUTPUT);   // Configure pin 9 as output
-        pinMode(10, OUTPUT);  // Configure pin 10 as output
-        pinMode(11, OUTPUT);  // Configure pin 11 as output
-        Serial.begin(9600);   // Start serial communication at 9600 baud
+        pinMode(9, OUTPUT);   // Konfiguriere Pin 9 als Ausgang
+        pinMode(10, OUTPUT);  // Konfiguriere Pin 10 als Ausgang
+        pinMode(11, OUTPUT);  // Konfiguriere Pin 11 als Ausgang
+        Serial.begin(9600);   // Starte serielle Kommunikation mit 9600 Baud
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        potValue = analogRead(A0);    // Read value from potentiometer
-        Serial.print("Pot Value: ");  // Prompt for the read value
-        Serial.println(potValue);     // Print the potentiometer value
+        // Hauptcode, der wiederholt ausgeführt wird:
+        potValue = analogRead(A0);    // Lese den Potentiometerwert
+        Serial.print("Pot Value: ");  // Ausgabe des gelesenen Werts
+        Serial.println(potValue);     // Drucke den Potentiometerwert
         delay(100);
-        if (potValue < 200) {          // If potValue less than 200
-            digitalWrite(9, LOW);        // Switch off the LED on pin 9
-            digitalWrite(10, LOW);       // Switch off the LED on pin 10
-            digitalWrite(11, LOW);       // Switch off the LED on pin 11
-        } else if (potValue < 600) {   // If potValue less than 600
-            digitalWrite(9, HIGH);       // Light up the LED on pin 9
-            digitalWrite(10, LOW);       // Switch off the LED on pin 10
-            digitalWrite(11, LOW);       // Switch off the LED on pin 11
-        } else if (potValue < 1000) {  // If potValue less than 1000
-            digitalWrite(9, HIGH);       // Light up the LED on pin 9
-            digitalWrite(10, HIGH);      // Light up the LED on pin 10
-            digitalWrite(11, LOW);       // Switch off the LED on pin 11
+        if (potValue < 200) {          // Wenn potValue kleiner als 200 ist
+            digitalWrite(9, LOW);        // Schalte die LED an Pin 9 aus
+            digitalWrite(10, LOW);       // Schalte die LED an Pin 10 aus
+            digitalWrite(11, LOW);       // Schalte die LED an Pin 11 aus
+        } else if (potValue < 600) {   // Wenn potValue kleiner als 600 ist
+            digitalWrite(9, HIGH);       // Schalte die LED an Pin 9 ein
+            digitalWrite(10, LOW);       // Schalte die LED an Pin 10 aus
+            digitalWrite(11, LOW);       // Schalte die LED an Pin 11 aus
+        } else if (potValue < 1000) {  // Wenn potValue kleiner als 1000 ist
+            digitalWrite(9, HIGH);       // Schalte die LED an Pin 9 ein
+            digitalWrite(10, HIGH);      // Schalte die LED an Pin 10 ein
+            digitalWrite(11, LOW);       // Schalte die LED an Pin 11 aus
         } else {
-            digitalWrite(9, HIGH);   // Light up the LED on pin 9
-            digitalWrite(10, HIGH);  // Light up the LED on pin 10
-            digitalWrite(11, HIGH);  // Light up the LED on pin 11
+            digitalWrite(9, HIGH);   // Schalte die LED an Pin 9 ein
+            digitalWrite(10, HIGH);  // Schalte die LED an Pin 10 ein
+            digitalWrite(11, HIGH);  // Schalte die LED an Pin 11 ein
         }
     }
 
-16. Rotate the potentiometer to see if the LED array functions as expected:
+16. Drehen Sie das Potentiometer, um zu überprüfen, ob das LED-Array wie erwartet funktioniert:
 
-   - If the potentiometer's value is below 200, all LEDs should be off.
-   - If the value is between 200 and 600, the first LED should be on.
-   - If the value is between 600 and 1000, the first two LEDs should be on.
-   - If the value exceeds 1000, all LEDs should be on.
+   - Wenn der Potentiometerwert unter 200 liegt, sollten alle LEDs aus sein.
+   - Wenn der Wert zwischen 200 und 600 liegt, sollte die erste LED leuchten.
+   - Wenn der Wert zwischen 600 und 1000 liegt, sollten die ersten beiden LEDs leuchten.
+   - Wenn der Wert über 1000 liegt, sollten alle LEDs leuchten.
 
-**Question**
+**Frage**
 
-In the code, we determine the number of LEDs to light up based on the value of the potentiometer. How can we modify the code so that, while lighting up the LEDs, their brightness changes in accordance with the potentiometer?
+Im Code bestimmen wir die Anzahl der LEDs, die basierend auf dem Wert des Potentiometers leuchten. Wie können wir den Code so ändern, dass sich während des Leuchtens der LEDs deren Helligkeit entsprechend dem Potentiometerwert ändert?
 
-**Summary**
+**Zusammenfassung**
 
-In this comprehensive lesson, you've learned to create an interactive LED display that responds to a potentiometer. Starting with circuit building, you've assembled a system that incorporates multiple LEDs controlled via digital pins, linked to a potentiometer that adjusts their states based on its readings. Through step-by-step instructions, you've successfully programmed your Arduino to manage different lighting scenarios based on specific potentiometer thresholds, enhancing your understanding of both hardware and software interactions.
+In dieser umfassenden Lektion haben Sie gelernt, ein interaktives LED-Display zu erstellen, das auf ein Potentiometer reagiert. Beginnend mit dem Aufbau der Schaltung haben Sie ein System zusammengebaut, das mehrere über digitale Pins gesteuerte LEDs beinhaltet, die mit einem Potentiometer verbunden sind, das deren Zustände basierend auf den gelesenen Werten anpasst. Schritt für Schritt haben Sie Ihren Arduino so programmiert, dass er verschiedene Beleuchtungsszenarien basierend auf bestimmten Potentiometer-Schwellenwerten steuert, was Ihr Verständnis für die Interaktion zwischen Hardware und Software vertieft.
 
-This course has equipped you with the skills to write efficient conditional structures, enabling your projects to react to precise changes in sensor inputs. By experimenting with different conditions, you've seen firsthand how the order and structure of your code affect the output and efficiency of your electronic projects.
+Dieser Kurs hat Ihnen die Fähigkeiten vermittelt, effiziente bedingte Strukturen zu schreiben, die es Ihren Projekten ermöglichen, präzise auf Änderungen von Sensoreingaben zu reagieren. Durch das Experimentieren mit verschiedenen Bedingungen haben Sie aus erster Hand erfahren, wie die Reihenfolge und Struktur Ihres Codes die Ausgabe und Effizienz Ihrer elektronischen Projekte beeinflussen kann.
 

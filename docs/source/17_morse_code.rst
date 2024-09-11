@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in die Welt von Raspberry Pi, Arduino und ESP32 zusammen mit anderen Enthusiasten ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Einblicke hinter die Kulissen.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Gewinnspielen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-17. Morse Code
+17. Morse-Code
 ========================
 
-Morse code is like a secret language using dots (.) and dashes (-) invented by Samuel Morse in the 1840s. It was created to send messages across long distances using telegraphs. Each letter of the alphabet and number is represented by a unique combination of these signals. For example, the most famous Morse code message is "SOS" (··· ––– ···), which is an international signal for help. Morse code used to be essential for communication before the invention of phones and the internet, and it was especially popular among ship and airplane operators. Today, it's fun to learn as a way to send secret messages to your friends!
+Der Morse-Code ist wie eine Geheimsprache, die aus Punkten (.) und Strichen (-) besteht und in den 1840er Jahren von Samuel Morse erfunden wurde. Er wurde entwickelt, um Nachrichten über weite Entfernungen mit Hilfe von Telegrafen zu übermitteln. Jeder Buchstabe des Alphabets und jede Zahl wird durch eine einzigartige Kombination dieser Signale dargestellt. Zum Beispiel ist die bekannteste Morsecode-Nachricht "SOS" (··· ––– ···), ein internationaler Hilferuf. Der Morsecode war vor der Erfindung von Telefonen und dem Internet unverzichtbar für die Kommunikation, insbesondere bei Schiffs- und Flugzeugbetreibern. Heute macht es Spaß, Morsecode zu lernen, um geheime Nachrichten an Freunde zu senden!
 
 .. raw:: html
 
@@ -24,42 +24,42 @@ Morse code is like a secret language using dots (.) and dashes (-) invented by S
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+In dieser Lektion wirst du lernen:
 
-* Understand the workings of an active buzzer.
-* Learn to code the SOS signal in Morse code, enabling you to send messages using Morse code with a buzzer.
+* Die Funktionsweise eines aktiven Summers verstehen.
+* Das SOS-Signal im Morsecode zu programmieren, sodass du Nachrichten mit einem Summer im Morsecode senden kannst.
 
 
-Morse Code Magic!
--------------------
+Morse-Code-Magie!
+---------------------
 
 .. image:: img/7_morse.jpeg
 
-Imagine inventing a way to send secret messages using just dots and dashes! That's what Samuel Morse did back in 1836 with Morse code. Initially a painter, Morse got inspired on a boat trip and later, with his buddy Alfred Vail, created the telegraph to send messages across wires.
+Stell dir vor, eine Möglichkeit zu erfinden, geheime Nachrichten nur mit Punkten und Strichen zu übermitteln! Genau das hat Samuel Morse 1836 mit dem Morsecode gemacht. Ursprünglich Maler, wurde Morse auf einer Schiffsreise inspiriert und entwickelte später zusammen mit seinem Kollegen Alfred Vail den Telegrafen, um Nachrichten über Drähte zu senden.
 
-Morse code uses dots (short signals) and dashes (long signals) to represent letters and numbers. The first Morse code message? "What hath God wrought"—sent in 1844 from Washington D.C. to Baltimore, kicking off the telegraph era.
+Der Morsecode verwendet Punkte (kurze Signale) und Striche (lange Signale), um Buchstaben und Zahlen darzustellen. Die erste gesendete Morsecode-Nachricht lautete "What hath God wrought" und wurde 1844 von Washington D.C. nach Baltimore übermittelt, was den Beginn des Telegrafen-Zeitalters markierte.
 
-Today, Morse code isn't used as much, but it's still cool for things like aviation and by amateur radio fans. Now, let's explore how Morse code works with Arduino and a buzzer and have some fun with this piece of communication history!
+Heute wird der Morsecode nicht mehr so häufig verwendet, ist aber in Bereichen wie der Luftfahrt und bei Amateurfunkern nach wie vor beliebt. Nun wollen wir erkunden, wie der Morsecode mit Arduino und einem Summer funktioniert, und dabei Spaß mit diesem Stück Kommunikationsgeschichte haben!
 
 
-Building the Circuit
------------------------
+Den Schaltkreis aufbauen
+----------------------------
 
-**Components Needed**
+**Benötigte Bauteile**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Active Buzzer
-     - 1 * Breadboard
-     - Jumper Wires
+     - 1 * Aktiver Summer
+     - 1 * Steckbrett
+     - Verbindungskabel
    * - |list_uno_r3| 
      - |list_active_buzzer| 
      - |list_breadboard| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USB-Kabel
      -
      - 
      - 
@@ -69,49 +69,49 @@ Building the Circuit
      - 
 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Anleitung**
 
-1. Locate an active buzzer which typically has a white sticker on the front and a sealed black back.
+1. Finde einen aktiven Summer, der normalerweise einen weißen Aufkleber auf der Vorderseite und eine versiegelte schwarze Rückseite hat.
 
 .. image:: img/7_beep_2.png
 
-Buzzers, as electronic sound devices, have a rich history that traces back to the 19th century. The precursor to modern buzzers is rooted in 1831, when Michael Faraday discovered electromagnetic induction, forming the foundational principle behind the operation of electromagnetic buzzers. Following Faraday's groundbreaking discovery, many scientists and inventors explored how to apply electromagnetic theories to practical devices. Today, Buzzers can be categorized as active and passive ones:
+Summersignale, als elektronische Klangerzeuger, haben eine reiche Geschichte, die bis ins 19. Jahrhundert zurückreicht. Der Vorläufer moderner Summer basiert auf der Entdeckung der elektromagnetischen Induktion durch Michael Faraday im Jahr 1831, welche das grundlegende Prinzip für den Betrieb elektromagnetischer Summer bildete. Nach Faradays bahnbrechender Entdeckung erkundeten viele Wissenschaftler und Erfinder die Anwendung elektromagnetischer Theorien auf praktische Geräte. Heute werden Summer in aktive und passive Typen unterteilt:
 
-**Active Buzzer**
+**Aktiver Summer**
 
 .. image:: img/7_beep_ac.png
     :width: 300
     :align: center
 
-Sealed at the back, active buzzers contain an internal oscillator that sounds when powered, typically producing a single-tone beep.
+Aktive Summer sind an der Rückseite versiegelt und enthalten einen internen Oszillator, der bei Stromzufuhr einen Einzelton erzeugt.
 
-**Passive Buzzer**
+**Passiver Summer**
 
 .. image:: img/7_beep_pa.png
     :width: 300
     :align: center
 
-Open at the back, passive buzzers require an external frequency signal from a microcontroller to generate sound, allowing for a range of tones.
+Passive Summer haben eine offene Rückseite und benötigen ein externes Frequenzsignal von einem Mikrocontroller, um Töne zu erzeugen, was eine Vielzahl von Klängen ermöglicht.
 
-1. Active buzzer is also polar device. The front side has a "+" sign indicating its positive terminal (anode), which is also the longer pin. Now insert the buzzer into the breadboard with the anode in hole 15F and the cathode in hole 18F.
+1. Ein aktiver Summer ist auch ein polares Bauteil. Die Vorderseite hat ein "+"-Zeichen, das den positiven Anschluss (Anode) kennzeichnet, der auch der längere Pin ist. Stecke nun den Summer so in das Steckbrett, dass die Anode in Loch 15F und die Kathode in Loch 18F ist.
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-2. Connect the cathode to the GND pin on the Arduino Uno R3.
+2. Verbinde die Kathode mit dem GND-Pin des Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-3. If you insert the anode of the buzzer into the 5V pin of the Arduino Uno R3, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
+3. Wenn du die Anode des Summers in den 5V-Pin des Arduino Uno R3 steckst, hörst du sofort ein Geräusch vom aktiven Summer. Natürlich kannst du diese Methode auch nutzen, um zu überprüfen, ob dein Summer korrekt ist. Ein passiver Summer gibt keinen Ton von sich, wenn er direkt mit einer Stromquelle verbunden wird.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+4. Entferne nun das Kabel, das im 5V-Pin steckt, und stecke es in Pin 9 des Arduino Uno R3, damit der Summer über den Code gesteuert werden kann.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -119,98 +119,97 @@ Open at the back, passive buzzers require an external frequency signal from a mi
 
 
 
-Code Creation
-----------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson17_Morse_Code`` using ``Ctrl + S`` or by clicking “Save”.
+Code-Erstellung
+--------------------
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ die Option „Neue Skizze“ auswählst.
+2. Speichere deine Skizze als ``Lesson17_Morse_Code`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
+3. Erstelle zunächst eine Konstante namens ``buzzerPin`` und weise ihr den Wert für Pin 9 zu.
 
 .. code-block:: Arduino
     :emphasize-lines: 1
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
+        // Hier kommt der Setup-Code, der einmal ausgeführt wird:
     }
 
-4. Initialize the pin: In the ``void setup()`` function, set the buzzer pin to output mode.
+4. Initialisiere den Pin: In der Funktion ``void setup()`` setze den Summer-Pin auf den Ausgangsmodus.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Hier kommt der Setup-Code, der einmal ausgeführt wird:
+        pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
     }
 
-5. Making an active buzzer sound an alert is as simple as lighting an LED; you just need to use ``digitalWrite()`` to set pin 9 high or low and ``delay()`` to control the timing.
+5. Einen aktiven Summer einen Ton ausgeben zu lassen, ist genauso einfach wie eine LED zu steuern; du musst nur ``digitalWrite()`` verwenden, um Pin 9 auf HIGH oder LOW zu setzen, und mit ``delay()`` die Zeitsteuerung kontrollieren.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-13
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Hier kommt der Setup-Code, der einmal ausgeführt wird:
+        pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-        delay(250);                     // Beep duration: 250 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-        delay(250);                     // Interval between signals: 250 milliseconds
+        // Hier kommt der Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(buzzerPin, HIGH);  // Schaltet den Summer ein
+        delay(250);                     // Tonlänge: 250 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schaltet den Summer aus
+        delay(250);                     // Abstand zwischen Signalen: 250 Millisekunden
     }
 
-6. You can upload your code to the Arduino Uno R3, and then you will hear the "beep beep" sound.
+6. Du kannst deinen Code auf das Arduino Uno R3 hochladen, dann wirst du den „Beep-Beep“-Ton hören.
 
-
-7. To make the buzzer emit Morse code, you need to create two functions after ``void loop()``, for emitting dots (short signals) and dashes (long signals).
+7. Um den Summer Morsecode ausgeben zu lassen, musst du zwei Funktionen nach ``void loop()`` erstellen, eine für Punkte (kurze Signale) und eine für Striche (lange Signale).
 
 .. note::
 
-    In Morse code, there are traditional timing rules for dots (short signals), dashes (long signals), and the intervals between signals to ensure the message is accurately received and understood. Here are some basic rules:
+    Im Morsecode gibt es traditionelle Zeitregeln für Punkte (kurze Signale), Striche (lange Signale) und die Abstände zwischen den Signalen, um sicherzustellen, dass die Nachricht korrekt empfangen und verstanden wird. Hier sind einige Grundregeln:
 
-    * Length of a dot: the basic time unit.
-    * Length of a dash: equals three dots.
-    * Interval between dots: the length of one dot.
-    * Interval within a character (between dots and dashes of a letter or number): the length of one dot.
-    * Interval between characters (e.g., between two letters): three dots.
-    * Interval between words (e.g., between two words): seven dots.
+    * Länge eines Punktes: die Basiseinheit der Zeit.
+    * Länge eines Strichs: entspricht drei Punkten.
+    * Abstand zwischen Punkten: die Länge eines Punktes.
+    * Abstand innerhalb eines Zeichens (zwischen Punkten und Strichen eines Buchstabens oder einer Zahl): die Länge eines Punktes.
+    * Abstand zwischen Zeichen (z. B. zwischen zwei Buchstaben): drei Punkte.
+    * Abstand zwischen Wörtern (z. B. zwischen zwei Wörtern): sieben Punkte.
 
-    Therefore, we set the length of a dot to 250ms, a dash to 750ms, and the interval between elements to 250ms.
+    Daher setzen wir die Länge eines Punktes auf 250 ms, eines Strichs auf 750 ms und den Abstand zwischen den Elementen auf 250 ms.
 
 .. code-block:: Arduino
     :emphasize-lines: 9-14,16-21
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-        delay(250);                     // Beep duration: 250 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-        delay(250);                     // Interval between signals: 250 milliseconds
+        // Hier kommt der Hauptcode, der wiederholt ausgeführt wird:
+        digitalWrite(buzzerPin, HIGH);  // Schaltet den Summer ein
+        delay(250);                     // Tonlänge: 250 Millisekunden
+        digitalWrite(buzzerPin, LOW);   // Schaltet den Summer aus
+        delay(250);                     // Abstand zwischen Signalen: 250 Millisekunden
     }
 
     void dot() {
         digitalWrite(buzzerPin, HIGH);
-        delay(250);  // Short duration for a dot
+        delay(250);  // Kurze Dauer für einen Punkt
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Abstand zwischen Signalen
     }
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // Längere Dauer für einen Strich
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Abstand zwischen Signalen
     }
 
-8. Now, you can transmit Morse code. For example, to send "SOS" (... --- ...), the Morse code for 'S' consists of three dots, and 'O' is three dashes, so you simply call the dot and dash functions three times respectively.
+8. Jetzt kannst du Morsecode senden. Um zum Beispiel "SOS" (... --- ...) zu senden, besteht der Morsecode für 'S' aus drei Punkten, und 'O' aus drei Strichen. Du rufst also einfach die Funktionen dot und dash jeweils dreimal auf.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-11
@@ -225,18 +224,18 @@ Code Creation
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // Wiederholen nach einer kurzen Pause
     }
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3, after which you will hear the Morse code for "SOS" (... --- ...).
+9. Hier ist dein vollständiger Code. Du kannst nun auf "Hochladen" klicken, um den Code auf das Arduino Uno R3 hochzuladen, danach wirst du den Morsecode für "SOS" (... --- ...) hören.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Weist Pin 9 der Konstanten für den Summer zu
     
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Hier kommt der Setup-Code, der einmal ausgeführt wird:
+        pinMode(buzzerPin, OUTPUT);  // Setzt Pin 9 auf Ausgang
     }
 
     void loop() {
@@ -249,45 +248,43 @@ Code Creation
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // Wiederholen nach einer kurzen Pause
     }
 
     void dot() {
         digitalWrite(buzzerPin, HIGH);
-        delay(250);  // Short duration for a dot
+        delay(250);  // Kurze Dauer für einen Punkt
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Abstand zwischen Signalen
     }
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // Längere Dauer für einen Strich
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Abstand zwischen Signalen
     }
 
+10. Vergiss nicht, deinen Code zu speichern und deinen Arbeitsplatz aufzuräumen.
 
-10. Finally, remember to save your code and tidy up your workspace.
 
+**Zusammenfassung**
 
-**Summary**
+In dieser Lektion hast du die Grundlagen des Morsecodes erkundet, einer einzigartigen Kommunikationsform, die in den 1840er Jahren von Samuel Morse entwickelt wurde. Du hast gelernt, wie man einen aktiven Summer verwendet, um den Morsecode für SOS, ein weltweit anerkanntes Notsignal, zu senden. Diese Lektion hat dir nicht nur gezeigt, wie man einen aktiven Summer einrichtet und programmiert, sondern dir auch einen Einblick in die historische Bedeutung des Morsecodes in der Telekommunikation gegeben. Mit diesen Fähigkeiten kannst du nun geheime Morsecode-Nachrichten an Freunde senden oder die Anwendungen des Morsecodes in modernen Geräten weiter erkunden.
 
-In this lesson, you've explored the basics of Morse code, a unique form of communication developed in the 1840s by Samuel Morse. You learned how to use an active buzzer to send the Morse code for SOS, a universally recognized distress signal. This lesson not only taught you how to set up and code an active buzzer but also gave you a glimpse into the historical significance of Morse code in telecommunications. With these skills, you can now send secret Morse code messages to friends or further explore its applications in modern devices.
-
-In this lesson, we only used the Morse codes for the letters "S" and "O." Here is the chart of the Morse code 26 letters and 10 numerals.
-
+In dieser Lektion haben wir nur die Morsecodes für die Buchstaben "S" und "O" verwendet. Hier ist die Tabelle mit den Morsecodes für die 26 Buchstaben und 10 Ziffern.
 
 .. list-table::
     :widths: 8 8 8 8 8 8 8 8
     :header-rows: 1
 
-    * - Letter
+    * - Buchstabe
       - Code
-      - Letter
+      - Buchstabe
       - Code
-      - Letter
+      - Buchstabe
       - Code
-      - Letter
+      - Buchstabe
       - Code
     * - A
       - \.-
@@ -361,11 +358,8 @@ In this lesson, we only used the Morse codes for the letters "S" and "O." Here i
       - \-\-\-\-.
       -
       -
-  
 
+**Frage**
 
-**Question**
-
-Using the Morse code table provided, write a code to send the message "Hello".
-
+Verwende die bereitgestellte Morsecode-Tabelle und schreibe einen Code, um die Nachricht "Hello" zu senden.
 

@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum solltest du beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitig Einblicke in neue Produktankündigungen und Sneak Peeks.
+    - **Sonderrabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und saisonalen Aktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu entdecken und zu kreieren? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-9. Dimmable Desk Lamp
+9. Dimmbarer Schreibtischlampe
 =============================================
 
-Imagine every desk lamp at home, gently casting light over your evening reads or late-night projects. Have you ever wondered how these lamps manage to adjust their brightness so seamlessly? In this lesson, we dive into the mechanics and electronics behind a desk lamp, transforming curiosity into knowledge as we build one from scratch using Arduino.
+Stell dir jede Schreibtischlampe zu Hause vor, die sanft Licht über deine Abendlektüren oder nächtlichen Projekte wirft. Hast du dich jemals gefragt, wie diese Lampen es schaffen, ihre Helligkeit so nahtlos anzupassen? In dieser Lektion tauchen wir in die Mechanik und Elektronik einer Schreibtischlampe ein und verwandeln Neugier in Wissen, indem wir eine solche Lampe von Grund auf mit Arduino bauen.
 
 .. .. image:: img/9_desk_lamp_pot.jpg
 ..     :width: 500
@@ -28,296 +28,293 @@ Imagine every desk lamp at home, gently casting light over your evening reads or
         Your browser does not support the video tag.
     </video>
 
-Get ready to:
+Mach dich bereit, um:
 
-* Decode the role of variables in storing and manipulating data within Arduino sketches.
-* Master reading analog signals with ``analogRead()``.
-* Explore PWM through ``analogWrite()`` to fine-tune LED brightness.
+* Die Rolle von Variablen zu entschlüsseln, die Daten in Arduino-Skizzen speichern und manipulieren.
+* Das Lesen analoger Signale mit ``analogRead()`` zu meistern.
+* PWM (Pulsweitenmodulation) durch ``analogWrite()`` zu erkunden, um die Helligkeit von LEDs fein zu justieren.
 
-By the end of this lesson, not only will you have crafted a fully functional electronic desk lamp, but you'll also have deepened your understanding of how software interacts with hardware to bring everyday objects to life. Let’s illuminate our knowledge by building a desk lamp that responds to your touch.
+Am Ende dieser Lektion wirst du nicht nur eine voll funktionsfähige elektronische Schreibtischlampe gebaut haben, sondern auch dein Verständnis dafür vertieft haben, wie Software mit Hardware interagiert, um alltägliche Objekte zum Leben zu erwecken. Lass uns unser Wissen erhellen, indem wir eine Lampe bauen, die auf deine Berührung reagiert.
 
 
-Build the Circuit
+Den Schaltkreis aufbauen
 ------------------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LEDs
-     - 1 * 220Ω Resistor
+     - 1 * Rote LED
+     - 1 * 220Ω Widerstand
      - 1 * Potentiometer
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * USB Cable
+   * - 1 * USB-Kabel
      - 1 * Breadboard
-     - Jumper Wires
+     - Jumper-Kabel
      - 1 * Multimeter
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_meter|
 
-**Building Steps**
+**Schritte zum Aufbau**
 
-1. Find a Potentiometer.
+1. Finde ein Potentiometer.
 
-A potentiometer, often called a pot, serves as a variable resistor, meaning it can adjust its resistance from nearly zero to its maximum limit. Most potentiometers are marked with their range. The one included in your kit is designated as a 103 (10K) potentiometer, which equates to 10 kilo-ohms or 10,000 ohms.
+Ein Potentiometer, oft einfach „Poti“ genannt, dient als variabler Widerstand. Das bedeutet, dass es seinen Widerstand von nahezu null bis zu seinem Maximalwert anpassen kann. Die meisten Potentiometer sind mit ihrem Bereich gekennzeichnet. Das Potentiometer in deinem Kit ist als 103 (10K) Potentiometer bezeichnet, was 10 Kiloohm oder 10.000 Ohm entspricht.
 
 .. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
-Inside the potentiometer is a strip of resistive material with a slider that moves along it. Each end of the resistive material is connected to a terminal or pin, shown below as pins A and B. The resistance between pins A and B is fixed and represents the maximum resistance the potentiometer can offer. For the ones in your kit, the maximum resistance is 10 kilo-ohms.
+Im Inneren des Potentiometers befindet sich ein Streifen aus Widerstandsmaterial mit einem Schieberegler, der sich entlang dieses Streifens bewegt. Jeder Endpunkt des Widerstandsmaterials ist mit einem Anschluss oder Pin verbunden, hier als Pins A und B dargestellt. Der Widerstand zwischen den Pins A und B ist fest und stellt den maximalen Widerstand dar, den das Potentiometer bieten kann. Bei den in deinem Kit enthaltenen beträgt dieser maximale Widerstand 10 Kiloohm.
 
 .. image:: img/9_dimmer_pot_2.png
     :width: 400
     :align: center
 
-* **A**: Connect to power
-* **B**: Connect to ground
-* **C**: Connect to analog pin
-* **D**: Slider
-* **E**: Resistive strip
+* **A**: Mit Strom verbinden
+* **B**: Mit Masse verbinden
+* **C**: Mit Analogpin verbinden
+* **D**: Schieberegler
+* **E**: Widerstandsstreifen
 
-The Pin C connects to the slider. The resistance through the slider, or Pin C, depends on the slider's position along the resistive material.
+Pin C ist mit dem Schieberegler verbunden. Der Widerstand durch den Schieberegler oder Pin C hängt von der Position des Schiebers auf dem Widerstandsmaterial ab.
 
 .. image:: img/9_dimmer_pot_3.png
     :width: 400
     :align: center
 
-In schematic diagrams, the symbol for a potentiometer typically looks like a resistor with an arrow through the middle.
+In Schaltplänen sieht das Symbol für ein Potentiometer typischerweise aus wie ein Widerstand mit einem Pfeil durch die Mitte.
 
 .. image:: img/9_dimmer_pot_4.png
     :width: 200
     :align: center
 
 
-Now let's explore how the potentiometer adjusts resistance in a circuit.
+Nun wollen wir sehen, wie das Potentiometer den Widerstand in einem Stromkreis einstellt.
 
-2. Connect a potentiometer to the breadboard. Insert its three pins into holes 30G, 29F, 28G.
+2. Schließe das Potentiometer an das Breadboard an. Stecke seine drei Pins in die Löcher 30G, 29F und 28G.
 
 .. note::
-    The potentiometer has a label "P 103", indicating its resistance range. Please insert the potentiometer into the breadboard as shown, with the labeled side facing you.
+    Das Potentiometer trägt die Aufschrift "P 103", was auf seinen Widerstandsbereich hinweist. Setze das Potentiometer wie gezeigt in das Breadboard ein, wobei die beschriftete Seite zu dir zeigt.
 
 .. image:: img/9_dimmer_test_pot.png
     :width: 500
     :align: center
 
-
-3. To measure the resistance of the potentiometer, you need to insert a wire into 29J and then touch it with the red test lead, and insert another wire into 28J and touch it with the black lead.
+3. Um den Widerstand des Potentiometers zu messen, steckst du ein Kabel in 29J und berührst es mit der roten Prüfspitze, und ein weiteres Kabel in 28J, das du mit der schwarzen Prüfspitze berührst.
 
 .. image:: img/9_dimmer_test_wore.png
     :width: 500
     :align: center
 
-4. Set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+4. Stelle das Multimeter auf den Widerstandsmessbereich von 20 Kiloohm (20K) ein.
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-5. Rotate the potentiometer to the "1" position indicated in the diagram.
+5. Drehe das Potentiometer auf die "1"-Position, wie im Diagramm angegeben.
 
 .. image:: img/9_pot_direction.png
     :width: 300
     :align: center
     
-6. Record the measured resistance values in the table.
+6. Trage die gemessenen Widerstandswerte in die Tabelle ein.
 
 .. note::
-    The values in the table are my measurements; your results may vary. Fill them out according to your actual findings.
+    Die Werte in der Tabelle sind meine Messungen; deine Ergebnisse können variieren. Trage sie entsprechend deinen tatsächlichen Messungen ein.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Measurement Point
-     - Resistance (kilohm)
+   * - Messpunkt
+     - Widerstand (Kiloohm)
    * - 1
-     - *1.52*
+     - *1,52*
    * - 2
      -
    * - 3
      -
 
-7. Rotate the potentiometer clockwise to positions 2 and 3 to measure the resistance at each point, and record the results in the table.
+7. Drehe das Potentiometer im Uhrzeigersinn auf die Positionen 2 und 3, um den Widerstand an jedem Punkt zu messen, und trage die Ergebnisse in die Tabelle ein.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Measurement Point
-     - Resistance (kilohm)
+   * - Messpunkt
+     - Widerstand (Kiloohm)
    * - 1
-     - *1.52*
+     - *1,52*
    * - 2
-     - *5.48*
+     - *5,48*
    * - 3
-     - *9.01*
+     - *9,01*
 
-From the measurement results:
+Aus den Messergebnissen:
 
-* As you rotate the potentiometer **clockwise** from position 1 to 3, the resistance between the position 2 and position 1 increases.
-* Conversely, rotating **counterclockwise** from position 3 to 1 will decrease the resistance between the position 2 and position 1.
+* Wenn du das Potentiometer **im Uhrzeigersinn** von Position 1 zu Position 3 drehst, erhöht sich der Widerstand zwischen Position 2 und Position 1.
+* Umgekehrt verringert sich der Widerstand zwischen Position 2 und Position 1, wenn du das Potentiometer **gegen den Uhrzeigersinn** von Position 3 zu Position 1 drehst.
 
-8. Insert the other end of the jumper wire from 28J into the negative terminal of the breadboard.
+8. Stecke das andere Ende des Jumperkabels von 28J in den negativen Anschluss des Breadboards.
 
 .. image:: img/9_dimmer_led1_pot_gnd.png
     :width: 500
     :align: center
 
-9. Then, insert the other end of the jumper wire from 29J into the A0 pin of the Arduino Uno R3.
+9. Stecke dann das andere Ende des Jumperkabels von 29J in den A0-Pin des Arduino Uno R3.
 
 .. image:: img/9_dimmer_led1_pot_a0.png
     :width: 500
     :align: center
 
-10. Finally, connect the potentiometer to 5V by inserting a jumper wire between hole 30J on the breadboard and the 5V pin on the Arduino Uno R3.
+10. Verbinde schließlich das Potentiometer mit 5V, indem du ein Jumperkabel zwischen Loch 30J des Breadboards und den 5V-Pin des Arduino Uno R3 einfügst.
 
 .. image:: img/9_dimmer_led1_pot_5v.png
     :width: 500
     :align: center
 
-
-11. Connect the GND pin of the Arduino Uno R3 to the negative terminal of the breadboard using a long jumper wire.
+11. Verbinde den GND-Pin des Arduino Uno R3 mit dem negativen Anschluss des Breadboards, indem du ein langes Jumperkabel verwendest.
 
 .. image:: img/9_dimmer_led1_gnd.png
     :width: 500
     :align: center
 
-12. Take out an LED. Insert its anode (longer pin) into hole 13A, and its cathode (shorter pin) into the negative terminal of the breadboard.
+12. Nimm eine LED heraus. Stecke ihre Anode (langer Pin) in Loch 13A und ihre Kathode (kurzer Pin) in den negativen Anschluss des Breadboards.
 
 .. image:: img/9_dimmer_led1_led.png
     :width: 500
     :align: center
 
-13. Place a 220 ohms resistor between holes 13E and 13G.
+13. Platziere einen 220-Ohm-Widerstand zwischen den Löchern 13E und 13G.
 
 .. image:: img/9_dimmer_led1_resistor.png
     :width: 500
     :align: center
 
-14. Connect the hole 13J on the breadboard to pin 9 on the Arduino Uno R3 with a wire.
+14. Verbinde das Loch 13J des Breadboards mit Pin 9 des Arduino Uno R3 mithilfe eines Kabels.
 
 .. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
-**Question**:
+**Frage**:
 
-How do you think the voltage at A0 would change when the potentiometer is turned clockwise and counterclockwise?
+Wie denkst du, würde sich die Spannung an A0 ändern, wenn das Potentiometer im Uhrzeigersinn bzw. gegen den Uhrzeigersinn gedreht wird?
 
 
-Code Creation
+Codeerstellung
 -------------------------------------
 
-In this lesson, we aim to adjust the brightness of the LED based on the rotation of the potentiometer.
+In dieser Lektion wollen wir die Helligkeit der LED basierend auf der Drehung des Potentiometers anpassen.
 
-Here's what the pseudocode might look like:
+So könnte der Pseudocode aussehen:
 
 .. code-block::
 
-    Create variable to store input information.
-    Set a pin as output.
-    Begin main loop:
-        Store the potentiometer value in a variable.
-        Set the LED brightness based on the potentiometer variable.
-    End main loop.
+    Erstelle eine Variable, um die Eingabewerte zu speichern.
+    Setze einen Pin als Ausgang fest.
+    Beginne die Hauptschleife:
+        Speichere den Wert des Potentiometers in einer Variable.
+        Setze die LED-Helligkeit basierend auf der Potentiometer-Variable.
+    Beende die Hauptschleife.
 
-**Pin Initialization**
+**Pin-Initialisierung**
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson9_Desk_Lamp`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du im Menü „Datei“ die Option „Neue Skizze“ auswählst.
+2. Speichere deine Skizze unter dem Namen ``Lesson9_Desk_Lamp`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. The LED in your circuit is connected to digital pin on the Arduino Uno R3, set as output. Remember to add a comment.
-
+3. Die LED in deinem Schaltkreis ist an einen digitalen Pin des Arduino Uno R3 angeschlossen, der als Ausgang definiert werden muss. Vergiss nicht, einen Kommentar hinzuzufügen.
 
 .. note::
 
-    The potentiometer is an analog input device connected to the analog pin A0. All analog pins on Arduino are input pins, which means they do not need to be declared as INPUT like digital pins.
+    Das Potentiometer ist ein analoges Eingabegerät, das mit dem analogen Pin A0 verbunden ist. Alle analogen Pins am Arduino sind Eingänge und müssen daher nicht wie digitale Pins als INPUT deklariert werden.
     
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Setze Pin 9 als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hauptcode, der wiederholt ausgeführt wird:
     }
 
-**Variable Declaration**
+**Variablendeklaration**
 
-To control the fading of LED using a potentiometer, you need a **variable** to store the value from the potentiometer.
+Um die LED mit einem Potentiometer zu steuern, benötigst du eine **Variable**, um den Wert des Potentiometers zu speichern.
 
-Let's dive into the concept of variables in programming. A variable acts like a container in your program, allowing you to store and later retrieve information.
+Tauchen wir in das Konzept der Variablen in der Programmierung ein. Eine Variable funktioniert wie ein Behälter in deinem Programm und erlaubt es dir, Informationen zu speichern und später abzurufen.
 
 .. image:: img/9_variable_define.png
     :width: 400
     :align: center
 
-Before using a variable, it must be declared, which is known as variable declaration.
+Bevor du eine Variable verwendest, muss sie deklariert werden, was als Variablendeklaration bezeichnet wird.
 
-To declare a variable, you must define its type and name. It is not necessary to assign a value to the variable at the moment of declaration—you can assign it later in your sketch. Here is how you can declare a variable:
+Um eine Variable zu deklarieren, musst du ihren Typ und ihren Namen definieren. Es ist nicht notwendig, der Variablen sofort einen Wert zuzuweisen – dies kann später im Sketch erfolgen. So kannst du eine Variable deklarieren:
 
 .. code-block:: Arduino
 
     int var;
 
-Here, ``int`` is the data type used for integers, capable of storing values from -32768 to 32767. Variables can store various types of data, including ``float``, ``byte``, ``boolean``, ``char``, and ``string``.
+Hier ist ``int`` der Datentyp für ganze Zahlen, der Werte von -32768 bis 32767 speichern kann. Variablen können verschiedene Datentypen speichern, darunter ``float``, ``byte``, ``boolean``, ``char`` und ``string``.
 
-Variable names can be anything you choose, such as ``i``, ``apple``, ``Bruce``, ``R2D2``, or ``Sectumsempra``. However, there are rules for naming:
+Variablennamen können beliebig sein, zum Beispiel ``i``, ``apple``, ``Bruce``, ``R2D2`` oder ``Sectumsempra``. Es gibt jedoch Regeln für die Namensgebung:
 
-* Names can include letters, digits, and underscores, but not spaces or special characters like !, #, %, etc.
+* Namen dürfen Buchstaben, Ziffern und Unterstriche enthalten, aber keine Leerzeichen oder Sonderzeichen wie !, #, % usw.
 
   .. image:: img/9_variable_name1.png
     :width: 400
     :align: center
 
-* Names must start with a letter or an underscore (_). They cannot begin with a number.
+* Namen müssen mit einem Buchstaben oder einem Unterstrich (_) beginnen. Sie dürfen nicht mit einer Zahl beginnen.
 
   .. image:: img/9_variable_name2.png
     :width: 400
     :align: center
 
-* Names are case sensitive. ``myCat`` and ``mycat`` would be considered different variables.
+* Namen sind case-sensitive. ``myCat`` und ``mycat`` würden als unterschiedliche Variablen betrachtet werden.
 
-* Avoid using keywords that the Arduino IDE recognizes and highlights, like ``int``, which it colors to indicate special significance. If the name turns a color like orange or blue, it's a keyword and should be avoided as a variable name.
+* Vermeide die Verwendung von Schlüsselwörtern, die von der Arduino IDE erkannt und hervorgehoben werden, wie ``int``, das farblich hervorgehoben wird, um seine besondere Bedeutung zu zeigen. Wenn der Name eine Farbe wie Orange oder Blau annimmt, ist es ein Schlüsselwort und sollte nicht als Variablenname verwendet werden.
 
 
-The scope of a variable determines where it can be used in your sketch, based on where it is declared. 
+Der Geltungsbereich einer Variable bestimmt, wo sie in deinem Sketch verwendet werden kann, abhängig davon, wo sie deklariert wird.
 
-* A variable declared outside all functions (i.e., outside any braces) is a global variable and can be used anywhere in your sketch. 
-* A variable declared within a function (within a set of braces) is a local variable and can only be used within that function.
+* Eine außerhalb aller Funktionen (d.h. außerhalb von geschweiften Klammern) deklarierte Variable ist eine globale Variable und kann überall im Sketch verwendet werden.
+* Eine innerhalb einer Funktion (innerhalb von geschweiften Klammern) deklarierte Variable ist eine lokale Variable und kann nur innerhalb dieser Funktion verwendet werden.
 
 .. code-block:: Arduino
     :emphasize-lines: 1,4,9
 
-    int global_variable = 0; // This is a global variable
+    int global_variable = 0; // Dies ist eine globale Variable
 
     void setup() {
-        int variable = 0; // This is a local variable
+        int variable = 0; // Dies ist eine lokale Variable
     }
 
     void loop() {
-        int variable = 0; // This is another local variable
+        int variable = 0; // Dies ist eine weitere lokale Variable
     }
 
 .. note::
 
-    Local variables can only be used within the functions where they are declared, meaning you can declare variables with the same name in different functions without issue. However, avoid using the same name for local and global variables to prevent confusion.
+    Lokale Variablen können nur innerhalb der Funktionen verwendet werden, in denen sie deklariert wurden. Das bedeutet, dass du Variablen mit dem gleichen Namen in verschiedenen Funktionen ohne Probleme deklarieren kannst. Vermeide jedoch die Verwendung desselben Namens für lokale und globale Variablen, um Verwirrung zu vermeiden.
 
-Typically, an Arduino sketch should follow a consistent pattern: declare global variables first, then define the ``void setup()`` function, and finally, the ``void loop()`` function.
+In der Regel sollte ein Arduino-Sketch einem konsistenten Muster folgen: Zuerst werden globale Variablen deklariert, dann die ``void setup()``-Funktion definiert und schließlich die ``void loop()``-Funktion.
 
-4. Go to the very start of your sketch, before the ``void setup()`` function. Here you will declare your variable to store value from the potentiometer.
+4. Gehe ganz an den Anfang deines Sketches, vor die ``void setup()``-Funktion. Hier deklarierst du die Variable, um den Wert vom Potentiometer zu speichern.
 
 .. code-block:: Arduino
     :emphasize-lines: 1
@@ -325,40 +322,40 @@ Typically, an Arduino sketch should follow a consistent pattern: declare global 
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Setze Pin 9 als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hauptcode, der wiederholt ausgeführt wird:
     }
 
-You have just declared an integer variable named ``potValue`` and set it to zero. This variable will be used later in your sketch to store the potentiometer's output.
+Du hast gerade eine Integer-Variable namens ``potValue`` deklariert und auf Null gesetzt. Diese Variable wird später im Sketch verwendet, um den Ausgangswert des Potentiometers zu speichern.
 
-**Reading Analog Values**
+**Analogwerte lesen**
 
-You're now ready to enter the main loop of the program. The first thing you'll do in the ``void loop()`` function is determine the value of the potentiometer.
+Nun bist du bereit, die Hauptschleife des Programms zu betreten. Das Erste, was du in der ``void loop()``-Funktion tun wirst, ist den Wert des Potentiometers zu ermitteln.
 
-The potentiometer is connected to a 5-volt power pin, allowing the voltage at pin A0 to range from 0 to 5 volts. This voltage is then converted by the Arduino Uno R3's microprocessor into an analog value ranging from 0 to 1023, thanks to the microprocessor's 10-bit resolution.
+Das Potentiometer ist an einen 5-Volt-Pin angeschlossen, wodurch die Spannung am Pin A0 zwischen 0 und 5 Volt variieren kann. Diese Spannung wird vom Mikroprozessor des Arduino Uno R3 in einen Analogwert von 0 bis 1023 umgewandelt, dank der 10-Bit-Auflösung des Mikroprozessors.
 
-Once converted, these analog values can be utilized within your program.
+Einmal umgewandelt, können diese Analogwerte im Programm verwendet werden.
 
-To fetch the analog value from the potentiometer, use the ``analogRead(pin)`` command. This command reads the voltage entering an analog pin and maps it to a value between 0 and 1023:
+Um den Analogwert des Potentiometers abzurufen, verwende den Befehl ``analogRead(pin)``. Dieser liest die an einem analogen Pin anliegende Spannung und ordnet sie einem Wert zwischen 0 und 1023 zu:
 
-- If there is no voltage, the analog value is 0.
-- If the voltage is a full 5 volts, the analog value will be 1023.
+- Liegt keine Spannung an, ist der Analogwert 0.
+- Bei voller 5-Volt-Spannung beträgt der Analogwert 1023.
 
-Here is how to use it:
+So verwendest du den Befehl:
 
-    * ``analogRead(pin)``: Reads the value from the specified analog pin. 
+    * ``analogRead(pin)``: Liest den Wert vom angegebenen analogen Pin.
 
-    **Parameters**
-        - ``pin``: the name of the analog input pin to read from.
+    **Parameter**
+        - ``pin``: der Name des analogen Eingangs-Pins, von dem gelesen wird.
 
-    **Returns**
-        The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: int.
+    **Rückgabewert**
+        Der analoge Wert auf dem Pin, begrenzt auf die Auflösung des Analog-Digital-Wandlers (0-1023 für 10 Bit oder 0-4095 für 12 Bit). Datentyp: int.
 
-5. Place the following command inside the void ``loop()`` function to store the analog value from the potentiometer into the ``potValue`` variable declared at the top of your sketch:
+5. Platziere den folgenden Befehl in der ``void loop()``-Funktion, um den Analogwert des Potentiometers in der oben deklarierten Variable ``potValue`` zu speichern:
 
 .. code-block:: Arduino
     :emphasize-lines: 10
@@ -366,54 +363,54 @@ Here is how to use it:
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Setze Pin 9 als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        potValue = analogRead(A0);        // Read value from potentiometer
+        // Hauptcode, der wiederholt ausgeführt wird:
+        potValue = analogRead(A0);        // Lese den Wert vom Potentiometer
     }
 
+Speichere und überprüfe deinen Code, um eventuelle Fehler zu korrigieren.
 
-Make sure to save and verify your code to correct any errors.
 
-**Writing Analog Values**
+**Analogwerte schreiben**
 
-The digital pins on the Arduino Uno R3 are capable of either ON or OFF states, meaning they can't output true analog values. To simulate analog behavior for applications like controlling LED brightness, we use a technique called Pulse Width Modulation (PWM). PWM pins, which are marked with a tilde (~) on the board, can vary the perceived output by adjusting the duty cycle of the signal.
+Die digitalen Pins des Arduino Uno R3 können nur EIN- oder AUS-Zustände annehmen, was bedeutet, dass sie keine echten Analogwerte ausgeben können. Um ein analoges Verhalten wie die Steuerung der Helligkeit einer LED zu simulieren, verwenden wir eine Technik namens Pulsweitenmodulation (PWM). PWM-Pins, die auf der Platine mit einer Tilde (~) markiert sind, können den wahrgenommenen Ausgangswert durch Anpassung des Tastverhältnisses des Signals variieren.
 
 .. image:: img/9_dimmer_pwm_pin.png
     :width: 500
     :align: center
 
-To control an LED's brightness, we use the ``analogWrite(pin, value)`` command. This adjusts the LED's brightness by changing the duty cycle of the PWM signal sent to the pin.
+Um die Helligkeit einer LED zu steuern, verwenden wir den Befehl ``analogWrite(pin, value)``. Dieser passt die Helligkeit der LED an, indem das Tastverhältnis des PWM-Signals, das an den Pin gesendet wird, verändert wird.
 
-    * ``analogWrite(pin, value)``: Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. 
+    * ``analogWrite(pin, value)``: Schreibt einen analogen Wert (PWM-Signal) an einen Pin. Kann verwendet werden, um eine LED in unterschiedlicher Helligkeit zu betreiben oder einen Motor mit verschiedenen Geschwindigkeiten anzutreiben.
 
-    **Parameters**
-        - ``pin``: the Arduino pin to write to. Allowed data types: int.
-        - ``value``: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: int.
+    **Parameter**
+        - ``pin``: Der Arduino-Pin, auf den geschrieben wird. Erlaubte Datentypen: int.
+        - ``value``: Das Tastverhältnis: zwischen 0 (immer aus) und 255 (immer an). Erlaubte Datentypen: int.
     
-    **Returns**
-        Nothing
+    **Rückgabewert**
+        Nichts
 
-Think of the duty cycle like a faucet's on and off pattern that controls water flow into a bucket, which represents LED brightness. Here's a simple breakdown:
+Betrachte das Tastverhältnis wie ein Wasserhahn, der den Wasserfluss (LED-Helligkeit) in einen Eimer regelt. Hier ist eine einfache Übersicht:
 
-* ``analogWrite(255)`` means the faucet is fully open all the time, making the bucket full and the LED brightest.
-* ``analogWrite(191)`` means the faucet is open 75% of the time, making the bucket less full and the LED dimmer.
-* ``analogWrite(0)`` means the faucet is completely closed, leaving the bucket empty and the LED off.
+* ``analogWrite(255)`` bedeutet, dass der Wasserhahn die ganze Zeit vollständig offen ist, wodurch der Eimer voll und die LED am hellsten ist.
+* ``analogWrite(191)`` bedeutet, dass der Wasserhahn 75 % der Zeit offen ist, wodurch der Eimer weniger voll und die LED dunkler ist.
+* ``analogWrite(0)`` bedeutet, dass der Wasserhahn vollständig geschlossen ist, der Eimer leer bleibt und die LED aus ist.
 
 .. image:: img/9_pwm_signal.png
     :width: 400
     :align: center
 
-6. Add an ``analogWrite()`` command in the ``void loop()`` function and comment each line for clarity:
+6. Füge einen ``analogWrite()``-Befehl in die ``void loop()``-Funktion ein und kommentiere jede Zeile für eine bessere Übersichtlichkeit:
 
 .. note::
 
-    * Because the input range from the potentiometer is 0 to 1023, but the range for output to the LEDs is 0 to 255. To bridge this gap, you can scale down the potentiometer value by dividing it by 4:
+    * Da der Eingangsbereich des Potentiometers von 0 bis 1023 reicht, der Ausgangsbereich für die LEDs jedoch von 0 bis 255, kannst du den Wert des Potentiometers durch 4 teilen, um diese Lücke zu überbrücken:
 
-    * Although the division result might not always be an integer, only the integer part is stored because the variables are declared as integers (int).
+    * Obwohl das Ergebnis der Division möglicherweise kein ganzzahliger Wert ist, wird nur der Ganzzahlanteil gespeichert, da die Variablen als Integer (int) deklariert sind.
 
 
 .. code-block:: Arduino
@@ -422,29 +419,28 @@ Think of the duty cycle like a faucet's on and off pattern that controls water f
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);  // Set pin 9 as output
+        // Setup-Code, der einmal ausgeführt wird:
+        pinMode(9, OUTPUT);  // Setze Pin 9 als Ausgang
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        potValue = analogRead(A0);        // Read value from potentiometer
-        analogWrite(9, potValue / 4);       // Apply brightness to LED on pin 9
+        // Hauptcode, der wiederholt ausgeführt wird:
+        potValue = analogRead(A0);        // Lese den Wert vom Potentiometer
+        analogWrite(9, potValue / 4);     // Wende die Helligkeit auf die LED an Pin 9 an
     }
 
-7. Once the code is uploaded to the Arduino Uno R3, turning the potentiometer will change the brightness of the LEDs. According to our setup, turning the potentiometer clockwise should increase the brightness, while turning it counterclockwise should decrease it.
+7. Sobald der Code auf das Arduino Uno R3 hochgeladen ist, verändert das Drehen des Potentiometers die Helligkeit der LEDs. Gemäß unserem Aufbau sollte das Drehen des Potentiometers im Uhrzeigersinn die Helligkeit erhöhen, während das Drehen gegen den Uhrzeigersinn sie verringert.
 
 .. note::
 
-    Debugging often requires checking both the code and the circuit for errors. If the code compiles correctly or seems correct but the LED do not change as expected, the issue may lie within the circuitry. Check all connections and components on the breadboard for good contact.
+    Debugging erfordert oft die Überprüfung sowohl des Codes als auch der Schaltung auf Fehler. Wenn der Code korrekt kompiliert oder korrekt erscheint, die LED jedoch nicht wie erwartet reagiert, könnte das Problem in der Schaltung liegen. Überprüfe alle Verbindungen und Komponenten auf dem Breadboard auf guten Kontakt.
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. Speichere abschließend deinen Code und räume deinen Arbeitsplatz auf.
 
-**Question**
+**Frage**
 
-If you connect the LED to a different pin, such as pin 8, and rotate the potentiometer, will the brightness of the LED still change? Why or why not?
+Wenn du die LED an einen anderen Pin anschließt, z. B. Pin 8, und das Potentiometer drehst, wird die Helligkeit der LED weiterhin geändert? Warum oder warum nicht?
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we explored how to work with analog signals in Arduino projects. We learned how to read analog values from a potentiometer, how to process these values in the Arduino sketch, and how to control the brightness of LED using Pulse Width Modulation (PWM). We also delved into the use of variable to store and manipulate data within our sketches. By integrating these elements, we demonstrated the dynamic control of electronic components, bridging the gap between simple digital outputs and more nuanced control of hardware through analog input readings.
-
+In dieser Lektion haben wir gelernt, wie man mit analogen Signalen in Arduino-Projekten arbeitet. Wir haben verstanden, wie man Analogwerte von einem Potentiometer liest, diese Werte im Arduino-Sketch verarbeitet und die Helligkeit einer LED mithilfe von Pulsweitenmodulation (PWM) steuert. Darüber hinaus haben wir den Einsatz von Variablen zur Speicherung und Manipulation von Daten in unseren Sketchen erlernt. Durch die Integration dieser Elemente haben wir eine dynamische Steuerung elektronischer Komponenten demonstriert und den Übergang von einfachen digitalen Ausgängen zu einer feineren Steuerung von Hardware über analoge Eingaben vollzogen.

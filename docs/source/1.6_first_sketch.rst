@@ -1,83 +1,84 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-1.6 Your First Sketch
+1.6 Dein erster Sketch
 ================================
 
-Now, let's learn how to send our awesome sketch to the Arduino board. It's like sending a message in a bottle, but way cooler because we're sending it through a USB cable!
+Jetzt lernen wir, wie wir unseren tollen Sketch an die Arduino-Platine senden. Es ist wie eine Nachricht in einer Flasche zu verschicken, aber viel cooler, weil wir sie über ein USB-Kabel schicken!
 
-**1. Start with an Example Project**
+**1. Beginnen wir mit einem Beispielprojekt**
 
-1. First, let's grab a project that's all set up for us. In the Arduino IDE, click on **File** -> **Examples** -> **Basic** -> **Blink**. This pops up a program that's like a cake ready for us to add our own decorations to!
+1. Zuerst holen wir uns ein Projekt, das bereits für uns vorbereitet ist. Klicke in der Arduino IDE auf **Datei** -> **Beispiele** -> **Basics** -> **Blink**. Es öffnet sich ein Programm, das wie ein fertiger Kuchen ist – bereit, von uns dekoriert zu werden!
 
     .. image:: img/1_ide_open_blink.png
         :align: center
 
-**2. Choose Your Board and Port**
+**2. Wähle deine Platine und den Port**
 
-1. Connect your Arduino Uno R3 to your computer with a USB cable. It's like plugging in a secret doorway to endless possibilities!
+1. Verbinde dein Arduino Uno R3 mit deinem Computer über ein USB-Kabel. Es ist wie das Einstecken einer geheimen Tür zu endlosen Möglichkeiten!
 
     .. image:: img/1_connect_uno_pc.jpg
         :width: 600
         :align: center
 
-2. Now, let's tell the IDE we're using an **Arduino Uno**. Click **Tools** -> **Board** -> **Arduino AVR Boards** -> **Arduino Uno**.
+2. Jetzt teilen wir der IDE mit, dass wir ein **Arduino Uno** verwenden. Klicke auf **Werkzeuge** -> **Platine** -> **Arduino AVR Boards** -> **Arduino Uno**.
 
     .. image:: img/1_ide_select_board.png
         :align: center
 
-3. We also need to pick the right port, like choosing the correct door to send our message through. Click **Tools** -> **Port**. 
+3. Wir müssen auch den richtigen Port auswählen, wie die richtige Tür, um unsere Nachricht zu versenden. Klicke auf **Werkzeuge** -> **Port**.
 
     .. note::
 
-        * On Windows computers, this may be the word "COM" followed by a number(not COM1).
-        * On Mac computers, the port might resemble "/dev/tty.usbmodem".
-        * In Linux computers, the port is called "/dev/ttyACM", followed by a number.
+        * Auf Windows-Computern könnte dies das Wort "COM" gefolgt von einer Zahl sein (nicht COM1).
+        * Auf Mac-Computern könnte der Port in etwa so aussehen: "/dev/tty.usbmodem".
+        * Auf Linux-Computern heißt der Port "/dev/ttyACM", gefolgt von einer Nummer.
 
     .. image:: img/1_ide_select_port.png
         :align: center
 
-4. If you're using Arduino IDE 2.0, you can quickly select the appropriate board and port in this window.
+4. Wenn du die Arduino IDE 2.0 verwendest, kannst du die passende Platine und den Port schnell in diesem Fenster auswählen.
 
     .. image:: img/1_ide_quick.png
         :align: center
 
-**3. Check Your Sketch**
+**3. Überprüfe deinen Sketch**
 
-1. Hit the **Verify** button to make sure your sketch is error-free. It's like proofreading your homework before handing it in.
+1. Drücke den **Überprüfen**-Button, um sicherzustellen, dass dein Sketch fehlerfrei ist. Es ist wie das Korrekturlesen deiner Hausaufgaben, bevor du sie abgibst.
 
     .. image:: img/1_ide_verify.png
         :align: center
 
-2. If there's a typo or a mistake, the IDE will tell you what and where it is, so you can fix it.
+2. Wenn ein Tippfehler oder Fehler vorliegt, zeigt dir die IDE an, was und wo der Fehler ist, damit du ihn beheben kannst.
 
     .. image:: img/1_ide_verify_error.png
         :align: center
 
-3. No errors? You'll see a message saying it's all good to go!
+3. Keine Fehler? Du erhältst eine Nachricht, die dir mitteilt, dass alles bereit ist!
 
     .. image:: img/1_ide_done_compiling.png
         :align: center
 
-**4. Send Your Sketch to the Board**
+**4. Sende deinen Sketch an die Platine**
 
-Finally, press the **Upload** button to send your sketch on its journey to the board. If everything goes right, you'll get a success message.
+Drücke abschließend den **Hochladen**-Button, um deinen Sketch auf die Reise zur Platine zu schicken. Wenn alles gut läuft, erhältst du eine Erfolgsmeldung.
 
     .. image:: img/1_ide_done_upload.png
         :align: center
 
-Watch the LED on your Arduino board start blinking. It's like it's saying "hello" to you!
+Sieh zu, wie die LED auf deiner Arduino-Platine zu blinken beginnt. Es ist, als würde sie dir "Hallo" sagen!
 
 
-Great job! You've just uploaded your first Arduino program, making you an official programmer! What's next? There's so much more to discover with Arduino, and this is just the beginning. Ready for more adventures?
+Tolle Arbeit! Du hast gerade dein erstes Arduino-Programm hochgeladen und bist jetzt offiziell ein Programmierer! Was kommt als Nächstes? Es gibt noch so viel mehr mit Arduino zu entdecken, und dies ist erst der Anfang. Bereit für weitere Abenteuer?
+

@@ -1,57 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-
-4. Ohm's Law: A Journey Through the Essentials of Electrical Circuits
-=======================================================================
-
-Every electronic device operates on principles governed by circuits and circuit boards. To ensure these devices function correctly, electrical engineers must deeply understand and control electricity's flow. One crucial concept in this realm is Ohm's Law, which provides a fundamental relationship between voltage, current, and resistance within electrical circuits. This lesson dives into Ohm's Law, exploring its implications and applications.
-
-This lesson explores the fundamental principles underlying every electronic device we use today. Understanding these principles, particularly Ohm's Law, is crucial for electrical engineers to control and predict the behavior of circuits effectively.
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
 
+4. Ohmsches Gesetz: Eine Reise durch die Grundlagen elektrischer Schaltkreise
+===================================================================================
 
-The Spark of Electricity
+Jedes elektronische Gerät basiert auf Prinzipien, die durch Schaltkreise und Leiterplatten geregelt werden. Um sicherzustellen, dass diese Geräte einwandfrei funktionieren, müssen Elektroingenieure den Stromfluss tiefgehend verstehen und kontrollieren. Ein zentrales Konzept in diesem Bereich ist das Ohmsche Gesetz, das eine grundlegende Beziehung zwischen Spannung, Strom und Widerstand in elektrischen Schaltkreisen beschreibt. In dieser Lektion tauchen wir in das Ohmsche Gesetz ein und erkunden seine Implikationen und Anwendungen.
+
+Diese Lektion beleuchtet die grundlegenden Prinzipien, die jedem modernen elektronischen Gerät zugrunde liegen. Das Verständnis dieser Prinzipien, insbesondere des Ohmschen Gesetzes, ist für Elektroingenieure unerlässlich, um das Verhalten von Schaltkreisen effektiv zu kontrollieren und vorherzusagen.
+
+
+
+Der Funke der Elektrizität
 -------------------------------
 
-The story of electricity begins with early experiments and profound insights. Benjamin Franklin, with his kite experiment, though not discovering electricity, ignited curiosity and spurred further exploration into electrical charges and their powers.
+Die Geschichte der Elektrizität beginnt mit frühen Experimenten und bahnbrechenden Erkenntnissen. Benjamin Franklin entfachte mit seinem Drachenexperiment zwar nicht die Elektrizität, weckte aber das Interesse und inspirierte weitere Forschungen zu elektrischen Ladungen und deren Kräften.
 
 .. image:: img/2_electronic.webp
     :width: 600
     :align: center
 
-His experiments laid the groundwork for understanding that electricity involves the movement of positive and negative charges, analogous to the natural phenomena of lightning. Inspired by Franklin, French scientist Thomas-François Dalibard demonstrated practical examples of how electrical currents could naturally occur.
+Seine Experimente legten den Grundstein für das Verständnis, dass Elektrizität mit der Bewegung positiver und negativer Ladungen zusammenhängt, vergleichbar mit dem natürlichen Phänomen des Blitzes. Inspiriert von Franklin zeigte der französische Wissenschaftler Thomas-François Dalibard praktische Beispiele dafür, wie elektrische Ströme auf natürliche Weise entstehen können.
 
-This era also witnessed the rivalry and collective achievements of Nikola Tesla and Thomas Edison, whose efforts helped sculpt our modern electrical infrastructure. Tesla's development of alternating current (AC) and Edison's introduction of the light bulb exemplified the rapid advancements in electrical engineering.
+Diese Ära erlebte auch die Rivalität und die kollektiven Errungenschaften von Nikola Tesla und Thomas Edison, deren Bemühungen unsere moderne elektrische Infrastruktur geprägt haben. Teslas Entwicklung des Wechselstroms (AC) und Edisons Einführung der Glühbirne sind Beispiele für den rasanten Fortschritt in der Elektroingenieurwissenschaft.
 
 .. image:: img/2_lamp.webp
     :width: 400
     :align: center
 
-Advancements continued with the invention of the transistor in 1947, a component foundational to all modern electronics. This tiny yet powerful device enabled the creation of microchips and electronic switches, pivotal in today's technology-driven world.
+Die Erfindung des Transistors im Jahr 1947, eines grundlegenden Bauteils für alle modernen Elektronikgeräte, führte zu weiteren Fortschritten. Dieses kleine, aber leistungsstarke Bauteil ermöglichte die Entwicklung von Mikrochips und elektronischen Schaltern, die in der heutigen technikgetriebenen Welt von entscheidender Bedeutung sind.
 
 .. image:: img/2_transistor.jpg
     :width: 300
     :align: center
     
 
-Georg Ohm and His Law
+Georg Ohm und sein Gesetz
 ------------------------------
 
-In the midst of these technological strides, Georg Ohm, a German physicist, embarked on experiments that would define the core principles of electrical circuits. At a time when electricity was still a novel scientific field, Ohm explored how electrical currents behaved under different conditions using basic yet effective experimental setups involving wires, batteries, and homemade resistors.
+Mitten in diesen technologischen Fortschritten führte der deutsche Physiker Georg Ohm Experimente durch, die die Grundprinzipien elektrischer Schaltkreise definierten. Zu einer Zeit, als Elektrizität noch ein neues wissenschaftliches Feld war, untersuchte Ohm, wie sich elektrische Ströme unter verschiedenen Bedingungen verhalten, indem er einfache, aber effektive Aufbauten mit Drähten, Batterien und selbstgemachten Widerständen verwendete.
 
-Ohm's meticulous experiments revealed a consistent proportional relationship between voltage, current, and resistance, encapsulated in the formula V=IR—now celebrated as Ohm's Law. This discovery not only provided a mathematical description of electricity but also facilitated the predictable design and operation of electrical devices.
+Ohms sorgfältige Experimente enthüllten eine konstante proportionale Beziehung zwischen Spannung, Strom und Widerstand, die in der Formel V=IR festgehalten ist – heute bekannt als das Ohmsche Gesetz. Diese Entdeckung lieferte nicht nur eine mathematische Beschreibung von Elektrizität, sondern ermöglichte auch das planbare Design und den Betrieb elektrischer Geräte.
 
 .. code-block::
 
@@ -59,52 +59,52 @@ Ohm's meticulous experiments revealed a consistent proportional relationship bet
     Or
     V = I • R
 
-Ohm's perseverance through skepticism highlighted the significance of his findings, which laid the groundwork for future technological advances and ushered in a new era of electrical engineering.
+Ohms Durchhaltevermögen trotz anfänglicher Skepsis unterstreicht die Bedeutung seiner Erkenntnisse, die den Grundstein für zukünftige technologische Fortschritte legten und eine neue Ära der Elektroingenieurwissenschaft einläuteten.
 
 
 
-Understanding Current, Voltage, and Resistance
+Verständnis von Strom, Spannung und Widerstand
 ----------------------------------------------------
 
-To fully understand and apply Ohm's Law, it is essential to grasp the basic concepts of current, voltage, and resistance. These components are indispensable elements of any circuit, analogous to the elements of a flowing river.
+Um das Ohmsche Gesetz vollständig zu verstehen und anwenden zu können, ist es wichtig, die grundlegenden Konzepte von Strom, Spannung und Widerstand zu begreifen. Diese Komponenten sind unverzichtbare Elemente eines jeden Schaltkreises und können mit den Elementen eines fließenden Flusses verglichen werden.
 
-- **Current (I)**: The flow of electrons through a conductor, measured in amperes (amps).
-- **Voltage (V)**: The electrical force or pressure that drives electrons through a conductor.
-- **Resistance (R)**: Provides opposition to the flow of electrons, measured in ohms (Ω), and typically represented by the Greek letter omega.
+- **Strom (I)**: Der Fluss von Elektronen durch einen Leiter, gemessen in Ampere (A).
+- **Spannung (V)**: Die elektrische Kraft oder der Druck, der Elektronen durch einen Leiter treibt.
+- **Widerstand (R)**: Der Widerstand gegen den Elektronenfluss, gemessen in Ohm (Ω), und wird oft durch den griechischen Buchstaben Omega dargestellt.
 
 .. image:: img/2_resistance.png
     :width: 400
     :align: center
 
-Using a garden hose analogy helps clarify these concepts:
+Die Analogie eines Gartenschlauchs hilft, diese Konzepte zu verdeutlichen:
 
-- **Current** is comparable to the flow of water, indicating the speed at which electrons move through a conductor.
-- **Voltage** is like the tap control, regulating the force that propels the water.
-- **Resistance** is similar to any knots or bends in the hose, which obstruct the water's path and slow down the flow.
+- **Strom** ist vergleichbar mit dem Wasserfluss und gibt die Geschwindigkeit an, mit der sich Elektronen durch einen Leiter bewegen.
+- **Spannung** ist wie der Wasserhahn, der die Kraft reguliert, die das Wasser antreibt.
+- **Widerstand** ist vergleichbar mit Knicken oder Biegungen im Schlauch, die den Weg des Wassers behindern und den Fluss verlangsamen.
 
-This explanation helps us connect the theoretical knowledge of Ohm's Law with the behavior of actual circuits, laying the foundation for further learning and application.
+Diese Erklärung verbindet das theoretische Wissen des Ohmschen Gesetzes mit dem Verhalten realer Schaltkreise und legt die Grundlage für weiteres Lernen und die praktische Anwendung.
 
-Exploring Ohm's Law with Practical Experiments
------------------------------------------------------
+Erkundung des Ohmschen Gesetzes durch praktische Experimente
+-----------------------------------------------------------------
 
-Now, let's apply Ohm's Law in a hands-on manner by using a simple LED circuit to observe the effects of changing resistance and voltage.
+Nun wenden wir das Ohmsche Gesetz in einem praktischen Experiment an, indem wir mit einem einfachen LED-Schaltkreis die Auswirkungen von verändertem Widerstand und Spannung beobachten.
 
-**Experiment Setup**
+**Versuchsaufbau**
 
-1. You will start with a basic circuit that includes an LED and a 220-ohm resistor.
+1. Du beginnst mit einem einfachen Schaltkreis, der eine LED und einen 220-Ohm-Widerstand enthält.
    
    .. image:: img/2_uno_gnd.png
      :width: 600
      :align: center
 
-2. Substitute the 220-ohm resistor with other resistors of different values as listed below. Record the LED's brightness changes with each substitution to observe how resistance affects the current and, consequently, the light output.
+2. Ersetze den 220-Ohm-Widerstand durch andere Widerstände mit verschiedenen Werten, die unten aufgeführt sind. Notiere die Helligkeitsveränderungen der LED bei jedem Austausch, um zu beobachten, wie der Widerstand den Strom und damit die Lichtausgabe beeinflusst.
 
    .. list-table::
       :widths: 25 100
       :header-rows: 1
 
-      * - Resistor
-        - Observations
+      * - Widerstand
+        - Beobachtungen
       * - 100Ω
         - 
       * - 1KΩ
@@ -115,16 +115,18 @@ Now, let's apply Ohm's Law in a hands-on manner by using a simple LED circuit to
         - 
 
   
-  You will notice that only with the 100Ω resistor is the LED brighter than with the previous 220Ω resistor. With higher resistances, the brightness of the LED diminishes until it completely turns off at 1MΩ. Why is this the case?
+  Du wirst feststellen, dass die LED nur beim 100Ω-Widerstand heller leuchtet als mit dem vorherigen 220Ω-Widerstand. Mit höheren Widerständen nimmt die Helligkeit der LED ab, bis sie bei 1MΩ vollständig erlischt. Warum ist das so?
 
-  According to Ohm's Law (I = V/R), as resistance increases while the voltage is held constant, the current through the LED decreases, thus dimming the LED. At 1MΩ, the current is too small to light up the LED.
 
-3. After observing the effects of changing resistance, maintain the resistor at 220 ohms and change the circuit's voltage supply from 5V to 3.3V. Record any changes in the LED's brightness.
+  Laut dem Ohmschen Gesetz (I = V/R) verringert sich der Strom durch die LED, wenn der Widerstand bei konstanter Spannung steigt, wodurch die LED dunkler wird. Bei 1MΩ ist der Strom zu gering, um die LED zum Leuchten zu bringen.
 
-  You will find that the LED is slightly dimmer at 3.3V than at 5V. Why is this?
+3. Nachdem du die Auswirkungen des veränderten Widerstands beobachtet hast, belasse den Widerstand bei 220 Ohm und ändere die Spannungsversorgung des Stromkreises von 5V auf 3,3V. Notiere die Veränderungen in der Helligkeit der LED.
 
-  With Ohm's Law, knowing the resistance and the new voltage, the current should be I = V/R. With a decrease in voltage while resistance stays the same, the current decreases, dimming the LED.
+  Du wirst feststellen, dass die LED bei 3,3V etwas dunkler ist als bei 5V. Warum ist das so?
 
-**Summary**
+  Nach dem Ohmschen Gesetz sollte der Strom mit dem bekannten Widerstand und der neuen Spannung I = V/R sein. Mit einer Verringerung der Spannung bei gleichbleibendem Widerstand sinkt der Strom, was die LED dunkler erscheinen lässt.
 
-By conducting these experiments, you have directly observed how Ohm's Law is fundamental in understanding and designing electrical circuits. This practical application helps cement the theoretical concepts discussed earlier and demonstrates the real-world implications of voltage, current, and resistance in electrical engineering.
+**Zusammenfassung**
+
+Durch diese Experimente hast du direkt beobachtet, wie das Ohmsche Gesetz das Verständnis und die Gestaltung von elektrischen Schaltkreisen grundlegend beeinflusst. Diese praktische Anwendung hilft, die zuvor besprochenen theoretischen Konzepte zu festigen und zeigt die realen Auswirkungen von Spannung, Strom und Widerstand in der Elektroingenieurwissenschaft.
+

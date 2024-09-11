@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Sneak Peeks.
+    - **Sonderrabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu erkunden und zu erschaffen? Klicke auf [|link_sf_facebook|] und trete noch heute bei!
 
-21. Siren Sound
+21. Sirenenton
 =========================
 
-In this Arduino project, we will explore how to create a siren system through programming and the integration of electronic hardware.
+In diesem Arduino-Projekt erkunden wir, wie man ein Sirenensystem durch Programmierung und Integration von elektronischer Hardware erstellt.
 
-Siren sounds use a specific frequency and pitch pattern, characterized by rapid rises and falls in pitch, which is not only easily recognizable but also distinct from other everyday sounds.
-These pitch changes can evoke a sense of urgency, as they are often associated with warning signals or dangerous situations in nature.
+Sirenenklänge verwenden ein spezifisches Frequenz- und Tonmuster, das durch schnelle Anstiege und Abfälle der Tonhöhe gekennzeichnet ist. Dies macht sie nicht nur leicht erkennbar, sondern unterscheidet sie auch von anderen alltäglichen Geräuschen. Diese Tonhöhenwechsel erzeugen oft ein Gefühl der Dringlichkeit, da sie in der Natur häufig mit Warnsignalen oder gefährlichen Situationen in Verbindung gebracht werden.
 
-By adjusting the frequency of a passive buzzer, we can simulate the characteristic rising and falling pitches of a siren sound.
+Durch die Anpassung der Frequenz eines passiven Summers können wir die charakteristischen auf- und absteigenden Tonhöhen eines Sirenentons simulieren.
 
 .. raw:: html
 
@@ -29,45 +28,45 @@ By adjusting the frequency of a passive buzzer, we can simulate the characterist
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+In dieser Lektion lernst du:
 
-* How passive buzzers work
-* How to drive a passive buzzer using the tone() function
-* How to use the for loop in programming
-* How to implement a siren sound
+* Wie passive Summer funktionieren
+* Wie man einen passiven Summer mit der tone()-Funktion ansteuert
+* Wie man die for-Schleife in der Programmierung verwendet
+* Wie man einen Sirenenton umsetzt
 
-Understanding Sound Properties
------------------------------------
+Verständnis der Klangeigenschaften
+---------------------------------------
 
-Sound is a wave phenomenon that propagates through mediums such as air, water, or solids as vibrating energy. Understanding the physical properties of sound can help us better understand and control how sound behaves in different environments.
-Here are several key physical properties of sound:
+Schall ist ein Wellenphänomen, das sich als vibrierende Energie durch Medien wie Luft, Wasser oder Feststoffe ausbreitet. Das Verständnis der physikalischen Eigenschaften von Schall hilft uns, besser zu begreifen, wie sich Schall in verschiedenen Umgebungen verhält.
+Hier sind einige wichtige physikalische Eigenschaften von Schall:
 
 .. image:: img/7_siren.png
     :width: 500
     :align: center
 
-**Frequency**
+**Frequenz**
 
-Frequency refers to the number of vibration cycles per unit of time, typically expressed in Hertz (Hz).
-Frequency determines the pitch of sound: higher frequencies sound higher in pitch; lower frequencies sound lower. The human audible range is approximately from 20 Hz to 20,000 Hz.
+Die Frequenz bezieht sich auf die Anzahl der Schwingungszyklen pro Zeiteinheit, typischerweise in Hertz (Hz) angegeben.
+Die Frequenz bestimmt die Tonhöhe des Klangs: Höhere Frequenzen klingen höher, tiefere Frequenzen klingen tiefer. Der hörbare Bereich des Menschen reicht ungefähr von 20 Hz bis 20.000 Hz.
 
 **Amplitude**
-Amplitude is the strength of the vibration of a sound wave, which determines the loudness of the sound.
-Greater amplitude means a louder sound; smaller amplitude means a softer sound.
-In physics, amplitude is usually directly related to the energy of a sound wave, while in everyday language, we often use decibels (dB) to describe the loudness of sound.
+Die Amplitude ist die Stärke der Schwingung einer Schallwelle, die die Lautstärke des Klangs bestimmt.
+Eine größere Amplitude bedeutet einen lauteren Klang, eine kleinere Amplitude einen leiseren Klang.
+In der Physik ist die Amplitude üblicherweise direkt mit der Energie einer Schallwelle verbunden, während wir im alltäglichen Sprachgebrauch oft Dezibel (dB) zur Beschreibung der Lautstärke verwenden.
 
-**Timbre**
-Timbre describes the texture or 'color' of sound, which allows us to distinguish sounds from different sources even if they have the same pitch and loudness.
-For example, even if a violin and a piano play the same note, we can still distinguish them by their timbre.
+**Klangfarbe**
+Die Klangfarbe beschreibt die Textur oder „Farbe“ des Klangs, die es uns ermöglicht, Geräusche verschiedener Quellen zu unterscheiden, selbst wenn sie die gleiche Tonhöhe und Lautstärke haben.
+Zum Beispiel können wir einen Unterschied zwischen einer Violine und einem Klavier erkennen, auch wenn beide das gleiche musikalische Stück spielen, dank ihrer unterschiedlichen Klangfarbe.
+
+In diesem Projekt erforschen wir nur den Einfluss der Frequenz auf den Klang.
 
 
-In this project, we are only exploring the influence of frequency on sound.
 
+Aufbau des Schaltkreises
+---------------------------
 
-Building the Circuit
------------------------
-
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -75,13 +74,13 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * Breadboard
-     - 1 * Passive Buzzer
-     - Jumper Wires
+     - 1 * Passiver Summer
+     - Jumper-Kabel
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_passive_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
+   * - 1 * USB-Kabel
      -
      - 
      - 
@@ -92,33 +91,33 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Aufbau**
 
-In previous lessons, we used active buzzer. In this lesson, we will use a passive buzzer. The circuit is the same, but the coding approach to drive it differs.
+In den vorherigen Lektionen haben wir aktive Summer verwendet. In dieser Lektion verwenden wir einen passiven Summer. Der Schaltkreis ist derselbe, jedoch unterscheidet sich der Programmieransatz zur Ansteuerung.
 
-1. Locate a passive buzzer, which has an exposed circuit board on its back.
+1. Finde einen passiven Summer, der auf seiner Rückseite eine offene Platine hat.
 
 .. image:: img/7_beep_2.png
 
-2. Although there is a '+' sign on the passive buzzer, it is not a polarized device. Insert it in any direction into the 15F and 18F holes of the breadboard.
+2. Obwohl auf dem passiven Summer ein '+'-Zeichen zu sehen ist, handelt es sich nicht um ein polarisiertes Bauteil. Stecke ihn in beliebiger Richtung in die Löcher 15F und 18F des Breadboards.
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-3. Connect one pin of the passive buzzer to the GND pin on the Arduino Uno R3.
+3. Verbinde einen Pin des passiven Summers mit dem GND-Pin des Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-4. Connect the other pin of the passive buzzer to the 5V pin of the Arduino Uno R3. The buzzer will not make a sound, differentiating it from an active buzzer, which would sound when connected this way.
+4. Verbinde den anderen Pin des passiven Summers mit dem 5V-Pin des Arduino Uno R3. Der Summer wird keinen Ton von sich geben, was ihn von einem aktiven Summer unterscheidet, der in dieser Konfiguration einen Ton erzeugen würde.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-5. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+5. Nun entferne das Kabel, das im 5V-Pin steckt, und stecke es in Pin 9 des Arduino Uno R3, damit der Summer mit Code gesteuert werden kann.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -126,210 +125,209 @@ In previous lessons, we used active buzzer. In this lesson, we will use a passiv
 
 
 
-Code Creation - Make the Passive Buzzer Sound
----------------------------------------------------
+Code-Erstellung - Den passiven Summer ertönen lassen
+---------------------------------------------------------
 
-As we learned while connecting, simply providing high and low power to a passive buzzer won't make it sound. In Arduino programming, the ``tone()`` function is used to control a passive buzzer or other audio output devices to generate a sound at a specified frequency.
+Wie wir beim Anschließen gelernt haben, reicht es nicht aus, einfach nur eine hohe oder niedrige Spannung an einen passiven Summer anzulegen, um einen Ton zu erzeugen. In der Arduino-Programmierung wird die Funktion ``tone()`` verwendet, um einen passiven Summer oder andere Audioausgabegeräte zu steuern und einen Ton mit einer bestimmten Frequenz zu erzeugen.
 
-    * ``tone()``: Generates a square wave of the specified frequency (and 50% duty cycle) on a pin. A duration can be specified, otherwise the wave continues until a call to ``noTone()``.
+    * ``tone()``: Erzeugt eine Rechteckwelle mit der angegebenen Frequenz (und einem Tastverhältnis von 50%) an einem Pin. Eine Dauer kann angegeben werden, andernfalls läuft die Welle weiter, bis ``noTone()`` aufgerufen wird.
 
     **Syntax**
 
         * ``tone(pin, frequency)``
         * ``tone(pin, frequency, duration)``
 
-    **Parameters**
+    **Parameter**
 
-        * ``pin``: the Arduino pin on which to generate the tone.
-        * ``frequency``: the frequency of the tone in hertz. Allowed data types: unsigned int.
-        * ``duration``: the duration of the tone in milliseconds (optional). Allowed data types: unsigned long.
+        * ``pin``: Der Arduino-Pin, an dem der Ton erzeugt wird.
+        * ``frequency``: Die Frequenz des Tons in Hertz. Erlaubte Datentypen: unsigned int.
+        * ``duration``: Die Dauer des Tons in Millisekunden (optional). Erlaubte Datentypen: unsigned long.
 
-    **Returns**
-        Nothing
+    **Rückgabewert**
+        Keiner
 
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson21_Tone`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffne die Arduino IDE und starte ein neues Projekt, indem du „New Sketch“ aus dem Menü „File“ auswählst.
+2. Speichere deinen Sketch als ``Lesson21_Tone`` mit ``Ctrl + S`` oder durch Klicken auf „Speichern“.
 
-3. First, define the buzzer pin.
+3. Zuerst definierst du den Pin für den Summer.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
+        // Hier den Setup-Code einfügen, um ihn einmal auszuführen:
     }
 
-4. To fully understand the use of the ``tone()`` function, we write it in the ``void setup()`` so that the buzzer will emit a sound at a specific frequency for a set duration.
+4. Um die Verwendung der ``tone()``-Funktion besser zu verstehen, schreiben wir sie in das ``void setup()``, sodass der Summer einen Ton mit einer bestimmten Frequenz für eine festgelegte Dauer abgibt.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
-        tone(buzzerPin, 1000, 100);  // Turn on the buzzer at 1000 Hz with a duration of 100 milliseconds
+        // Hier den Setup-Code einfügen, um ihn einmal auszuführen:
+        tone(buzzerPin, 1000, 100);  // Summer mit 1000 Hz für 100 Millisekunden einschalten
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Hier den Hauptcode einfügen, um ihn wiederholt auszuführen:
     }
 
-5. Now you can upload the code to the Arduino Uno R3, after which you will hear a brief "beep" sound from the passive buzzer, and then it will go silent.
+5. Jetzt kannst du den Code auf das Arduino Uno R3 hochladen, und du wirst einen kurzen "Piep"-Ton vom passiven Summer hören, danach wird er still.
 
-**Questions**
+**Fragen**
 
-1. If you switch the code and circuit pins to 7 or 8, which are not PWM pins, will the buzzer still make a sound? You can test and then write your answer in the handbook.
+1. Wenn du die Pins des Codes und der Schaltung auf 7 oder 8 änderst, die keine PWM-Pins sind, wird der Summer dann trotzdem einen Ton abgeben? Du kannst es testen und deine Antwort ins Handbuch schreiben.
 
-2. To explore how ``frequency`` and ``duration`` in ``tone(pin, frequency, duration)`` affect the sound of the buzzer, please modify the code under two conditions and fill in the observed phenomena in your handbook:
+2. Um zu erkunden, wie ``frequency`` und ``duration`` in ``tone(pin, frequency, duration)`` den Ton des Summers beeinflussen, modifiziere den Code unter zwei Bedingungen und notiere die beobachteten Phänomene in deinem Handbuch:
 
-* Keeping ``frequency`` at 1000, gradually increase ``duration``, from 100, 500, to 1000. How does the sound of the buzzer change, and why?
+* Bei Beibehaltung der ``frequency`` von 1000, erhöhe schrittweise die ``duration`` von 100, 500 auf 1000. Wie verändert sich der Ton des Summers und warum?
 
-* Keeping ``duration`` at 100, gradually increase ``frequency``, from 1000, 2000, to 5000. How does the sound of the buzzer change, and why?
+* Bei Beibehaltung der ``duration`` von 100, erhöhe schrittweise die ``frequency`` von 1000, 2000 auf 5000. Wie verändert sich der Ton des Summers und warum?
 
 
 
-Code Creation - Emit a Siren Sound
------------------------------------------
+Code-Erstellung - Einen Sirenenton erzeugen
+----------------------------------------------
 
-Previously, we learned how to make a buzzer emit sound and understood how frequency and duration affect the sound. Now, if we want to make the buzzer emit a siren sound that increases from a low to a high pitch, how should we proceed?
+Zuvor haben wir gelernt, wie man einen Summer zum Ertönen bringt, und verstanden, wie Frequenz und Dauer den Ton beeinflussen. Wenn wir nun möchten, dass der Summer einen Sirenenton erzeugt, der von einem tiefen zu einem hohen Ton ansteigt, wie sollten wir vorgehen?
 
-From our earlier explorations, we know that using the ``tone(pin, frequency)`` function allows a passive buzzer to emit sound. Gradually increasing the ``frequency`` makes the pitch of the passive buzzer's sound higher. Let's implement this with code now.
+Aus unseren früheren Erkundungen wissen wir, dass die Funktion ``tone(pin, frequency)`` es ermöglicht, einen passiven Summer zum Erklingen zu bringen. Durch schrittweises Erhöhen der ``frequency`` wird die Tonhöhe des Summers höher. Lass uns das nun im Code umsetzen.
 
-1. Open the sketch you saved earlier, ``Lesson21_Tone``. 
+1. Öffne den zuvor gespeicherten Sketch ``Lesson21_Tone``. 
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson21_Siren_Sound``. Click "Save".
+2. Wähle im Menü „Datei“ die Option „Speichern unter...“ und benenne die Datei in ``Lesson21_Siren_Sound`` um. Klicke auf „Speichern“.
 
-3. Write the ``tone()`` function into the ``void loop()`` and set three different frequencies. To clearly hear the difference in each frequency sound, use the ``delay()`` function to separate them.
+3. Schreibe die ``tone()``-Funktion in die ``void loop()`` und setze drei verschiedene Frequenzen. Um den Unterschied zwischen den Tönen deutlich zu hören, verwende die ``delay()``-Funktion, um sie zu trennen.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
+        // Hier den Setup-Code einfügen, um ihn einmal auszuführen:
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 100 Hz
+        // Hier den Hauptcode einfügen, um ihn wiederholt auszuführen:
+        tone(buzzerPin, 100);  // Summer bei 100 Hz einschalten
         delay(500);
-        tone(buzzerPin, 300);  // Turn on the buzzer at 300 Hz
+        tone(buzzerPin, 300);  // Summer bei 300 Hz einschalten
         delay(500);
-        tone(buzzerPin, 600);  // Turn on the buzzer at 600 Hz
+        tone(buzzerPin, 600);  // Summer bei 600 Hz einschalten
         delay(500);
     }
 
-4. At this point, you can upload the code to the Arduino Uno R3, and you will hear the buzzer repeating three different tones.
+4. An diesem Punkt kannst du den Code auf das Arduino Uno R3 hochladen, und du wirst den Summer hören, der drei verschiedene Töne wiederholt.
 
-5. To achieve a smoother pitch increase, we should set shorter intervals for ``frequency``, such as an interval of 10, starting from 100, 110, 120...up to 1000. We can write the following code.
+5. Um einen sanfteren Anstieg der Tonhöhe zu erreichen, sollten wir kürzere Intervalle für ``frequency`` setzen, zum Beispiel in Schritten von 10, beginnend bei 100, 110, 120... bis 1000. Wir können den folgenden Code schreiben.
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 1000 Hz
+        // Hier den Hauptcode einfügen, um ihn wiederholt auszuführen:
+        tone(buzzerPin, 100);  // Summer bei 100 Hz einschalten
         delay(500);
-        tone(buzzerPin, 110);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 110);  // Summer bei 110 Hz einschalten
         delay(500);
-        tone(buzzerPin, 120);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 120);  // Summer bei 120 Hz einschalten
         delay(500);
-        tone(buzzerPin, 130);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 130);  // Summer bei 130 Hz einschalten
         delay(500);
-        tone(buzzerPin, 140);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 140);  // Summer bei 140 Hz einschalten
         delay(500);
-        tone(buzzerPin, 150);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 150);  // Summer bei 150 Hz einschalten
         delay(500);
-        tone(buzzerPin, 160);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 160);  // Summer bei 160 Hz einschalten
         delay(500);
         ...
     }
 
-6. You will notice that if you really wanted to write up to 1000, this code would be over two hundred lines long. At this point, you can use the ``for`` statement, which is used to repeat a block of statements enclosed in curly braces.
+6. Du wirst feststellen, dass der Code über zweihundert Zeilen lang wäre, wenn du wirklich bis 1000 zählen wolltest. An diesem Punkt kannst du die ``for``-Schleife verwenden, die dazu dient, einen Block von Anweisungen, der in geschweifte Klammern eingeschlossen ist, zu wiederholen.
 
-    * ``for``: The ``for`` statement is useful for any repetitive operation, and is often used in combination with arrays to operate on collections of data/pins. An increment counter is usually used to increment and terminate the loop. 
+    * ``for``: Die ``for``-Schleife ist nützlich für jede wiederholte Operation und wird oft in Kombination mit Arrays verwendet, um auf Daten/Pins zuzugreifen. Ein Inkrementzähler wird dabei in der Regel verwendet, um die Schleife zu durchlaufen und zu beenden. 
 
     **Syntax**
 
     .. code-block::
 
         for (initialization; condition; increment) {
-            // statement(s);
+            // Anweisung(en);
         }
 
-    **Parameters**
+    **Parameter**
 
-        * ``initialization``: happens first and exactly once.
-        * ``condition``: each time through the loop, condition is tested; if it's true, the statement block and the increment are executed, then the condition is tested again. When the condition becomes false, the loop ends.
-        * ``increment``: executed each time through the loop when condition is true.
+        * ``initialization``: wird zuerst und nur einmal ausgeführt.
+        * ``condition``: wird bei jedem Durchlauf der Schleife getestet; wenn sie wahr ist, wird der Anweisungsblock ausgeführt, dann das Inkrement durchgeführt und die Bedingung erneut geprüft. Wenn die Bedingung falsch wird, endet die Schleife.
+        * ``increment``: wird bei jedem Durchlauf der Schleife ausgeführt, solange die Bedingung wahr ist.
 
 .. image:: img/for_loop.png
     :width: 400
     :align: center
 
 
-
-7. Now change the ``void loop()`` function as shown below, where ``freq`` starts at 100 and increases by 10 until 1000.
+7. Ändere nun die Funktion ``void loop()``, wie unten gezeigt, wobei ``freq`` bei 100 startet und sich in Schritten von 10 bis 1000 erhöht.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-6
 
     void loop() {
-        // Gradually increase the pitch
+        // Steigere allmählich die Tonhöhe
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Erzeuge einen Ton
+            delay(20);              // Warte vor dem Frequenzwechsel
         }
     }
 
-8. Next, let ``freq`` start at 1000 and decrease by 10 until 100, so you can hear the buzzer's sound go from low to high and then from high to low, thus simulating a siren sound.
+8. Lass als Nächstes ``freq`` bei 1000 starten und sich in Schritten von 10 bis 100 verringern, sodass du den Ton des Summers von tief nach hoch und dann von hoch nach tief hören kannst und somit einen Sirenenton simulierst.
 
 .. code-block:: Arduino
     :emphasize-lines: 9-12
 
     void loop() {
-        // Gradually increase the pitch
+        // Steigere allmählich die Tonhöhe
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Erzeuge einen Ton
+            delay(20);              // Warte vor dem Frequenzwechsel
         }
 
-        // Gradually decrease the pitch
+        // Verringere allmählich die Tonhöhe
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Erzeuge einen Ton
+            delay(20);              // Warte vor dem Frequenzwechsel
         }
     }
 
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+9. Hier ist dein vollständiger Code. Du kannst jetzt auf „Upload“ klicken, um den Code auf das Arduino Uno R3 hochzuladen.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Weist Pin 9 der Konstanten für den Summer zu
 
     void setup() {
-        // put your setup code here, to run once:
+        // Hier Setup-Code einfügen, um ihn einmal auszuführen:
     }
 
     void loop() {
-        // Gradually increase the pitch
+        // Steigere allmählich die Tonhöhe
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Erzeuge einen Ton
+            delay(20);              // Warte vor dem Frequenzwechsel
         }
 
-        // Gradually decrease the pitch
+        // Verringere allmählich die Tonhöhe
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Erzeuge einen Ton
+            delay(20);              // Warte vor dem Frequenzwechsel
         }
     }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. Speichere schließlich deinen Code und räume deinen Arbeitsplatz auf.
 
-**Summary**
+**Zusammenfassung**
 
-In this lesson, we explored how to use an Arduino and a passive buzzer to simulate a siren sound. By discussing the basic physical properties of sound, such as frequency and pitch, we learned how these elements influence the perception and effect of sound. Through hands-on activities, we not only learned how to build circuits but also mastered programming with the ``tone()`` function on Arduino to control the frequency and duration of sound, achieving the simulation of a siren sound that rises and falls in pitch.
+In dieser Lektion haben wir untersucht, wie man mit einem Arduino und einem passiven Summer einen Sirenenton simuliert. Durch die Besprechung der grundlegenden physikalischen Eigenschaften von Schall, wie Frequenz und Tonhöhe, haben wir gelernt, wie diese Elemente die Wahrnehmung und Wirkung von Klang beeinflussen. Durch praktische Übungen haben wir nicht nur den Aufbau von Schaltungen erlernt, sondern auch die Programmierung mit der ``tone()``-Funktion auf dem Arduino gemeistert, um die Frequenz und Dauer von Klängen zu steuern und so die Simulation eines Sirenentons zu erreichen, der in der Tonhöhe an- und absteigt.

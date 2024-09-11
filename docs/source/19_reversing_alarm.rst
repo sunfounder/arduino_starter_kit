@@ -1,31 +1,31 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo, willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche tiefer in Raspberry Pi, Arduino und ESP32 ein und tausche dich mit anderen Begeisterten aus.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Tutorials aus, um deine Fähigkeiten zu verbessern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und Einblicken hinter die Kulissen.
+    - **Exklusive Rabatte**: Genieße exklusive Rabatte auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und festlichen Sonderaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, mit uns zu forschen und zu basteln? Klicke [|link_sf_facebook|] und tritt noch heute bei!
 
-19. Reverse Parking Alarm System
+19. Rückfahrwarner-System
 =====================================
 
 .. image:: img/19_packing.png
     :width: 600
     :align: center
 
-When reversing a car, it is crucial to be aware of obstacles behind the vehicle, especially in situations with limited visibility. 
-To enhance safety, many modern vehicles are equipped with reverse warning systems. 
+Beim Rückwärtsfahren ist es entscheidend, Hindernisse hinter dem Fahrzeug zu erkennen, insbesondere in Situationen mit eingeschränkter Sicht.
+Um die Sicherheit zu erhöhen, sind viele moderne Fahrzeuge mit Rückfahrwarnsystemen ausgestattet.
 
-In this project, we will use an Arduino, an ultrasonic sensor, and an active buzzer to simulate such a system. 
-The ultrasonic sensor helps detect the distance to obstacles behind the vehicle, and when this distance is too short, the active buzzer will sound an alert to warn the driver. 
+In diesem Projekt werden wir ein Arduino, einen Ultraschallsensor und einen aktiven Summer verwenden, um ein solches System zu simulieren.
+Der Ultraschallsensor hilft dabei, den Abstand zu Hindernissen hinter dem Fahrzeug zu erkennen, und wenn dieser Abstand zu kurz wird, ertönt ein aktiver Summer, um den Fahrer zu warnen.
 
-This project not only allows us to better understand how ultrasonic sensors work but also teaches us how to program and control using Arduino to implement a practical reverse warning function. 
+Dieses Projekt ermöglicht es uns nicht nur, besser zu verstehen, wie Ultraschallsensoren funktionieren, sondern lehrt uns auch, wie man mit Arduino programmiert und steuert, um eine praktische Rückfahrwarnfunktion zu implementieren.
 
 .. raw:: html
 
@@ -33,110 +33,106 @@ This project not only allows us to better understand how ultrasonic sensors work
         <source src="_static/video/19_reverse_parking_system.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-  
-
-**Ultrasonic Module**
 
 
-Imagine you are in a dark room and can't see the objects around you. In this situation, you could clap your hands to produce a sound that travels outward. When this sound hits a wall or another object, it bounces back as an echo. If you listen carefully, you can hear this echo. By calculating the time it takes for the sound to travel out and the echo to return, you can roughly estimate how far away the wall or object is. Ultrasonic sensors work in a similar way to “see” the world around them.
+**Ultraschallmodul**
+
+Stellen Sie sich vor, Sie befinden sich in einem dunklen Raum und können die Gegenstände um Sie herum nicht sehen. In dieser Situation könnten Sie in die Hände klatschen, um ein Geräusch zu erzeugen, das sich nach außen ausbreitet. Wenn dieses Geräusch auf eine Wand oder einen anderen Gegenstand trifft, wird es als Echo zurückgeworfen. Wenn Sie genau hinhören, können Sie dieses Echo hören. Durch Berechnung der Zeit, die der Schall benötigt, um hinauszugehen und das Echo zurückzukehren, können Sie grob abschätzen, wie weit die Wand oder der Gegenstand entfernt ist. Ultraschallsensoren funktionieren auf ähnliche Weise, um die Umgebung „zu sehen“.
 
 .. image:: img/19_ultrasonic_pic.png
     :width: 400
     :align: center
 
-Ultrasonic sensors mainly consist of two parts: a transmitter and a receiver, much like your mouth and ears.
+Ultraschallsensoren bestehen hauptsächlich aus zwei Teilen: einem Sender und einem Empfänger, ähnlich wie Mund und Ohren.
 
-1. Emitting Sound Waves:
+1. Aussenden von Schallwellen:
 
-When the ultrasonic sensor is activated, the transmitter emits a series of rapid sound waves, similar to clapping your hands. These sound waves have such a high frequency that our ears cannot hear them.
+Wenn der Ultraschallsensor aktiviert wird, sendet der Sender eine Reihe schneller Schallwellen aus, ähnlich wie das Klatschen Ihrer Hände. Diese Schallwellen haben eine so hohe Frequenz, dass unsere Ohren sie nicht hören können.
 
-2. Sound Travels and Returns:
+2. Der Schall breitet sich aus und kehrt zurück:
 
-The sound waves propagate forward until they hit something like a wall or a table, and then they bounce back.
+Die Schallwellen breiten sich nach vorne aus, bis sie auf etwas wie eine Wand oder einen Tisch treffen, und dann werden sie zurückgeworfen.
 
-3. Receiving Sound Waves:
+3. Empfang der Schallwellen:
 
-The receiver part of the ultrasonic sensor is responsible for "listening" to these echoes, just like your ears catching the sound waves reflected back from objects.
+Der Empfänger des Ultraschallsensors ist dafür verantwortlich, diese Echos „anzuhören“, ähnlich wie Ihre Ohren die reflektierten Schallwellen von Gegenständen auffangen.
 
-4. Calculating Distance:
+4. Berechnung der Entfernung:
 
-The sensor records the time it takes for the sound waves to travel out and back. 
-Since the speed of sound is known (about 340 meters per second in air), 
-multiplying this time by the speed of sound gives the total distance the sound waves traveled. 
-Since we only need the one-way distance to the object, 
-we divide the total distance by 2 to get the final result.
-This technology makes ultrasonic sensors very useful in many situations, 
-such as helping robots avoid obstacles or assisting drivers by indicating the distance to objects behind a vehicle when reversing.
+Der Sensor zeichnet die Zeit auf, die die Schallwellen benötigen, um hinauszugehen und zurückzukehren.
+Da die Schallgeschwindigkeit bekannt ist (etwa 340 Meter pro Sekunde in der Luft),
+liefert die Multiplikation dieser Zeit mit der Schallgeschwindigkeit die gesamte Strecke, die die Schallwellen zurückgelegt haben.
+Da wir nur die einfache Entfernung zum Objekt benötigen,
+teilen wir die gesamte Entfernung durch 2, um das endgültige Ergebnis zu erhalten.
+Diese Technologie macht Ultraschallsensoren in vielen Situationen sehr nützlich,
+zum Beispiel, um Robotern zu helfen, Hindernissen auszuweichen, oder um Fahrern beim Rückwärtsfahren die Entfernung zu Hindernissen hinter dem Fahrzeug anzuzeigen.
 
 .. image:: img/19_ultrasonic_ms.png
     :width: 500
     :align: center
 
+**Ultraschall-Timing**
 
-**Ultrasonic Timing**
+Das Timing-Diagramm ist unten dargestellt.
+Sie müssen nur einen kurzen 10µs-Impuls für den Trigger-Eingang bereitstellen, um die Messung zu starten,
+und dann sendet das Modul einen 8-Zyklus-Ultraschallstoß bei 40 kHz aus und hebt sein Echo an.
+Sie können die Reichweite durch das Zeitintervall zwischen dem Senden des Triggersignals und dem Empfang des Echosignals berechnen.
 
-The timing diagram is shown below. 
-You only need to supply a short 10us pulse for the trigger input to start the ranging, 
-and then the module will send out an 8 cycle burst of ultrasound at 40 kHz and raise its echo. 
-You can calculate the range through the time interval between sending trigger signal and receiving echo signal.
-
-Formula: us / 58 = centimeters or us / 148 =inch; or: the range = high level time * velocity (340M/S) / 2; 
-you are suggested to use measurement cycle over 60ms in order to prevent signal collisions of trigger signal and the echo signal.
+Formel: us / 58 = Zentimeter oder us / 148 = Zoll; oder: die Reichweite = Hochpegelzeit * Geschwindigkeit (340M/S) / 2;
+es wird empfohlen, einen Messzyklus von über 60ms zu verwenden, um Signalstörungen zwischen dem Triggersignal und dem Echosignal zu vermeiden.
 
 .. image:: img/19_ultrasonic_timing.png
     :width: 600
     :align: center
 
 
-Building the Circuit
---------------------------------
+Schaltungsaufbau
+-----------------------------
 
-**Components Needed**
+**Benötigte Komponenten**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Ultrasonic Module
-     - 1 * Active Buzzer
-     - Jumper Wires
+     - 1 * Ultraschallmodul
+     - 1 * Aktiver Summer
+     - Verbindungskabel
    * - |list_uno_r3| 
      - |list_ultrasonic| 
      - |list_active_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
+   * - 1 * USB-Kabel
+     - 1 * Steckbrett
      - 1 * Multimeter
      - 
    * - |list_usb_cable| 
      - |list_breadboard| 
-     - |list_meter|
+     - |list_meter| 
      - 
 
 
 
-**Building Step-by-Step**
+**Schritt-für-Schritt-Aufbau**
 
-Follow the wiring diagram, or the steps below to build your circuit.
-
-
+Folgen Sie dem Schaltplan oder den untenstehenden Schritten, um Ihre Schaltung zu erstellen.
 
 .. image:: img/19_reversing_aid_bb.png
     :width: 600
     :align: center
 
 
-Code Creation
--------------
+Erstellen des Codes
+------------------------
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson19_reversin_alarm`` using ``Ctrl + S`` or by clicking “Save”.
+1. Öffnen Sie die Arduino IDE und starten Sie ein neues Projekt, indem Sie „New Sketch“ aus dem Menü „File“ auswählen.
+2. Speichern Sie Ihren Sketch als ``Lesson19_reversin_alarm`` mit ``Strg + S`` oder durch Klicken auf „Speichern“.
 
-3. Firstly, we need to define the pins on the Arduino that are connected to the ultrasonic sensor and the buzzer. This step is crucial as it sets the foundation for the hardware interface.
+3. Zuerst müssen wir die Pins auf dem Arduino definieren, die mit dem Ultraschallsensor und dem Summer verbunden sind. Dieser Schritt ist entscheidend, da er die Grundlage für die Hardware-Schnittstelle bildet.
 
-* **TRIGGER_PIN** and **ECHO_PIN** are used for triggering and receiving echoes from the ultrasonic sensor.
-* **BUZZER_PIN** is the pin connected to the buzzer.
+* **TRIGGER_PIN** und **ECHO_PIN** werden verwendet, um den Ultraschallsensor auszulösen und die Echos zu empfangen.
+* **BUZZER_PIN** ist der Pin, der mit dem Summer verbunden ist.
 
 .. code-block:: Arduino
 
@@ -144,8 +140,7 @@ Code Creation
   #define ECHO_PIN     9
   #define BUZZER_PIN   2
 
-
-4. In the setup() function, we set the mode for each pin. The Trig pin needs to be set to output (as it sends the signal), the Echo pin is set to input (as it receives the signal), and the buzzer pin is also set to output (as it needs to emit sound).
+4. In der Funktion setup() legen wir den Modus für jeden Pin fest. Der Trigger-Pin muss auf Ausgang gesetzt werden (da er das Signal sendet), der Echo-Pin wird auf Eingang gesetzt (da er das Signal empfängt), und der Summer-Pin wird ebenfalls auf Ausgang gesetzt (da er ein Geräusch ausgeben muss).
 
 .. code-block:: Arduino
 
@@ -153,101 +148,97 @@ Code Creation
     pinMode(TRIGGER_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
     pinMode(BUZZER_PIN, OUTPUT);
-    Serial.begin(9600); // Start serial communication for debugging and distance viewing
+    Serial.begin(9600); // Starte die serielle Kommunikation zur Fehlerbehebung und zur Anzeige der Entfernung
   }
 
-5. Writing the measureDistance() Function:
+5. Schreiben der Funktion measureDistance():
 
-The measureDistance() function encapsulates the logic required to trigger the ultrasonic sensor and read the distance based on the echo received:
+Die Funktion measureDistance() enthält die Logik, die erforderlich ist, um den Ultraschallsensor auszulösen und die Entfernung basierend auf dem empfangenen Echo zu berechnen:
 
-a. Triggering the Ultrasonic Pulse
+a. Auslösen des Ultraschallimpulses:
 
-  * Set the TRIGGER_PIN low initially to ensure a clean pulse.
-  * A short delay of 2 microseconds ensures the line is clear.
-  * Send a 10-microsecond high pulse to the TRIGGER_PIN. This pulse tells the sensor to emit an ultrasonic sound wave.
-  * Set the TRIGGER_PIN back to low to end the pulse.
+  * Setzen Sie den TRIGGER_PIN zunächst auf LOW, um einen sauberen Impuls zu gewährleisten.
+  * Eine kurze Verzögerung von 2 Mikrosekunden sorgt dafür, dass die Leitung frei ist.
+  * Senden Sie einen 10-Mikrosekunden-Hochimpuls an den TRIGGER_PIN. Dieser Impuls weist den Sensor an, eine Ultraschallwelle auszusenden.
+  * Setzen Sie den TRIGGER_PIN zurück auf LOW, um den Impuls zu beenden.
 
   .. code-block:: Arduino
 
     long measureDistance() {
-      digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+      digitalWrite(TRIGGER_PIN, LOW);  // Stellen Sie sicher, dass der Trigger-Pin vor einem Impuls LOW ist
       delayMicroseconds(2);
-      digitalWrite(TRIGGER_PIN, HIGH); // Send a high pulse
-      delayMicroseconds(10);           // Pulse duration of 10 microseconds
-      digitalWrite(TRIGGER_PIN, LOW);  // End the high pulse
+      digitalWrite(TRIGGER_PIN, HIGH); // Senden Sie einen Hochimpuls
+      delayMicroseconds(10);           // Impulsdauer von 10 Mikrosekunden
+      digitalWrite(TRIGGER_PIN, LOW);  // Beenden Sie den Hochimpuls
     }
 
 .. note::
 
-  In previous lessons, we worked with ``int`` and ``float`` types of variables or constants. Now, let’s understand what long and unsigned long variables are about:
+  In früheren Lektionen haben wir mit ``int``- und ``float``-Variablen oder Konstanten gearbeitet. Nun lassen Sie uns verstehen, was es mit den Typen ``long`` und ``unsigned long`` auf sich hat:
 
-  * ``long``: A ``long`` integer is an extended version of an ``int``. It is used to store larger integer values that exceed the capacity of standard ``int``. A long typically occupies 32 or 64 bits of memory, which allows it to hold much larger values, both positive and negative.
-  * ``unsigned long``: An ``unsigned long`` is similar to a ``long`` but can only represent non-negative values. It uses the bit normally reserved for the sign to extend the range of possible values it can hold, but strictly in the positive spectrum.
+  * ``long``: Ein ``long``-Integer ist eine erweiterte Version eines ``int``. Es wird verwendet, um größere Ganzzahlen zu speichern, die die Kapazität eines Standard-``int`` überschreiten. Ein ``long`` belegt typischerweise 32 oder 64 Bit Speicher, was es ihm ermöglicht, viel größere Werte zu speichern, sowohl positive als auch negative.
+  * ``unsigned long``: Ein ``unsigned long`` ist ähnlich wie ein ``long``, kann jedoch nur nicht-negative Werte darstellen. Es verwendet das Bit, das normalerweise für das Vorzeichen reserviert ist, um den Bereich der möglichen Werte zu erweitern, jedoch ausschließlich im positiven Bereich.
 
+b. Echo lesen:
 
-
-b. Reading the Echo
-
-  * The pulseIn() function is used on the ECHO_PIN to measure the duration of the incoming pulse. This function waits for the pin to go HIGH, times how long it stays HIGH, and then returns the duration in microseconds.
-  * This duration is the time taken for the ultrasonic pulse to travel to the object and back.
+  * Die Funktion pulseIn() wird am ECHO_PIN verwendet, um die Dauer des eingehenden Impulses zu messen. Diese Funktion wartet darauf, dass der Pin HIGH wird, misst, wie lange er HIGH bleibt, und gibt dann die Dauer in Mikrosekunden zurück.
+  * Diese Dauer ist die Zeit, die der Ultraschallimpuls benötigt, um zum Objekt und zurück zu gelangen.
 
   .. code-block:: Arduino
     :emphasize-lines: 7
 
     long measureDistance() {
-      digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+      digitalWrite(TRIGGER_PIN, LOW);  // Stellen Sie sicher, dass der Trigger-Pin vor einem Impuls LOW ist
       delayMicroseconds(2);
-      digitalWrite(TRIGGER_PIN, HIGH); // Send a high pulse
-      delayMicroseconds(10);           // Pulse duration of 10 microseconds
-      digitalWrite(TRIGGER_PIN, LOW);  // End the high pulse
-      long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
+      digitalWrite(TRIGGER_PIN, HIGH); // Senden Sie einen Hochimpuls
+      delayMicroseconds(10);           // Impulsdauer von 10 Mikrosekunden
+      digitalWrite(TRIGGER_PIN, LOW);  // Beenden Sie den Hochimpuls
+      long duration = pulseIn(ECHO_PIN, HIGH);  // Messen Sie die Dauer des HIGH-Pegels am Echo-Pin
     }
 
-c. Calculating the Distance
+c. Berechnung der Entfernung:
 
-  * The speed of sound in air (approximately 340 m/s) is used here. The formula to calculate the distance is (duration * speed of sound) / 2. We divide by 2 because the sound wave travels to the object and back, so we only need half the distance for a one-way measurement.
-  * In our code, 0.034 cm/us (speed of sound in cm/microsecond) is used as a conversion factor.
+  * Die Schallgeschwindigkeit in der Luft (etwa 340 m/s) wird hier verwendet. Die Formel zur Berechnung der Entfernung lautet (Dauer * Schallgeschwindigkeit) / 2. Wir teilen durch 2, da die Schallwelle zum Objekt und zurück reist, sodass wir nur die halbe Entfernung für eine einfache Messung benötigen.
+  * In unserem Code wird 0,034 cm/µs (Schallgeschwindigkeit in cm/Mikrosekunde) als Umrechnungsfaktor verwendet.
 
   .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     long measureDistance() {
-      digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+      digitalWrite(TRIGGER_PIN, LOW);  // Stellen Sie sicher, dass der Trigger-Pin vor einem Impuls LOW ist
       delayMicroseconds(2);
-      digitalWrite(TRIGGER_PIN, HIGH); // Send a high pulse
-      delayMicroseconds(10);           // Pulse duration of 10 microseconds
-      digitalWrite(TRIGGER_PIN, LOW);  // End the high pulse
-      long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-      long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+      digitalWrite(TRIGGER_PIN, HIGH); // Senden Sie einen Hochimpuls
+      delayMicroseconds(10);           // Impulsdauer von 10 Mikrosekunden
+      digitalWrite(TRIGGER_PIN, LOW);  // Beenden Sie den Hochimpuls
+      long duration = pulseIn(ECHO_PIN, HIGH);  // Messen Sie die Dauer des HIGH-Pegels am Echo-Pin
+      long distance = duration * 0.034 / 2;     // Berechnen Sie die Entfernung (in cm)
       return distance;
     }
 
-
-6. Implement the Main Loop
-In the loop() function, the distance is measured frequently using the measureDistance() function. 
-Decisions are made based on this distance, such as whether to activate the buzzer.
+6. Implementieren der Hauptschleife:
+In der loop()-Funktion wird die Entfernung häufig mit der Funktion measureDistance() gemessen.
+Entscheidungen basieren auf dieser Entfernung, z. B. ob der Summer aktiviert werden soll.
 
 .. code-block:: Arduino
 
   void loop() {
-    long distance = measureDistance(); // Measure distance
-    Serial.print("Distance: ");
+    long distance = measureDistance(); // Entfernung messen
+    Serial.print("Entfernung: ");
     Serial.print(distance);
     Serial.println(" cm");
 
     if (distance > 0 && distance <= 50) {
-      digitalWrite(BUZZER_PIN, HIGH);  // Activate the buzzer if close
-      delay(100);                      // Buzzer sounds for 100 milliseconds
-      digitalWrite(BUZZER_PIN, LOW);   // Turn off the buzzer
+      digitalWrite(BUZZER_PIN, HIGH);  // Summer aktivieren, wenn der Abstand gering ist
+      delay(100);                      // Der Summer ertönt 100 Millisekunden lang
+      digitalWrite(BUZZER_PIN, LOW);   // Summer ausschalten
     } else {
-      digitalWrite(BUZZER_PIN, LOW);   // Keep the buzzer off
+      digitalWrite(BUZZER_PIN, LOW);   // Summer ausgeschaltet lassen
     }
 
-    delay(100);  // Delay between measurements to prevent sensor overload
+    delay(100);  // Verzögerung zwischen den Messungen, um eine Überlastung des Sensors zu verhindern
   }
 
-
-7. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+7. Hier ist Ihr vollständiger Code. Sie können jetzt auf „Upload“ klicken, um den Code auf das Arduino Uno R3 hochzuladen.
 
 .. code-block:: Arduino
 
@@ -256,44 +247,43 @@ Decisions are made based on this distance, such as whether to activate the buzze
   #define BUZZER_PIN   2
 
   void setup() {
-    pinMode(TRIGGER_PIN, OUTPUT);  // Set the Trig pin as output
-    pinMode(ECHO_PIN, INPUT);      // Set the Echo pin as input
-    pinMode(BUZZER_PIN, OUTPUT);   // Set the buzzer pin as output
-    Serial.begin(9600);            // Start serial communication for debugging
+    pinMode(TRIGGER_PIN, OUTPUT);  // Setzt den Trigger-Pin als Ausgang
+    pinMode(ECHO_PIN, INPUT);      // Setzt den Echo-Pin als Eingang
+    pinMode(BUZZER_PIN, OUTPUT);   // Setzt den Summer-Pin als Ausgang
+    Serial.begin(9600);            // Startet die serielle Kommunikation zur Fehlerbehebung
   }
 
   void loop() {
-    long distance = measureDistance(); // Call the function to measure distance
+    long distance = measureDistance(); // Ruft die Funktion zur Entfernungsmessung auf
     Serial.print("Distance: ");
     Serial.print(distance);
     Serial.println(" cm");
 
-    if (distance > 0 && distance <= 50) { // If distance is within 50 centimeters
-      digitalWrite(BUZZER_PIN, HIGH);     // Turn on the buzzer
-      delay(100);                         // Buzzer sounds for 100 milliseconds
-      digitalWrite(BUZZER_PIN, LOW);      // Turn off the buzzer
+    if (distance > 0 && distance <= 50) { // Wenn die Entfernung innerhalb von 50 cm liegt
+      digitalWrite(BUZZER_PIN, HIGH);     // Den Summer einschalten
+      delay(100);                         // Der Summer ertönt 100 Millisekunden lang
+      digitalWrite(BUZZER_PIN, LOW);      // Den Summer ausschalten
     } else {
-      digitalWrite(BUZZER_PIN, LOW);      // Keep the buzzer off
+      digitalWrite(BUZZER_PIN, LOW);      // Den Summer ausgeschaltet lassen
     }
 
-    delay(100);  // Delay between measurements
+    delay(100);  // Verzögerung zwischen den Messungen
   }
 
   long measureDistance() {
-    digitalWrite(TRIGGER_PIN, LOW);  // Ensure Trig pin is low before a pulse
+    digitalWrite(TRIGGER_PIN, LOW);  // Stellen Sie sicher, dass der Trigger-Pin vor einem Impuls LOW ist
     delayMicroseconds(2);
-    digitalWrite(TRIGGER_PIN, HIGH); // Send a high pulse
-    delayMicroseconds(10);           // Pulse duration of 10 microseconds
-    digitalWrite(TRIGGER_PIN, LOW);  // End the high pulse
+    digitalWrite(TRIGGER_PIN, HIGH); // Senden Sie einen Hochimpuls
+    delayMicroseconds(10);           // Impulsdauer von 10 Mikrosekunden
+    digitalWrite(TRIGGER_PIN, LOW);  // Beenden Sie den Hochimpuls
 
-    long duration = pulseIn(ECHO_PIN, HIGH);  // Measure the duration of high level on Echo pin
-    long distance = duration * 0.034 / 2;     // Calculate the distance (in cm)
+    long duration = pulseIn(ECHO_PIN, HIGH);  // Messen Sie die Dauer des HIGH-Pegels am Echo-Pin
+    long distance = duration * 0.034 / 2;     // Berechnen Sie die Entfernung (in cm)
     return distance;
   }
 
-8. Finally, remember to save your code and tidy up your workspace.
+8. Speichern Sie abschließend Ihren Code und räumen Sie Ihren Arbeitsplatz auf.
 
-**Question**
+**Frage**
 
-If you want the distance detected by this device to be more accurate to decimals, how should you modify the code?
-
+Wenn Sie möchten, dass die gemessene Entfernung auf Dezimalstellen genau ist, wie sollten Sie den Code ändern?

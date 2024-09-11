@@ -1,47 +1,47 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hallo und herzlich willkommen in der SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasten-Community auf Facebook! Tauche gemeinsam mit anderen Enthusiasten tiefer in die Welt von Raspberry Pi, Arduino und ESP32 ein.
 
-    **Why Join?**
+    **Warum beitreten?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Expertenunterstützung**: Löse nach dem Kauf auftretende Probleme und technische Herausforderungen mit Hilfe unserer Community und unseres Teams.
+    - **Lernen & Teilen**: Tausche Tipps und Anleitungen aus, um deine Fähigkeiten zu erweitern.
+    - **Exklusive Vorschauen**: Erhalte frühzeitigen Zugang zu neuen Produktankündigungen und exklusiven Einblicken.
+    - **Spezielle Rabatte**: Profitiere von exklusiven Rabatten auf unsere neuesten Produkte.
+    - **Festliche Aktionen und Verlosungen**: Nimm an Verlosungen und Feiertagsaktionen teil.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Bereit, gemeinsam mit uns zu entdecken und zu erschaffen? Klicke auf [|link_sf_facebook|] und tritt noch heute bei!
 
-3. Measure with Multimeter
+3. Messen mit dem Multimeter
 ==========================================
 
-Welcome to our exploration of the multimeter, an essential tool in electronics. This lesson will guide you through the functionality and application of the multimeter, teaching you how to measure various electrical properties effectively. Starting from the basics of setting up your multimeter with a battery and test leads, we'll delve into adjusting settings and utilizing its numerous functions. This hands-on experience will not only impart theoretical knowledge but also equip you with the skills to perform accurate measurements on any circuit.
+Willkommen zur Erkundung des Multimeters, einem unverzichtbaren Werkzeug in der Elektronik. Diese Lektion führt dich durch die Funktionalität und Anwendung des Multimeters und lehrt dich, wie du verschiedene elektrische Eigenschaften effektiv misst. Beginnend mit den Grundlagen, wie der Einrichtung deines Multimeters mit einer Batterie und Messleitungen, tauchen wir in das Anpassen der Einstellungen und die Nutzung seiner zahlreichen Funktionen ein. Diese praktische Erfahrung vermittelt dir nicht nur theoretisches Wissen, sondern auch die Fähigkeiten, um präzise Messungen in jedem Schaltkreis durchzuführen.
 
-Here's what you'll achieve:
+Das wirst du erreichen:
 
-* Understand the Components and Functions of a Multimeter
-* Master Measuring Voltage, Current, and Resistance.
-* Enhance your understanding of electronic fundamentals through hands-on practice
+* Verständnis der Komponenten und Funktionen eines Multimeters
+* Beherrschung der Messung von Spannung, Strom und Widerstand
+* Verbesserung deines Verständnisses der Elektronik durch praktische Übungen
 
-This lesson will not only boost your technical skills but also provide practical knowledge that lays a strong foundation for your future electronics learning and projects.
+Diese Lektion wird nicht nur deine technischen Fähigkeiten erweitern, sondern dir auch praktisches Wissen vermitteln, das eine solide Grundlage für dein zukünftiges Elektroniklernen und deine Projekte bildet.
 
-Know More about Multimeter
------------------------------
+Mehr über das Multimeter erfahren
+-------------------------------------
 
-A multimeter is a device used to measure various electrical properties. Most multimeters can measure voltage, current, resistance, and continuity (whether electricity can flow). 
+Ein Multimeter ist ein Gerät, das verschiedene elektrische Eigenschaften misst. Die meisten Multimeter können Spannung, Strom, Widerstand und Durchgang (ob Strom fließen kann) messen.
 
-The dial on the multimeter allows you to select the type of electrical measurement and the range you wish to measure in. Now, let's explore the various functions available on the dial.
+Das Einstellrad des Multimeters ermöglicht es dir, die Art der elektrischen Messung und den gewünschten Bereich auszuwählen. Lass uns nun die verschiedenen Funktionen auf dem Einstellrad erkunden.
 
 .. image:: img/multimeter_dashboard.png
     :width: 300
     :align: center
 
 
-**DC Voltage**
- 
-In this image, the selected position is used for measuring direct current (DC) voltage.Voltage is represented by a capital V. DC is denoted by three dashed lines with a straight line above them.
+**Gleichspannung**
 
-Your multimeter has five different DC voltage ranges — 200m (millivolts), 2V (volts), 20V (volts), 200V (volts), and 600V (volts). These numbers represent the maximum voltage that can be measured in each setting.
+In diesem Bild ist die gewählte Position für die Messung von Gleichspannung (DC) vorgesehen. Spannung wird durch ein großes V dargestellt. Gleichspannung wird durch drei gestrichelte Linien mit einer durchgehenden Linie darüber angezeigt.
+
+Dein Multimeter verfügt über fünf verschiedene Gleichspannungsbereiche — 200m (Millivolt), 2V (Volt), 20V (Volt), 200V (Volt) und 600V (Volt). Diese Zahlen geben die maximale Spannung an, die in jeder Einstellung gemessen werden kann.
 
 .. image:: img/multimeter_dc.png
     :width: 300
@@ -49,27 +49,27 @@ Your multimeter has five different DC voltage ranges — 200m (millivolts), 2V (
 
 .. note::
 
-    Here's the conversion between Volts:
+    Hier ist die Umrechnung zwischen Volt:
 
-    * 1 millivolt (mV) = 0.001 volt (V)
+    * 1 Millivolt (mV) = 0,001 Volt (V)
 
-    For example, if you have a voltage of 500 millivolts (mV), it can also be expressed as 0.5 volts (V).
+    Zum Beispiel, wenn du eine Spannung von 500 Millivolt (mV) hast, kann dies auch als 0,5 Volt (V) ausgedrückt werden.
 
-**Measuring Method**: Before measuring voltage, you need to select an appropriate measuring range. In all of our courses, the circuit voltage will not exceed 5V, so you can simply select the 20V position. When the circuit is functioning normally, you can test the voltage by placing the red and black test leads on either side of the device.
+**Messmethode**: Vor der Spannungsmessung musst du einen geeigneten Messbereich wählen. In all unseren Kursen überschreitet die Spannung im Stromkreis nicht 5V, daher kannst du einfach die 20V-Position wählen. Wenn der Stromkreis ordnungsgemäß funktioniert, kannst du die Spannung messen, indem du die roten und schwarzen Messleitungen an beiden Seiten des Geräts platzierst.
 
 
-**AC Voltage**
+**Wechselspannung**
 
-This image shows the setting for measuring alternating current (AC) voltage. AC is represented by a wavy line.
+Dieses Bild zeigt die Einstellung zur Messung von Wechselspannung (AC). Wechselstrom wird durch eine wellenförmige Linie dargestellt.
 
 .. image:: img/multimeter_ac.png
     :width: 300
     :align: center
 
 
-**Transistors**
+**Transistoren**
 
-The hFE NPN PNP setting is for measuring transistors. You will not use this setting in this course.
+Die Einstellung hFE NPN PNP ist für die Messung von Transistoren vorgesehen. Diese Einstellung wirst du in diesem Kurs nicht verwenden.
 
 .. image:: img/multimeter_hfe.png
     :width: 300
@@ -79,15 +79,15 @@ The hFE NPN PNP setting is for measuring transistors. You will not use this sett
 **1.5V mA**
 
 
-The "1.5V mA" setting on a meter is used to measure the current at a 1.5V voltage level, typically for testing how much current a circuit or device draws at this voltage
+Die Einstellung "1.5V mA" auf einem Messgerät wird verwendet, um den Strom bei einer Spannung von 1,5V zu messen, typischerweise um zu testen, wie viel Strom ein Stromkreis oder Gerät bei dieser Spannung zieht.
 
 .. image:: img/multimeter_1.5v.png
     :width: 300
     :align: center
 
-**Current**
+**Strom**
 
-For measuring current, the multimeter has settings for 2m (2 milliamp), 20m (20 milliamp), 200m (200 milliamp), and 10A (10 amp).
+Zum Messen von Strom verfügt das Multimeter über Einstellungen für 2m (2 Milliampere), 20m (20 Milliampere), 200m (200 Milliampere) und 10A (10 Ampere).
 
 .. image:: img/multimeter_current.png
     :width: 300
@@ -95,36 +95,36 @@ For measuring current, the multimeter has settings for 2m (2 milliamp), 20m (20 
 
 .. note::
 
-    Here's the conversion between amperes:
+    Hier ist die Umrechnung zwischen Ampere:
 
-    * 1 milliampere (mA) = 0.001 ampere (A)
-
-    For example, if you have a current of 50 milliamperes (mA), it can also be expressed as 0.05 amperes (A).
+    * 1 Milliampere (mA) = 0,001 Ampere (A)
 
 
 
-To measure currents less than 200 milliamps, you can insert the red test lead into the VΩmA port. Then, turn the dial to one of the milliamp settings. The circuits you build in this course and project will always have currents less than 200 mA.
+    Zum Beispiel, wenn du einen Strom von 50 Milliampere (mA) hast, kann dies auch als 0,05 Ampere (A) ausgedrückt werden.
 
-For measuring currents up to 10 amperes, you must insert the red test lead into the 10ADC port. Then, turn the dial to the 10A setting.
+Zum Messen von Strömen unter 200 Milliampere kannst du die rote Messleitung in den VΩmA-Port einstecken. Dann drehst du das Einstellrad auf eine der Milliampere-Einstellungen. Die Schaltkreise, die du in diesem Kurs und Projekt baust, haben immer Ströme unter 200 mA.
+
+Zum Messen von Strömen bis zu 10 Ampere musst du die rote Messleitung in den 10ADC-Port einstecken und das Einstellrad auf die 10A-Einstellung drehen.
 
 .. image:: img/multimeter_10a.png
     :width: 300
     :align: center
 
-**Measuring Method**: To measure the current in a circuit, the multimeter must be inserted into the circuit. In other words, it must become part of the circuit. This is different from measuring voltage or resistance, which can be done by across a component in the circuit. You will have the opportunity to make these measurements later when you start building circuits.
+**Messmethode**: Um den Strom in einem Stromkreis zu messen, muss das Multimeter in den Stromkreis eingefügt werden. Mit anderen Worten, es muss Teil des Stromkreises werden. Dies unterscheidet sich von der Messung von Spannung oder Widerstand, die über ein Bauteil im Stromkreis erfolgen kann. Du wirst die Gelegenheit haben, diese Messungen später durchzuführen, wenn du beginnst, Schaltkreise zu bauen.
 
-**Continuity**
+**Durchgang**
 
-The setting with a diode symbol and a sound icon is used for measuring continuity. When measuring continuity, if there can be current flow between the test leads, the multimeter will emit a "beep" sound.
+Die Einstellung mit einem Diodensymbol und einem Lautsprecher-Symbol wird zur Messung des Durchgangs verwendet. Wenn der Durchgang zwischen den Messleitungen gegeben ist, gibt das Multimeter einen "Piepton" ab.
 
 .. image:: img/multimeter_diode.png
     :width: 300
     :align: center
 
-**Resistance**
+**Widerstand**
 
 
-The final set of options on the multimeter is designated for assessing resistance, symbolized by the Greek letter omega (Ω). Typically, multimeters offer a variety of ranges for resistance measurements. This particular multimeter is equipped with five ranges: 200 ohms, 2k (2,000 ohms), 20k (20,000 ohms), 200k (200,000 ohms), and 2M (2,000,000 ohms). Each range specifies the highest resistance value it can accurately measure. To achieve the most precise readings, select a range that can measure the resistance without surpassing its upper limit.
+Die letzte Gruppe von Optionen auf dem Multimeter ist für die Messung des Widerstands vorgesehen, dargestellt durch den griechischen Buchstaben Omega (Ω). Typischerweise bieten Multimeter verschiedene Bereiche für Widerstandsmessungen an. Dieses Multimeter ist mit fünf Bereichen ausgestattet: 200 Ohm, 2k (2000 Ohm), 20k (20.000 Ohm), 200k (200.000 Ohm) und 2M (2.000.000 Ohm). Jeder Bereich gibt den höchsten Widerstandswert an, den es genau messen kann. Um die genauesten Messungen zu erzielen, wähle einen Bereich, der den Widerstand messen kann, ohne dessen obere Grenze zu überschreiten.
 
 .. image:: img/multimeter_resistance.png
     :width: 300
@@ -132,51 +132,51 @@ The final set of options on the multimeter is designated for assessing resistanc
   
 .. note::
 
-    Here's the conversion between ohms:
+    Hier ist die Umrechnung zwischen Ohm:
 
     * 1 kilohm (kΩ) = 1000 ohms (Ω)
     * 1 megohm (MΩ) = 1000000 ohms (Ω)
 
-For example, if you have a resistance of 1000 ohms (Ω), it can also be expressed as 1 kilohm (kΩ).
+Zum Beispiel, wenn du einen Widerstand von 1000 Ohm (Ω) hast, kann dies auch als 1 Kiloohm (kΩ) ausgedrückt werden.
 
 
-**Tips**
+**Tipps**
 
 
-During the measurement of resistance, voltage, or current, you might notice that the values on the display tend to vary. To stabilize and capture a specific reading, you can utilize the HOLD feature. This action freezes the current value on the display, where it stays until the HOLD button is pressed once more.
+Während der Messung von Widerstand, Spannung oder Strom wirst du vielleicht feststellen, dass die Werte auf dem Display schwanken. Um eine stabile und präzise Anzeige zu erhalten, kannst du die HOLD-Funktion nutzen. Dadurch wird der aktuelle Wert auf dem Display eingefroren, bis der HOLD-Button erneut gedrückt wird.
 
-If you're uncertain about the appropriate range to choose for measuring voltage, current, or resistance, it's advisable to begin with the maximum range available. This approach provides an initial estimate of the values you're working with, allowing you to subsequently narrow down to a more accurate range for precise measurements.
+Wenn du dir unsicher bist, welchen Bereich du für die Messung von Spannung, Strom oder Widerstand wählen sollst, ist es ratsam, mit dem maximal verfügbaren Bereich zu beginnen. Dies gibt dir eine erste Schätzung der Werte, mit denen du arbeitest, und du kannst dann schrittweise zu einem genaueren Bereich übergehen, um präzise Messungen durchzuführen.
 
-**Question**
+**Frage**
 
-Now that you have a detailed understanding of how to use a multimeter, consider which multimeter setting you would use to measure the following electrical values?
+Nachdem du nun ein detailliertes Verständnis für die Verwendung eines Multimeters hast, überlege dir, welche Multimeter-Einstellung du verwenden würdest, um die folgenden elektrischen Werte zu messen:
 
 .. list-table::
   :widths: 25 25
   :header-rows: 1
 
-  * - Measurement Object
-    - Multimeter Setting
-  * - 9V volts DC
+  * - Messobjekt
+    - Multimeter-Einstellung
+  * - 9V Gleichspannung
     -
-  * - 1K ohms
+  * - 1K Ohm
     -
-  * - 40 milliamps
+  * - 40 Milliampere
     - 
-  * - 110 volts AC
+  * - 110 Volt Wechselspannung
     -
 
 
-Measuring with a Multimeter
+Messen mit dem Multimeter
 --------------------------------
 
-In the previous lesson, you set up a simple circuit to light an LED. Now, we will use a multimeter to measure the voltage, current, and resistance in this circuit. Let's see how to do it now!
+In der vorherigen Lektion hast du einen einfachen Stromkreis aufgebaut, um eine LED zu beleuchten. Jetzt werden wir ein Multimeter verwenden, um die Spannung, den Strom und den Widerstand in diesem Stromkreis zu messen. Lass uns sehen, wie das funktioniert!
 
-**Preparing the Multimeter**
+**Vorbereitung des Multimeters**
 
-Before using the multimeter, you need to install the battery and connect the two test leads, so it's ready to use at any time.
+Bevor du das Multimeter verwendest, musst du die Batterie einlegen und die beiden Messleitungen anschließen, sodass es jederzeit einsatzbereit ist.
 
-1. Follow the video below to connect the battery to your multimeter.
+1. Folge dem Video unten, um die Batterie mit deinem Multimeter zu verbinden.
 
   .. raw:: html
 
@@ -185,125 +185,125 @@ Before using the multimeter, you need to install the battery and connect the two
           Your browser does not support the video tag.
       </video>
 
-2. Find your multimeter and the red and black test leads. Ensure the multimeter is in the "off" position. Insert the black test lead into the COM port of the multimeter. Insert the red test lead into the voltage-ohm-milliamp (VΩmA) port.
+2. Finde dein Multimeter und die roten und schwarzen Messleitungen. Stelle sicher, dass das Multimeter in der "Aus"-Position ist. Stecke die schwarze Messleitung in den COM-Port des Multimeters. Stecke die rote Messleitung in den Spannung-Ohm-Milliampere-Port (VΩmA).
 
 .. image:: img/multimeter_test_wire.png
   :width: 300
   :align: center
 
-**Measuring Voltage**
+**Spannung messen**
 
-1. Turn the multimeter to the DC 20 volts setting.
+1. Drehe das Multimeter auf die Gleichspannungseinstellung 20 Volt.
 
 .. image:: img/multimeter_dc_20v.png
   :width: 300
   :align: center
 
-2. Slightly pull apart the positive and negative wires on the breadboard to expose the metal ends without fully detaching them.
+2. Ziehe die positiven und negativen Drähte auf dem Steckbrett leicht auseinander, um die Metallenden freizulegen, ohne sie vollständig zu entfernen.
 
-3. Then, touch the exposed metal ends with the multimeter's red and black test leads to measure the voltage.
+3. Berühre dann die freiliegenden Metallenden mit den roten und schwarzen Messleitungen des Multimeters, um die Spannung zu messen.
 
 .. image:: img/3_measure_volmeter.png
 
-4. Record the voltage, you can also record the observed phenomena in the Notes column.
+4. Notiere die gemessene Spannung, du kannst auch die beobachteten Phänomene in der Notizspalte vermerken.
 
 .. note::
 
-    * Mine was 5.13 volts, fill in according to your measurement.
+    * Meine Messung betrug 5,13 Volt, trage deine Messung entsprechend ein.
 
-    * Due to wiring issues and instability of your hand, you may see the voltage fluctuate. Keep your hand steady, observe a few times, and you will get a fairly stable voltage reading.
+    * Aufgrund von Verdrahtungsproblemen und Instabilität deiner Hand kann es zu Spannungsabweichungen kommen. Halte deine Hand ruhig, beobachte einige Male und du wirst eine relativ stabile Spannungsmessung erhalten.
 
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - Typ
+     - Einheiten
+     - Messergebnisse
+     - Notizen
+   * - Spannung
+     - Volt
+     - *≈5,13 Volt*
      - 
-   * - Current
-     - Milliamps
+   * - Strom
+     - Milliampere
      - 
      - 
-   * - Resistance
-     - Ohms
+   * - Widerstand
+     - Ohm
      - 
      -
 
-5. Finally, reinsert all the jumper wires into the breadboard to prevent them from being pulled out while you conduct other measurements.
+5. Setze schließlich alle Jumperkabel wieder in das Steckbrett ein, um zu verhindern, dass sie herausgezogen werden, während du andere Messungen durchführst.
 
-**Measuring Current**
+**Strom messen**
 
-You have measured the voltage in the circuit. Next, you will measure the current in the circuit.
+Du hast die Spannung im Stromkreis gemessen. Als Nächstes wirst du den Strom im Stromkreis messen.
 
-1. For current measurement, the multimeter needs to be integrated into the circuit's flow path, essentially becoming a segment of the circuit's conductive route. A straightforward method involves adjusting the LED's placement: keep the LED's anode in hole 1F while shifting its cathode (the shorter leg) from hole 1E to hole 3E.
+1. Für die Strommessung muss das Multimeter in den Stromfluss des Stromkreises integriert werden und somit Teil des Leitungswegs werden. Eine einfache Methode besteht darin, die Position der LED zu ändern: Lasse die Anode der LED in Loch 1F und verschiebe die Kathode (das kürzere Bein) von Loch 1E auf Loch 3E.
 
 .. image:: img/3_measure_current.png
   :width: 600
   :align: center
 
-2. Set the multimeter to the 200 milliamps position.
+2. Stelle das Multimeter auf die Position 200 Milliampere ein.
 
 .. image:: img/multimeter_200ma.png
   :width: 300
   :align: center
 
-3. Place the black test lead on the wire connected to hole 1B and the red test lead on the LED's cathode in hole 3E. Completing this setup, the red LED should begin to blink.
+3. Platziere die schwarze Messleitung auf dem Draht, der mit Loch 1B verbunden ist, und die rote Messleitung auf der Kathode der LED in Loch 3E. Wenn alles richtig verbunden ist, sollte die rote LED anfangen zu blinken.
 
   .. note::
 
-    When measuring voltage across the resistor and LED, ensuring a solid connection with the multimeter test leads can be tricky. To get a better grip, attach the test leads where the component legs enter the breadboard. This way, you can press down harder without dislodging anything.
+    Beim Messen der Spannung über den Widerstand und die LED kann es schwierig sein, eine feste Verbindung mit den Messleitungen des Multimeters herzustellen. Um einen besseren Halt zu bekommen, befestige die Messleitungen dort, wo die Komponentenbeine in das Steckbrett eingeführt sind. So kannst du fester drücken, ohne etwas zu lösen.
 
 .. image:: img/3_measure_current2.png
 
-4. You will find the read current is less than 20mA, so we can switch to the 20mA position to get a more accurate reading.
+4. Du wirst feststellen, dass der gemessene Strom unter 20 mA liegt. Daher können wir auf die Position 20 mA umschalten, um eine genauere Messung zu erhalten.
 
 .. image:: img/multimeter_20a.png
   :width: 300
   :align: center
 
 
-5. Measure and record the current in the circuit, in milliamps.
+5. Messe und notiere den Strom im Stromkreis in Milliampere.
 
 .. note::
 
-  Please be aware that fluctuations in the measured current are normal due to various factors such as contact stability, power supply variations, and temperature effects. We recommend simply recording the current value you measure at any given moment. If the value is within theoretical expectations, it should be considered acceptable.
+  Bitte beachte, dass Schwankungen im gemessenen Strom aufgrund verschiedener Faktoren wie Kontaktstabilität, Stromversorgungsänderungen und Temperatureffekten normal sind. Wir empfehlen, einfach den Stromwert zu notieren, den du zu einem bestimmten Zeitpunkt misst. Wenn der Wert innerhalb der theoretischen Erwartungen liegt, sollte er als akzeptabel angesehen werden.
 
   
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - Typ
+     - Einheiten
+     - Messergebnisse
+     - Notizen
+   * - Spannung
+     - Volt
+     - *≈5,13 Volt*
      - 
-   * - Current
-     - Milliamps
-     - *≈13.54 milliamps*
+   * - Strom
+     - Milliampere
+     - *≈13,54 Milliampere*
      - 
-   * - Resistance
-     - Ohms
+   * - Widerstand
+     - Ohm
      - 
      -
 
-6. Put the LED back in its original position, with the anode in hole 1F and the cathode in hole 1E.
+6. Setze die LED wieder in ihre ursprüngliche Position, mit der Anode in Loch 1F und der Kathode in Loch 1E.
 
-**Calculating Total Resistance**
+**Gesamtwiderstand berechnen**
 
-Measuring resistance in a circuit with a multimeter gets tricky when LEDs are involved, because LEDs need a specific amount of voltage to turn on, called the forward voltage. If the voltage isn't high enough, the LED won't light up, and the circuit stays open, which complicates measuring resistance. Moreover, you can't have any voltage in the circuit other than what's coming from the multimeter when you're trying to measure resistance.
+Die Messung des Widerstands in einem Schaltkreis mit einem Multimeter wird kompliziert, wenn LEDs beteiligt sind, da LEDs eine bestimmte Spannung benötigen, um zu leuchten, die sogenannte Vorwärtsspannung. Wenn die Spannung nicht ausreicht, leuchtet die LED nicht und der Stromkreis bleibt offen, was die Widerstandsmessung erschwert. Zudem darf keine andere Spannung im Stromkreis vorhanden sein, außer der des Multimeters, wenn du den Widerstand messen möchtest.
 
-So, directly measuring the circuit's resistance with a multimeter isn't straightforward. What should we do then?
+Was tun wir also?
 
-Here, we will use the formula shown below to calculate resistance from voltage and current, which is Ohm's Law. We will provide a detailed introduction to this in the next lesson.
+Hier verwenden wir die unten gezeigte Formel, um den Widerstand aus Spannung und Strom zu berechnen, das Ohmsche Gesetz. Wir werden dies in der nächsten Lektion ausführlich behandeln.
 
 
 .. code-block::
@@ -314,7 +314,7 @@ Here, we will use the formula shown below to calculate resistance from voltage a
 
     V = I • R
 
-When rearranged, the equation becomes:
+Umgestellt lautet die Gleichung:
 
 .. code-block::
 
@@ -324,15 +324,15 @@ When rearranged, the equation becomes:
 
     R = V / I
 
-Using the formula above, with the voltage and current you measured, you can calculate the total resistance in the circuit and fill it into the table.
+Verwende die obige Formel und die von dir gemessenen Spannungs- und Stromwerte, um den Gesamtwiderstand im Stromkreis zu berechnen und in die Tabelle einzutragen.
 
 .. note::
 
-    Voltage is in volts, resistance is in ohms, and current in the table is in milliamps, you need to convert milliamps to amperes:
+    Spannung wird in Volt, Widerstand in Ohm und Strom in Milliampere gemessen. Du musst Milliampere in Ampere umrechnen:
 
     1 Amps = 1000 Milliamps
 
-    Meaning you need to divide the measured current by 1000 before using the formula to calculate total resistance. The final calculated result may not be a whole number, please round to two decimal places. For example, my calculated value is 378.8774002954, which I round to 378.88.
+    Das bedeutet, dass du den gemessenen Strom durch 1000 teilen musst, bevor du die Formel zur Berechnung des Gesamtwiderstands verwendest. Das Endergebnis wird möglicherweise keine ganze Zahl sein, runde bitte auf zwei Dezimalstellen. Zum Beispiel lautet mein berechneter Wert 378,8774002954, den ich auf 378,88 aufrunde.
 
     R = 5.13 / (13.54 / 1000) = 378.88 ohms
 
@@ -341,54 +341,55 @@ Using the formula above, with the voltage and current you measured, you can calc
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Type
-     - Units
-     - Measurement Results
-     - Notes
-   * - Voltage
-     - Volts
-     - *≈5.13 volts*
+   * - Typ
+     - Einheiten
+     - Messergebnisse
+     - Notizen
+   * - Spannung
+     - Volt
+     - *≈5,13 Volt*
      - 
-   * - Current
-     - Milliamps
-     - *≈13.54 milliamps*
+   * - Strom
+     - Milliampere
+     - *≈13,54 Milliampere*
      - 
-   * - Resistance
-     - Ohms
-     - *≈378.88 ohms*
+   * - Widerstand
+     - Ohm
+     - *≈378,88 Ohm*
      -
 
-**Measuring the Resistance Value**
+**Den Widerstandswert messen**
 
-Now that we've figured out the circuit's total resistance, it's time to see how much of it is because of the resistor and how much is due to the LED. Our resistor is marked as 220 ohms, but with a 5% tolerance, it could actually be anywhere from 209 to 231 ohms. Let's use the multimeter to find out its exact value.
+Nun, da wir den Gesamtwiderstand im Stromkreis berechnet haben, ist es an der Zeit zu sehen, wie viel davon auf den Widerstand und wie viel auf die LED zurückzuführen ist. Unser Widerstand ist mit 220 Ohm markiert, aber mit einer Toleranz von 5% könnte er tatsächlich zwischen 209 und 231 Ohm liegen. Lass uns das Multimeter verwenden, um den genauen Wert herauszufinden.
 
-1. When measuring resistance, your multimeter has to act as the only source of voltage; make sure there are no other power sources connected to the circuit. So, unplug any jumper wires from the Arduino Uno R3 to ensure the breadboard is isolated.
+1. Beim Messen des Widerstands muss dein Multimeter die einzige Spannungsquelle sein. Stelle sicher, dass keine anderen Stromquellen mit dem Stromkreis verbunden sind. Ziehe daher alle Jumperkabel vom Arduino Uno R3 ab, um sicherzustellen, dass das Steckbrett isoliert ist.
 
 .. image:: img/3_measure_resistance.png
   :width: 600
   :align: center
 
-2. For an accurate measure of the resistor's resistance, dial your multimeter to the 2K (2000 ohms) resistance mode.
+2. Um den Widerstand des Widerstands genau zu messen, wähle die 2K (2000 Ohm) Widerstandseinstellung an deinem Multimeter.
 
 .. image:: img/multimeter_2k.png
   :width: 300
   :align: center
 
-3. Place the multimeter's red and black test leads on either side of the resistor, and record the reading from the multimeter.
+3. Platziere die roten und schwarzen Messleitungen des Multimeters auf beiden Seiten des Widerstands und notiere den Messwert.
 
 .. image:: img/3_measure_resistor.png
 
-4. After measuring, remember to turn the multimeter off by setting it to the "OFF" position.
+4. Nachdem du die Messung durchgeführt hast, denke daran, das Multimeter auszuschalten, indem du es auf "OFF" stellst.
 
-**Calculating the LED's Resistance**
+**Den Widerstand der LED berechnen**
 
-To determine the LED's resistance, subtract the resistor's resistance from the total resistance in the circuit.
+Um den Widerstand der LED zu bestimmen, ziehe den Widerstandswert des Widerstands vom Gesamtwiderstand im Stromkreis ab.
 
 .. code-block::
 
 
-    LED Resistance = Total Resistance - Resistor's Resistance
+    LED-Widerstand = Gesamtwiderstand - Widerstand des Widerstands
 
-So, according to my measurements, the LED's resistance should be: 378.88 - 215 = 163.88 ohms.
+Gemäß meinen Messungen sollte der Widerstand der LED folgendermaßen sein: 378,88 - 215 = 163,88 Ohm.
 
-We've taken a hands-on journey through the essentials of using a multimeter to measure voltage, current, and resistance in a circuit. From building a simple LED circuit to delving into the nuances of measuring resistance in circuits with LEDs, we've explored how to practically apply Ohm's Law and understand the dynamics of series and parallel circuits. As we move forward, remember that these foundational skills lay the groundwork for more complex projects and deeper understanding of electronics. Keep experimenting, keep learning, and let's continue to illuminate the path of electronic exploration together.
+Wir haben eine praktische Reise durch die Grundlagen der Verwendung eines Multimeters unternommen, um Spannung, Strom und Widerstand in einem Schaltkreis zu messen. Vom Bau eines einfachen LED-Schaltkreises bis hin zum Eintauchen in die Feinheiten der Widerstandsmessung in Schaltkreisen mit LEDs haben wir gelernt, wie man das Ohmsche Gesetz praktisch anwendet und die Dynamik von Reihen- und Parallelschaltungen versteht. Während wir weitermachen, denke daran, dass diese grundlegenden Fähigkeiten die Grundlage für komplexere Projekte und ein tieferes Verständnis der Elektronik bilden. Experimentiere weiter, lerne weiter und lass uns gemeinsam den Weg der elektronischen Erkundung erleuchten.
+
