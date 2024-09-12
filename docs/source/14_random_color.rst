@@ -1,189 +1,182 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux nouvelles annonces de produits.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-14. Random Colors
-======================
+14. Couleurs Aléatoires
+===========================
 
-Sometimes, life needs a dash of surprise. When you're feeling indecisive, let randomness take the reins. This lesson will guide you on how to make an RGB LED light up in random colors, perfect for when you want to add an unpredictable sparkle to your projects.
+Parfois, la vie a besoin d'une touche de surprise. Quand vous ne savez pas quelle couleur choisir, laissez le hasard décider ! Cette leçon vous montrera comment faire briller une LED RGB en couleurs aléatoires, parfait pour ajouter une étincelle imprévisible à vos projets.
 
-Building the Circuit
------------------------
+Montage du circuit
+-------------------------
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * LED RGB
+     - 3 * Résistances de 220Ω
+     - Fils de connexion
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     -
-     -
+   * - 1 * Câble USB
+     - 1 * Plaque d'essai (breadboard)
+     - 
+     - 
    * - |list_usb_cable| 
      - |list_breadboard| 
-     -
-     -
-     
-This lesson uses the same circuit as Lesson 12.
+     - 
+     - 
+
+Cette leçon utilise le même circuit que la leçon 12.
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
-Code Creation
--------------------
+Création du code
+---------------------
 
-In the previous lessons, you've controlled the RGB LED to display your desired colors. But sometimes, you may not need it to show a specific color; instead, you might want it to display a random color, much like stage lights. How can this be done?
+Dans les leçons précédentes, vous avez contrôlé la LED RGB pour afficher les couleurs de votre choix. Mais parfois, vous voudrez peut-être qu'elle affiche une couleur aléatoire, comme des lumières de scène. Comment cela peut-il être fait ?
 
-**Know random() functions**
+**Comprendre les fonctions random()**
 
-In the physical world, randomness abounds, but in programming, so-called "random" numbers are usually computed through a deterministic algorithm. This algorithm typically requires a starting point known as a "seed," making these numbers predictable and thus called "pseudo-random." The "pseudo" prefix indicates that these numbers seem random but are actually patterned.
+Dans le monde physique, le hasard est omniprésent, mais en programmation, les nombres dits "aléatoires" sont généralement calculés à l'aide d'un algorithme déterministe. Cet algorithme nécessite un point de départ appelé "graine" pour générer ces nombres. Ils sont donc dits "pseudo-aléatoires" car ils semblent aléatoires, mais suivent en réalité un modèle prévisible.
 
-Interestingly, on an Arduino Uno R3, we can use physical measurements from the real world as seeds. During your measurements with a multimeter, you might notice minor fluctuations in the circuit's voltage and current values. These fluctuations can provide unpredictability to our random numbers.
+Sur un Arduino Uno R3, nous pouvons utiliser des mesures physiques comme source de hasard. Par exemple, des fluctuations mineures dans la tension et le courant d'un circuit peuvent servir de base à nos nombres pseudo-aléatoires.
 
-Arduino's approach to randomness involves several functions:
+Arduino propose plusieurs fonctions pour générer des nombres aléatoires :
 
-* ``randomSeed();``: Initializing the random number generator's seed value. This function ensures that the starting point of the random number sequence varies with each program run, thus producing different sequences. 
+* ``randomSeed();`` : Initialise la graine pour le générateur de nombres aléatoires. Cette fonction permet de s'assurer que la séquence de nombres varie à chaque exécution du programme.
 
-    **Parameters**
-        * ``seed``: A value used to initialize the random number generator. This unsigned long value sets the starting point of the random sequence.
-    **Returns**
-        None.
+    **Paramètres**
+        * ``seed`` : Une valeur utilisée pour initialiser le générateur de nombres aléatoires.
+    **Retourne**
+        Aucun.
 
-* ``long random(long max);``: Generating a random number within a specified range.
+* ``long random(long max);`` : Génère un nombre aléatoire dans une plage spécifiée.
 
-    **Parameters**
-        ``max``: The upper limit of the random number (``max`` itself not included), meaning the random number will be between 0 (inclusive) and ``max-1`` (inclusive).
+    **Paramètres**
+        ``max`` : La limite supérieure du nombre aléatoire (excluant ``max``), ce qui signifie que le nombre généré sera compris entre 0 (inclus) et ``max-1`` (inclus).
     
-    **Returns**
-        A long type number between 0 and max-1.
+    **Retourne**
+        Un nombre de type long compris entre 0 et max-1.
 
-* ``long random(long min, long max);``: Generating a random number within a specified range.
+* ``long random(long min, long max);`` : Génère un nombre aléatoire dans une plage spécifiée.
 
-    **Parameters**
-        ``min``: The lower limit of the random number (inclusive).
-        ``max``: The upper limit of the random number (``max`` itself not included), meaning the random number will be between min (inclusive) and max-1 (inclusive).
+    **Paramètres**
+        ``min`` : La limite inférieure du nombre aléatoire (incluse).
+        ``max`` : La limite supérieure du nombre aléatoire (excluant ``max``).
     
-    **Returns**
-        A long type number between min and max-1.
+    **Retourne**
+        Un nombre de type long compris entre min et max-1.
 
-**Writing the Code**
+**Écrire le code**
 
-1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
+1. Ouvrez le sketch que vous avez sauvegardé précédemment, ``Lesson13_PWM_Color_Mixing``.
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson14_Random_Colors``. Click "Save".
+2. Cliquez sur "Enregistrer sous..." dans le menu "Fichier" et renommez-le en ``Lesson14_Random_Colors``. Cliquez sur "Enregistrer".
 
-3. Only call ``randomSeed()`` once in ``void setup()`` to initialize the seed. Avoid using a fixed seed value, as this would cause the same sequence of random numbers to be generated every time the program runs.
-
-    We use ``analogRead(A0)`` to read the value from an unconnected analog pin. As this pin is not connected, it picks up noise, which varies with each reading, providing a good seed for ``randomSeed()``.
+3. Appelez ``randomSeed()`` une seule fois dans ``void setup()`` pour initialiser la graine. Nous utilisons ``analogRead(A0)`` pour lire une valeur sur une broche analogique non connectée, qui capte le bruit aléatoire de l'environnement.
 
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     void setup() {
-        // Set up code to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Code à exécuter une fois :
+        pinMode(9, OUTPUT);   // Configurer la broche bleue de la LED RGB en sortie
+        pinMode(10, OUTPUT);  // Configurer la broche verte de la LED RGB en sortie
+        pinMode(11, OUTPUT);  // Configurer la broche rouge de la LED RGB en sortie
             
-        // Initialize random seed based on an unconnected analog pin
-        // This ensures a different sequence of random numbers on each reset
+        // Initialiser la graine aléatoire avec une broche analogique non connectée
         randomSeed(analogRead(A0));
     }
 
-4. Now in ``void loop()``, remove the original code. Use the ``random()`` function to generate random values stored in the variables ``redValue``, ``greenValue``, and ``blueValue``.
+4. Dans ``void loop()``, remplacez le code original par la fonction ``random()`` pour générer des valeurs aléatoires et les stocker dans les variables ``redValue``, ``greenValue`` et ``blueValue``.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
 
     void loop(){
-        // Generate random values for each color component
-        int redValue = random(0, 256);   // Random value between 0 and 255
-        int greenValue = random(0, 256); // Random value between 0 and 255
-        int blueValue = random(0, 256);  // Random value between 0 and 255
+        // Générer des valeurs aléatoires pour chaque composant de couleur
+        int redValue = random(0, 256);   // Valeur aléatoire entre 0 et 255
+        int greenValue = random(0, 256); // Valeur aléatoire entre 0 et 255
+        int blueValue = random(0, 256);  // Valeur aléatoire entre 0 et 255
     }
 
-5. Input the generated RGB values into the ``setColor()`` function, allowing the RGB LED to emit the color. Also, use a ``delay()`` function to determine how long the color is displayed.
-
+5. Transmettez les valeurs RGB générées à la fonction ``setColor()``, et utilisez la fonction ``delay()`` pour déterminer la durée d'affichage de chaque couleur.
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     void loop() {
-        // Generate random values for each color component between 0 and 255
-        int redValue = random(0, 256);    // Generate a random red value
-        int greenValue = random(0, 256);  // Generate a random green value
-        int blueValue = random(0, 256);   // Generate a random blue value
+        // Générer des valeurs aléatoires pour chaque composant de couleur
+        int redValue = random(0, 256);    // Valeur aléatoire pour le rouge
+        int greenValue = random(0, 256);  // Valeur aléatoire pour le vert
+        int blueValue = random(0, 256);   // Valeur aléatoire pour le bleu
 
-        // Apply the random color values to the RGB LED
+        // Appliquer les valeurs aléatoires à la LED RGB
         setColor(redValue, greenValue, blueValue);
-        delay(1000);  // Wait for 1 second
+        delay(1000);  // Attendre 1 seconde
     }
 
-
-6. Your complete code is now ready. You can upload it to the Arduino Uno R3, and you will see the RGB LED display a random color every second.
+6. Votre code est maintenant prêt. Téléchargez-le sur l'Arduino Uno R3 et vous verrez la LED RGB afficher une couleur aléatoire toutes les secondes.
 
 .. code-block:: Arduino
     :emphasize-lines: 19,20
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Code à exécuter une fois :
+        pinMode(9, OUTPUT);   // Configurer la broche bleue de la LED RGB en sortie
+        pinMode(10, OUTPUT);  // Configurer la broche verte de la LED RGB en sortie
+        pinMode(11, OUTPUT);  // Configurer la broche rouge de la LED RGB en sortie
         
-        // Initialize random seed based on an unconnected analog pin
-        // This ensures a different sequence of random numbers on each reset
+        // Initialiser la graine aléatoire avec une broche analogique non connectée
         randomSeed(analogRead(A0));
     }
 
     void loop() {
-        // Generate random values for each color component between 0 and 255
-        int redValue = random(0, 256);    // Generate a random red value
-        int greenValue = random(0, 256);  // Generate a random green value
-        int blueValue = random(0, 256);   // Generate a random blue value
+        // Générer des valeurs aléatoires pour chaque composant de couleur
+        int redValue = random(0, 256);    // Valeur aléatoire pour le rouge
+        int greenValue = random(0, 256);  // Valeur aléatoire pour le vert
+        int blueValue = random(0, 256);   // Valeur aléatoire pour le bleu
 
-        // Apply the random color values to the RGB LED
+        // Appliquer les valeurs aléatoires à la LED RGB
         setColor(redValue, greenValue, blueValue);
-        delay(1000);  // Wait for 1 second
+        delay(1000);  // Attendre 1 seconde
     }
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // Écrire la valeur PWM pour le rouge, le vert et le bleu sur la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-7. Finally, remember to save your code and tidy up your workspace.
+7. Enfin, n'oubliez pas de sauvegarder votre code et de ranger votre espace de travail.
 
 **Question**
 
-1. If you change the code from ``randomSeed(analogRead(A0))`` to ``randomSeed(0)``, how will the colors of the RGB LED change, and why?
+1. Si vous remplacez ``randomSeed(analogRead(A0))`` par ``randomSeed(0)``, comment les couleurs de la LED RGB vont-elles changer, et pourquoi ?
 
-2. What are some situations where randomness is used to solve problems in everyday life, aside from randomly picking colors for decoration and choosing lottery numbers?
+2. Dans quelles situations le hasard est-il utilisé pour résoudre des problèmes dans la vie quotidienne, en dehors du choix aléatoire de couleurs pour la décoration ou de la sélection des numéros de loterie ?
 
-**Summary**
+**Résumé**
 
-By the end of this lesson, you will not only have learned about randomness in programming and how to manipulate it to create vibrant, unexpected visual displays but also appreciated the simple beauty of randomness in everyday life. Programming can be as unpredictable as life itself, and with the right tools, you can harness that unpredictability in creative and functional ways.
-
+À la fin de cette leçon, vous aurez non seulement appris à gérer l'aléatoire en programmation pour créer des affichages visuels dynamiques, mais vous aurez également acquis une nouvelle appréciation de la beauté simple de l'imprévisibilité dans la vie quotidienne. La programmation peut parfois être aussi imprévisible que la vie elle-même, et avec les bons outils, vous pouvez exploiter cette imprévisibilité de manière créative et fonctionnelle.

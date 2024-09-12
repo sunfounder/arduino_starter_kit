@@ -1,227 +1,228 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté Facebook des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et relevez les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Avant-premières exclusives** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des promotions festives et à des tirages au sort.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
-5. Series Circuit vs. Parallel Circuit
-=================================================
-
-In this lesson, you will engage in building and analyzing both series and parallel circuits, learning to measure and understand how voltage behaves in different circuit configurations. Utilizing a multimeter, you will measure the voltage and resistance of the circuits you construct, gaining practical insights into circuit dynamics.
-
-In this exciting lesson, you'll:
-
-* Connect schematic diagrams with actual circuits.
-* Use a multimeter to measure resistance and voltage.
-* Build series and parallel circuits using a breadboard.
-* Compare the behavior of voltage in series and parallel circuits.
-
-These objectives will empower you to bridge the gap between theoretical knowledge and practical application, enriching your understanding of electronics through hands-on experience.
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
-Series Circuit vs. Parallel Circuit
-------------------------------------------
+5. Circuit en série vs. Circuit en parallèle
+===============================================
 
-In our previous lessons, we've successfully constructed a simple circuit with an Arduino Uno R3, a resistor, and an LED. The current in this setup flows in a series configuration: from the board's Pin 13 pin, through the LED, through the resistor, and back to the GND pin. This is a straightforward example of a series circuit.
+Dans cette leçon, vous allez construire et analyser des circuits en série et en parallèle, tout en apprenant à mesurer et à comprendre comment la tension se comporte dans différentes configurations de circuits. En utilisant un multimètre, vous mesurerez la tension et la résistance des circuits que vous construisez, acquérant ainsi une compréhension pratique des dynamiques des circuits.
 
-But as we delve deeper into the world of electronics, we encounter circuits that are more complex, comprising components arranged in series or parallel. To comprehend these arrangements and their implications on current and voltage, we need to familiarize ourselves with circuit diagrams, also known as schematic diagrams.
+Dans cette leçon passionnante, vous allez :
 
-**Wiring Diagrams vs. Schematic Diagrams**
+* Relier les schémas électriques aux circuits réels.
+* Utiliser un multimètre pour mesurer la résistance et la tension.
+* Construire des circuits en série et en parallèle à l'aide d'une plaque d'essai.
+* Comparer le comportement de la tension dans les circuits en série et en parallèle.
 
-We've been using wiring diagrams—pictorial representations that mimic the physical layout of circuit components. These diagrams are intuitive and serve well for assembly purposes:
+Ces objectifs vous permettront de combler le fossé entre les connaissances théoriques et l'application pratique, enrichissant ainsi votre compréhension de l'électronique grâce à une expérience pratique.
+
+
+Circuit en série vs. Circuit en parallèle
+---------------------------------------------
+
+Dans nos leçons précédentes, nous avons construit un circuit simple avec un Arduino Uno R3, une résistance et une LED. Le courant dans cette configuration circule en série : du Pin 13 de la carte, à travers la LED, puis à travers la résistance avant de retourner au Pin GND. C'est un exemple simple de circuit en série.
+
+Mais au fur et à mesure que nous avançons dans le monde de l'électronique, nous rencontrons des circuits plus complexes, composés de composants disposés en série ou en parallèle. Pour comprendre ces configurations et leurs implications sur le courant et la tension, il est nécessaire de se familiariser avec les schémas de circuits, aussi appelés schémas électriques.
+
+**Schémas de câblage vs. Schémas électriques**
+
+Nous avons utilisé des schémas de câblage—des représentations picturales qui imitent la disposition physique des composants du circuit. Ces schémas sont intuitifs et utiles pour l'assemblage :
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-However, to grasp a circuit's functionality and design logic, schematic diagrams are indispensable. Schematic diagrams distill circuits down to their essence, using standardized symbols to represent each component. They reveal the electrical relationships between components without the clutter of physical layouts.
+Cependant, pour comprendre la fonctionnalité et la logique de conception d'un circuit, les schémas électriques sont indispensables. Ces schémas réduisent les circuits à leur essence, en utilisant des symboles standardisés pour représenter chaque composant. Ils révèlent les relations électriques entre les composants sans l'encombrement des dispositions physiques.
 
-Here are the symbols for a LED, a resistor, and a battery that you'll often find in schematics:
+Voici les symboles d'une LED, d'une résistance et d'une batterie que vous trouverez souvent dans les schémas :
 
 .. image:: img/5_led_resistor_symbol.png
   :align: center
 
-A schematic diagram based on our previous wiring would look like this, with the entire Arduino Uno R3 acting as a battery powering the circuit. From this schematic, you can clearly indicate the flow and direction of current, simplifying the complexity of physical connections.
+Un schéma électrique basé sur notre câblage précédent ressemblerait à ceci, avec l'Arduino Uno R3 entier agissant comme une batterie alimentant le circuit. À partir de ce schéma, vous pouvez clairement indiquer le flux et la direction du courant, simplifiant ainsi la complexité des connexions physiques.
 
 .. image:: img/5_serial_circuit_1led.png
   :align: center
 
-**Series vs. Parallel Configurations**
+**Configurations en série vs. en parallèle**
 
-In a series circuit, components are lined up in a row, so the current has a single path to follow. If one component fails, the entire circuit is interrupted—much like a string of old Christmas lights where one burnt-out bulb would darken the whole chain.
+Dans un circuit en série, les composants sont alignés en rangée, de sorte que le courant n'a qu'un seul chemin à suivre. Si un composant tombe en panne, tout le circuit est interrompu—comme une guirlande de lumières de Noël où une ampoule grillée éteint toute la chaîne.
 
 .. image:: img/5_serial_circuit_2led.png
   :align: center
 
-A parallel circuit, on the other hand, divides the current into multiple paths. Each component operates independently, so if one path is broken, the others continue to function. Think of your home's electrical system: if you switch off a light, the TV can still be on.
+Un circuit en parallèle, quant à lui, divise le courant en plusieurs chemins. Chaque composant fonctionne indépendamment, donc si un chemin est interrompu, les autres continuent de fonctionner. Pensez au système électrique de votre maison : si vous éteignez une lumière, la télévision peut toujours fonctionner.
 
 .. image:: img/5_parallel_circuit.png
   :align: center
 
 
-Diving into Series Circuits
-------------------------------
+Exploration des circuits en série
+---------------------------------
 
-Building on our understanding of the differences between series and parallel circuits, this activity focuses on constructing a series circuit with multiple LEDs. Remember, in a series circuit, the electrical current flows through a single pathway. Let's explore the unique characteristics of series circuits through this practical exercise.
+En nous appuyant sur notre compréhension des différences entre les circuits en série et en parallèle, cette activité se concentre sur la construction d'un circuit en série avec plusieurs LEDs. Rappelez-vous que dans un circuit en série, le courant électrique circule sur un seul trajet. Explorons les caractéristiques uniques des circuits en série à travers cet exercice pratique.
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 3 * Red LEDs
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 3 * LEDs rouges
+     - 3 * Résistances de 220Ω
+     - Câbles de connexion
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 1 * Multimeter
+   * - 1 * Câble USB
+     - 1 * Plaque d'essai
+     - 1 * Multimètre
      -   
    * - |list_usb_cable| 
      - |list_breadboard| 
-     - |list_meter|
+     - |list_meter| 
      - 
 
-**Building the Circuit**
+**Construire le circuit**
 
-1. Adjust the previous LED circuit by removing the jumper wire between 1J and the breadboard's positive side on the right. Then, take another red LED and insert its cathode (the shorter leg) into 1J, and the anode into the breadboard's positive side, so you can serially connect another LED in the circuit.
+1. Modifiez le circuit LED précédent en retirant le câble de connexion entre 1J et le côté positif de la plaque d'essai à droite. Ensuite, prenez une autre LED rouge et insérez sa cathode (la patte la plus courte) dans 1J, et l'anode dans le côté positif de la plaque d'essai, afin de pouvoir connecter une autre LED en série dans le circuit.
 
 .. image:: img/5_serial_circuit.png
 
-Now you have a series circuit with two LEDs. Follow the current through the circuit:
+Vous avez maintenant un circuit en série avec deux LEDs. Suivez le parcours du courant à travers le circuit :
 
-* Current flows from 5V on the Arduino Uno R3, through a long jumper wire to the breadboard's positive terminal.
-* Then the current flows through the first LED, lighting it up due to the flow of current.
-* The current then flows through the breadboard's metal clips to the second LED, which also lights up.
-* After leaving the second LED, it enters the 220Ω resistor, where it encounters resistance, reducing the amount of current. Without this resistor, the current through the LEDs would be too high and could burn them out.
-* It then flows back to the Arduino Uno R3's ground pin, completing the circuit.
+* Le courant circule à partir de 5V sur l'Arduino Uno R3, à travers un long câble de connexion jusqu'au terminal positif de la plaque d'essai.
+* Ensuite, le courant traverse la première LED, l'allumant grâce au flux de courant.
+* Le courant passe ensuite par les clips métalliques de la plaque d'essai pour atteindre la deuxième LED, qui s'allume également.
+* Après avoir quitté la deuxième LED, il entre dans la résistance de 220Ω, où il rencontre une résistance, réduisant ainsi l'intensité du courant. Sans cette résistance, le courant dans les LEDs serait trop élevé et pourrait les brûler.
+* Le courant retourne ensuite au pin GND de l'Arduino Uno R3, complétant ainsi le circuit.
 
-**Question:** 
+**Question :**
 
-In this series circuit, what happens if you remove one LED? Why does this occur?
+Dans ce circuit en série, que se passe-t-il si vous retirez une LED ? Pourquoi cela se produit-il ?
 
 .. image:: img/5_serial_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Measuring Voltage**
+**Mesurer la tension**
 
-1. Set the multimeter to the 20 volts DC setting.
+1. Réglez le multimètre sur la position 20 volts en courant continu (DC).
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Use the multimeter to measure the voltage across the resistor.
+2. Utilisez le multimètre pour mesurer la tension aux bornes de la résistance.
 
     .. note::
         
-        Measuring a component's voltage in a circuit means checking the voltage across it. Essentially, voltage represents the energy difference between two points. So, when you measure a component's voltage, you're gauging the energy difference from one side to the other.
+        Mesurer la tension d'un composant dans un circuit signifie vérifier la tension à ses bornes. En essence, la tension représente la différence d'énergie entre deux points. Ainsi, lorsque vous mesurez la tension d'un composant, vous évaluez la différence d'énergie d'un côté à l'autre.
 
 .. image:: img/5_serial_circuit_voltage_resistor.png
     :width: 600
     :align: center
 
-3. Record the voltage across the resistor, voltage unit: Volts (V).
+3. Notez la tension mesurée aux bornes de la résistance, unité de mesure : Volts (V).
 
 .. note::
 
-    * Mine was 1.13V, you should fill in according to your measurement.
+    * La mienne était de 1,13V, vous devez indiquer votre propre mesure.
 
-    * Due to wiring issues and your hand's instability, you may see the voltage fluctuate. You need to keep your hand steady, then observe several times to get a fairly stable voltage value.
+    * En raison de problèmes de câblage ou d'instabilité de la main, vous pouvez constater des fluctuations de la tension. Essayez de stabiliser votre main, puis observez plusieurs fois pour obtenir une valeur de tension relativement stable.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+     - Tension Résistance
+     - Tension LED1
+     - Tension LED2
+     - Tension Totale 
    * - 2 LEDs
      - *≈1.13 volts*
      - 
      - 
      - 
 
-4. Now, measure the voltage across LED 1 in the circuit.
+4. Mesurez maintenant la tension aux bornes de la LED 1 dans le circuit.
 
 .. image:: img/5_serial_circuit_voltage_led1.png
     :width: 600
     :align: center
 
-5. Record the voltage across LED 1 in the table.
+5. Inscrivez la tension mesurée aux bornes de la LED 1 dans le tableau.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+     - Tension Résistance
+     - Tension LED1
+     - Tension LED2
+     - Tension Totale 
    * - 2 LEDs
      - *≈1.13 volts*
      - *≈1.92 volts*
      - 
      - 
 
-6. Measure the voltage across LED 2 in the circuit.
+6. Mesurez la tension aux bornes de la LED 2 dans le circuit.
 
 .. image:: img/5_serial_circuit_voltage_led2.png
     :width: 600
     :align: center
 
-7. Record the voltage across LED 2 in the table.
+7. Notez la tension mesurée aux bornes de la LED 2 dans le tableau.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+     - Tension Résistance
+     - Tension LED1
+     - Tension LED2
+     - Tension Totale 
    * - 2 LEDs
      - *≈1.13 volts*
      - *≈1.92 volts*
      - *≈1.92 volts*
      - 
 
-8. Now measure the total voltage in the circuit.
+8. Mesurez maintenant la tension totale du circuit.
 
 .. image:: img/5_serial_circuit_voltage.png
     :width: 600
     :align: center
 
-9. Fill in the measured voltage into the Total Voltage column of the table.
+9. Remplissez la tension mesurée dans la colonne Tension Totale du tableau.
 
 .. list-table::
    :widths: 25 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - Resistor Voltage
-     - LED1 Voltage
-     - LED2 Voltage
-     - Total Voltage 
+     - Tension Résistance
+     - Tension LED1
+     - Tension LED2
+     - Tension Totale 
    * - 2 LEDs
      - *≈1.13 volts*
      - *≈1.92 volts*
@@ -229,188 +230,186 @@ In this series circuit, what happens if you remove one LED? Why does this occur?
      - *≈4.97 volts*
 
 
-Through our measurements, you will discover:
+Grâce à nos mesures, vous découvrirez :
 
 .. code-block::
 
   4.97 volts ≈ 1.13 volts + 1.92 volts + 1.92 volts
 
-  Total Voltage = Resistor Voltage + LED 1 Voltage + LED 2 Voltage
+  Tension Totale = Tension Résistance + Tension LED 1 + Tension LED 2
 
-You can also calculate whether your measurement results conform to the above equation.
+Vous pouvez également vérifier si vos résultats de mesure correspondent à cette équation.
 
 .. note::
     
-    Due to wiring stability, or minor manufacturing differences in the LEDs and resistor, the sum of the resistor voltage and the two LEDs' voltages might not equal the total voltage you measured. This is also okay, as long as it's within a reasonable range.
+    En raison de l'instabilité des câblages ou des petites différences de fabrication des LEDs et de la résistance, il est possible que la somme des tensions mesurées aux bornes de la résistance et des LEDs ne soit pas exactement égale à la tension totale mesurée. Tant que la différence reste dans une plage raisonnable, cela ne pose pas de problème.
 
 
-This is a characteristic of a series circuit, where the total voltage across the circuit is the sum of the voltages across each component.
+C'est une caractéristique d'un circuit en série, où la tension totale dans le circuit est la somme des tensions à travers chaque composant.
 
-**Measuring Current**
+**Mesurer le courant**
 
-Having understood the voltage characteristics of series circuits, let's now explore the current within the circuit using a multimeter.
+Après avoir compris les caractéristiques de la tension dans un circuit en série, explorons maintenant le courant dans le circuit à l'aide d'un multimètre.
 
-
-1. Set the multimeter to the 20 milliamps position. The current won't exceed 20mA, so this setting is chosen. If unsure, it's recommended to start with the 200mA setting.
+1. Réglez le multimètre sur la position 20 milliampères. Le courant ne dépassera pas 20mA, c'est donc le réglage choisi. En cas de doute, il est recommandé de commencer par la position 200mA.
 
 .. image:: img/multimeter_20a.png
   :width: 300
   :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Keep the LED's anode in hole 1F and shift its cathode (the shorter leg) from hole 1E to hole 3E.
+2. Pour mesurer le courant, le multimètre doit être intégré dans le trajet du flux du circuit. Gardez l'anode de la LED dans le trou 1F et déplacez sa cathode (la patte la plus courte) du trou 1E au trou 3E.
 
 .. image:: img/5_serial_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Measure the current across LED 1 in the circuit.
+3. Mesurez le courant à travers la LED 1 dans le circuit.
 
 .. image:: img/5_serial_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. Inscrivez le courant mesuré dans le tableau.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - LED1 Current
-     - LED2 Current
+     - Courant LED1
+     - Courant LED2
    * - 2 LEDs
      - *≈4.43 milliamps*
      - 
 
-5. Move the first LED's cathode back to its original position and shift the second LED's cathode (the shorter leg) from hole 1J to hole 2J.
+5. Replacez la cathode de la première LED dans sa position d'origine et déplacez la cathode de la deuxième LED (la patte la plus courte) du trou 1J au trou 2J.
 
 .. image:: img/5_serial_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Measure the current across LED 2 in the circuit.
+6. Mesurez le courant à travers la deuxième LED dans le circuit.
 
 .. image:: img/5_serial_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. Notez le courant mesuré dans le tableau.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - LED1 Current
-     - LED2 Current
+     - Courant LED1
+     - Courant LED2
    * - 2 LEDs
      - *≈4.43 milliamps*
      - *≈4.43 milliamps*
 
-Our measurements have illustrated a fundamental principle of series circuits: the current that flows through each component is identical. This consistent flow underscores the interconnectedness of components in series, where the interruption of current in one part affects the entire circuit.
+Nos mesures ont illustré un principe fondamental des circuits en série : le courant qui traverse chaque composant est identique. Ce flux constant souligne l'interdépendance des composants en série, où l'interruption du courant dans une partie affecte l'ensemble du circuit.
 
-The exploration of voltage, current, and resistance not only enriches our understanding of series circuits but also lays the groundwork for more complex electrical engineering concepts. It's through these hands-on experiments that we bridge the gap between theory and practical application, making the learning process both engaging and informative.
+L'exploration de la tension, du courant et de la résistance enrichit non seulement notre compréhension des circuits en série, mais jette également les bases de concepts plus complexes en ingénierie électrique. C'est par ces expériences pratiques que nous comblons le fossé entre la théorie et l'application, rendant le processus d'apprentissage à la fois captivant et informatif.
 
 
 **Question**
 
-If another LED is added to this circuit, resulting in three LEDs, how does the brightness of the LEDs change? why? How do the voltages across the three LEDs change? 
+Si une autre LED est ajoutée à ce circuit, ce qui donne trois LEDs, comment la luminosité des LEDs change-t-elle ? Pourquoi ? Comment les tensions à travers les trois LEDs changent-elles ?
 
 
 
-Diving into Parallel Circuits
----------------------------------------
+Exploration des circuits en parallèle
+------------------------------------------
 
-**Components Needed**
+**Composants nécessaires**
 
 * 1 * Arduino Uno R3
-* 3 * Red LEDs
-* 3 * 220Ω Resistors
-* Several Jumper Wires
-* 1 * USB Cable
-* 1 * Breadboard
-* 1 * Multimeter with Test Leads
+* 3 * LEDs rouges
+* 3 * Résistances de 220Ω
+* Plusieurs fils de connexion
+* 1 * Câble USB
+* 1 * Plaque d'essai
+* 1 * Multimètre avec pointes de test
 
-**Building the Circuit**
+**Construction du circuit**
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
   
-1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
+1. Connectez une résistance de 220Ω à la plaque d'essai. Une extrémité doit être dans le terminal négatif, et l'autre dans le trou 1B.
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-2. Add a red LED to the breadboard. The LED's anode (long leg) should be in hole 1F. The cathode (short leg) should be in hole 1E.
+2. Ajoutez une LED rouge à la plaque d'essai. L'anode (longue patte) de la LED doit être dans le trou 1F et la cathode (courte patte) dans le trou 1E.
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-3. Use a short jumper wire to connect the LED and the power source. One end of the jumper wire should be in hole 1J. The other end should be in the positive terminal.
+3. Utilisez un court fil de connexion pour relier la LED à la source d'alimentation. Une extrémité du fil doit être dans le trou 1J et l'autre dans le terminal positif.
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
-4. Connect the long jumper wire connected to the breadboard's positive terminal to the 5V pin on the Arduino Uno R3. The LED should turn on and stay on. The 5V pin provides a constant 5 volts DC to the circuit. This is different from pin 13, which can be programmed via the Arduino IDE software to turn on and off.
+4. Connectez le long fil de connexion, relié au terminal positif de la plaque d'essai, au pin 5V de l'Arduino Uno R3. La LED devrait s'allumer et rester allumée. Le pin 5V fournit un courant constant de 5 volts DC au circuit, contrairement au pin 13, qui peut être programmé via le logiciel Arduino IDE pour s'allumer et s'éteindre.
 
 .. image:: img/5_parallel_circuit_5v.png
     :width: 600
     :align: center
 
-5. Connect the breadboard's negative terminal to one of the ground pins on the Arduino Uno R3. The ground pins are marked as "GND".
+5. Reliez le terminal négatif de la plaque d'essai à l'une des broches de masse ("GND") de l'Arduino Uno R3.
 
 .. image:: img/5_parallel_circuit_gnd.png
     :width: 600
     :align: center
 
-6. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
+6. Prenez une autre résistance de 220Ω et connectez une extrémité au terminal négatif et l'autre au trou 6B.
 
 .. image:: img/5_parallel_circuit_resistor.png
     :width: 600
     :align: center
 
-7. Take another red LED. The LED's anode (long leg) should be in hole 6F. The cathode (short leg) should be in hole 6E.
+7. Prenez une autre LED rouge. L'anode de la LED (longue patte) doit être dans le trou 6F et la cathode (courte patte) dans le trou 6E.
 
 .. image:: img/5_parallel_circuit_led.png
     :width: 600
     :align: center
 
-8. Finally, place one end of a short jumper wire in hole 6J and the other end in the positive terminal. This completes the parallel circuit.
+8. Enfin, placez une extrémité d'un court fil de connexion dans le trou 6J et l'autre dans le terminal positif. Cela complète le circuit en parallèle.
 
 .. image:: img/5_parallel_circuit_bb.png
     :width: 600
     :align: center
 
+Maintenant, ce circuit contient deux LEDs dans une configuration parallèle. Il existe deux chemins pour que le courant circule :
 
-Now, this circuit has two LEDs in a parallel configuration. There are two paths for current to flow through:
-
-* In the first path: current enters the first LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* In the second path: current enters the second LED from the jumper wire, flows through the current-limiting resistor, and then to the negative side of the breadboard.
-* At the negative side, the two paths converge again and then flow through the black power wire to reach the ground pin on the Arduino Uno R3.
+* Dans le premier chemin : le courant entre dans la première LED depuis le fil de connexion, traverse la résistance limitant le courant, puis se dirige vers le côté négatif de la plaque d'essai.
+* Dans le second chemin : le courant entre dans la deuxième LED depuis le fil de connexion, traverse la résistance limitant le courant, puis se dirige vers le côté négatif de la plaque d'essai.
+* Au côté négatif, les deux chemins convergent à nouveau, puis le courant retourne au pin de masse de l'Arduino Uno R3.
 
 
-**Question:**
+**Question :**
 
-In this parallel circuit, what happens if one LED is removed? Why does this occur? 
+Dans ce circuit en parallèle, que se passe-t-il si l'on retire une LED ? Pourquoi cela se produit-il ? 
 
 .. image:: img/5_parallel_circuit_remove.png
     :width: 600
     :align: center
 
 
-**Voltage Measurement Steps**
+**Étapes de mesure de la tension**
 
-1. Adjust the multimeter to the DC 20 volts mode.
+1. Réglez le multimètre sur le mode courant continu 20 volts.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. Remember, in a parallel circuit, each branch gets the entire voltage from the power source. So, each branch in your setup should show around 5 volts. Start by measuring the voltage along the first path.
+2. Rappelez-vous, dans un circuit en parallèle, chaque branche reçoit la tension totale de la source d'alimentation. Chaque branche de votre montage devrait donc afficher environ 5 volts. Commencez par mesurer la tension le long du premier chemin.
 
 .. image:: img/5_parallel_circuit_voltage1.png
     :width: 600
@@ -421,13 +420,13 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
    :header-rows: 1
 
    * - Circuit
-     - Path1 Voltage
-     - Path2 Voltage
+     - Tension Chemin 1
+     - Tension Chemin 2
    * - 2 LEDs
      - *≈5.00 volts*
      - 
 
-3. Next, check the voltage drop across the second path. Expect it to be near 5 volts as well.
+3. Ensuite, vérifiez la chute de tension dans le second chemin. Attendez-vous à ce qu'elle soit également proche de 5 volts.
 
 .. image:: img/5_parallel_circuit_voltage2.png
     :width: 600
@@ -444,90 +443,89 @@ In this parallel circuit, what happens if one LED is removed? Why does this occu
      - *≈5.00 volts*
      - *≈5.00 volts*
 
-Our voltage measurement exercise in a parallel circuit clearly demonstrates that each branch receives an equal share of the total voltage from the source, approximately 5 volts in this case. This consistency across different paths confirms the fundamental nature of parallel circuits, where voltage remains constant across each branch, despite potential minor variations due to manufacturing differences in components like LEDs and resistors.
+Notre exercice de mesure de la tension dans un circuit en parallèle démontre clairement que chaque branche reçoit une part égale de la tension totale provenant de la source, soit environ 5 volts dans ce cas. Cette constance entre les différents chemins confirme la nature fondamentale des circuits en parallèle, où la tension reste constante à travers chaque branche, malgré de possibles variations mineures dues à des différences de fabrication dans les composants tels que les LEDs et les résistances.
 
+**Étapes de mesure du courant**
 
-**Current Measurement Steps**
+Lors de nos mesures précédentes, nous avons appris que chaque branche dans un circuit en parallèle reçoit la pleine tension de la source. Mais qu'en est-il du courant ? Mesurons-le maintenant.
 
-From our previous measurements, we learned that each branch in a parallel circuit receives the full voltage from the source. But what about the current? Let's measure it now.
-
-1. Set the multimeter to the 200 milliamps position.
+1. Réglez le multimètre sur la position 200 milliampères.
 
 .. image:: img/multimeter_200ma.png
     :width: 300
     :align: center
 
-2. For current measurement, the multimeter must be integrated into the circuit's flow path. Leave one end of the resistor on the breadboard's negative terminal and move the other end to hole 3B.
+2. Pour mesurer le courant, le multimètre doit être intégré dans le chemin du flux du circuit. Laissez une extrémité de la résistance sur le terminal négatif de la plaque d'essai et déplacez l'autre extrémité au trou 3B.
 
 .. note::
     
-    This step will cause LED 1 to turn off while LED 2 remains lit. This demonstrates a characteristic of parallel circuits: the disconnection of one path does not affect the other paths.
+    Cette étape éteindra la LED 1 tandis que la LED 2 restera allumée. Cela démontre une caractéristique des circuits en parallèle : la déconnexion d'un chemin n'affecte pas les autres.
 
 .. image:: img/5_parallel_circuit_led1_current.png
     :width: 600
     :align: center
 
-3. Place the multimeter's red and black leads between the LED and the resistor, and you will see LED1 light up again.
+3. Placez les sondes rouge et noire du multimètre entre la LED et la résistance, et vous verrez la LED1 s'allumer à nouveau.
 
 .. image:: img/5_parallel_circuit_led1_current1.png
     :width: 600
     :align: center
 
-4. Record the measured current in the table.
+4. Notez le courant mesuré dans le tableau.
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
+     - Courant LED1
+     - Courant LED2
+     - Courant Total
    * - 2 LEDs
      - *≈12.6 milliamps*
-     -
+     - 
      - 
 
-5. Return the first resistor to its original position, and keep one end of the second resistor at the breadboard's negative terminal while moving the other end to hole 9B.
+5. Remettez la première résistance dans sa position d'origine, et gardez une extrémité de la deuxième résistance sur le terminal négatif de la plaque d'essai tout en déplaçant l'autre extrémité au trou 9B.
 
 .. image:: img/5_parallel_circuit_led2_current.png
     :width: 600
     :align: center
 
-6. Now, measure the current across LED 2 in the circuit.
+6. Mesurez maintenant le courant à travers la LED 2 dans le circuit.
 
 .. image:: img/5_parallel_circuit_led2_current1.png
     :width: 600
     :align: center
 
-7. Record the measured current in the table.
+7. Notez le courant mesuré dans le tableau.
 
 .. list-table::
    :widths: 25 25 25 25
    :header-rows: 1
 
    * - Circuit
-     - LED1 Current
-     - LED2 Current
-     - Total Current
+     - Courant LED1
+     - Courant LED2
+     - Courant Total
    * - 2 LEDs
      - *≈12.6 milliamps*
      - *≈12.6 milliamps*
      - 
 
-8. Having measured the current in both paths, what is the total current when the paths converge? Now, move the jumper wire from the breadboard's negative terminal to hole 25C.
+8. Après avoir mesuré le courant dans les deux chemins, quel est le courant total lorsque les chemins convergent ? Déplacez maintenant le fil de connexion du terminal négatif de la plaque d'essai au trou 25C.
 
 .. image:: img/5_parallel_circuit_total_current.png
     :width: 600
     :align: center
 
-9. Measure the total current of the circuit now.
+9. Mesurez maintenant le courant total du circuit.
 
 .. image:: img/5_parallel_circuit_total_current1.png
     :width: 600
     :align: center
 
-10. Fill in the measured results in the table.
+10. Remplissez les résultats mesurés dans le tableau.
 
 .. list-table::
    :widths: 25 25 25 25
@@ -542,11 +540,11 @@ From our previous measurements, we learned that each branch in a parallel circui
      - *≈12.6 milliamps*
      - *≈25.3 milliamps*
 
-Our exploration into parallel circuits has illuminated a key aspect: the total current mirrors the sum of individual branch currents, adhering to the fundamental principles of electrical circuits. This hands-on activity not only strengthens our understanding of parallel circuitry but also highlights its distinct behavior compared to series circuits, offering a clear picture of how components in parallel share the electrical load. As we continue our journey through the world of electronics, these insights lay the groundwork for deeper investigations into circuit design and functionality.
+Notre exploration des circuits en parallèle a mis en lumière un aspect clé : le courant total est la somme des courants de chaque branche individuelle, conformément aux principes fondamentaux des circuits électriques. Cette activité pratique renforce notre compréhension des circuits en parallèle et met en évidence leur comportement distinct par rapport aux circuits en série, offrant une vision claire de la manière dont les composants en parallèle partagent la charge électrique. À mesure que nous poursuivons notre voyage dans le monde de l'électronique, ces découvertes posent les bases d'investigations plus approfondies dans la conception et le fonctionnement des circuits.
 
-**Question**:
+**Question** :
 
-1. If another LED is added to this circuit, what happens to the brightness of the LEDs? Why? Record your answer in your handbook.
+1. Si une autre LED est ajoutée à ce circuit, que se passe-t-il avec la luminosité des LEDs ? Pourquoi ? Notez votre réponse dans votre carnet.
 
 .. image:: img/5_parallel_circuit_3led.png
     :width: 600
@@ -554,22 +552,22 @@ Our exploration into parallel circuits has illuminated a key aspect: the total c
 
 
 
-Summary of Series and Parallel Circuits
------------------------------------------------------
+Résumé des circuits en série et en parallèle
+------------------------------------------------
 
-**Series Circuits**
+**Circuits en série**
 
-* **Advantages**: Since the current throughout the circuit is the same, it's easy to control the current. If one component fails, the current will stop. Its wiring is simpler, reducing the cost of building large circuits.
-* **Disadvantages**: If one part of the circuit is damaged, the whole circuit will stop working. Since the current in the circuit is steady, you can't use components that require different currents.
+* **Avantages** : Puisque le courant est le même tout au long du circuit, il est facile de contrôler le courant. Si un composant tombe en panne, le courant s'arrête. Le câblage est plus simple, ce qui réduit le coût de fabrication des grands circuits.
+* **Inconvénients** : Si une partie du circuit est endommagée, tout le circuit cesse de fonctionner. Étant donné que le courant est constant, il est impossible d'utiliser des composants nécessitant des courants différents.
 
-**Parallel Circuits**
+**Circuits en parallèle**
 
-* **Advantages**: If any path in the circuit is disconnected, it does not affect the other branches in the circuit. A device in one branch can operate independently of other devices. More branches can be easily added to the circuit at any time.
-* **Disadvantages**: As more devices are added to the circuit, more current is drawn. This can become dangerous as the circuit heats up, potentially leading to fire. Fuses or circuit breakers are used to disconnect the circuit when the current is too high to avoid overheating. Its wiring is more complex, increasing the cost of making large circuits.
+* **Avantages** : Si un chemin du circuit est déconnecté, cela n'affecte pas les autres branches du circuit. Un appareil sur une branche peut fonctionner indépendamment des autres appareils. Il est facile d'ajouter de nouvelles branches à tout moment.
+* **Inconvénients** : À mesure que de nouveaux appareils sont ajoutés, plus de courant est tiré. Cela peut devenir dangereux car le circuit peut chauffer, ce qui risque de provoquer un incendie. Des fusibles ou des disjoncteurs sont utilisés pour déconnecter le circuit lorsque le courant est trop élevé afin d'éviter une surchauffe. Le câblage est plus complexe, ce qui augmente le coût de fabrication des grands circuits.
 
-**Rules of Series and Parallel Circuits**
+**Règles des circuits en série et en parallèle**
 
-Here are the rules for series and parallel circuits, which you can continue to verify with a multimeter:
+Voici les règles pour les circuits en série et en parallèle, que vous pouvez continuer à vérifier à l'aide d'un multimètre :
 
 .. .. list-table::
 ..    :widths: 10 25 25 25
@@ -589,18 +587,15 @@ Here are the rules for series and parallel circuits, which you can continue to v
 ..      - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
 
 
-**Series**
+**Série**
 
-  - The total voltage of the circuit equals the sum of the voltages used by each component (Total voltage = V1 + V2 + V3 + ...).
-  - The current at any point in the circuit is the same (Total current = I1 = I2 = I3 = ...).
-  - The total resistance of a circuit equals the sum of the resistances of each component (Total resistance = R1 + R2 + R3 + ...).
+  - La tension totale du circuit est égale à la somme des tensions utilisées par chaque composant (Tension totale = V1 + V2 + V3 + ...).
+  - Le courant en tout point du circuit est le même (Courant total = I1 = I2 = I3 = ...).
+  - La résistance totale d'un circuit est égale à la somme des résistances de chaque composant (Résistance totale = R1 + R2 + R3 + ...).
 
-**Parallel**
+**Parallèle**
 
-  - The voltage used by each load equals the total voltage used by the circuit (Total voltage = V1 = V2 = V3 = ...)
-  - The total current of the circuit equals the sum of the currents used by each component (Total current = I1 + I2 + I3 + ...).
-  - The reciprocal of the total resistance equals the sum of the reciprocals of each component's resistance (1/ Total resistance = 1/R1 + 1/R2 + 1/R3 + ...)   
-
-
-
+  - La tension utilisée par chaque charge est égale à la tension totale utilisée par le circuit (Tension totale = V1 = V2 = V3 = ...).
+  - Le courant total du circuit est égal à la somme des courants utilisés par chaque composant (Courant total = I1 + I2 + I3 + ...).
+  - L'inverse de la résistance totale est égal à la somme des inverses des résistances de chaque composant (1/Résistance totale = 1/R1 + 1/R2 + 1/R3 + ...).
 

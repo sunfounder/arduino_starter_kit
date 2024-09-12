@@ -1,20 +1,20 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Plongez plus profondément dans Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions et à des cadeaux spéciaux pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-13. The Spectrum of Sight
+13. Le Spectre de la Vision
 ================================================================================
-Welcome to this lesson,  where we unravel the mystery of human color perception and replicate it using technology. In this lesson, we delve into how our eyes distinguish millions of colors and how this incredible ability can be simulated digitally with RGB LEDs. By exploring the interplay of photoreceptors in our eyes and the RGB color model, you'll learn to recreate the vividness of the world in digital form.
+Bienvenue dans cette leçon où nous dévoilons le mystère de la perception des couleurs chez l’humain et reproduisons cette capacité avec la technologie. Dans cette leçon, nous explorerons comment nos yeux distinguent des millions de couleurs et comment cette capacité incroyable peut être simulée numériquement avec des LED RGB. En explorant l'interaction des photorécepteurs de nos yeux et du modèle de couleur RGB, vous apprendrez à recréer la vivacité du monde en forme numérique.
 
 .. raw:: html
 
@@ -24,116 +24,121 @@ Welcome to this lesson,  where we unravel the mystery of human color perception 
     </video>
 
 
-**Overview**
+**Aperçu**
 
-The human visual system can perceive about ten million different colors, a capability achieved through photoreceptor cells in the retina—cones and rods. Perception of color is not linear; our visual system is more sensitive to changes in certain colors than others. Cones, which are sensitive to color, primarily come in three types, each most sensitive to either red, green, or blue light.
+Le système visuel humain peut percevoir environ dix millions de couleurs différentes, 
+une capacité obtenue grâce aux cellules photoréceptrices de la rétine – les cônes et 
+les bâtonnets. La perception des couleurs n'est pas linéaire ; notre système visuel 
+est plus sensible aux variations de certaines couleurs qu'à d'autres. Les cônes, 
+sensibles à la couleur, existent en trois types principaux, chacun étant le plus 
+réceptif à la lumière rouge, verte ou bleue.
 
-The human eye perceives about ten million different colors, thanks to specialized cells in the retina called cones and rods. This perception isn't uniform across the spectrum; we're more sensitive to changes in some colors than others. Cones, which detect color, are predominantly sensitive to red, green, or blue wavelengths.
-
-.. image:: img/13_mix_eyeballjpg.jpg
-
-The RGB color model is an additive color model where colors are created by mixing varying intensities of red, green, and blue light. In this model, red, green, and blue are typically considered primary color channels. By adjusting the intensity of each channel (from 0 to a maximum value, typically 255 corresponding to an 8-bit color depth), it is possible to produce a visible spectrum of over 16 million different colors. For instance, orange can be achieved by mixing more red with less green.
-
-The RGB color model uses an additive approach, mixing red, green, and blue light to create a broad array of colors. This model reflects how our visual system combines light from different parts of the spectrum to form diverse hues. By manipulating the intensity of these three primary colors, we can generate over 16 million distinct colors. For example, by increasing red and decreasing green, we achieve orange.
+Le modèle de couleur RGB est un modèle additif dans lequel les couleurs sont créées en 
+mélangeant des intensités variables de lumière rouge, verte et bleue. Dans ce modèle, 
+le rouge, le vert et le bleu sont considérés comme des canaux de couleur primaires. 
+En ajustant l’intensité de chaque canal (de 0 à une valeur maximale, généralement 255 
+correspondant à une profondeur de couleur de 8 bits), il est possible de produire un 
+spectre visible de plus de 16 millions de couleurs. Par exemple, on peut obtenir du 
+orange en mélangeant plus de rouge avec moins de vert.
 
 .. image:: img/13_mix_orange.jpg
 
-In this interactive lesson, you will apply these principles to control an RGB LED, enabling it to display colors of your choice through precise electronic commands.
+Dans cette leçon interactive, vous appliquerez ces principes pour contrôler une LED RGB, lui permettant d'afficher les couleurs de votre choix grâce à des commandes électroniques précises.
 
-**Learning Objectives**
+**Objectifs d'apprentissage**
 
-* Grasp how this model mimics human color perception and its application in digital displays.
-* Learn to use Pulse Width Modulation (PWM) for nuanced color mixing with RGB LED.
-* Enhance your coding efficiency and clarity by creating functions that take parameters in Arduino.
-* Experiment with different RGB values to customize colors on your LED, mirroring the complexity of human color vision.
+* Comprendre comment ce modèle imite la perception des couleurs humaines et son application dans les affichages numériques.
+* Apprendre à utiliser la modulation de largeur d'impulsion (PWM) pour un mélange subtil des couleurs avec une LED RGB.
+* Améliorer l'efficacité et la clarté de votre code en créant des fonctions prenant des paramètres dans Arduino.
+* Expérimenter différentes valeurs RGB pour personnaliser les couleurs sur votre LED, reflétant la complexité de la vision des couleurs humaines.
 
 
-Building the Circuit
+Montage du Circuit
 -----------------------
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * LED RGB
+     - 3 * Résistances de 220Ω
+     - Fils de connexion
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     -
-     -
+   * - 1 * Câble USB
+     - 1 * Plaque d'essai (breadboard)
+     - -
+     - -
    * - |list_usb_cable| 
      - |list_breadboard| 
-     -
-     -
+     - -
+     - -
 
-This lesson uses the same circuit as Lesson 12.
+Cette leçon utilise le même circuit que la Leçon 12.
 
 .. image:: img/12_mix_color_bb_4.png
     :width: 600
     :align: center
 
 
-Code Creation - Displaying Colors
-------------------------------------
+Création de Code - Affichage des Couleurs
+------------------------------------------------
 
-In our journey to master the control of RGB LEDs, we've seen how using ``digitalWrite()`` can light up the LED in basic colors. To further explore and unlock the full spectrum of colors that an RGB LED can produce, we'll now delve into using ``analogWrite()`` to send PWM (Pulse Width Modulation) signals, allowing us to achieve a wide range of hues.
+Dans notre parcours pour maîtriser le contrôle des LED RGB, nous avons vu comment utiliser ``digitalWrite()`` pour allumer la LED dans des couleurs basiques. Pour explorer plus en profondeur et débloquer tout le spectre de couleurs qu'une LED RGB peut produire, nous allons maintenant utiliser ``analogWrite()`` pour envoyer des signaux PWM (modulation de largeur d'impulsion), ce qui nous permettra d'obtenir une large gamme de teintes.
 
-Let's see how we can implement this with code.
+Voyons comment implémenter cela avec du code.
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson13_PWM_Color_Mixing`` using ``Ctrl + S`` or by clicking “Save”.
+1. Ouvrez l'IDE Arduino et démarrez un nouveau projet en sélectionnant « Nouveau Sketch » dans le menu « Fichier ».
+2. Enregistrez votre sketch sous le nom de ``Lesson13_PWM_Color_Mixing`` en utilisant ``Ctrl + S`` ou en cliquant sur « Enregistrer ».
 
-3. First, set the three pins of the RGB LED as outputs:
+3. Tout d'abord, configurez les trois broches de la LED RGB en tant que sorties :
 
 .. code-block:: Arduino
     :emphasize-lines: 3-5
 
     void setup() {
-        // Set up code to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Code d'initialisation à exécuter une seule fois :
+        pinMode(9, OUTPUT);   // Configurer la broche bleue de la LED RGB en sortie
+        pinMode(10, OUTPUT);  // Configurer la broche verte de la LED RGB en sortie
+        pinMode(11, OUTPUT);  // Configurer la broche rouge de la LED RGB en sortie
     }
 
-4. Use ``analogWrite()`` to send PWM values to the RGB LED. From Lesson 9, we know that PWM values can change an LED's brightness, and the PWM range is 0-255. To display red, we set the PWM value of the RGB LED's red pin to 255, and the other two pins to 0.
+4. Utilisez ``analogWrite()`` pour envoyer des valeurs PWM à la LED RGB. Dans la Leçon 9, nous avons appris que les valeurs PWM peuvent changer la luminosité d'une LED, et que la plage PWM est de 0 à 255. Pour afficher du rouge, nous réglons la valeur PWM de la broche rouge de la LED RGB à 255, et les deux autres broches à 0.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-12
 
     void setup() {
-        // Set up code to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Code d'initialisation à exécuter une seule fois :
+        pinMode(9, OUTPUT);   // Configurer la broche bleue de la LED RGB en sortie
+        pinMode(10, OUTPUT);  // Configurer la broche verte de la LED RGB en sortie
+        pinMode(11, OUTPUT);  // Configurer la broche rouge de la LED RGB en sortie
     }
 
     void loop() {
-        // Main code to run repeatedly:
-        analogWrite(9, 0);    // Set the PWM value of Blue pin to 0
-        analogWrite(10, 0);   // Set the PWM value of Green pin to 0
-        analogWrite(11, 255);  // Set the PWM value of Red pin to 255
+        // Code principal à exécuter en boucle :
+        analogWrite(9, 0);    // Régler la valeur PWM de la broche bleue à 0
+        analogWrite(10, 0);   // Régler la valeur PWM de la broche verte à 0
+        analogWrite(11, 255);  // Régler la valeur PWM de la broche rouge à 255
     }
 
-5. With this setup, after uploading the code to the Arduino Uno R3, you will see the RGB LED display red.
+5. Avec cette configuration, après avoir téléchargé le code sur l'Arduino Uno R3, vous verrez la LED RGB afficher la couleur rouge.
 
-6. The ``analogWrite()`` function allows the RGB LED to display not only the seven basic colors but many other different hues. Now you can adjust the values of pins 9, 10, and 11 separately, and record the observed colors in your handbook.
+6. La fonction ``analogWrite()`` permet à la LED RGB d'afficher non seulement les sept couleurs de base, mais également de nombreuses autres nuances. Vous pouvez maintenant ajuster les valeurs des broches 9, 10 et 11 séparément, et enregistrer les couleurs observées dans votre carnet.
 
 .. list-table::
     :widths: 20 20 20 40
     :header-rows: 1
 
-    *   - Red Pin    
-        - Green Pin  
-        - Blue Pin
-        - Color
+    *   - Broche Rouge    
+        - Broche Verte  
+        - Broche Bleue
+        - Couleur
     *   - 0
         - 128
         - 128
@@ -151,133 +156,130 @@ Let's see how we can implement this with code.
         - 0
         -     
 
-Code Creation - Parameterized Functions
+Création de Code - Fonctions Paramétrées
 ------------------------------------------------
 
-Using the ``analogWrite()`` function to display different colors can make your code lengthy if you want to display many colors simultaneously. Therefore, we need to create functions.
+L'utilisation de la fonction ``analogWrite()`` pour afficher différentes couleurs peut rendre votre code long si vous souhaitez afficher plusieurs couleurs en même temps. Par conséquent, nous devons créer des fonctions.
 
-Unlike the previous lesson, we are preparing to create a function with parameters. 
+Contrairement à la leçon précédente, nous nous préparons à créer une fonction avec des paramètres.
 
+Une fonction paramétrée vous permet de passer des valeurs spécifiques à la fonction, qui les utilisera pour effectuer ses tâches. Cela est particulièrement utile pour ajuster des propriétés telles que l'intensité des couleurs de manière dynamique. Cela rend votre code plus flexible et facile à lire.
 
-A parameterized function allows you to pass specific values into the function, which can then use these values to perform its tasks. This is incredibly useful for adjusting properties like color intensity on the fly. It makes your code more flexible and easier to read.
+Lorsque vous définissez une fonction paramétrée, vous spécifiez les valeurs dont elle a besoin pour fonctionner à travers des paramètres listés entre parenthèses juste après le nom de la fonction. Ces paramètres agissent comme des variables temporaires qui sont remplacées par des valeurs réelles lorsque la fonction est appelée.
 
-When defining a parameterized function, you specify what values it needs to operate through parameters listed in parentheses right after the function name. These parameters act like placeholders that get replaced by actual values when the function is called.
+Voici comment définir une fonction paramétrée pour régler la couleur d'une LED RGB :
 
-Here's how to define a parameterized function for setting the color of an RGB LED:
+1. Ouvrez le sketch que vous avez sauvegardé précédemment, ``Lesson13_PWM_Color_Mixing``.
 
-1. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
+2. Cliquez sur "Enregistrer sous..." dans le menu "Fichier" et renommez-le en ``Lesson13_PWM_Color_Mixing_Function``. Cliquez sur "Enregistrer".
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson13_PWM_Color_Mixing_Function``. Click "Save".
-
-3. Start by declaring the function after the ``void loop()`` with the keyword ``void``, followed by the function name and parameters in parentheses. For our ``setColor`` function, we'll use three parameters— ``red``, ``green``, and ``blue``—each representing the intensity of the corresponding color component of the RGB LED.
+3. Commencez par déclarer la fonction après la fonction ``void loop()`` avec le mot-clé ``void``, suivi du nom de la fonction et des paramètres entre parenthèses. Pour notre fonction ``setColor``, nous utiliserons trois paramètres—``red``, ``green`` et ``blue``—chacun représentant l'intensité du composant couleur correspondant de la LED RGB.
 
 .. code-block:: Arduino
     :emphasize-lines: 5,6
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // mettez ici votre code principal à exécuter en boucle
     }
 
     void setColor(int red, int green, int blue) {
     }
 
-   
-4. Within the function body, use the ``analogWrite()`` command to send PWM signals to the RGB LED pins. The values passed to ``setColor`` will determine the brightness of each color. The parameters ``red``, ``green``, and ``blue`` are used here to directly control the intensity of each LED pin.
+4. Dans le corps de la fonction, utilisez la commande ``analogWrite()`` pour envoyer des signaux PWM aux broches de la LED RGB. Les valeurs passées à ``setColor`` détermineront la luminosité de chaque couleur. Les paramètres ``red``, ``green`` et ``blue`` sont utilisés ici pour contrôler directement l'intensité de chaque broche de la LED.
 
 .. code-block:: Arduino
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // Écrire la valeur PWM pour le rouge, le vert et le bleu sur la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-
-5. Now you can call your newly created ``setColor()`` function in the ``void loop()``. Since you created a function with parameters, you need to fill in the arguments in the ``()`` such as ``(255, 0, 0)``. Remember to write comments.
+5. Vous pouvez maintenant appeler votre nouvelle fonction ``setColor()`` dans la fonction ``void loop()``. Puisque vous avez créé une fonction avec des paramètres, vous devez remplir les arguments dans les ``()`` comme ``(255, 0, 0)``. N'oubliez pas d'ajouter des commentaires.
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0); // Display red color
+        // mettez ici votre code principal à exécuter en boucle
+        setColor(255, 0, 0); // Affiche la couleur rouge
     }
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // Écrire la valeur PWM pour le rouge, le vert et le bleu sur la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-6. We already know that by providing different values to the three pins of the RGB LED, we can light up different colors of light. So, how do we make the RGB LED light up exactly the color we want? This requires the aid of a color palette. Open **Paint** (this software comes with Windows) or any drawing software on your personal computer.
+6. Nous savons déjà qu'en fournissant différentes valeurs aux trois broches de la LED RGB, nous pouvons afficher différentes couleurs de lumière. Comment faire en sorte que la LED RGB affiche précisément la couleur que nous voulons ? Pour cela, vous aurez besoin de l'aide d'une palette de couleurs. Ouvrez **Paint** (ce logiciel est fourni avec Windows) ou tout autre logiciel de dessin sur votre ordinateur personnel.
 
 .. image:: img/13_mix_color_paint.png
 
-7. Choose a color you like, record its RGB values.
+7. Choisissez une couleur qui vous plaît et notez ses valeurs RGB.
 
 .. note::
 
-    Note that before you select a color, adjust the lumens to the proper position.
+    Notez qu'avant de sélectionner une couleur, ajustez les lumens à la position appropriée.
 
 .. image:: img/13_mix_color_paint_2.png
 
-8. Fill in the color you selected into the ``setColor()`` function in the ``void loop()``, use the ``delay()`` function to specify the display time for each color.
+8. Insérez la couleur que vous avez sélectionnée dans la fonction ``setColor()`` dans la ``void loop()``, et utilisez la fonction ``delay()`` pour spécifier la durée d'affichage de chaque couleur.
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0);      // Display red color
-        delay(1000);              // Wait for 1 second
-        setColor(0, 128, 128);    // Display teal color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 0, 255);    // Display purple color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 128, 255);  // Display Light blue color
-        delay(1000);              // Wait for 1 second
-        setColor(255, 128, 0);    // Display orange color
-        delay(1000);              // Wait for 1 second
+        // mettez ici votre code principal à exécuter en boucle
+        setColor(255, 0, 0);      // Affiche la couleur rouge
+        delay(1000);              // Attendre 1 seconde
+        setColor(0, 128, 128);    // Affiche la couleur turquoise
+        delay(1000);              // Attendre 1 seconde
+        setColor(128, 0, 255);    // Affiche la couleur violette
+        delay(1000);              // Attendre 1 seconde
+        setColor(128, 128, 255);  // Affiche la couleur bleu clair
+        delay(1000);              // Attendre 1 seconde
+        setColor(255, 128, 0);    // Affiche la couleur orange
+        delay(1000);              // Attendre 1 seconde
     }
 
-9. Below is the complete code; you can click "Upload" to upload the code to the Arduino Uno R3 to see the effects.
+9. Voici le code complet ; vous pouvez cliquer sur "Téléverser" pour envoyer le code à l'Arduino Uno R3 et voir les effets.
 
 .. code-block:: Arduino
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // mettez ici votre code de configuration à exécuter une seule fois
+        pinMode(9, OUTPUT);   // Configurer la broche bleue de la LED RGB en sortie
+        pinMode(10, OUTPUT);  // Configurer la broche verte de la LED RGB en sortie
+        pinMode(11, OUTPUT);  // Configurer la broche rouge de la LED RGB en sortie
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        setColor(255, 0, 0);      // Display red color
-        delay(1000);              // Wait for 1 second
-        setColor(0, 128, 128);    // Display teal color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 0, 255);    // Display purple color
-        delay(1000);              // Wait for 1 second
-        setColor(128, 128, 255);  // Display Light blue color
-        delay(1000);              // Wait for 1 second
-        setColor(255, 128, 0);    // Display orange color
-        delay(1000);              // Wait for 1 second
+        // mettez ici votre code principal à exécuter en boucle
+        setColor(255, 0, 0);      // Affiche la couleur rouge
+        delay(1000);              // Attendre 1 seconde
+        setColor(0, 128, 128);    // Affiche la couleur turquoise
+        delay(1000);              // Attendre 1 seconde
+        setColor(128, 0, 255);    // Affiche la couleur violette
+        delay(1000);              // Attendre 1 seconde
+        setColor(128, 128, 255);  // Affiche la couleur bleu clair
+        delay(1000);              // Attendre 1 seconde
+        setColor(255, 128, 0);    // Affiche la couleur orange
+        delay(1000);              // Attendre 1 seconde
     }
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // Écrire la valeur PWM pour le rouge, le vert et le bleu sur la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. Enfin, n'oubliez pas de sauvegarder votre code et de ranger votre espace de travail.
 
-**Summary**
+**Résumé**
 
-Today's exploration of color perception bridges the gap between biological science and electronic application, highlighting the power of programming in bringing abstract concepts to life. By adjusting RGB values on an LED, you've mimicked the eye's method of perceiving color, gaining both a deeper appreciation for human biology and advanced skills in electronic control.
+L'exploration d'aujourd'hui sur la perception des couleurs fait le lien entre la science biologique et l'application électronique, mettant en lumière la puissance de la programmation pour donner vie à des concepts abstraits. En ajustant les valeurs RGB sur une LED, vous avez imité la manière dont l'œil perçoit les couleurs, acquérant ainsi à la fois une meilleure compréhension de la biologie humaine et des compétences avancées en contrôle électronique.

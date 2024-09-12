@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez au cœur des Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-goûts.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des tirages au sort et des promotions spéciales lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-16. Temperature Alarm
-========================
+16. Alarme de température
+=============================
 
-In this lesson, we'll explore the critical role of temperature management in food safety. Not all foods need to be refrigerated or frozen; even shelf-stable items like chips, bread, and certain fruits require proper temperature storage to maintain quality and safety. By building a temperature monitoring system, we will learn how to keep foods within safe temperature ranges, triggering an alarm when temperatures deviate from these limits. This practical project not only helps protect food but also serves as an excellent introduction to environmental monitoring with real-world applications.
+Dans cette leçon, nous allons explorer l'importance de la gestion de la température dans la sécurité alimentaire. Tous les aliments ne nécessitent pas une réfrigération ou une congélation, mais même des produits stables à température ambiante comme les chips, le pain et certains fruits doivent être stockés à des températures appropriées pour préserver leur qualité et leur sécurité. En construisant un système de surveillance de la température, nous apprendrons à maintenir les aliments dans des plages de température sûres et à déclencher une alarme en cas de déviation de ces limites. Ce projet pratique permet non seulement de protéger les aliments, mais sert également d'excellente introduction à la surveillance environnementale avec des applications concrètes.
 
 .. .. image:: img/16_temperature.jpg
 ..     :width: 400
@@ -28,41 +28,40 @@ In this lesson, we'll explore the critical role of temperature management in foo
         Your browser does not support the video tag.
     </video>
 
-By the end of this lesson, you will be able to:
+À la fin de cette leçon, vous serez capable de :
 
-* Understand the importance of temperature control in food safety.
-* Build a circuit with a thermistor to monitor temperature changes.
-* Write an Arduino program to read temperature data from a thermistor.
-* Use logic in programming to trigger actions (like lighting an LED or sounding an alarm) based on temperature data.
-* Apply concepts of electrical resistance and temperature conversion in practical scenarios.
+* Comprendre l'importance du contrôle de la température dans la sécurité alimentaire.
+* Construire un circuit avec une thermistance pour surveiller les variations de température.
+* Écrire un programme Arduino pour lire les données de température d'une thermistance.
+* Utiliser la logique en programmation pour déclencher des actions (comme allumer une LED ou déclencher une alarme) en fonction des données de température.
+* Appliquer des concepts de résistance électrique et de conversion de température dans des scénarios pratiques.
 
-Building the Circuit
------------------------
+Construction du circuit
+--------------------------
 
-**Components Needed**
-
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * 10KΩ Resistor
+     - 1 * LED RGB
+     - 3 * Résistances 220Ω
+     - 1 * Résistance 10KΩ
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_10kohm| 
-   * - 1 * Thermistor
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+   * - 1 * Thermistance
+     - 1 * Plaque de montage (breadboard)
+     - Fils de connexion
+     - 1 * Câble USB
    * - |list_thermistor| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
-   * - 1 * Multimeter
+   * - 1 * Multimètre
      - 
      - 
      - 
@@ -71,57 +70,57 @@ Building the Circuit
      - 
      - 
 
-**Building Step-by-Step**
+Étapes de construction
+---------------------------
 
-This circuit builds upon the one from Lesson 12 by adding a Thermistor.
+Ce circuit est basé sur celui de la leçon 12, avec l'ajout d'une thermistance.
 
 .. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
-1. Based on the circuit of lesson12, remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Sur la base du circuit de la leçon 12, retirez le fil reliant la broche GND de l'Arduino Uno R3 à la broche GND de la LED RGB, puis insérez-le dans la borne négative de la breadboard. Ensuite, connectez un fil de cette borne négative à la broche GND de la LED RGB.
 
 .. image:: img/16_temperature_alarm_gnd.png
     :width: 500
     :align: center
 
-2. Insert the Thermistor into holes 6E and 8E. The pins are non-directional and can be inserted freely.
+2. Insérez la thermistance dans les trous 6E et 8E. Les broches ne sont pas directionnelles et peuvent être insérées librement.
 
 .. image:: img/16_temperature_alarm_thermistor.png
     :width: 500
     :align: center
 
-A thermistor is a special type of resistor whose resistance changes with temperature. This device is very useful as it helps us detect and measure temperature, thereby controlling it in various electronic projects and devices.
+Une thermistance est un type spécial de résistance dont la valeur change en fonction de la température. Cet appareil est très utile pour détecter et mesurer la température, permettant ainsi de la contrôler dans divers projets et dispositifs électroniques.
 
-Here is the electronic symbol of thermistor.
+Voici le symbole électronique de la thermistance.
 
 .. image:: img/16_thermistor_symbol.png
     :width: 300
     :align: center
 
-Thermistors are of two opposite fundamental types:
+Il existe deux types fondamentaux opposés de thermistances :
 
-* **NTC thermistors**: Resistance decreases with rising temperature. Commonly used as temperature sensors or inrush current limiters in circuits.
-* **PTC thermistors**: Resistance increases with rising temperature. Often used as resettable fuses in circuits to protect against overcurrent.
+* **Thermistances NTC** : La résistance diminue avec l'augmentation de la température. Elles sont couramment utilisées comme capteurs de température ou limiteurs de courant d'appel dans les circuits.
+* **Thermistances PTC** : La résistance augmente avec l'augmentation de la température. Elles sont souvent utilisées comme fusibles réarmables dans les circuits pour protéger contre les surintensités.
 
-In this kit we use an **NTC** one. 
+Dans ce kit, nous utilisons une **NTC**.
 
-Now use a multimeter to measure the resistance of this thermistor to see if it indeed decreases with an increase in temperature.
+Utilisez maintenant un multimètre pour mesurer la résistance de cette thermistance et vérifiez si elle diminue effectivement avec une augmentation de la température.
 
-3. Since the rated resistance of the thermistor is 10K, set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+3. Comme la résistance nominale de la thermistance est de 10K, réglez le multimètre sur la plage de mesure de résistance de 20 kilo-ohms (20K).
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-
-4. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
+4. Touchez maintenant les deux broches de la thermistance avec les fils de test rouge et noir du multimètre.
 
 .. image:: img/16_temperature_alarm_test.png
     :width: 500
     :align: center
 
-5. Read the resistance value under the current temperature and record it in the table below.
+5. Lisez la valeur de la résistance à la température ambiante actuelle et enregistrez-la dans le tableau ci-dessous.
 
 .. list-table::
    :widths: 20 20
@@ -132,118 +131,118 @@ Now use a multimeter to measure the resistance of this thermistor to see if it i
    * - Current temperature
      - *9.37*
    * - Higher temperature
-     -
+     - 
    * - Lower temperature
-     -
+     - 
 
-6. Now you can find a friend to help you hold the thermistor, or use something else to raise the temperature around the thermistor (no water, no fire, safety first). Record the resistance value of the thermistor at this time in the table.
+6. Maintenant, vous pouvez demander à un ami de vous aider à tenir la thermistance ou utiliser quelque chose d'autre pour augmenter la température autour de la thermistance (pas d'eau, pas de feu, la sécurité d'abord). Notez la valeur de la résistance de la thermistance dans le tableau.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Current temperature
+   * - Environnement
+     - Résistance (kilohms)
+   * - Température actuelle
      - *9.37*
-   * - Higher temperature
+   * - Température plus élevée
      - *6.10*
-   * - Lower temperature
-     -
+   * - Température plus basse
+     - 
 
-7. You can place the thermistor outdoors, or fan it to lower the temperature around it. Record the resistance measured at this time in the table.
+7. Vous pouvez placer la thermistance à l'extérieur ou utiliser un éventail pour diminuer la température autour d'elle. Notez la résistance mesurée dans le tableau à ce moment.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Current temperature
+   * - Environnement
+     - Résistance (kilohms)
+   * - Température actuelle
      - *9.37*
-   * - Higher temperature
+   * - Température plus élevée
      - *6.10*
-   * - Lower temperature
+   * - Température plus basse
      - *12.49*
 
-Through these measurements, we can see that the higher the ambient temperature, the lower the
+À travers ces mesures, on peut voir que plus la température ambiante est élevée, plus la résistance diminue.
 
-8. Now you can continue building the circuit. Connect one end of the thermistor to a 10K resistor, and the other end of the 10K resistor to the negative terminal of the breadboard.
+8. Vous pouvez maintenant continuer à construire le circuit. Connectez une extrémité de la thermistance à une résistance de 10K et l'autre extrémité de la résistance de 10K à la borne négative de la breadboard.
 
 .. image:: img/16_temperature_alarm_resistor.png
     :width: 500
     :align: center
 
-9. Connect the other end of the breadboard to the 5V pin of the Arduino Uno R3.
+9. Connectez l'autre extrémité de la breadboard à la broche 5V de l'Arduino Uno R3.
 
 .. image:: img/16_temperature_alarm_5v.png
     :width: 500
     :align: center
 
-
-10. Finally, connect the common pin of the photoresistor and the 10K resistor to the A0 pin of the Arduino Uno R3.
+10. Enfin, connectez la broche commune de la thermistance et de la résistance 10K à la broche A0 de l'Arduino Uno R3.
 
 .. image:: img/16_temperature_alarm.png
     :width: 500
     :align: center
 
-Understanding Temperature Calculation
-----------------------------------------
-**About the Temperature Formula**
+Compréhension du calcul de la température
+---------------------------------------------
 
-The resistance of an NTC thermistor changes with temperature. This relationship is usually accurately described by the Steinhart-Hart Equation, as follows:
+**À propos de la formule de la température**
+
+La résistance d'une thermistance NTC change avec la température. Cette relation est généralement décrite avec précision par l'équation de Steinhart-Hart, comme suit :
 
 .. image:: img/16_format_steinhart.png
     :width: 400
     :align: center
 
-Here, a, b, and c are called the Steinhart–Hart parameters, which must be specified for each device. T is the absolute temperature, and R is the resistance.
+Ici, a, b et c sont appelés les paramètres de Steinhart-Hart, qui doivent être spécifiés pour chaque appareil. T est la température absolue, et R est la résistance.
 
-In addition to the Steinhart-Hart Equation, many practical applications also use a simplified formula based on the beta parameter (beta parameter) model to quickly calculate temperature. This model assumes that the relationship between resistance and temperature can be approximated by a simpler exponential relationship, thereby simplifying the calculation process and making it suitable for rapid temperature monitoring in engineering applications.
+En plus de l'équation de Steinhart-Hart, de nombreuses applications pratiques utilisent également une formule simplifiée basée sur le modèle du paramètre bêta pour calculer rapidement la température. Ce modèle suppose que la relation entre la résistance et la température peut être approximée par une relation exponentielle plus simple, simplifiant ainsi le processus de calcul et le rendant adapté à la surveillance rapide de la température dans des applications techniques.
 
 .. image:: img/16_format_3.png
     :width: 400
     :align: center
 
-* **T** is the temperature of the thermistor in Kelvin.
-* **T0** is a reference temperature, usually at 25°C (which is 273.15 + 25 in Kelvin).
-* **B** is the beta parameter of the material, the beta coefficient of the NTC thermistor used in this kit is 3950.
-* **R** is the resistance we measure.
-* **R0** is the resistance at the reference temperature T0, the resistance of the NTC thermistor in this kit at 25°C is 10 kilohms.
+* **T** est la température de la thermistance en Kelvin.
+* **T0** est une température de référence, généralement de 25°C (soit 273,15 + 25 en Kelvin).
+* **B** est le paramètre bêta du matériau, le coefficient bêta de la thermistance NTC utilisée dans ce kit est de 3950.
+* **R** est la résistance que nous mesurons.
+* **R0** est la résistance à la température de référence T0, la résistance de la thermistance NTC dans ce kit à 25°C est de 10 kilo-ohms.
 
-After converting the above formulas, the Kelvin temperature is calculated as: ``T=1/(ln(R/R0)/B+1/T0)``, subtract 273.15 to convert it to Celsius.
+Après conversion des formules ci-dessus, la température en Kelvin est calculée comme : ``T=1/(ln(R/R0)/B+1/T0)``, soustrayez 273,15 pour la convertir en Celsius.
 
-**How to measure resistance?**
+**Comment mesurer la résistance ?**
 
-We connect the thermistor and a 10K resistor in series in our circuit.
+Nous connectons la thermistance et une résistance de 10K en série dans notre circuit.
 
 .. image:: img/16_thermistor_sch.png
     :width: 200
     :align: center
 
-The voltage at pin A0, which we measure, divided by the series resistor (the 10K resistor), tells us the current flowing through the circuit. This current can also be obtained by dividing the total voltage by the total resistance of the circuit (series resistor + thermistor):
+La tension à la broche A0, que nous mesurons, divisée par la résistance de la série (la résistance de 10K), nous indique le courant circulant dans le circuit. Ce courant peut également être obtenu en divisant la tension totale par la résistance totale du circuit (résistance en série + thermistance) :
 
 .. image:: img/16_format_1.png
     :width: 400
     :align: center
 
-* **Vsupply**: The voltage supplied to the circuit.
-* **Rseries**: The resistance value of the series resistor.
-* **Vmeasured**: The voltage across the 10K resistor, also the voltage at pin A0.
+* **Vsupply** : La tension fournie au circuit.
+* **Rseries** : La valeur de la résistance en série.
+* **Vmesurée** : La tension aux bornes de la résistance de 10K, également la tension à la broche A0.
 
-From these, we can rearrange the formula to find the resistance of the thermistor:
+À partir de cela, nous pouvons réarranger la formule pour trouver la résistance de la thermistance :
 
 .. image:: img/16_format_2.png
     :width: 400
     :align: center
 
-In our code, we use the ``analogRead()`` function to read the voltage at pin A0. The relationship between the voltage **Vmeasured** and the analog value read is:
+Dans notre code, nous utilisons la fonction ``analogRead()`` pour lire la tension à la broche A0. La relation entre la tension **Vmesurée** et la valeur analogique lue est :
 
 .. code-block::
 
     (Analog value at A0) / 1023.0 = Vmeasured / Vsupply
 
-Using the formula above, we calculate the thermistor's resistance:
+En utilisant la formule ci-dessus, nous calculons la résistance de la thermistance :
 
 .. code-block::
 
@@ -251,145 +250,145 @@ Using the formula above, we calculate the thermistor's resistance:
 
 .. note::
 
-    If the formulas seem complicated, just remember the final ones here, and you're good to go!
+    Si les formules vous paraissent compliquées, souvenez-vous simplement des formules finales ci-dessous, et tout ira bien !
 
-    The resistance of the thermistor can be obtained through the following formula:
+    La résistance de la thermistance peut être obtenue grâce à la formule suivante :
 
     .. code-block::
 
-        R_thermistor =R_series x (1023.0 / (Analog value at A0) - 1)
+        R_thermistor =R_series x (1023.0 / (Valeur analogique à A0) - 1)
 
-    Then calculate the Kelvin temperature using the following formula:
+    Ensuite, calculez la température en Kelvin avec la formule suivante :
 
     .. code-block::
 
         T=1/(ln(R/R0)/B+1/T0)
 
-    * **T0**: 273.15 + 25.
-    * **B**: 3950.
-    * **R** is the resistance we measure.
-    * **R0**: 10 kilohms.
+    * **T0** : 273.15 + 25.
+    * **B** : 3950.
+    * **R** est la résistance que nous mesurons.
+    * **R0** : 10 kilo-ohms.
 
-    Finally, convert to Celsius using the following formula:
+    Enfin, convertissez en Celsius avec la formule suivante :
 
     .. code-block::
 
         Tc = T - 273.15
 
-    
-Code Creation
----------------
 
-**Get the Temperature**
+Création de Code
+--------------------
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson16_Temperature_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
+**Obtenir la Température**
 
-3. In previous lessons, we directly referenced the RGB LED pins in our code; here, we define them as constants.
+1. Ouvrez l'IDE Arduino et démarrez un nouveau projet en sélectionnant "New Sketch" dans le menu "File".
+2. Sauvegardez votre sketch sous le nom de ``Lesson16_Temperature_Alarm`` en utilisant ``Ctrl + S`` ou en cliquant sur “Save”.
+
+3. Dans les leçons précédentes, nous avons directement référencé les broches de la LED RGB dans notre code ; ici, nous les définissons comme des constantes.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 11;         // Red LED digital pin
-    const int greenPin = 10;       // Green LED digital pin
-    const int bluePin = 9;         // Blue LED digital pin
+    // Configuration des broches
+    const int tempSensorPin = A0;  // Entrée analogique pour le thermistor NTC
+    const int redPin = 11;         // Broche numérique pour la LED rouge
+    const int greenPin = 10;       // Broche numérique pour la LED verte
+    const int bluePin = 9;         // Broche numérique pour la LED bleue
 
     void setup() {
-        // put your setup code here, to run once:
+        // Configuration à exécuter une seule fois :
     }
 
-Using constants instead of variables, which remain unchanged throughout the program, provides clarity and simplifies maintenance. It allows meaningful names instead of numbers, and changes only need adjustments in declaration, not everywhere in the code. Constants follow the same naming rules as variables, avoiding any reserved keywords or commands from the Arduino IDE.
+L'utilisation de constantes au lieu de variables, qui ne changent pas tout au long du programme, apporte clarté et simplifie la maintenance. Cela permet d'utiliser des noms explicites au lieu de nombres, et toute modification n'est requise qu'au moment de la déclaration, pas partout dans le code. Les constantes suivent les mêmes règles de nommage que les variables, en évitant les mots-clés réservés par l'IDE Arduino.
 
-4. Before using the thermistor, we also need to define some more constants to store parameters related to the circuit.
+4. Avant d'utiliser le thermistor, nous devons également définir quelques constantes supplémentaires pour stocker des paramètres liés au circuit.
 
 .. note::
 
-    You will see that there are ``int`` type constants and ``float`` type constants. So, what's the difference between these two types of constants?
+    Vous remarquerez qu'il y a des constantes de type ``int`` et ``float``. Alors, quelle est la différence entre ces deux types de constantes ?
 
-  * ``const int``: An ``int`` (short for integer) constant holds whole numbers. This type does not support fractions or decimal points. It occupies typically 16 or 32 bits of memory, depending on the system.
-  * ``const float``: A ``float`` (short for floating-point) constant holds numbers that can have fractional parts. It is used when more precision is needed, such as in measurements or calculations that require decimal values. A ``float`` typically occupies 32 bits of memory and can represent a wider range of numbers than ``int``.
+  * ``const int`` : Une constante de type ``int`` (entier) contient des nombres entiers. Ce type ne supporte pas les fractions ou les nombres décimaux. Il occupe généralement 16 ou 32 bits de mémoire selon le système.
+  * ``const float`` : Une constante de type ``float`` (nombre à virgule flottante) contient des nombres pouvant avoir des parties fractionnaires. Elle est utilisée lorsque plus de précision est nécessaire, par exemple dans des mesures nécessitant des valeurs décimales. Un ``float`` occupe généralement 32 bits de mémoire et peut représenter une gamme plus large de nombres que ``int``.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 10;         // Red LED digital pin
-    const int greenPin = 11;       // Green LED digital pin
-    const int bluePin = 12;        // Blue LED digital pin
+    // Configuration des broches
+    const int tempSensorPin = A0;  // Entrée analogique pour le thermistor NTC
+    const int redPin = 10;         // Broche numérique pour la LED rouge
+    const int greenPin = 11;       // Broche numérique pour la LED verte
+    const int bluePin = 12;        // Broche numérique pour la LED bleue
 
-    // Constants for temperature calculation
-    const float beta = 3950.0;               // NTC thermistor's Beta value
-    const float seriesResistor = 10000;      // Series resistor value (ohms)
-    const float roomTempResistance = 10000;  // NTC resistance at 25°C
-    const float roomTemp = 25 + 273.15;      // Room temperature in Kelvin
+    // Constantes pour le calcul de la température
+    const float beta = 3950.0;               // Valeur Beta du thermistor NTC
+    const float seriesResistor = 10000;      // Valeur de la résistance série (ohms)
+    const float roomTempResistance = 10000;  // Résistance du NTC à 25°C
+    const float roomTemp = 25 + 273.15;      // Température ambiante en Kelvin
 
-5. In ``void setup()``, set the RGB LED pins as outputs and configure the serial communication baud rate to 9600.
+5. Dans ``void setup()``, configurez les broches de la LED RGB comme sorties et configurez la communication série à une vitesse de 9600 bauds.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
     void setup() {
-        // Initialize LED pins as outputs
+        // Initialiser les broches des LEDs en tant que sorties
         pinMode(redPin, OUTPUT);
         pinMode(greenPin, OUTPUT);
         pinMode(bluePin, OUTPUT);
         
-        // Start serial communication at 9600 baud
+        // Démarrer la communication série à 9600 bauds
         Serial.begin(9600);
     }
 
-6. First, you need to read the analog value of the pin A0 in ``void loop()``.
+6. D'abord, lisez la valeur analogique de la broche A0 dans ``void loop()``.
 
 .. code-block:: Arduino
     :emphasize-lines: 2
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
     }
 
-7. Next, calculate the resistance of the thermistor using the formula derived previously for converting analog values to voltage.
+7. Ensuite, calculez la résistance de la thermistance en utilisant la formule dérivée précédemment pour convertir les valeurs analogiques en tension.
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculer la résistance du thermistor
     }
 
-8. Then, calculate the Kelvin temperature using the formula shown below:
+8. Ensuite, calculez la température en Kelvin en utilisant la formule ci-dessous :
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculer la résistance du thermistor
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // Calculer la température en Kelvin à l'aide de l'équation Beta
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     }
 
-9. Subtract 273.15 from the Kelvin temperature to convert it to Celsius, and then print the result to the serial monitor using the ``Serial.printlnln()`` function.
+9. Soustrayez 273,15 de la température en Kelvin pour la convertir en Celsius, puis affichez le résultat sur le moniteur série à l'aide de la fonction ``Serial.println()``.
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculer la résistance du thermistor
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // Calculer la température en Kelvin à l'aide de l'équation Beta
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // Convertir en Celsius
+        Serial.println(tempC);         // Afficher la température en Celsius sur le moniteur série
     }
 
-10. At this point, you can upload the code to your Arduino Uno R3 and obtain the current Celsius temperature values.
+10. À ce stade, vous pouvez télécharger le code sur votre Arduino Uno R3 et obtenir les valeurs actuelles de la température en Celsius.
 
 .. code-block::
 
@@ -399,121 +398,118 @@ Using constants instead of variables, which remain unchanged throughout the prog
     26.28
     26.28
 
-**Change RGB LED Color**
+**Changer la couleur de la LED RGB**
 
-Now, let's change the RGB LED color based on the temperature measured by the thermistor.
+Maintenant, changeons la couleur de la LED RGB en fonction de la température mesurée par le thermistor.
 
-For example, we set three temperature ranges:
+Par exemple, nous définissons trois plages de températures :
 
-* Below 10 degrees, the RGB LED shows green, indicating the temperature is comfortable.
-* Between 10 and 20 degrees, the RGB LED shows yellow, signaling caution with the current temperature.
-* Above 21 degrees, the RGB LED shows red, indicating the temperature is too high and measures are needed.
+* En dessous de 10 degrés, la LED RGB s'affiche en vert, indiquant que la température est confortable.
+* Entre 10 et 20 degrés, la LED RGB s'affiche en jaune, signalant une attention particulière à la température actuelle.
+* Au-dessus de 21 degrés, la LED RGB s'affiche en rouge, indiquant que la température est trop élevée et que des mesures doivent être prises.
 
-11. For controlling the RGB LED, we'll use the function ``setColor()`` created in previous lessons.
+11. Pour contrôler la LED RGB, nous utiliserons la fonction ``setColor()`` créée dans les leçons précédentes.
 
 .. code-block:: Arduino
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM values for red, green, and blue to the RGB LED
+        // Envoyer les valeurs PWM pour les couleurs rouge, vert et bleu à la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-12. Now, we use an ``if else if`` statement to control the RGB LED's color based on different temperatures.
+12. Maintenant, nous utilisons une instruction ``if else if`` pour contrôler la couleur de la LED RGB en fonction des différentes températures.
 
 .. code-block:: Arduino
     :emphasize-lines: 12-18
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculer la résistance du thermistor
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // Calculer la température en Kelvin à l'aide de l'équation Beta
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
     
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           // Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // Convertir en Celsius
+        Serial.println(tempC);         // Afficher la température en Celsius sur le Moniteur Série
 
-        // Adjust LED color based on temperature
+        // Ajuster la couleur de la LED en fonction de la température
         if (tempC < 10) {
-            setColor(0, 0, 255);  // Cold: blue
+            setColor(0, 0, 255);  // Froid : bleu
         } else if (tempC >= 10 && tempC <= 21) {
-            setColor(0, 255, 0);  // Comfortable: green
+            setColor(0, 255, 0);  // Confortable : vert
         } else if (tempC > 21) {
-            setColor(255, 0, 0);  // Hot: red
+            setColor(255, 0, 0);  // Chaud : rouge
         }
-        delay(1000);  // Delay 1 second before next reading
+        delay(1000);  // Attendre 1 seconde avant la prochaine lecture
     }
 
-13. Your complete code is now ready. You can now upload the code to your Arduino Uno R3 to see the effects.
-
+13. Votre code complet est maintenant prêt. Vous pouvez télécharger le code sur votre Arduino Uno R3 pour voir les effets.
 
 .. code-block:: Arduino
 
-    // Pin configurations
-    const int tempSensorPin = A0;  // NTC thermistor analog input
-    const int redPin = 10;         // Red LED digital pin
-    const int greenPin = 11;       // Green LED digital pin
-    const int bluePin = 12;        // Blue LED digital pin
+    // Configuration des broches
+    const int tempSensorPin = A0;  // Entrée analogique pour le thermistor NTC
+    const int redPin = 10;         // Broche numérique pour la LED rouge
+    const int greenPin = 11;       // Broche numérique pour la LED verte
+    const int bluePin = 12;        // Broche numérique pour la LED bleue
 
-    // Constants for temperature calculation
-    const float beta = 3950.0;               // NTC thermistor's Beta value
-    const float seriesResistor = 10000;      // Series resistor value (ohms)
-    const float roomTempResistance = 10000;  // NTC resistance at 25°C
-    const float roomTemp = 25 + 273.15;      // Room temperature in Kelvin
+    // Constantes pour le calcul de la température
+    const float beta = 3950.0;               // Valeur Beta du thermistor NTC
+    const float seriesResistor = 10000;      // Valeur de la résistance en série (ohms)
+    const float roomTempResistance = 10000;  // Résistance du NTC à 25°C
+    const float roomTemp = 25 + 273.15;      // Température ambiante en Kelvin
 
     void setup() {
-        // Initialize LED pins as outputs
+        // Initialiser les broches des LEDs en tant que sorties
         pinMode(redPin, OUTPUT);
         pinMode(greenPin, OUTPUT);
         pinMode(bluePin, OUTPUT);
 
-        // Start serial communication at 9600 baud
+        // Démarrer la communication série à 9600 bauds
         Serial.begin(9600);
     }
 
     void loop() {
-        int adcValue = analogRead(tempSensorPin);                     // Read thermistor value
-        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculate thermistor resistance
+        int adcValue = analogRead(tempSensorPin);                     // Lire la valeur du thermistor
+        float resistance = (1023.0 / adcValue - 1) * seriesResistor;  // Calculer la résistance du thermistor
 
-        // Calculate temperature in Kelvin using Beta parameter equation
+        // Calculer la température en Kelvin à l'aide de l'équation Beta
         float tempK = 1 / (log(resistance / roomTempResistance) / beta + 1 / roomTemp);
 
-        float tempC = tempK - 273.15;  // Convert to Celsius
-        Serial.println(tempC);           //Display temperature in Celsius on Serial Monitor
+        float tempC = tempK - 273.15;  // Convertir en Celsius
+        Serial.println(tempC);         // Afficher la température en Celsius sur le Moniteur Série
 
-        // Adjust LED color based on temperature
+        // Ajuster la couleur de la LED en fonction de la température
         if (tempC < 10) {
-            setColor(0, 0, 255);  // Cold: blue
+            setColor(0, 0, 255);  // Froid : bleu
         } else if (tempC >= 10 && tempC <= 21) {
-            setColor(0, 255, 0);  // Comfortable: green
+            setColor(0, 255, 0);  // Confortable : vert
         } else if (tempC > 21) {
-            setColor(255, 0, 0);  // Hot: red
+            setColor(255, 0, 0);  // Chaud : rouge
         }
-        delay(1000);  // Delay 1 second before next reading
+        delay(1000);  // Attendre 1 seconde avant la prochaine lecture
     }
 
-    // Function to set the color of the RGB LED
+    // Fonction pour définir la couleur de la LED RGB
     void setColor(int red, int green, int blue) {
-        // Write PWM value for red, green, and blue to the RGB LED
+        // Envoyer les valeurs PWM pour rouge, vert et bleu à la LED RGB
         analogWrite(11, red);
         analogWrite(10, green);
         analogWrite(9, blue);
     }
 
-
-14. Finally, remember to save your code and tidy up your workspace.
+14. Enfin, n'oubliez pas de sauvegarder votre code et de ranger votre espace de travail.
 
 **Question**
 
-1. In the code, Kelvin and Celsius temperatures are calculated. If you also want to know the Fahrenheit temperature, what should you do?
+1. Dans le code, les températures en Kelvin et en Celsius sont calculées. Si vous souhaitez également connaître la température en Fahrenheit, que devez-vous faire ?
 
-2. Can you think of other situations or places where a temperature monitoring system like the one we built today could be useful?
+2. Pouvez-vous penser à d'autres situations ou lieux où un système de surveillance de la température comme celui que nous avons construit aujourd'hui pourrait être utile ?
 
-**Summary**
+**Résumé**
 
-In today's lesson, we built a temperature alarm system that uses a thermistor to monitor the temperature of a storage area for shelf-stable foods. We learned how to read and convert resistance values from the thermistor into temperature readings in Celsius. Through our programming, we also set up conditions to change the color of an RGB LED based on the temperature, providing a visual alert for temperatures that are too low, just right, or too high.
-
+Dans la leçon d'aujourd'hui, nous avons construit un système d'alarme de température utilisant un thermistor pour surveiller la température d'une zone de stockage d'aliments non périssables. Nous avons appris à lire et à convertir les valeurs de résistance du thermistor en relevés de température en Celsius. Grâce à notre programmation, nous avons également mis en place des conditions pour changer la couleur d'une LED RGB en fonction de la température, fournissant une alerte visuelle pour les températures trop basses, adéquates ou trop élevées.
 

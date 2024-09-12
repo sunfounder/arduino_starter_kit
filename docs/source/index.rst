@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi & Arduino & ESP32 sur Facebook ! Explorez plus en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions spéciales durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-|link_beginner_lab_kit| with Original Arduino Uno R3
-=================================================
+|link_beginner_lab_kit| avec Arduino Uno R3 original
+===========================================================
 
-Thank You for Choosing the |link_beginner_lab_kit|
+Merci d'avoir choisi le |link_beginner_lab_kit|
 
 * :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
@@ -24,28 +24,35 @@ Thank You for Choosing the |link_beginner_lab_kit|
     :align: center
 
 .. note::
-    This document is available in the following languages.
+    Ce document est disponible dans les langues suivantes :
 
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_german_tutorials|
+        * |link_fr_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Veuillez cliquer sur les liens respectifs pour accéder au document dans la langue de votre choix.
 
-Welcome to the |link_beginner_lab_kit|, a comprehensive starter pack designed 
-specifically for newcomers to the world of electronics and programming. 
-This kit includes an array of essential components such as LEDs, resistors, 
-a buzzer, potentiometers, photoresistors, thermistors, push buttons, digital tubes, 
-and an ultrasonic module. One of the standout features of this kit is the inclusion of a multimeter, 
-an invaluable tool that allows you to measure current, voltage, and resistance within your circuits. 
-This addition is particularly useful for deepening your understanding of how each component functions.
+Bienvenue dans le |link_beginner_lab_kit|, un pack de démarrage complet conçu 
+spécialement pour les nouveaux venus dans le monde de l'électronique et de la 
+programmation. Ce kit comprend une gamme de composants essentiels tels que des 
+LED, des résistances, un buzzer, des potentiomètres, des photo-résistances, des 
+thermistances, des boutons-poussoirs, des tubes numériques et un module ultrasonique. 
+L'une des caractéristiques remarquables de ce kit est l'inclusion d'un multimètre, 
+un outil inestimable qui vous permet de mesurer le courant, la tension et la 
+résistance dans vos circuits. Cet ajout est particulièrement utile pour approfondir 
+votre compréhension du fonctionnement de chaque composant.
 
-The course sequence provided with this kit is structured around the Arduino programming syntax, 
-ensuring a logical and educational progression. 
-This structure allows you to build circuits step-by-step while learning how to write the programs that control them. 
-Throughout the course, you will encounter troubleshooting challenges that enhance your understanding of the material.
+La séquence de cours fournie avec ce kit est structurée autour de la syntaxe de 
+programmation Arduino, garantissant une progression logique et éducative. Cette 
+structure vous permet de construire des circuits étape par étape tout en apprenant 
+à écrire les programmes qui les contrôlent. Tout au long du cours, vous rencontrerez 
+des défis de dépannage qui amélioreront votre compréhension du matériel.
 
-For any inquiries or support, please reach out to us at service@sunfounder.com. 
-Dive into your learning journey with the Beginner's Lab Kit and start building, coding, and exploring the exciting world of electronics!
+Pour toute question ou assistance, n'hésitez pas à nous contacter à l'adresse 
+service@sunfounder.com. Plongez dans votre voyage d'apprentissage avec le kit de 
+laboratoire pour débutants et commencez à construire, coder et explorer le monde 
+passionnant de l'électronique !
 
 .. toctree::
     :maxdepth: 1
@@ -78,7 +85,7 @@ Dive into your learning journey with the Beginner's Lab Kit and start building, 
     25_show_number
 
 
-**Copyright Notice**
+**Avis de droit d'auteur**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Tous les contenus, y compris mais sans s'y limiter, les textes, les images et les codes de ce manuel, appartiennent à la société SunFounder. Vous ne devez les utiliser que pour des études personnelles, des recherches, des loisirs ou à d'autres fins non commerciales ou à but non lucratif, conformément aux lois et réglementations sur les droits d'auteur, sans porter atteinte aux droits légaux de l'auteur et des détenteurs de droits concernés. Toute personne ou organisation utilisant ces contenus à des fins commerciales sans autorisation se verra opposer le droit de la société de prendre des mesures légales.
 

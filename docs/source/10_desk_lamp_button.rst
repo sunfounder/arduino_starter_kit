@@ -1,54 +1,53 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, d'Arduino et d'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-10. ON/OFF Desk Lamp
+10. Lampe de Bureau ON/OFF
 ====================================
 
-In this lesson, you'll expand on your previous project by adding a practical feature to your adjustable desk lamp—a switchable button. This enhancement simulates a real-life scenario where desk lamps are turned on or off and then adjusted for brightness using a dimmer, mimicking everyday functionality more closely.
+Dans cette leçon, vous allez enrichir votre projet précédent en ajoutant une fonctionnalité pratique à votre lampe de bureau réglable : un bouton marche/arrêt. Cette amélioration simule un scénario réel où les lampes de bureau sont allumées ou éteintes, puis ajustées en luminosité avec un variateur, reproduisant ainsi plus fidèlement une utilisation quotidienne.
 
 .. image:: img/10_desk_lamp_button.jpg
     :width: 500
     :align: center
 
-* Learn to use the Serial Monitor for real-time data display.
-* Implement the ``INPUT_PULLUP`` mode to manage button inputs efficiently.
-* Understand how to detect changes from one state to another.
-* Explore the characteristics of digital and analog signals
-* Utilizing Conditional Statements (``if else``)
+* Apprenez à utiliser le moniteur série pour afficher des données en temps réel.
+* Implémentez le mode ``INPUT_PULLUP`` pour gérer efficacement les entrées du bouton.
+* Comprenez comment détecter les changements d'état.
+* Explorez les caractéristiques des signaux numériques et analogiques.
+* Utilisez les instructions conditionnelles (``if else``).
 
-Build the Circuit
+Construction du Circuit
 ------------------------------------
 
-**Components Needed**
-
+**Composants Nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LEDs
-     - 1 * 220Ω Resistor
-     - 1 * Potentiometer
+     - 1 * LED rouge
+     - 1 * Résistance de 220Ω
+     - 1 * Potentiomètre
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * Button
-     - 1 * USB Cable
+   * - 1 * Bouton
+     - 1 * Câble USB
      - 1 * Breadboard
-     - Jumper Wires
+     - Fils de Connexion
    * - |list_button| 
      - |list_usb_cable| 
      - |list_breadboard| 
@@ -56,45 +55,45 @@ Build the Circuit
 
 
 
-**Building Steps**
+**Étapes de Construction**
 
-1. Start with the desk lamp circuit from the previous lesson.
+1. Commencez par le circuit de la lampe de bureau de la leçon précédente.
 
 .. image:: img/9_dimmer_led1_pin9.png
     :width: 500
     :align: center
 
-2. Insert the button into the breadboard across the middle gap, with pins in holes 6E, 8E, 6J and 8J. 
+2. Insérez le bouton dans la breadboard en traversant le vide central, avec les broches dans les trous 6E, 8E, 6J et 8J.
 
 .. note::
 
-    If you're unsure how to insert the button, try both orientations. One way, the pin spacing will be slightly too narrow to fit.
+    Si vous ne savez pas comment insérer le bouton, essayez les deux orientations. Dans un sens, l'écartement des broches sera légèrement trop étroit pour s'adapter.
 
 .. image:: img/10_desk_lamp_button_button.png
     :width: 500
     :align: center
 
-3. Connect the button's buttom-left pin to digital pin 7 on the Arduino Uno R3 with a long jumper wire, inserting one end into hole 8J and the other into pin 7.
+3. Connectez la broche en bas à gauche du bouton à la pin numérique 7 de l'Arduino Uno R3 à l'aide d'un long fil, en insérant une extrémité dans le trou 8J et l'autre dans la pin 7.
 
 .. image:: img/10_desk_lamp_button_p7.png
     :width: 500
     :align: center
 
-4. Connect the button's top-right pin to the breadboard's negative rail with a short jumper wire, inserting one end into hole 6A and the other into the negative rail.
+4. Connectez la broche en haut à droite du bouton au rail négatif de la breadboard avec un court fil, en insérant une extrémité dans le trou 6A et l'autre dans le rail négatif.
 
 .. image:: img/10_desk_lamp_button_gnd.png
     :width: 500
     :align: center
 
+Création de Code
+---------------------
 
-Code Creation
------------------
 
-**Printing Button State**
+**Afficher l'État du Bouton**
 
-1. Open the sketch you saved earlier, ``Lesson9_Desk_Lamp``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson10_Desk_Lamp_Button``. Click "Save".
+1. Ouvrez le sketch que vous avez sauvegardé précédemment, ``Lesson9_Desk_Lamp``. Cliquez sur "Enregistrer sous..." dans le menu "Fichier", et renommez-le en ``Lesson10_Desk_Lamp_Button``. Cliquez sur "Enregistrer".
 
-2. In Lesson 8, we used a button with a manually connected 10K pull-down resistor between GND and the button. However, in this circuit, we did not connect a resistor. Instead, we can use the Arduino software pull-up feature. You need to set the pin connected to the button as input while also setting it to ``PULLUP``.
+2. Dans la leçon 8, nous avons utilisé un bouton avec une résistance de pull-down de 10K connectée manuellement entre GND et le bouton. Cependant, dans ce circuit, nous n'avons pas connecté de résistance. À la place, nous pouvons utiliser la fonctionnalité de pull-up interne d'Arduino. Vous devez définir la pin connectée au bouton comme entrée tout en l'ajustant à ``PULLUP``.
 
 .. code-block:: Arduino
     :emphasize-lines: 6
@@ -102,14 +101,14 @@ Code Creation
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 8 as input with an internal pull-up resistor
+        // Mettez votre code de configuration ici, à exécuter une fois :
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT_PULLUP);  // Définir la pin 7 comme entrée avec une résistance de pull-up interne
     }
 
-3. To utilize the Serial Monitor, you must include a command that initiates serial communication on the Arduino Uno R3. 
+3. Pour utiliser le moniteur série, vous devez inclure une commande qui initialise la communication série sur l'Arduino Uno R3.
 
-This command is typically placed in the ``void setup()`` section of the sketch. The command ``Serial.begin(baud)`` starts the serial communication, where ``baud`` represents the rate of data transfer per second between the computer and the Arduino Uno R3. Common baud rates are 9600 and 115200 bits per second.
+Cette commande est généralement placée dans la section ``void setup()`` du sketch. La commande ``Serial.begin(baud)`` démarre la communication série, où ``baud`` représente la vitesse de transfert des données par seconde entre l'ordinateur et l'Arduino Uno R3. Les vitesses de transfert courantes sont 9600 et 115200 bits par seconde.
 
 .. code-block:: Arduino
     :emphasize-lines: 7
@@ -117,29 +116,28 @@ This command is typically placed in the ``void setup()`` section of the sketch. 
     int potValue = 0;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        // Mettez votre code de configuration ici, à exécuter une fois :
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT_PULLUP);  // Définir la pin 7 comme entrée avec une résistance de pull-up interne
+        Serial.begin(9600);        // Initialisation de la communication série à 9600 bauds
     }
 
-
-4. Before entering the ``void loop()``, we also need to create two variables to initialize the states of the button and the LED. The LED should be off when there is no interaction, so set it to LOW. Since the button uses an internal pull-up resistor, it will read as HIGH when not pressed.
+4. Avant d'entrer dans la fonction ``void loop()``, nous devons également créer deux variables pour initialiser les états du bouton et de la LED. La LED doit être éteinte en l'absence d'interaction, donc définissez son état sur LOW. Comme le bouton utilise une résistance de pull-up interne, il sera lu comme HIGH lorsqu'il n'est pas pressé.
 
 .. code-block:: Arduino
     :emphasize-lines: 2,3
 
-    int potValue = 0;  // Variable to store the value read from the potentiometer
-    int ledState = LOW;          // Initial state of the LED
-    int lastButtonState = HIGH;  // the previous reading from the input pin
+    int potValue = 0;  // Variable pour stocker la valeur lue du potentiomètre
+    int ledState = LOW;          // État initial de la LED
+    int lastButtonState = HIGH;  // La dernière lecture de la pin d'entrée
 
     void setup() {
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT_PULLUP);  // Définir la pin 7 comme entrée avec une résistance de pull-up interne
+        Serial.begin(9600);        // Initialisation de la communication série à 9600 bauds
     }
 
-5. Now, in the ``void loop()``, first read the state of the button using ``digitalRead()`` and store it in the variable ``buttonState``. 
+5. Maintenant, dans la fonction ``void loop()``, lisez d'abord l'état du bouton en utilisant ``digitalRead()`` et stockez-le dans la variable ``buttonState``.
 
 .. code-block:: Arduino
     :emphasize-lines: 2
@@ -148,277 +146,272 @@ This command is typically placed in the ``void setup()`` section of the sketch. 
         int buttonState = digitalRead(7);  // Read the state of the button
     }
 
-6. You are now ready to use the Serial Monitor to print data. You will utilize ``Serial.print()`` to display data and other texts.
+6. Vous êtes maintenant prêt à utiliser le moniteur série pour afficher des données. Vous utiliserez ``Serial.print()`` pour afficher des données et d'autres textes.
 
-Here's how to use it:
+Voici comment l'utiliser :
 
 
-    * ``Serial.print(val)`` or ``Serial.print(val, format)``: Prints data to the serial port as human-readable ASCII text. 
+    * ``Serial.print(val)`` ou ``Serial.print(val, format)`` : Affiche des données sur le port série sous forme de texte ASCII lisible.
 
-    **Parameters**
-        - ``Serial``: serial port object.
-        - ``val``: the value to print. Allowed data types: any data type.
+    **Paramètres**
+        - ``Serial`` : objet du port série.
+        - ``val`` : la valeur à afficher. Types de données autorisés : tout type de données.
 
-    **Returns**
-        ``print()`` returns the number of bytes written, though reading that number is optional. Data type: size_t.
+    **Retourne**
+        ``print()`` renvoie le nombre d'octets écrits, bien que la lecture de ce nombre soit optionnelle. Type de données : size_t.
 
-This command can represent various data types and formats, including numbers, floating points, bytes, and strings. For example:
+Cette commande peut représenter divers types de données et formats, y compris les nombres, les points flottants, les octets et les chaînes de caractères. Par exemple :
 
 .. code-block:: Arduino
 
-    Serial.print(78);                // outputs "78"
-    Serial.print(78, BIN);           // outputs "1001110"
-    Serial.print(1.23456);           // outputs "1.23"
-    Serial.print(1.23456, 0);        // outputs "1"
-    Serial.print('N');               // outputs "N"
-    Serial.print("Hello world.");    // outputs "Hello world."
+    Serial.print(78);                // affiche "78"
+    Serial.print(78, BIN);           // affiche "1001110"
+    Serial.print(1.23456);           // affiche "1.23"
+    Serial.print(1.23456, 0);        // affiche "1"
+    Serial.print('N');               // affiche "N"
+    Serial.print("Bonjour tout le monde.");  // affiche "Bonjour tout le monde."
 
-
-7. Now, use this command to print a prompt indicating the data about to be printed. This is helpful when differentiating multiple data prints at once.
+7. Utilisez cette commande pour afficher un message indiquant les données sur le point d'être imprimées. Cela est utile pour différencier plusieurs impressions de données en même temps.
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
     }
 
-8. Now print the value stored in the ``buttonState`` variable. To ensure each output appears on a new line in the Serial Monitor, use ``Serial.println()``, which adds a newline character at the end of the print statement.
-    
+8. Imprimez maintenant la valeur stockée dans la variable ``buttonState``. Pour vous assurer que chaque sortie apparaît sur une nouvelle ligne dans le Moniteur Série, utilisez ``Serial.println()``, qui ajoute un caractère de retour à la ligne à la fin de l'instruction print.
+
 .. note::
 
-    Note the difference in printing characters or strings (which must be enclosed in quotes) versus variables that are inserted directly.
-    
+    Notez la différence entre l'impression de caractères ou de chaînes (qui doivent être placés entre guillemets) et les variables qui sont insérées directement.
+
 .. code-block:: Arduino
     :emphasize-lines: 14
 
-    int potValue = 0;  // Variable to store the value read from the potentiometer
-    int ledState = LOW;          // Initial state of the LED
-    int lastButtonState = HIGH;  // the previous reading from the input pin
+    int potValue = 0;  // Variable pour stocker la valeur lue du potentiomètre
+    int ledState = LOW;          // État initial de la LED
+    int lastButtonState = HIGH;  // La dernière lecture de la pin d'entrée
 
     void setup() {
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT_PULLUP);  // Définir la pin 7 comme entrée avec une résistance de pull-up interne
+        Serial.begin(9600);        // Initialisation de la communication série à 9600 bauds
     }
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
-        Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
+        Serial.print("État du Bouton : ");
+        Serial.println(buttonState);  // Imprimer l'état actuel du bouton
     }
 
-9. At this point, the code is essentially complete. Click "Upload" to upload the code to the Arduino Uno R3.
+9. À ce stade, le code est essentiellement complet. Cliquez sur "Téléverser" pour téléverser le code sur l'Arduino Uno R3.
 
-    .. note::
+.. note::
 
-        Whenever data is transmitted from the board to the computer, you should see the TX LED on your Arduino Uno R3 flashing.
+    Chaque fois que des données sont transmises de la carte à l'ordinateur, vous devriez voir la LED TX sur votre Arduino Uno R3 clignoter.
 
-10. Afterward, click on the "Serial Monitor" button in the top right corner of the Arduino IDE.
+10. Ensuite, cliquez sur le bouton "Moniteur Série" en haut à droite de l'IDE Arduino.
 
-    .. image:: img/10_dimmer_led_serial.png
-        :align: center
+.. image:: img/10_dimmer_led_serial.png
+    :align: center
 
-11. If you see garbled data displayed, you will need to adjust the baud rate to match the one set in your code.
+11. Si vous voyez des données illisibles affichées, vous devrez ajuster le débit en bauds pour qu'il corresponde à celui défini dans votre code.
 
-    .. image:: img/10_dimmer_led_serial_baud.png
-        :align: center
+.. image:: img/10_dimmer_led_serial_baud.png
+    :align: center
 
-12. You will find that when the button is not pressed, it continuously prints "1", and when the button is pressed, it continuously prints "0". This is the characteristic of a digital signal, which has only two states: “0” and “1”.
+12. Vous constaterez que lorsque le bouton n'est pas pressé, il imprime continuellement "1", et lorsque le bouton est pressé, il imprime continuellement "0". C'est la caractéristique d'un signal numérique, qui n'a que deux états : "0" et "1".
 
-**Detecting Button State Changes**
+**Détection des Changements d'État du Bouton**
 
-In this segment, we're going to learn how a simple button can control an LED by toggling its state from ON to OFF and vice versa. This involves detecting the precise moment the button changes from not being pressed to being pressed.
+Dans cette section, nous allons apprendre à utiliser un simple bouton pour contrôler une LED en basculant son état de ON à OFF et vice versa. Cela implique de détecter le moment précis où l'état du bouton passe de non appuyé à appuyé.
 
-1. Let's start with the core function that monitors the button press.
+1. Commençons par la fonction principale qui surveille l'appui sur le bouton.
 
-Previously, we learned how to determine if a button is pressed by reading its state as ``HIGH`` or ``LOW``. However, this lesson aims to respond to a single press without the need to keep the button held down. This requires us to detect a change in the button's state.
+Auparavant, nous avons appris à déterminer si un bouton est appuyé en lisant son état comme ``HIGH`` ou ``LOW``. Cependant, cette leçon vise à réagir à un simple appui sans qu'il soit nécessaire de maintenir le bouton enfoncé. Cela nécessite de détecter un changement d'état du bouton.
 
-To achieve this, we use an ``if`` statement that compares the button's previous state (``lastButtonState``) with its current state (``buttonState``). The logical operator ``&&`` is used here, meaning both conditions must be true for the block of code within the ``if`` statement to execute.
+Pour y parvenir, nous utilisons une instruction ``if`` qui compare l'état précédent du bouton (``lastButtonState``) avec son état actuel (``buttonState``). L'opérateur logique ``&&`` est utilisé ici, ce qui signifie que les deux conditions doivent être vraies pour que le bloc de code dans l'instruction ``if`` soit exécuté.
 
 .. code-block:: Arduino
     :emphasize-lines: 7,8
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
+        Serial.println(buttonState);  // Imprimer l'état actuel du bouton
             
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
+        // Vérifier si l'état du bouton a changé depuis la dernière itération de la boucle
+        if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
         }
     }
 
-2. When the button is detected as pressed, we toggle the LED's state. This means if the LED was off, it turns on, and if it was on, it turns off. The ``!`` operator is used to invert the state of the ledState variable.
-
+2. Lorsque l'appui sur le bouton est détecté, nous basculons l'état de la LED. Cela signifie que si la LED était éteinte, elle s'allume, et si elle était allumée, elle s'éteint. L'opérateur ``!`` est utilisé pour inverser l'état de la variable ledState.
 
 .. code-block:: Arduino
     :emphasize-lines: 8
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
+        Serial.println(buttonState);  // Imprimer l'état actuel du bouton
             
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-            ledState = !ledState;                               // Toggle LED state
+        // Vérifier si l'état du bouton a changé depuis la dernière itération de la boucle
+        if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
+            ledState = !ledState;                               // Basculer l'état de la LED
         }
     }
 
-3. After checking the button's state and updating the LED accordingly, we need to record the current state of the button as the new 'last known state'. This step is crucial for detecting the next state change.
+3. Après avoir vérifié l'état du bouton et mis à jour la LED en conséquence, nous devons enregistrer l'état actuel du bouton comme le nouveau 'dernier état connu'. Cette étape est cruciale pour détecter le prochain changement d'état.
 
 .. code-block:: Arduino
     :emphasize-lines: 10,11
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
+        Serial.println(buttonState);  // Imprimer l'état actuel du bouton
         
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-            ledState = !ledState;                               // Toggle LED state
+        // Vérifier si l'état du bouton a changé depuis la dernière itération de la boucle
+        if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
+            ledState = !ledState;                               // Basculer l'état de la LED
         }
-        lastButtonState = buttonState;  // Update lastButtonState to the current state
-        delay(200);                     // Optional: Simple software debouncing
-        }
+        lastButtonState = buttonState;  // Mettre à jour lastButtonState avec l'état actuel
+        delay(200);                     // Optionnel : Simple anti-rebond logiciel
+    }
 
-**Adjusting Brightness with a Potentiometer**
+**Ajuster la Luminosité avec un Potentiomètre**
 
-In scenarios where ``ledState`` is ``HIGH``, we want the LED not only to light up but also to have its brightness adjustable by a potentiometer. Here’s how you can implement this functionality:
+Dans les scénarios où ``ledState`` est à ``HIGH``, nous voulons que la LED ne se contente pas de s'allumer, mais que sa luminosité puisse également être ajustée à l'aide d'un potentiomètre. Voici comment vous pouvez implémenter cette fonctionnalité :
 
-
-1. Right after the ``if`` statement that toggles the LED state upon a button press, add another ``if`` statement to check if ``ledState`` is ``HIGH``. If it is, this is where we'll adjust the LED's brightness based on the potentiometer's value.
-
+1. Juste après l'instruction ``if`` qui bascule l'état de la LED lors d'un appui sur le bouton, ajoutez une autre instruction ``if`` pour vérifier si ``ledState`` est à ``HIGH``. Si c'est le cas, c'est ici que nous ajusterons la luminosité de la LED en fonction de la valeur du potentiomètre.
 
 .. code-block:: Arduino
     :emphasize-lines: 10,12
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
-        Serial.println(buttonState);  // Print the current button state
+        Serial.println(buttonState);  // Imprimer l'état actuel du bouton
         
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-            ledState = !ledState;                               // Toggle LED state
+        // Vérifier si l'état du bouton a changé depuis la dernière itération
+        if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
+            ledState = !ledState;                               // Basculer l'état de la LED
         }
         if (ledState == HIGH) {
 
         }
-        lastButtonState = buttonState;  // Update lastButtonState to the current state
-        delay(200);                     // Optional: Simple software debouncing
+        lastButtonState = buttonState;  // Mettre à jour lastButtonState avec l'état actuel
+        delay(200);                     // Optionnel : Simple anti-rebond logiciel
     }
 
-2. Inside the ``if (ledState == HIGH)`` block, read the potentiometer value to determine the brightness level. Then, apply this value to adjust the LED's brightness using ``analogWrite()``. Also, print this value to the Serial Monitor for real-time feedback.
+2. À l'intérieur du bloc ``if (ledState == HIGH)``, lisez la valeur du potentiomètre pour déterminer le niveau de luminosité. Ensuite, appliquez cette valeur pour ajuster la luminosité de la LED à l'aide de ``analogWrite()``. Imprimez également cette valeur dans le Moniteur Série pour obtenir un retour en temps réel.
 
 .. code-block:: Arduino
     :emphasize-lines: 6-9
 
-    // Check if button state has changed from the last loop iteration
-    if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-        ledState = !ledState;                               // Toggle LED state
+    // Vérifier si l'état du bouton a changé depuis la dernière itération
+    if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
+        ledState = !ledState;                               // Basculer l'état de la LED
     }
     if (ledState == HIGH) {
-        potValue = analogRead(A0);  // Continuously read value from potentiometer when LED is on
-        analogWrite(9, potValue / 4);  // Adjust brightness continuously
+        potValue = analogRead(A0);  // Lire en continu la valeur du potentiomètre lorsque la LED est allumée
+        analogWrite(9, potValue / 4);  // Ajuster en continu la luminosité
         Serial.print("Pot Value: ");
         Serial.println(potValue);
     }
-    lastButtonState = buttonState;  // Update lastButtonState to the current state
-    delay(200);                     // Optional: Simple software debouncing
+    lastButtonState = buttonState;  // Mettre à jour lastButtonState avec l'état actuel
+    delay(200);                     // Optionnel : Simple anti-rebond logiciel
 
-3. To ensure the LED turns off when ``ledState`` is ``LOW``, add an ``else`` statement following the ``if`` block. This will handle turning off the LED completely when the conditions within the ``if`` are not met.
+3. Pour vous assurer que la LED s'éteint lorsque ``ledState`` est à ``LOW``, ajoutez une instruction ``else`` après le bloc ``if``. Cela permettra d'éteindre complètement la LED lorsque les conditions dans le ``if`` ne sont pas remplies.
 
 .. image:: img/if_else.png
     :width: 400
     :align: center
 
-
 .. code-block:: Arduino
     :emphasize-lines: 6-8
 
     if (ledState == HIGH) {
-        potValue = analogRead(A0);  // Continuously read value from potentiometer when LED is on
-        analogWrite(9, potValue / 4);  // Adjust brightness continuously
+        potValue = analogRead(A0);  // Lire en continu la valeur du potentiomètre lorsque la LED est allumée
+        analogWrite(9, potValue / 4);  // Ajuster en continu la luminosité
         Serial.print("Pot Value: ");
         Serial.println(potValue);
     } else {
-        analogWrite(9, 0);  // Adjust brightness continuously
+        analogWrite(9, 0);  // Éteindre la LED
     }
 
-**Running the Code**
+**Exécution du Code**
 
-Now that your code is complete, the full listing is as follows:
+Maintenant que votre code est complet, voici la liste complète :
 
 .. code-block:: Arduino
 
-    int potValue = 0;            // Variable to store the value read from the potentiometer
-    int ledState = LOW;          // Initial state of the LED
-    int lastButtonState = HIGH;  // the previous reading from the input pin
+    int potValue = 0;            // Variable pour stocker la valeur lue du potentiomètre
+    int ledState = LOW;          // État initial de la LED
+    int lastButtonState = HIGH;  // La dernière lecture de la pin d'entrée
 
     void setup() {
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT_PULLUP);  // Set pin 7 as input with an internal pull-up resistor
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT_PULLUP);  // Définir la pin 7 comme entrée avec une résistance de pull-up interne
+        Serial.begin(9600);        // Initialisation de la communication série à 9600 bauds
     }
 
     void loop() {
-        int buttonState = digitalRead(7);  // Read the state of the button
+        int buttonState = digitalRead(7);  // Lire l'état du bouton
         Serial.print("Button State: ");
         Serial.println(buttonState);
 
-        // Check if button state has changed from the last loop iteration
-        if (lastButtonState == HIGH && buttonState == LOW) {  // Button press detected
-            ledState = !ledState;                               // Toggle LED state
+        // Vérifier si l'état du bouton a changé depuis la dernière itération
+        if (lastButtonState == HIGH && buttonState == LOW) {  // Appui sur le bouton détecté
+            ledState = !ledState;                               // Basculer l'état de la LED
         }
 
         if (ledState == HIGH) {
-            potValue = analogRead(A0);  // Continuously read value from potentiometer when LED is on
-            analogWrite(9, potValue / 4);  // Adjust brightness continuously
+            potValue = analogRead(A0);  // Lire en continu la valeur du potentiomètre lorsque la LED est allumée
+            analogWrite(9, potValue / 4);  // Ajuster en continu la luminosité
             Serial.print("Pot Value: ");
             Serial.println(potValue);
         } else {
-            analogWrite(9, 0);  // Adjust brightness continuously
+            analogWrite(9, 0);  // Éteindre la LED
         }
 
-        lastButtonState = buttonState;  // Update lastButtonState to the current state
-        delay(200);                     // Optional: Simple software debouncing
+        lastButtonState = buttonState;  // Mettre à jour lastButtonState avec l'état actuel
+        delay(200);                     // Optionnel : Simple anti-rebond logiciel
     }
 
-1. After selecting the correct board and port, click "Upload" to upload the code to your Arduino.
+1. Après avoir sélectionné la carte et le port corrects, cliquez sur "Téléverser" pour télécharger le code sur votre Arduino.
 
-2. Open the Serial Monitor to view the output data. You will notice that the button state prints "1" continuously when not pressed and "0" for the moment the button is pressed. At the same time, the value from the potentiometer will also be printed. As you rotate the potentiometer, you'll observe in the Serial Monitor that the higher the value, the brighter the LED becomes, and vice versa.
-    
+2. Ouvrez le Moniteur Série pour visualiser les données de sortie. Vous remarquerez que l'état du bouton affiche "1" en continu lorsqu'il n'est pas pressé et "0" au moment où il est pressé. En même temps, la valeur du potentiomètre sera également imprimée. Lorsque vous tournez le potentiomètre, vous observerez dans le Moniteur Série que plus la valeur est élevée, plus la LED devient lumineuse, et vice versa.
+
 .. image:: img/10_dimmer_led_serial_tool.png
     :align: center
 
 .. note::
 
-    From this, you should clearly understand:
+    Vous devez désormais bien comprendre :
 
-    - Digital signals only have two states: 0 and 1.
-    - Analog signals, however, have a range, which in this case is from 0 to 1023.
+    - Les signaux numériques n'ont que deux états : 0 et 1.
+    - Les signaux analogiques, en revanche, ont une plage de valeurs, dans ce cas de 0 à 1023.
 
-3. Finally, remember to save your code and tidy up your workspace.
+3. Enfin, n'oubliez pas de sauvegarder votre code et de ranger votre espace de travail.
 
 **Question**
 
-1. What would happen if you set digital pin 7 to INPUT only? Why?
+1. Que se passerait-il si vous définissiez la pin numérique 7 uniquement sur INPUT ? Pourquoi ?
 
 .. code-block::
     :emphasize-lines: 3
 
     void setup() {
-        pinMode(9, OUTPUT);        // Set pin 9 as output
-        pinMode(7, INPUT);  // Set pin 7 as input with an internal pull-up resistor
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        pinMode(9, OUTPUT);        // Définir la pin 9 comme sortie
+        pinMode(7, INPUT);  // Définir la pin 7 comme entrée
+        Serial.begin(9600);        // Initialisation de la communication série à 9600 bauds
     }
 
-2. If pin 7 is set only to ``INPUT``, what adjustments would need to be made to the circuit?
+2. Si la pin 7 est définie uniquement sur ``INPUT``, quels ajustements faudrait-il apporter au circuit ?
 
-**Summary**
+**Résumé**
 
-By the end of this lesson, you'll have a fully functional ON/OFF desk lamp controlled via a simple user interface. You will have mastered how to integrate and manipulate various electronic components and Arduino programming techniques to create a practical and interactive electronic device. This project not only reinforces foundational concepts in electronics and programming but also gives you a functional piece to add to your collection of DIY projects.
+À la fin de cette leçon, vous aurez une lampe de bureau ON/OFF entièrement fonctionnelle, contrôlée via une interface utilisateur simple. Vous aurez maîtrisé l'intégration et la manipulation de divers composants électroniques ainsi que les techniques de programmation Arduino pour créer un dispositif électronique pratique et interactif. Ce projet renforce non seulement les concepts fondamentaux en électronique et en programmation, mais vous donne également une pièce fonctionnelle à ajouter à votre collection de projets DIY.

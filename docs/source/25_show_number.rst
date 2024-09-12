@@ -1,25 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez plus profondément dans Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux nouvelles annonces de produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et cadeaux** : Participez à des concours et à des promotions spéciales lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-25. Show Number with 74hc595
-==================================
+25. Afficher un chiffre avec le 74HC595
+===========================================
 
-In the previous lesson, you may have noticed that the 74HC595 and the 7-segment display make a perfect pair. The 74HC595 can simultaneously output 8-bit signals, while the 7-segment display is controlled by 8 electrical signals (including the decimal point LED segment, i.e., the dp segment).
+Dans la leçon précédente, vous avez peut-être remarqué que le 74HC595 et l'afficheur 7 segments forment un duo parfait. Le 74HC595 peut simultanément produire des signaux sur 8 bits, tandis que l'afficheur 7 segments est contrôlé par 8 signaux électriques (y compris le segment LED du point décimal, appelé segment dp).
 
-So, can the 74HC595 be used to control the 7-segment display? The answer is yes.
+Alors, le 74HC595 peut-il être utilisé pour contrôler l'afficheur 7 segments ? La réponse est oui.
 
-In this lesson, we will use the 74HC595 to control the 7-segment display and make it show different numbers.
+Dans cette leçon, nous allons utiliser le 74HC595 pour contrôler l'afficheur 7 segments et afficher différents chiffres.
 
 .. raw:: html
 
@@ -28,114 +28,114 @@ In this lesson, we will use the 74HC595 to control the 7-segment display and mak
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will able to:
+Dans cette leçon, vous apprendrez à :
 
-* Understand how to use the 74HC595 shift register to drive a 7-segment display.
-* Learn the binary representations of digits 0 to 9 and how to convert them to decimal and hexadecimal formats.
-* Understand how to use the Serial Monitor to input data and display it on the 7-segment display.
+* Comprendre comment utiliser le registre à décalage 74HC595 pour piloter un afficheur 7 segments.
+* Apprendre les représentations binaires des chiffres de 0 à 9 et comment les convertir en formats décimal et hexadécimal.
+* Comprendre comment utiliser le Moniteur Série pour saisir des données et les afficher sur l'afficheur 7 segments.
 
 
-Building the Circuit
---------------------------------
+Construction du circuit
+--------------------------
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * 7-segment Display
-     - 1 * 220Ω Resistor
+     - 1 * Afficheur 7 segments
+     - 1 * Résistance de 220Ω
      - 1 * 74HC595
    * - |list_uno_r3| 
      - |list_7segment| 
      - |list_220ohm| 
      - |list_74hc595| 
-   * - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
-     -
+   * - 1 * Plaque d'expérimentation
+     - Câbles de raccordement
+     - 1 * Câble USB
+     - 
    * - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
-     -
+     - 
 
-**Building Step-by-Step**
+**Étapes de montage**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Suivez le schéma de câblage ou les étapes ci-dessous pour monter votre circuit.
 
 .. image:: img/25_show_number.png
     :width: 500
     :align: center
 
-1. Insert the 7-segment display into the breadboard with the decimal point at the bottom right corner.
+1. Insérez l'afficheur 7 segments dans la plaque d'expérimentation avec le point décimal situé dans le coin inférieur droit.
 
 .. image:: img/25_show_number_7segment.png
     :width: 500
     :align: center
 
-2. Connect the negative (-) terminal of the 7-segment display to the ground rail of the breadboard using a jumper wire.
+2. Connectez la borne négative (-) de l'afficheur 7 segments au rail de masse de la plaque d'expérimentation à l'aide d'un câble de raccordement.
 
 .. image:: img/25_show_number_resistor.png
     :width: 500
     :align: center
 
-3. Locate the 74HC595 chip and insert it into the breadboard. Ensure that the chip spans the middle gap.
+3. Localisez la puce 74HC595 et insérez-la dans la plaque d'expérimentation. Assurez-vous que la puce traverse le milieu de la plaque.
 
 .. image:: img/25_show_number_74hc595.png
     :width: 500
     :align: center
 
-4. Connect the VCC and MR pins of the 74HC595 to the positive rail on the breadboard.
+4. Connectez les broches VCC et MR du 74HC595 au rail positif de la plaque d'expérimentation.
 
 .. image:: img/25_show_number_vcc.png
     :width: 500
     :align: center
 
-5. Connect the CE and GND pins of the 74HC595 to the negative rail on the breadboard.
+5. Connectez les broches CE et GND du 74HC595 au rail négatif de la plaque d'expérimentation.
 
 .. image:: img/25_show_number_gnd.png
     :width: 500
     :align: center
 
-6. Connect Q0 of the 74HC595 to the 'a' pin of the 7-segment display, Q1 to the 'b' pin, Q2 to the 'c' pin, Q3 to the 'd' pin, and Q4 to the 'e' pin.
+6. Connectez la broche Q0 du 74HC595 à la broche 'a' de l'afficheur 7 segments, Q1 à la broche 'b', Q2 à la broche 'c', Q3 à la broche 'd', et Q4 à la broche 'e'.
 
 .. image:: img/25_show_number_q0_q4.png
     :width: 500
     :align: center
 
-7. Connect Q5 of the 74HC595 to the 'f' pin of the 7-segment display, Q6 to the 'g' pin, and Q7 to the 'dp' pin.
+7. Connectez la broche Q5 du 74HC595 à la broche 'f' de l'afficheur 7 segments, Q6 à la broche 'g', et Q7 à la broche 'dp'.
 
 .. image:: img/25_show_number_q5_q7.png
     :width: 500
     :align: center
 
-8. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
+8. Connectez la broche DS du 74HC595 à la broche 11 de l'Arduino Uno R3.
 
 .. image:: img/25_show_number_pin11.png
     :width: 500
     :align: center
 
-9. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
+9. Connectez la broche ST_CP du 74HC595 à la broche 12 de l'Arduino Uno R3.
 
 .. image:: img/25_show_number_pin12.png
     :width: 500
     :align: center
 
-10. Connect the SH_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
+10. Connectez la broche SH_CP du 74HC595 à la broche 8 de l'Arduino Uno R3.
 
 .. image:: img/25_show_number_pin8.png
     :width: 500
     :align: center
 
-11. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
+11. Enfin, connectez les broches GND et 5V de l'Arduino Uno R3 aux rails négatif et positif de la plaque d'expérimentation, respectivement.
 
 .. image:: img/25_show_number.png
     :width: 500
     :align: center
 
-12. The following tables shows the pin connections between the 74HC595, the Arduino Uno R3, the7-segment Display.
+12. Le tableau suivant montre les connexions des broches entre le 74HC595, l'Arduino Uno R3 et l'afficheur 7 segments.
 
 .. list-table::
     :widths: 20 20
@@ -167,7 +167,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - Q0
         - a
     *   - Q1
-        - b 
+        - b
     *   - Q2
         - c
     *   - Q3
@@ -181,18 +181,18 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - Q7
         - dp
 
-Binary Numbers for Digits 0 to 9
-------------------------------------
+Nombres binaires pour les chiffres de 0 à 9
+----------------------------------------------
 
-In this project, we use the 74HC595 shift register to drive the 7-segment display to show different numbers. However, the 74HC595 receives binary numbers, so before programming, we need to know the corresponding binary numbers for digits 0 to 9.
+Dans ce projet, nous utilisons le registre à décalage 74HC595 pour piloter l'afficheur 7 segments et afficher différents chiffres. Cependant, le 74HC595 reçoit des nombres binaires. Avant de programmer, nous devons connaître les nombres binaires correspondants aux chiffres de 0 à 9.
 
-Assuming we want to display a digit 2 on the 7-segment display, we need to turn off segments f and c and turn on the remaining segments.
+Supposons que nous souhaitions afficher le chiffre 2 sur l'afficheur 7 segments, nous devons éteindre les segments f et c, et allumer les autres segments.
 
 .. image:: img/23_segment_2.png
     :align: center
     :width: 200
 
-According to the wiring diagram, the output pins Q0 to Q7 of the 74HC595 correspond to the respective pins of the 7-segment display, as shown in the diagram. In binary, 0 represents off (closed), and 1 represents on (open). To display the digit 2, dp, f, and c should be 0, while the other segments should be 1, resulting in the binary number ``B01011011``.
+Selon le schéma de câblage, les broches de sortie Q0 à Q7 du 74HC595 correspondent aux broches respectives de l'afficheur 7 segments, comme indiqué dans le diagramme. En binaire, 0 représente éteint (fermé) et 1 représente allumé (ouvert). Pour afficher le chiffre 2, dp, f et c doivent être 0, tandis que les autres segments doivent être 1, ce qui donne le nombre binaire ``B01011011``.
 
 .. image:: img/25_display_2_binary.png
     :align: center
@@ -200,20 +200,20 @@ According to the wiring diagram, the output pins Q0 to Q7 of the 74HC595 corresp
 
 .. note::
 
-    When you only have one 7-segment display, the DP pin is always set to 0. When you have multiple 7-segment displays in a daisy-chain configuration, you can use the DP pin to indicate the decimal point.
+    Lorsque vous avez un seul afficheur 7 segments, la broche DP est toujours réglée à 0. Si vous avez plusieurs afficheurs 7 segments en configuration en chaîne, vous pouvez utiliser la broche DP pour indiquer le point décimal.
 
-To display the digit 0, dp and g should be 0, and all other segments should be 1, giving the binary number ``B00111111``.
+Pour afficher le chiffre 0, dp et g doivent être 0, et tous les autres segments doivent être 1, ce qui donne le nombre binaire ``B00111111``.
 
 **Question**
 
-Now that we know the binary representations for digits 0 and 2, please fill in the binary numbers for the remaining digits in the table below.
+Maintenant que nous connaissons les représentations binaires des chiffres 0 et 2, veuillez remplir les nombres binaires des autres chiffres dans le tableau ci-dessous.
 
 .. list-table::
     :widths: 20 20
     :header-rows: 1
 
-    *   - Number
-        - Binary
+    *   - Chiffre
+        - Binaire
     *   - 0
         - B00111111
     *   - 1
@@ -233,55 +233,52 @@ Now that we know the binary representations for digits 0 and 2, please fill in t
     *   - 8
         -
     *   - 9
-        -        
+        -         
+
+Création du code - Affichage des chiffres
+---------------------------------------------
+1. Ouvrez le sketch que vous avez enregistré précédemment, ``Lesson24_Flowing_Light``. 
+
+2. Cliquez sur “Enregistrer sous...” dans le menu “Fichier” et renommez-le en ``Lesson25_Show_Number_Binary``. Cliquez sur "Enregistrer".
 
 
-Code Creation - Displaying Numbers
-------------------------------------------
-1. Open the sketch you saved earlier, ``Lesson24_Flowing_Light``. 
-
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson25_Show_Number_Binary``. Click "Save".
-
-
-3. Change the ``datArray[]`` to display the binary numbers corresponding to digits 0 to 9.
+3. Modifiez le tableau ``datArray[]`` pour afficher les nombres binaires correspondant aux chiffres de 0 à 9.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  //Broche connectée à ST_CP du 74HC595
+    const int SHcp = 8;   //Broche connectée à SH_CP du 74HC595
+    const int DS = 11;    //Broche connectée à DS du 74HC595
+    //afficher 0,1,2,3,4,5,6,7,8,9
     int datArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
-
-4. Since the ``datArray[]`` array contains 10 elements, modify the range of the variable ``num`` to ``num <= 9``.
+4. Comme le tableau ``datArray[]`` contient 10 éléments, modifiez la plage de la variable ``num`` à ``num <= 9``.
 
 .. code-block:: Arduino
     :emphasize-lines: 2
 
     void loop() {
         for (int num = 0; num <= 9; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // Met ST_CP à la masse et maintient bas pendant la transmission
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Envoie les données, MSB en premier
+            digitalWrite(STcp, HIGH);                     // Met ST_CP à HIGH pour sauvegarder les données
+            delay(1000);                                  // Attend une seconde
         }
     }
 
-5. Your complete code should look like the following. At this point, you can upload the code to the Arduino Uno R3, and you'll see the 7-segment display scrolling through digits 0 to 9.
-
+5. Votre code complet devrait ressembler à ce qui suit. À ce stade, vous pouvez télécharger le code sur l'Arduino Uno R3, et vous verrez l'afficheur 7 segments défiler les chiffres de 0 à 9.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  // Broche connectée à ST_CP du 74HC595
+    const int SHcp = 8;   // Broche connectée à SH_CP du 74HC595
+    const int DS = 11;    // Broche connectée à DS du 74HC595
+    // afficher 0,1,2,3,4,5,6,7,8,9
     int datArray[] = { B00111111, B00000110, B01011011, B01001111, B01100110, B01101101, B01111101, B00000111, B01111111, B01101111 };
 
     void setup() {
-        //set pins to output
+        // configure les broches en sortie
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
@@ -289,53 +286,53 @@ Code Creation - Displaying Numbers
 
     void loop() {
         for (int num = 0; num <= 9; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // Met ST_CP à la masse et maintient bas pendant la transmission
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Envoie les données, MSB en premier
+            digitalWrite(STcp, HIGH);                     // Met ST_CP à HIGH pour sauvegarder les données
+            delay(1000);                                  // Attend une seconde
         }
     }
 
-Binary Conversion
-------------------
+Conversion binaire
+----------------------
 
-In practical applications, writing binary numbers can more clearly express the state of each bit in the data. However, for general numerical representation, writing decimal numbers is more convenient.
+Dans les applications pratiques, écrire des nombres binaires peut exprimer plus clairement l'état de chaque bit dans les données. Cependant, pour une représentation numérique générale, écrire des nombres décimaux est plus pratique.
 
 .. note::
 
-    Writing binary, decimal, or even hexadecimal numbers does not affect the program's result but only the code's readability. For example, writing the decimal number ``91`` will be internally converted to binary form ``B01011011``.
+    L'écriture de nombres binaires, décimaux ou même hexadécimaux n'affecte pas le résultat du programme mais uniquement la lisibilité du code. Par exemple, écrire le nombre décimal ``91`` sera converti en interne en forme binaire ``B01011011``.
 
-Let's see how to convert binary numbers to decimal.
+Voyons comment convertir des nombres binaires en décimaux.
 
-**Conversion to Decimal**
+**Conversion en décimal**
 
-In the binary system, each bit represents a corresponding place value. The place value is a power of 2, such as 2^0, 2^1, 2^2…, etc. By multiplying each bit by its corresponding place value and adding all the results together, we get the decimal number.
+Dans le système binaire, chaque bit représente une valeur de position correspondante. La valeur de position est une puissance de 2, comme 2^0, 2^1, 2^2, etc. En multipliant chaque bit par sa valeur de position correspondante et en additionnant tous les résultats, nous obtenons le nombre décimal.
 
-For example, the binary number ``B01011011`` converts to the decimal number 91.
+Par exemple, le nombre binaire ``B01011011`` se convertit en nombre décimal 91.
 
 .. image:: img/25_binary_dec.png
     :align: center
     :width: 600
- 
-**Using a Calculator**
 
-In practical applications, you can use the calculator on your computer. Switch to Programmer mode, and you can easily convert between binary, decimal, and hexadecimal.
+**Utiliser une calculatrice**
 
-Search for "Calculator" on your computer, then switch to **Programmer** mode.
+Dans les applications pratiques, vous pouvez utiliser la calculatrice de votre ordinateur. Passez en mode programmeur et vous pourrez facilement convertir entre les systèmes binaire, décimal et hexadécimal.
+
+Recherchez "Calculatrice" sur votre ordinateur, puis passez en mode **Programmeur**.
 
 .. image:: img/25_calculator_programmer.png
     :align: center
 
-2. If you already know the binary number and want to convert it to another base, select **BIN**.
+2. Si vous connaissez déjà le nombre binaire et que vous souhaitez le convertir dans une autre base, sélectionnez **BIN**.
 
 .. image:: img/25_calculator_binary.png
     :align: center
 
-3. Now, you can start entering the binary number.
+3. Maintenant, vous pouvez commencer à entrer le nombre binaire.
 
-* The effective bits in binary refer to the range from the most significant bit (leftmost non-zero bit) to the least significant bit (rightmost non-zero bit).
-* So for the binary number ``B00111111``, the effective bits are ``111111``. 
-* Now, enter ``111111`` into the calculator to get the corresponding decimal and hexadecimal numbers.
+* Les bits significatifs en binaire se réfèrent à la plage du bit le plus significatif (bit non nul le plus à gauche) au bit le moins significatif (bit non nul le plus à droite).
+* Donc, pour le nombre binaire ``B00111111``, les bits significatifs sont ``111111``.
+* Maintenant, entrez ``111111`` dans la calculatrice pour obtenir les nombres décimaux et hexadécimaux correspondants.
 
 .. image:: img/25_calculator_binary_0.png
     :align: center
@@ -343,16 +340,16 @@ Search for "Calculator" on your computer, then switch to **Programmer** mode.
 
 **Question**
 
-Please convert the binary numbers representing digits 0 to 9 into decimal and hexadecimal numbers using a calculator, and fill in the table. This will give you a quick reference guide for base conversions.
+Veuillez convertir les nombres binaires représentant les chiffres de 0 à 9 en nombres décimaux et hexadécimaux à l'aide d'une calculatrice, et remplir le tableau ci-dessous. Cela vous donnera un guide de référence rapide pour les conversions de base.
 
 .. list-table::
     :widths: 20 40 30 30
     :header-rows: 1
 
-    *   - Number
-        - Binary
-        - Decimal
-        - Hexadecimal
+    *   - Chiffre
+        - Binaire
+        - Décimal
+        - Hexadécimal
     *   - 0
         - B00111111
         - 63
@@ -394,22 +391,22 @@ Please convert the binary numbers representing digits 0 to 9 into decimal and he
         -
         -
 
-**Modify the Sketch**
+**Modifier le Croquis**
 
-Now, open your ``Lesson25_Show_Number_Binary`` sketch in the Arduino IDE. Click "File" -> "Save As...", name the file ``Lesson25_Show_Number_Decimal``. Click "Save".
+Ouvrez maintenant votre croquis ``Lesson25_Show_Number_Binary`` dans l'IDE Arduino. Cliquez sur "Fichier" -> "Enregistrer sous...", nommez le fichier ``Lesson25_Show_Number_Decimal``. Cliquez sur "Enregistrer".
 
-Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once modified, you can upload the code to the Arduino Uno R3 to see the effect.
+Modifiez tous les éléments du tableau ``datArray[]`` en valeurs décimales, comme indiqué dans le code ci-dessous. Une fois modifié, vous pouvez téléverser le code sur l'Arduino Uno R3 pour voir l'effet.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  // Broche connectée à ST_CP du 74HC595
+    const int SHcp = 8;   // Broche connectée à SH_CP du 74HC595
+    const int DS = 11;    // Broche connectée à DS du 74HC595
+    // afficher 0,1,2,3,4,5,6,7,8,9
     int datArray[] = { 63, 6, 91, 79, 102, 109, 125, 7, 127, 111 };
 
     void setup() {
-        //set pins to output
+        // configurer les broches en sortie
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
@@ -417,250 +414,243 @@ Change all the elements of ``datArray[]`` to decimal, as shown in the code. Once
 
     void loop() {
         for (int num = 0; num <= 9; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // Met ST_CP à LOW et maintient bas pendant la transmission
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Transmet les données, MSB en premier
+            digitalWrite(STcp, HIGH);                     // Met ST_CP à HIGH pour sauvegarder les données
+            delay(1000);                                  // Attendre une seconde
         }
     }
 
 
-Code Creation - Serial Input
----------------------------------
+Création du Code - Entrée Séries
+-------------------------------------
 
-The Serial Monitor is a powerful tool provided by the Arduino IDE for communication with the Arduino board. We have used it to monitor data output from the Arduino, such as reading analog values from a photoresistor. It can also be used to send data to the Arduino, allowing it to perform actions based on received data.
+Le Moniteur Série est un outil puissant fourni par l'IDE Arduino pour communiquer avec la carte Arduino. Nous l'avons utilisé pour surveiller les données envoyées par l'Arduino, comme la lecture des valeurs analogiques d'une photorésistance. Il peut également être utilisé pour envoyer des données à l'Arduino, lui permettant d'effectuer des actions basées sur les données reçues.
 
-In this activity, we will write a number between 0 and 9 into the Serial Monitor to display it on the 7-segment display.
+Dans cette activité, nous allons écrire un nombre entre 0 et 9 dans le Moniteur Série pour l'afficher sur l'afficheur 7 segments.
 
+1. Ouvrez votre croquis ``Lesson25_Show_Number_Decimal`` dans l'IDE Arduino. Cliquez sur "Fichier" -> "Enregistrer sous...", nommez le fichier ``Lesson25_Show_Number_Serial``. Cliquez sur "Enregistrer".
 
-1.  Open your ``Lesson25_Show_Number_Decimal`` sketch in the Arduino IDE. Click "File" -> "Save As...", name the file ``Lesson25_Show_Number_Serial``. Click "Save".
-
-2. In ``void setup()``, start the serial monitor and set its baud rate to 9600.
+2. Dans ``void setup()``, démarrez le moniteur série et réglez son débit à 9600 bauds.
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void setup() {
-        //set pins to output
+        // configurer les broches en sortie
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
-        Serial.begin(9600);  // Serial communication setup at 9600 baud
+        Serial.begin(9600);  // Configuration de la communication série à 9600 bauds
     }
 
-3.  When using the Serial Monitor, you can read data entered into it through Arduino code. Here, you need to understand two functions:
+3. Lorsque vous utilisez le Moniteur Série, vous pouvez lire les données saisies via le code Arduino. Voici deux fonctions à comprendre :
 
-* ``Serial.available()``: Get the number of bytes (characters) available for reading from the serial port. This is data that's already arrived and stored in the serial receive buffer (which holds 64 bytes).
-* ``Serial.read()``: Returns the ASCII code of the character received via the serial input.
+* ``Serial.available()`` : Renvoie le nombre d'octets disponibles à la lecture dans le port série.
+* ``Serial.read()`` : Retourne le code ASCII du caractère reçu via l'entrée série.
 
-Now, use an ``if`` statement in void ``loop()`` to check if data has been read from the port, then print it.
+Utilisez une instruction ``if`` dans ``void loop()`` pour vérifier si des données ont été reçues, puis affichez-les.
 
 .. note::
 
-    Temporarily comment out the for statement in ``void loop()`` that displays characters on the 7-segment display to avoid affecting the printing process.
+    Commentez temporairement l'instruction for dans ``void loop()`` qui affiche des caractères sur l'afficheur 7 segments pour éviter d'interférer avec le processus d'impression.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-5
 
     void loop() {
         if (Serial.available() > 0) {
-            //Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             Serial.println(Serial.read());
         }
 
         // for (int num = 0; num <= 9; num++) {
-        //   digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-        //   digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-        //   delay(1000);                                  // Wait for a second
+        //   digitalWrite(STcp, LOW);                      // Met ST_CP à LOW et maintient bas pendant la transmission
+        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Transmet les données, MSB en premier
+        //   digitalWrite(STcp, HIGH);                     // Met ST_CP à HIGH pour sauvegarder les données
+        //   delay(1000);                                  // Attendre une seconde
         // }
     }
 
-4. Your complete code is shown below. At this point, you can upload the code to the Arduino Uno R3.
+4. Voici votre code complet. Vous pouvez maintenant téléverser le code sur l'Arduino Uno R3.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  // Broche connectée à ST_CP du 74HC595
+    const int SHcp = 8;   // Broche connectée à SH_CP du 74HC595
+    const int DS = 11;    // Broche connectée à DS du 74HC595
+    // afficher 0,1,2,3,4,5,6,7,8,9
     int datArray[] = { 63, 6, 91, 79, 102, 109, 125, 7, 127, 111 };
 
     void setup() {
-        //set pins to output
+        // configurer les broches en sortie
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
-        Serial.begin(9600);  // Serial communication setup at 9600 baud
+        Serial.begin(9600);  // Configuration de la communication série à 9600 bauds
     }
 
     void loop() {
         if (Serial.available() > 0) {
-            //Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             Serial.println(Serial.read());
         }
 
         // for (int num = 0; num <= 9; num++) {
-        //   digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-        //   digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-        //   delay(1000);                                  // Wait for a second
+        //   digitalWrite(STcp, LOW);                      // Met ST_CP à LOW et maintient bas pendant la transmission
+        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Transmet les données, MSB en premier
+        //   digitalWrite(STcp, HIGH);                     // Met ST_CP à HIGH pour sauvegarder les données
+        //   delay(1000);                                  // Attendre une seconde
         // }
     }
 
-5. After uploading, open the Serial Monitor. In the input box, enter the number ``0`` (or any digit between 0-9) and press enter. At this moment, you will find that the Serial outputs a number ``48``.
+5. Après téléversement, ouvrez le Moniteur Série. Dans la zone de saisie, entrez le chiffre ``0`` (ou un chiffre entre 0 et 9) et appuyez sur Entrée. Vous constaterez que la sortie Série affiche le nombre ``48``.
 
 .. note::
 
-    * If "Newline" is selected in the line ending option of the serial monitor, you can also see a ``10``. 
-    * ``10`` is the ASCII code for a newline character (also called LF - Line Feed).
-
+    * Si "Nouvelle ligne" est sélectionné dans les options de fin de ligne du moniteur série, vous pouvez également voir un ``10``.
+    * ``10`` est le code ASCII du caractère de nouvelle ligne (également appelé LF - Line Feed).
 
 .. image:: img/25_serial_read.png
     :align: center
     :width: 600
 
-So, where did our input of ``0`` go? Where did that ``48`` come from? Is it possible that ``0`` is ``48``?
+Alors, où est passé notre entrée de ``0`` ? D'où vient ce ``48`` ? Est-il possible que ``0`` soit ``48`` ?
 
-This is because the ``0`` we input in the Serial Monitor is considered a "character," not a "number."
+C'est parce que le ``0`` que nous avons saisi dans le Moniteur Série est considéré comme un "caractère" et non comme un "nombre".
 
-The character transfer follows a coding standard known as ASCII (American Standard Code for Information Interchange).
+La transmission de caractères suit une norme de codage appelée ASCII (American Standard Code for Information Interchange).
 
-ASCII includes common characters like uppercase letters (A-Z), lowercase letters (a-z), digits (0-9), and punctuation marks (such as periods, commas, exclamation marks, etc.). It also defines some control characters used to control devices and communication protocols. These control characters typically do not display on the screen but are used to control the behavior of devices like printers, terminals, etc., such as line feed, backspace, carriage return, etc.
-
-Here is an ASCII table:
+Voici un tableau ASCII :
 
 .. image:: img/25_ascii_table.png
     :align: center
     :width: 800
 
-When you type the character ``0`` in the Serial Monitor, the ASCII code for the character ``0`` is sent to the Arduino.
-In ASCII, the code for the character ``0`` is ``48`` in decimal.
+Lorsque vous tapez le caractère ``0`` dans le Moniteur Série, le code ASCII du caractère ``0`` est envoyé à l'Arduino. En ASCII, le code du caractère ``0`` est ``48`` en décimal.
 
-6. Before you continue coding, you need to comment out the previous code that prints the ASCII code to avoid conflicts with the following code.
+6. Avant de continuer à coder, vous devez commenter le code précédent qui imprime le code ASCII pour éviter les conflits avec le code suivant.
 
 .. code-block:: Arduino
     :emphasize-lines: 4
 
     void loop() {
         if (Serial.available() > 0) {
-            // Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             // Serial.println(Serial.read());
         }
 
         // for (int num = 0; num <= 9; num++) {
-        //   digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-        //   digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-        //   delay(1000);                                  // Wait for a second
+        //   digitalWrite(STcp, LOW);                      // Mettre ST_CP à LOW et maintenir bas pendant la transmission
+        //   shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Transmettre les données, MSB en premier
+        //   digitalWrite(STcp, HIGH);                     // Mettre ST_CP à HIGH pour sauvegarder les données
+        //   delay(1000);                                  // Attendre une seconde
         // }
     }
 
-7. You need to create a new ``char`` variable to store the character read from the Serial Monitor. 
+7. Vous devez créer une nouvelle variable ``char`` pour stocker le caractère lu à partir du Moniteur Série.
 
 .. code-block:: Arduino
     :emphasize-lines: 6,7
 
     void loop() {
         if (Serial.available() > 0) {
-            // Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             // Serial.println(Serial.read());
 
-            // Read the character received from the serial port
+            // Lire le caractère reçu du port série
             char receivedChar = Serial.read();
         }
     }
 
-8. Now, convert the character to a number. In ASCII, the value for the character ``'0'`` is ``48``, ``'1'`` is ``49``, and so on. Therefore, by subtracting the ASCII code for ``'0'``, we can get the corresponding numeric value.
+8. Convertissez maintenant le caractère en nombre. En ASCII, la valeur pour le caractère ``'0'`` est ``48``, ``'1'`` est ``49``, et ainsi de suite. En soustrayant le code ASCII de ``'0'``, nous obtenons la valeur numérique correspondante.
 
 .. code-block:: Arduino
     :emphasize-lines: 8,9
 
     void loop() {
         if (Serial.available() > 0) {
-            //Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             Serial.println(Serial.read());
 
-            // Read the character received from the serial port
+            // Lire le caractère reçu du port série
             char receivedChar = Serial.read();
-            // Convert the character to a digit
+            // Convertir le caractère en chiffre
             int digit = receivedChar - '0';
         }
     }
 
-9. In this example, we assume the input is numeric characters ``'0'`` to ``'9'``. Therefore, we only care if the input character is within this range. Hence, you need to check if the number is within the valid range:
+9. Dans cet exemple, nous supposons que l'entrée est un caractère numérique entre ``'0'`` et ``'9'``. Nous devons donc vérifier si le caractère est dans cette plage. Ensuite, utilisez l'afficheur 7 segments pour afficher le nombre correspondant :
 
-* Select the previously commented-out ``for`` loop statement and press ``Ctrl + /`` to uncomment it.
-* Then modify the ``for`` statement to an ``if`` statement to check if the input character is within the range of ``'0'`` to ``'9'``. If it is, let the 7-segment display show the corresponding number.
+* Sélectionnez l'instruction ``for`` précédemment commentée et appuyez sur ``Ctrl + /`` pour la décommenter.
+* Modifiez ensuite l'instruction ``for`` en une instruction ``if`` pour vérifier si le caractère d'entrée est dans la plage ``'0'`` à ``'9'``. Si c'est le cas, laissez l'afficheur 7 segments afficher le chiffre correspondant.
 
 .. code-block:: Arduino
     :emphasize-lines: 9
 
     void loop() {
         if (Serial.available() > 0) {
-            // Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             // Serial.println(Serial.read());
 
-            // Read the character received from the serial port
+            // Lire le caractère reçu du port série
             char receivedChar = Serial.read();
-            // Convert the character to a digit
+            // Convertir le caractère en chiffre
             int digit = receivedChar - '0';
 
             if (digit >= 0 && digit <= 9) {
-                digitalWrite(STcp, LOW);                        // Ground ST_CP and hold low while transmitting
-                shiftOut(DS, SHcp, MSBFIRST, datArray[digit]);  // Shift out the data, MSB first
-                digitalWrite(STcp, HIGH);                       // Pull ST_CP high to save the data
-                delay(1000);                                    // Wait for a second
+                digitalWrite(STcp, LOW);                        // Mettre ST_CP à LOW et maintenir bas pendant la transmission
+                shiftOut(DS, SHcp, MSBFIRST, datArray[digit]);  // Transmettre les données, MSB en premier
+                digitalWrite(STcp, HIGH);                       // Mettre ST_CP à HIGH pour sauvegarder les données
+                delay(1000);                                    // Attendre une seconde
             }
         }
     }
 
-10. Your complete code should be as follows. You can now upload the code to the Arduino Uno R3 and open the Serial Monitor. Enter any number between 0 and 9 to see if the 7-segment display shows the corresponding number.
+10. Votre code complet doit être le suivant. Vous pouvez maintenant téléverser le code sur l'Arduino Uno R3 et ouvrir le Moniteur Série. Entrez un nombre entre 0 et 9 pour voir si l'afficheur 7 segments affiche le chiffre correspondant.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  //Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   //Pin connected to SH_CP of 74HC595
-    const int DS = 11;    //Pin connected to DS of 74HC595
-    //display 0,1,2,3,4,5,6,7,8,9
+    const int STcp = 12;  // Broche connectée à ST_CP du 74HC595
+    const int SHcp = 8;   // Broche connectée à SH_CP du 74HC595
+    const int DS = 11;    // Broche connectée à DS du 74HC595
+    // Afficher 0,1,2,3,4,5,6,7,8,9
     int datArray[] = { 63, 6, 91, 79, 102, 109, 125, 7, 127, 111 };
 
     void setup() {
-        //set pins to output
+        // Configurer les broches en sortie
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
-        Serial.begin(9600);  // Serial communication setup at 9600 baud
+        Serial.begin(9600);  // Configurer la communication série à 9600 bauds
     }   
 
     void loop() {
         if (Serial.available() > 0) {
-            // Print the character received from the serial port
+            // Imprimer le caractère reçu du port série
             // Serial.println(Serial.read());
 
-            // Read the character received from the serial port
+            // Lire le caractère reçu du port série
             char receivedChar = Serial.read();
-            // Convert the character to a digit
+            // Convertir le caractère en chiffre
             int digit = receivedChar - '0';
 
             if (digit >= 0 && digit <= 9) {
-                digitalWrite(STcp, LOW);                        // Ground ST_CP and hold low while transmitting
-                shiftOut(DS, SHcp, MSBFIRST, datArray[digit]);  // Shift out the data, MSB first
-                digitalWrite(STcp, HIGH);                       // Pull ST_CP high to save the data
-                delay(1000);                                    // Wait for a second
+                digitalWrite(STcp, LOW);                        // Mettre ST_CP à LOW et maintenir bas pendant la transmission
+                shiftOut(DS, SHcp, MSBFIRST, datArray[digit]);  // Transmettre les données, MSB en premier
+                digitalWrite(STcp, HIGH);                       // Mettre ST_CP à HIGH pour sauvegarder les données
+                delay(1000);                                    // Attendre une seconde
             }
         }
     }
 
-11. Finally, remember to save your code and tidy up your workspace.
+11. Enfin, n'oubliez pas de sauvegarder votre code et de ranger votre espace de travail.
 
-**Summary**
+**Résumé**
 
-In this lesson, you learned how to use the 74HC595 shift register to drive a 7-segment display and reduce the number of pins required on the Arduino Uno R3. You also explored the binary representations for digits to be displayed and understood how to convert binary numbers to decimal and hexadecimal formats, making the code more readable.
+Dans cette leçon, vous avez appris à utiliser le registre à décalage 74HC595 pour piloter un afficheur 7 segments et réduire le nombre de broches nécessaires sur l'Arduino Uno R3. Vous avez également exploré les représentations binaires des chiffres à afficher et compris comment convertir les nombres binaires en formats décimal et hexadécimal, rendant le code plus lisible.
 
-Additionally, you learned how to use the Serial Monitor for serial input and how the input characters are internally converted to ASCII codes. By understanding this conversion, you could map characters to their numeric equivalents, enabling accurate display on the 7-segment display.
+De plus, vous avez appris à utiliser le Moniteur Série pour l'entrée série et comment les caractères d'entrée sont convertis en codes ASCII. En comprenant cette conversion, vous avez pu mapper les caractères à leurs équivalents numériques, permettant un affichage précis sur l'afficheur 7 segments.
 
-Overall, this lesson provided a comprehensive understanding of using shift registers, controlling 7-segment displays, and handling serial communication for interactive projects.
-
-
+Dans l'ensemble, cette leçon vous a offert une compréhension approfondie de l'utilisation des registres à décalage, du contrôle des afficheurs 7 segments et de la gestion de la communication série pour des projets interactifs.
 

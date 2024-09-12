@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 
-7. Let's Make Traffic Lights!
-==============================
+7. Construisons un feu de signalisation !
+============================================
 
 
 .. .. image:: img/5_traffic_light_pic.png
 ..     :width: 400
 ..     :align: center
 
-Welcome to this lesson, this engaging lesson bridges the gap between theoretical concepts and practical application in electronics and programming. We will delve into the process of converting pseudo-code—a simplified form of programming language—into functional Arduino sketches. This exercise will simulate the operations of traffic lights, offering you hands-on experience in programming and circuit design. As you learn to interpret and implement pseudo-code, you will gain deeper insights into the logic behind controlling electronic devices with code.
+Bienvenue dans cette leçon captivante qui fait le lien entre les concepts théoriques et leur application pratique en électronique et en programmation. Nous allons explorer le processus de conversion d'un pseudo-code — une forme simplifiée de langage de programmation — en sketchs Arduino fonctionnels. Cet exercice simulera le fonctionnement des feux de signalisation, vous offrant une expérience pratique en programmation et en conception de circuits. En apprenant à interpréter et à implémenter un pseudo-code, vous approfondirez vos connaissances de la logique qui régit le contrôle des dispositifs électroniques par du code.
 
 .. raw:: html
 
@@ -30,36 +30,36 @@ Welcome to this lesson, this engaging lesson bridges the gap between theoretical
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn to:
+Dans cette leçon, vous apprendrez à :
 
-* Learn to write and interpret pseudo-code for planning electronic circuit functionality.
-* Convert pseudo-code into Arduino sketches to control traffic light simulations.
-* Build and program a traffic light system using LEDs and an Arduino board.
+* Écrire et interpréter un pseudo-code pour planifier la fonctionnalité d'un circuit électronique.
+* Convertir un pseudo-code en sketchs Arduino pour contrôler une simulation de feux de signalisation.
+* Construire et programmer un système de feux de signalisation utilisant des LEDs et une carte Arduino.
 
-By mastering these skills, you'll be equipped to design, program, and troubleshoot basic electronic systems, paving the way for more complex projects.
+En maîtrisant ces compétences, vous serez en mesure de concevoir, programmer et résoudre les problèmes de systèmes électroniques de base, ouvrant la voie à des projets plus complexes.
 
-Getting Traffic Lights Ready
-------------------------------------------
-Hey there! Ready to create your very own traffic light with an Arduino? Here's what we need:
+Préparation du feu de signalisation
+----------------------------------------
+Prêt à créer votre propre feu de signalisation avec un Arduino ? Voici ce dont nous avons besoin :
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * Yellow LED
-     - 1 * Green LED
+     - 1 * LED rouge
+     - 1 * LED jaune
+     - 1 * LED verte
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_yellow_led| 
      - |list_green_led| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - 3 * 220Ω Resistor
-     - Jumper Wires
+   * - 1 * Câble USB
+     - 1 * Plaque d'essai
+     - 3 * Résistance de 220Ω
+     - Câbles de connexion
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_220ohm| 
@@ -67,57 +67,57 @@ Hey there! Ready to create your very own traffic light with an Arduino? Here's w
 
 
 
-**Building Step-by-Step**
+**Étapes de construction**
 
-Let's put everything together, just like building a LEGO set!
+Mettons tout en place, comme si vous construisiez un ensemble LEGO !
 
 .. image:: img/7_traffic_light.png
     :width: 600
     :align: center
 
-1. Connect a 220Ω resistor to the breadboard. One end should be in the negative terminal, and the other end should be in hole 1B.
+1. Connectez une résistance de 220Ω à la plaque d'essai. Une extrémité doit être dans la borne négative, et l'autre dans le trou 1B.
 
 .. image:: img/7_traffic_light_resistor.png
     :width: 600
     :align: center
 
-2. Add a Green LED to the breadboard. The LED's anode (long lead) should be in hole 1F. The cathode (short leg) should be in hole 1E.
+2. Ajoutez une LED verte à la plaque d'essai. L'anode (longue patte) de la LED doit être dans le trou 1F. La cathode (courte patte) doit être dans le trou 1E.
 
 .. image:: img/7_traffic_light_green.png
     :width: 600
     :align: center
 
-3. Connect the green LED to pin 3 of the Arduino Uno R3 with a wire. Insert a jumper wire in hole 1J and the other end of the jumper wire into pin 3 of the Arduino Uno R3.
+3. Connectez la LED verte à la broche 3 de l'Arduino Uno R3 à l'aide d'un câble. Insérez un câble de connexion dans le trou 1J et l'autre extrémité dans la broche 3 de l'Arduino Uno R3.
 
 .. image:: img/7_traffic_light_pin3.png
     :width: 600
     :align: center
 
-4. Take another 220Ω resistor, connect one end to the negative terminal and the other end to hole 6B.
+4. Prenez une autre résistance de 220Ω, connectez une extrémité à la borne négative et l'autre extrémité au trou 6B.
 
 .. image:: img/7_traffic_light_yellow_resistor.png
     :width: 600
     :align: center
 
-5. Take a Yellow LED. The LED's anode (long Lead) should be in hole 6F. The cathode (short lead) should be in hole 6E.
+5. Prenez une LED jaune. L'anode (longue patte) de la LED doit être dans le trou 6F. La cathode (courte patte) doit être dans le trou 6E.
 
 .. image:: img/7_traffic_light_yellow.png
     :width: 600
     :align: center
 
-6. Connect the yellow LED to pin 4 of the Arduino Uno R3.
+6. Connectez la LED jaune à la broche 4 de l'Arduino Uno R3.
 
 .. image:: img/7_traffic_light_pin4.png
     :width: 600
     :align: center
 
-7. Connect the red LED in the same way, the red LED is connected to pin 5 of the Arduino Uno R3.
+7. Connectez la LED rouge de la même manière, elle est reliée à la broche 5 de l'Arduino Uno R3.
 
 .. image:: img/7_traffic_light_red.png
     :width: 600
     :align: center
 
-8. Oops! We almost forgot to ground the circuit. Connect the breadboard's negative side to a GND pin on the Arduino Uno R3 with a black wire. Now, it's all set!
+8. Oups ! Nous avons presque oublié de mettre le circuit à la masse. Connectez le côté négatif de la plaque d'essai à une broche GND de l'Arduino Uno R3 à l'aide d'un fil noir. Maintenant, tout est prêt !
 
 .. image:: img/7_traffic_light.png
     :width: 600
@@ -125,174 +125,173 @@ Let's put everything together, just like building a LEGO set!
 
 .. note::
 
-    There are three GND pins on the Arduino Uno R3. You can use any of them; they all work the same way.
+    Il y a trois broches GND sur l'Arduino Uno R3. Vous pouvez utiliser n'importe laquelle d'entre elles ; elles fonctionnent toutes de la même manière.
 
-And just like that, you've got a complete traffic light setup! Each colored light is controlled by its own switch on the R3, ready to tell cars when to stop, wait, or go. Isn't it awesome to build something that works like real traffic lights? Great job!
+Et voilà, vous avez un système complet de feux de signalisation ! Chaque lumière colorée est contrôlée par son propre interrupteur sur l'Arduino R3, prête à indiquer aux voitures quand s'arrêter, attendre ou avancer. N'est-ce pas génial de construire quelque chose qui fonctionne comme un vrai feu de signalisation ? Super travail !
 
-Writing Pseudo-code for a Traffic Light
--------------------------------------------
+Écriture d'un pseudo-code pour un feu de signalisation
+-----------------------------------------------------------
 
-It's time to give your LEDs a purpose. In this activity, you will program them to act as a traffic light, controlling the flow of traffic at a busy intersection.
+Il est temps de donner une utilité à vos LEDs. Dans cette activité, vous allez les programmer pour qu'elles fonctionnent comme un feu de signalisation, régulant le flux de trafic à une intersection animée.
 
-Traffic lights require precise control to switch between three colors in a strict sequence, making it an ideal project for diving into Arduino programming. To perfect our traffic light, we must clearly instruct the Arduino on its tasks.
+Les feux de signalisation nécessitent un contrôle précis pour passer d'une couleur à l'autre dans un ordre strict, ce qui en fait un projet idéal pour plonger dans la programmation Arduino. Pour perfectionner notre feu de signalisation, nous devons donner des instructions claires à l'Arduino.
 
-Communication between humans involves listening, speaking, reading, writing, gesturing, or making facial expressions. Communicating with microcontrollers (like the one on your Arduino board) involves writing code.
+La communication entre humains implique l'écoute, la parole, la lecture, l'écriture, les gestes ou les expressions faciales. Communiquer avec des microcontrôleurs (comme celui de votre carte Arduino) implique d'écrire du code.
 
-We can't simply tell the Arduino to "make a traffic light" in natural language. However, we can use natural language to write a "pseudo-code" to aid in the actual Arduino code development.
-
-.. note::
-    
-    There are no right or wrong answers in pseudo-code writing. The more detailed your pseudo-code, the easier it will be to translate it into a functional program.
-
-
-Think about what needs to happen for your circuit to act like a traffic light. In the space provided in your log, write down the pseudo-code describing how your traffic light will function. Use plain English.
-
-Here are some guiding questions for your pseudo-code:
-
-* Should two or more lights be on at the same time?
-* What's the order of the lights?
-* What happens to the other lights when one is on?
-* What happens after the third light turns off?
-* How long should each light stay on?
-
-Here are a couple of pseudo-code examples:
-
-.. code-block::
-
-    1) Set all LED pins to output.
-    2) Start main loop.
-    a) Turn off all lights.
-    b) Turn on green light for 10 seconds.
-    c) Turn off all lights.
-    d) Turn on yellow light for 3 seconds.
-    e) Turn off all lights.
-    f) Turn on red light for 10 seconds.
-    3) Return to the start of the loop.
-
-.. code-block::
-
-    Setup:
-        Define all LED pins as output
-    Main Loop:
-        Turn on green light
-        Turn off red and yellow lights
-        Wait 10 seconds
-        Turn on yellow light
-        Turn off red and green lights
-        Wait 3 seconds
-        Turn on red light
-        Turn off green and yellow lights
-        Wait 10 seconds
-
-Pseudo-code doesn't have a strict format, allowing you to clarify your thoughts and organize them logically. This logical order is called an algorithm.
-You use algorithms every day, perhaps without realizing it. Think of an algorithm like a recipe; in programming, the ingredients are keywords and commands, and the cooking steps are the algorithm.
-An algorithm is a set of steps or instructions. When an algorithm is translated from pseudo-code into Arduino programming language, it precisely instructs the Arduino board on what to do and when.
+Nous ne pouvons pas simplement dire à l'Arduino de "faire un feu de signalisation" en langage naturel. Cependant, nous pouvons utiliser un langage naturel pour écrire un "pseudo-code" qui aidera au développement du code Arduino réel.
 
 .. note::
     
-    Using sticky notes or index cards can be helpful when writing pseudo-code. Place each step of your algorithm on a separate note. This way, you can easily rearrange, insert, or remove steps from your algorithm.
+    Il n'existe pas de bonnes ou mauvaises réponses dans l'écriture de pseudo-code. Plus votre pseudo-code est détaillé, plus il sera facile de le traduire en programme fonctionnel.
 
 
-Transform Pseudo-code into an Arduino Sketch
-----------------------------------------------
+Réfléchissez à ce qui doit se passer pour que votre circuit fonctionne comme un feu de signalisation. Dans l'espace prévu dans votre journal, écrivez le pseudo-code décrivant le fonctionnement de votre feu. Utilisez un langage simple.
 
-It's time to refine the code you've written and add additional ``digitalWrite()`` and ``delay()`` commands as needed. Here's a guide to structuring your code: Your ``void loop()`` function should encapsulate separate segments for the green, yellow, and red LEDs, each followed by a unique delay period. Not all delays need to be of equal duration. Update your code comments for clarity on what each line achieves.
+Voici quelques questions pour guider votre pseudo-code :
 
-1. Open the sketch you saved earlier, ``Lesson6_Blink_LED``. Hit “Save As...” from the “File” menu, and rename it to ``Lesson7_Traffic_Light``. Click "Save".
+* Deux lumières ou plus doivent-elles être allumées en même temps ?
+* Quel est l'ordre des lumières ?
+* Que se passe-t-il pour les autres lumières lorsqu'une est allumée ?
+* Que se passe-t-il après l'extinction de la troisième lumière ?
+* Combien de temps chaque lumière doit-elle rester allumée ?
 
-2. Now, according to our pseudo-code, set all three pins to output in the ``void setup()``. Copy the ``pinMode()`` command twice, paste it below, and adjust the pin numbers for each.
+Voici quelques exemples de pseudo-code :
+
+.. code-block::
+
+    1) Définir toutes les broches des LEDs en sortie.
+    2) Démarrer la boucle principale.
+    a) Éteindre toutes les lumières.
+    b) Allumer la lumière verte pendant 10 secondes.
+    c) Éteindre toutes les lumières.
+    d) Allumer la lumière jaune pendant 3 secondes.
+    e) Éteindre toutes les lumières.
+    f) Allumer la lumière rouge pendant 10 secondes.
+    3) Revenir au début de la boucle.
+
+.. code-block::
+
+    Configuration :
+        Définir toutes les broches des LEDs en sortie
+    Boucle principale :
+        Allumer la lumière verte
+        Éteindre les lumières rouge et jaune
+        Attendre 10 secondes
+        Allumer la lumière jaune
+        Éteindre les lumières rouge et verte
+        Attendre 3 secondes
+        Allumer la lumière rouge
+        Éteindre les lumières verte et jaune
+        Attendre 10 secondes
+
+Le pseudo-code n'a pas de format strict, ce qui vous permet de clarifier vos idées et de les organiser logiquement. Cet ordre logique est appelé algorithme. Vous utilisez des algorithmes chaque jour, peut-être sans vous en rendre compte. Pensez à un algorithme comme à une recette ; en programmation, les ingrédients sont les mots-clés et les commandes, et les étapes de préparation sont l'algorithme.
+Un algorithme est un ensemble d'étapes ou d'instructions. Lorsqu'un algorithme est traduit du pseudo-code en langage de programmation Arduino, il donne des instructions précises à la carte Arduino sur ce qu'il faut faire et quand le faire.
+
+.. note::
+    
+    Utiliser des notes autocollantes ou des fiches peut être utile lors de l'écriture de pseudo-code. Placez chaque étape de votre algorithme sur une note distincte. Ainsi, vous pouvez facilement réorganiser, insérer ou supprimer des étapes dans votre algorithme.
+
+
+Transformer le pseudo-code en un sketch Arduino
+----------------------------------------------------
+
+Il est temps d'affiner le code que vous avez écrit et d'ajouter des commandes supplémentaires ``digitalWrite()`` et ``delay()`` si nécessaire. Voici un guide pour structurer votre code : votre fonction ``void loop()`` doit encapsuler des segments distincts pour les LEDs verte, jaune et rouge, chacun suivi d'une période de délai unique. Tous les délais n'ont pas besoin d'être de la même durée. Mettez à jour les commentaires de votre code pour clarifier ce que chaque ligne réalise.
+
+1. Ouvrez le sketch que vous avez sauvegardé précédemment, ``Lesson6_Blink_LED``. Cliquez sur “Enregistrer sous...” dans le menu “Fichier” et renommez-le en ``Lesson7_Traffic_Light``. Cliquez sur "Enregistrer".
+
+2. Maintenant, selon notre pseudo-code, définissez toutes les trois broches en sortie dans le ``void setup()``. Copiez la commande ``pinMode()`` deux fois, collez-la en dessous et ajustez les numéros de broche pour chacune.
 
     .. code-block:: Arduino
         :emphasize-lines: 4,5
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT); // set pin 3 as output
-            pinMode(4, OUTPUT); // set pin 4 as output
-            pinMode(5, OUTPUT); // set pin 5 as output
+            // Code de configuration ici, exécuté une seule fois :
+            pinMode(3, OUTPUT);  // définir la broche 3 comme sortie
+            pinMode(4, OUTPUT);  // définir la broche 4 comme sortie
+            pinMode(5, OUTPUT);  // définir la broche 5 comme sortie
         }
 
-3. In ``void loop()``, first turn on the green LED and turn off the other two LEDs. So, copy the ``digitalWrite()`` commands twice and modify the pin numbers to 4 and 5, changing ``HIGH`` to ``LOW`` for the LEDs you want to turn off, and update the comments to suit the current scenario. Modified code is as follows:
+3. Dans ``void loop()``, allumez d'abord la LED verte et éteignez les deux autres LEDs. Ainsi, copiez deux fois les commandes ``digitalWrite()`` et modifiez les numéros de broche en 4 et 5, changez ``HIGH`` en ``LOW`` pour les LEDs que vous souhaitez éteindre, et mettez à jour les commentaires pour correspondre au scénario actuel. Le code modifié est le suivant :
 
     .. code-block:: Arduino
         :emphasize-lines: 4,5
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(3000);           // Wait for 3 seconds
+            // Code principal, exécuté en boucle :
+            digitalWrite(3, HIGH);  // Allumer la LED sur la broche 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(3000);           // Attendre 3 secondes
         }
 
-4. You might want the green LED to be on longer. In our traffic system, it might be about a minute, but here we'll simulate it with 10 seconds.
+4. Vous pourriez vouloir que la LED verte reste allumée plus longtemps. Dans notre système de circulation, cela pourrait durer environ une minute, mais ici nous allons simuler cela avec 10 secondes.
 
     .. code-block:: Arduino
         :emphasize-lines: 6
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
+            // Code principal, exécuté en boucle :
+            digitalWrite(3, HIGH);  // Allumer la LED sur la broche 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(10000);           // Attendre 10 secondes
         }
 
-5. Now let the yellow LED light up, and turn off the other two LEDs. Again, copy and paste the 4 lines from ``void loop()``, setting pin 4 to HIGH and the others to LOW. Change the delay for the yellow LED to 3 seconds.
+5. Allumez maintenant la LED jaune, et éteignez les deux autres. Encore une fois, copiez et collez les 4 lignes de ``void loop()``, en réglant la broche 4 sur HIGH et les autres sur LOW. Changez le délai pour la LED jaune à 3 secondes.
 
     .. code-block:: Arduino
         :emphasize-lines: 7-10
 
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(3000);            // Wait for 3 seconds
+            // Code principal, exécuté en boucle :
+            digitalWrite(3, HIGH);  // Allumer la LED sur la broche 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(10000);           // Attendre 10 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la broche 3
+            digitalWrite(4, HIGH);  // Allumer la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(3000);            // Attendre 3 secondes
         }
 
-6. Finally, let the red LED light up for 10 seconds, turning the other two LEDs off. Your complete code is as follows:
+6. Enfin, allumez la LED rouge pendant 10 secondes, en éteignant les deux autres LEDs. Voici votre code complet :
 
     .. code-block:: Arduino
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT); // set pin 3 as output
-            pinMode(4, OUTPUT); // set pin 4 as output
-            pinMode(5, OUTPUT); // set pin 5 as output
+            // Code de configuration ici, exécuté une seule fois :
+            pinMode(3, OUTPUT);  // définir la broche 3 comme sortie
+            pinMode(4, OUTPUT);  // définir la broche 4 comme sortie
+            pinMode(5, OUTPUT);  // définir la broche 5 comme sortie
         }
         
         void loop() {
-            // put your main code here, to run repeatedly:
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off LED on pin 5
-            delay(3000);            // Wait for 3 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, HIGH);  // Light up LED on pin 5
-            delay(10000);           // Wait for 10 seconds
+            // Code principal, exécuté en boucle :
+            digitalWrite(3, HIGH);  // Allumer la LED sur la broche 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(10000);           // Attendre 10 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la broche 3
+            digitalWrite(4, HIGH);  // Allumer la LED sur la broche 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la broche 5
+            delay(3000);            // Attendre 3 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la broche 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la broche 4
+            digitalWrite(5, HIGH);  // Allumer la LED sur la broche 5
+            delay(10000);           // Attendre 10 secondes
         }
 
 **Question**
 
-Take a look at the intersections around your home. How many traffic lights are there usually? How do they coordinate with each other?
+Observez les intersections autour de chez vous. Combien de feux de signalisation y a-t-il en général ? Comment se coordonnent-ils entre eux ?
 
-**Summary**
+**Résumé**
 
-Congratulations on completing Lesson 7! You've successfully translated pseudo-code into a fully functional Arduino-controlled traffic light system. Here's a brief recap of what you achieved:
+Félicitations pour avoir terminé la leçon 7 ! Vous avez réussi à traduire un pseudo-code en un système de feux de signalisation contrôlé par Arduino entièrement fonctionnel. Voici un bref récapitulatif de vos réalisations :
 
-* Pseudo-code Mastery: You've mastered the use of pseudo-code to outline electronic system operations, enhancing your logical thinking and planning skills.
-* From Pseudo-code to Real Code: You experienced how a structured approach in pseudo-code leads to effective and accurate Arduino programming.
-* Practical Application: By assembling and programming a traffic light system, you demonstrated practical application of your knowledge, showing how software directly controls hardware.
+* Maîtrise du pseudo-code : Vous avez appris à utiliser le pseudo-code pour définir le fonctionnement des systèmes électroniques, améliorant ainsi vos compétences en logique et en planification.
+* Du pseudo-code au code réel : Vous avez expérimenté comment une approche structurée en pseudo-code conduit à une programmation Arduino efficace et précise.
+* Application pratique : En assemblant et en programmant un système de feux de signalisation, vous avez démontré l'application pratique de vos connaissances, montrant comment le logiciel contrôle directement le matériel.
 
-This lesson has sharpened both your technical abilities and analytical thinking, equipping you for more complex projects in electronics and programming. Keep building on these skills to unlock further possibilities in technology integration!
+Cette leçon a affiné vos compétences techniques et votre réflexion analytique, vous préparant à des projets plus complexes en électronique et en programmation. Continuez à développer ces compétences pour débloquer encore plus de possibilités dans l'intégration des technologies !
 

@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des tirages au sort et à des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-8. Traffic Light with Pedestrian Button
-===============================================
+8. Feu de signalisation avec bouton piéton
+===========================================
 
-Welcome to the next phase of our Arduino journey. In the previous lesson, we built a foundational traffic light system, a staple of our roads, controlling the flow with red, yellow, and green lights. Now, we're adding a layer of interaction that reflects real-world complexities: a pedestrian button. This feature introduces a human element to our electronic crossroads, allowing for a dynamic interplay between the walkways and roadways at our busy intersections. 
+Bienvenue dans la prochaine étape de notre voyage avec Arduino. Dans la leçon précédente, nous avons construit un système de feu de signalisation de base, essentiel à la régulation du trafic, avec des feux rouges, jaunes et verts. Nous allons maintenant ajouter une couche d'interaction reflétant les complexités du monde réel : un bouton pour piétons. Cette fonctionnalité introduit un élément humain à notre croisement électronique, permettant une interaction dynamique entre les piétons et la circulation.
 
 .. raw:: html
 
@@ -24,255 +24,254 @@ Welcome to the next phase of our Arduino journey. In the previous lesson, we bui
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn to:
+Dans cette leçon, vous apprendrez à :
 
-* Understand how button work and their role in circuits.
-* Learn to use ``digitalRead()`` to detect pin input levels.
-* Implement ``if`` statements to create conditional behaviors in traffic light systems.
+* Comprendre le fonctionnement des boutons et leur rôle dans les circuits.
+* Utiliser ``digitalRead()`` pour détecter les niveaux d'entrée sur une broche.
+* Implémenter des instructions ``if`` pour créer des comportements conditionnels dans les systèmes de feu de signalisation.
 
-As we delve into this project, we'll explore not just the technical setup but also the logic and programming that make such systems both possible and efficient in managing pedestrian and vehicle traffic.
+Au cours de ce projet, nous allons explorer non seulement la configuration technique, mais aussi la logique et la programmation qui permettent à ces systèmes d'être à la fois possibles et efficaces dans la gestion du trafic piétonnier et automobile.
 
-Building the Circuit
------------------------------
+Construire le circuit
+-------------------------
 
-**Components Needed**
+**Composants nécessaires**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * Yellow LED
-     - 1 * Green LED
+     - 1 * LED rouge
+     - 1 * LED jaune
+     - 1 * LED verte
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_yellow_led| 
      - |list_green_led| 
-   * - 1 * Push Button
-     - 1 * Breadboard
-     - 3 * 220Ω Resistor
-     - 1 * 10K Ohm Resistor
+   * - 1 * Bouton-poussoir
+     - 1 * Plaque d'essai
+     - 3 * Résistance de 220Ω
+     - 1 * Résistance de 10KΩ
    * - |list_button| 
      - |list_breadboard| 
      - |list_220ohm| 
      - |list_10kohm| 
-   * - 1 * USB Cable
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * Câble USB
+     - Câbles de connexion
+     - 1 * Multimètre
      - 
    * - |list_usb_cable| 
      - |list_wire| 
-     - |list_meter|
+     - |list_meter| 
      - 
 
 
-**Building Step-by-Step**
+**Étapes de construction**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Suivez le schéma de câblage ou les étapes ci-dessous pour construire votre circuit.
 
 .. image:: img/8_traffic_light_button.png
     :width: 600
     :align: center  
 
-1. Start with the traffic light circuit from the previous lesson.
+1. Commencez avec le circuit du feu de signalisation de la leçon précédente.
 
 .. image:: img/7_traffic_light.png
     :width: 600
     :align: center
 
-2. Find a push button. 
+2. Trouvez un bouton-poussoir.
 
 .. image:: img/8_traffic_button.png
     :width: 500
     :align: center
 
-Buttons are ubiquitous components in electronics, acting as switches to make or break circuits. Below is the internal structure of a button, with its common symbol used in circuit diagrams.
+Les boutons sont des composants omniprésents en électronique, agissant comme des interrupteurs pour ouvrir ou fermer des circuits. Voici la structure interne d'un bouton et son symbole courant utilisé dans les schémas de circuits.
 
 .. image:: img/8_traffic_button_symbol.png
     :width: 500
     :align: center
 
-Though buttons have four pins, pins 1 and 2 are connected, as are pins 3 and 4. Pressing the button connects all four pins, closing the circuit.
+Bien que les boutons aient quatre broches, les broches 1 et 2 sont connectées, tout comme les broches 3 et 4. En appuyant sur le bouton, toutes les broches sont connectées, fermant ainsi le circuit.
 
-3. Insert the button into the breadboard across the middle gap, with pins in holes 18e, 18f, 20e, and 20f. 
+3. Insérez le bouton dans la plaque d'essai au niveau de la fente centrale, avec les broches dans les trous 18e, 18f, 20e et 20f.
 
 .. note::
 
-    If you're unsure how to insert the button, try both orientations. One way, the pin spacing will be slightly too narrow to fit.
+    Si vous avez du mal à insérer le bouton, essayez dans les deux sens. Dans un sens, l'espacement des broches sera légèrement trop étroit pour s'adapter.
 
 .. image:: img/8_traffic_light_button_button.png
     :width: 600
     :align: center
 
-4. Connect the button's top-right pin to digital pin 8 on the Arduino Uno R3 with a long jumper wire, inserting one end into hole 18j and the other into pin 8.
+4. Connectez la broche en haut à droite du bouton à la broche numérique 8 de l'Arduino Uno R3 avec un long câble de connexion, en insérant une extrémité dans le trou 18j et l'autre dans la broche 8.
 
 .. image:: img/8_traffic_light_button_pin8.png
     :width: 600
     :align: center
 
-5. Place a 10K Ohm resistor between the button's top-left pin and ground, connecting one end to hole 18a and the other to the breadboard's negative rail. This resistor pulls pin 8 to ground, stabilizing it at LOW when the button is not pressed.
+5. Placez une résistance de 10KΩ entre la broche en haut à gauche du bouton et la masse, en connectant une extrémité au trou 18a et l'autre à la borne négative de la plaque d'essai. Cette résistance tire la broche 8 vers la masse, la stabilisant à LOW lorsque le bouton n'est pas pressé.
 
     .. image:: img/8_traffic_light_button_10k.png
         :width: 600
         :align: center
 
-Pin 8 serves as an input to read the button's state. Arduino boards read voltages between 0 and approximately 5 volts at input pins, interpreting them as either LOW or HIGH based on a threshold voltage. For a pin to read as HIGH, it must have over 3 volts. To read as LOW, it must have less than 1.5 volts.
+La broche 8 sert d'entrée pour lire l'état du bouton. Les cartes Arduino lisent les tensions comprises entre 0 et environ 5 volts sur les broches d'entrée, les interprétant comme LOW ou HIGH en fonction d'un seuil de tension. Pour qu'une broche soit lue comme HIGH, elle doit avoir plus de 3 volts. Pour être lue comme LOW, elle doit avoir moins de 1,5 volt.
 
-If without the 10K resistor, pin 8 connects only to the button, floating between 0 and 5V, causing its state to fluctuate randomly between HIGH and LOW.
+Sans la résistance de 10KΩ, si la broche 8 était uniquement reliée au bouton, elle flotterait entre 0 et 5V, provoquant des fluctuations aléatoires entre HIGH et LOW.
 
-The 10K resistor connected from pin 8 to ground pulls the pin's voltage down to ground level, ensuring it reads as LOW when the button is unpressed.
+La résistance de 10KΩ connectée entre la broche 8 et la masse tire la tension de la broche vers le niveau de la masse, garantissant qu'elle soit lue comme LOW lorsque le bouton n'est pas pressé.
 
-6. Lastly, power the button by connecting the breadboard's positive rail to the Arduino Uno R3's 5V pin with a red power wire.
+6. Enfin, alimentez le bouton en connectant la borne positive de la plaque d'essai à la broche 5V de l'Arduino Uno R3 à l'aide d'un fil rouge.
 
 .. image:: img/8_traffic_light_button.png
     :width: 600
     :align: center
 
 
-**Question:**
+**Question :**
 
-Your traffic light is a mix of series and parallel circuits. Discuss which parts of your circuit are in series and why. Then, explain which parts are in parallel and why.
+Votre feu de signalisation est un mélange de circuits en série et en parallèle. Discutez des parties de votre circuit qui sont en série et expliquez pourquoi. Ensuite, expliquez quelles parties sont en parallèle et pourquoi.
 
 
-Code Creation
-----------------
+Création de Code
+--------------------
 
-**Initializing Pins**
+**Initialisation des Pins**
 
-So far, you've programmed the traffic lights to sequentially flash green, yellow, and red LEDs. In this lesson, you'll program your pedestrian button so that when pressed, the red and yellow LEDs turn off while the green LED flashes, indicating it's safe for pedestrians to cross.
+Jusqu'à présent, vous avez programmé les feux de circulation pour que les LED vertes, jaunes et rouges clignotent séquentiellement. Dans cette leçon, vous allez programmer le bouton piéton afin que, lorsqu'il est pressé, les LED rouges et jaunes s'éteignent tandis que la LED verte clignote, indiquant qu'il est sûr pour les piétons de traverser.
 
-1. Open the sketch you saved earlier, ``Lesson7_Traffic_Light``. Hit "Save As..." from the "File" menu, and rename it to ``Lesson8_Traffic_Light_Button``. Click "Save".
+1. Ouvrez le sketch que vous avez sauvegardé précédemment, ``Lesson7_Traffic_Light``. Cliquez sur "Enregistrer sous..." dans le menu "Fichier" et renommez-le en ``Lesson8_Traffic_Light_Button``. Cliquez sur "Enregistrer".
 
-2. In the ``void setup()`` function, add another ``pinMode()`` command to declare pin 8 as input (``INPUT``). Then, add a code comment to explain your new command.
+2. Dans la fonction ``void setup()``, ajoutez une autre commande ``pinMode()`` pour déclarer la pin 8 en tant qu'entrée (``INPUT``). Ensuite, ajoutez un commentaire de code pour expliquer cette nouvelle commande.
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void setup() {
-        // Setup code here, to run once:
-        pinMode(3, OUTPUT); // Set pin 3 as output
-        pinMode(4, OUTPUT); // Set pin 4 as output
-        pinMode(5, OUTPUT); // Set pin 5 as output
-        pinMode(8, INPUT);  // Declare pin 8 (button) as input
+        // Configuration initiale exécutée une seule fois :
+        pinMode(3, OUTPUT); // Définir la pin 3 comme sortie
+        pinMode(4, OUTPUT); // Définir la pin 4 comme sortie
+        pinMode(5, OUTPUT); // Définir la pin 5 comme sortie
+        pinMode(8, INPUT);  // Déclarer la pin 8 (bouton) comme entrée
     }
     
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(3, HIGH);  // Light up the LED on pin 3
-        digitalWrite(4, LOW);   // Switch off the LED on pin 4
-        digitalWrite(5, LOW);   // Switch off the LED on pin 5
-        delay(10000);           // Wait for 10 seconds
-        digitalWrite(3, LOW);   // Switch off the LED on pin 3
-        digitalWrite(4, HIGH);  // Light up the LED on pin 4
-        digitalWrite(5, LOW);   // Switch off LED on pin 5
-        delay(3000);            // Wait for 3 seconds
-        digitalWrite(3, LOW);   // Switch off the LED on pin 3
-        digitalWrite(4, LOW);   // Switch off the LED on pin 4
-        digitalWrite(5, HIGH);  // Light up LED on pin 5
-        delay(10000);           // Wait for 10 seconds
+        // Code principal, exécuté en boucle :
+        digitalWrite(3, HIGH);  // Allumer la LED sur la pin 3
+        digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+        digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+        delay(10000);           // Attendre 10 secondes
+        digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+        digitalWrite(4, HIGH);  // Allumer la LED sur la pin 4
+        digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+        delay(3000);            // Attendre 3 secondes
+        digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+        digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+        digitalWrite(5, HIGH);  // Allumer la LED sur la pin 5
+        delay(10000);           // Attendre 10 secondes
     }
 
-3. After coding, verify your sketch and upload the code to the Arduino Uno R3.
+3. Après avoir codé, vérifiez votre sketch et téléversez le code sur l'Arduino Uno R3.
 
-**Measuring Voltage at Pin 8**
+**Mesure de la Tension sur la Pin 8**
 
-We already know how the LEDs section of our circuit works from the previous lesson. Each LED, acting as an output, is controlled by different pins on the Arduino Uno R3.
+Nous savons déjà comment fonctionne la section des LED de notre circuit grâce à la leçon précédente. Chaque LED, agissant comme une sortie, est contrôlée par différentes pins de l'Arduino Uno R3.
 
-However, the button connected to pin 8 on the board is different. It's an input device. Pin 8 will read incoming voltage instead of sending voltage out.
+Cependant, le bouton connecté à la pin 8 est différent. C'est un dispositif d'entrée. La pin 8 lira la tension entrante au lieu d'envoyer de la tension.
 
-Let's use a multimeter to test the voltage at pin 8 when the button is pressed and released. You might need a friend to help press the button for this measurement.
+Utilisons un multimètre pour tester la tension à la pin 8 lorsque le bouton est pressé et relâché. Vous pourriez avoir besoin de l'aide d'un ami pour appuyer sur le bouton pendant la mesure.
 
-1. Adjust the multimeter to the 20 volts DC setting.
+1. Réglez le multimètre sur la position 20 volts DC.
 
 .. image:: img/multimeter_dc_20v.png
     :width: 300
     :align: center
 
-2. When the button is not pressed, measure the voltage at pin 8. Touch the red test lead of the multimeter to pin 8 and the black test lead to GND.
+2. Lorsque le bouton n'est pas pressé, mesurez la tension à la pin 8. Touchez le fil de test rouge du multimètre à la pin 8 et le fil noir à la masse (GND).
 
 .. image:: img/8_traffic_voltage.png
     :width: 600
     :align: center
 
-3. Record the measured voltage in the table.
+3. Notez la tension mesurée dans le tableau.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Button State
-     - Pin 8 Voltage
-     - State
-   * - Release
-     - *0.00 volts*
+   * - État du Bouton
+     - Tension à la Pin 8
+     - État
+   * - Relâché
+     - *0,00 volts*
      - 
-   * - Press
-     -
+   * - Pressé
+     - 
      - 
 
-4. Have your friend help you press the button, then continue measuring the voltage at pin 8.
+4. Demandez à votre ami de vous aider à appuyer sur le bouton, puis continuez à mesurer la tension à la pin 8.
 
 .. image:: img/8_traffic_voltage.png
     :width: 600
     :align: center
 
-5. When the button is pressed, record the voltage at pin 8 in the table.
+5. Lorsque le bouton est pressé, enregistrez la tension à la pin 8 dans le tableau.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Button State
-     - Pin 8 Voltage
-     - State
-   * - Release
-     - *0.00 volts*
+   * - État du Bouton
+     - Tension à la Pin 8
+     - État
+   * - Relâché
+     - *0,00 volts*
      - 
-   * - Press
-     - *≈4.97 volts*
+   * - Pressé
+     - *≈4,97 volts*
      - 
 
-6. Arduino boards read voltages between 0 and approximately 5 volts at input pins, interpreting them as either ``LOW`` or ``HIGH`` based on a threshold voltage. For a pin to read as ``HIGH``, it must have over 3 volts. To read as ``LOW``, it must have less than 1.5 volts.
+6. Les cartes Arduino lisent des tensions comprises entre 0 et environ 5 volts sur les pins d'entrée, les interprétant comme ``LOW`` ou ``HIGH`` en fonction d'une tension de seuil. Pour qu'une pin soit lue comme ``HIGH``, elle doit recevoir plus de 3 volts. Pour être lue comme ``LOW``, elle doit recevoir moins de 1,5 volts.
 
-   Based on the measured voltage, fill in the state for pin 8.
+   En fonction de la tension mesurée, remplissez l'état pour la pin 8.
 
 .. list-table::
    :widths: 25 25 25
    :header-rows: 1
 
-   * - Button State
-     - Pin 8 Voltage
-     - Pin 8 State
-   * - Release
-     - *0.00 volts*
+   * - État du Bouton
+     - Tension à la Pin 8
+     - État de la Pin 8
+   * - Relâché
+     - *0,00 volts*
      - *LOW*
-   * - Press
-     - *≈4.97 volts*
+   * - Pressé
+     - *≈4,97 volts*
      - *HIGH*
 
 
-**Conditional Statements**
+**Instructions Conditionnelles**
 
-The traffic light should display two different behaviors depending on whether the button is pressed:
+Le feu de circulation doit afficher deux comportements différents selon que le bouton est pressé ou non :
 
-* When the button is pressed, the code for the pedestrian crossing should run, and the green LED should blink.
-* When the button is not pressed, the traffic light should operate normally as you've programmed.
+* Lorsque le bouton est pressé, le code pour le passage piéton doit s'exécuter, et la LED verte doit clignoter.
+* Lorsque le bouton n'est pas pressé, le feu de circulation doit fonctionner normalement, comme vous l'avez programmé.
 
-To program these behaviors, you'll use a new coding function known as conditional statements.
+Pour programmer ces comportements, vous utiliserez une nouvelle fonction de codage appelée instructions conditionnelles.
 
-Conditional statements are sometimes called ``if-then`` statements, or simply, an ``if`` statement.
-Conditional statements allow you to run certain lines of code when a specific condition or scenario is true.
-
+Les instructions conditionnelles sont parfois appelées instructions ``si-alors``, 
+ou plus simplement, une instruction ``if``. Elles vous permettent d'exécuter certaines 
+lignes de code lorsqu'une condition ou un scénario spécifique est vérifié.
 
 .. image:: img/if.png
     :width: 300
     :align: center
 
-
 .. note::
 
-    You often use conditional statements in everyday life to make decisions, such as:
+    Vous utilisez souvent des instructions conditionnelles dans la vie quotidienne pour prendre des décisions, par exemple :
 
     .. code-block:: Arduino
 
@@ -280,8 +279,8 @@ Conditional statements allow you to run certain lines of code when a specific co
         if cold;
         then wear a coat;
         end;
-        
-In the Arduino IDE, a conditional statement looks like this:
+
+Dans l'IDE Arduino, une instruction conditionnelle ressemble à ceci :
 
     .. code-block:: Arduino
 
@@ -289,190 +288,187 @@ In the Arduino IDE, a conditional statement looks like this:
             commands to run when the condition is true 
         }
 
-The ``condition`` is within parentheses, using comparison operators to compare two or more values. These values can be numbers, variables, or inputs coming into the Arduino Uno R3.
+La ``condition`` se trouve entre parenthèses, et utilise des opérateurs de comparaison pour comparer deux ou plusieurs valeurs. Ces valeurs peuvent être des nombres, des variables ou des entrées venant de l'Arduino Uno R3.
 
-Here's a list of comparison operators and how they're used in the condition part of an if statement:
+Voici une liste des opérateurs de comparaison et comment ils sont utilisés dans la partie conditionnelle d'une instruction if :
 
 .. list-table::
     :widths: 20 20 60
     :header-rows: 1
 
-    *   - Comparison Operator
-        - Meaning
-        - Example
+    *   - Opérateur de Comparaison
+        - Signification
+        - Exemple
     *   - ==
-        - Equals
-        - if (digitalRead(8) == HIGH) {do something}
+        - Égal à
+        - if (digitalRead(8) == HIGH) {faire quelque chose}
     *   - !=
-        - Not equal
-        - if (digitalRead(5) != LOW) {do something}
+        - Différent de
+        - if (digitalRead(5) != LOW) {faire quelque chose}
     *   - <
-        - Less than
-        - if (distance < 100) {do something}
+        - Inférieur à
+        - if (distance < 100) {faire quelque chose}
     *   - >
-        - Greater than
-        - if (count > 5) {do something}
+        - Supérieur à
+        - if (count > 5) {faire quelque chose}
     *   - <=
-        - Less than or equal to
-        - if (number <= minValue) {do something}
+        - Inférieur ou égal à
+        - if (number <= minValue) {faire quelque chose}
     *   - >=
-        - Greater than or equal to
-        - if (number >= maxValue) {do something}
+        - Supérieur ou égal à
+        - if (number >= maxValue) {faire quelque chose}
 
 .. note::
 
-    The equality comparison uses two equals signs(``==``). A single equals sign (``=``) is used for assigning a value to a variable (explained in later sections), while double equals are used for comparing two values.
+    La comparaison d'égalité utilise deux signes égaux (``==``). Un signe égal seul (``=``) est utilisé pour attribuer une valeur à une variable (comme expliqué dans les sections suivantes), tandis que deux signes égaux sont utilisés pour comparer deux valeurs.
 
-When comparing two values in a condition, the result can be ``True`` or ``False``. If the condition is ``True``, then the commands within the curly brackets are executed. If the condition is ``False``, then the commands within the curly brackets are skipped.
+Lorsque vous comparez deux valeurs dans une condition, le résultat peut être ``True`` ou ``False``. Si la condition est ``True``, les commandes entre accolades sont exécutées. Si la condition est ``False``, les commandes sont ignorées.
 
-In coding, conditional statements can be simple or involve complex logical arguments with multiple conditions and scenarios. You'll be using the basic form of ``if`` statements next.
+En programmation, les instructions conditionnelles peuvent être simples ou impliquer des arguments logiques complexes avec plusieurs conditions et scénarios. Vous utiliserez la forme basique des instructions ``if`` dans les prochaines étapes.
 
-**Button Not Pressed**
+**Bouton Non Pressé**
 
-Building on our understanding of conditional statements, let's apply this concept to enhance our traffic light sketch. Given that a button's press alters the flow of traffic, we'll incorporate a condition to monitor the button's state. 
+En nous basant sur notre compréhension des instructions conditionnelles, appliquons ce concept pour améliorer notre sketch du feu de circulation. Comme le fait d'appuyer sur un bouton modifie le flux de circulation, nous allons intégrer une condition pour surveiller l'état du bouton.
 
-1. From our earlier measurements of pin 8's voltage, we know that when the button is not pressed, pin 8 is ``LOW``. So, if the state of pin 8 read is ``LOW``, it means it's not pressed. Now, at the beginning of the ``void loop()`` function in your previous code, enter the following statement:
+1. D'après nos mesures précédentes de la tension de la pin 8, nous savons que lorsque le bouton n'est pas pressé, la pin 8 est à l'état ``LOW``. Ainsi, si la lecture de l'état de la pin 8 renvoie ``LOW``, cela signifie que le bouton n'est pas pressé. Maintenant, au début de la fonction ``void loop()`` dans votre code précédent, entrez l'instruction suivante :
 
     .. code-block:: Arduino
         :emphasize-lines: 11,13
 
         void setup() {
-            // Setup code here, to run once:
-            pinMode(3, OUTPUT); // Set pin 3 as output
-            pinMode(4, OUTPUT); // Set pin 4 as output
-            pinMode(5, OUTPUT); // Set pin 5 as output
-            pinMode(8, INPUT);  // Declare pin 8 (button) as input
+            // Code de configuration exécuté une seule fois :
+            pinMode(3, OUTPUT); // Définir la pin 3 comme sortie
+            pinMode(4, OUTPUT); // Définir la pin 4 comme sortie
+            pinMode(5, OUTPUT); // Définir la pin 5 comme sortie
+            pinMode(8, INPUT);  // Déclarer la pin 8 (bouton) comme entrée
         }
 
         void loop() {
-            // put your main code here, to run repeatedly:
+            // Code principal, exécuté en boucle :
             if (digitalRead(8) == LOW) {
                 
             }
 
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
+            digitalWrite(3, HIGH);  // Allumer la LED sur la pin 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
 
             ...
 
-Just like the ``digitalWrite()`` command is used for output pins, the ``digitalRead()`` command is used for input pins. ``digitalRead(pin)`` is the command to read if a digital pin is ``HIGH`` or ``LOW``.
+Tout comme la commande ``digitalWrite()`` est utilisée pour les pins de sortie, la commande ``digitalRead()`` est utilisée pour les pins d'entrée. ``digitalRead(pin)`` est la commande permettant de lire si une pin numérique est à l'état ``HIGH`` ou ``LOW``.
 
-Here is its syntax:
+Voici sa syntaxe :
 
-    * ``digitalRead(pin)``: Reads the value from a specified digital pin, either ``HIGH`` or ``LOW``.
+    * ``digitalRead(pin)`` : Lit la valeur d'une pin numérique spécifiée, soit ``HIGH``, soit ``LOW``.
 
-        **Parameters**
-            - ``pin``: the Arduino pin number you want to read
+        **Paramètres**
+            - ``pin`` : le numéro de la pin Arduino que vous souhaitez lire.
         
-        **Returns**
-            ``HIGH`` or ``LOW``
+        **Retourne**
+            ``HIGH`` ou ``LOW``.
 
-2. Next, add the commands to run when the button is not pressed. These commands are the ones you've already created for running the normal traffic light.
+2. Ensuite, ajoutez les commandes à exécuter lorsque le bouton n'est pas pressé. Ces commandes sont celles que vous avez déjà créées pour le fonctionnement normal du feu de circulation.
 
-    * You can cut and paste these commands inside the curly brackets of the ``if`` statement,
-    * Or, you could simply move the right curly bracket of the ``if`` statement to after the last delay.
-    * Use whichever method suits you. After doing so, your ``void loop()`` function should look something like this:
+    * Vous pouvez couper et coller ces commandes à l'intérieur des accolades de l'instruction ``if``,
+    * Ou bien, vous pouvez simplement déplacer l'accolade fermante de l'instruction ``if`` après le dernier ``delay``.
+    * Utilisez la méthode qui vous convient le mieux. Après avoir effectué cette modification, votre fonction ``void loop()`` devrait ressembler à ceci :
 
 .. code-block:: Arduino
     :emphasize-lines: 11,24
 
     void setup() {
-        // Setup code here, to run once:
-        pinMode(3, OUTPUT); // Set pin 3 as output
-        pinMode(4, OUTPUT); // Set pin 4 as output
-        pinMode(5, OUTPUT); // Set pin 5 as output
-        pinMode(8, INPUT);  // Declare pin 8 (button) as input
+        // Code de configuration exécuté une seule fois :
+        pinMode(3, OUTPUT); // Définir la pin 3 comme sortie
+        pinMode(4, OUTPUT); // Définir la pin 4 comme sortie
+        pinMode(5, OUTPUT); // Définir la pin 5 comme sortie
+        pinMode(8, INPUT);  // Déclarer la pin 8 (bouton) comme entrée
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // Code principal, exécuté en boucle :
         if (digitalRead(8) == LOW) {
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off LED on pin 5
-            delay(3000);            // Wait for 3 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, HIGH);  // Light up LED on pin 5
-            delay(10000);           // Wait for 10 seconds
+            digitalWrite(3, HIGH);  // Allumer la LED sur la pin 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+            delay(10000);           // Attendre 10 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+            digitalWrite(4, HIGH);  // Allumer la LED sur la pin 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+            delay(3000);            // Attendre 3 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+            digitalWrite(5, HIGH);  // Allumer la LED sur la pin 5
+            delay(10000);           // Attendre 10 secondes
         }
     }
 
-Notice how the commands within the ``if`` statement are indented. Using indentation helps keep your code tidy and clarifies the commands being executed within a function. Although it might take a few extra seconds, using indentation, line breaks, and code comments can maintain the aesthetics of your code, which will be beneficial in the long run.
+Notez comment les commandes à l'intérieur de l'instruction ``if`` sont indentées. Utiliser l'indentation permet de garder votre code ordonné et de clarifier quelles commandes sont exécutées au sein d'une fonction. Même si cela prend quelques secondes supplémentaires, l'indentation, les sauts de ligne et les commentaires dans le code permettent de maintenir la lisibilité, ce qui sera avantageux à long terme.
 
-A common syntax error is forgetting the required number of curly brackets. Sometimes, the right bracket is missed in a function, or too many right brackets are added. In your sketch, every left bracket needs a right bracket. Proper indentation also helps you troubleshoot mismatched brackets.
+Une erreur courante de syntaxe est d'oublier le nombre d'accolades requis. Parfois, l'accolade fermante est manquante dans une fonction, ou trop d'accolades fermantes sont ajoutées. Dans votre sketch, chaque accolade ouvrante doit avoir une accolade fermante. Une bonne indentation aide également à résoudre les erreurs liées aux accolades mal appariées.
 
+**Quand le bouton est pressé**
 
-**When the Button Is Pressed**
+Il est maintenant temps d'écrire le code qui permet aux piétons de traverser la rue lorsque le bouton est pressé.
 
-Now it's time to write the code that allows pedestrians to cross the street when the button is pressed.
+Cela nécessitera une deuxième instruction conditionnelle. Cette fois-ci, vous devrez comparer la valeur de ``digitalRead()`` pour la pin 8 à ``HIGH`` au lieu de ``LOW``.
 
-This will require a second conditional statement. However, this time you'll need to compare the ``digitalRead()`` value of pin 8 to ``HIGH`` instead of ``LOW``.
+Lorsque le bouton est pressé, le feu de circulation doit arrêter tous les véhicules et signaler qu'il est sûr pour les piétons de traverser. Pour ce faire, vous devez éteindre les LED rouges et jaunes et faire clignoter la LED verte. À l'intérieur des accolades de votre deuxième instruction conditionnelle, ajoutez trois commandes ``digitalWrite()`` :
 
-When the button is pressed, the traffic light needs to stop all vehicles and signal that it's safe for pedestrians to cross. To achieve this, you'll turn off the red and yellow LEDs and make the green LED blink. Within the curly brackets of your second conditional statement, add three ``digitalWrite()`` commands:
+* Allumez la LED verte connectée à la pin 3.
+* Éteignez la LED jaune connectée à la pin 4.
+* Éteignez la LED rouge connectée à la pin 5.
 
+Ensuite, faites clignoter la LED verte. N'oubliez pas que la fréquence de clignotement est déterminée par vos instructions ``delay()``.
 
-* Turn on the green LED connected to pin 3.
-* Turn off the yellow LED connected to pin 4.
-* Turn off the red LED connected to pin 5.
-
-Then, make the green LED blink. Remember, the blinking frequency is determined by your ``delay()`` statements.
-
-Your sketch should look something like this:
-
+Votre sketch devrait ressembler à ceci :
 
 .. code-block:: Arduino
     :emphasize-lines: 24-31
 
     void setup() {
-        pinMode(3, OUTPUT);  // declare pin 3 (green LED) as output
-        pinMode(4, OUTPUT);  // declare pin 4 (yellow LED) as output
-        pinMode(5, OUTPUT);  // declare pin 5 (red LED) as output
-        pinMode(8, INPUT);   // declare pin 8 (button) as input
+        pinMode(3, OUTPUT);  // déclarer la pin 3 (LED verte) comme sortie
+        pinMode(4, OUTPUT);  // déclarer la pin 4 (LED jaune) comme sortie
+        pinMode(5, OUTPUT);  // déclarer la pin 5 (LED rouge) comme sortie
+        pinMode(8, INPUT);   // déclarer la pin 8 (bouton) comme entrée
     }
 
     void loop() {
-        // Main code to run repeatedly:
+        // Code principal, exécuté en boucle :
         if (digitalRead(8) == LOW) {
-            digitalWrite(3, HIGH);  // Light up the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off the LED on pin 5
-            delay(10000);           // Wait for 10 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, HIGH);  // Light up the LED on pin 4
-            digitalWrite(5, LOW);   // Switch off LED on pin 5
-            delay(3000);            // Wait for 3 seconds
-            digitalWrite(3, LOW);   // Switch off the LED on pin 3
-            digitalWrite(4, LOW);   // Switch off the LED on pin 4
-            digitalWrite(5, HIGH);  // Light up LED on pin 5
-            delay(10000);           // Wait for 10 seconds
+            digitalWrite(3, HIGH);  // Allumer la LED sur la pin 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+            delay(10000);           // Attendre 10 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+            digitalWrite(4, HIGH);  // Allumer la LED sur la pin 4
+            digitalWrite(5, LOW);   // Éteindre la LED sur la pin 5
+            delay(3000);            // Attendre 3 secondes
+            digitalWrite(3, LOW);   // Éteindre la LED sur la pin 3
+            digitalWrite(4, LOW);   // Éteindre la LED sur la pin 4
+            digitalWrite(5, HIGH);  // Allumer la LED sur la pin 5
+            delay(10000);           // Attendre 10 secondes
         }
-        if (digitalRead(8) == HIGH) {  //if the button is pressed:
-            digitalWrite(3, HIGH);       // Light up the LED on pin 3
-            digitalWrite(4, LOW);        // Switch off the LED on pin 4
-            digitalWrite(5, LOW);        // Switch off the LED on pin 5
-            delay(500);                  // Wait half a second
-            digitalWrite(3, LOW);        // Switch off the LED on pin 3
-            delay(500);                  // Wait half a second
+        if (digitalRead(8) == HIGH) {  // si le bouton est pressé :
+            digitalWrite(3, HIGH);       // Allumer la LED sur la pin 3
+            digitalWrite(4, LOW);        // Éteindre la LED sur la pin 4
+            digitalWrite(5, LOW);        // Éteindre la LED sur la pin 5
+            delay(500);                  // Attendre une demi-seconde
+            digitalWrite(3, LOW);        // Éteindre la LED sur la pin 3
+            delay(500);                  // Attendre une demi-seconde
         }
     }
 
-Upload your code to the Arduino Uno R3. Once the sketch is fully transferred, the code will execute.
+Téléversez votre code sur l'Arduino Uno R3. Une fois le sketch transféré, le code s'exécutera.
 
-Observe the behavior of your traffic light. Press the button and wait for the traffic light to complete its cycle. Does the pedestrian green light blink? When the button is released, does the traffic light return to its normal operation mode? If not, make adjustments to your sketch and re-upload it to the R3.
+Observez le comportement de votre feu de circulation. Appuyez sur le bouton et attendez que le feu termine son cycle. La LED verte pour piétons clignote-t-elle ? Lorsque le bouton est relâché, le feu revient-il à son mode de fonctionnement normal ? Si ce n'est pas le cas, ajustez votre sketch et téléversez-le à nouveau sur la carte R3.
 
-Once completed, save your sketch.
+Une fois terminé, sauvegardez votre sketch.
 
 **Question**
 
-During testing, you may notice that the green LED only blinks while the pedestrian button is kept pressed, but pedestrians can’t cross the road while continuously pressing the button. How can you modify the code to ensure that once the pedestrian button is pressed, the green LED lights up long enough for a safe crossing without requiring continuous pressing? Please write down the pseudo-code solution in your handbook.
+Pendant les tests, vous pouvez remarquer que la LED verte ne clignote que lorsque le bouton piéton est maintenu enfoncé, mais les piétons ne peuvent pas traverser la route en maintenant le bouton appuyé. Comment pouvez-vous modifier le code pour vous assurer que, une fois le bouton piéton pressé, la LED verte reste allumée suffisamment longtemps pour permettre une traversée sécurisée sans avoir à maintenir le bouton appuyé ? Veuillez écrire la solution en pseudo-code dans votre cahier.
 
-**Summary**
+**Résumé**
 
-In this lesson, we've delved into integrating a pedestrian button into a traffic light system, simulating a real-world scenario that balances the flow of both pedestrian and vehicular traffic. We explored the workings of a button in an electronic circuit and utilized the ``digitalRead()`` function to monitor input from the button. By implementing conditional statements with ``if`` structures, we programmed the traffic lights to respond dynamically to pedestrian input, enhancing our understanding of interactive systems. This lesson not only reinforced our skills in Arduino programming but also highlighted the practical application of these technologies in managing everyday situations efficiently.
+Dans cette leçon, nous avons intégré un bouton piéton dans un système de feux de circulation, simulant un scénario réel qui équilibre le flux de piétons et de véhicules. Nous avons exploré le fonctionnement d'un bouton dans un circuit électronique et utilisé la fonction ``digitalRead()`` pour surveiller les entrées du bouton. En utilisant des instructions conditionnelles avec des structures ``if``, nous avons programmé les feux pour qu'ils réagissent dynamiquement à l'entrée des piétons, renforçant ainsi notre compréhension des systèmes interactifs. Cette leçon nous a non seulement permis de perfectionner nos compétences en programmation Arduino, mais a également mis en lumière l'application pratique de ces technologies dans la gestion efficace de situations du quotidien.
 
