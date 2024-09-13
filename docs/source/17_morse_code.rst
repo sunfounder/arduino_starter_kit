@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. ¡Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas!
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas post-venta y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? ¡Haz clic en [|link_sf_facebook|] y únete hoy!
 
-17. Morse Code
+17. Código Morse
 ========================
 
-Morse code is like a secret language using dots (.) and dashes (-) invented by Samuel Morse in the 1840s. It was created to send messages across long distances using telegraphs. Each letter of the alphabet and number is represented by a unique combination of these signals. For example, the most famous Morse code message is "SOS" (··· ––– ···), which is an international signal for help. Morse code used to be essential for communication before the invention of phones and the internet, and it was especially popular among ship and airplane operators. Today, it's fun to learn as a way to send secret messages to your friends!
+El código Morse es como un lenguaje secreto que usa puntos (.) y rayas (-) inventado por Samuel Morse en la década de 1840. Fue creado para enviar mensajes a largas distancias mediante telégrafos. Cada letra del alfabeto y número está representado por una combinación única de estos símbolos. Por ejemplo, el mensaje en código Morse más famoso es "SOS" (··· ––– ···), que es una señal internacional de auxilio. El código Morse fue esencial para la comunicación antes de la invención de los teléfonos y el internet, y era especialmente popular entre los operadores de barcos y aviones. Hoy en día, es divertido aprenderlo como una forma de enviar mensajes secretos a tus amigos.
 
 .. raw:: html
 
@@ -24,94 +24,94 @@ Morse code is like a secret language using dots (.) and dashes (-) invented by S
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+En esta lección aprenderás:
 
-* Understand the workings of an active buzzer.
-* Learn to code the SOS signal in Morse code, enabling you to send messages using Morse code with a buzzer.
+* Cómo funciona un zumbador activo.
+* A programar la señal SOS en código Morse, permitiéndote enviar mensajes con un zumbador utilizando este código.
 
 
-Morse Code Magic!
--------------------
+¡La Magia del Código Morse!
+--------------------------------
 
 .. image:: img/7_morse.jpeg
 
-Imagine inventing a way to send secret messages using just dots and dashes! That's what Samuel Morse did back in 1836 with Morse code. Initially a painter, Morse got inspired on a boat trip and later, with his buddy Alfred Vail, created the telegraph to send messages across wires.
+¡Imagina inventar una forma de enviar mensajes secretos usando solo puntos y rayas! Eso es lo que hizo Samuel Morse en 1836 con el código Morse. Inicialmente un pintor, Morse se inspiró en un viaje en barco y más tarde, con su amigo Alfred Vail, creó el telégrafo para enviar mensajes a través de cables.
 
-Morse code uses dots (short signals) and dashes (long signals) to represent letters and numbers. The first Morse code message? "What hath God wrought"—sent in 1844 from Washington D.C. to Baltimore, kicking off the telegraph era.
+El código Morse utiliza puntos (señales cortas) y rayas (señales largas) para representar letras y números. ¿El primer mensaje en código Morse? "What hath God wrought"—enviado en 1844 desde Washington D.C. a Baltimore, marcando el inicio de la era del telégrafo.
 
-Today, Morse code isn't used as much, but it's still cool for things like aviation and by amateur radio fans. Now, let's explore how Morse code works with Arduino and a buzzer and have some fun with this piece of communication history!
+Hoy en día, el código Morse no se usa tanto, pero sigue siendo genial para cosas como la aviación y para los aficionados a la radio. Ahora, vamos a explorar cómo funciona el código Morse con Arduino y un zumbador, ¡y a divertirnos con esta parte de la historia de la comunicación!
 
 
-Building the Circuit
------------------------
+Construyendo el Circuito
+----------------------------
 
-**Components Needed**
+**Componentes necesarios**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Active Buzzer
-     - 1 * Breadboard
-     - Jumper Wires
+     - 1 * Zumbador Activo
+     - 1 * Protoboard
+     - Cables de conexión
    * - |list_uno_r3| 
      - |list_active_buzzer| 
      - |list_breadboard| 
      - |list_wire| 
-   * - 1 * USB Cable
-     -
+   * - 1 * Cable USB
+     - 
      - 
      - 
    * - |list_usb_cable| 
-     -
      - 
      - 
+     - 
 
 
-**Building Step-by-Step**
+**Pasos de Construcción**
 
-1. Locate an active buzzer which typically has a white sticker on the front and a sealed black back.
+1. Localiza un zumbador activo, que típicamente tiene una pegatina blanca en la parte delantera y un respaldo sellado negro.
 
 .. image:: img/7_beep_2.png
 
-Buzzers, as electronic sound devices, have a rich history that traces back to the 19th century. The precursor to modern buzzers is rooted in 1831, when Michael Faraday discovered electromagnetic induction, forming the foundational principle behind the operation of electromagnetic buzzers. Following Faraday's groundbreaking discovery, many scientists and inventors explored how to apply electromagnetic theories to practical devices. Today, Buzzers can be categorized as active and passive ones:
+Los zumbadores, como dispositivos electrónicos de sonido, tienen una rica historia que se remonta al siglo XIX. El precursor de los zumbadores modernos se origina en 1831, cuando Michael Faraday descubrió la inducción electromagnética, formando el principio fundamental detrás del funcionamiento de los zumbadores electromagnéticos. Después de este descubrimiento, muchos científicos e inventores exploraron cómo aplicar las teorías electromagnéticas a dispositivos prácticos. Hoy en día, los zumbadores se clasifican en activos y pasivos:
 
-**Active Buzzer**
+**Zumbador Activo**
 
 .. image:: img/7_beep_ac.png
     :width: 300
     :align: center
 
-Sealed at the back, active buzzers contain an internal oscillator that sounds when powered, typically producing a single-tone beep.
+Sellado en la parte posterior, los zumbadores activos contienen un oscilador interno que emite sonido cuando están alimentados, produciendo típicamente un solo tono.
 
-**Passive Buzzer**
+**Zumbador Pasivo**
 
 .. image:: img/7_beep_pa.png
     :width: 300
     :align: center
 
-Open at the back, passive buzzers require an external frequency signal from a microcontroller to generate sound, allowing for a range of tones.
+Abierto en la parte posterior, los zumbadores pasivos requieren una señal de frecuencia externa de un microcontrolador para generar sonido, permitiendo una gama de tonos.
 
-1. Active buzzer is also polar device. The front side has a "+" sign indicating its positive terminal (anode), which is also the longer pin. Now insert the buzzer into the breadboard with the anode in hole 15F and the cathode in hole 18F.
+2. El zumbador activo es un dispositivo polar. El lado frontal tiene un signo "+" que indica su terminal positivo (ánodo), que también es el pin más largo. Ahora inserta el zumbador en el protoboard con el ánodo en el agujero 15F y el cátodo en el agujero 18F.
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-2. Connect the cathode to the GND pin on the Arduino Uno R3.
+3. Conecta el cátodo al pin GND en el Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-3. If you insert the anode of the buzzer into the 5V pin of the Arduino Uno R3, you will hear the active buzzer emit sound directly. Of course, you can also use this method to verify if the buzzer you have is correct. A passive buzzer will not produce sound when directly connected to a power source.
+4. Si insertas el ánodo del zumbador en el pin 5V del Arduino Uno R3, escucharás el zumbador activo emitir sonido directamente. Por supuesto, también puedes usar este método para verificar si el zumbador es el correcto. Un zumbador pasivo no producirá sonido cuando se conecte directamente a una fuente de alimentación.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-4. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+5. Ahora, retira el cable insertado en el pin 5V e insértalo en el pin 9 del Arduino Uno R3, para que el zumbador pueda ser controlado con código.
 
 .. image:: img/16_morse_code.png
     :width: 500
@@ -119,98 +119,98 @@ Open at the back, passive buzzers require an external frequency signal from a mi
 
 
 
-Code Creation
-----------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson17_Morse_Code`` using ``Ctrl + S`` or by clicking “Save”.
+Creación del Código
+-----------------------
+1. Abre el Arduino IDE y comienza un nuevo proyecto seleccionando "Nuevo Sketch" desde el menú "Archivo".
+2. Guarda tu sketch como ``Lesson17_Morse_Code`` usando ``Ctrl + S`` o haciendo clic en "Guardar".
 
-3. First, create a constant called ``buzzerPin`` and set it equal to pin 9.
+3. Primero, crea una constante llamada ``buzzerPin`` y asígnale el valor del pin 9.
 
 .. code-block:: Arduino
     :emphasize-lines: 1
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Asigna el pin 9 a la constante para el zumbador
 
     void setup() {
-        // put your setup code here, to run once:
+        // Pon tu código de configuración aquí, para que se ejecute una vez:
     }
 
-4. Initialize the pin: In the ``void setup()`` function, set the buzzer pin to output mode.
+4. Inicializa el pin: En la función ``void setup()``, configura el pin del zumbador como salida.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Asigna el pin 9 a la constante para el zumbador
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Pon tu código de configuración aquí, para que se ejecute una vez:
+        pinMode(buzzerPin, OUTPUT);  // Configura el pin 9 como salida
     }
 
-5. Making an active buzzer sound an alert is as simple as lighting an LED; you just need to use ``digitalWrite()`` to set pin 9 high or low and ``delay()`` to control the timing.
+5. Hacer que un zumbador activo suene es tan simple como encender un LED; solo necesitas usar ``digitalWrite()`` para poner el pin 9 en alto o bajo y ``delay()`` para controlar el tiempo.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-13
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Asigna el pin 9 a la constante para el zumbador
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Pon tu código de configuración aquí, para que se ejecute una vez:
+        pinMode(buzzerPin, OUTPUT);  // Configura el pin 9 como salida
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-        delay(250);                     // Beep duration: 250 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-        delay(250);                     // Interval between signals: 250 milliseconds
+        // Pon tu código principal aquí, para que se ejecute repetidamente:
+        digitalWrite(buzzerPin, HIGH);  // Enciende el zumbador
+        delay(250);                     // Duración del pitido: 250 milisegundos
+        digitalWrite(buzzerPin, LOW);   // Apaga el zumbador
+        delay(250);                     // Intervalo entre señales: 250 milisegundos
     }
 
-6. You can upload your code to the Arduino Uno R3, and then you will hear the "beep beep" sound.
+6. Puedes cargar tu código en el Arduino Uno R3, y luego escucharás el sonido de "bip bip".
 
 
-7. To make the buzzer emit Morse code, you need to create two functions after ``void loop()``, for emitting dots (short signals) and dashes (long signals).
+7. Para hacer que el zumbador emita código Morse, necesitas crear dos funciones después de ``void loop()``, para emitir puntos (señales cortas) y rayas (señales largas).
 
 .. note::
 
-    In Morse code, there are traditional timing rules for dots (short signals), dashes (long signals), and the intervals between signals to ensure the message is accurately received and understood. Here are some basic rules:
+    En el código Morse, existen reglas tradicionales de temporización para los puntos (señales cortas), las rayas (señales largas) y los intervalos entre señales para asegurar que el mensaje sea recibido y comprendido correctamente. Aquí están algunas reglas básicas:
 
-    * Length of a dot: the basic time unit.
-    * Length of a dash: equals three dots.
-    * Interval between dots: the length of one dot.
-    * Interval within a character (between dots and dashes of a letter or number): the length of one dot.
-    * Interval between characters (e.g., between two letters): three dots.
-    * Interval between words (e.g., between two words): seven dots.
+    * Duración de un punto: la unidad de tiempo básica.
+    * Duración de una raya: equivale a tres puntos.
+    * Intervalo entre puntos: la duración de un punto.
+    * Intervalo dentro de un carácter (entre puntos y rayas de una letra o número): la duración de un punto.
+    * Intervalo entre caracteres (por ejemplo, entre dos letras): tres puntos.
+    * Intervalo entre palabras (por ejemplo, entre dos palabras): siete puntos.
 
-    Therefore, we set the length of a dot to 250ms, a dash to 750ms, and the interval between elements to 250ms.
+    Por lo tanto, establecemos la duración de un punto en 250ms, una raya en 750ms y el intervalo entre elementos en 250ms.
 
 .. code-block:: Arduino
     :emphasize-lines: 9-14,16-21
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        digitalWrite(buzzerPin, HIGH);  // Turn buzzer ON
-        delay(250);                     // Beep duration: 250 milliseconds
-        digitalWrite(buzzerPin, LOW);   // Turn buzzer OFF
-        delay(250);                     // Interval between signals: 250 milliseconds
+        // Pon tu código principal aquí, para que se ejecute repetidamente:
+        digitalWrite(buzzerPin, HIGH);  // Enciende el zumbador
+        delay(250);                     // Duración del pitido: 250 milisegundos
+        digitalWrite(buzzerPin, LOW);   // Apaga el zumbador
+        delay(250);                     // Intervalo entre señales: 250 milisegundos
     }
 
     void dot() {
         digitalWrite(buzzerPin, HIGH);
-        delay(250);  // Short duration for a dot
+        delay(250);  // Duración corta para un punto
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Intervalo entre señales
     }
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // Duración más larga para una raya
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Intervalo entre señales
     }
 
-8. Now, you can transmit Morse code. For example, to send "SOS" (... --- ...), the Morse code for 'S' consists of three dots, and 'O' is three dashes, so you simply call the dot and dash functions three times respectively.
+8. Ahora, puedes transmitir código Morse. Por ejemplo, para enviar "SOS" (... --- ...), el código Morse para 'S' consiste en tres puntos, y 'O' en tres rayas, por lo que simplemente llamas a las funciones de punto y raya tres veces respectivamente.
 
 .. code-block:: Arduino
     :emphasize-lines: 2-11
@@ -225,18 +225,18 @@ Code Creation
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // Repite después de un período
     }
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3, after which you will hear the Morse code for "SOS" (... --- ...).
+9. Aquí está tu código completo. Ahora puedes hacer clic en "Subir" para cargar el código en el Arduino Uno R3, y luego escucharás el código Morse para "SOS" (... --- ...).
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;   // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;   // Asigna el pin 9 a la constante para el zumbador
     
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set pin 9 as output
+        // Configura el pin 9 como salida:
+        pinMode(buzzerPin, OUTPUT);  
     }
 
     void loop() {
@@ -249,33 +249,32 @@ Code Creation
         dot();
         dot();
         dot();       // S: ...
-        delay(750);  // Repeat after a period
+        delay(750);  // Repite después de un período
     }
 
     void dot() {
         digitalWrite(buzzerPin, HIGH);
-        delay(250);  // Short duration for a dot
+        delay(250);  // Duración corta para un punto
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Intervalo entre señales
     }
 
     void dash() {
         digitalWrite(buzzerPin, HIGH);
-        delay(750);  // Longer duration for a dash
+        delay(750);  // Duración más larga para una raya
         digitalWrite(buzzerPin, LOW);
-        delay(250);  // Interval between signals
+        delay(250);  // Intervalo entre señales
     }
 
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. Finalmente, recuerda guardar tu código y ordenar tu área de trabajo.
 
 
-**Summary**
+**Resumen**
 
-In this lesson, you've explored the basics of Morse code, a unique form of communication developed in the 1840s by Samuel Morse. You learned how to use an active buzzer to send the Morse code for SOS, a universally recognized distress signal. This lesson not only taught you how to set up and code an active buzzer but also gave you a glimpse into the historical significance of Morse code in telecommunications. With these skills, you can now send secret Morse code messages to friends or further explore its applications in modern devices.
+En esta lección, has explorado los fundamentos del código Morse, una forma única de comunicación desarrollada en la década de 1840 por Samuel Morse. Aprendiste cómo utilizar un zumbador activo para enviar el código Morse para SOS, una señal de socorro reconocida internacionalmente. Esta lección no solo te enseñó cómo configurar y programar un zumbador activo, sino que también te dio una visión de la importancia histórica del código Morse en las telecomunicaciones. Con estas habilidades, ahora puedes enviar mensajes secretos en código Morse a amigos o explorar más aplicaciones en dispositivos modernos.
 
-In this lesson, we only used the Morse codes for the letters "S" and "O." Here is the chart of the Morse code 26 letters and 10 numerals.
-
+En esta lección, solo utilizamos los códigos Morse para las letras "S" y "O". Aquí tienes la tabla del código Morse con las 26 letras y los 10 números.
 
 .. list-table::
     :widths: 8 8 8 8 8 8 8 8
@@ -322,7 +321,7 @@ In this lesson, we only used the Morse codes for the letters "S" and "O." Here i
       - P
       - \.-\-.
     * - Q
-      - \-\-.-
+      - \-\-.- 
       - R
       - \.-.
       - S
@@ -359,13 +358,11 @@ In this lesson, we only used the Morse codes for the letters "S" and "O." Here i
       - \-\-\-..
       - 9
       - \-\-\-\-.
-      -
-      -
-  
+      - 
+      - 
 
 
-**Question**
+**Pregunta**
 
-Using the Morse code table provided, write a code to send the message "Hello".
-
+Usando la tabla de código Morse proporcionada, escribe un código para enviar el mensaje "Hello".
 

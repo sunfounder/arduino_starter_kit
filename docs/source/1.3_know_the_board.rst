@@ -1,116 +1,116 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete más en el mundo de Raspberry Pi, Arduino y ESP32 con otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-1.3 Getting to Know Your Arduino Board
+1.3 Conociendo tu Placa Arduino
 ========================================
 
-Welcome to your next step in the Arduino journey! In your hands is an Arduino board, a tool that will help you turn your clever ideas into real projects. Although this board may look a little different from others, it functions just the same. The Arduino community loves to share, which means this board was made following open-source blueprints available to everyone.
+¡Bienvenido a tu siguiente paso en el viaje de Arduino! En tus manos tienes una placa Arduino, una herramienta que te ayudará a convertir tus ingeniosas ideas en proyectos reales. Aunque esta placa puede parecer un poco diferente de otras, funciona exactamente igual. A la comunidad de Arduino le encanta compartir, lo que significa que esta placa fue creada siguiendo planos de código abierto disponibles para todos.
 
-Think of the amazing projects you can create—whether it's a mini robot, a custom-made game, or a smart device for your room. Arduino is all about making those ideas possible. It's a compact platform filled with big possibilities. Let's get to know the board and all its parts so you can start creating.
+Imagina los increíbles proyectos que puedes crear, ya sea un mini robot, un juego personalizado o un dispositivo inteligente para tu habitación. Arduino se trata de hacer realidad esas ideas. Es una plataforma compacta con grandes posibilidades. Vamos a conocer la placa y todas sus partes para que puedas comenzar a crear.
 
 .. image:: img/1_introduce_board.png
     :width: 800
     :align: center
 
-The Core: Microcontroller
+El Núcleo: Microcontrolador
 -------------------------------
 
-The microcontroller is the main chip on your Arduino. Think of it as the board's brain where all the thinking happens. It processes your commands and controls the pins, which interact with lights, motors, and sensors.
+El microcontrolador es el chip principal de tu Arduino. Piensa en él como el cerebro de la placa, donde ocurre todo el procesamiento. Ejecuta tus comandos y controla los pines, que interactúan con luces, motores y sensores.
 
 .. image:: img/1_uno_mcu.png
     :width: 500
     :align: center
 
-Pins: Connecting and Controlling
+Pines: Conectando y Controlando
 -------------------------------------
 
-**Power Pins**
+**Pines de Alimentación**
 
-These pins supply power to your creations. They have labels like "3.3V," "5V," and "GND," each providing different power levels for your projects. The "Reset" pin acts like a restart button, resetting everything back to the beginning.
+Estos pines suministran energía a tus creaciones. Tienen etiquetas como "3.3V", "5V" y "GND", cada uno proporcionando diferentes niveles de energía para tus proyectos. El pin "Reset" actúa como un botón de reinicio, volviendo todo al inicio.
 
 .. image:: img/1_uno_power_pin.png
     :width: 500
     :align: center
 
-**Digital Pins**
+**Pines Digitales**
 
-Digital pins act like little switches that can be turned on and off. You'll use them to control things like LEDs or to read button presses. Some of them can even control how much power they send, which is useful for dimming lights or controlling motor speeds.
+Los pines digitales funcionan como pequeños interruptores que pueden encenderse y apagarse. Los utilizarás para controlar cosas como LEDs o para leer pulsaciones de botones. Algunos de ellos incluso pueden controlar cuánta energía envían, lo cual es útil para atenuar luces o controlar la velocidad de motores.
 
 .. image:: img/1_uno_digital_pin.png
     :width: 500
     :align: center
 
-**Analog Pins**
+**Pines Analógicos**
 
-These pins can read different levels of power, which means they're great for reading from sensors. They can measure how bright a light is, how warm something is, or how much pressure you're applying.
+Estos pines pueden leer diferentes niveles de energía, lo que significa que son excelentes para leer desde sensores. Pueden medir cuánta luz hay, qué tan cálido está algo o cuánta presión estás aplicando.
 
 .. image:: img/1_uno_analog_pin.png
     :width: 500
     :align: center
 
-**ICSP Header**
+**Encabezado ICSP**
 
-This set of pins is a bit like a secret passage for programming your Arduino in a special way. It's not commonly used, but it's there if you need it.
+Este conjunto de pines es como un pasaje secreto para programar tu Arduino de una manera especial. No se utiliza comúnmente, pero está ahí si lo necesitas.
 
 .. image:: img/1_uno_icsp_header.png
     :width: 500
     :align: center
 
-Ports: Connecting Your Board
+Puertos: Conectando tu Placa
 --------------------------------
 
-**USB Connection**
+**Conexión USB**
 
-This port connects your Arduino to your computer, allowing you to upload programs and let your board know what you want it to do.
+Este puerto conecta tu Arduino a tu computadora, permitiéndote cargar programas y decirle a tu placa lo que quieres que haga.
 
 .. image:: img/1_uno_usb_port.png
     :width: 500
     :align: center
 
-**Power Jack**
+**Conector de Alimentación**
 
-This is where you can plug in an external power source, like a battery, to make your Arduino work without a computer.
+Aquí puedes conectar una fuente de alimentación externa, como una batería, para hacer que tu Arduino funcione sin necesidad de estar conectado a una computadora.
 
 .. image:: img/1_uno_power_jack.png
     :width: 500
     :align: center
 
-Other Key Components
+Otros Componentes Clave
 ----------------------------------
 
-**5-volt Voltage Regulator**
+**Regulador de Voltaje de 5 Voltios**
 
-This part makes sure your Arduino gets just the right amount of power, keeping everything running smoothly.
+Esta parte se asegura de que tu Arduino reciba la cantidad adecuada de energía, manteniendo todo funcionando sin problemas.
 
 .. image:: img/1_uno_voltage_regulator.png
     :width: 500
     :align: center
 
-**Reset Switch**
+**Interruptor de Reinicio**
 
-The reset button lets you start your program over, right from the beginning, with just a push.
+El botón de reinicio te permite comenzar tu programa desde el principio con solo un toque.
 
 .. image:: img/1_uno_reset_switch.png
     :width: 500
     :align: center
 
-**USB Interface Chip**
+**Chip de Interfaz USB**
 
-This is what talks to the USB port, helping your computer and Arduino understand each other.
+Este es el que se comunica con el puerto USB, ayudando a que tu computadora y Arduino se entiendan entre sí.
 
 .. image:: img/1_uno_usb_chip.png
     :width: 500
     :align: center
 
-Understanding these parts will help you get the most out of your Arduino board. So let's get started on this learning adventure together!
+Entender estas partes te ayudará a aprovechar al máximo tu placa Arduino. ¡Así que comencemos juntos esta emocionante aventura de aprendizaje!

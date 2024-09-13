@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook. Adéntrate en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros aficionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por temporadas.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-|link_beginner_lab_kit| with Original Arduino Uno R3
-=================================================
+|link_beginner_lab_kit| con Arduino Uno R3 Original
+==========================================================
 
-Thank You for Choosing the |link_beginner_lab_kit|
+Gracias por elegir el |link_beginner_lab_kit|
 
 * :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
 
@@ -24,28 +24,35 @@ Thank You for Choosing the |link_beginner_lab_kit|
     :align: center
 
 .. note::
-    This document is available in the following languages.
+    Este documento está disponible en los siguientes idiomas.
 
         * |link_jp_tutorials|
         * |link_en_tutorials|
+        * |link_german_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
-Welcome to the |link_beginner_lab_kit|, a comprehensive starter pack designed 
-specifically for newcomers to the world of electronics and programming. 
-This kit includes an array of essential components such as LEDs, resistors, 
-a buzzer, potentiometers, photoresistors, thermistors, push buttons, digital tubes, 
-and an ultrasonic module. One of the standout features of this kit is the inclusion of a multimeter, 
-an invaluable tool that allows you to measure current, voltage, and resistance within your circuits. 
-This addition is particularly useful for deepening your understanding of how each component functions.
+Bienvenido al |link_beginner_lab_kit|, un paquete de inicio completo diseñado 
+específicamente para los principiantes en el mundo de la electrónica y la 
+programación. Este kit incluye una variedad de componentes esenciales como LEDs, 
+resistencias, un zumbador, potenciómetros, fotoresistencias, termistores, botones 
+pulsadores, tubos digitales y un módulo ultrasónico. Uno de los aspectos más destacados 
+de este kit es la inclusión de un multímetro, una herramienta invaluable que te permite 
+medir corriente, voltaje y resistencia en tus circuitos. Esta adición es particularmente 
+útil para profundizar en tu comprensión de cómo funciona cada componente.
 
-The course sequence provided with this kit is structured around the Arduino programming syntax, 
-ensuring a logical and educational progression. 
-This structure allows you to build circuits step-by-step while learning how to write the programs that control them. 
-Throughout the course, you will encounter troubleshooting challenges that enhance your understanding of the material.
+La secuencia de cursos que acompaña a este kit está estructurada en torno a la sintaxis 
+de programación de Arduino, garantizando una progresión lógica y educativa. Esta estructura 
+te permite construir circuitos paso a paso mientras aprendes a escribir los programas que 
+los controlan. A lo largo del curso, te enfrentarás a desafíos de resolución de problemas 
+que mejorarán tu comprensión del material.
 
-For any inquiries or support, please reach out to us at service@sunfounder.com. 
-Dive into your learning journey with the Beginner's Lab Kit and start building, coding, and exploring the exciting world of electronics!
+Para cualquier consulta o soporte, no dudes en contactarnos a service@sunfounder.com. 
+¡Sumérgete en tu viaje de aprendizaje con el Kit de Laboratorio para Principiantes y 
+comienza a construir, programar y explorar el emocionante mundo de la electrónica!
 
 .. toctree::
     :maxdepth: 1
@@ -78,7 +85,6 @@ Dive into your learning journey with the Beginner's Lab Kit and start building, 
     25_show_number
 
 
-**Copyright Notice**
+**Aviso de Copyright**
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study,investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
-
+Todos los contenidos, incluidos pero no limitados a textos, imágenes y código en este manual, son propiedad de la compañía SunFounder. Debes utilizarlos únicamente para estudios personales, investigación, disfrute u otros fines no comerciales o sin ánimo de lucro, bajo las leyes de derechos de autor y regulaciones relacionadas, sin infringir los derechos legales del autor y otros titulares de derechos. Para cualquier individuo u organización que utilice este material con fines comerciales sin permiso, la compañía se reserva el derecho de tomar acciones legales.

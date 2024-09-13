@@ -1,128 +1,121 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
 .. _2_first_circuit:
 
-2. Your First Circuit
+2. Tu Primer Circuito
 =========================
 
-Welcome to the electrifying world of your first circuit, where a simple switch can light up your surroundings, and a single click can bring gadgets to life. This lesson is your gateway to understanding the unseen force of electricity that powers the devices we use every day. Ever curious about how your favorite gadgets operate or what makes lights glow? It's time to embark on a hands-on exploration of circuit building.
+¡Bienvenido al electrizante mundo de tu primer circuito! Aquí, un simple interruptor puede iluminar tu entorno y un solo clic puede dar vida a los dispositivos. Esta lección es tu puerta de entrada para entender la fuerza invisible de la electricidad que alimenta los aparatos que usamos todos los días. ¿Te has preguntado alguna vez cómo funcionan tus gadgets favoritos o qué hace que las luces brillen? Es hora de embarcarte en una exploración práctica de la construcción de circuitos.
 
-As we begin this adventure, we'll explore the origins of electricity and trace the pathways of electrons as they flow through circuits. This lesson serves as a practical introduction to the components of a circuit and how they interact to perform various functions. You'll also play the role of an electrical detective, discovering how to effectively harness and measure this lively force.
+Al comenzar esta aventura, exploraremos los orígenes de la electricidad y seguiremos el camino de los electrones a medida que fluyen a través de los circuitos. Esta lección sirve como una introducción práctica a los componentes de un circuito y cómo interactúan para realizar diversas funciones. También jugarás el papel de un detective eléctrico, descubriendo cómo aprovechar y medir efectivamente esta fuerza activa.
 
-Get ready for some electrifying experiments! Here's what you'll achieve:
+¡Prepárate para algunos experimentos electrizantes! Esto es lo que lograrás:
 
-* Use a breadboard for easy circuit construction.
-* Read resistor color codes to manage electrical flow.
-* Understand how LEDs control the direction of current.
-* Learn about voltage from Arduino Uno R3.
-* Discover how electrons flow through a circuit.
-* Recognize different types of circuits and their functions.
+* Usar una protoboard para una construcción fácil de circuitos.
+* Leer los códigos de colores de las resistencias para manejar el flujo eléctrico.
+* Comprender cómo los LEDs controlan la dirección de la corriente.
+* Aprender sobre el voltaje del Arduino Uno R3.
+* Descubrir cómo los electrones fluyen a través de un circuito.
+* Reconocer los diferentes tipos de circuitos y sus funciones.
 
-Are you ready to dive into your first circuit-building experience? Let's get charged up and begin this enlightening journey!
+¿Estás listo para sumergirte en tu primera experiencia de construcción de circuitos? ¡Vamos a cargarnos de energía y comenzar este viaje iluminador!
 
 
-Components Needed
-----------------------
+Componentes Necesarios
+-------------------------
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Red LED
-     - 1 * 220Ω Resistor
-     - Jumper Wires
+     - 1 * LED rojo
+     - 1 * Resistencia de 220Ω
+     - Cables de conexión
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_wire| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     -
-     -   
-   * - |list_usb_cable| 
-     - |list_breadboard| 
-     -
+   * - 1 * Cable USB
+     - 1 * Protoboard
+     - 
      - 
 
 
-Breadboard
+
+
+Protoboard
 -------------
 
-1. Locate your breadboard. 
+1. Localiza tu protoboard.
 
-The breadboard you'll be using is called a solderless breadboard. Each hole on the breadboard contains a metal connector that grips the wire when inserted. This helps to prevent the wire from being pulled out, ensuring a secure connection in your circuit.
+La protoboard que estarás utilizando se llama protoboard sin soldadura. Cada agujero en la protoboard contiene un conector metálico que sujeta el cable cuando se inserta. Esto ayuda a evitar que el cable se salga, garantizando una conexión segura en tu circuito.
 
 .. image:: img/2_breadboard_half.png
     :width: 500
     :align: center
 
-
-Ever wonder why the essential electronic tool in your hand shares a name with the kitchen board used for slicing bread? It's quite a story! Back in the days before the 1970s, electronics were assembled on literal wooden boards, sometimes repurposed kitchen breadboards, by nailing or gluing components onto them and making connections with wires.
+¿Alguna vez te has preguntado por qué esta herramienta esencial de la electrónica comparte un nombre con la tabla de cocina que se usa para cortar pan? ¡Es toda una historia! En los días anteriores a la década de 1970, los circuitos electrónicos se ensamblaban en tablas de madera, a veces tablas de cortar pan reutilizadas, clavando o pegando los componentes y conectándolos con cables.
 
 .. image:: img/2_breadboard_circuit.jpg
     :width: 500
     :align: center
 
-From the 1960s to the 1980s, engineers experimented with wire wrapping for more complex circuits, which was semi-permanent and required specific tools but was eventually deemed too cumbersome and not suited for repeated use.
+Desde la década de 1960 hasta la de 1980, los ingenieros experimentaron con el método de envolver cables para circuitos más complejos, que era semi-permanente y requería herramientas específicas, pero finalmente se consideró demasiado engorroso y no adecuado para uso repetido.
 
 .. image:: img/2_breadboard_wire_wrap.jpg
     :width: 500
     :align: center
 
-Then, in the early 1970s, Ronald J. Portugal revolutionized prototyping with the invention of the "solderless breadboard," making circuit assembly faster, easier, and requiring no soldering. This innovative tool quickly outshined wire wrapping, leading to the breadboards we know today, named for their historical predecessors but designed for the modern maker.
+Luego, a principios de la década de 1970, Ronald J. Portugal revolucionó la creación de prototipos con la invención de la "protoboard sin soldadura", haciendo que el montaje de circuitos fuera más rápido, fácil y sin necesidad de soldar. Esta innovadora herramienta superó rápidamente al método de envolver cables, dando lugar a las protoboards que conocemos hoy, nombradas por sus predecesoras históricas pero diseñadas para el creador moderno.
 
 .. image:: img/2_breadboard_half.png
     :width: 500
     :align: center
 
-
-Ever curious about what lies beneath the surface of a breadboard? Hidden behind its plastic facade and a layer of sticky foam, covered by yellow protective paper, lies the heart of the breadboard's functionality: dozens of metal strips.
+¿Tienes curiosidad por saber qué se esconde debajo de la superficie de una protoboard? Detrás de su fachada de plástico y una capa de espuma adhesiva, cubierta por un papel protector amarillo, se encuentra el corazón de la funcionalidad de la protoboard: decenas de tiras metálicas.
 
 .. note::
-    It's best not to peel away this protective layer. We've done it here just to show you what's inside.
+    Es mejor no despegar esta capa protectora. Lo hemos hecho aquí solo para mostrarte qué hay dentro.
 
 .. image:: img/2_breadboard_internal0.jpg
     :width: 500
     :align: center
 
-If you were to (though we strongly advise against it) pull out these metal parts with pliers, you'd discover that each piece is a metal clip with small teeth. Each strip features five teeth, correlating with the five holes on the breadboard's surface for each row. The power rails have longer strips with fifty teeth.
+Si tiraras (aunque te aconsejamos encarecidamente que no lo hagas) de estas partes metálicas con unos alicates, descubrirías que cada pieza es un clip metálico con pequeños dientes. Cada tira tiene cinco dientes, que corresponden a los cinco agujeros en la superficie de la protoboard en cada fila. Los rieles de alimentación tienen tiras más largas con cincuenta dientes.
 
 .. image:: img/2_breadboard_internal1.jpg
     :width: 500
     :align: center
 
-These tiny teeth are perfect for gripping onto the legs of electronic components. When a component is inserted into the breadboard, the clip opens slightly to snugly grasp the metal leg. Any other component inserted into the same row of teeth will be electrically connected.
+Estos pequeños dientes son perfectos para sujetar las patas de los componentes electrónicos. Cuando se inserta un componente en la protoboard, el clip se abre ligeramente para sujetar firmemente la pata metálica. Cualquier otro componente insertado en la misma fila de dientes estará conectado eléctricamente.
 
 .. image:: img/2_breadboard_internal2.jpg
     :width: 500
     :align: center
 
-This clever design allows for easy and flexible prototyping without the need for soldering, making breadboards an essential tool for electronics enthusiasts and professionals alike.
+Este ingenioso diseño permite una creación de prototipos fácil y flexible sin la necesidad de soldar, lo que convierte a las protoboards en una herramienta esencial tanto para entusiastas como para profesionales de la electrónica.
 
-
-Most breadboards have some numbers, letters and plus and minus signs on them. Although the labels will vary from breadboard to breadboard, the function is basically the same. These labels allow you to find the corresponding holes more quickly when building your circuit. The row numbers and column letters help you to precisely locate the holes on the breadboard, for example, hole "C15" is where column C intersects row 15.
-
+La mayoría de las protoboards tienen algunos números, letras y signos de más y menos. Aunque las etiquetas varían de una protoboard a otra, la función es básicamente la misma. Estas etiquetas te permiten encontrar los agujeros correspondientes más rápidamente al construir tu circuito. Los números de fila y las letras de columna te ayudan a ubicar con precisión los agujeros en la protoboard. Por ejemplo, el agujero "C15" es donde la columna C se cruza con la fila 15.
 
 .. image:: img/2_breadboard_letter_number.jpg
     :width: 500
     :align: center
 
 
-The sides of the breadboard are usually distinguished by red and blue (or other colors), as well as plus and minus signs, and are usually used to connect to the power supply, known as the power bus.
-When building a circuit, it is common to connect the negative terminal to the blue (-) column and the positive terminal to the red (+) column.
+Los laterales de la protoboard suelen estar distinguidos por colores rojo y azul (u otros colores), así como por los signos de más y menos, y generalmente se utilizan para conectar la fuente de alimentación, conocida como el bus de alimentación. Al construir un circuito, es común conectar el terminal negativo a la columna azul (-) y el terminal positivo a la columna roja (+).
 
 .. image:: img/2_breadboard_plus_minus.jpg
     :width: 500
@@ -130,195 +123,185 @@ When building a circuit, it is common to connect the negative terminal to the bl
 
 
 
-Resistor
+Resistencia
 ---------------------
 
-2. Locate a 220-ohm resistor.
+2. Localiza una resistencia de 220 ohmios.
 
 .. image:: img/2_220_resistor.png
     :align: center
 
-Resistors help manage the flow of electricity in a circuit by converting electrical energy into heat. Each resistor has two wires, one on each end, allowing electricity to pass in either direction, which means they can be placed in any direction on the circuit.
+Las resistencias ayudan a gestionar el flujo de electricidad en un circuito convirtiendo la energía eléctrica en calor. Cada resistencia tiene dos alambres, uno en cada extremo, lo que permite que la electricidad pase en cualquier dirección. Esto significa que se pueden colocar en cualquier sentido dentro del circuito.
 
-A resistor's ohm value tells us the amount of resistance it adds. A higher ohm value means more resistance. For instance, a 220-ohm resistor adds 220 ohms of resistance, and a 10 kiloohm resistor adds 10 kilo ohms.
+El valor en ohmios de una resistencia nos indica la cantidad de resistencia que añade. Un valor más alto de ohmios significa más resistencia. Por ejemplo, una resistencia de 220 ohmios añade 220 ohmios de resistencia, y una resistencia de 10 kiloohmios añade 10 kiloohmios.
 
-To read a resistor's value, check the color bands. This chart explains the meaning behind each color band on a resistor. The multiplier is represented in scientific notation, where the exponent indicates the number of zeros added to the number represented by the color bands. For instance, a 4-band resistor shown at the top of the chart starts with a green band. Green stands for the number 5, so the resistance value begins with 5. The second band is brown, so the next number is 1. The multiplier band is red, valued at 2, meaning we add two zeros. This results in a total resistance of 5100 ohms, or 5.1 kilohms (5.1kΩ).
+Para leer el valor de una resistencia, debes observar las bandas de colores. Este gráfico explica el significado de cada banda de color en una resistencia. El multiplicador está representado en notación científica, donde el exponente indica el número de ceros que se añaden al número representado por las bandas de colores. Por ejemplo, una resistencia de 4 bandas que se muestra en la parte superior del gráfico comienza con una banda verde. El verde representa el número 5, por lo que el valor de la resistencia comienza con 5. La segunda banda es marrón, por lo que el siguiente número es 1. La banda multiplicadora es roja, valorada en 2, lo que significa que añadimos dos ceros. Esto da un valor total de resistencia de 5100 ohmios, o 5.1 kiloohmios (5.1kΩ).
 
 .. image:: img/2_resistor_card.png
 
-
-The chart shown here represents all the resistors included in your kit. For this lesson, we'll be using a 220-ohm resistor.
+El gráfico mostrado aquí representa todas las resistencias incluidas en tu kit. Para esta lección, utilizaremos una resistencia de 220 ohmios.
 
 .. image:: img/2_all_resistor.png
     :width: 500
     :align: center
 
-3. Bend the leads of the resistor so they face the same direction.
+3. Dobla las patas de la resistencia para que apunten en la misma dirección.
 
 .. image:: img/2_220_resistor_pin.png
     :width: 200
     :align: center
 
-4. Insert one lead into the top hole of the breadboard's negative side, connecting the resistor to the power source. Insert the other lead of the 220 ohm resistor into hole 1b of the breadboard.
+4. Inserta una pata en el agujero superior del lado negativo de la protoboard, conectando la resistencia a la fuente de alimentación. Inserta la otra pata de la resistencia de 220 ohmios en el agujero 1b de la protoboard.
 
-    .. note::
-        
-        Resistors are considered non-polarized components, meaning the direction they face in a circuit doesn't matter.
-
+    .. note:: 
+        Las resistencias se consideran componentes no polarizados, lo que significa que la dirección en que se colocan en un circuito no afecta su funcionamiento.
 
 .. image:: img/2_connect_resistor.png
     :width: 300
     :align: center
 
-
 LED
 -----------------
 
-5. Find the red LED.
+5. Encuentra el LED rojo.
 
 .. image:: img/2_red_led.png
     :align: center
 
-
-LEDs, or Light Emitting Diodes, are specialized electronic components that emit light when an electric current flows through them in a specific direction.
+Los LED, o diodos emisores de luz, son componentes electrónicos especializados que emiten luz cuando una corriente eléctrica fluye a través de ellos en una dirección específica.
 
 .. image:: img/2_led_polarity.jpg
     :width: 200
     :align: center
 
-The most common LED colors are red, yellow, blue, green, and white, with the emitted light typically matching the color of the LED itself.
+Los colores más comunes de los LED son rojo, amarillo, azul, verde y blanco, y la luz emitida normalmente coincide con el color del propio LED.
 
 .. image:: img/2_led_color.png
     :width: 600
     :align: center
 
-These devices are designed with two leads: a longer one known as the anode and a shorter one called the cathode. To function properly, the anode should be connected to the positive terminal of the power source, and the cathode should be connected to the negative terminal or ground. Some LEDs feature a flat edge on the side of the cathode to aid in correct placement. 
+Estos dispositivos están diseñados con dos patas: una más larga llamada ánodo y otra más corta llamada cátodo. Para que funcionen correctamente, el ánodo debe conectarse al terminal positivo de la fuente de alimentación, y el cátodo debe conectarse al terminal negativo o tierra. Algunos LEDs tienen un borde plano en el lado del cátodo para facilitar su correcta colocación.
 
 .. image:: img/2_led_pin.jpg
     :width: 100
     :align: center
 
-
-6. Insert the cathode of the LED (the short lead) into hole 1e on the breadboard. This connects the LED to the 220Ω resistor. Remember, holes 1b and 1e are connected underneath the breadboard.
+6. Inserta el cátodo del LED (la pata corta) en el agujero 1e de la protoboard. Esto conecta el LED a la resistencia de 220Ω. Recuerda, los agujeros 1b y 1e están conectados por debajo de la protoboard.
 
 .. note::
 
-    LEDs are considered to be polarized components, meaning that current can only flow through them in one direction. If you find that the LED does not light up, try swapping the connections.
+    Los LEDs son componentes polarizados, lo que significa que la corriente solo puede fluir a través de ellos en una dirección. Si ves que el LED no se enciende, intenta intercambiar las conexiones.
 
 .. image:: img/2_connect_led.png
     :width: 300
     :align: center
 
-Jumper Wire
+Cable Jumper
 ----------------------
 
-7. Find a jumper wire.
+7. Encuentra un cable jumper.
 
-
-Your kit includes jumper wires of different colors and lengths, all functioning the same. Use varying colors for easy circuit identification and shorter wires for a tidy setup. Each wire consists of a conductive core and an insulated coating to prevent unintended contacts.
+Tu kit incluye cables jumper de diferentes colores y longitudes, todos con la misma función. Utiliza colores variados para facilitar la identificación del circuito y cables más cortos para una configuración ordenada. Cada cable consta de un núcleo conductor y una cubierta aislante para evitar contactos no deseados.
 
 .. image:: img/2_wire_color.jpg
     :width: 500
     :align: center
 
-8. Insert one end of the jumper wire into hole 1j on the breadboard. This connects the jumper wire to the LED, as holes 1f and 1j are linked underneath the breadboard. Insert the other end of the jumper wire into the top hole of the breadboard's positive rail. Now, the jumper wire connects the LED and the ground wire together.
+8. Inserta un extremo del cable jumper en el agujero 1j de la protoboard. Esto conecta el cable jumper al LED, ya que los agujeros 1f y 1j están conectados por debajo de la protoboard. Inserta el otro extremo del cable jumper en el agujero superior del riel positivo de la protoboard. Ahora, el cable jumper conecta el LED y el cable de tierra.
 
 .. image:: img/2_connect_wire.png
     :width: 300
     :align: center
 
 Arduino Uno R3
---------------
+-----------------
 
-9. Find your Arduino Uno R3.
+9. Encuentra tu Arduino Uno R3.
 
 .. image:: img/1_uno_board.png
     :width: 400
     :align: center
 
-In this lesson, we're using the Arduino Uno R3 as a power supply. Its 5V pin serves as the positive terminal and the GND pin as the negative terminal, supplying a steady 5V to the circuit.
+En esta lección, estamos utilizando el Arduino Uno R3 como fuente de alimentación. Su pin de 5V actúa como el terminal positivo y el pin GND como el terminal negativo, proporcionando un suministro constante de 5V al circuito.
 
 .. image:: img/1_uno_power_pin.png
     :width: 500
     :align: center
 
-However, connecting the power supply's terminals directly without a load can cause a short circuit, generating heat and potentially causing damage or fire. Always include a load, like an LED or resistor, to prevent short circuits.
+Sin embargo, conectar directamente los terminales de la fuente de alimentación sin una carga puede causar un cortocircuito, generando calor y potencialmente causando daños o incluso un incendio. Siempre incluye una carga, como un LED o una resistencia, para evitar cortocircuitos.
 
 .. image:: img/2_short_circuit.png
     :width: 500
     :align: center
 
-10. Connect a wire from the positive rail on the right side of the breadboard to the 5V pin on the Arduino Uno R3. It is recommended to use a red or orange wire to represent the positive terminal, which can be particularly helpful for quickly identifying connections in complex projects.
+10. Conecta un cable desde el riel positivo en el lado derecho de la protoboard hasta el pin de 5V del Arduino Uno R3. Se recomienda usar un cable rojo o naranja para representar el terminal positivo, lo cual puede ser particularmente útil para identificar rápidamente las conexiones en proyectos más complejos.
 
 .. image:: img/2_uno_5v.png
     :width: 600
     :align: center
 
-11. Finally, connect a wire from the negative rail on the left side of the breadboard to the GND pin on the Arduino Uno R3. A black or green wire is suggested for consistency, using the same color to represent the negative terminal across all circuits.
-
+11. Finalmente, conecta un cable desde el riel negativo en el lado izquierdo de la protoboard hasta el pin GND del Arduino Uno R3. Se sugiere usar un cable negro o verde para mantener la consistencia, utilizando el mismo color para representar el terminal negativo en todos los circuitos.
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
-12. Finally, power the Arduino Uno R3 by connecting it to a computer or a power socket using the USB cable provided in the kit, and the LED should light up.
+12. Finalmente, alimenta el Arduino Uno R3 conectándolo a una computadora o a una toma de corriente utilizando el cable USB proporcionado en el kit, y el LED debería encenderse.
 
     .. image:: img/2_first_circuit.png
         :width: 600
         :align: center
 
+Después de conectar tu Arduino Uno R3 y ver que el LED se enciende, no solo estás viendo un circuito simple, sino que estás observando los fundamentos de la electricidad en acción. Vamos a profundizar en lo que hace que tu circuito cobre vida.
 
-After connecting your Arduino Uno R3 and witnessing the LED light up, you're not just looking at a simple circuit — you're observing the fundamentals of electricity at work. Let's delve into what makes your circuit come to life.
+Comprendiendo la Electricidad en los Circuitos
+-----------------------------------------------------
 
+**Conceptos Básicos de la Electricidad**
 
-Understanding Electricity in Circuits
-----------------------------------------
-
-**Electricity Essentials**
-
-The flow of electrons from the negative to the positive is what we understand as the actual electron flow. Initially, scientists like Ben Franklin believed that the current was a movement of positive charges, which is why conventional current is defined as flowing from positive to negative.
+El flujo de electrones desde el terminal negativo al positivo es lo que entendemos como el flujo real de electrones. Inicialmente, científicos como Ben Franklin creían que la corriente era un movimiento de cargas positivas, por lo que la corriente convencional se define como fluyendo de positivo a negativo.
 
 .. image:: img/2_uno_current.png
     :width: 600
     :align: center
 
-However, in reality, electrons, which carry a negative charge, move from the negative terminal to the positive terminal. Most countries today still use the conventional current flow model. Thus, in diagrams and when designing electronic components, current is depicted as flowing from the positive to the negative terminal, even though electrons actually flow in the opposite direction.
+Sin embargo, en realidad, los electrones, que llevan una carga negativa, se mueven desde el terminal negativo hacia el terminal positivo. La mayoría de los países hoy en día aún utilizan el modelo de flujo de corriente convencional. Por lo tanto, en los diagramas y al diseñar componentes electrónicos, se representa la corriente fluyendo del terminal positivo al negativo, aunque los electrones realmente fluyen en la dirección opuesta.
 
 .. image:: img/2_uno_electron.png
     :width: 600
     :align: center
 
-* **A** Traditional current direction
-* **B** Actual electron flow direction
-* **C** Electrons (not to scale)
-* **D** Wire
+* **A** Dirección de la corriente tradicional
+* **B** Dirección real del flujo de electrones
+* **C** Electrones (no a escala)
+* **D** Cable
 
-There are two types of current generated by a power source: alternating current (AC) and direct current (DC). A battery or a Microcontroller like Arduino Uno R3 provides DC, where the current flows in one direction—from the positive to the negative terminal.
+Hay dos tipos de corriente generada por una fuente de alimentación: corriente alterna (CA) y corriente continua (CC). Una batería o un microcontrolador como el Arduino Uno R3 proporciona CC, donde la corriente fluye en una sola dirección, del terminal positivo al terminal negativo.
 
-With AC, however, the current changes direction periodically. The voltage in the circuit reverses as the current changes direction, compelling it to flow the other way. Most homes and buildings are powered by AC circuits, such as the 120 volts at 60 Hz from wall outlets in American homes or 220 volts at 50 Hz in many European homes.
+Con la CA, sin embargo, la corriente cambia de dirección periódicamente. El voltaje en el circuito se invierte a medida que la corriente cambia de dirección, obligándola a fluir en sentido contrario. La mayoría de las casas y edificios están alimentados por circuitos de CA, como los 120 voltios a 60 Hz en los hogares estadounidenses o los 220 voltios a 50 Hz en muchos hogares europeos.
 
-**Safety in Circuitry**
+**Seguridad en Circuitos**
 
-When connecting a power source, a prudent approach is to attach the positive end to the circuit first, followed by the negative. Conversely, when disconnecting, you should remove the negative end first to prevent short circuits. This course utilizes low voltage and current, so there's no risk of electric shock or injury. But good safety practices can prevent harm when working with higher voltages and currents, like replacing car batteries or repairing outlets.
+Cuando conectes una fuente de alimentación, es prudente conectar primero el extremo positivo al circuito, seguido del negativo. Por el contrario, al desconectar, debes quitar primero el extremo negativo para evitar cortocircuitos. Este curso utiliza voltajes y corrientes bajos, por lo que no hay riesgo de descarga eléctrica o lesiones. Pero unas buenas prácticas de seguridad pueden prevenir daños cuando trabajes con voltajes y corrientes más altos, como al reemplazar baterías de automóviles o reparar enchufes.
 
-**Closed and Open Circuits**
+**Circuitos Cerrados y Abiertos**
 
-As electricity flows through the LED, resistor, jumper wires, and back into the breadboard's negative rail, it forms what is known as a closed circuit. If you were to remove a wire from the breadboard, the LED would go out because the current has stopped — the circuit is now open.
+A medida que la electricidad fluye a través del LED, la resistencia, los cables jumper y regresa al riel negativo de la protoboard, forma lo que se conoce como un circuito cerrado. Si quitas un cable de la protoboard, el LED se apagará porque la corriente se ha detenido, el circuito ahora está abierto.
 
 .. image:: img/2_open_circuit.png
     :width: 600
     :align: center
 
-By mastering these basics, you're on your way to understanding and creating more complex electronics that power our world.
+Al dominar estos conceptos básicos, estarás en camino de comprender y crear dispositivos electrónicos más complejos que impulsan nuestro mundo.
 
 
-**Questions:**
+**Preguntas:**
 
-1. Remove the red wire from the breadboard and experiment by placing it in different holes on the breadboard. Observe any changes in the LED. Sketch the hole positions that allow the LED to light up.
+1. Retira el cable rojo de la protoboard y experimenta colocándolo en diferentes agujeros de la protoboard. Observa los cambios en el LED. Haz un esquema de las posiciones de los agujeros que permiten que el LED se encienda.
 
 .. image:: img/2_uno_gnd.png
     :width: 600
     :align: center
 
+2. ¿Qué ocurre si inviertes las patillas del LED? ¿Se encenderá? ¿Por qué sí o por qué no?
 
-2. What happens if you reverse the pins of the LED? Will it light up? Why or why not?

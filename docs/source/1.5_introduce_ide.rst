@@ -1,48 +1,47 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
-1.5 Discovering the Arduino Playground (IDE)
+1.5 Descubriendo el Entorno de Arduino (IDE)
 ==============================================
 
-Introduce the Arduino IDE
----------------------------
+Introducción al Arduino IDE
+-----------------------------
 
-Welcome to the Arduino IDE, your special tool for creating cool electronics projects. This program is where you write the instructions, also known as code, that tells your Arduino what to do.
+¡Bienvenido al Arduino IDE, tu herramienta especial para crear proyectos electrónicos geniales! Este programa es donde escribirás las instrucciones, también conocidas como código, que le dirán a tu Arduino qué hacer.
 
 .. image:: img/1_ide_introduce.png
     :align: center
     :width: 800
 
-Here are some of the things you can do with the Arduino IDE:
+Aquí tienes algunas de las cosas que puedes hacer con el Arduino IDE:
 
+* **Verificar / Subir**: Estas opciones verifican tu código y lo envían a la placa Arduino.
+* **Seleccionar Placa y Puerto**: Esto ayuda a tu computadora a encontrar la placa Arduino. Muestra dónde está conectada tu placa para que el código vaya al lugar correcto.
+* **Sketchbook**: Un lugar donde se almacenan todos tus códigos y proyectos anteriores.
+* **Gestor de Placas**: Agrega nuevas placas Arduino para codificación.
+* **Gestor de Bibliotecas**: Ofrece código adicional para más funciones en tus proyectos.
+* **Depurador**: Ayuda a corregir problemas en el código.
+* **Buscar**: Localiza rápidamente segmentos específicos del código.
+* **Monitor Serie**: Abre el monitor serie para comunicarte con la placa Arduino.
+* **Trazador Serie**: Crea gráficos a partir de datos, como los niveles de luz.
 
-* **Verify / Upload**: These check your code and send it to the Arduino board.
-* **Select Board & Port**: This helps your computer find your Arduino board. It shows where your board is connected so your code goes to the right place.
-* **Sketchbook**: A place to find all your previous codes and projects.
-* **Boards Manager**: Adds new Arduino boards for coding.
-* **Library Manager**: Offers additional code for more functions in your projects.
-* **Debugger:** Assists in fixing code issues.
-* **Search**: Quickly locate specific code segments.
-* **Serial Monitor**: Opens the serial monitor for communicating with the Arduino board.
-* **Serial Plotter**: Creates graphs from data, like light levels.
+Para obtener información más detallada sobre estas funciones, consulta |link_docs_ide|.
 
-For more detailed information about these features, please refer to |link_docs_ide|.
+Configuración Básica
+-----------------------
 
-Basic Settings
-----------------
-
-Next, let's peek into the Arduino IDE's basic settings. In the menu bar at the top, click on **File**, then find and click on **Preferences**.
+A continuación, echemos un vistazo a las configuraciones básicas del Arduino IDE. En la barra de menú en la parte superior, haz clic en **Archivo** y luego en **Preferencias**.
 
 .. image:: img/1_ide_preferences.png
     :align: center
@@ -51,7 +50,7 @@ Next, let's peek into the Arduino IDE's basic settings. In the menu bar at the t
 
     <br>
 
-First up, you'll see the default location for storing your projects, known as sketches. These sketches live in a place called the sketchbook. You can choose to keep the default location or pick a spot that works best for you.
+Primero, verás la ubicación predeterminada para almacenar tus proyectos, conocidos como sketches. Estos sketches se guardan en un lugar llamado el sketchbook. Puedes optar por mantener la ubicación predeterminada o elegir una que funcione mejor para ti.
 
 .. image:: img/1_ide_setting.png
     :align: center
@@ -60,11 +59,13 @@ First up, you'll see the default location for storing your projects, known as sk
 
     <br>
 
-Then, feel free to tweak the Arduino IDE to your liking:
+Luego, ajusta el Arduino IDE a tu gusto:
 
-* Adjust **font sizes**, **interface scale**, **themes**, and even the **language** displayed.
-* In **Show verbose output during**, check **compile** or **upload** to get detailed feedback on errors during these processes.
 
-Customize the Arduino IDE to make it as comfortable as possible for you. Once you're happy with your settings, click **OK** to save them.
+* Ajusta el **tamaño de fuente**, la **escala de la interfaz**, los **temas**, e incluso el **idioma** que se muestra.
+* En **Mostrar salida detallada durante**, selecciona **compilación** o **subida** para obtener retroalimentación detallada sobre los errores durante estos procesos.
 
-Congratulations! You've successfully installed and configured the Arduino IDE. You've taken an important first step into the world of Arduino programming.
+Personaliza el Arduino IDE para que te resulte lo más cómodo posible. Una vez que estés satisfecho con tus configuraciones, haz clic en **OK** para guardarlas.
+
+¡Felicidades! Has instalado y configurado correctamente el Arduino IDE. Has dado un primer paso importante en el mundo de la programación con Arduino.
+

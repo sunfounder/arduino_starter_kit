@@ -1,35 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook. Sumérgete más en Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo!
 
-18. Light Alarm
+18. Alarma de luz
 ========================
 
 .. image:: img/18_light_alarm.png
     :width: 600
     :align: center
 
-Imagine a scene straight out of a movie:
-In a dimly lit museum, a cunning thief quietly approaches a priceless painting.
-He moves stealthily, attempting to carry out his theft under the cover of night.
-However, the moment he touches the painting, a series of sophisticated sensors are triggered,
-setting off alarms throughout the gallery, instantly illuminating the surrounding area.
-The thief is quickly apprehended by on-site security personnel, preventing a potential art heist in its tracks.
-This isn't a movie; this is a real-life example of sensor technology at work in modern security systems.
+Imagina una escena sacada directamente de una película: En un museo tenuemente 
+iluminado, un ladrón astuto se acerca sigilosamente a una pintura invaluable. 
+Se mueve en silencio, intentando llevar a cabo su robo bajo la cobertura de la noche. 
+Sin embargo, en el momento en que toca la pintura, una serie de sofisticados 
+sensores se activan, desencadenando alarmas por toda la galería e iluminando 
+instantáneamente el área circundante. El ladrón es rápidamente arrestado por 
+el personal de seguridad en el lugar, evitando un posible robo de arte en el 
+acto. Esto no es una película; es un ejemplo real de cómo la tecnología de 
+sensores trabaja en los sistemas de seguridad modernos.
 
-How is this achieved? This involves placing a photoresistor or a more sophisticated light sensor near the frame of the painting. Any attempt to move the painting or block it alters the light conditions, thus triggering the alarm system.
+¿Cómo se logra esto? Esto implica colocar una fotorresistencia o un sensor de 
+luz más sofisticado cerca del marco de la pintura. Cualquier intento de mover o 
+bloquear la pintura altera las condiciones de luz, activando el sistema de alarma.
 
-Now, let's build a simulated light alarm system using a photoresistor and a buzzer, shall we?
+Ahora, vamos a construir un sistema simulado de alarma de luz utilizando una 
+fotorresistencia y un zumbador, ¿de acuerdo?
 
 .. raw:: html
 
@@ -38,33 +43,33 @@ Now, let's build a simulated light alarm system using a photoresistor and a buzz
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+En esta lección, aprenderás:
 
-* The working principles and characteristics of a photoresistor.
-* How to build a simple light alarm system.
+* Los principios de funcionamiento y características de una fotorresistencia.
+* Cómo construir un simple sistema de alarma de luz.
 
 
-Building the Circuit
------------------------
+Construyendo el circuito
+---------------------------
 
-**Components Needed**
+**Componentes necesarios**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * Photoresistor
-     - 1 * 10KΩ Resistor
-     - 1 * Active Buzzer
+     - 1 * Fotorresistencia
+     - 1 * Resistor de 10KΩ
+     - 1 * Zumbador activo
    * - |list_uno_r3| 
      - |list_photoresistor| 
      - |list_10kohm| 
      - |list_active_buzzer| 
-   * - 1 * USB Cable
-     - 1 * Breadboard
-     - Jumper Wires
-     - 1 * Multimeter
+   * - 1 * Cable USB
+     - 1 * Protoboard
+     - Cables Jumper
+     - 1 * Multímetro
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
@@ -72,249 +77,250 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**Paso a paso para construir**
 
-1. Start with a Photoresistor.
+1. Comienza con una fotorresistencia.
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
-A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity; in other words, it exhibits photoconductivity.
+Una fotorresistencia o célula fotoeléctrica es un resistor variable controlado por la luz. La resistencia de una fotorresistencia disminuye con el aumento de la intensidad de la luz incidente; en otras palabras, exhibe fotoconductividad.
 
-Photoresistors can be used as resistive semiconductors in light-sensitive detector circuits and in light-activated and dark-activated switching circuits. In darkness, the resistance of a photoresistor can be as high as several megaohms (MΩ), while in lighted conditions, it can drop to a few hundred ohms.
+Las fotorresistencias pueden usarse como semiconductores resistivos en circuitos detectores sensibles a la luz y en circuitos de conmutación activados por la luz o la oscuridad. En la oscuridad, la resistencia de una fotorresistencia puede ser tan alta como varios megaohmios (MΩ), mientras que en condiciones de luz puede reducirse a unos pocos cientos de ohmios.
 
-The kit includes a resistor rated at 10K at 25°C. Now, use a multimeter to measure the resistance of the photoresistor under normal light, illuminated, and dark conditions.
+El kit incluye un resistor con una clasificación de 10K a 25°C. Ahora, usa un multímetro para medir la resistencia de la fotorresistencia bajo condiciones normales de luz, iluminada y en oscuridad.
 
-2. Since the rated resistance of the photoresistor is 10K, set the multimeter to measure resistance in the 20 kilo-ohm (20K) range.
+2. Dado que la resistencia nominal de la fotorresistencia es de 10K, configura el multímetro para medir la resistencia en el rango de 20 kiloohmios (20K).
 
 .. image:: img/multimeter_20k.png
     :width: 300
     :align: center
 
-3. Insert the photoresistor into the breadboard at positions 10E and 11E. The pins are non-directional and can be inserted freely.
+3. Inserta la fotorresistencia en el protoboard en las posiciones 10E y 11E. Los pines no tienen dirección, por lo que pueden insertarse libremente.
 
 .. image:: img/17_light_alarm_photoresistor.png
     :width: 500
     :align: center
 
-4. Now, touch the two pins of the photoresistor with the red and black test leads of the multimeter.
+4. Ahora, toca los dos pines de la fotorresistencia con las puntas de prueba roja y negra del multímetro.
 
 .. image:: img/17_light_alarm_test.png
     :width: 500
     :align: center
 
-5. Read the resistance value under the current ambient light and record it in the table below.
+5. Lee el valor de la resistencia bajo la luz ambiental actual y regístralo en la tabla a continuación.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - Entorno
+     - Resistencia (kilohmios)
+   * - Luz normal
      - *5.48*
-   * - Bright Light
-     -
-   * - Darkness
+   * - Luz brillante
+     - 
+   * - Oscuridad
      -
 
-6. Now, have a friend help by shining a flashlight or another light source directly on the photoresistor, record the resistance value, which might be just a few hundred ohms. Therefore, you might need to set the multimeter to 2K, or even to 200 ohms for a more precise reading.
+6. Ahora, pídele a un amigo que te ayude a iluminar directamente la fotorresistencia con una linterna u otra fuente de luz. Registra el valor de la resistencia, que podría ser solo unos pocos cientos de ohmios. Por lo tanto, puede que necesites configurar el multímetro en 2K o incluso en 200 ohmios para obtener una lectura más precisa.
 
 .. note::
 
-    We've set the resistance unit in the table to kilohms. 1 kilohm (kΩ) = 1000 ohms.
+    Hemos establecido la unidad de resistencia en la tabla en kiloohmios. 1 kiloohmio (kΩ) = 1000 ohmios.
 
-    If you chose the 200 ohm range and got a reading of 164.5 ohms, convert it to 0.16 kilohms (rounding recommended to two decimal places), and enter the converted value in the table.
+    Si seleccionaste el rango de 200 ohmios y obtuviste una lectura de 164.5 ohmios, conviértelo a 0.16 kiloohmios (redondeado a dos decimales) e introduce el valor convertido en la tabla.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - Entorno
+     - Resistencia (kilohmios)
+   * - Luz normal
      - *≈5.48*
-   * - Bright Light
+   * - Luz brillante
      - *≈0.16*
-   * - Darkness
+   * - Oscuridad
      - 
 
-7. For dark conditions, the resistance of the photoresistor can reach several megaohms, so we need to set the multimeter to the 2 megaohm position.
+7. En condiciones de oscuridad, la resistencia de la fotorresistencia puede alcanzar varios megaohmios, por lo que necesitamos configurar el multímetro en la posición de 2 megaohmios.
 
 .. image:: img/multimeter_2mΩ.png
     :width: 300
     :align: center
 
-8. Completely cover the photoresistor with a black object, then record the measured resistance in the table.
+8. Cubre completamente la fotorresistencia con un objeto negro y luego registra la resistencia medida en la tabla.
 
 .. note::
-    We have set the resistance unit in the table to kilohms. 1 megohm (MΩ) = 1000 kilohms.
+    Hemos configurado la unidad de resistencia en la tabla en kiloohmios. 1 megaohmio (MΩ) = 1000 kiloohmios.
 
-    If you chose the 2 megaohm range and obtained a reading of 1.954 megohms, convert it to 1954 kilohms, which is the value you should enter.
+    Si seleccionaste el rango de 2 megaohmios y obtuviste una lectura de 1.954 megaohmios, conviértelo a 1954 kiloohmios, que es el valor que debes introducir.
 
-    If the reading is directly higher than 2MΩ, it will display "1.", at which point you can directly enter 2 megohms, or you might consider using a more precise multimeter to measure the exact value.
+    Si la lectura es directamente superior a 2MΩ, mostrará "1.", en cuyo caso puedes ingresar directamente 2 megaohmios, o podrías considerar usar un multímetro más preciso para medir el valor exacto.
 
 .. list-table::
    :widths: 20 20
    :header-rows: 1
 
-   * - Environment
-     - Resistance (kilohm)
-   * - Normal Light
+   * - Entorno
+     - Resistencia (kilohmios)
+   * - Luz normal
      - *≈5.48*
-   * - Bright Light
+   * - Luz brillante
      - *≈0.16*
-   * - Darkness
+   * - Oscuridad
      - *≈1954*
 
-From the measurements, we have confirmed the photoconductive properties of the photoresistor: the stronger the light, the lower the resistance; the dimmer the light, the higher the resistance, which can reach several megaohms.
+A partir de las mediciones, hemos confirmado las propiedades fotoconductivas de la fotorresistencia: cuanto más fuerte es la luz, menor es la resistencia; cuanto más tenue es la luz, mayor es la resistencia, llegando a varios megaohmios.
 
-9. Continue building the circuit. Connect one pin of the photoresistor to the negative terminal of the breadboard and the other pin to the A0 pin on the Arduino Uno R3.
+9. Continúa construyendo el circuito. Conecta un pin de la fotorresistencia al terminal negativo del protoboard y el otro pin al pin A0 del Arduino Uno R3.
 
 .. image:: img/17_light_alarm_a0.png
     :width: 500
     :align: center
 
-10. Insert a 10K resistor in the same row as the photoresistor's connection to A0.
+10. Inserta un resistor de 10K en la misma fila que la conexión de la fotorresistencia al A0.
 
 .. image:: img/17_light_alarm_resistor.png
     :width: 500
     :align: center
 
-In this circuit, the 10K resistor and the photoresistor are connected in series, and the current passing through them is the same. The 10K resistor acts as a protection, and the A0 pin reads the value after the voltage conversion of the photoresistor.
+En este circuito, el resistor de 10K y la fotorresistencia están conectados en serie, y la corriente que pasa a través de ellos es la misma. El resistor de 10K actúa como protección, y el pin A0 lee el valor después de la conversión de voltaje de la fotorresistencia.
 
-When the light is enhanced, the resistance of the photoresistor decreases, then its voltage decreases, so the value from the A0 pin will decrease; if the light is strong enough, the resistance of the photoresistor will be close to 0, and the value of the A0 pin will be close to 0. At this time, the 10K resistor plays a protective role, preventing a short circuit by keeping the 5V and GND from being directly connected.
+Cuando la luz aumenta, la resistencia de la fotorresistencia disminuye, y su voltaje disminuye, por lo que el valor del pin A0 disminuirá; si la luz es lo suficientemente fuerte, la resistencia de la fotorresistencia se acercará a 0, y el valor del pin A0 será cercano a 0. En ese momento, el resistor de 10K desempeña un papel protector, evitando un cortocircuito al evitar que los 5V y GND se conecten directamente.
 
-If you place the photoresistor in a dark situation, the value of the A0 pin will increase. In a dark enough situation, the resistance of the photoresistor will be infinite, and its voltage will be close to 5V (the 10K resistor becomes negligible), and the value of the A0 pin will be close to 1023.
+Si colocas la fotorresistencia en una situación oscura, el valor del pin A0 aumentará. En una situación lo suficientemente oscura, la resistencia de la fotorresistencia será infinita y su voltaje será cercano a 5V (el resistor de 10K se vuelve insignificante), y el valor del pin A0 será cercano a 1023.
 
-11. Connect the other pin of the 10K resistor to the 5V pin on the Arduino Uno R3.
+11. Conecta el otro pin del resistor de 10K al pin de 5V en el Arduino Uno R3.
 
 .. image:: img/17_light_alarm_5v.png
     :width: 500
     :align: center
 
-12. Next, as in the previous lesson, insert the active buzzer into the breadboard, connecting its anode to pin 9 of the R3 and its cathode to the negative terminal of the breadboard.
+12. A continuación, como en la lección anterior, inserta el zumbador activo en el protoboard, conectando su ánodo al pin 9 del R3 y su cátodo al terminal negativo del protoboard.
 
 .. image:: img/17_light_alarm_buzzer.png
     :width: 500
     :align: center
 
-13. Finally, connect the negative terminal of the breadboard to the GND pin on the Arduino Uno R3 with a jumper wire.
-
+13. Finalmente, conecta el terminal negativo del protoboard al pin GND en el Arduino Uno R3 con un cable jumper.
 
 .. image:: img/17_light_alarm.png
     :width: 500
     :align: center
 
-Code Creation
--------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson18_Light_Alarm`` using ``Ctrl + S`` or by clicking “Save”.
+Creación del Código
+---------------------------
+1. Abre el Arduino IDE y comienza un nuevo proyecto seleccionando "Nuevo Sketch" en el menú "Archivo".
+2. Guarda tu sketch como ``Lesson18_Light_Alarm`` usando ``Ctrl + S`` o haciendo clic en "Guardar".
 
-3. Before the ``void setup()``, create constants for the photoresistor and buzzer, as well as a constant threshold value that will trigger the alarm when the photoresistor's reading falls below it.
+3. Antes de la función ``void setup()``, crea constantes para la fotorresistencia y el zumbador, así como un valor de umbral constante que activará la alarma cuando la lectura de la fotorresistencia caiga por debajo de este valor.
 
 .. code-block:: Arduino
     :emphasize-lines: 1,2,3
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // Asigna el pin A0 como constante para la fotorresistencia
+    const int buzzerPin = 9;    // Asigna el pin 9 como constante para el zumbador
+    const int threshold = 300;  // Establece el valor umbral
 
     void setup() {
-        // put your setup code here, to run once:
+        // coloca tu código de configuración aquí, para que se ejecute una vez:
     }
 
-4. Additionally, create a variable to store the value read from the photoresistor.
+4. Además, crea una variable para almacenar el valor leído de la fotorresistencia.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // Asigna el pin A0 como constante para la fotorresistencia
+    const int buzzerPin = 9;    // Asigna el pin 9 como constante para el zumbador
+    const int threshold = 300;  // Establece el valor umbral
 
-    int sensorValue = 0;  // To store the photoresistor reading
+    int sensorValue = 0;  // Para almacenar la lectura de la fotorresistencia
 
     void setup() {
-        // put your setup code here, to run once:
+        // coloca tu código de configuración aquí, para que se ejecute una vez:
     }
 
-5. In the ``void setup()``, set the buzzer as an output and start serial communication to monitor the readings from the photoresistor.
+5. En la función ``void setup()``, configura el zumbador como salida e inicia la comunicación serial para monitorear las lecturas de la fotorresistencia.
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set the buzzer pin as an output
-        Serial.begin(9600);          // Initialize serial communication at 9600 baud rate
+        // coloca tu código de configuración aquí, para que se ejecute una vez:
+        pinMode(buzzerPin, OUTPUT);  // Configura el pin del zumbador como salida
+        Serial.begin(9600);          // Inicia la comunicación serial a 9600 baudios
     }
 
-6. In the ``void loop()``, use the ``analogRead()`` function to read from the photoresistor and store the value in the variable ``sensorValue``. Then print this value to the serial monitor. Remember to set a time interval for each data reading.
+6. En la función ``void loop()``, utiliza la función ``analogRead()`` para leer la fotorresistencia y almacena el valor en la variable ``sensorValue``. Luego imprime este valor en el monitor serial. Recuerda establecer un intervalo de tiempo entre cada lectura.
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4,5
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100); // Wait 0.1 seconds
+        // coloca tu código principal aquí, para que se ejecute repetidamente:
+        sensorValue = analogRead(sensorPin);  // Lee el valor analógico de la fotorresistencia
+        Serial.println(sensorValue);          // Imprime la lectura de la fotorresistencia en el monitor serial
+        delay(100); // Espera 0.1 segundos
     }
 
-7. When the environment shifts from dark to bright, the resistance of the photoresistor decreases, and so does the reading at pin A0. Now use an ``if`` statement to check if the photoresistor's value is below the ``threshold``; if it is, turn the buzzer on, otherwise, turn it off.
+7. Cuando el entorno cambia de oscuro a brillante, la resistencia de la fotorresistencia disminuye, y también lo hace la lectura en el pin A0. Ahora usa una declaración ``if`` para verificar si el valor de la fotorresistencia está por debajo del ``threshold``; si lo está, activa el zumbador, de lo contrario, apágalo.
 
 .. code-block:: Arduino
     :emphasize-lines: 7-12
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100);                           // Wait 0.1 seconds
+        // coloca tu código principal aquí, para que se ejecute repetidamente:
+        sensorValue = analogRead(sensorPin);  // Lee el valor analógico de la fotorresistencia
+        Serial.println(sensorValue);          // Imprime la lectura de la fotorresistencia en el monitor serial
+        delay(100);                           // Espera 0.1 segundos
 
-        // Check if the reading is below the threshold
+        // Verifica si la lectura está por debajo del umbral
         if (sensorValue < threshold) {
-            digitalWrite(buzzerPin, HIGH);  // If below threshold, turn on the buzzer
+            digitalWrite(buzzerPin, HIGH);  // Si está por debajo del umbral, enciende el zumbador
         } else {
-            digitalWrite(buzzerPin, LOW);  // If not below threshold, turn off the buzzer
+            digitalWrite(buzzerPin, LOW);  // Si no está por debajo del umbral, apaga el zumbador
         }
     }
 
-8. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+8. Aquí tienes tu código completo. Ahora puedes hacer clic en "Subir" para cargar el código en el Arduino Uno R3.
 
 .. code-block:: Arduino
 
-    const int sensorPin = A0;   // Assigns the pin A0 to the constant for the photoresistor
-    const int buzzerPin = 9;    // Assigns the pin 9 to the constant for the buzzer
-    const int threshold = 300;  // Set the threshold value
+    const int sensorPin = A0;   // Asigna el pin A0 como constante para la fotorresistencia
+    const int buzzerPin = 9;    // Asigna el pin 9 como constante para el zumbador
+    const int threshold = 300;  // Establece el valor umbral
 
-    int sensorValue = 0;  // To store the photoresistor reading
+    int sensorValue = 0;  // Para almacenar la lectura de la fotorresistencia
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(buzzerPin, OUTPUT);  // Set the buzzer pin as an output
-        Serial.begin(9600);          // Initialize serial communication at 9600 baud rate
+        // coloca tu código de configuración aquí, para que se ejecute una vez:
+        pinMode(buzzerPin, OUTPUT);  // Configura el pin del zumbador como salida
+        Serial.begin(9600);          // Inicia la comunicación serial a 9600 baudios
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        sensorValue = analogRead(sensorPin);  // Read the analog value from the photoresistor
-        Serial.println(sensorValue);          // Print the photoresistor reading to the serial monitor
-        delay(100);                           // Wait 0.1 seconds
+        // coloca tu código principal aquí, para que se ejecute repetidamente:
+        sensorValue = analogRead(sensorPin);  // Lee el valor analógico de la fotorresistencia
+        Serial.println(sensorValue);          // Imprime la lectura de la fotorresistencia en el monitor serial
+        delay(100);                           // Espera 0.1 segundos
 
-        // Check if the reading is below the threshold
+        // Verifica si la lectura está por debajo del umbral
         if (sensorValue < threshold) {
-            digitalWrite(buzzerPin, HIGH);  // If below threshold, turn on the buzzer
+            digitalWrite(buzzerPin, HIGH);  // Si está por debajo del umbral, enciende el zumbador
         } else {
-            digitalWrite(buzzerPin, LOW);  // If not below threshold, turn off the buzzer
+            digitalWrite(buzzerPin, LOW);  // Si no está por debajo del umbral, apaga el zumbador
         }
     }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. Finalmente, recuerda guardar tu código y organizar tu espacio de trabajo.
 
-**Question**
 
-Cunning thieves might choose to steal at night, and if a painting disappears, 
-the photoresistor might not be able to detect any change in light, thus failing to trigger an alarm. What can be done to improve this flaw?
+**Pregunta**
+
+Ladrones astutos podrían elegir robar por la noche, y si una pintura desaparece, 
+la fotorresistencia podría no detectar ningún cambio de luz, lo que impediría que 
+se active la alarma. ¿Qué se podría hacer para mejorar este fallo?

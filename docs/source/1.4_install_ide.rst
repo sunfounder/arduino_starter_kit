@@ -1,109 +1,110 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola! Bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete en el mundo de Raspberry Pi, Arduino y ESP32 con otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales durante las festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-1.4 Install Arduino IDE
+1.4 Instalar Arduino IDE
 ==========================
 
-Exciting times ahead! Now that we've introduced Arduino and its board, let's get our hands dirty by installing the Arduino IDE. This software is your toolbox for programming the Arduino board to do all the amazing things you've imagined.
+¡Momentos emocionantes por delante! Ahora que hemos presentado Arduino y su placa, vamos a poner manos a la obra instalando el Arduino IDE. Este software es tu caja de herramientas para programar la placa Arduino y hacer todas las cosas asombrosas que has imaginado.
 
-The latest iteration, Arduino IDE 2.0, is both feature-rich and user-friendly. Before diving in, ensure your system meets these requirements:
+La última versión, Arduino IDE 2.0, es rica en funciones y fácil de usar. Antes de comenzar, asegúrate de que tu sistema cumpla con estos requisitos:
 
-- **Windows**: Win 10 or newer, 64-bit
-- **Linux**: 64-bit
-- **Mac OS X**: Version 10.14 "Mojave" or newer, 64-bit
+- **Windows**: Win 10 o más reciente, 64 bits
+- **Linux**: 64 bits
+- **Mac OS X**: Versión 10.14 "Mojave" o más reciente, 64 bits
 
-Follow these steps to get set up:
+Sigue estos pasos para configurar todo:
 
-For Windows Users
--------------------------
+Para usuarios de Windows
+-----------------------------
 
-1. Head to the |link_download_arduino|, where you'll find the Arduino IDE available for three different operating systems. For Windows users, there are three versions to choose from:
+1. Dirígete a |link_download_arduino|, donde encontrarás el Arduino IDE disponible para tres sistemas operativos. Para los usuarios de Windows, hay tres versiones para elegir:
 
-    * **Windows Win 10 and newer, 64 bits (Installer)**: Recommended for most users. Automatically installs needed drivers.
+    * **Windows Win 10 y más reciente, 64 bits (Instalador)**: Recomendado para la mayoría de los usuarios. Instala automáticamente los controladores necesarios.
     
-    * **Windows MSI Installer**: Suitable for network deployment or if you prefer MSI over a standard setup.
+    * **Windows Instalador MSI**: Adecuado para implementación en red o si prefieres MSI sobre una configuración estándar.
     
-    * **Windows ZIP File**: Offers a portable version that doesn't require installation. Ideal if you're using multiple PCs or lack admin rights. Manual driver installation may be needed.
+    * **Windows Archivo ZIP**: Ofrece una versión portátil que no requiere instalación. Ideal si estás usando múltiples PC o no tienes derechos de administrador. Es posible que necesites instalar manualmente los controladores.
 
     .. image:: img/1_ide_download_page.png
         :align: center
 
-2. After downloading (the file will be named like ``arduino-ide_xxxx.exe``), double-click it to initiate installation.
+2. Después de descargar el archivo (el nombre será algo como ``arduino-ide_xxxx.exe``), haz doble clic para iniciar la instalación.
 
-3. Read through the **License Agreement**. If you're okay with the terms, click "I Agree".
+3. Lee el **Acuerdo de licencia**. Si estás de acuerdo con los términos, haz clic en "Acepto".
 
     .. image:: img/1_ide_windows_license.png
         :align: center
 
-4. You'll be prompted to select installation options. Keep the defaults and click "Next".
+4. Se te pedirá que selecciones las opciones de instalación. Mantén las predeterminadas y haz clic en "Siguiente".
 
     .. image:: img/1_ide_windows_option.png
         :align: center
 
-5. Choose the installation path. Installing it on a drive other than your system drive is recommended.
+5. Elige la ruta de instalación. Se recomienda instalarlo en una unidad distinta a la unidad del sistema.
 
     .. image:: img/1_ide_windows_path.png
         :align: center
 
-6. Click "Install". Once completed, click "Finish".
+6. Haz clic en "Instalar". Una vez completada la instalación, haz clic en "Finalizar".
 
     .. image:: img/1_ide_windows_finish.png
         :align: center
 
-For macOS Users
------------------------
+Para usuarios de macOS
+---------------------------
 
-1. Head to the |link_download_arduino|, where you'll find the Arduino IDE tailored for different operating systems. For macOS users, there are two specialized versions:
+1. Dirígete a |link_download_arduino|, donde encontrarás el Arduino IDE disponible para diferentes sistemas operativos. Para los usuarios de macOS, hay dos versiones especializadas:
 
-    * **macOS Intel, 10.15 "Catalina" or newer, 64 bits**: This version is designed for Macs with Intel processors. It's optimized to ensure smooth operation on macOS versions from Catalina onwards, supporting the latest features and security standards of macOS on Intel architecture.
+    * **macOS Intel, 10.15 "Catalina" o más reciente, 64 bits**: Esta versión está diseñada para Mac con procesadores Intel. Está optimizada para garantizar un funcionamiento fluido en macOS a partir de Catalina, y soporta las últimas características y estándares de seguridad de macOS en arquitectura Intel.
     
-    * **macOS Apple Silicon, 11 "Big Sur" or newer, 64 bits**: Specifically crafted for the latest generation of Macs with Apple Silicon chips, this version offers enhanced performance and efficiency on macOS Big Sur and later. It leverages the advanced capabilities of Apple's own chips to provide an optimized Arduino development experience.
+    * **macOS Apple Silicon, 11 "Big Sur" o más reciente, 64 bits**: Específicamente creada para la última generación de Macs con chips Apple Silicon, esta versión ofrece un rendimiento mejorado en macOS Big Sur y versiones posteriores. Aprovecha las capacidades avanzadas de los chips de Apple para brindar una experiencia de desarrollo optimizada con Arduino.
 
     .. image:: img/1_ide_download_page.png
         :align: center
 
-2. Double-click the downloaded file (``arduino_ide_xxxx.dmg``). Follow on-screen instructions to drag the **Arduino IDE** app into your **Applications** folder.
+2. Haz doble clic en el archivo descargado (``arduino_ide_xxxx.dmg``). Sigue las instrucciones en pantalla para arrastrar la aplicación **Arduino IDE** a tu carpeta **Aplicaciones**.
 
     .. image:: img/1_ide_macos_install.png
         :width: 800
         :align: center
 
-For Linux Users
---------------------
+Para usuarios de Linux
+--------------------------
 
-1. Visit the |link_download_arduino|, where the Arduino IDE is available for three different operating systems. For Linux users, two options are provided:
+1. Visita |link_download_arduino|, donde el Arduino IDE está disponible para tres sistemas operativos diferentes. Para los usuarios de Linux, se ofrecen dos opciones:
 
-    * **Linux AppImage 64 bits (X86-64)**: This version comes as an AppImage, which is a type of portable software package. It doesn't require installation; simply make the file executable and run it directly.
+    * **Linux AppImage 64 bits (X86-64)**: Esta versión viene como un AppImage, que es un tipo de paquete de software portátil. No requiere instalación; simplemente haz el archivo ejecutable y ejecútalo directamente.
 
-    * **Linux ZIP file 64 bits (X86-64)**: This is a ZIP file containing the IDE. It's suitable for users who prefer manually managing their installations or need a portable version of the IDE.
+    * **Linux Archivo ZIP 64 bits (X86-64)**: Es un archivo ZIP que contiene el IDE. Es adecuado para usuarios que prefieren gestionar manualmente sus instalaciones o que necesitan una versión portátil del IDE.
 
     .. image:: img/1_ide_download_page.png
         :align: center
 
-2. Navigate to your download folder. Before we can start the editor, the file needs to be executable. Right-click the file, choose **Properties**.
+2. Navega a tu carpeta de descargas. Antes de poder iniciar el editor, el archivo debe ser ejecutable. Haz clic derecho en el archivo, elige **Propiedades**.
 
     .. image:: img/1_ide_linux_properties.png
         :align: center
 
-3. In the **Permissions** tab, tick "Allow executing file as a program".
+3. En la pestaña **Permisos**, marca "Permitir ejecutar el archivo como un programa".
 
     .. image:: img/1_ide_linux_permission.png
         :align: center
 
-4. Now, double-click the file to launch Arduino IDE 2 on your Linux machine. If you're unable to run the AppImage, ensure that FUSE is installed on your system.
+4. Ahora, haz doble clic en el archivo para lanzar Arduino IDE 2 en tu máquina Linux. Si no puedes ejecutar el AppImage, asegúrate de que FUSE esté instalado en tu sistema.
 
     .. image:: img/1_ide_linux_execute_now.png
         :align: center
 
-You're all set to begin your Arduino programming adventure. Happy coding!
+¡Ya estás listo para comenzar tu aventura de programación con Arduino! ¡Feliz codificación!
+
