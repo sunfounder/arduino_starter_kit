@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di Raspberry Pi & Arduino & ESP32 di SunFounder su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotti e anteprime.
+    - **Sconti speciali**: Godi di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a omaggi e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-24. Flowing Light with 74HC595
+24. Luce Scorrevole con 74HC595
 =======================================
 
-In this lesson, we will delve into the world of the 74HC595 shift register chip. This powerful component allows us to control numerous LEDs with just a few pins, making it perfect for implementing flowing light effects. By the end of this lesson, you'll have a solid understanding of how the 74HC595 works, how to use it to shift binary data, and how to apply it in a practical LED control experiment.
+In questa lezione, esploreremo il mondo del chip 74HC595, un componente potente che ci permette di controllare numerosi LED con pochi pin, rendendolo perfetto per creare effetti di luce scorrevole. Alla fine di questa lezione, avrai una solida comprensione di come funziona il 74HC595, come usarlo per spostare i dati binari e come applicarlo in un esperimento pratico di controllo LED.
 
 .. raw:: html
 
@@ -24,60 +24,60 @@ In this lesson, we will delve into the world of the 74HC595 shift register chip.
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+In questa lezione imparerai:
 
-* Understand the working principles of the 74HC595 chip and its pin functions.
-* Learn how to use the ``shiftOut()`` function to shift data.
-* Build a flowing light circuit using the 74HC595 chip and Arduino.
-* Control 8 LEDs using binary data and the 74HC595 chip to create a flowing light effect.
+* Comprendere i principi di funzionamento del chip 74HC595 e le sue funzioni pin.
+* Imparare a utilizzare la funzione ``shiftOut()`` per spostare i dati.
+* Costruire un circuito di luce scorrevole usando il chip 74HC595 e Arduino.
+* Controllare 8 LED utilizzando dati binari e il chip 74HC595 per creare un effetto di luce scorrevole.
 
-Learn the 74HC595 Chip
---------------------------
-The 74HC595 chip consists of an 8-bit shift register and a storage register with three-state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU. 
+Imparare il Chip 74HC595
+----------------------------
+
+Il chip 74HC595 consiste in un registro a scorrimento a 8 bit e un registro di memoria con uscite parallele a tre stati. Converte l'input seriale in output parallelo, permettendoti di risparmiare porte IO di un microcontrollore.
 
 .. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
-**Pins Functions**
+**Funzioni dei Pin**
 
 .. image:: img/24_74hc595_pin.png
     :width: 500
     :align: center
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7'**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level;
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level.
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7**: Uscite dati parallele a 8 bit, capaci di controllare direttamente 8 LED o 8 pin di un display a 7 segmenti.
+* **Q7'**: Pin di uscita seriale, collegato al DS di un altro 74HC595 per connettere più 74HC595 in serie.
+* **MR**: Pin di reset, attivo a livello basso.
+* **SHcp**: Ingresso della sequenza temporale del registro a scorrimento. Al fronte di salita, i dati nel registro a scorrimento si spostano successivamente di un bit, ovvero i dati in Q1 si spostano su Q2, e così via. Al fronte di discesa, i dati nel registro rimangono invariati.
+* **STcp**: Ingresso della sequenza temporale del registro di memoria. Al fronte di salita, i dati nel registro a scorrimento si trasferiscono nel registro di memoria.
+* **CE**: Pin di abilitazione dell'uscita, attivo a livello basso.
+* **DS**: Pin di ingresso dati seriali.
+* **VCC**: Alimentazione positiva.
+* **GND**: Terra.
 
-**Working Principle**
+**Principio di Funzionamento**
 
-When MR (pin10) is high level and OE (pin13) is low level, 
-data is input in the rising edge of SHcp and goes to the storage register through the rising edge of STcp. 
+Quando MR (pin 10) è a livello alto e OE (pin 13) è a livello basso, 
+i dati vengono inseriti al fronte di salita di SHcp e passano al registro di memoria al fronte di salita di STcp.
 
+* Registro a Scorrimento
 
-* Shift Register
-
-    * Suppose, we want to input the binary data 1110 1110 into the shift register of the 74hc595.
-    * The data is input from bit 0 of the shift register.
-    * Whenever the shift register clock is a rising edge, the bits in the shift register are shifted one step. For example, bit 7 accepts the previous value in bit 6, bit 6 gets the value of bit 5, etc.
+    * Supponiamo di voler inserire i dati binari 1110 1110 nel registro a scorrimento del 74HC595.
+    * I dati vengono inseriti a partire dal bit 0 del registro a scorrimento.
+    * Ogni volta che il clock del registro a scorrimento ha un fronte di salita, i bit nel registro vengono spostati di un passo. Ad esempio, il bit 7 accetta il valore precedente del bit 6, il bit 6 prende il valore del bit 5, e così via.
 
 .. image:: img/24_74hc595_shift.png
     :width: 600
     :align: center
 
-* Storage Register
+* Registro di Memoria
 
-    * When the storage register is in the rising edge state, the data of the shift register will be transferred to the storage register.
-    * The storage register is directly connected to the 8 output pins, Q0 ~ Q7 will be able to receive a byte of data. 
-    * The so-called storage register means that the data can exist in this register and will not disappear with one output. 
-    * The data will remain valid and unchanged as long as the 74HC595 is powered on continuously. 
-    * When new data comes, the data in the storage register will be overwritten and updated.
+    * Quando il registro di memoria si trova nello stato di fronte di salita, i dati del registro a scorrimento vengono trasferiti nel registro di memoria.
+    * Il registro di memoria è direttamente collegato agli 8 pin di uscita; Q0 ~ Q7 saranno in grado di ricevere un byte di dati. 
+    * Il cosiddetto registro di memoria significa che i dati possono rimanere in questo registro e non scompariranno con un'uscita. 
+    * I dati rimarranno validi e invariati finché il 74HC595 rimane alimentato. 
+    * Quando arrivano nuovi dati, quelli presenti nel registro di memoria verranno sovrascritti e aggiornati.
 
 .. image:: img/24_74hc595_storage.png
     :width: 600
@@ -85,109 +85,108 @@ data is input in the rising edge of SHcp and goes to the storage register throug
 
 
 
-Building the Circuit
+Costruzione del Circuito
 --------------------------------
 
-**Components Needed**
+**Componenti Necessari**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 8 * LEDs
-     - 8 * 220Ω Resistor
+     - 8 * LED
+     - 8 * Resistenza da 220Ω
      - 1 * 74HC595
    * - |list_uno_r3| 
      - |list_red_led| 
      - |list_220ohm| 
      - |list_74hc595|  
    * - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
-     -
+     - Fili di collegamento
+     - 1 * Cavo USB
+     - 
    * - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
-     -
+     - 
 
-**Building Step-by-Step**
+**Costruzione Passo per Passo**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Segui il diagramma di cablaggio o i passaggi seguenti per costruire il tuo circuito.
 
 .. image:: img/24_flow_light.png
     :width: 600
     :align: center
 
-1. Insert 8 LEDs into the breadboard, in any color configuration you like. Ensure that all the cathodes (short legs) of the LEDs are connected to the ground rail on the breadboard, while the anodes are connected to separate rows.
+1. Inserisci 8 LED nella breadboard, in qualsiasi configurazione di colore desideri. Assicurati che tutti i catodi (gambe corte) degli LED siano collegati alla barra di terra sulla breadboard, mentre gli anodi siano collegati a file separate.
 
 .. image:: img/24_flow_light_led.png
     :width: 500
     :align: center
 
-2. Connect a 220Ω resistor to each anode of the LEDs.
+2. Collega una resistenza da 220Ω a ciascun anodo degli LED.
 
 .. image:: img/24_flow_light_resistor.png
     :width: 500
     :align: center
 
-3. Locate the 74HC595 chip and insert it into the breadboard. Ensure that the chip spans the middle gap.
+3. Trova il chip 74HC595 e inseriscilo nella breadboard. Assicurati che il chip attraversi il divario centrale.
 
 .. note::
 
-    Pay careful attention to the orientation of the 74HC595 to avoid damage. You can identify the correct orientation using the following clues:
+    Fai molta attenzione all'orientamento del 74HC595 per evitare danni. Puoi identificare l'orientamento corretto usando i seguenti indizi:
 
-    * The label on the chip is upright.
-    * The notch on the chip is to the left.
+    * L'etichetta sul chip è in posizione verticale.
+    * La tacca sul chip è rivolta verso sinistra.
 
 .. image:: img/24_flow_light_74hc595.png
     :width: 500
     :align: center
 
-4. Connect the VCC and MR pins of the 74HC595 to the positive rail on the breadboard.
+4. Collega i pin VCC e MR del 74HC595 alla barra positiva della breadboard.
 
 .. image:: img/24_flow_light_vcc.png
     :width: 500
     :align: center
 
-5. Connect the CE and GND pins of the 74HC595 to the negative rail on the breadboard.
+5. Collega i pin CE e GND del 74HC595 alla barra negativa della breadboard.
 
 .. image:: img/24_flow_light_gnd.png
     :width: 500
     :align: center
 
-6. Connect the Q0-Q7 pins of the 74HC595 to the rows on the breadboard containing the 220Ω resistors.
+6. Collega i pin Q0-Q7 del 74HC595 alle file della breadboard che contengono le resistenze da 220Ω.
 
 .. image:: img/24_flow_light_q0_q7.png
     :width: 500
     :align: center
 
-7. Connect the DS pin of the 74HC595 to pin 11 of the Arduino Uno R3.
+7. Collega il pin DS del 74HC595 al pin 11 dell'Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin11.png
     :width: 600
     :align: center
 
-8. Connect the ST_CP pin of the 74HC595 to pin 12 of the Arduino Uno R3.
+8. Collega il pin ST_CP del 74HC595 al pin 12 dell'Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin12.png
     :width: 600
     :align: center
 
-9. Connect the Sh_CP pin of the 74HC595 to pin 8 of the Arduino Uno R3.
+9. Collega il pin Sh_CP del 74HC595 al pin 8 dell'Arduino Uno R3.
 
 .. image:: img/24_flow_light_pin8.png
     :width: 600
     :align: center
 
-10. Finally, connect the GND and 5V pins of the Arduino Uno R3 to the negative and positive rails on the breadboard, respectively.
+10. Infine, collega i pin GND e 5V dell'Arduino Uno R3 rispettivamente alle barre negative e positive sulla breadboard.
 
 .. image:: img/24_flow_light.png
     :width: 600
     :align: center
 
-11. The following table shows the pin connections between the 74HC595 and the Arduino Uno R3.
-
+11. La seguente tabella mostra le connessioni tra il 74HC595 e l'Arduino Uno R3.
 
 .. list-table::
     :widths: 20 20
@@ -198,7 +197,7 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - VCC
         - 5V
     *   - Q0~Q7
-        - LEDs 
+        - LED
     *   - DS
         - 11
     *   - CE
@@ -212,149 +211,148 @@ Follow the wiring diagram, or the steps below to build your circuit.
     *   - GND
         - GND
 
-
-Code Creation - Lighting Up LEDs
+Creazione del Codice - Accendere i LED
 --------------------------------------------
 
-The Arduino Uno R3 sends groups of binary data to the 74HC595 chip.
-Binary data forms the core of computers and many electronic devices, using simple 0s and 1s to process complex data and instructions.
-In computer science and digital electronics, binary data is vital as it forms the foundation for information processing and storage in electronic computers.
-Here, 0 and 1 can be seen as states of a switch, where 0 represents off (closed), and 1 represents on (open).
+L'Arduino Uno R3 invia gruppi di dati binari al chip 74HC595.
+I dati binari formano il nucleo dei computer e di molti dispositivi elettronici, utilizzando semplici 0 e 1 per elaborare dati e istruzioni complessi. 
+Nella scienza informatica e nell'elettronica digitale, i dati binari sono essenziali poiché costituiscono la base per l'elaborazione e l'archiviazione delle informazioni nei computer elettronici.
+Qui, 0 e 1 possono essere visti come stati di un interruttore, dove 0 rappresenta spento (chiuso) e 1 rappresenta acceso (aperto).
 
-For binary numbers, you need to understand two basic concepts:
+Per i numeri binari, è necessario comprendere due concetti base:
 
-* Bit: A bit is the basic unit in the binary system, and each bit can be either 0 or 1.
-* Byte: A byte is made up of 8 bits. It is a common unit of data processing in computers. (And look, the 74HC595 chip accepts exactly 1 byte of data at a time!)
+* Bit: Un bit è l'unità di base nel sistema binario, e ogni bit può essere 0 o 1.
+* Byte: Un byte è composto da 8 bit. È un'unità comune di elaborazione dati nei computer. (E guarda, il chip 74HC595 accetta esattamente 1 byte di dati alla volta!)
 
-Binary numbers are ordered from least significant to most significant bit, with the rightmost bit being the least significant and the leftmost bit being the most significant.
+I numeri binari sono ordinati dal bit meno significativo al più significativo, con il bit più a destra che è il meno significativo e il bit più a sinistra che è il più significativo.
 
 .. image:: img/24_binary_bit.png
     :width: 500
     :align: center
 
-Let's now see how the 74HC595 receives binary data and outputs it to the LEDs!
+Vediamo ora come il 74HC595 riceve i dati binari e li trasmette ai LED!
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson24_Lighting_up_LEDs`` using ``Ctrl + S`` or by clicking “Save”.
+1. Apri l'Arduino IDE e avvia un nuovo progetto selezionando "New Sketch" dal menu "File".
+2. Salva il tuo sketch come ``Lesson24_Lighting_up_LEDs`` utilizzando ``Ctrl + S`` o cliccando "Save".
 
-3. Controlling the 74HC595 only requires three pins to provide pulse signals, so set them as OUTPUT.
+3. Il controllo del 74HC595 richiede solo tre pin per fornire segnali di impulso, quindi imposta questi pin come OUTPUT.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // Pin collegato a ST_CP del 74HC595
+    const int SHcp = 8;   // Pin collegato a SH_CP del 74HC595
+    const int DS = 11;    // Pin collegato a DS del 74HC595
 
     void setup() {
-        // Set pins to output mode
+        // Imposta i pin come output
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
     }
 
-4. Your computer sends binary data to the ``DS`` (Data Input) pin of the 74HC595, then uses the clock signal from the ``SH_CP`` (Shift Register Clock Input) pin to shift each data bit forward. This data transmission process can be implemented using the ``shiftOut()`` function.
+4. Il tuo computer invia dati binari al pin ``DS`` (Data Input) del 74HC595, quindi utilizza il segnale di clock dal pin ``SH_CP`` (Shift Register Clock Input) per spostare ogni bit di dati in avanti. Questo processo di trasmissione dati può essere implementato utilizzando la funzione ``shiftOut()``.
 
-    * ``shiftOut(dataPin, clockPin, bitOrder, value)``: Shifts out a byte of data one bit at a time. Starts from either the most (i.e., the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.
+    * ``shiftOut(dataPin, clockPin, bitOrder, value)``: Sposta un byte di dati un bit alla volta. Inizia dal bit più significativo (MSB) o meno significativo (LSB). Ogni bit viene scritto sul pin dei dati, dopodiché un pin di clock viene pulsato (prima alto, poi basso) per indicare che il bit è pronto.
 
-    **Parameters**
+    **Parametri**
 
-        * ``dataPin``: the pin on which to output each bit. Allowed data types: int.
-        * ``clockPin``: the pin to toggle once the dataPin has been set to the correct value. Allowed data types: int.
-        * ``bitOrder``: which order to shift out the bits; either ``MSBFIRST`` or ``LSBFIRST``. (Most Significant Bit First, or Least Significant Bit First).
-        * ``value``: the data to shift out. Allowed data types: byte.
+        * ``dataPin``: il pin su cui inviare ogni bit. Tipi di dati ammessi: int.
+        * ``clockPin``: il pin da alternare una volta che il dataPin è stato impostato sul valore corretto. Tipi di dati ammessi: int.
+        * ``bitOrder``: l'ordine con cui inviare i bit; può essere ``MSBFIRST`` o ``LSBFIRST`` (Most Significant Bit First o Least Significant Bit First).
+        * ``value``: il dato da spostare. Tipi di dati ammessi: byte.
 
-    **Returns**
-        Nothing
+    **Restituisce**
+        Nessun valore.
 
-5. Here, we attempt to send a byte (8 bits) of data to the 74HC595 shift register using the ``shiftOut()`` function.
+5. Qui, proviamo a inviare un byte (8 bit) di dati al registro a scorrimento del 74HC595 usando la funzione ``shiftOut()``.
 
 .. code-block:: Arduino
     :emphasize-lines: 3
 
     void loop()
     {
-        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Shift out the data, MSB first
+        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Sposta i dati, MSB first
     }
 
-* This sends the data ``B11101110`` (binary, B is short for binary) to the 74HC595 shift register, with data sent starting from the most significant bit.
-* Each time the ``SH_CP`` pin receives a rising edge signal (the moment voltage goes from low to high), the bits in the shift register are shifted one step.
-* For example, bit 7 accepts the previous value in bit 6, bit 6 gets the value of bit 5, etc.
+* Questo invia i dati ``B11101110`` (binario, B indica binario) al registro a scorrimento del 74HC595, con i dati inviati a partire dal bit più significativo.
+* Ogni volta che il pin ``SH_CP`` riceve un segnale di fronte di salita (il momento in cui la tensione passa da bassa ad alta), i bit nel registro a scorrimento vengono spostati di un passo.
+* Ad esempio, il bit 7 accetta il valore precedente del bit 6, il bit 6 prende il valore del bit 5, e così via.
 
 .. image:: img/24_74hc595_shift.png
     :width: 500
     :align: center
 
-6. After all the data bits have been input through the DS pin and shifted to their correct positions using multiple clock signals, the next step is to copy this data from the shift register to a storage register.
+6. Dopo che tutti i bit di dati sono stati immessi attraverso il pin DS e spostati nelle posizioni corrette utilizzando segnali di clock multipli, il passaggio successivo è copiare questi dati dal registro a scorrimento a un registro di memoria.
 
 .. code-block:: Arduino
     :emphasize-lines: 2,7
 
     void loop() {
-        digitalWrite(STcp, LOW);  // Ground ST_CP (Latch Pin) and hold low while transmitting data
+        digitalWrite(STcp, LOW);  // Imposta ST_CP (Pin Latch) a livello basso e mantienilo basso durante la trasmissione dei dati
         
-        // Send data to the shift register using MSBFIRST (Most Significant Bit First)
+        // Invia i dati al registro a scorrimento utilizzando MSBFIRST (Most Significant Bit First)
         shiftOut(DS, SHcp, MSBFIRST, B11101110);
         
-        digitalWrite(STcp, HIGH);  // Pull ST_CP (Latch Pin) high to save the data to output pins
+        digitalWrite(STcp, HIGH);  // Porta ST_CP a livello alto per salvare i dati nei pin di uscita
         
-        delay(1000);  // Wait for one second before repeating
+        delay(1000);  // Attendi un secondo prima di ripetere
     }
 
-* When the ``ST_CP`` pin receives a rising edge signal, the data in the shift register is copied to the storage register.
-* Once the data is copied to the storage register, the LEDs connected to the corresponding output pins(Q0 ~ Q7) will light up or remain off according to whether the data is 1 or 0.
+* Quando il pin ``ST_CP`` riceve un segnale di fronte di salita, i dati nel registro a scorrimento vengono copiati nel registro di memoria.
+* Una volta copiati i dati nel registro di memoria, i LED collegati ai pin di uscita corrispondenti (Q0 ~ Q7) si accenderanno o rimarranno spenti a seconda che il dato sia 1 o 0.
 
 .. image:: img/24_74hc595_storage_1data.png
     :width: 300
     :align: center
 
-7. Here's your complete code. You can now upload this code to the Arduino Uno R3. After that, you will see the LEDs connected to Q0 and Q4 turned off while other LEDs are lit.
+7. Ecco il tuo codice completo. Ora puoi caricare questo codice sull'Arduino Uno R3. Dopodiché vedrai i LED collegati a Q0 e Q4 spenti mentre gli altri LED saranno accesi.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // Pin collegato a ST_CP del 74HC595
+    const int SHcp = 8;   // Pin collegato a SH_CP del 74HC595
+    const int DS = 11;    // Pin collegato a DS del 74HC595
 
     void setup() {
-        // Set pins to output mode
+        // Imposta i pin come output
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
     }
 
     void loop() {
-        digitalWrite(STcp, LOW);  // Ground ST_CP and hold low while transmitting
-        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Shift out the data, MSB first
-        digitalWrite(STcp, HIGH);  // Pull ST_CP high to save the data
-        delay(1000);  // Wait for a second
+        digitalWrite(STcp, LOW);  // Porta ST_CP a livello basso e mantienilo basso durante la trasmissione
+        shiftOut(DS, SHcp, MSBFIRST, B11101110);  // Invia i dati, MSB first
+        digitalWrite(STcp, HIGH);  // Porta ST_CP a livello alto per salvare i dati
+        delay(1000);  // Attendi un secondo
     }
 
-**Question**
+**Domanda**
 
-What happens if we change ``MSBFIRST`` to ``LSBFIRST`` in ``shiftOut(DS, SHcp, MSBFIRST, B11101110);``? Why?
+Cosa succede se cambiamo ``MSBFIRST`` con ``LSBFIRST`` in ``shiftOut(DS, SHcp, MSBFIRST, B11101110);``? Perché?
 
 
 
-Code Creation - Flowing Light
---------------------------------
+Creazione del Codice - Luce Scorrevole
+---------------------------------------------
 
-How would we implement a flowing light effect, where the LEDs light up one by one?
+Come possiamo implementare un effetto di luce scorrevole, dove i LED si accendono uno alla volta?
 
-1. Open the sketch you saved earlier, ``Lesson24_Lighting_up_LEDs``. 
+1. Apri lo sketch che hai salvato in precedenza, ``Lesson24_Lighting_up_LEDs``. 
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson24_Flowing_Light``. Click "Save".
+2. Fai clic su “Salva con nome...” dal menu “File” e rinominalo in ``Lesson24_Flowing_Light``. Clicca su "Salva".
 
-3. Here, we want to set up a flowing light, where the LEDs light up one by one. We will write the on/off states of this flowing light sequence as an array.
+3. Qui, vogliamo configurare una luce scorrevole, dove i LED si accendono uno alla volta. Scriveremo gli stati di accensione/spegnimento di questa sequenza di luci scorrevoli come un array.
 
 .. code-block:: Arduino
     :emphasize-lines: 4
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // Pin collegato a ST_CP del 74HC595
+    const int SHcp = 8;   // Pin collegato a SH_CP del 74HC595
+    const int DS = 11;    // Pin collegato a DS del 74HC595
     int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
-4. Then, use a ``for`` loop to sequentially call this array.
+4. Poi, utilizza un ciclo ``for`` per chiamare sequenzialmente questo array.
 
 .. code-block:: Arduino
     :emphasize-lines: 3,5
@@ -362,26 +360,25 @@ How would we implement a flowing light effect, where the LEDs light up one by on
     void loop()
     {
         for (int num = 0; num <= 8; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // Imposta ST_CP a livello basso e mantienilo basso durante la trasmissione
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Invia i dati, MSB first
+            digitalWrite(STcp, HIGH);                     // Porta ST_CP a livello alto per salvare i dati
+            delay(1000);                                  // Attendi un secondo
         }
     }
 
-5. Your complete code is shown below. You can now upload this code to the Arduino Uno R3, and then you'll see the LEDs light up one by one, like a flowing light.
-
+5. Ecco il tuo codice completo. Ora puoi caricare questo codice sull'Arduino Uno R3, e vedrai i LED accendersi uno alla volta, come una luce scorrevole.
 
 .. code-block:: Arduino
 
-    const int STcp = 12;  // Pin connected to ST_CP of 74HC595
-    const int SHcp = 8;   // Pin connected to SH_CP of 74HC595
-    const int DS = 11;    // Pin connected to DS of 74HC595
+    const int STcp = 12;  // Pin collegato a ST_CP del 74HC595
+    const int SHcp = 8;   // Pin collegato a SH_CP del 74HC595
+    const int DS = 11;    // Pin collegato a DS del 74HC595
     int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
     void setup ()
     {
-        // Set pins to output mode
+        // Imposta i pin come output
         pinMode(STcp, OUTPUT);
         pinMode(SHcp, OUTPUT);
         pinMode(DS, OUTPUT);
@@ -390,25 +387,20 @@ How would we implement a flowing light effect, where the LEDs light up one by on
     void loop()
     {
         for (int num = 0; num <= 8; num++) {
-            digitalWrite(STcp, LOW);                      // Ground ST_CP and hold low while transmitting
-            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Shift out the data, MSB first
-            digitalWrite(STcp, HIGH);                     // Pull ST_CP high to save the data
-            delay(1000);                                  // Wait for a second
+            digitalWrite(STcp, LOW);                      // Imposta ST_CP a livello basso e mantienilo basso durante la trasmissione
+            shiftOut(DS, SHcp, MSBFIRST, datArray[num]);  // Invia i dati, MSB first
+            digitalWrite(STcp, HIGH);                     // Porta ST_CP a livello alto per salvare i dati
+            delay(1000);                                  // Attendi un secondo
         }
     }
 
-6. Finally, remember to save your code and tidy up your workspace.
+6. Infine, ricorda di salvare il codice e sistemare la tua postazione di lavoro.
 
-**Question**
+**Domanda**
 
-If we want to have three LEDs lit at a time and have them appear to "flow," how should the elements of the ``datArray[]`` array be modified?
+Se vogliamo avere tre LED accesi alla volta e farli sembrare "scorrere", come dovrebbero essere modificati gli elementi dell'array ``datArray[]``?
 
-**Summary**
+**Riepilogo**
 
-In this lesson, we explored the structure and functionality of the 74HC595 chip, learning how to shift binary data through its shift register and build a flowing light experiment. Using the ``shiftOut()`` function to control binary data transmission, we successfully managed the sequential lighting of 8 LEDs to achieve a flowing light effect. With this newfound knowledge, you should now be able to effectively use the 74HC595 chip to add dazzling lighting features to your own projects.
-
-
-
-
-
+In questa lezione, abbiamo esplorato la struttura e il funzionamento del chip 74HC595, imparando come trasferire i dati binari attraverso il suo registro a scorrimento e costruire un esperimento di luce scorrevole. Utilizzando la funzione ``shiftOut()`` per controllare la trasmissione dei dati binari, siamo riusciti a gestire l'accensione sequenziale di 8 LED per ottenere un effetto di luce scorrevole. Con queste nuove conoscenze, ora dovresti essere in grado di utilizzare efficacemente il chip 74HC595 per aggiungere effetti di illuminazione brillanti ai tuoi progetti.
 

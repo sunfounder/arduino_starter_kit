@@ -1,26 +1,25 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino e ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara & Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-21. Siren Sound
+21. Suono della Sirena
 =========================
 
-In this Arduino project, we will explore how to create a siren system through programming and the integration of electronic hardware.
+In questo progetto Arduino, esploreremo come creare un sistema di sirene attraverso la programmazione e l'integrazione di hardware elettronico.
 
-Siren sounds use a specific frequency and pitch pattern, characterized by rapid rises and falls in pitch, which is not only easily recognizable but also distinct from other everyday sounds.
-These pitch changes can evoke a sense of urgency, as they are often associated with warning signals or dangerous situations in nature.
+I suoni delle sirene utilizzano un modello di frequenza e tonalità specifico, caratterizzato da rapide salite e discese di tonalità, facilmente riconoscibili e distinti dagli altri suoni quotidiani. Questi cambiamenti di tonalità possono evocare un senso di urgenza, poiché sono spesso associati a segnali di allarme o situazioni pericolose in natura.
 
-By adjusting the frequency of a passive buzzer, we can simulate the characteristic rising and falling pitches of a siren sound.
+Modificando la frequenza di un buzzer passivo, possiamo simulare le caratteristiche tipiche di una sirena con toni ascendenti e discendenti.
 
 .. raw:: html
 
@@ -29,45 +28,41 @@ By adjusting the frequency of a passive buzzer, we can simulate the characterist
         Your browser does not support the video tag.
     </video>
 
-In this lesson, you will learn:
+In questa lezione imparerai:
 
-* How passive buzzers work
-* How to drive a passive buzzer using the tone() function
-* How to use the for loop in programming
-* How to implement a siren sound
+* Come funzionano i buzzer passivi
+* Come pilotare un buzzer passivo utilizzando la funzione tone()
+* Come usare il ciclo for nella programmazione
+* Come implementare un suono di sirena
 
-Understanding Sound Properties
------------------------------------
+Comprendere le Proprietà del Suono
+--------------------------------------
 
-Sound is a wave phenomenon that propagates through mediums such as air, water, or solids as vibrating energy. Understanding the physical properties of sound can help us better understand and control how sound behaves in different environments.
-Here are several key physical properties of sound:
+Il suono è un fenomeno ondulatorio che si propaga attraverso mezzi come l'aria, l'acqua o i solidi sotto forma di energia vibrante. Comprendere le proprietà fisiche del suono ci aiuta a capire e controllare meglio come esso si comporta in diversi ambienti. Ecco alcune delle principali proprietà fisiche del suono:
 
 .. image:: img/7_siren.png
     :width: 500
     :align: center
 
-**Frequency**
+**Frequenza**
 
-Frequency refers to the number of vibration cycles per unit of time, typically expressed in Hertz (Hz).
-Frequency determines the pitch of sound: higher frequencies sound higher in pitch; lower frequencies sound lower. The human audible range is approximately from 20 Hz to 20,000 Hz.
+La frequenza si riferisce al numero di cicli di vibrazione per unità di tempo, solitamente espressa in Hertz (Hz). La frequenza determina l'altezza del suono: frequenze più alte producono suoni più acuti, frequenze più basse suoni più gravi. Il range udibile dall'uomo è di circa 20 Hz a 20.000 Hz.
 
-**Amplitude**
-Amplitude is the strength of the vibration of a sound wave, which determines the loudness of the sound.
-Greater amplitude means a louder sound; smaller amplitude means a softer sound.
-In physics, amplitude is usually directly related to the energy of a sound wave, while in everyday language, we often use decibels (dB) to describe the loudness of sound.
+**Ampiezza**
+L'ampiezza è l'intensità della vibrazione di un'onda sonora e determina il volume del suono. Una maggiore ampiezza corrisponde a un suono più forte, una minore ampiezza a un suono più debole. In fisica, l'ampiezza è solitamente correlata direttamente all'energia dell'onda sonora, mentre nel linguaggio comune utilizziamo spesso i decibel (dB) per descrivere il volume del suono.
 
-**Timbre**
-Timbre describes the texture or 'color' of sound, which allows us to distinguish sounds from different sources even if they have the same pitch and loudness.
-For example, even if a violin and a piano play the same note, we can still distinguish them by their timbre.
+**Timbro**
+Il timbro descrive la "qualità" o "colore" del suono, permettendoci di distinguere suoni provenienti da diverse fonti, anche se hanno la stessa altezza e volume. Ad esempio, anche se un violino e un pianoforte suonano la stessa nota, possiamo distinguerli dal timbro.
+
+In questo progetto, ci concentreremo sull'influenza della frequenza sul suono.
 
 
-In this project, we are only exploring the influence of frequency on sound.
 
 
-Building the Circuit
+Costruire il Circuito
 -----------------------
 
-**Components Needed**
+**Componenti Necessari**
 
 .. list-table:: 
    :widths: 25 25 25 25
@@ -75,195 +70,191 @@ Building the Circuit
 
    * - 1 * Arduino Uno R3
      - 1 * Breadboard
-     - 1 * Passive Buzzer
-     - Jumper Wires
+     - 1 * Buzzer Passivo
+     - Cavi di Collegamento
    * - |list_uno_r3| 
      - |list_breadboard| 
      - |list_passive_buzzer| 
      - |list_wire| 
-   * - 1 * USB Cable
-     -
+   * - 1 * Cavo USB
+     - 
      - 
      - 
    * - |list_usb_cable| 
-     -
      - 
      - 
+     - 
 
+**Costruzione Passo-Passo**
 
+Nelle lezioni precedenti, abbiamo utilizzato un buzzer attivo. In questa lezione utilizzeremo un buzzer passivo. Il circuito è lo stesso, ma l'approccio di codifica per pilotarlo è diverso.
 
-**Building Step-by-Step**
-
-In previous lessons, we used active buzzer. In this lesson, we will use a passive buzzer. The circuit is the same, but the coding approach to drive it differs.
-
-1. Locate a passive buzzer, which has an exposed circuit board on its back.
+1. Trova un buzzer passivo, che ha un circuito esposto sul retro.
 
 .. image:: img/7_beep_2.png
 
-2. Although there is a '+' sign on the passive buzzer, it is not a polarized device. Insert it in any direction into the 15F and 18F holes of the breadboard.
+2. Anche se c'è un segno '+' sul buzzer passivo, non è un dispositivo polarizzato. Inseriscilo in qualsiasi direzione nei fori 15F e 18F della breadboard.
 
 .. image:: img/16_morse_code_buzzer.png
     :width: 500
     :align: center
 
-3. Connect one pin of the passive buzzer to the GND pin on the Arduino Uno R3.
+3. Collega uno dei pin del buzzer passivo al pin GND di Arduino Uno R3.
 
 .. image:: img/16_morse_code_gnd.png
     :width: 500
     :align: center
 
-4. Connect the other pin of the passive buzzer to the 5V pin of the Arduino Uno R3. The buzzer will not make a sound, differentiating it from an active buzzer, which would sound when connected this way.
+4. Collega l'altro pin del buzzer passivo al pin 5V di Arduino Uno R3. Il buzzer non emetterà alcun suono, a differenza di un buzzer attivo, che invece suonerebbe se collegato in questo modo.
 
 .. image:: img/16_morse_code_5v.png
     :width: 500
     :align: center
 
-5. Now, remove the wire inserted into the 5V pin and insert it into pin 9 of the Arduino Uno R3, so that the buzzer can be controlled with code.
+5. Ora, rimuovi il filo inserito nel pin 5V e inseriscilo nel pin 9 di Arduino Uno R3, in modo che il buzzer possa essere controllato tramite codice.
 
 .. image:: img/16_morse_code.png
     :width: 500
     :align: center
 
 
-
-Code Creation - Make the Passive Buzzer Sound
+Creare il Codice - Far Suonare il Buzzer Passivo
 ---------------------------------------------------
 
-As we learned while connecting, simply providing high and low power to a passive buzzer won't make it sound. In Arduino programming, the ``tone()`` function is used to control a passive buzzer or other audio output devices to generate a sound at a specified frequency.
+Come abbiamo imparato durante il collegamento, fornire semplicemente alimentazione alta e bassa a un buzzer passivo non lo farà suonare. Nella programmazione Arduino, la funzione ``tone()`` viene utilizzata per controllare un buzzer passivo o altri dispositivi audio per generare un suono a una frequenza specificata.
 
-    * ``tone()``: Generates a square wave of the specified frequency (and 50% duty cycle) on a pin. A duration can be specified, otherwise the wave continues until a call to ``noTone()``.
+    * ``tone()``: Genera un'onda quadra alla frequenza specificata (e con un ciclo di lavoro del 50%) su un pin. Può essere specificata una durata, altrimenti l'onda continua finché non viene chiamata ``noTone()``.
 
-    **Syntax**
+    **Sintassi**
 
         * ``tone(pin, frequency)``
         * ``tone(pin, frequency, duration)``
 
-    **Parameters**
+    **Parametri**
 
-        * ``pin``: the Arduino pin on which to generate the tone.
-        * ``frequency``: the frequency of the tone in hertz. Allowed data types: unsigned int.
-        * ``duration``: the duration of the tone in milliseconds (optional). Allowed data types: unsigned long.
+        * ``pin``: il pin di Arduino su cui generare il suono.
+        * ``frequency``: la frequenza del suono in Hertz. Tipi di dati consentiti: unsigned int.
+        * ``duration``: la durata del suono in millisecondi (opzionale). Tipi di dati consentiti: unsigned long.
 
-    **Returns**
-        Nothing
+    **Restituisce**
+        Nessun valore
 
 
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson21_Tone`` using ``Ctrl + S`` or by clicking “Save”.
-
-3. First, define the buzzer pin.
+1. Apri l'Arduino IDE e inizia un nuovo progetto selezionando "New Sketch" dal menu "File".
+2. Salva il tuo sketch come ``Lesson21_Tone`` utilizzando ``Ctrl + S`` o cliccando su "Save".
+3. Prima di tutto, definisci il pin per il buzzer.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Assegna il pin 9 alla costante per il buzzer
 
     void setup() {
-        // put your setup code here, to run once:
+        // inserisci qui il tuo codice di configurazione, eseguito una sola volta:
     }
 
-4. To fully understand the use of the ``tone()`` function, we write it in the ``void setup()`` so that the buzzer will emit a sound at a specific frequency for a set duration.
+4. Per comprendere appieno l'uso della funzione ``tone()``, la scriviamo all'interno di ``void setup()``, così che il buzzer emetta un suono a una frequenza specifica per una durata determinata.
 
 .. code-block:: Arduino
     :emphasize-lines: 5
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Assegna il pin 9 alla costante per il buzzer
 
     void setup() {
-        // put your setup code here, to run once:
-        tone(buzzerPin, 1000, 100);  // Turn on the buzzer at 1000 Hz with a duration of 100 milliseconds
+        // inserisci qui il tuo codice di configurazione, eseguito una sola volta:
+        tone(buzzerPin, 1000, 100);  // Accendi il buzzer a 1000 Hz per una durata di 100 millisecondi
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
+        // inserisci qui il tuo codice principale, eseguito ripetutamente:
     }
 
-5. Now you can upload the code to the Arduino Uno R3, after which you will hear a brief "beep" sound from the passive buzzer, and then it will go silent.
+5. Ora puoi caricare il codice su Arduino Uno R3; sentirai un breve "beep" dal buzzer passivo, poi resterà in silenzio.
 
-**Questions**
+**Domande**
 
-1. If you switch the code and circuit pins to 7 or 8, which are not PWM pins, will the buzzer still make a sound? You can test and then write your answer in the handbook.
+1. Se modifichi il codice e sposti i collegamenti sui pin 7 o 8, che non sono pin PWM, il buzzer emetterà comunque suono? Prova e scrivi la tua risposta nel manuale.
 
-2. To explore how ``frequency`` and ``duration`` in ``tone(pin, frequency, duration)`` affect the sound of the buzzer, please modify the code under two conditions and fill in the observed phenomena in your handbook:
+2. Per esplorare come ``frequency`` e ``duration`` nella funzione ``tone(pin, frequency, duration)`` influenzano il suono del buzzer, modifica il codice in base a due condizioni e annota le osservazioni nel manuale:
 
-* Keeping ``frequency`` at 1000, gradually increase ``duration``, from 100, 500, to 1000. How does the sound of the buzzer change, and why?
+* Mantenendo ``frequency`` a 1000, aumenta gradualmente ``duration`` da 100, 500 a 1000. Come cambia il suono del buzzer e perché?
 
-* Keeping ``duration`` at 100, gradually increase ``frequency``, from 1000, 2000, to 5000. How does the sound of the buzzer change, and why?
+* Mantenendo ``duration`` a 100, aumenta gradualmente ``frequency`` da 1000, 2000 a 5000. Come cambia il suono del buzzer e perché?
 
 
 
-Code Creation - Emit a Siren Sound
------------------------------------------
+Creazione del Codice - Emettere un Suono di Sirena
+---------------------------------------------------
 
-Previously, we learned how to make a buzzer emit sound and understood how frequency and duration affect the sound. Now, if we want to make the buzzer emit a siren sound that increases from a low to a high pitch, how should we proceed?
+Abbiamo già imparato come far emettere un suono a un buzzer e abbiamo capito come frequenza e durata influenzino il suono. Ora, se vogliamo far emettere al buzzer un suono di sirena che sale da un tono basso a uno alto, come possiamo procedere?
 
-From our earlier explorations, we know that using the ``tone(pin, frequency)`` function allows a passive buzzer to emit sound. Gradually increasing the ``frequency`` makes the pitch of the passive buzzer's sound higher. Let's implement this with code now.
+Dalle nostre esplorazioni precedenti, sappiamo che la funzione ``tone(pin, frequency)`` permette a un buzzer passivo di emettere un suono. Aumentando gradualmente la ``frequency``, il tono del suono diventa più acuto. Implementiamo questo concetto con del codice.
 
-1. Open the sketch you saved earlier, ``Lesson21_Tone``. 
+1. Apri lo sketch che hai salvato in precedenza, ``Lesson21_Tone``.
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson21_Siren_Sound``. Click "Save".
+2. Seleziona “Salva con nome...” dal menu “File” e rinominalo ``Lesson21_Siren_Sound``. Clicca su "Salva".
 
-3. Write the ``tone()`` function into the ``void loop()`` and set three different frequencies. To clearly hear the difference in each frequency sound, use the ``delay()`` function to separate them.
+3. Scrivi la funzione ``tone()`` all'interno di ``void loop()`` e imposta tre frequenze diverse. Per sentire chiaramente la differenza tra i suoni, utilizza la funzione ``delay()`` per separare i vari suoni.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Assegna il pin 9 alla costante per il buzzer
 
     void setup() {
-        // put your setup code here, to run once:
+        // inserisci qui il tuo codice di configurazione, eseguito una sola volta:
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 100 Hz
+        // inserisci qui il tuo codice principale, eseguito ripetutamente:
+        tone(buzzerPin, 100);  // Accendi il buzzer a 100 Hz
         delay(500);
-        tone(buzzerPin, 300);  // Turn on the buzzer at 300 Hz
+        tone(buzzerPin, 300);  // Accendi il buzzer a 300 Hz
         delay(500);
-        tone(buzzerPin, 600);  // Turn on the buzzer at 600 Hz
+        tone(buzzerPin, 600);  // Accendi il buzzer a 600 Hz
         delay(500);
     }
 
-4. At this point, you can upload the code to the Arduino Uno R3, and you will hear the buzzer repeating three different tones.
+4. A questo punto, puoi caricare il codice su Arduino Uno R3 e sentirai il buzzer ripetere tre toni diversi.
 
-5. To achieve a smoother pitch increase, we should set shorter intervals for ``frequency``, such as an interval of 10, starting from 100, 110, 120...up to 1000. We can write the following code.
+5. Per ottenere una salita di tono più fluida, dobbiamo impostare intervalli di ``frequency`` più brevi, ad esempio un intervallo di 10, partendo da 100, 110, 120... fino a 1000. Possiamo scrivere il codice seguente.
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        tone(buzzerPin, 100);  // Turn on the buzzer at 1000 Hz
+        // inserisci qui il tuo codice principale, eseguito ripetutamente:
+        tone(buzzerPin, 100);  // Accendi il buzzer a 100 Hz
         delay(500);
-        tone(buzzerPin, 110);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 110);  // Accendi il buzzer a 110 Hz
         delay(500);
-        tone(buzzerPin, 120);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 120);  // Accendi il buzzer a 120 Hz
         delay(500);
-        tone(buzzerPin, 130);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 130);  // Accendi il buzzer a 130 Hz
         delay(500);
-        tone(buzzerPin, 140);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 140);  // Accendi il buzzer a 140 Hz
         delay(500);
-        tone(buzzerPin, 150);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 150);  // Accendi il buzzer a 150 Hz
         delay(500);
-        tone(buzzerPin, 160);  // Turn on the buzzer at 1000 Hz
+        tone(buzzerPin, 160);  // Accendi il buzzer a 160 Hz
         delay(500);
         ...
     }
 
-6. You will notice that if you really wanted to write up to 1000, this code would be over two hundred lines long. At this point, you can use the ``for`` statement, which is used to repeat a block of statements enclosed in curly braces.
+6. Noterai che se volessi davvero scrivere fino a 1000, questo codice sarebbe lungo oltre duecento righe. A questo punto, puoi utilizzare l'istruzione ``for``, che viene impiegata per ripetere un blocco di istruzioni racchiuso tra parentesi graffe.
 
-    * ``for``: The ``for`` statement is useful for any repetitive operation, and is often used in combination with arrays to operate on collections of data/pins. An increment counter is usually used to increment and terminate the loop. 
+    * ``for``: L'istruzione ``for`` è utile per qualsiasi operazione ripetitiva e viene spesso utilizzata in combinazione con array per operare su raccolte di dati o pin. Viene solitamente usato un contatore di incremento per proseguire e terminare il ciclo.
 
-    **Syntax**
+    **Sintassi**
 
     .. code-block::
 
-        for (initialization; condition; increment) {
-            // statement(s);
+        for (inizializzazione; condizione; incremento) {
+            // istruzione(i);
         }
 
-    **Parameters**
+    **Parametri**
 
-        * ``initialization``: happens first and exactly once.
-        * ``condition``: each time through the loop, condition is tested; if it's true, the statement block and the increment are executed, then the condition is tested again. When the condition becomes false, the loop ends.
-        * ``increment``: executed each time through the loop when condition is true.
+        * ``inizializzazione``: avviene per prima e solo una volta.
+        * ``condizione``: ogni volta che il ciclo viene eseguito, la condizione viene testata; se è vera, il blocco di istruzioni e l'incremento vengono eseguiti, dopodiché la condizione viene testata di nuovo. Quando la condizione diventa falsa, il ciclo termina.
+        * ``incremento``: viene eseguito ogni volta che la condizione è vera.
 
 .. image:: img/for_loop.png
     :width: 400
@@ -271,65 +262,66 @@ From our earlier explorations, we know that using the ``tone(pin, frequency)`` f
 
 
 
-7. Now change the ``void loop()`` function as shown below, where ``freq`` starts at 100 and increases by 10 until 1000.
+7. Ora modifica la funzione ``void loop()`` come mostrato di seguito, dove ``freq`` inizia da 100 e aumenta di 10 fino a 1000.
 
 .. code-block:: Arduino
     :emphasize-lines: 3-6
 
     void loop() {
-        // Gradually increase the pitch
+        // Aumenta gradualmente il tono
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Emetti un tono
+            delay(20);              // Attendi prima di cambiare la frequenza
         }
     }
 
-8. Next, let ``freq`` start at 1000 and decrease by 10 until 100, so you can hear the buzzer's sound go from low to high and then from high to low, thus simulating a siren sound.
+8. Successivamente, lascia che ``freq`` parta da 1000 e diminuisca di 10 fino a 100, così potrai sentire il suono del buzzer passare da basso ad alto e poi da alto a basso, simulando così un suono di sirena.
 
 .. code-block:: Arduino
     :emphasize-lines: 9-12
 
     void loop() {
-        // Gradually increase the pitch
+        // Aumenta gradualmente il tono
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Emetti un tono
+            delay(20);              // Attendi prima di cambiare la frequenza
         }
 
-        // Gradually decrease the pitch
+        // Diminuisci gradualmente il tono
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Emetti un tono
+            delay(20);              // Attendi prima di cambiare la frequenza
         }
     }
 
 
-9. Here is your complete code. You can now click "Upload" to upload the code to the Arduino Uno R3.
+9. Ecco il codice completo. Ora puoi cliccare su "Upload" per caricare il codice sull'Arduino Uno R3.
 
 .. code-block:: Arduino
 
-    const int buzzerPin = 9;  // Assigns the pin 9 to the constant for the buzzer
+    const int buzzerPin = 9;  // Assegna il pin 9 alla costante per il buzzer
 
     void setup() {
-        // put your setup code here, to run once:
+        // inserisci qui il tuo codice di configurazione, eseguito una sola volta:
     }
 
     void loop() {
-        // Gradually increase the pitch
+        // Aumenta gradualmente il tono
         for (int freq = 100; freq <= 1000; freq += 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Emetti un tono
+            delay(20);              // Attendi prima di cambiare la frequenza
         }
 
-        // Gradually decrease the pitch
+        // Diminuisci gradualmente il tono
         for (int freq = 1000; freq >= 100; freq -= 10) {
-            tone(buzzerPin, freq);  // Emit a tone
-            delay(20);              // Wait before changing the frequency
+            tone(buzzerPin, freq);  // Emetti un tono
+            delay(20);              // Attendi prima di cambiare la frequenza
         }
     }
 
-10. Finally, remember to save your code and tidy up your workspace.
+10. Infine, ricorda di salvare il codice e di mettere in ordine la tua postazione di lavoro.
 
-**Summary**
+**Riassunto**
 
-In this lesson, we explored how to use an Arduino and a passive buzzer to simulate a siren sound. By discussing the basic physical properties of sound, such as frequency and pitch, we learned how these elements influence the perception and effect of sound. Through hands-on activities, we not only learned how to build circuits but also mastered programming with the ``tone()`` function on Arduino to control the frequency and duration of sound, achieving the simulation of a siren sound that rises and falls in pitch.
+In questa lezione, abbiamo esplorato come utilizzare un Arduino e un buzzer passivo per simulare un suono di sirena. Discutendo delle proprietà fisiche di base del suono, come la frequenza e il tono, abbiamo imparato come questi elementi influenzano la percezione e l'effetto del suono. Attraverso attività pratiche, non solo abbiamo imparato a costruire circuiti, ma abbiamo anche padroneggiato la programmazione con la funzione ``tone()`` su Arduino per controllare la frequenza e la durata del suono, ottenendo così la simulazione di un suono di sirena che sale e scende di tono.
+

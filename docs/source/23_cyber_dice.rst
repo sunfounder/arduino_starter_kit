@@ -1,27 +1,27 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperti**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara & Condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e anteprime esclusive.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri nuovi prodotti.
+    - **Promozioni e Giveaway Festivi**: Partecipa a promozioni festive e giveaway.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti subito!
 
-23. Cyber Dice
+23. Dado Cibernetico
 =======================
 
-In this lesson, we embark on an exciting journey through two projects involving digital electronics and programming.
+In questa lezione, intraprenderemo un entusiasmante viaggio attraverso due progetti che coinvolgono l'elettronica digitale e la programmazione.
 
 .. image:: img/23_dice.jpg
     :align: center
     :width: 500
 
-Initially, we will delve into the operation of a 7-segment display, learning how to control it to show numbers step-by-step. Following that, we will create an electronic dice! By simply pressing a button, a random number ranging from 1 to 6 will appear on the 7-segment display, offering a digital twist to traditional dice.
+Inizialmente, esploreremo il funzionamento di un display a 7 segmenti, imparando a controllarlo per mostrare i numeri passo dopo passo. Successivamente, creeremo un dado elettronico! Premendo semplicemente un pulsante, apparirà un numero casuale compreso tra 1 e 6 sul display a 7 segmenti, offrendo una svolta digitale ai dadi tradizionali.
 
 .. raw:: html
 
@@ -30,71 +30,71 @@ Initially, we will delve into the operation of a 7-segment display, learning how
         Your browser does not support the video tag.
     </video>
 
-During this lesson, you will learn:
+Durante questa lezione imparerai:
 
-* The principles of how a 7-segment display works and how to make it function.
-* The use of switch-case statements to simplify code logic.
-* How to utilize a while loop to maintain the current state until a change is required.
-* How to construct the Cyber Dice project, integrating simple electronics with interactive programming for practical application.
+* I principi del funzionamento di un display a 7 segmenti e come farlo funzionare.
+* L'uso delle istruzioni switch-case per semplificare la logica del codice.
+* Come utilizzare un ciclo while per mantenere lo stato corrente fino a quando non è necessario un cambiamento.
+* Come costruire il progetto Dado Cibernetico, integrando elettronica semplice con programmazione interattiva per un'applicazione pratica.
 
-The Origin of Dice
+L'origine dei Dadi
 -----------------------
 
-Dice are among the oldest gambling tools in the world, with a history dating back thousands of years before the Common Era. They originated around 3000 BCE in ancient Egypt, typically made from bones, ivory, or other natural materials. These early dice were often irregular in shape and sometimes not entirely symmetrical.
+I dadi sono tra gli strumenti di gioco d'azzardo più antichi al mondo, con una storia che risale a migliaia di anni prima dell'era comune. Sono stati originati intorno al 3000 a.C. nell'antico Egitto, tipicamente realizzati con ossa, avorio o altri materiali naturali. Questi primi dadi erano spesso irregolari nella forma e talvolta non del tutto simmetrici.
 
 .. image:: img/23_dice.png
     :width: 500
     :align: center
 
-Dice were also found in ancient Mesopotamia (modern-day Iraq) around the same time. Ancient diviners and religious leaders used dice to make decisions or predict the future, highlighting their significance in religious and mystical rites.
+I dadi sono stati trovati anche nell'antica Mesopotamia (l'attuale Iraq) all'incirca nello stesso periodo. Gli antichi indovini e leader religiosi usavano i dadi per prendere decisioni o prevedere il futuro, sottolineando la loro importanza nei riti religiosi e mistici.
 
-Over time, the shape and manufacturing techniques of dice became standardized. By the 1st century BCE, dice were widely used in the Roman Empire, not only for gambling but also for social and entertainment purposes.
+Col tempo, la forma e le tecniche di produzione dei dadi si sono standardizzate. Entro il I secolo a.C., i dadi erano ampiamente utilizzati nell'Impero Romano, non solo per il gioco d'azzardo, ma anche per scopi sociali e di intrattenimento.
 
-In Asia, particularly in India, dice usage is documented in the ancient epic, the Mahabharata, where a pivotal dice game plays a crucial role in the storyline.
+In Asia, in particolare in India, l'uso dei dadi è documentato nell'antico poema epico, il Mahabharata, in cui una partita di dadi gioca un ruolo cruciale nella trama.
 
-During the Renaissance, dice production became more refined, and materials diversified to include wood, bone, ivory, and even metal. Today, dice are not just tools for entertainment and gambling but are also used in education, decision-making support, and various tabletop games. Their history and diversity reflect the evolution of human culture and technology, offering a fascinating window into the exploration of chance and luck.
+Durante il Rinascimento, la produzione di dadi divenne più raffinata e i materiali si diversificarono includendo legno, osso, avorio e persino metallo. Oggi, i dadi non sono solo strumenti per l'intrattenimento e il gioco d'azzardo, ma vengono utilizzati anche nell'educazione, nel supporto alle decisioni e in vari giochi da tavolo. La loro storia e diversità riflettono l'evoluzione della cultura e della tecnologia umana, offrendo una finestra affascinante sull'esplorazione del caso e della fortuna.
 
 
 
-Understanding the 7-Segment Display
--------------------------------------------
+Comprensione del Display a 7 Segmenti
+--------------------------------------------
 
-1. Find a 7-segment display. 
+1. Trova un display a 7 segmenti.
 
-A 7-segment display is an 8-shaped component that packages 7 LEDs. Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from "a" to "g" representing each individual LED. 
-The other LED pins are connected together forming a common pin. An additional 8th LED used within the same package thus allowing the indication of a decimal point (DP) when two or more 7-segment displays are connected together to display numbers greater than ten.
+Un display a 7 segmenti è un componente a forma di 8 che racchiude 7 LED. Ognuno dei LED nel display è collegato a un segmento posizionale con uno dei suoi pin di connessione che esce dal pacchetto di plastica rettangolare. Questi pin LED sono etichettati da "a" a "g", rappresentando ogni singolo LED.
+Un ulteriore ottavo LED è utilizzato all'interno dello stesso pacchetto, consentendo così l'indicazione di un punto decimale (DP) quando due o più display a 7 segmenti sono collegati insieme per mostrare numeri maggiori di dieci.
 
 .. image:: img/23_7_segment.png
     :width: 300
     :align: center
 
-The common pin of the display generally tells its type. There are two types of pin connections: one with connected cathodes and another with connected anodes, indicating Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected, while a CA display has all the anodes of the 7 segments connected.
+Il pin comune del display solitamente ne indica il tipo. Esistono due tipi di connessioni: una con i catodi collegati e un'altra con gli anodi collegati, indicando Catodo Comune (CC) e Anodo Comune (CA). Come suggerisce il nome, un display CC ha tutti i catodi dei 7 LED collegati, mentre un display CA ha tutti gli anodi dei 7 segmenti collegati.
 
 .. note::
 
-    Usually, there is a label on the side of the 7-segment display, xxxAx or xxxBx. Generally, xxxAx stands for common cathode and xxxBx stands for common anode. The displays in our kit are common cathode.
+    Solitamente, c'è un'etichetta sul lato del display a 7 segmenti, xxxAx o xxxBx. In generale, xxxAx sta per catodo comune e xxxBx per anodo comune. I display nel nostro kit sono a catodo comune.
 
 .. image:: img/23_segment_cathode_1.png
     :align: center
     :width: 600
 
-To determine whether a 7-segment display is common cathode or common anode, you can use a multimeter. You can also use a multimeter to test if each segment of the display is working properly, as follows:
+Per determinare se un display a 7 segmenti è a catodo comune o anodo comune, puoi utilizzare un multimetro. Puoi anche utilizzare un multimetro per testare se ogni segmento del display funziona correttamente, come segue:
 
-1. Set the multimeter to diode test mode. The diode test is a function of the multimeter used to check the forward conduction of diodes or similar semiconductor devices (such as LEDs). The multimeter passes a small current through the diode. If the diode is intact, it will allow the current to pass.
+1. Imposta il multimetro in modalità test diodi. Il test diodi è una funzione del multimetro utilizzata per controllare la conduzione diretta dei diodi o di dispositivi semiconduttori simili (come i LED). Il multimetro fa passare una piccola corrente attraverso il diodo. Se il diodo è intatto, permetterà il passaggio della corrente.
 
 .. image:: img/multimeter_diode.png
     :width: 300
     :align: center
 
-2. Insert the 7-segment display into a breadboard, noting that the decimal point is at the bottom right and ensure to spans the middle gap. Insert a wire in the same row as pin 1 of the display, and touch it with the red lead of the multimeter. Insert another wire in the same row as any “-” pin of the display, and touch it with the black lead.
+2. Inserisci il display a 7 segmenti in una breadboard, notando che il punto decimale è in basso a destra e assicurati che attraversi la fessura centrale. Inserisci un filo nella stessa fila del pin 1 del display e toccalo con il cavo rosso del multimetro. Inserisci un altro filo nella stessa fila di qualsiasi pin "-" del display e toccalo con il cavo nero.
 
 .. image:: img/23_7_segment_test.png
     :align: center
     :width: 500
 
-3. Observe whether any LED segment lights up. If so, it indicates that the display is common cathode. If not, swap the red and black leads; if a segment lights up after swapping, it indicates that the display is common anode.
+3. Osserva se si accende un segmento LED. In tal caso, indica che il display è a catodo comune. In caso contrario, scambia i cavi rosso e nero; se un segmento si accende dopo lo scambio, significa che il display è ad anodo comune.
 
-4. If a segment lights up, refer to this diagram to record the segment's pin number and approximate position in the Handbook's table.
+4. Se un segmento si accende, fai riferimento a questo diagramma per annotare il numero del pin del segmento e la posizione approssimativa nella tabella del Manuale.
 
 .. image:: img/23_segment_2.png
     :align: center
@@ -104,11 +104,11 @@ To determine whether a 7-segment display is common cathode or common anode, you 
     :header-rows: 1
 
     *   - Pin
-        - Segment Number
-        - Position
+        - Numero del Segmento
+        - Posizione
     *   - 1
         - a
-        - The top segment
+        - Il segmento superiore
     *   - 2
         -
         - 
@@ -131,46 +131,43 @@ To determine whether a 7-segment display is common cathode or common anode, you 
         -
         -     
 
-5. Repeat the above steps, keeping the black lead on the “-” pin, and connect the red lead to the other pins to find out the control pins corresponding to the LED segments of the display.
+5. Ripeti i passaggi precedenti, mantenendo il cavo nero sul pin "-", e collega il cavo rosso agli altri pin per scoprire i pin di controllo corrispondenti ai segmenti LED del display.
 
+**Domanda**
 
-**Question**
-
-From the tests above, it is known that the display in the kit is common cathode, which means you only need to connect the common pin to GND and provide a high voltage to the other pins to light up the corresponding segments. If you want the display to show the number 2, which pins should be provided with a high voltage? Why?
+Dai test precedenti, si sa che il display nel kit è a catodo comune, il che significa che è sufficiente collegare il pin comune a GND e fornire una tensione alta agli altri pin per accendere i segmenti corrispondenti. Se vuoi che il display mostri il numero 2, quali pin dovrebbero ricevere una tensione alta? Perché?
 
 .. image:: img/23_segment_2.png
     :align: center
 
 
 
-Building the Circuit
+Costruzione del Circuito
 --------------------------------
 
-**Components Needed**
-
-
+**Componenti Necessari**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * 7-segment Display
-     - 1 * 220Ω Resistor
-     - 1 * 10KΩ Resistor
+     - 1 * Display a 7 segmenti
+     - 1 * Resistenza da 220Ω
+     - 1 * Resistenza da 10KΩ
    * - |list_uno_r3| 
      - |list_7segment| 
      - |list_220ohm| 
      - |list_10kohm| 
-   * - 1 * Button
+   * - 1 * Pulsante
      - 1 * Breadboard
-     - Jumper Wires
-     - 1 * USB Cable
+     - Fili di collegamento
+     - 1 * Cavo USB
    * - |list_button| 
      - |list_breadboard| 
      - |list_wire| 
      - |list_usb_cable| 
-   * - 1 * Multimeter
+   * - 1 * Multimetro
      - 
      - 
      - 
@@ -181,57 +178,57 @@ Building the Circuit
 
 
 
-**Building Step-by-Step**
+**Passaggi per la Costruzione**
 
-Follow the wiring diagram, or the steps below to build your circuit.
+Segui il diagramma di collegamento o i passaggi seguenti per costruire il tuo circuito.
 
 .. image:: img/23_segment_5v.png
     :align: center
     :width: 500
 
-1. Insert the 7-segment display into the breadboard with the decimal point at the bottom right corner.
+1. Inserisci il display a 7 segmenti nella breadboard con il punto decimale nell'angolo in basso a destra.
 
 .. image:: img/23_segment_segment.png
     :align: center
     :width: 500
 
-2. Insert one end of a 220Ω resistor into the negative (“-”) terminal of the 7-segment display, and the other end into the negative rail of the breadboard. Then connect the breadboard’s negative rail to the GND pin of the Arduino Uno R3 with a jumper wire.
+2. Inserisci un'estremità di una resistenza da 220Ω nel terminale negativo (“-”) del display a 7 segmenti, e l'altra estremità nel binario negativo della breadboard. Quindi collega il binario negativo della breadboard al pin GND dell'Arduino Uno R3 con un filo di collegamento.
 
 .. image:: img/23_segment_resistor_gnd.png
     :align: center
     :width: 500
 
-3. Connect the pins controlling the a, b, c segments of the LED to pins 2, 3, and 4 on the Arduino Uno R3.
+3. Collega i pin che controllano i segmenti a, b, c del LED ai pin 2, 3 e 4 dell'Arduino Uno R3.
 
 .. image:: img/23_segment_abc.png
     :align: center
     :width: 500
 
-4. Connect the pins controlling the d, e, f, g segments of the LED to pins 5, 6, 7, and 8 on the Arduino Uno R3.
+4. Collega i pin che controllano i segmenti d, e, f, g del LED ai pin 5, 6, 7 e 8 dell'Arduino Uno R3.
 
 .. image:: img/23_segment_defg.png
     :align: center
     :width: 500
 
-5. Now insert a button into the breadboard.
+5. Ora inserisci un pulsante nella breadboard.
 
 .. image:: img/23_segment_button.png
     :align: center
     :width: 500
 
-6. Connect the lower right pin of the button to pin 9 of R3 with a wire.
+6. Collega il pin in basso a destra del pulsante al pin 9 di R3 con un filo.
 
 .. image:: img/23_segment_pin9.png
     :align: center
     :width: 500
 
-7. Connect a 10K pull-down resistor to the button so that when the button is not pressed, pin 9 remains at a low level and does not bounce.
+7. Collega una resistenza pull-down da 10K al pulsante in modo che quando il pulsante non viene premuto, il pin 9 rimanga a un livello basso e non vi sia rimbalzo.
 
 .. image:: img/23_segment_10k_resistor.png
     :align: center
     :width: 500
 
-8. Connect the lower left pin of the button to the 5V on the Arduino Uno R3.
+8. Collega il pin in basso a sinistra del pulsante al pin 5V sull'Arduino Uno R3.
 
 .. image:: img/23_segment_5v.png
     :align: center
@@ -259,16 +256,16 @@ Follow the wiring diagram, or the steps below to build your circuit.
         - 8
 
 
-Code Creation - Displaying Numbers
--------------------------------------
-1. Open the Arduino IDE and start a new project by selecting “New Sketch” from the “File” menu.
-2. Save your sketch as ``Lesson23_Show_Number`` using ``Ctrl + S`` or by clicking “Save”.
+Creazione del Codice - Visualizzazione dei Numeri
+--------------------------------------------------------
+1. Apri l'IDE di Arduino e avvia un nuovo progetto selezionando “New Sketch” dal menu “File”.
+2. Salva il tuo sketch con il nome ``Lesson23_Show_Number`` utilizzando ``Ctrl + S`` o cliccando su “Save”.
 
-3. Define pins connected to the 7-segment display and set all pins as outputs.
+3. Definisci i pin collegati al display a 7 segmenti e imposta tutti i pin come output.
 
 .. code-block:: Arduino
 
-    // Define pins connected to the 7-segment display
+    // Definizione dei pin collegati al display a 7 segmenti
     int pinA = 2;
     int pinB = 3;
     int pinC = 4;
@@ -278,7 +275,7 @@ Code Creation - Displaying Numbers
     int pinG = 8;
 
     void setup() {
-        // Set all pins as outputs
+        // Imposta tutti i pin come output
         pinMode(pinA, OUTPUT);
         pinMode(pinB, OUTPUT);
         pinMode(pinC, OUTPUT);
@@ -288,12 +285,12 @@ Code Creation - Displaying Numbers
         pinMode(pinG, OUTPUT);
     }
 
-4. Now write code to make the 7-segment display show a number, such as the number 2. To display the number 2, set segments F and C to LOW (off), other segments to HIGH (on).
+4. Ora scrivi il codice per far visualizzare al display a 7 segmenti un numero, come il numero 2. Per visualizzare il numero 2, imposta i segmenti F e C su LOW (spenti), mentre gli altri segmenti su HIGH (accesi).
 
 .. code-block:: Arduino
   :emphasize-lines: 22-29
 
-    // Define pins connected to the 7-segment display
+    // Definizione dei pin collegati al display a 7 segmenti
     int pinA = 2;
     int pinB = 3;
     int pinC = 4;
@@ -303,7 +300,7 @@ Code Creation - Displaying Numbers
     int pinG = 8;
 
     void setup() {
-        // Set all pins as outputs
+        // Imposta tutti i pin come output
         pinMode(pinA, OUTPUT);
         pinMode(pinB, OUTPUT);
         pinMode(pinC, OUTPUT);
@@ -314,7 +311,7 @@ Code Creation - Displaying Numbers
     }
 
     void loop() {
-        // Set segments F and C to LOW (off), other segments to HIGH (on)
+        // Imposta i segmenti F e C su LOW (spenti), gli altri su HIGH (accesi)
         digitalWrite(pinA, HIGH);
         digitalWrite(pinB, HIGH);
         digitalWrite(pinC, LOW);
@@ -324,16 +321,16 @@ Code Creation - Displaying Numbers
         digitalWrite(pinG, HIGH);
     }
 
-5. Now you can upload the code to the Arduino Uno R3, and you will see the number 2 displayed on the 7-segment display.
+5. Ora puoi caricare il codice sull'Arduino Uno R3 e vedrai il numero 2 visualizzato sul display a 7 segmenti.
 
-6. If you need to display other numbers, such as cycling through 1 to 6, using ``digitalWrite()`` to set each segment would make the code very long and the logic less clear. Here we use a function creation method instead.
+6. Se hai bisogno di visualizzare altri numeri, ad esempio scorrendo da 1 a 6, utilizzare ``digitalWrite()`` per impostare ogni segmento renderebbe il codice molto lungo e la logica meno chiara. Qui utilizziamo invece un metodo di creazione di funzione.
 
-7. Create a function with a parameter - ``displayDigit()``, which first turns off all LED segments of the 7-segment display.
+7. Crea una funzione con un parametro - ``displayDigit()``, che prima spegne tutti i segmenti LED del display a 7 segmenti.
 
 .. code-block:: Arduino
 
     void displayDigit(int digit) {
-        // Turn off all segments
+        // Spegne tutti i segmenti
         digitalWrite(pinA, LOW);
         digitalWrite(pinB, LOW);
         digitalWrite(pinC, LOW);
@@ -343,40 +340,40 @@ Code Creation - Displaying Numbers
         digitalWrite(pinG, LOW);
     }
 
-8. Next, control different LED segments to display numbers. Here we could use ``if-else`` statements, but that might be cumbersome. Thus, a ``switch`` statement provides a clearer and more organized way to choose among multiple possible different behaviors than multiple ``if-else`` statements.
+8. Successivamente, controlla i vari segmenti LED per visualizzare i numeri. Qui potremmo usare istruzioni ``if-else``, ma ciò potrebbe risultare ingombrante. Pertanto, una dichiarazione ``switch`` fornisce un modo più chiaro e organizzato per scegliere tra più comportamenti diversi rispetto a molteplici istruzioni ``if-else``.
 
-In programming, a ``switch`` statement is a control structure used to execute different code segments based on the value of a variable.
+Nel linguaggio di programmazione, un'istruzione ``switch`` è una struttura di controllo utilizzata per eseguire diversi blocchi di codice in base al valore di una variabile.
 
-The basic syntax of a switch statement is usually as follows:
+La sintassi di base di una dichiarazione switch è la seguente:
 
 .. code-block:: Arduino
 
-    switch (expression) {
-        case value1:
-            // code
+    switch (espressione) {
+        case valore1:
+            // codice
             break;
-        case value2:
-            // code
+        case valore2:
+            // codice
             break;
         default:
-            // code
+            // codice
     }
 
-* ``expression``: This is an expression that typically returns an integer or character, based on which the switch statement decides which ``case`` to execute.
-* ``case``: Each ``case`` keyword is followed by a value that can match the result of ``expression``. If a match is successful, the code is executed from this point until a ``break`` statement is encountered.
-* ``break``: The ``break`` statement is used to exit the ``switch`` block. Without ``break``, the program would continue executing the next case's code, regardless of its match, which is known as "fall-through".
-* ``default``: The ``default`` part is optional and is executed if no ``case`` matches, similar to ``else`` in an ``if-else`` structure.
+* ``espressione``: Questa è un'espressione che in genere restituisce un intero o un carattere, in base al quale l'istruzione switch decide quale ``case`` eseguire.
+* ``case``: Ogni parola chiave ``case`` è seguita da un valore che può corrispondere al risultato dell'espressione. Se la corrispondenza è corretta, il codice viene eseguito da questo punto fino al raggiungimento di un'istruzione ``break``.
+* ``break``: L'istruzione ``break`` viene utilizzata per uscire dal blocco ``switch``. Senza ``break``, il programma continuerebbe a eseguire il codice del case successivo, indipendentemente dalla corrispondenza, questo è noto come "fall-through".
+* ``default``: La parte ``default`` è opzionale e viene eseguita se nessun case corrisponde, simile a ``else`` in una struttura ``if-else``.
 
 .. image:: img/23_flow_swtich.png
     :align: center
     :width: 600
 
-9. Use the ``switch-case`` in the ``displayDigit()`` function to complete the display of numbers on the 7-segment display. For instance, to display 1, only segments B and C need to be high; to display 2, segments F and C need to be low, while the others are high.
+9. Usa lo ``switch-case`` nella funzione ``displayDigit()`` per completare la visualizzazione dei numeri sul display a 7 segmenti. Ad esempio, per visualizzare 1, solo i segmenti B e C devono essere impostati su HIGH; per visualizzare 2, i segmenti F e C devono essere impostati su LOW, mentre gli altri su HIGH.
 
 .. code-block:: Arduino
 
     void displayDigit(int digit) {
-        // Turn off all segments
+        // Spegne tutti i segmenti
         digitalWrite(pinA, LOW);
         digitalWrite(pinB, LOW);
         digitalWrite(pinC, LOW);
@@ -385,7 +382,7 @@ The basic syntax of a switch statement is usually as follows:
         digitalWrite(pinF, LOW);
         digitalWrite(pinG, LOW);
 
-        // Set to HIGH to turn on the segments needed for the desired number
+        // Imposta su HIGH i segmenti necessari per visualizzare il numero desiderato
         switch (digit) {
             case 1:
                 digitalWrite(pinB, HIGH);
@@ -429,25 +426,23 @@ The basic syntax of a switch statement is usually as follows:
         }
     }
 
-
-10. Now you can call ``displayDigit()`` in the ``void loop()`` to display specific numbers, such as cycling between 3 and 6, with a one-second interval.
+10. Ora puoi chiamare ``displayDigit()`` all'interno di ``void loop()`` per visualizzare numeri specifici, come alternare tra il 3 e il 6 con un intervallo di un secondo.
 
 .. code-block:: Arduino
 
     void loop() {
 
-        displayDigit(3);  // Display the 3 on the 7-segment display
+        displayDigit(3);  // Visualizza il numero 3 sul display a 7 segmenti
         delay(1000);
-        displayDigit(6);  // Display the 6 on the 7-segment display
+        displayDigit(6);  // Visualizza il numero 6 sul display a 7 segmenti
         delay(1000);
     }
 
-
-11. Below is your complete code. Now you can upload the code to the Arduino Uno R3, and you will see the 7-segment display cycle through displaying 3 and 6.
+11. Di seguito è riportato il tuo codice completo. Ora puoi caricare il codice sull'Arduino Uno R3 e vedrai il display a 7 segmenti alternare la visualizzazione tra il numero 3 e il numero 6.
 
 .. code-block:: Arduino
 
-    // Define pins connected to the 7-segment display
+    // Definizione dei pin collegati al display a 7 segmenti
     int pinA = 2;
     int pinB = 3;
     int pinC = 4;
@@ -457,7 +452,7 @@ The basic syntax of a switch statement is usually as follows:
     int pinG = 8;
 
     void setup() {
-        // Set all pins as outputs
+        // Imposta tutti i pin come output
         pinMode(pinA, OUTPUT);
         pinMode(pinB, OUTPUT);
         pinMode(pinC, OUTPUT);
@@ -469,14 +464,14 @@ The basic syntax of a switch statement is usually as follows:
 
     void loop() {
 
-        displayDigit(3);  // Display the 3 on the 7-segment display
+        displayDigit(3);  // Visualizza il numero 3 sul display a 7 segmenti
         delay(1000);
-        displayDigit(6);  // Display the 6 on the 7-segment display
+        displayDigit(6);  // Visualizza il numero 6 sul display a 7 segmenti
         delay(1000);
     }
 
     void displayDigit(int digit) {
-        // Turn off all segments
+        // Spegne tutti i segmenti
         digitalWrite(pinA, LOW);
         digitalWrite(pinB, LOW);
         digitalWrite(pinC, LOW);
@@ -485,7 +480,7 @@ The basic syntax of a switch statement is usually as follows:
         digitalWrite(pinF, LOW);
         digitalWrite(pinG, LOW);
 
-        // Turn on the segments needed for the desired number (HIGH turns on the segments for common cathode)
+        // Accende i segmenti necessari per visualizzare il numero desiderato (HIGH accende i segmenti per catodo comune)
         switch (digit) {
             case 1:
                 digitalWrite(pinB, HIGH);
@@ -531,22 +526,22 @@ The basic syntax of a switch statement is usually as follows:
 
 
 
-Code Creation - Cyber Dice
+Creazione del Codice - Cyber Dice
 -------------------------------------
-Now that we know how to display numbers 1-6 on the 7-segment display, how can we achieve the effect of a Cyber Dice?
+Ora che sappiamo come visualizzare i numeri da 1 a 6 sul display a 7 segmenti, come possiamo ottenere l'effetto di un Cyber Dice?
 
-This involves pressing a button to make the display cycle through numbers 1 to 6, and releasing the button to show a stable number. Let's see how we can achieve this with code.
+Questo coinvolge la pressione di un pulsante per far ciclicare il display attraverso i numeri da 1 a 6 e il rilascio del pulsante per mostrare un numero stabile. Vediamo come possiamo ottenere questo effetto con il codice.
 
-1. Open the sketch you saved earlier, ``Lesson23_Show_Number``. 
+1. Apri lo sketch salvato in precedenza, ``Lesson23_Show_Number``. 
 
-2. Hit “Save As...” from the “File” menu, and rename it to ``Lesson23_Cyber_Dice``. Click "Save".
+2. Clicca su “Salva come...” dal menu “File” e rinominalo in ``Lesson23_Cyber_Dice``. Clicca su "Salva".
 
-3. Define the button pin and set it as an input.
+3. Definisci il pin del pulsante e impostalo come input.
 
 .. code-block:: Arduino
     :emphasize-lines: 10-11,23-24
 
-    // Define the pins connected to the segments of the 7-segment display
+    // Definisci i pin collegati ai segmenti del display a 7 segmenti
     int pinA = 2;
     int pinB = 3;
     int pinC = 4;
@@ -555,11 +550,11 @@ This involves pressing a button to make the display cycle through numbers 1 to 6
     int pinF = 7;
     int pinG = 8;
 
-    // Define the pin connected to the button
+    // Definisci il pin collegato al pulsante
     int buttonPin = 9;
 
     void setup() {
-        // Set all pins as outputs
+        // Imposta tutti i pin come output
         pinMode(pinA, OUTPUT);
         pinMode(pinB, OUTPUT);
         pinMode(pinC, OUTPUT);
@@ -568,98 +563,95 @@ This involves pressing a button to make the display cycle through numbers 1 to 6
         pinMode(pinF, OUTPUT);
         pinMode(pinG, OUTPUT);
 
-        // Set the button pin as an input
+        // Imposta il pin del pulsante come input
         pinMode(buttonPin, INPUT);
     }
 
-4. Check if the button is pressed at the moment when the ``void loop()`` function runs. If the button is not pressed, the code inside the ``if`` block is skipped.
+4. Verifica se il pulsante è premuto nel momento in cui viene eseguita la funzione ``void loop()``. Se il pulsante non è premuto, il codice all'interno del blocco ``if`` viene saltato.
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4
 
     void loop() {
-        // Check if the button is pressed
+        // Verifica se il pulsante è premuto
         if (digitalRead(buttonPin) == HIGH) {
         }
     }
 
-5. In Arduino or similar microcontroller programming, a common issue when dealing with button input is ensuring that each press triggers only one action, especially when generating events or commands (such as generating a random number). To address this, we can use a technique known as "wait-for-release".
+5. In Arduino o in programmazione su microcontrollori simili, un problema comune quando si lavora con input da pulsante è assicurarsi che ogni pressione generi una sola azione, soprattutto quando si generano eventi o comandi (come generare un numero casuale). Per risolvere questo, possiamo usare una tecnica chiamata "attendere il rilascio".
 
-**wait-for-release**
+**attendere il rilascio**
 
-The core idea of this method is that after a button is pressed and an action is performed, the program enters a loop that continues to monitor the button state until it is released. This is to ensure that no additional actions are triggered due to button bouncing or the user holding down the button.
+L'idea principale di questo metodo è che, dopo che il pulsante è stato premuto e un'azione è stata eseguita, il programma entra in un ciclo che continua a monitorare lo stato del pulsante fino al suo rilascio. Questo serve per garantire che non vengano attivate ulteriori azioni a causa di rimbalzi del pulsante o perché l'utente lo tiene premuto.
 
-We can implement this with a ``while`` loop in the code.
-
+Possiamo implementare questo comportamento con un ciclo ``while`` nel codice.
 
 .. image:: img/while_loop.png
     :width: 400
     :align: center
 
-
-
 .. code-block:: Arduino
     :emphasize-lines: 4-6
 
     void loop() {
-        // Check if the button is pressed
+        // Verifica se il pulsante è premuto
         if (digitalRead(buttonPin) == HIGH) {
-            // Wait for the button to be released before continuing
+            // Attendi che il pulsante venga rilasciato prima di continuare
             while (digitalRead(buttonPin) == HIGH) {
             }
         }
     }
 
-6. Now, use the ``random()`` function to generate a random number between 1 and 6, and use ``displayDigit()`` to display this number on the 7-segment display. You will see the display rapidly rolling through different numbers while the button is held down.
+6. Ora, usa la funzione ``random()`` per generare un numero casuale tra 1 e 6, e usa ``displayDigit()`` per visualizzare questo numero sul display a 7 segmenti. Vedrai il display scorrere rapidamente tra numeri diversi mentre il pulsante è tenuto premuto.
 
 .. code-block:: Arduino
     :emphasize-lines: 6-12
 
     void loop() {
-        // Check if the button is pressed
+        // Verifica se il pulsante è premuto
         if (digitalRead(buttonPin) == HIGH) {
-            // Wait for the button to be released before continuing
+            // Attendi che il pulsante venga rilasciato prima di continuare
             while (digitalRead(buttonPin) == HIGH) {
-                // Generate a random number between 1 and 6
+                // Genera un numero casuale tra 1 e 6
                 int num = random(1, 7);
                 
-                // Display the random number on the 7-segment display
+                // Visualizza il numero casuale sul display a 7 segmenti
                 displayDigit(num);
-                // Delay for a short period to allow visible display updates
+                // Ritardo per permettere aggiornamenti visibili del display
                 delay(100);
             }
         }
     }
 
-7. Finally, add a delay to debounce the button and prevent multiple rapid inputs.
+7. Infine, aggiungi un ritardo per evitare il rimbalzo del pulsante e prevenire ingressi multipli rapidi.
 
 .. code-block:: Arduino
     :emphasize-lines: 15
 
     void loop() {
-        // Check if the button is pressed
+        // Verifica se il pulsante è premuto
         if (digitalRead(buttonPin) == HIGH) {
-            // Wait for the button to be released before continuing
+            // Attendi che il pulsante venga rilasciato prima di continuare
             while (digitalRead(buttonPin) == HIGH) {
-                // Generate a random number between 1 and 6
+                // Genera un numero casuale tra 1 e 6
                 int num = random(1, 7);
                 
-                // Display the random number on the 7-segment display
+                // Visualizza il numero casuale sul display a 7 segmenti
                 displayDigit(num);
-                // Delay for a short period to allow visible display updates
+                // Ritardo per consentire aggiornamenti visibili del display
                 delay(100);
             }
-            // Add a delay to debounce the button and prevent multiple rapid inputs
+            // Aggiungi un ritardo per evitare il rimbalzo del pulsante e prevenire ingressi multipli rapidi
             delay(500);
         }
     }
 
 
-8. Your complete code should look like this, and now you can upload the code to the Arduino Uno R3. Once the code is uploaded, if you hold down the button, the numbers on the display will cycle rapidly, and when released, a number will be shown.
+8. Il codice completo dovrebbe essere simile a questo, e ora puoi caricare il codice sull'Arduino Uno R3. Una volta caricato, se tieni premuto il pulsante, i numeri sul display scorreranno rapidamente, e al rilascio verrà mostrato un numero.
 
 .. code-block:: Arduino
 
-    // Define the pins connected to the segments of the 7-segment display
+    // Definisci i pin collegati ai segmenti del display a 7 segmenti
     int pinA = 2;
     int pinB = 3;
     int pinC = 4;
@@ -668,11 +660,11 @@ We can implement this with a ``while`` loop in the code.
     int pinF = 7;
     int pinG = 8;
 
-    // Define the pin connected to the button
+    // Definisci il pin collegato al pulsante
     int buttonPin = 9;
 
     void setup() {
-        // Set all pins as outputs
+        // Imposta tutti i pin come output
         pinMode(pinA, OUTPUT);
         pinMode(pinB, OUTPUT);
         pinMode(pinC, OUTPUT);
@@ -681,31 +673,31 @@ We can implement this with a ``while`` loop in the code.
         pinMode(pinF, OUTPUT);
         pinMode(pinG, OUTPUT);
 
-        // Set the button pin as an input
+        // Imposta il pin del pulsante come input
         pinMode(buttonPin, INPUT);
     }
 
     void loop() {
-        // Check if the button is pressed
+        // Verifica se il pulsante è premuto
         if (digitalRead(buttonPin) == HIGH) {
-            // Wait for the button to be released before continuing
+            // Attendi che il pulsante venga rilasciato prima di continuare
             while (digitalRead(buttonPin) == HIGH) {
-                // Generate a random number between 1 and 6
+                // Genera un numero casuale tra 1 e 6
                 int num = random(1, 7);
 
-                // Display the random number on the 7-segment display
+                // Visualizza il numero casuale sul display a 7 segmenti
                 displayDigit(num);
-                // Delay for a short period to allow visible display updates
+                // Ritardo per consentire aggiornamenti visibili del display
                 delay(100);
             }
-            // Add a delay to debounce the button and prevent multiple rapid inputs
+            // Aggiungi un ritardo per evitare il rimbalzo del pulsante e prevenire ingressi multipli rapidi
             delay(500);
         }
     }
 
 
     void displayDigit(int digit) {
-        // Turn off all segments
+        // Spegni tutti i segmenti
         digitalWrite(pinA, LOW);
         digitalWrite(pinB, LOW);
         digitalWrite(pinC, LOW);
@@ -714,7 +706,7 @@ We can implement this with a ``while`` loop in the code.
         digitalWrite(pinF, LOW);
         digitalWrite(pinG, LOW);
 
-        // Turn on the segments needed for the desired number (LOW turns on the segments for common cathode)
+        // Accendi i segmenti necessari per il numero desiderato (LOW accende i segmenti per catodo comune)
         switch (digit) {
             case 1:
             digitalWrite(pinB, HIGH);
@@ -758,10 +750,11 @@ We can implement this with a ``while`` loop in the code.
         }
     }
 
-9. Finally, remember to save your code and tidy up your workspace.
+9. Infine, ricorda di salvare il codice e di riordinare la tua area di lavoro.
 
-**Summary**
+**Riepilogo**
 
-In this lesson, we've successfully completed the Cyber Dice project, enabling you to engage in friendly competitions with friends to see who can roll the highest number. Throughout this lesson, we explored the workings of a 7-segment display, learning how to drive it effectively. We simplified our code using switch-case statements, enhancing readability and efficiency.
+In questa lezione, abbiamo completato con successo il progetto del Cyber Dice, permettendoti di partecipare a competizioni amichevoli con i tuoi amici per vedere chi riesce a ottenere il numero più alto. Durante questa lezione, abbiamo esplorato il funzionamento di un display a 7 segmenti, imparando a controllarlo efficacemente. Abbiamo semplificato il nostro codice utilizzando dichiarazioni switch-case, migliorando la leggibilità e l'efficienza.
 
-Furthermore, we implemented logic to control the display of random numbers on the 7-segment display based on the state of a button press, adding dynamic interaction to our project. This hands-on experience not only familiarizes you with basic electronic components and coding strategies but also illustrates practical applications of these skills in creating engaging and interactive projects.
+Inoltre, abbiamo implementato la logica per controllare la visualizzazione di numeri casuali sul display a 7 segmenti in base allo stato di pressione di un pulsante, aggiungendo un'interazione dinamica al nostro progetto. Questa esperienza pratica non solo ti ha familiarizzato con i componenti elettronici di base e le strategie di codifica, ma ha anche illustrato le applicazioni pratiche di queste competenze nella creazione di progetti coinvolgenti e interattivi.
+

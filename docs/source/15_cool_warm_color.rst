@@ -1,21 +1,21 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts su Facebook! Approfondisci Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Ottieni accesso anticipato a nuove presentazioni di prodotti e anteprime.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e Omaggi Festivi**: Partecipa a promozioni e omaggi durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
-15. Cool or Warm Colors
-=========================
+15. Colori Caldi o Freddi
+============================
 
-Colors are not just a part of our visual experience—they also influence our emotions and feelings. In this lesson, we dive into the psychological impacts of colors and learn how to manipulate an RGB LED to shift between warm and cool colors, mimicking the effects of changing light temperatures.
+I colori non fanno solo parte della nostra esperienza visiva, influenzano anche le nostre emozioni e sensazioni. In questa lezione esploreremo gli impatti psicologici dei colori e impareremo a manipolare un LED RGB per passare tra colori caldi e freddi, imitando gli effetti delle variazioni di temperatura della luce.
 
 .. raw:: html
 
@@ -24,206 +24,205 @@ Colors are not just a part of our visual experience—they also influence our em
         Your browser does not support the video tag.
     </video>
 
-**Overview**
+**Panoramica**
 
-The concept of cool and warm colors relates to the psychological effects colors have on our perception. Reds, oranges, yellows, and browns typically evoke feelings of warmth and excitement, classifying them as warm colors. Conversely, greens, blues, and purples often impart calming, refreshing, and spacious feelings, making them cool colors. Orange and blue are at opposite ends of this warm-cool spectrum.
+Il concetto di colori caldi e freddi si riferisce agli effetti psicologici che i colori hanno sulla nostra percezione. Rossi, arancioni, gialli e marroni evocano solitamente sensazioni di calore e vitalità, classificandoli come colori caldi. Al contrario, verdi, blu e viola spesso trasmettono sensazioni di calma e freschezza, rendendoli colori freddi. Arancione e blu si trovano agli estremi opposti di questo spettro caldo-freddo.
 
 .. image:: img/15_mix_color_warm_cool.png
     :width: 400
     :align: center
 
-At home or in leisure environments, people prefer lighting in shades of light yellow or off-white, creating a cozy atmosphere akin to being bathed in sunset or candlelight.
+A casa o in ambienti di svago, le persone preferiscono luci in tonalità di giallo chiaro o bianco caldo, creando un'atmosfera accogliente, simile a quella di un tramonto o della luce di una candela.
 
 .. image:: img/15_mix_color_warm_room.png
     :width: 400
     :align: center
 
-In libraries, classrooms, offices, and hospitals, cooler lighting tones are favored as they promote concentration and freshness, which are conducive to working and learning.
+In biblioteche, aule, uffici e ospedali, sono invece preferite tonalità di luce più fredde, in quanto favoriscono la concentrazione e una sensazione di freschezza, condizioni ideali per lavorare e studiare.
 
 .. image:: img/15_mix_color_cool_room.png
     :width: 400
     :align: center
 
-The warmth or coolness of light is a visceral experience that affects our psychological response and visual comfort. Designers and lighting engineers carefully select color temperatures suited to a space's function and desired ambiance, creating both aesthetically pleasing and practical lighting environments. By scientifically applying these principles, we can enhance the quality of our living and working environments, fostering a healthier and more comfortable atmosphere.
+La sensazione di calore o freschezza della luce è un'esperienza viscerale che influisce sulla nostra risposta psicologica e sul comfort visivo. I progettisti e gli ingegneri dell'illuminazione selezionano attentamente le temperature di colore adatte alla funzione di uno spazio e all'atmosfera desiderata, creando ambienti di illuminazione esteticamente gradevoli e funzionali. Applicando scientificamente questi principi, possiamo migliorare la qualità dei nostri ambienti abitativi e di lavoro, creando atmosfere più sane e confortevoli.
 
-In this lesson, we'll take on the role of lighting engineers to create a lighting system that can switch between color temperatures.
+In questa lezione, assumeremo il ruolo di ingegneri dell'illuminazione per creare un sistema di illuminazione che possa passare tra diverse temperature di colore.
 
-**Learning Objectives**
+**Obiettivi di Apprendimento**
 
-- Understand the psychological effects of cool and warm colors.
-- Explore how light temperatures affect mood and setting.
-- Learn to adjust RGB LED colors to simulate different temperatures using Arduino.
-- Develop practical skills in using the ``map()`` function to transition between color temperatures.
+- Comprendere gli effetti psicologici dei colori caldi e freddi.
+- Esplorare come le temperature della luce influenzano l'umore e l'ambiente.
+- Imparare a regolare i colori di un LED RGB per simulare diverse temperature con Arduino.
+- Sviluppare competenze pratiche nell'uso della funzione ``map()`` per passare tra le temperature di colore.
 
 
-Build the Circuit
+Costruzione del Circuito
 ------------------------------------
 
-**Components Needed**
-
+**Componenti Necessari**
 
 .. list-table:: 
    :widths: 25 25 25 25
    :header-rows: 0
 
    * - 1 * Arduino Uno R3
-     - 1 * RGB LED
-     - 3 * 220Ω Resistor
-     - 1 * Potentiometer
+     - 1 * LED RGB
+     - 3 * Resistenze da 220Ω
+     - 1 * Potenziometro
    * - |list_uno_r3| 
      - |list_rgb_led| 
      - |list_220ohm| 
      - |list_potentiometer| 
-   * - 1 * USB Cable
+   * - 1 * Cavo USB
      - 1 * Breadboard
-     - Jumper Wires
-     -
+     - Fili di Collegamento
+     - 
    * - |list_usb_cable| 
      - |list_breadboard| 
      - |list_wire| 
-     -
+     - 
      
-**Building Steps**
+**Fasi di Costruzione**
 
-This circuit builds upon the one from Lesson 12 by adding a potentiometer.
+Questo circuito si basa su quello della Lezione 12 con l'aggiunta di un potenziometro.
 
 .. image:: img/15_cool_warm_color.png
     :width: 500
     :align: center
 
-1. Remove the jumper wire connecting the GND pin of the Arduino Uno R3 to the GND pin of the RGB LED and then insert it into the negative terminal of the breadboard. Then, connect a jumper wire from the negative terminal to the GND pin of the RGB LED.
+1. Rimuovi il filo jumper che collega il pin GND dell'Arduino Uno R3 al pin GND del LED RGB, quindi inseriscilo nel terminale negativo della breadboard. Poi, collega un filo jumper dal terminale negativo al pin GND del LED RGB.
 
 .. image:: img/15_cool_warm_color_gnd.png
     :width: 500
     :align: center
 
-2. Insert the potentiometer into holes 25G, 26F, and 27G.
+2. Inserisci il potenziometro nei fori 25G, 26F e 27G.
 
 .. image:: img/15_cool_warm_color_pot.png
     :width: 500
     :align: center
 
-3. Connect the middle pin of the potentiometer to the A0 pin of the Arduino Uno R3.
+3. Collega il pin centrale del potenziometro al pin A0 dell'Arduino Uno R3.
 
 .. image:: img/15_cool_warm_color_a0.png
     :width: 500
     :align: center
 
-4. Finally, connect the left pin of the potentiometer to the 5V pin on the Arduino Uno R3 and the right pin to the negative terminal on the breadboard.
+4. Infine, collega il pin sinistro del potenziometro al pin 5V dell'Arduino Uno R3 e il pin destro al terminale negativo della breadboard.
 
 .. image:: img/15_cool_warm_color.png
     :width: 500
     :align: center
 
 
+Creazione del Codice
+-------------------------
 
-Code Creation
----------------------
+**Comprendere i Colori Caldi e Freddi**
 
-**Understanding Warm and Cool Colors**
+Prima di regolare la temperatura del colore, dobbiamo comprendere le differenze tra i valori RGB per i colori freddi e caldi.
 
-Before adjusting the color temperature, we need to understand the differences between the RGB values for cool and warm colors.
+La percezione del calore nella luce è in parte soggettiva, ma i colori caldi devono tendere verso l'arancio-rosso, mentre i colori freddi devono tendere verso il blu.
 
-The perception of warmth in lighting is somewhat subjective, but unquestionably, warm colors should lean towards orange-red, while cool colors should lean towards blue.
+1. Apri **Paint** o un qualsiasi strumento di selezione colori, trova quelli che consideri i colori più caldi e freddi, e registra i loro valori RGB nel tuo quaderno.
 
-1. Open **Paint** or any color picking tool, find what you consider the warmest and coolest colors, and record their RGB values in your handbook.
 
 .. note::
 
-    Note that before you select a color, adjust the lumens to the proper position.
+    Nota che, prima di selezionare un colore, devi regolare i lumen nella posizione corretta.
 
 .. list-table::
    :widths: 25 25 50 25
    :header-rows: 1
 
-   * - Color Type
-     - Red
-     - Green
-     - Blue
-   * - Warm Color
-     -
-     -
-     -
-   * - Cool Color
-     -
-     -
-     -
+   * - Tipo di Colore
+     - Rosso
+     - Verde
+     - Blu
+   * - Colore Caldo
+     - 
+     - 
+     - 
+   * - Colore Freddo
+     - 
+     - 
+     - 
 
-2. Here are examples of warm and cool tones along with their RGB values:
+2. Ecco alcuni esempi di tonalità calde e fredde con i relativi valori RGB:
 
-* Red (Red: 246, Green: 52, Blue: 8)
+* Rosso (Rosso: 246, Verde: 52, Blu: 8)
 
 .. image:: img/15_mix_color_tone_warm.png
 
-* Light Blue (Red: 100 ,Green: 150, Blue: 255)
+* Azzurro Chiaro (Rosso: 100, Verde: 150, Blu: 255)
 
 .. image:: img/15_mix_color_tone_cool.png
 
-The primary difference between warm and cool colors is the ratio of the three primary color intensities. Next, we'll store these warm and cool RGB values in our sketch.
+La differenza principale tra i colori caldi e freddi è il rapporto tra le intensità dei tre colori primari. Successivamente, memorizzeremo questi valori RGB caldi e freddi nel nostro sketch.
 
-3. Open the sketch you saved earlier, ``Lesson13_PWM_Color_Mixing``. 
+3. Apri lo sketch che hai salvato in precedenza, ``Lesson13_PWM_Color_Mixing``.
 
-4. Hit “Save As...” from the “File” menu, and rename it to ``Lesson15_Cool_Warm_Color``. Click "Save".
+4. Clicca su "Salva con nome..." dal menu "File" e rinominalo in ``Lesson15_Cool_Warm_Color``. Premi "Salva".
 
-5. Before the ``void setup()``, declare six variables to store the RGB values for these two colors. Use the colors you've selected.
+5. Prima del ``void setup()``, dichiara sei variabili per memorizzare i valori RGB di questi due colori. Usa i colori che hai selezionato.
 
 .. code-block:: Arduino
     :emphasize-lines: 1-4,6-9
 
-    // RGB values for a warm color
+    // Valori RGB per un colore caldo
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // Valori RGB per un colore freddo
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // Codice da eseguire una volta all'inizio:
+        pinMode(9, OUTPUT);   // Imposta il pin Blu del LED RGB come output
+        pinMode(10, OUTPUT);  // Imposta il pin Verde del LED RGB come output
+        pinMode(11, OUTPUT);  // Imposta il pin Rosso del LED RGB come output
     }
 
-**Using the map() Function**
+**Utilizzo della funzione map()**
 
-To transition from warm to cool lighting, all you need to do is reduce the intensity of red light, increase blue light, and finely adjust green light intensity.
+Per passare dall'illuminazione calda a quella fredda, tutto ciò che devi fare è ridurre l'intensità della luce rossa, aumentare quella blu e regolare finemente l'intensità della luce verde.
 
-In previous projects, we've learned how to vary the LED's brightness in response to the rotation of a potentiometer.
+Nei progetti precedenti, abbiamo imparato come variare la luminosità del LED in base alla rotazione di un potenziometro.
 
-However, in this project, the potentiometer's rotation causes the intensities of the RGB pins to change within a specific range, making simple division inadequate for our needs. Thus, we require a new function, ``map()``.
+Tuttavia, in questo progetto, la rotazione del potenziometro causa il cambiamento delle intensità dei pin RGB all'interno di un intervallo specifico, rendendo inadeguata una semplice divisione. Per questo, utilizziamo la funzione ``map()``.
 
-In Arduino programming, the ``map()`` function is extremely useful because it allows you to map (or convert) a numerical range to another range.
+Nel linguaggio di programmazione Arduino, la funzione ``map()`` è estremamente utile perché ti permette di mappare (o convertire) un intervallo numerico in un altro.
 
-Here is how to use it:
+Ecco come utilizzarla:
 
-* ``map(value, fromLow, fromHigh, toLow, toHigh)``: Re-maps a number from one range to another. That is, a value of ``fromLow`` would get mapped to ``toLow``, a value of ``fromHigh`` to ``toHigh``, values in-between to values in-between, etc.
+* ``map(value, fromLow, fromHigh, toLow, toHigh)``: Mappa un numero da un intervallo a un altro. Un valore di ``fromLow`` verrà mappato su ``toLow``, un valore di ``fromHigh`` su ``toHigh`` e così via per i valori intermedi.
 
-    **Parameters**
-        * ``value``: the number to map.
-        * ``fromLow``: the lower bound of the value's current range.
-        * ``fromHigh``: the upper bound of the value's current range.
-        * ``toLow``: the lower bound of the value's target range.
-        * ``toHigh``: the upper bound of the value's target range.
+    **Parametri**
+        * ``value``: il numero da mappare.
+        * ``fromLow``: il limite inferiore dell'intervallo di partenza.
+        * ``fromHigh``: il limite superiore dell'intervallo di partenza.
+        * ``toLow``: il limite inferiore dell'intervallo di destinazione.
+        * ``toHigh``: il limite superiore dell'intervallo di destinazione.
 
-    **Returns**
-        The mapped value. Data type: long.
+    **Restituisce**
+        Il valore mappato. Tipo di dato: long.
 
-The ``map()`` function scales a value from its original range (fromLow to fromHigh) to a new range (toLow to toHigh). First, it calculates the position of the ``value`` within its original range, then applies the same proportion to scale this position to the new range.
+La funzione ``map()`` scala un valore dal suo intervallo originale (fromLow a fromHigh) a un nuovo intervallo (toLow a toHigh). Prima, calcola la posizione del ``value`` all'interno dell'intervallo originale, quindi applica la stessa proporzione per scalare questa posizione nel nuovo intervallo.
 
 .. image:: img/15_map_pic.png
     :width: 400
     :align: center
 
-So it can be written as the formula shown below:
+Pertanto, può essere scritta come la formula mostrata di seguito:
 
 .. code-block::
 
     (value-fromLow)/(fromHigh-fromLow) = (y-toLow)/(toHigh-toLow)
 
-Using algebra, you can rearrange this equation to solve for ``y``:
+Utilizzando l'algebra, puoi riordinare questa equazione per risolvere ``y``:
 
 .. code-block::
 
@@ -231,82 +230,81 @@ Using algebra, you can rearrange this equation to solve for ``y``:
 
 .. image:: img/15_map_format.png
 
-For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 434, then ``y = (434-0) * (100 - 246) / (1023-0) + 246``, which approximately equals 152.
+Ad esempio, utilizzando ``y = map(value, 0, 1023, 246, 100);``, se ``value`` è uguale a 434, allora ``y = (434-0) * (100 - 246) / (1023-0) + 246``, che è approssimativamente uguale a 152.
 
-
-6. Remove the original code in ``void loop()``, then write code to read the potentiometer value, storing it in the variable ``potValue``.
-
-.. code-block:: Arduino
-
-    void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-    }
-
-7. Then, use the ``map()`` function to map the potentiometer value from the range 0~1023 to the range 255 (``warm_r``) ~ 100 (``cool_r``).
+6. Rimuovi il codice originale nel ``void loop()``, quindi scrivi del codice per leggere il valore del potenziometro, memorizzandolo nella variabile ``potValue``.
 
 .. code-block:: Arduino
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // Codice da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Legge il valore dal potenziometro
     }
 
-8. You can use the serial monitor to view the ``potValue`` and the mapped value ``value_r`` to deepen your understanding of the ``map()`` function. Now start the serial monitor in ``void setup()``.
+7. Usa poi la funzione ``map()`` per mappare il valore del potenziometro dall'intervallo 0~1023 all'intervallo 255 (``warm_r``) ~ 100 (``cool_r``).
+
+.. code-block:: Arduino
+
+    void loop() {
+        // Codice da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Legge il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
+    }
+
+8. Puoi usare il monitor seriale per visualizzare il ``potValue`` e il valore mappato ``value_r`` per approfondire la tua comprensione della funzione ``map()``. Ora, avvia il monitor seriale nel ``void setup()``.
 
 .. code-block:: Arduino
     :emphasize-lines: 6
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        // Codice da eseguire una volta:
+        pinMode(9, OUTPUT);   // Imposta il pin Blu del LED RGB come output
+        pinMode(10, OUTPUT);  // Imposta il pin Verde del LED RGB come output
+        pinMode(11, OUTPUT);  // Imposta il pin Rosso del LED RGB come output
+        Serial.begin(9600);        // Configurazione della comunicazione seriale a 9600 baud
     }
 
-9. Print the variables ``potValue`` and ``value_r`` on the same line, separated by "|".
+9. Stampa le variabili ``potValue`` e ``value_r`` sulla stessa linea, separate da "|".
 
 .. code-block:: Arduino
     :emphasize-lines: 23-26
 
-    // RGB values for a warm color
+    // Valori RGB per un colore caldo
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // Valori RGB per un colore freddo
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
-        Serial.begin(9600);        // Serial communication setup at 9600 baud
+        // Codice da eseguire una volta:
+        pinMode(9, OUTPUT);   // Imposta il pin Blu del LED RGB come output
+        pinMode(10, OUTPUT);  // Imposta il pin Verde del LED RGB come output
+        pinMode(11, OUTPUT);  // Imposta il pin Rosso del LED RGB come output
+        Serial.begin(9600);        // Configurazione della comunicazione seriale a 9600 baud
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // Codice da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Legge il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
         Serial.print(potValue);
         Serial.print(" | ");
         Serial.println(value_r);
-        delay(500);  // Wait for 500ms
+        delay(500);  // Attende 500ms
     }
 
-    // Function to set the color of the RGB LED
+    // Funzione per impostare il colore del LED RGB
     void setColor(int red, int green, int blue) {
-        analogWrite(11, red);    // Write PWM to red pin
-        analogWrite(10, green);  // Write PWM to green pin
-        analogWrite(9, blue);    // Write PWM to blue pin
+        analogWrite(11, red);    // Scrive il valore PWM sul pin rosso
+        analogWrite(10, green);  // Scrive il valore PWM sul pin verde
+        analogWrite(9, blue);    // Scrive il valore PWM sul pin blu
     }
 
-10. You can now verify and upload your code, open the serial monitor, and you will see two columns of data printed.
+10. Ora puoi verificare e caricare il tuo codice, aprire il monitor seriale e vedrai due colonne di dati stampati.
 
 .. code-block::
 
@@ -317,139 +315,132 @@ For instance, using ``y = map(value, 0, 1023, 246, 100);``, if ``value`` equals 
     434 | 152
     434 | 152
 
+Dai dati è evidente che il valore 434, all'interno dell'intervallo 0~1023, corrisponde al valore 152 all'interno dell'intervallo 246~100.
 
-From the data, it is evident that the value 434's position within the range 0~1023 corresponds to the position of 152 within the range 246~100.
+**Regolazione della temperatura colore**
 
+Qui utilizziamo la funzione ``map()`` per far variare l'intensità dei tre pin del LED RGB in base alla rotazione del potenziometro, passando dalle tonalità più calde a quelle più fredde.
+Più specificamente, prendendo come riferimento i valori forniti, mentre si ruota il potenziometro, il valore R del LED RGB passerà gradualmente da 246 a 100, il valore G da 8 a 150 (anche se la variazione del valore G potrebbe non essere molto evidente), e il valore B da 8 a 255.
 
-**Adjusting Color Temperature**
-
-Here we use the ``map()`` function to make the intensity of the three pins of the RGB LED change with the rotation of the potentiometer, shifting from the warmest to the coldest hues.
-More specifically, as an example with the reference values I provided, as the potentiometer is rotated,
-the R value of the RGB LED will gradually change from 246 to 100, G value from 8 to 150 (even though the change in G value is not very noticeable), and B value gradually from 8 to 255.
-
-
-11. Next, we won't need serial printing temporarily, and serial printing can affect the entire code process, so use ``Ctrl +/`` to comment out the related code.
+11. Successivamente, non avremo bisogno della stampa seriale temporaneamente, e la stampa seriale potrebbe influire sull'intero processo del codice, quindi usa ``Ctrl + /`` per commentare il codice relativo.
 
     .. note::
 
-        The reason not to delete directly is that if you need to print below, you do not need to rewrite it; just select these lines and press ``Ctrl+/`` to uncomments.
-
+        Il motivo per cui non eliminiamo direttamente è che, se in futuro sarà necessario stampare, non sarà necessario riscrivere il codice; basterà selezionare queste righe e premere ``Ctrl + /`` per decommentarle.
 
 .. code-block:: Arduino
     :emphasize-lines: 3,4
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // inserisci qui il codice principale da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Leggi il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
+        // delay(500);  // Attendi per 500ms
     }
 
-12. Continue to call the ``map()`` function, to get the mapped ``value_g`` and ``value_b`` based on the potentiometer's value.
-
+12. Continua a chiamare la funzione ``map()`` per ottenere i valori mappati ``value_g`` e ``value_b`` in base al valore del potenziometro.
 
 .. code-block:: Arduino
     :emphasize-lines: 9,10
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // inserisci qui il codice principale da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Leggi il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
+        // delay(500);  // Attendi per 500ms
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Mappa il valore del potenziometro sull'intensità del verde
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Mappa il valore del potenziometro sull'intensità del blu
     }
 
-13. Finally, call the ``setColor()`` function to display the mapped RGB values on the RGB LED.
+13. Infine, chiama la funzione ``setColor()`` per visualizzare i valori RGB mappati sul LED RGB.
 
 .. code-block:: Arduino
     :emphasize-lines: 11,12
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // inserisci qui il codice principale da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Leggi il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
-        setColor(value_r, value_g, value_b);                   // Set LED color
+        // delay(500);  // Attendi per 500ms
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Mappa il valore del potenziometro sull'intensità del verde
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Mappa il valore del potenziometro sull'intensità del blu
+        setColor(value_r, value_g, value_b);                   // Imposta il colore del LED
         delay(500);
     }
 
-14. Your complete code is as follows; you can click the Upload button to upload the code to the Arduino Uno R3. Then you can rotate the potentiometer, and you will notice the RGB LED slowly transition from a cool to a warm hue, or from a warm hue to a cool hue.
+14. Il tuo codice completo è il seguente; puoi cliccare sul pulsante Upload per caricare il codice sull'Arduino Uno R3. Quindi puoi ruotare il potenziometro e noterai che il LED RGB passa lentamente da una tonalità fredda a una calda, o viceversa.
 
 .. code-block:: Arduino
 
-    // RGB values for a warm color
+    // Valori RGB per un colore caldo
     int warm_r = 246;
     int warm_g = 52;
     int warm_b = 8;
 
-    // RGB values for a cool color
+    // Valori RGB per un colore freddo
     int cool_r = 100;
     int cool_g = 150;
     int cool_b = 255;
 
     void setup() {
-        // put your setup code here, to run once:
-        pinMode(9, OUTPUT);   // Set Blue pin of RGB LED as output
-        pinMode(10, OUTPUT);  // Set Green pin of RGB LED as output
-        pinMode(11, OUTPUT);  // Set Red pin of RGB LED as output
+        // inserisci qui il codice di configurazione da eseguire una sola volta:
+        pinMode(9, OUTPUT);   // Imposta il pin Blu del LED RGB come output
+        pinMode(10, OUTPUT);  // Imposta il pin Verde del LED RGB come output
+        pinMode(11, OUTPUT);  // Imposta il pin Rosso del LED RGB come output
     }
 
     void loop() {
-        // put your main code here, to run repeatedly:
-        int potValue = analogRead(A0);                         // Read value from potentiometer
-        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Map pot value to red intensity
+        // inserisci qui il codice principale da eseguire ripetutamente:
+        int potValue = analogRead(A0);                         // Leggi il valore dal potenziometro
+        int value_r = map(potValue, 0, 1023, warm_r, cool_r);  // Mappa il valore del potenziometro sull'intensità del rosso
         // Serial.print(potValue);
         // Serial.print(" | ");
         // Serial.println(value_r);
-        // delay(500);  // Wait for 500ms
-        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Map pot value to green intensity
-        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Map pot value to blue intensity
-        setColor(value_r, value_g, value_b);                   // Set LED color
-        delay(500);                                            // Wait for 500ms
+        // delay(500);  // Attendi per 500ms
+        int value_g = map(potValue, 0, 1023, warm_g, cool_g);  // Mappa il valore del potenziometro sull'intensità del verde
+        int value_b = map(potValue, 0, 1023, warm_b, cool_b);  // Mappa il valore del potenziometro sull'intensità del blu
+        setColor(value_r, value_g, value_b);                   // Imposta il colore del LED
+        delay(500);                                            // Attendi 500ms
     }
 
-    // Function to set the color of the RGB LED
+    // Funzione per impostare il colore del LED RGB
     void setColor(int red, int green, int blue) {
-        analogWrite(11, red);    // Write PWM to red pin
-        analogWrite(10, green);  // Write PWM to green pin
-        analogWrite(9, blue);    // Write PWM to blue pin
+        analogWrite(11, red);    // Scrivi PWM sul pin rosso
+        analogWrite(10, green);  // Scrivi PWM sul pin verde
+        analogWrite(9, blue);    // Scrivi PWM sul pin blu
     }
 
-15. Finally, remember to save your code and tidy up your workspace.
+15. Infine, ricorda di salvare il tuo codice e sistemare la tua area di lavoro.
 
-**Tips**
+**Consigli**
 
-During the experiment, you might find that the shift between warm and cool hues is not as apparent as seen on screen; for example, an expected warm light may appear white. This is normal, as the color mixing in an RGB LED is not as refined as on a display.
+Durante l'esperimento, potresti notare che il passaggio tra tonalità calde e fredde non è così evidente come visto sullo schermo; ad esempio, una luce calda attesa potrebbe apparire bianca. Questo è normale, poiché la miscelazione dei colori in un LED RGB non è raffinata come su uno schermo.
 
-In such cases, you can reduce the intensity of G and B values in the warm color to make the RGB LED display a more appropriate color.
+In questi casi, puoi ridurre l'intensità dei valori G e B nel colore caldo per far visualizzare al LED RGB un colore più appropriato.
 
-**Question**
+**Domanda**
 
-Note that the "lower bounds" of either range may be larger or smaller than the "upper bounds", so the ``map(value, fromLow, fromHigh, toLow, toHigh)`` function may be used to reverse a range of numbers, for example:
+Nota che i "limiti inferiori" di un intervallo possono essere maggiori o minori dei "limiti superiori", quindi la funzione ``map(value, fromLow, fromHigh, toLow, toHigh)`` può essere utilizzata per invertire un intervallo di numeri, ad esempio:
 
 .. code-block::
 
     y = map(x, 1, 50, 50, 1);
 
-The function also handles negative numbers well, so that this example is also valid and works well.
+La funzione gestisce bene anche i numeri negativi, quindi questo esempio è valido e funziona correttamente.
 
 .. code-block::
 
     y = map(x, 1, 50, 50, -100);
 
-For ``y = map(x, 1, 50, 50, -100);``, if ``x`` equals 20, what should ``y`` be? Refer to the following formula to calculate it.
-
+Per ``y = map(x, 1, 50, 50, -100);``, se ``x`` è uguale a 20, quale dovrebbe essere ``y``? Fai riferimento alla seguente formula per calcolarlo.
 
 .. image:: img/15_map_format.png

@@ -1,102 +1,97 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci di nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a concorsi e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
-1.2 What's Included in Your Kit
+1.2 Cosa è incluso nel tuo Kit
 ======================================
 
-
-Inside our kit, you'll find a variety of components and parts you'll use throughout this course to build circuits. Here's a quick guide to what's included.
-
+Nel nostro kit troverai una varietà di componenti e parti che utilizzerai durante questo corso per costruire circuiti. Ecco una guida rapida a ciò che è incluso.
 
 **1 x Original Arduino Uno R3**
 
-A microcontroller board that's the brain of your circuits. It has everything needed to support the microcontroller; simply connect it to your computer with a USB cable or power it with an AC-to-DC adapter or battery to get started.
+Una scheda a microcontrollore che è il cervello dei tuoi circuiti. Ha tutto ciò di cui hai bisogno per supportare il microcontrollore; semplicemente collegala al tuo computer con un cavo USB o alimentala con un adattatore AC-DC o una batteria per iniziare.
 
 .. image:: img/1_uno_r3.png
     :width: 500
     :align: center
 
 
-**1 x 400-hole Breadboard**
+**1 x Breadboard con 400 fori**
 
-A solderless board that lets you easily build electronic circuits. It's filled with rows of holes for connecting wires and components.
+Una breadboard senza saldature che ti permette di costruire facilmente circuiti elettronici. È piena di file di fori per collegare fili e componenti.
 
 .. image:: img/2_breadboard_half.png
     :width: 500
     :align: center
 
-**120 x Resistors (10 of each, 30 of 220Ω resistor)**
+**120 x Resistenze (10 per tipo, 30 da 220Ω)**
 
-A resistor is a component that obstructs the flow of electric power, thereby altering the voltage and current within a circuit. The value of a resistor is measured in ohms, symbolized by the Greek letter omega (Ω). The colored stripes on a resistor indicate its resistance value and tolerance.
-
+Una resistenza è un componente che ostacola il flusso di energia elettrica, alterando così la tensione e la corrente all'interno di un circuito. Il valore di una resistenza è misurato in ohm, simbolizzato dalla lettera greca omega (Ω). Le strisce colorate su una resistenza indicano il suo valore di resistenza e tolleranza.
 
 .. image:: img/2_all_resistor.png
     :align: center
 
-**25 x LEDs (5 of each color)**
+**25 x LED (5 per ogni colore)**
 
-This colorful LED selection includes five colors: red, green, blue, yellow, and white, meeting various lighting and signaling needs. Suitable for applications ranging from simple status indicators to complex decorative lighting projects, these LEDs offer a rich color choice to enhance the visual appeal of any electronic project.
+Questa selezione di LED colorati include cinque colori: rosso, verde, blu, giallo e bianco, per soddisfare varie esigenze di illuminazione e segnalazione. Adatti per applicazioni che vanno da semplici indicatori di stato a progetti di illuminazione decorativa complessi, questi LED offrono una ricca scelta di colori per arricchire l'aspetto visivo di qualsiasi progetto elettronico.
 
 .. image:: img/2_led_color.png
     :align: center
 
-**2 x RGB LEDs**
+**2 x LED RGB**
 
-Combines red, green, and blue LEDs in one casing. It can display various colors by adjusting the input voltage, creating millions of colors.
+Combina LED rossi, verdi e blu in un unico involucro. Può visualizzare vari colori regolando la tensione di ingresso, creando milioni di tonalità diverse.
 
 .. image:: img/12_rgb_led.jpg
     :width: 300
     :align: center
 
-**1 x Photoresistor**
+**1 x Fotoresistenza**
 
-
-A photoresistor is a light-sensitive component that changes its resistance based on the intensity of light it is exposed to, ideal for creating light-activated controls and sensors in electronic projects.
+Una fotoresistenza è un componente sensibile alla luce che cambia la sua resistenza in base all'intensità della luce a cui è esposta, ideale per creare controlli e sensori attivati dalla luce nei progetti elettronici.
 
 .. image:: img/17_photoresistor.png
     :width: 100
     :align: center
 
 
-**1 x NTC Thermistor**
+**1 x Termistore NTC**
 
-A thermistor is a resistor sensitive to temperature changes. NTC thermistors decrease resistance as temperature rises, while PTC thermistors increase resistance with temperature.
+Un termistore è una resistenza sensibile alle variazioni di temperatura. I termistori NTC riducono la loro resistenza all'aumentare della temperatura, mentre i termistori PTC aumentano la loro resistenza con l'aumento della temperatura.
 
 .. image:: img/1_thermistor.png
     :width: 100
     :align: center
 
-**1 x Active Buzzer & 1 x Passive Buzzer**
+**1 x Buzzer attivo & 1 x Buzzer passivo**
 
-A buzzer, available in active and passive types, is an audio signaling device that emits sound when electric current is applied. It is commonly used in alarms, timers, and notification systems.
-
+Un buzzer, disponibile in versione attiva e passiva, è un dispositivo di segnalazione acustica che emette suoni quando viene applicata una corrente elettrica. Viene comunemente utilizzato in allarmi, timer e sistemi di notifica.
 
 .. image:: img/7_beep_2.png
     :align: center
 
-**1 x Potentiometer**
+**1 x Potenziometro**
 
-A potentiometer is a variable resistor with three pins. Two pins connect to the ends of a resistor, while the middle pin attaches to a movable wiper, dividing the resistor into two parts. Potentiometers, often used to adjust voltage in circuits, are like the volume knobs on radios.
+Un potenziometro è una resistenza variabile con tre pin. Due pin si collegano alle estremità di una resistenza, mentre il pin centrale si collega a un cursore mobile, dividendo la resistenza in due parti. I potenziometri, spesso utilizzati per regolare la tensione nei circuiti, sono simili alle manopole del volume sulle radio.
 
 .. image:: img/9_dimmer_pot.png
     :width: 200
     :align: center
 
 
-**10 x Small Buttons**
+**10 x Piccoli pulsanti**
 
-A small push-button is used to provide a physical response when pressed, commonly used in electronic devices to initiate actions or input commands.
+Un piccolo pulsante a pressione è utilizzato per fornire una risposta fisica quando viene premuto, comunemente usato nei dispositivi elettronici per avviare azioni o inserire comandi.
 
 .. image:: img/1_button.png
     :width: 200
@@ -104,25 +99,25 @@ A small push-button is used to provide a physical response when pressed, commonl
 
 
 
-**1 x 74HC595 Chip**
+**1 x Chip 74HC595**
 
-The 74HC594 is a shift register that is used to expand the input/output ports of digital circuits by converting serial input into parallel output, thus reducing the number of connection pins needed. This chip is suitable for controlling a large number of output devices, such as 7-segment Display, without occupying too many microcontroller pins.
+Il 74HC594 è un registro a scorrimento utilizzato per espandere le porte di input/output dei circuiti digitali convertendo l'input seriale in output parallelo, riducendo così il numero di pin di connessione necessari. Questo chip è adatto per controllare un gran numero di dispositivi di output, come un display a 7 segmenti, senza occupare troppi pin del microcontrollore.
 
 .. image:: img/24_74hc595.png
     :width: 300
     :align: center
 
-**1 x 7-segment Display**
+**1 x Display a 7 segmenti**
 
-A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment - when energized, one segment forms part of a numeral to be displayed.
+Un display a 7 segmenti è un componente a forma di "8" che racchiude 7 LED. Ogni LED è chiamato segmento: quando viene alimentato, un segmento forma parte di una cifra da visualizzare.
 
 .. image:: img/23_7_segment.png
     :width: 300
     :align: center
 
-**1 x Ultrasonic Module**
+**1 x Modulo a ultrasuoni**
 
-This is an ultrasonic module that uses ultrasonic waves to measure distances, accurately detecting and measuring the position and distance of objects. Widely used in robotics, obstacle avoidance systems, and automatic control fields, it is a key component for environmental perception and spatial navigation.
+Questo è un modulo a ultrasuoni che utilizza onde ultrasoniche per misurare le distanze, rilevando con precisione la posizione e la distanza degli oggetti. Ampiamente utilizzato in robotica, sistemi di evitamento ostacoli e campi di controllo automatico, è un componente chiave per la percezione ambientale e la navigazione spaziale.
 
 .. image:: img/19_ultrasonic_pic.png
     :width: 300
@@ -130,39 +125,39 @@ This is an ultrasonic module that uses ultrasonic waves to measure distances, ac
 
 **65 x Jumper Wires**
 
-Connect components on the breadboard to each other and to the Arduino board.
+Connetti i componenti sulla breadboard tra loro e alla scheda Arduino.
 
 .. image:: img/2_wire_color.jpg
     :width: 400
     :align: center
 
-**10 x Male-to-female DuPont Wires**
+**10 x Cavi DuPont maschio-femmina**
 
-Male-to-female DuPont wires are specifically designed for connecting modules with male pin headers, like ultrasonic module, to breadboard. These wires are essential for interfacing different components in electronic projects, where breadboard-compatible male-to-female connections are needed.
+I cavi DuPont maschio-femmina sono progettati specificamente per collegare moduli con pin header maschi, come i moduli a ultrasuoni, alla breadboard. Questi cavi sono essenziali per interfacciare diversi componenti nei progetti elettronici, dove sono necessarie connessioni maschio-femmina compatibili con la breadboard.
 
 .. image:: img/1_dupont_wire.jpg
     :width: 400
     :align: center
 
-**1 x USB Cable**
+**1 x Cavo USB**
 
-Connects the Arduino board to a computer. Allows you to write, compile, and transfer programs to the Arduino board. Also powers the board.
+Collega la scheda Arduino a un computer. Ti permette di scrivere, compilare e trasferire programmi alla scheda Arduino. Fornisce anche alimentazione alla scheda.
 
 .. image:: img/1_usb_cable.png
     :width: 400
     :align: center
 
-**1 x 9V Battery**
+**1 x Batteria da 9V**
 
-This is a non-rechargeable alkaline 9V battery. You need to install it on the multimeter.
+Questa è una batteria alcalina da 9V non ricaricabile. Devi installarla nel multimetro.
 
 .. image:: img/1_9v_battery.png
     :width: 200
     :align: center
 
-**1 x Multimeter with Red & Black Leads**
+**1 x Multimetro con cavi rosso e nero**
 
-This is a versatile multimeter capable of measuring voltage, current, and resistance, as well as performing other electrical tests, making it an indispensable tool for electronics and electrical work.
+Questo è un multimetro versatile capace di misurare tensione, corrente e resistenza, oltre a eseguire altri test elettrici, rendendolo uno strumento indispensabile per il lavoro elettronico ed elettrico.
 
 .. image:: img/multimeter_pic.png
     :width: 200
