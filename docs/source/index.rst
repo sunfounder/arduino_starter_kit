@@ -29,6 +29,9 @@ Vielen Dank, dass du dich für das |link_beginner_lab_kit| entschieden hast!
         * |link_jp_tutorials|
         * |link_en_tutorials|
         * |link_german_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
     Klicke bitte auf die jeweiligen Links, um das Dokument in deiner bevorzugten Sprache zu lesen.
 
