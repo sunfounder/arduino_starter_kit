@@ -30,6 +30,8 @@ Merci d'avoir choisi le |link_beginner_lab_kit|
         * |link_en_tutorials|
         * |link_german_tutorials|
         * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
     Veuillez cliquer sur les liens respectifs pour accéder au document dans la langue de votre choix.
 
