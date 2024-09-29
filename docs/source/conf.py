@@ -174,7 +174,7 @@ rst_epilog += """
 .. |link_it_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/beginners-lab-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
-
+    
 """
 
 # component pic
