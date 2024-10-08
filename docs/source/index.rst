@@ -17,7 +17,7 @@
 
 Gracias por elegir el |link_beginner_lab_kit|
 
-* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Handbook with the Answers.pdf>`
+* :download:`Beginner's Lab Kit Handbook with the Answers </_static/pdf/Beginner's Lab Kit Manual con las Respuestas.pdf>`
 
 .. image:: img/00_bgn_lab_kit_page1.jpg
     :width: 800
