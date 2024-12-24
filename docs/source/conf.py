@@ -106,7 +106,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">hier</a>
 
 
 .. |link_wiki_avometer| raw:: html
@@ -116,7 +116,7 @@ rst_epilog = """
 
 .. |link_docs_ide| raw:: html
 
-    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank">Getting Started with Arduino IDE 2</a>
+    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank">Einstieg mit Arduino IDE 2</a>
 
 
 .. |link_arduino_forum| raw:: html
