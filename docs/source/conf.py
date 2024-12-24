@@ -105,7 +105,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">ここ</a>
 
 
 .. |link_wiki_avometer| raw:: html
@@ -115,7 +115,7 @@ rst_epilog = """
 
 .. |link_docs_ide| raw:: html
 
-    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank">Getting Started with Arduino IDE 2</a>
+    <a href="https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2/" target="_blank">～の始め方 Arduino IDE 2</a>
 
 
 .. |link_arduino_forum| raw:: html
@@ -128,11 +128,11 @@ rst_epilog = """
 
 .. |link_arduino_docs| raw:: html
 
-    <a href="https://docs.arduino.cc/" target="_blank">Official Arduino Documentation</a>
+    <a href="https://docs.arduino.cc/" target="_blank">公式Arduinoドキュメント</a>
 
 .. |link_download_arduino| raw:: html
 
-    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino Software Page</a>
+    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduinoソフトウェアページ</a>
 
 .. |link_ascii| raw:: html
 
@@ -140,7 +140,7 @@ rst_epilog = """
 
 .. |link_arduino_reference| raw:: html
 
-    <a href="https://www.arduino.cc/reference/en/" target="_blank">Language Reference</a>
+    <a href="https://www.arduino.cc/reference/en/" target="_blank">言語リファレンス</a>
 
 
 """
